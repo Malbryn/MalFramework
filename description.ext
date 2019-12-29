@@ -25,11 +25,10 @@ respawnOnStart = 0;  // -1 = Don't respawn on start and don't run the respawn sc
 
 // Mission settings
 cba_settings_hasSettingsFile = 1;  // Enable CBA settings file
-reviveMode = 0;  // Enable/disable revive
 disableChannels[] = {0, 2, 4, 5};  // Disable certain comms channels
 disabledAI = 1;  // Enable/disable AI
 enableDebugConsole = 1;  // Enable debug console (0 = disable, 1 = logged in admin or host)
-saving = 0;  // Enable/disable mission saving
+  // Enable/disable mission saving
 
 
 // Garbage collector settings
@@ -47,6 +46,10 @@ wreckRemovalMaxTime = 900;
 // Debrief settings
 class CfgDebriefing {
     #include "mission_framework\core\debriefing\CfgDebriefing.hpp"
+};
+
+class CfgDebriefingSections {
+    #include "mission_framework\core\debriefing\CfgDebriefingSections.hpp"
 };
 
 
@@ -74,7 +77,7 @@ class CfgFunctions {
 // Notifications config
 class CfgNotifications {
     #include "mission_framework\core\notifications\CfgNotifications.hpp"
-}
+};
 
 
 // Custom sounds
