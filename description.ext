@@ -1,0 +1,87 @@
+// Mission parameters
+class Header {
+    gameType =  Coop;    // Game type
+	  minPlayers =  1;    // Minimum number of players
+	  maxPlayers = 10;    // Maximum number of players
+};
+
+
+// Loading screen settings
+OnLoadName		= "OperationName";  // Name of the operation
+onLoadMission = "MissionDescription";  // Mission description
+author = "Malbryn";  // Author of the mission
+loadScreen = "mission_framework\settings\img\loading_screen.jpg";  // Loading screen image
+
+
+// Respawn settings
+respawn = "BASE";  // Respawn type ("NONE", "BASE")
+respawnButton = 0;  // Enable/disable the respawn button
+respawnDelay = 30;  // Respawn delay in seconds
+respawnVehicleDelay = 60;  // Vehicle respawn delay in seconds
+respawnDialog = 1;  // Displays the respawn dialog ("BASE" respawn only)
+respawnOnStart = 0;  // -1 = Don't respawn on start and don't run the respawn script, 0 = Don't respawn on start and run the respawn script, 1 = Respawn on start and run the respawn script
+//respawnTemplates[] = {};  // Pre-defined respawn templates
+
+
+// Mission settings
+cba_settings_hasSettingsFile = 1;  // Enable CBA settings file
+reviveMode = 0;  // Enable/disable revive
+disableChannels[] = {0, 2, 4, 5};  // Disable certain comms channels
+disabledAI = 1;  // Enable/disable AI
+enableDebugConsole = 1;  // Enable debug console (0 = disable, 1 = logged in admin or host)
+saving = 0;  // Enable/disable mission saving
+
+
+// Garbage collector settings
+corpseManagerMode = 1;
+corpseLimit = 25;
+corpseRemovalMinTime = 300;
+corpseRemovalMaxTime = 600;
+
+wreckManagerMode = 1;
+wreckLimit = 10;
+wreckRemovalMinTime = 600;
+wreckRemovalMaxTime = 900;
+
+
+// Debrief settings
+class CfgDebriefing {
+    #include "mission_framework\core\debriefing\CfgDebriefing.hpp"
+};
+
+
+// Remote exec rules
+class CfgRemoteExec {
+    class Functions {
+        mode = 2;
+        jip = 1;
+    };
+};
+
+
+// Tasks
+taskManagement_markers2D = 0;  // Use 2D markers
+taskManagement_markers3D = 0;  // Use 3D markers
+taskManagement_propagate = 1;  // Propagate shared tasks to subordinates
+
+
+// Functions library
+class CfgFunctions {
+    #include "mission_framework\core\CfgFunctions.hpp"
+};
+
+
+// Notifications config
+class CfgNotifications {
+    #include "mission_framework\core\notifications\CfgNotifications.hpp"
+}
+
+
+// Custom sounds
+// Using the SWU Immersion pack
+// Uncomment if the pack is used
+/*
+class CfgSounds {
+    #include "mission_framework\core\SWU_sounds\sounds.hpp"
+};
+*/
