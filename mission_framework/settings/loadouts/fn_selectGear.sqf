@@ -1,4 +1,12 @@
 // [_role] call MF_fnc_selectLoadout;
+// New role syntax:
+/*
+case "role"
+  GEAR_START
+    []
+  GEAR_END
+*/
+
 #define GEAR_START  : { _gear =
 #define GEAR_END ;};
 

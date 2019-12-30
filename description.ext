@@ -70,7 +70,11 @@ taskManagement_propagate = 1;  // Propagate shared tasks to subordinates
 
 // Functions library
 class CfgFunctions {
-    #include "mission_framework\core\CfgFunctions.hpp"
+    class MissionFramework {
+        tag = "MF";
+
+        #include "mission_framework\activate_modules.hpp"
+    };
 };
 
 
