@@ -1,3 +1,21 @@
+/*
+ * Author:
+ * Malbryn
+ *
+ * Description:
+ * Prints out the mission intro text
+ *
+ * Arguments:
+ * -
+ *
+ * Return Value:
+ * void
+ *
+ * Example:
+ * [] call MF_fnc_runIntro
+ *
+ */
+
 private _intro =
 [
   [MF_var_title, "size='1.5' font='PuristaBold'"],

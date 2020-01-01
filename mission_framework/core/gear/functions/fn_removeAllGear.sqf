@@ -1,4 +1,20 @@
-// [_unit] call MF_fnc_removeAllGear;
+/*
+ * Author:
+ * Malbryn
+ *
+ * Description:
+ * Removes all of tge unit's current gear
+ *
+ * Arguments:
+ * _this select 0: OBJECT - Unit
+ *
+ * Return Value:
+ * void
+ *
+ * Example:
+ * [this] call MF_fnc_removeAllGear
+ *
+ */
 
 params ["_unit"];
 

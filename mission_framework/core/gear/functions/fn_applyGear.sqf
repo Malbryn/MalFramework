@@ -1,3 +1,22 @@
+/*
+ * Author:
+ * Malbryn
+ *
+ * Description:
+ * Applies the selected loadout to the unit and saves it in a variable
+ *
+ * Arguments:
+ * _this select 0: OBJECT - Unit
+ * _this select 1: ARRAY - Gear exported from ACE Arsenal
+ *
+ * Return Value:
+ * void
+ *
+ * Example:
+ * [this, [...]] call MF_fnc_applyGear
+ *
+ */
+
 params ["_unit", "_gear"];
 
 // Set the loadout
