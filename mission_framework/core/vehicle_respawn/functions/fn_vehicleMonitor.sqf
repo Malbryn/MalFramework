@@ -1,15 +1,24 @@
 /*
-	File:
-		fn_vehicleMonitor.sqf
+ * Author:
+ * Fredrik Eriksson
+ *
+ * Description:
+ * Vehicle respawn status monitoring
+ *
+ * Arguments:
+ * -
+ *
+ * Return Value:
+ * void
+ *
+ * Example:
+ * [] call MF_fnc_vehicleMonitor
+ *
+ */
 
-	Author:
-		Fredrik Eriksson
-
-	Description:
-		Vehicle respawn status monitoring.
-*/
 if (!isServer) exitWith {};
-waitUntil {Sleep 0.5; count TotalVRArray > 0};
+
+waitUntil {Sleep 0.5; count MF_var_TotalVRArray > 0};
 
 while {true} do {
 	{
@@ -36,9 +45,9 @@ while {true} do {
 					"_limitEnabled"
 				];
 
-				_respawnCount = _vehicle getVariable ["VRRespawnCount", 0];
-				_respawnLimit = _vehicle getVariable ["VRRespawnLimit", 0];
-				if (_respawnCount > _respawnLimit OR {_vehicle getVariable ["VRStop", false]}) exitWith {};
+				_respawnCount = _vehicle getVariable ["MF_var_VRRespawnCount", 0];
+				_respawnLimit = _vehicle getVariable ["MF_var_VRRespawnLimit", 0];
+				if (_respawnCount > _respawnLimit OR {_vehicle getVariable ["MF_var_VRStop", false]}) exitWith {};
 
 				if _deleteWreck then {
 					deleteVehicle _vehicle
@@ -55,20 +64,20 @@ while {true} do {
 				if _savePaint then {[_newVehicle, _paint, _parts] call BIS_fnc_initVehicle};
 
 				if _limitEnabled then {
-					_newVehicle setVariable ["VRRespawnCount", _respawnCount + 1, true];
-					_newVehicle setVariable ["VRRespawnLimit", _respawnLimit, true];
+					_newVehicle setVariable ["MF_var_VRRespawnCount", _respawnCount + 1, true];
+					_newVehicle setVariable ["MF_var_VRRespawnLimit", _respawnLimit, true];
 				};
 
 				[_newVehicle, _name] remoteExec ["setVehicleVarName", 0, _newVehicle];
 
 				_newVehicle call _init;
 
-				TotalVRArray pushBack [_newVehicle, _vehicleData];
+				MF_var_TotalVRArray pushBack [_newVehicle, _vehicleData];
 			};
-			TotalVRArray set [_forEachIndex, ["DELETE"]];
+			MF_var_TotalVRArray set [_forEachIndex, ["DELETE"]];
 		};
 		Sleep 0.2;
-	} forEach TotalVRArray;
-	TotalVRArray = TotalVRArray select {!(typeName (_x select 0) == "STRING")};
+	} forEach MF_var_TotalVRArray;
+	MF_var_TotalVRArray = MF_var_TotalVRArray select {!(typeName (_x select 0) == "STRING")};
 	Sleep 5;
 };

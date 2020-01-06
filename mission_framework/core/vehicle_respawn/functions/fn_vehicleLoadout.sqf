@@ -1,23 +1,24 @@
 /*
-	File:
-		fn_vehicleLoadout.sqf
+ * Author:
+ * Fredrik Eriksson
+ *
+ * Description:
+ * Adds items to the vehicle equipment storage
+ *
+ * Arguments:
+ * _this select 0: OBJECT - Vehicle to add loadout to
+ * _this select 1: ARRAY - Array of items/magazines/weapons/backpacks
+ *
+ * Return Value:
+ * void
+ *
+ * Example:
+ * nul = [this, [[["Medikit","Toolkit"], [1, 2]],[],[],[]]] call MF_fnc_vehicleLoadout
+ *
+ */
 
-	Author:
-		Fredrik Eriksson
-
-	Description:
-		Vehicle loadout.
-
-	Parameters:
-		0 : OBJECT
-				- Vehicle to add loadout to.
-		1 : ARRAY
-				- Array of items/magazines/weapons/backpacks.
-
-	Example:
-		nul = [this, [[["Medikit","Toolkit"], [1, 2]],[],[],[]]] call MF_fnc_vehicleLoadout
-*/
 if (!isServer) exitWith {};
+  
 private ["_itemArray", "_magazineArray", "_weaponArray", "_backpackArray"];
 params [
 	["_vehicle", objNull, [objNull]],

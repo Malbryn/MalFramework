@@ -45,11 +45,11 @@ wreckRemovalMaxTime = 900;
 
 // Debrief settings
 class CfgDebriefing {
-    #include "mission_framework\core\debriefing\CfgDebriefing.hpp"
+    #include "mission_framework\settings\debriefing\CfgDebriefing.hpp"
 };
 
 class CfgDebriefingSections {
-    #include "mission_framework\core\debriefing\CfgDebriefingSections.hpp"
+    #include "mission_framework\settings\debriefing\CfgDebriefingSections.hpp"
 };
 
 

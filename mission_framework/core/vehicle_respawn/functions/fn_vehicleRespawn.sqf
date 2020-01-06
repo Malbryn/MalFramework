@@ -1,39 +1,31 @@
 /*
-	File:
-		fn_vehicleRespawn.sqf
+ * Author:
+ * Fredrik Eriksson
+ *
+ * Description:
+ * Init the vehicle respawn monitor
+ *
+ * Arguments:
+ * _this select 0: OBJECT - Vehicle to be monitored for respawn
+ * _this select 1: SCALAR - Respawn delay in seconds (default: 5)
+ * _this select 2: CODE - Initialization for vehicle (to call vehicle use: _this)
+ * _this select 3: SCALAR - Respawn Limit. Number of lives a vehicle has (default: -1)
+ * _this select 4: BOOLEAN - Deletes wreck on respawn. Wrecks within
+ 100m of respawn point is automatically deleted, regardless of setting
+   (default: false)
+ * _this select 5: BOOLEAN - Use custom loadout, saves inventory and loads it on respawn (default: true)
+ * _this select 6: BOOLEAN - Custom Paintjob. Saves the current paint on the vehicle and applies it on respawn (default: true)
+ *
+ * Return Value:
+ * void
+ *
+ * Example:
+ * [this, 30, {_this allowDamage false;}, 3, false, true, true] call MF_fnc_vehicleRespawn
+ *
+ */
 
-	Author:
-		Fredrik Eriksson
-
-	Description:
-		Vehicle respawn, with init, name and loadout capabilities.
-
-	Parameters:
-		0 : OBJECT (REQUIRED)
-				- Vehicle to be monitored for respawn.
-		1 : NUMBER (OPTIONAL)
-				- Respawn delay in seconds. +-5-10 seconds.
-					(Default: 5)
-		2 : CODE (OPTIONAL)
-				- Initialization for vehicle. (To call vehicle use: _this)
-		3 : NUMBER (OPTIONAL)
-				- Respawn Limit. Number of lives a vehicle has.
-					(Default: -1)
-		4 : BOOLEAN (OPTIONAL)
-				- Deletes wreck on respawn. Wrecks within
-				100m of respawn point is automatically deleted, regardless of setting.
-					(Default: false)
-		5 : BOOLEAN (OPTIONAL)
-				- Use Custom Loadout. Saves inventory and loads it on respawn.
-					(Default: true)
-		6 : BOOLEAN (OPTIONAL)
-				- Custom Paintjob. Saves the current paint on the vehicle and applies it on respawn.
-					(Default: true)
-
-	Example:
-		[this, 5, {_this allowDamage false;}, false] call MF_fnc_vehicleRespawn;
-*/
 if (!isServer) exitWith {};
+
 private ["_inventory", "_paint", "_parts", "_vehicleData"];
 params [
 	["_vehicle", objNull, [objNull]],
@@ -74,10 +66,10 @@ _vehicleData = [
 	_deleteWreck, _limitEnabled
 ];
 
-if (isNil "VRMonitor") then {
-	TotalVRArray = [];
+if (isNil "MF_var_VRMonitor") then {
+	MF_var_TotalVRArray = [];
 	[] spawn MF_fnc_vehicleMonitor;
-	VRMonitor = 1;
+	MF_var_VRMonitor = 1;
 };
 
-TotalVRArray pushBack [_vehicle, _vehicleData];
+MF_var_TotalVRArray pushBack [_vehicle, _vehicleData];
