@@ -16,7 +16,7 @@
  *
  */
 
-if (isServer) exitWith {};
+if (!hasInterface) exitWith {};
 
 if (serverCommandAvailable "#kick") then {
   private _menu = ['Admin Menu', 'Admin Menu', '', {}, {true}] call ace_interact_menu_fnc_createAction;

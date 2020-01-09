@@ -1,6 +1,6 @@
 class Briefing {
 
-    file = "mission_framework\settings\briefing\fn_setOrbat.sqf";
+    file = "mission_framework\settings\briefing";
 
-    class setBriefing {};
+    class SetBriefing {};
 };

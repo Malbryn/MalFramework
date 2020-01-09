@@ -16,6 +16,8 @@
  *
  */
 
+if (!hasInterface) exitWith {};
+
 private _intro =
 [
   [MF_var_title, "size='1.5' font='PuristaBold'"],

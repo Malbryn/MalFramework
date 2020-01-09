@@ -1,13 +1,37 @@
-/*
- * Uncomment the active modules to confire their variables
- */
+/* ---------------------------MISSION PARAMETERS------------------------------*/
+MF_var_time_limit = 3600;  // Mission time limit in seconds
+MF_var_respawn_tickets = 1;  // TODO: Respawn ticket check in onPlayerKilled.sqf
+MF_var_view_distance_server = 3000;  // Server view distance
+MF_var_view_distance_player = 4000;  // Player view distance
+
+
+/* -------------------------------MODULES-------------------------------------*/
+// BRIEFING
+#define MF_BRIEFING
+
+// COVER MAP
+#define MF_COVERMAP
+MF_var_ao = "ao";  // Name of the AO marker
 
 // INTRO TEXT
+#define MF_INTROTEXT
 MF_var_title = "TEST TITLE";
 MF_var_date = "TEST DATE";
 MF_var_location = "TEST LOCATION";
-MF_var_titleDelay = 10;
+MF_var_title_delay = 10;
+
+// JIP TELEPORT --- TODO: WAIT UNTIL PLAYER IS IN THE GAME (SO THE NOTIFICATION CAN BE SEEN)
+#define MF_JIPTELEPORT
+MF_var_jip_is_available = true;  // If teleport is available for JIP players
+MF_var_jipTimer = 180;  // Seconds the player has to TP back to their squad
+
+// ORBAT
+#define MF_ORBAT
 
 // REINSERT
-MF_var_usePara = true;
-MF_var_useMrv = false;  // Mobile Respawn Vehicle
+MF_var_use_para = true;
+MF_var_use_mrv = false;  // Mobile Respawn Vehicle
+
+// SNOWFALL
+#define MF_SNOWFALL
+MF_var_snowfall_enabled = true;

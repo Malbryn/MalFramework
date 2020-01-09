@@ -1,6 +1,11 @@
 class AdminMenu {
 
-    file = "mission_framework\core\admin_menu\functions\fn_addAdminMenu.sqf";
+    file = "mission_framework\core\admin_menu\functions";
 
-    class AddAdminMenu {};
+    class AddAdminMenu {
+      postInit = 1;
+    };
+    class AddArsenalMenu {
+      postInit = 1;
+    };
 };

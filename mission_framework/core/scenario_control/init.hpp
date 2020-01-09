@@ -1,6 +1,9 @@
 class ScenarioControl {
 
-    file = "mission_framework\core\scenario_control\functions\fn_addScenarioEndControl.sqf";
+    file = "mission_framework\core\scenario_control\functions";
 
-    class AddScenarioEndControl {};
+    class AddScenarioEndControl {
+      postInit = 1;
+    };
+    class AssignCO {};
 };

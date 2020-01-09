@@ -16,7 +16,7 @@
  *
  */
 
-if (isServer) exitWith {};
+if (!hasInterface) exitWith {};
 
 // Snow script category
 private _switch = ['Snow Script', 'Snow Script', '', {}, {true}] call ace_interact_menu_fnc_createAction;
@@ -34,7 +34,7 @@ private _switch = ['Snow Script - On', 'Snow Script - On', '', {
 
 // Turn snow script off
 private _switch = ['Snow Script - Off', 'Snow Script - Off', '', {
-  missionNameSpace setVariable ["MF_var_snow_start", false];
+  missionNameSpace setVariable ["MF_var_snowfall_start", false];
   systemChat "Snow script is OFF";
 }, {true}] call ace_interact_menu_fnc_createAction;
 

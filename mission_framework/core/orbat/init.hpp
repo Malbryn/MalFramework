@@ -1,6 +1,7 @@
 class Orbat {
 
-    file = "mission_framework\core\orbat\functions\fn_setOrbat.sqf";
+    file = "mission_framework\core\orbat\functions";
 
-    class setOrbat {};
+    class SetOrbat {};
+    class RefreshOrbat {};
 };

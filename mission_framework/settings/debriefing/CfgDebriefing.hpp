@@ -4,8 +4,8 @@ class MissionSuccess {
     subtitle = "";  // Closing shot - Short description
     description = "";  // Debriefing - Summary of the mission
     pictureBackground = "";  // Debriefing - 2:1 picture as background
-    picture = "hd_flag";  // Closing shot - 1:1 icon in the middle of the screen
-    pictureColor[] = {0.0, 0.3, 0.6, 1};  // Closing shot - Icon colour
+    picture = "mil_end";  // Closing shot - 1:1 icon in the middle of the screen
+    pictureColor[] = {0, 0.8, 0, 1};  // Closing shot - Icon colour
 };
 
 class MissionFail {
@@ -23,6 +23,6 @@ class MissionTerminated {
     subtitle = "The mission was terminated by admin";
     description = "Due to technical reasons the mission was terminated";
     pictureBackground = "";
-    picture = "hd_warning";
-    pictureColor[] = {1, 0, 0, 1};
+    picture = "mil_warning";
+    pictureColor[] = {0.9, 0, 0, 1};
 };

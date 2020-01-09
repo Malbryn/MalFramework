@@ -1,6 +1,6 @@
 class Intro {
 
-    file = "mission_framework\core\introText\functions\fn_runIntro.sqf";
+    file = "mission_framework\core\intro_text\functions";
 
-    class runIntro {};
+    class RunIntro {};
 };
