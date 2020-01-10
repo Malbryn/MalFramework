@@ -4,6 +4,9 @@
 // BRIEFING
 #include "briefing\init.hpp"
 
+// COMMON
+#include "common\init.hpp"
+
 // COVER MAP
 #include "cover_map\init.hpp"
 

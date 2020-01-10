@@ -1,21 +1,24 @@
-// DO NOT EDIT THIS
-/* -------------------------------------------------------------------------- */
-_briefing = [];
+/*
+ * Author:
+ * Based on Perfks' briefing, edited by Pax'Jarome
+ *
+ * Description:
+ * Displays the briefing for everyone on the map screen
+ *
+ * Arguments:
+ * -
+ *
+ * Return Value:
+ * void
+ *
+ * Example:
+ * [] call MF_fnc_setBriefing
+ *
+ */
 
-#define NEWTAB(NAME) _briefing set [count _briefing, ["Diary",[NAME,"
-#define ENDTAB "]]];
-
-#define DISPLAYBRIEFING() \
-_size = count _briefing - 1; \
-for '_i' from 0 to _size do \
-{ \
-	player createDiaryRecord (_briefing select _size - _i); \
-};
+#include "briefingMacros.sqf"  // DON'T REMOVE
 
 
-
-// EDIT BELOW THE LINE
-/* -------------------------------------------------------------------------- */
 NEWTAB("I. Organization")
 <br/><font color='#FFA500' size='16' face='PuristaBold'>player_facetion_goes_here</font>
 <br/>list_of_the_squads_goes_here
@@ -101,6 +104,8 @@ NEWTAB("VI. Mission notes:")
 <br/>- View Distance:
 <br/>-- Player:
 <br/>-- AI:
+<br/>
+<br/>- JIP:
 ENDTAB;
 
 DISPLAYBRIEFING();

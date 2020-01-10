@@ -8,8 +8,8 @@
  * Arguments:
  * _this select 0: STRING - Name of the trigger
  * _this select 1: NUMBER - Number of the shells dropped
- * _this select 2: NUMBER - Safe distance from the player (Optional)
- * _this select 3: STRING - Used shell type (Optional)
+ * _this select 2: NUMBER - Safe distance from the player (Optional, default: 60)
+ * _this select 3: STRING - Used shell type (Optional, default: "Sh_82mm_AMOS")
  *
  * Return Value:
  * void
@@ -21,7 +21,7 @@
 
 if (!isServer) exitWith {};
 
-params ["_trigger", "_shellCount", ["_safeDistance", 62], ["shellType", "Sh_82mm_AMOS"]];
+params ["_trigger", "_shellCount", ["_safeDistance", 60], ["shellType", "Sh_82mm_AMOS"]];
 
 private _triggerPos = getPos _trigger;
 private _triggerRadius = (triggerArea _trigger) select 0;

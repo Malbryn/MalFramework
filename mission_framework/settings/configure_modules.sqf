@@ -1,11 +1,12 @@
-/* ---------------------------MISSION PARAMETERS------------------------------*/
+/* ---------------------------MISSION PARAMETERS----------------------------- */
 MF_var_time_limit = 3600;  // Mission time limit in seconds
-MF_var_respawn_tickets = 1;  // TODO: Respawn ticket check in onPlayerKilled.sqf
-MF_var_view_distance_server = 3000;  // Server view distance
-MF_var_view_distance_player = 4000;  // Player view distance
+MF_var_respawn_tickets = 1;  // Not yet implemented!
+MF_var_view_distance_server = 2000;  // Server view distance (AI)
+MF_var_view_distance_player = 2000;  // Player view distance
+MF_var_time_acceleration = 1;  // Time acceleration between 0.1 - 120
 
 
-/* -------------------------------MODULES-------------------------------------*/
+/* -------------------------------MODULES------------------------------------ */
 // BRIEFING
 #define MF_BRIEFING
 

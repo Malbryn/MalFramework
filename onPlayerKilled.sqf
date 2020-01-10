@@ -25,13 +25,13 @@ if (side _killer == playerSide) then {
 uiSleep 5;
 
 // Init the spectator mode if available, TODO: disable respawn counter when no respawn is available
-if (MF_var_respawn_tickets == 0) then {
-  setPlayerRespawnTime 999999;
-  ["Initialize", [player, [], false, false, true, false, false, false, false, true]] call BIS_fnc_EGSpectator;
-} else {
+//if (MF_var_respawn_tickets == 0) then {
+//  setPlayerRespawnTime 999999;
+//  ["Initialize", [player, [], false, false, true, false, false, false, false, true]] call BIS_fnc_EGSpectator;
+//} else {
   ["Initialize", [player, [], false, false, true, false, false, false, false, true]] call BIS_fnc_EGSpectator;
 
-  MF_var_respawn_tickets = MF_var_respawn_tickets - 1;
+//  MF_var_respawn_tickets = MF_var_respawn_tickets - 1;
 };
 
 // Stop the snow script if enabled

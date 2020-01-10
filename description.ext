@@ -7,9 +7,9 @@ class Header {
 
 
 // Loading screen settings
-OnLoadName		= "OperationName";  // Name of the operation
-onLoadMission = "MissionDescription";  // Mission description
-author = "Malbryn";  // Author of the mission
+OnLoadName = "operation_name";  // Name of the operation
+onLoadMission = "mission_description";  // Mission description
+author = "mission_maker";  // Author of the mission
 loadScreen = "mission_framework\settings\img\loading_screen.jpg";  // Loading screen image
 
 
@@ -28,7 +28,6 @@ cba_settings_hasSettingsFile = 1;  // Enable CBA settings file
 disableChannels[] = {0, 2, 4, 5};  // Disable certain comms channels
 disabledAI = 1;  // Enable/disable AI
 enableDebugConsole = 1;  // Enable debug console (0 = disable, 1 = logged in admin or host)
-  // Enable/disable mission saving
 
 
 // Garbage collector settings
@@ -84,11 +83,11 @@ class CfgNotifications {
 };
 
 
-// Custom sounds
+// Custom ambient sounds
 // Using the SWU Immersion pack
 // Uncomment if the pack is used
 /*
 class CfgSounds {
-    #include "mission_framework\core\SWU_sounds\sounds.hpp"
+    #include "mission_framework\core\SWU_sounds\CfgSounds.hpp"
 };
 */

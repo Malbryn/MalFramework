@@ -14,7 +14,7 @@
  * void
  *
  * Example:
- * [this, "SL"] call MF_fnc_gearCore;
+ * [this, "SL"] call MF_fnc_gearCore
  *
  */
 

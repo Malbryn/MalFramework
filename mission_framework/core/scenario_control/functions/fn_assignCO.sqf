@@ -13,7 +13,7 @@
  * void
  *
  * Example:
- * [] call MF_fnc_assignCO
+ * [this] call MF_fnc_assignCO
  *
  */
 

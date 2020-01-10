@@ -58,6 +58,8 @@ if (hasInterface) then {
 if (isServer) then {
   setViewDistance MF_var_view_distance_server;
 
+  setTimeMultiplier MF_var_time_acceleration;
+
   /*Mission end conditions check loop on server
   [] spawn {
 
