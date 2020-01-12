@@ -19,7 +19,7 @@
 
 if (!hasInterface) exitWith {};
 
-// Put all tasks into an array
+// Put every task into an array
 _taskList = player call BIS_fnc_tasksUnit;
 
 // Create the Tasks parent
