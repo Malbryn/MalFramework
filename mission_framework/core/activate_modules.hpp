@@ -25,6 +25,9 @@
 // REINSERT
 #include "reinsert\init.hpp"
 
+// SAFETY
+#include "safety\init.hpp"
+
 // SCENARIO CONTROL
 #include "scenario_control\init.hpp"
 

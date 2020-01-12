@@ -88,6 +88,6 @@ class CfgNotifications {
 // Uncomment if the pack is used
 /*
 class CfgSounds {
-    #include "mission_framework\core\SWU_sounds\CfgSounds.hpp"
+    #include "mission_framework\core\swu_sounds\CfgSounds.hpp"
 };
 */

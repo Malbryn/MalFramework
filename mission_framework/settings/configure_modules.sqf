@@ -1,4 +1,5 @@
 /* ---------------------------MISSION PARAMETERS----------------------------- */
+MF_var_time_limit_enabled = false;  // Mission time limit enabled / disabled
 MF_var_time_limit = 3600;  // Mission time limit in seconds
 MF_var_respawn_tickets = 1;  // Not yet implemented!
 MF_var_view_distance_server = 2000;  // Server view distance (AI)
@@ -21,7 +22,7 @@ MF_var_date = "TEST DATE";
 MF_var_location = "TEST LOCATION";
 MF_var_title_delay = 10;
 
-// JIP TELEPORT --- TODO: WAIT UNTIL PLAYER IS IN THE GAME (SO THE NOTIFICATION CAN BE SEEN)
+// JIP TELEPORT
 #define MF_JIPTELEPORT
 MF_var_jip_is_available = true;  // If teleport is available for JIP players
 MF_var_jipTimer = 180;  // Seconds the player has to TP back to their squad
@@ -32,6 +33,9 @@ MF_var_jipTimer = 180;  // Seconds the player has to TP back to their squad
 // REINSERT
 MF_var_use_para = true;
 MF_var_use_mrv = false;  // Mobile Respawn Vehicle
+
+// SAFETY
+#define MF_SAFETY
 
 // SNOWFALL
 #define MF_SNOWFALL
