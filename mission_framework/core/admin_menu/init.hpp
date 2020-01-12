@@ -8,4 +8,7 @@ class AdminMenu {
     class AddArsenalMenu {
       postInit = 1;
     };
+    class AddTaskControl {
+      postInit = 1;
+    };
 };

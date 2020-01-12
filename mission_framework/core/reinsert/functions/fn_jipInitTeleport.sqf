@@ -12,11 +12,13 @@
  * void
  *
  * Example:
- * [] call MF_fnc_jipInitTeleport
+ * [] spawn MF_fnc_jipInitTeleport
  *
  */
 
 // Init checks
+sleep 5;
+
 if (MF_var_jip_is_available) then {
   ["JipTeleport"] call BIS_fnc_showNotification;
 } else {

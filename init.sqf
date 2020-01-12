@@ -9,7 +9,7 @@ enableEnvironment [false, true];
 // Run on player's machine
 if (hasInterface) then {
 
-/* Added postInit = 1; value to these functions, this section might not be needed?
+/* Added postInit = 1; value to these functions, this section might not be needed anymore?
   [{!isNull player}, {
     [] call MF_fnc_addAdminMenu;
     [] call MF_fnc_addArsenalMenu;
@@ -38,8 +38,12 @@ if (hasInterface) then {
 
   #ifdef MF_JIPTELEPORT
     if (CBA_missionTime > 90) then {
-      [] call MF_fnc_jipInitTeleport;
+      [] spawn MF_fnc_jipInitTeleport;
     };
+  #endif
+
+  #ifdef MF_SAFETY
+    [] spawn MF_fnc_forceSafety;
   #endif
 
   #ifdef MF_SNOWFALL  // TODO: FIX THIS

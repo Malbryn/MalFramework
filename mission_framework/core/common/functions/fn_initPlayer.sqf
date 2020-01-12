@@ -19,7 +19,7 @@
  *
  */
 
-params ["_unit", "_role", ["_isCO", false], ["_colour", "MAIN"];
+params ["_unit", "_role", ["_isCO", false], ["_colour", "MAIN"]];
 
 // Gear script
 [_unit, _role] call MF_fnc_gearCore;
