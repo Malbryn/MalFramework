@@ -1,6 +1,9 @@
 // ADMIN MENU
 #include "admin_menu\init.hpp"
 
+// AMBIENT FLYBY
+#include "ambient_flyby\init.hpp"
+
 // BRIEFING
 #include "briefing\init.hpp"
 

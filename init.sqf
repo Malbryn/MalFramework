@@ -37,7 +37,12 @@ if (hasInterface) then {
   #endif
 
   #ifdef MF_JIPTELEPORT
+    /*This works, testing another method below
     if (CBA_missionTime > 90) then {
+      [] spawn MF_fnc_jipInitTeleport;
+    };*/
+    
+    if (didJIP) then {
       [] spawn MF_fnc_jipInitTeleport;
     };
   #endif
