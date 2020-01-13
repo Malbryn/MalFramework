@@ -19,7 +19,7 @@
 if (!hasInterface) exitWith {};
 
 if (serverCommandAvailable "#kick") then {
-  private _menu = ['Admin Menu', 'Admin Menu', '', {}, {true}] call ace_interact_menu_fnc_createAction;
+  private _menu = ['Admin Menu', 'Admin Menu', '\a3\ui_f\data\GUI\Cfg\Hints\Commanding_ca.paa', {}, {true}] call ace_interact_menu_fnc_createAction;
 
   [player, 1, ["ACE_SelfActions"], _menu] call ace_interact_menu_fnc_addActionToObject;
 };
