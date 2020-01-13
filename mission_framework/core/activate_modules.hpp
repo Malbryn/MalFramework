@@ -16,6 +16,9 @@
 // GEAR
 #include "gear\init.hpp"
 
+// GRASS CUTTER
+#include "grass_cutter\init.hpp"
+
 // MORTAR FIRE
 #include "mortar_fire\init.hpp"
 

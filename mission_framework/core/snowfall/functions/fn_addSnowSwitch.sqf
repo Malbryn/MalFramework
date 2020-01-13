@@ -19,7 +19,7 @@
 if (!hasInterface) exitWith {};
 
 // Snow script category
-private _switch = ['Snow Script', 'Snow Script', '', {}, {true}] call ace_interact_menu_fnc_createAction;
+private _switch = ['Snow Script', 'Snow Script', '\a3\ui_f\data\IGUI\Cfg\Cursors\unitHealer_ca.paa', {}, {true}] call ace_interact_menu_fnc_createAction;
 [player, 1, ["ACE_SelfActions"], _switch] call ace_interact_menu_fnc_addActionToObject;
 
 
