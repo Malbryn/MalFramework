@@ -68,9 +68,9 @@ MF_var_use_mrv = false;  // MRV = Mobile Respawn Vehicle
 
 
 // SNOWFALL
-#include "..\root\MF_Misc\snowfall\fncInit.sqf"
+#include "..\root\MF_Effects\snowfall\fncInit.sqf"
 MF_var_snowfall_enabled = true;
-#include "..\root\MF_Misc\snowfall\init.sqf"
+#include "..\root\MF_Effects\snowfall\init.sqf"
 
 
 // VEHICLE RESPAWN

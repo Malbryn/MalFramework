@@ -1,3 +1,6 @@
+// Import admin scripts
+#include "mission_framework\root\MF_Admin\init.sqf"
+
 // Import the mission framework modules
 #include "mission_framework\config\config.sqf"
 
