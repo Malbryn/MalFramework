@@ -2,21 +2,46 @@
 Welcome to Malbryn's Mission Framework.
 
 ## Current Features
-  - Admin menu
-    - Scenario end control
-    - Open ACE Arsenal
-  - Briefing template
-  - Map cover
-  - Play loadout script
-  - Intro text
-  - Mortar fire
-  - Custom notifications
-  - Orbat & loadouts script
-  - Reinsertion options
-    - Parachute
-    - Mobile Respawn Vehicle
-    - JIP teleport
-  - Scenario end control
-  - Snowfall script
-  - Custom sounds config for SWU
-  - Vehicle respawn
+
+### MF_Admin
+ - Admin menu
+ - Open ACE Arsenal
+ - Task & scenario control
+ 
+### MF_Cfg
+ - Custom notifications
+ - Custom sounds
+ 
+### MF_Diary
+ - Briefing script
+ - Orbat & player loadouts
+ 
+### MF_Effects
+ - Ambient flyby
+ - Mortar fire
+ 
+### MF_Logistics
+ - JIP teleport
+ - Reinsertion via parachute or tp to MRV
+ - Vehicle respawn system
+ 
+### MF_Misc
+ - Map cover
+ - Intro text
+ - Snowfall
+ 
+### MF_Player
+ - Gear script
+ - Grass cutter
+ - Assign team colour
+ - Force weapon safety on mission start
+ - Scenario control for CO's
+ 
+### Other features
+ - Mission time limit
+ - Preparation time limit
+ - Respawn tickets
+ - View distance control
+ - Time accelaration control
+ - Custom debriefing screens
+ - Placeholder loading screen
