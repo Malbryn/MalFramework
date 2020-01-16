@@ -22,7 +22,10 @@ Welcome to Malbryn's Mission Framework.
  
 ### MF_Logistics
  - JIP teleport
- - Reinsertion via parachute or tp to MRV
+ - Reinsertion
+   - HALO drop
+   - Mobile Respawn Vehicle
+   - Squad Rally Point
  - Vehicle respawn system
  
 ### MF_Misc
