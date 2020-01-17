@@ -26,11 +26,14 @@ params ["_unit", "_role", ["_isCO", false], ["_colour", "MAIN"]];
 // Gear script
 [_unit, _role] execVM "mission_framework\root\MF_Player\gear\gearCore.sqf";
 
+
 // Command element = can end the mission
 [_unit] execVM "mission_framework\root\MF_Player\scenario_control\assignCO.sqf";
 
+
 // Assign team colour
 _unit assignTeam _colour;
+
 
 // ACE player role variables
 _unit setVariable ["ACE_isEngineer", 1, true];
@@ -45,4 +48,10 @@ if ((roleDescription _unit) find "Pilot" >= 0) then {
     _unit setVariable ["ACE_GForceCoef", 0.5];
 } else {
     _unit setVariable ["ACE_GForceCoef", 1.0];
+};
+
+
+// Assign group leader rally point menu
+if (MF_var_use_rp && (leader group player) == player) then {
+    [] call MF_fnc_initRpMenu;
 };
