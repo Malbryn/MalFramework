@@ -39,19 +39,19 @@ _unit assignTeam _colour;
 _unit setVariable ["ACE_isEngineer", 1, true];
 
 if ((roleDescription _unit) find "Medic" >= 0) then {
-    _unit setVariable ["ACE_medical_medicClass", 1, true];
+  _unit setVariable ["ACE_medical_medicClass", 1, true];
 } else {
-    _unit setVariable ["ACE_medical_medicClass", 0, true];
+  _unit setVariable ["ACE_medical_medicClass", 0, true];
 };
 
 if ((roleDescription _unit) find "Pilot" >= 0) then {
-    _unit setVariable ["ACE_GForceCoef", 0.5];
+  _unit setVariable ["ACE_GForceCoef", 0.5];
 } else {
-    _unit setVariable ["ACE_GForceCoef", 1.0];
+  _unit setVariable ["ACE_GForceCoef", 1.0];
 };
 
 
 // Assign group leader rally point menu
-if (MF_var_use_rp && (leader group player) == player) then {
-    [] call MF_fnc_initRpMenu;
+if ((leader group player) == player) then {
+  [] call MF_fnc_initRpMenu;
 };

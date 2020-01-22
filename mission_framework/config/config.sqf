@@ -3,7 +3,7 @@
 /* ---------------------------MISSION PARAMETERS----------------------------- */
 MF_var_time_limit_enabled = false;  // Mission time limit on/off (Not yet implemented!)
 MF_var_time_limit = 90 MINUTES;  // Mission time limit in seconds (Not yet implemented!)
-MF_var_prep_time = 5 MINUTES;  // Preparation time on Defense mission (Not yet implemented!)
+MF_var_prep_time = 5 MINUTES;  // Preparation time on a Defense mission (Not yet implemented!)
 MF_var_respawn_tickets = 1;  // How many times the player can respawn (Not yet implemented!)
 MF_var_view_distance_server = 2500;  // Server view distance (= AI view distance)
 MF_var_view_distance_player = 2500;  // Player view distance
@@ -70,9 +70,18 @@ MF_var_use_rp = true;  // Squad Rally Point
 
 
 // SNOWFALL
-#include "..\root\MF_Effects\snowfall\fncInit.sqf"
-MF_var_snowfall_enabled = true;
-#include "..\root\MF_Effects\snowfall\init.sqf"
+//#include "..\root\MF_Effects\snowfall\fncInit.sqf"
+//#include "..\root\MF_Effects\snowfall\init.sqf"
+
+
+// SUPPLY DROP
+#include "..\root\MF_Logistics\supply_drop\fncInit.sqf"
+MF_var_supply_drop_crates = [
+	[crate1, "Ammo Resupply"],
+	[crate2, "Medic Resupply"]
+];
+MF_var_supply_drop_plane = "LIB_C47_Skytrain";
+#include "..\root\MF_Logistics\supply_drop\addSupplyDropMenu.sqf"
 
 
 // VEHICLE RESPAWN
