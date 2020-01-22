@@ -13,7 +13,7 @@
  * void
  *
  * Example:
- * [this, [...]] execVM "mission_framework\core\gear\applyGear.sqf"
+ * [this, [...]] execVM "mission_framework\root\MF_Player\gear\applyGear.sqf"
  *
  */
 

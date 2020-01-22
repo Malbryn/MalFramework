@@ -12,7 +12,7 @@
  * void
  *
  * Example:
- * [] execVM "mission_framework\core\safety\forceSafety.sqf"
+ * [] execVM "mission_framework\root\MF_Player\safety\forceSafety.sqf"
  *
  */
 

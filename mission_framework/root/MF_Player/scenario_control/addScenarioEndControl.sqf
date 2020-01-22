@@ -12,7 +12,7 @@
  * void
  *
  * Example:
- * [] execVM "mission_framework\core\scenario_control\addScenarioEndControl.sqf"
+ * [] execVM "mission_framework\root\MF_Player\scenario_control\addScenarioEndControl.sqf"
  *
  */
 

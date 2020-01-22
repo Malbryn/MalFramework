@@ -12,7 +12,7 @@
  * void
  *
  * Example:
- * ["ao"] execVM "mission_framework\core\cover_map\coverMap.sqf"
+ * ["ao"] execVM "mission_framework\root\MF_Misc\cover_map\coverMap.sqf"
  *
  */
 

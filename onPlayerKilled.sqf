@@ -19,7 +19,7 @@ private _nameKiller = name _killer;
 private _nameKilled = name player;
 
 if (side _killer == playerSide) then {
-  format ["Friendly fire: %1 was killed by %2", _nameKilled, _nameKiller] remoteExec ["systemChat", 0]
+  [_nameKilled, _nameKiller] remoteExec ["MF_fnc_friendlyFireMessage", 0];
 };
 
 uiSleep 5;

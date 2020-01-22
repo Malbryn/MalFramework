@@ -12,7 +12,7 @@
  * void
  *
  * Example:
- * [] execVM "mission_framework\core\grass_cutter\addCutterOption.sqf"
+ * [] execVM "mission_framework\root\MF_Player\grass_cutter\addCutterOption.sqf"
  *
  */
 

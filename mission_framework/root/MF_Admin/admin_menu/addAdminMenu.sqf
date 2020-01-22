@@ -12,7 +12,7 @@
  * void
  *
  * Example:
- * [] execVM "mission_framework\core\admin_menu\addAdminMenu.sqf"
+ * [] execVM "mission_framework\root\MF_Admin\admin_menu\addAdminMenu.sqf"
  *
  */
 

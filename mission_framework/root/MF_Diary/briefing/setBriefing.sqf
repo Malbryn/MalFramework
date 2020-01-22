@@ -12,7 +12,7 @@
  * void
  *
  * Example:
- * [] execVM "mission_framework\core\briefing\setBriefing.sqf"
+ * [] execVM "mission_framework\root\MF_Diary\briefing\setBriefing.sqf"
  *
  */
 

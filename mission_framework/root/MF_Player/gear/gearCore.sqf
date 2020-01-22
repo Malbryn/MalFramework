@@ -14,7 +14,7 @@
  * void
  *
  * Example:
- * [this, "SL"] execVM "mission_framework\core\gear\gearCore.sqf"
+ * [this, "SL"] execVM "mission_framework\root\MF_Player\gear\gearCore.sqf"
  *
  */
 

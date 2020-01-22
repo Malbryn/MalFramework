@@ -36,7 +36,7 @@ _unit assignTeam _colour;
 
 
 // ACE player role variables
-_unit setVariable ["ACE_isEngineer", 1, true];
+//_unit setVariable ["ACE_isEngineer", 1, true];
 
 if ((roleDescription _unit) find "Medic" >= 0) then {
   _unit setVariable ["ACE_medical_medicClass", 1, true];

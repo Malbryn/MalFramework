@@ -1,5 +1,7 @@
 // Import admin scripts
+#include "mission_framework\root\MF_Admin\fncInit.sqf"
 #include "mission_framework\root\MF_Admin\init.sqf"
+
 
 // Import the mission framework settings
 #include "mission_framework\config\config.sqf"
@@ -20,8 +22,8 @@ if (hasInterface) then {
 
 // Run on the server
 if (isServer) then {
-  setViewDistance MF_var_view_distance_server;
 
+  setViewDistance MF_var_view_distance_server;
   setTimeMultiplier MF_var_time_acceleration;
 
   /*Mission end conditions check loop on server

@@ -12,7 +12,7 @@
  * void
  *
  * Example:
- * [] execVM "mission_framework\core\jip\jipCore.sqf"
+ * [] execVM "mission_framework\root\MF_Logistics\jip\jipCore.sqf"
  *
  */
 

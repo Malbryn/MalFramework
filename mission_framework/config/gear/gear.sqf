@@ -17,3 +17,8 @@ case "MEDIC"
   GEAR_START
     [[],[],[],["U_Rangemaster",[["FirstAidKit",1]]],["V_Rangemaster_belt",[]],[],"H_Cap_headphones","G_Tactical_Clear",[],["ItemMap","","ItemRadio","ItemCompass","ItemWatch",""]]
   GEAR_END
+
+case "AR"
+  GEAR_START
+    //gear here
+  GEAR_END

@@ -12,7 +12,7 @@
  * void
  *
  * Example:
- * [] execVM "mission_framework\core\intro_text\runIntro.sqf"
+ * [] execVM "mission_framework\root\MF_Misc\intro_text\runIntro.sqf"
  *
  */
 

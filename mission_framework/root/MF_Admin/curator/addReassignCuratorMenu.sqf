@@ -3,7 +3,7 @@
  * Malbryn
  *
  * Description:
- * Creates ACE self-interaction menu for the logged-in admin which opens the ACE Arsenal
+ * Adds option to reassign admin zeus in case of JIP
  *
  * Arguments:
  * -
@@ -12,15 +12,15 @@
  * void
  *
  * Example:
- * [] execVM "mission_framework\root\MF_Admin\arsenal\addArsenalMenu.sqf"
+ * [] execVM "mission_framework\root\MF_Admin\curator\addReassignCuratorMenu.sqf"
  *
  */
 
 if (!hasInterface) exitWith {};
 
 if (serverCommandAvailable "#kick") then {
-  private _menu = ['Open Arsenal', 'Open Arsenal', '', {
-    [player, player, true] call ace_arsenal_fnc_openBox;
+  private _menu = ['Reassign Curator', 'Reassign Curator', '', {
+    ["MF_registerCurator", player] call CBA_fnc_serverEvent;
   }, {true}] call ace_interact_menu_fnc_createAction;
 
   [player, 1, ["ACE_SelfActions", "Admin Menu"], _menu] call ace_interact_menu_fnc_addActionToObject;

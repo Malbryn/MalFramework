@@ -3,10 +3,15 @@
 /* ---------------------------MISSION PARAMETERS----------------------------- */
 MF_var_time_limit_enabled = false;  // Mission time limit on/off (Not yet implemented!)
 MF_var_time_limit = 90 MINUTES;  // Mission time limit in seconds (Not yet implemented!)
+
+MF_var_prep_time_enabled = true;  // Preparation time on/off (Not yet implemented!)
 MF_var_prep_time = 5 MINUTES;  // Preparation time on a Defense mission (Not yet implemented!)
+
 MF_var_respawn_tickets = 1;  // How many times the player can respawn (Not yet implemented!)
+
 MF_var_view_distance_server = 2500;  // Server view distance (= AI view distance)
 MF_var_view_distance_player = 2500;  // Player view distance
+
 MF_var_time_acceleration = 1;  // Time acceleration between 0.1 - 120
 
 

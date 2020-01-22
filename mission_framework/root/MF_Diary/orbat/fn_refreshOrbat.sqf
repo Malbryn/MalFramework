@@ -3,7 +3,7 @@
  * Malbryn
  *
  * Description:
- * Refreshes the ORBAT diary record by removing the diary record and re-running the script again
+ * Refreshes the ORBAT diary record by removing the diary record and re-running the script
  *
  * Arguments:
  * -

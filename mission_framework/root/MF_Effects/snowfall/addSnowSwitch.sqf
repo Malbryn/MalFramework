@@ -12,7 +12,7 @@
  * void
  *
  * Example:
- * [] execVM "mission_framework\core\snowfall\addSnowSwitch.sqf"
+ * [] execVM "mission_framework\root\MF_Effects\snowfall\addSnowSwitch.sqf"
  *
  */
 

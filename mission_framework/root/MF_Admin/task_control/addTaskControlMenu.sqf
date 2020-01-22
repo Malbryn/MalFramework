@@ -13,7 +13,7 @@
  * void
  *
  * Example:
- * [] execVM "mission_framework\core\admin_menu\addTaskControlMenu.sqf"
+ * [] execVM "mission_framework\root\MF_Admin\task_control\addTaskControlMenu.sqf"
  *
  */
 
