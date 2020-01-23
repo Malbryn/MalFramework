@@ -1,11 +1,14 @@
 # MalFramework
-Welcome to Malbryn's Mission Framework.
+Welcome to Malbryn's Mission Framework. This framework was made for my Arma 3 scripted missions.
 
 ## Current Features
 
 ### MF_Admin
  - Admin menu
+ - Curator for admins
+ - FPS & friendly-fire warning
  - Open ACE Arsenal
+ - Performance check
  - Task & scenario control
 
 ### MF_Cfg
