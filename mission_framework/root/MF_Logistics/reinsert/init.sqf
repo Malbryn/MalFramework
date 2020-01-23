@@ -12,7 +12,7 @@
  * void
  *
  * Example:
- * [this] execVM "mission_framework\root\MF_Logistics\reinsert\reinsertCore.sqf"
+ * [] execVM "mission_framework\root\MF_Logistics\reinsert\init.sqf"
  *
  */
 

@@ -21,11 +21,10 @@ if (!hasInterface) exitWith {};
 if (serverCommandAvailable "#kick") then {
   [{ !isNil "MF_var_server_fps" },
     {[{
-	  if (ServerFPS < 15 && !isServer) then {
-	    _aiCount = {!isPlayer _x} count allUnits;
-		_objCount = count allMissionObjects "All";
-		systemChat format ["[WARNING] Server FPS is low! FPS: %1 | AI count: %2 | Obj count: %3", ServerFPS, _aiCount, _objCount];
-	  };
+	    if (MF_var_server_fps < 15 && !isServer) then {
+	      _aiCount = {!isPlayer _x} count allUnits;
+		    systemChat format ["[WARNING] Server FPS is low! FPS: %1  |  AI count: %2", MF_var_server_fps, _aiCount];
+	    };
     }, 3] call CBA_fnc_addPerFrameHandler;}
   ] call CBA_fnc_waitUntilAndExecute;
 };

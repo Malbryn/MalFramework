@@ -53,5 +53,5 @@ if ((roleDescription _unit) find "Pilot" >= 0) then {
 
 // Assign group leader rally point menu
 if ((leader group player) == player) then {
-  [] call MF_fnc_initRpMenu;
+  [] execVM "mission_framework\root\MF_Logistics\reinsert\rally_point\addRpMenu.sqf";
 };

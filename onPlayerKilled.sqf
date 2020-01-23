@@ -32,7 +32,7 @@ uiSleep 5;
   ["Initialize", [player, [], false, false, true, false, false, false, false, true]] call BIS_fnc_EGSpectator;
 
 //  MF_var_respawn_tickets = MF_var_respawn_tickets - 1;
-};
+//};
 
 // Stop the snow script if enabled
 if (MF_var_snowfall_enabled) then {

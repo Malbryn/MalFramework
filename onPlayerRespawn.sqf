@@ -16,8 +16,8 @@ cutText  ["", "BLACK IN", 5, true];
 ["Terminate"] call BIS_fnc_EGSpectator;
 
 // Load the player's loadout
-if (!((player getVariable "currentLoadout") isEqualTo objNull)) then {
-    [player, [player, "currentLoadout"]] call BIS_fnc_loadInventory;
+if (!((player getVariable "MF_var_current_loadout") isEqualTo objNull)) then {
+    [player, [player, "MF_var_current_loadout"]] call BIS_fnc_loadInventory;
 };
 
 // Start the snows script if enabled

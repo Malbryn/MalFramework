@@ -13,11 +13,11 @@
  * void
  *
  * Example:
- * [this] call MF_fnc_setMrv
+ * [this] execVM "mission_framework\root\MF_Logistics\reinsert\mrv\setMrv.sqf"
  *
  */
 
 params ["_vehicle"];
 
-missionNamespace setVariable [MF_var_mrv, _vehicle];
+missionNamespace setVariable ["MF_var_mrv", _vehicle, true];
 publicVariable "MF_var_mrv";

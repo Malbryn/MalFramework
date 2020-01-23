@@ -12,7 +12,7 @@
  * void
  *
  * Example:
- * [] call MF_fnc_initRpMenu
+ * [] execVM "mission_framework\root\MF_Logistics\reinsert\rally_point\addRpMenu.sqf"
  *
  */
 

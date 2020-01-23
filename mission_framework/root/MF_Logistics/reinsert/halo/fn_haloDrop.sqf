@@ -16,6 +16,10 @@
  *
  */
 
+if (isNil (player getVariable "MF_var_death_pos")) exitWith {
+  ["Warning", ["Target destination does not exist!"]] call BIS_fnc_showNotification;
+};
+
 player setPos (player getVariable "MF_var_death_pos");
 
 cutText ["You are being paradropped back into the AO", "BLACK OUT", 2, true];
