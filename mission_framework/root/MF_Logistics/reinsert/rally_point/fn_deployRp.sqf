@@ -35,12 +35,11 @@ if !(allUnits findIf {side _x getFriend side player < 0.6 && _x distance player 
 };
 
 
-// Play animation (duration: 9 seconds)
-player playMove "AinvPknlMstpSnonWrflDr_medic5";
-
-
 // Display ACE progress bar
 [12, [], {
+  // Play animation (duration: 9 seconds)
+  player playMove "AinvPknlMstpSnonWrflDr_medic5";
+
   // Create RP tent and save the coordinates
   RPTent = createVehicle ["Land_TentA_F", player getPos [3, getDir player], [], 0, "CAN_COLLIDE"];
   (leader player) setVariable ["rpPos", getPos player, true];

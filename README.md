@@ -1,5 +1,5 @@
 # MalFramework
-Welcome to Malbryn's Mission Framework. This framework was made for my Arma 3 scripted missions.
+Welcome to Malbryn's Mission Framework. This framework was made for my Arma 3 scripted missions and it is based on some other Arma 3 mission framework. Some scripts are made by other people, they are credited in the script header as well as in the Credits section.
 
 ## Current Features
 
@@ -37,12 +37,19 @@ Welcome to Malbryn's Mission Framework. This framework was made for my Arma 3 sc
  - Intro text
  - Snowfall
 
+### MF_Mission
+ - End condition check
+   - Time limit
+   - Casualty check
+   - Task check
+   - Extraction check
+ - Scenario control
+
 ### MF_Player
  - Gear script
  - Grass cutter
  - Assign team colour
  - Force weapon safety on mission start
- - Scenario control for CO's
 
 ### Other features
  - Mission time limit

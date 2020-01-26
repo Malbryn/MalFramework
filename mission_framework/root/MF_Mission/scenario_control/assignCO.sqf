@@ -13,7 +13,7 @@
  * void
  *
  * Example:
- * [this] execVM "mission_framework\root\MF_Player\scenario_control\assignCO.sqf"
+ * [this] execVM "mission_framework\root\MF_Mission\scenario_control\assignCO.sqf"
  *
  */
 

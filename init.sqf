@@ -12,7 +12,7 @@ enableSaving [false, false];
 enableEnvironment [false, true];
 
 
-// Run on the player's machine
+// Run on the client's machine
 if (hasInterface) then {
 
   enableRadio false;
@@ -26,9 +26,14 @@ if (isServer) then {
   setViewDistance MF_var_view_distance_server;
   setTimeMultiplier MF_var_time_acceleration;
 
-  /*Mission end conditions check loop on server
-  [] spawn {
+  // Mission end conditions check loop on server
+  MF_var_mission_ended = false;
 
+  waitUntil { CBA_missionTime > 0 };
+
+  MF_EndCheck = [] spawn {
+    while {!MF_var_mission_ended} do {
+      [] call MF_fnc_checkEndConditions;
+    };
   };
-  */
 };

@@ -8,8 +8,9 @@
  * Arguments:
  * _this select 0: OBJECT - The player unit
  * _this select 1: STRING - Role of the unit, see: gear script
- * _this select 2: BOOLEAN - True if the unit is a command element (who can end the mission) (Optional, default: false)
- * _this select 3: STRING - Assigned fireteam colour (Optional, default: white = "MAIN")
+ * _this select 2: BOOLEAN - True if the unit is a command element (the CO can end the mission and/or call in supply drops)
+ *                           (Optional, default: false)
+ * _this select 3: STRING - Assigned fireteam colour (Optional, default: white (= "MAIN"))
  *
  * Return Value:
  * void
@@ -27,8 +28,8 @@ params ["_unit", "_role", ["_isCO", false], ["_colour", "MAIN"]];
 [_unit, _role] execVM "mission_framework\root\MF_Player\gear\gearCore.sqf";
 
 
-// Command element = can end the mission
-[_unit] execVM "mission_framework\root\MF_Player\scenario_control\assignCO.sqf";
+// Command element = can end the mission and/or call in supply drops
+[_unit] execVM "mission_framework\root\MF_Mission\scenario_control\assignCO.sqf";
 
 
 // Assign team colour

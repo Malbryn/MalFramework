@@ -24,3 +24,8 @@ if (!((player getVariable "MF_var_current_loadout") isEqualTo objNull)) then {
 if (MF_var_snowfall_enabled) then {
   [] spawn MF_fnc_startSnowfall;
 };
+
+// Remaining respawn tickets hint
+if (MF_var_respawn_tickets == -1) exitWith {};
+
+[format ["Respawns available:<br/>%1", MF_var_respawn_tickets], 2, ace_player, 12] call ace_common_fnc_displayTextStructured
