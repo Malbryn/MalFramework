@@ -39,7 +39,7 @@ params [
 
 _limitEnabled = false;
 if (_respawnLimit != -1) then {
-	_vehicle setVariable ["VRRespawnLimit", _respawnLimit, true];
+	_vehicle setVariable ["MF_var_VRRespawnLimit", _respawnLimit, true];
 	_limitEnabled = true;
 };
 

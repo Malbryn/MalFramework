@@ -1,3 +1,7 @@
+// These are some customised ambient sounds from the SWU Ambient Sounds mod
+// Uncomment it if you wish to use the mod pack during the mission
+
+/*
 sounds[] = {};
 
 class Ambient1 {
@@ -20,3 +24,4 @@ class Ambient3 {
     titles[] = {0, ""};
     empty[] = {"", 0, 0, 0, 0, 0, 0, 0};
 };
+*/

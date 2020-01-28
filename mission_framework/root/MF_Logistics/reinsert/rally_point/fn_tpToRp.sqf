@@ -16,6 +16,8 @@
  *
  */
 
+if (!hasInterface) exitWith {};
+
 _coord = (leader player) getVariable "rpPos";
 
 if (isNil "_coord") exitWith {

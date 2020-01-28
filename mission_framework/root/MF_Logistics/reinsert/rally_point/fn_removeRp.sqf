@@ -40,4 +40,7 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
     [] call MF_fnc_deployRp;
   }, {true}] call ace_interact_menu_fnc_createAction;
   [player, 1, ["ACE_SelfActions", "Rally Point"], _menu] call ace_interact_menu_fnc_addActionToObject;
-}, {}, "Removing Rally Point"] call ace_common_fnc_progressBar;
+}, {
+  // Stop the animation if the progress bar was cancelled
+  player playMove "";
+}, "Removing Rally Point"] call ace_common_fnc_progressBar;

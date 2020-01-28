@@ -1,16 +1,20 @@
 /*
- * Author: Olsen
+ * Author:
+ * Olsen
  *
- * Checks if unit is within area of marker, supports all shapes.
+ * Description:
+ * Checks if the unit is in an area marker
  *
  * Arguments:
- * 0: unit <object>
- * 1: marker <string>
+ * _this select 0: OBJECT - Unit
+ * _this select 1: STRING - Name of the marker
  *
  * Return Value:
- * is unit in marker <bool>
+ * BOOLEAN
  *
- * Public: Yes
+ * Example:
+ * [] call MF_fnc_unitInArea
+ *
  */
 
 params [

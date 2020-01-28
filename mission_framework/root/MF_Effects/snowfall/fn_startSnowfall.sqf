@@ -18,7 +18,7 @@
 
 if (!hasInterface) exitWith {};
 
-private["_fog"];
+private ["_fog"];
 setWind [0, -1, true];
 _obj = player;
 MF_var_snowfall_start = true;

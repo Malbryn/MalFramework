@@ -73,11 +73,7 @@ class CfgNotifications {
 };
 
 
-// Custom ambient sounds config
-// Using the SWU Immersion pack
-// Uncomment if the pack is used
-/*
+// Custom sounds config
 class CfgSounds {
-    #include "mission_framework\root\CfgSounds\CfgSounds.hpp"
+    #include "mission_framework\root\MF_Cfg\CfgSounds\CfgSounds.hpp"
 };
-*/

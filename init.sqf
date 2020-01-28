@@ -7,6 +7,10 @@
 #include "mission_framework\config\config.sqf"
 
 
+// Mission statistics script
+#include "mission_framework\root\MF_Mission\mission_statistics\fncInit.sqf"
+
+
 // Run everywhere
 enableSaving [false, false];
 enableEnvironment [false, true];
@@ -22,6 +26,8 @@ if (hasInterface) then {
 
 // Run on the server
 if (isServer) then {
+
+  MF_var_stat_ff = ["FRIENDLY FIRE INCIDENTS:<br/>"];
 
   setViewDistance MF_var_view_distance_server;
   setTimeMultiplier MF_var_time_acceleration;

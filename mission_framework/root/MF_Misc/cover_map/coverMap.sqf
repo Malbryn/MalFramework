@@ -40,8 +40,8 @@ if ((_a > 0 && _a <= 90) || (_a > 180 && _a <= 270)) then {
 	_sy = _temp;
 };
 
-private _colorForest = "Color4_FD_F";
-private _colors = ["colorBlack","colorBlack",_colorForest,"colorGreen",_colorForest,/**/"colorBlack"/**/,_colorForest,_colorForest];
+private _customColour = "Color4_FD_F";
+private _colours = ["colorBlack", "colorBlack", _customColour, "colorGreen", _customColour, /**/"colorBlack"/**/, _customColour, _customColour];
 
 {
 	_x params ["_a"];
@@ -76,7 +76,7 @@ private _colors = ["colorBlack","colorBlack",_colorForest,"colorGreen",_colorFor
 			_marker setMarkerBrushLocal "grid";
 		};
 
-	} forEach _colors;
+	} forEach _colours;
 
 
 	_pos_x = _px + (sin _a) * (_mainBS/2 + _s);

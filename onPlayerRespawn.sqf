@@ -1,5 +1,5 @@
 // Exit the spectator voice channel
-//[player, false] call TFAR_fnc_forceSpectator;
+[player, false] call TFAR_fnc_forceSpectator;
 
 // Screen effects
 cutText  ["", "BLACK FADED", 5, true];

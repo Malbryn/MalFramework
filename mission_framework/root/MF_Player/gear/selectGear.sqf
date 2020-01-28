@@ -9,7 +9,7 @@
  * _this select 0: STRING - Role of the unit
  *
  * Return Value:
- * <ARRAY>
+ * ARRAY
  *
  * Example:
  * ["SL"] call MF_fnc_selectGear

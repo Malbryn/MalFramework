@@ -3,7 +3,7 @@
  * Malbryn
  *
  * Description:
- * Spawns a plane to do a flyby then despawns it
+ * Spawns a plane to do a fly-by then despawns it
  *
  * Arguments:
  * _this select 0: STRING - Classname of the plane

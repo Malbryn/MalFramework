@@ -18,7 +18,6 @@
 
 if (!hasInterface) exitWith {};
 
-
 // Create parent category
 private _menu = ['Rally Point', 'Rally Point', '\a3\ui_f\data\GUI\Cfg\Hints\icon_text\b_inf_ca.paa', {}, {true}] call ace_interact_menu_fnc_createAction;
 

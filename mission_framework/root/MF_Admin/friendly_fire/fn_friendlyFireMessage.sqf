@@ -17,10 +17,16 @@
  *
  */
 
-if (!hasInterface) exitWith {};
-
 params ["_killed", "_killer"];
 
-if (serverCommandAvailable "#kick") then {
-  systemChat format ["[FRIENDLY FIRE] %1 was killed by %2!", _killed, _killer];
+if (hasInterface) then {
+  if (serverCommandAvailable "#kick") then {
+    systemChat format ["[FRIENDLY FIRE] %1 was killed by %2!", _killed, _killer];
+  };
+};
+
+// End statistics
+if (isServer) then {
+  _text = format ["%1 was killed by %2<br/>", _killed, _killer];
+  MF_var_stat_ff pushBack _text;
 };

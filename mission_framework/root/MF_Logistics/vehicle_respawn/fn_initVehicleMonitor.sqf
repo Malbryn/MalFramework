@@ -18,7 +18,10 @@
 
 if (!isServer) exitWith {};
 
-waitUntil {Sleep 0.5; count MF_var_TotalVRArray > 0};
+waitUntil {
+  sleep 0.5;
+  count MF_var_TotalVRArray > 0;
+};
 
 while {true} do {
 	{
@@ -78,6 +81,7 @@ while {true} do {
 		};
 		Sleep 0.2;
 	} forEach MF_var_TotalVRArray;
+
 	MF_var_TotalVRArray = MF_var_TotalVRArray select {!(typeName (_x select 0) == "STRING")};
 	Sleep 5;
 };

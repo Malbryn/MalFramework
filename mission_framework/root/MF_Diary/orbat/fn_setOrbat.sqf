@@ -19,7 +19,7 @@
 if (!hasInterface) exitWith {};
 
 MF_loadoutIndex = {
-  private _newIndex = player createDiarySubject ["GearIndex","Loadouts"];
+  private _newIndex = player createDiarySubject ["GearIndex", "ORBAT"];
 
   private _playerSide = side player;
   private _grpArray = [];

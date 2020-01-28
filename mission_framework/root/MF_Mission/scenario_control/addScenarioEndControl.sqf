@@ -28,21 +28,39 @@ if (serverCommandAvailable "#kick") then {
 
   // Mission Success
   private _switch = ['Mission Success', 'Mission Success', '', {
+    [] call MF_fnc_getStats;
+
     ["MissionSuccess", true, true, true, true] remoteExecCall ["BIS_FNC_EndMission", 0, true];
+
+    if (MF_var_nd_ending_enabled) {
+      [] remoteExecCall ["MF_fnc_noDamageEnding", 0];
+    };
   }, {true}] call ace_interact_menu_fnc_createAction;
 
   [player, 1, ["ACE_SelfActions", "Admin Menu", "Scenario Flow"], _switch] call ace_interact_menu_fnc_addActionToObject;
 
   // Mission Fail
   private _switch = ['Mission Fail', 'Mission Fail', '', {
+    [] call MF_fnc_getStats;
+
     ["MissionFail", false, true, true, true] remoteExecCall ["BIS_FNC_EndMission", 0, true];
+
+    if (MF_var_nd_ending_enabled) {
+      [] remoteExecCall ["MF_fnc_noDamageEnding", 0];
+    };
   }, {true}] call ace_interact_menu_fnc_createAction;
 
   [player, 1, ["ACE_SelfActions", "Admin Menu", "Scenario Flow"], _switch] call ace_interact_menu_fnc_addActionToObject;
 
   // Mission Terminated
   private _switch = ['Terminate Mission', 'Terminate Mission', '', {
+    [] call MF_fnc_getStats;
+
     ["MissionTerminated", false, true, true, true] remoteExecCall ["BIS_FNC_EndMission", 0, true];
+
+    if (MF_var_nd_ending_enabled) {
+      [] remoteExecCall ["MF_fnc_noDamageEnding", 0];
+    };
   }, {true}] call ace_interact_menu_fnc_createAction;
 
   [player, 1, ["ACE_SelfActions", "Admin Menu", "Scenario Flow"], _switch] call ace_interact_menu_fnc_addActionToObject;
@@ -60,7 +78,13 @@ if ((player getVariable "MF_var_is_CO") && !(serverCommandAvailable "#kick")) th
 
   // Mission Success
   private _switch = ['Mission Success', 'Mission Success', '', {
+    [] call MF_fnc_getStats;
+
     ["MissionSuccess", true, true, true, true] remoteExecCall ["BIS_FNC_EndMission", 0, true];
+
+    if (MF_var_nd_ending_enabled) {
+      [] remoteExecCall ["MF_fnc_noDamageEnding", 0];
+    };
   }, {true}] call ace_interact_menu_fnc_createAction;
 
   [player, 1, ["ACE_SelfActions", "Scenario flow"], _switch] call ace_interact_menu_fnc_addActionToObject;
@@ -68,7 +92,13 @@ if ((player getVariable "MF_var_is_CO") && !(serverCommandAvailable "#kick")) th
 
   // Mission Fail
   private _switch = ['Mission Fail', 'Mission Fail', '', {
+    [] call MF_fnc_getStats;
+
     ["MissionFail", false, true, true, true] remoteExecCall ["BIS_FNC_EndMission", 0, true];
+
+    if (MF_var_nd_ending_enabled) {
+      [] remoteExecCall ["MF_fnc_noDamageEnding", 0];
+    };
   }, {true}] call ace_interact_menu_fnc_createAction;
 
   [player, 1, ["ACE_SelfActions", "Scenario flow"], _switch] call ace_interact_menu_fnc_addActionToObject;

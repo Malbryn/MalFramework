@@ -1,4 +1,5 @@
-#define MINUTES *60
+#define MINUTES *60  // DO NOT REMOVE
+
 
 /* ---------------------------MISSION PARAMETERS----------------------------- */
 MF_var_player_side = west;  // Defining the players' side (needed in some server side scripts)
@@ -7,7 +8,7 @@ MF_var_player_side = west;  // Defining the players' side (needed in some server
 #include "..\root\MF_Mission\end_conditions\fncInit.sqf"
 
 // End condition: time limit
-MF_var_end_time_enabled = false;  // Mission time limit on/off
+MF_var_end_time_enabled = true;  // Mission time limit on/off
 MF_var_end_time_limit = 90 MINUTES;  // Mission time limit in seconds
 
 // End condition: casualty check
@@ -20,12 +21,8 @@ MF_var_end_task_number = 1;  // Number of completed tasks that triggers this con
 
 // End condition: extraction
 MF_var_end_ex_enabled = false;  // Mission end if x% of the platoon reaches the extraction marker on/off
-MF_var_end_ex_marker = "extraction";  // Area marker used for extraction
+MF_var_end_ex_marker = "extraction";  // Name of the area marker used for extraction
 MF_var_end_ex_threshold = 50;  // 50% of the unit should be inside the exfil marker
-
-// Preparation time
-//MF_var_prep_time_enabled = true;  // Preparation time on/off (Not yet implemented!)
-//MF_var_prep_time = 5 MINUTES;  // Preparation time on a Defense mission (Not yet implemented!)
 
 // Respawn tickets
 MF_var_respawn_tickets = 1;  // How many times the player can respawn (-1 = disabled)
@@ -53,9 +50,18 @@ MF_var_ao = "ao";  // Name of the AO marker
 #include "..\root\MF_Misc\cover_map\init.sqf"
 
 
+// NO DAMAGE ENDING
+#include "..\root\MF_Player\no_damage_ending\fncInit.sqf"
+MF_var_nd_ending_enabled = true;  // Don't comment it out
+
+
 // GRASS CUTTER
 #include "..\root\MF_Player\grass_cutter\fncInit.sqf"
 #include "..\root\MF_Player\grass_cutter\init.sqf"
+
+
+// INTEL
+#include "..\root\MF_Diary\intel\fncInit.sqf"
 
 
 // INTRO TEXT
@@ -100,7 +106,7 @@ MF_var_use_rp = true;  // Squad Rally Point
 
 // SNOWFALL
 //#include "..\root\MF_Effects\snowfall\fncInit.sqf"
-MF_var_snowfall_enabled = false;  // Don't comment out this line
+MF_var_snowfall_enabled = false;  // Don't comment out this line!
 //#include "..\root\MF_Effects\snowfall\init.sqf"
 
 

@@ -2,7 +2,7 @@
 player setVariable ["MF_var_death_pos", getPos player];
 
 // Put the player into the spectator voice channel
-//[player, true] call TFAR_fnc_forceSpectator;
+[player, true] call TFAR_fnc_forceSpectator;
 
 "dynamicBlur" ppEffectEnable true;
 "dynamicBlur" ppEffectAdjust [0];
@@ -22,7 +22,7 @@ if (side _killer == playerSide) then {
   [_nameKilled, _nameKiller] remoteExec ["MF_fnc_friendlyFireMessage", 0];
 };
 
-// Init the spectator mode if available, TODO: disable respawn counter when no respawn is available
+// Init the spectator mode
 if (MF_var_respawn_tickets == 0) then {
   setPlayerRespawnTime 999999;
   cutText  ["", "BLACK IN",  5, true];

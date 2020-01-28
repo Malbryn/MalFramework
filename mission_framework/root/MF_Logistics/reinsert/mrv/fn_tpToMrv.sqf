@@ -16,6 +16,8 @@
  *
  */
 
+if (!hasInterface) exitWith {};
+
 _mrv = missionNamespace getVariable "MF_var_mrv";
 
 if (_mrv emptyPositions "cargo" == 0) exitWith {

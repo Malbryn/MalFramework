@@ -34,7 +34,7 @@ if (MF_var_use_mrv) then {
 
 // Option #3 - Squad rally point
 if (MF_var_use_rp) then {
-  tpPole addAction ["Reinsert - Rally Point", {
+  tpPole addAction ["Reinsert - Squad Rally Point", {
     [] spawn MF_fnc_tpToRp;
   }];
 };

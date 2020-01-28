@@ -1,6 +1,6 @@
 /*
  * Author:
- * Diwako (customised a bit by Malbryn)
+ * Diwako (customised by Malbryn)
  *
  * Description:
  * Initialises the JIP teleport system, adds an ACE self-interaction option to the player
@@ -32,9 +32,9 @@ private _jipActionCode = {
     private _vicSpot = [_target] call MF_fnc_checkEmptySeats;
 
     // Check the distance from the squad
-    /*if ((([] call cba_fnc_players) - [player]) findif {_x distance2D player < 200} != 1) exitWith {
+    if ((([] call cba_fnc_players) - [player]) findif {_x distance2D player < 200} != 1) exitWith {
       ["Warning", ["JIP TP aborted. You're too close to your squad"]] call BIS_fnc_showNotification;
-    };*/
+    };
 
     // Check if there are other people in the squad
     if !(count units group player > 1) exitWith {

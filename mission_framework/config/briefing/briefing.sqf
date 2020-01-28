@@ -1,88 +1,117 @@
 NEWTAB("I. Organization")
-<br/><font color='#FFA500' size='16' face='PuristaBold'>player_facetion_goes_here</font>
-<br/>list_of_the_squads_goes_here
+<br/><font color='#21749c' size='18' face='PuristaBold'>ORBAT</font>
 <br/>
-<br/><font color='#FFA500' size='16' face='PuristaBold'>Attached Forces:</font>
-<br/>list_of_the_friendly_assets_goes_here
+<br/><font color='#21749c' size='16' face='PuristaSemiBold'>player_unit_or_faction</font>
+<br/>list_of_the_squads
+<br/>
+<br/><font color='#21749c' size='16' face='PuristaSemiBold'>assets_unit_or_faction</font>
+<br/>list_of_the_friendly_assets
 ENDTAB;
 
 NEWTAB("II. Situation")
-<br/>description_of_the_current_situation_goes_here
+<br/><font color='#21749c' size='18' face='PuristaBold'>SUMMARY</font>
+<br/>summary_of_the_mission
 <br/>
-<br/><font color='#FFA500' size='16' face='PuristaBold'>Area of Operation:</font>
-<br/><font color='#d21111' size='15'>a) Terrain:</font>
-<br/>description_of_the_terrain_goes_here
 <br/>
-<br/><font color='#d21111' size='15'>b) Weather:</font>
-<br/><font size='14'>CURRENT:</font>
-<br/>Wind:
-<br/>Rain:
-<br/>Sky:
-<br/>Fog:
+<br/><font color='#21749c' size='18' face='PuristaBold'>AREA OF OPERATIONS</font>
+<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Terrain</font>
+<br/>description_of_the_terrain
 <br/>
-<br/><font size='14'>FORECAST:</font>
-<br/>possible_change_of_the_weather_goes_here
+<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Weather</font>
+<br/><font size='14' face='PuristaMedium'>Current:</font>
+<br/> - Wind:
+<br/> - Rain:
+<br/> - Sky:
+<br/> - Fog:
 <br/>
-<br/><font size='14'>MOONSTATE:</font>
-<br/>day_or_night_op
+<br/><font size='14' face='PuristaMedium'>Forecast:</font>
+<br/> - possible_change_of_the_weather
 <br/>
-<br/><font size='14'>VISIBILITY:</font>
-<br/>estimated_view_distance_goes_here
+<br/><font size='14' face='PuristaMedium'>Visibility:</font>
+<br/> - estimated_view_distance
+<br/> - night_mission_conditions
 <br/>
-<br/><font color='#FFA500' size='16' face='PuristaBold'>Enemy:</font>
-<br/><font color='#d21111' size='15'>a) Composition and Strength:</font>
+<br/>
+<br/><font color='#21749c' size='18' face='PuristaBold'>ENEMY FORCES</font>
+<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Composition and Strength</font>
 <br/>description_of_the_enemy_composition_weapons_and_assets
 <br/>enemy_qrf_composition_strength
 <br/>
-<br/><font color='#d21111' size='15'>b) Capabilities:</font>
-<br/><font size='14'>MANEUVER:</font>
+<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Capabilities:</font>
+<br/><font size='14' face='PuristaMedium'>Fire support:</font>
+<br/> - enemy_fire_support_if_available
 <br/>
-<br/>
-<br/><font size='14'>FIRE SUPPORT:</font>
-<br/>
-<br/>
-<br/><font size='14'>EXPLOSIVES:</font>
-<br/>
+<br/><font size='14' face='PuristaMedium'>Explosives:</font>
+<br/> - mines_and_other_explosives
 ENDTAB;
 
 NEWTAB("III. Mission:")
-<br/><font color='#FFA500' size='16' face='PuristaBold'>Objectives:</font>
-<br/><font color='#d21111' size='15'>location_of_obj</font>
-<br/> - short_description_of_this_obj
+<br/><font color='#21749c' size='18' face='PuristaBold'>MISSION INTENT</font>
+<br/>short_description_of_the_mission
+<br/>
+<br/>
+<br/><font color='#21749c' size='18' face='PuristaBold'>OBJECTIVES</font>
+<br/><font color='#21749c' size='16' face='PuristaSemiBold'>location_of_the_objective:</font>
+<br/> - short_description_of_this_objective
 ENDTAB;
 
 NEWTAB("IV. Execution:")
 <br/>Up to Platoon Commander
 ENDTAB;
 
-NEWTAB("V. Service Support:")
-<br/><font color='#d21111' size='15'>Resupply:</font>
+NEWTAB("V. Support & Logistics:")
+<br/><font color='#21749c' size='18' face='PuristaBold'>SUPPORT</font>
+<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Available supports:</font>
+<br/>fire_support_etc
 <br/>
+<br/>
+<br/><font color='#21749c' size='18' face='PuristaBold'>LOGISTICS</font>
+<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Maintenance:</font>
+<br/>RRR_information
+<br/>
+<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Transportation:</font>
+<br/>transport_information
+<br/>
+<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Available supplies:</font>
+<br/>information_of_the_available_resupplies_for_each_category
+<br/>
+<br/>
+<br/><font color='#21749c' size='18' face='PuristaBold'>SIGNALS</font>
+<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Radio frequencies</font>
+<br/>designated_radio_net_structure
+<br/>
+<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Smoke signals</font>
+<br/>designated_smoke_signals
+<br/>
+<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Challenge and posswords</font>
+<br/>designated_passwords
 ENDTAB;
 
 NEWTAB("VI. Mission notes:")
-<br/><font color='#FFA500' size='15'>RESPAWN</font>
-<br/>respawn_info_goes_here
+<br/><font color='#21749c' size='18' face='PuristaBold'>RESPAWNS</font>
+<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Player respawn</font>
+<br/>player_respawn_info
 <br/>
-<br/><font color='#FFA500' size='15'>END CONDITION</font>
+<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Asset respawn</font>
+<br/>asset_respawn_info
 <br/>
-<br/><font size='14'>VICTORY CONDITION:</font>
-<br/>end_conditions
 <br/>
-<br/><font size='14'>DEFEAT VICTORY:</font>
-<br/>end_conditions
+<br/><font color='#21749c' size='18' face='PuristaBold'>END CONDITIONS</font>
+<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Success</font>
+<br/>success_conditions
 <br/>
-<br/><font color='#FFA500' size='15'>USE OF ENEMY VEHICLE ASSETS</font>
-<br/>yay_or_nay
+<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Failure</font>
+<br/>failure_conditions
 <br/>
-<br/><font color='#FFA500' size='15'>USE OF ENEMY WEAPONS</font>
-<br/>yay_or_nay
 <br/>
-<br/><font color='#FFA500' size='15'>TECHNICAL ASPECT</font>
+<br/><font color='#21749c' size='18' face='PuristaBold'>RESTRICTIONS</font>
+<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Use of enemy weapons</font>
+<br/>allowed_or_not
 <br/>
-<br/>- View Distance:
-<br/>-- Player:
-<br/>-- AI:
+<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Use of enemy vehicles</font>
+<br/>allowed_or_not
 <br/>
-<br/>- JIP:
+<br/>
+<br/><font color='#21749c' size='18' face='PuristaBold'>JIP</font>
+<br/>jip_info
 ENDTAB;
