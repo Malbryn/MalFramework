@@ -2,7 +2,7 @@
 player setVariable ["MF_var_death_pos", getPos player];
 
 // Put the player into the spectator voice channel
-//[player, true] call TFAR_fnc_forceSpectator;
+[player, true] call TFAR_fnc_forceSpectator;
 
 "dynamicBlur" ppEffectEnable true;
 "dynamicBlur" ppEffectAdjust [0];
@@ -19,19 +19,22 @@ private _nameKiller = name _killer;
 private _nameKilled = name player;
 
 if (side _killer == playerSide) then {
-  format ["Friendly fire: %1 was killed by %2", _nameKilled, _nameKiller] remoteExec ["systemChat", 0]
+  [_nameKilled, _nameKiller] remoteExec ["MF_fnc_friendlyFireMessage", 0];
 };
 
-uiSleep 5;
+// Init the spectator mode
+if (MF_var_respawn_tickets == 0) then {
+  setPlayerRespawnTime 999999;
+  cutText  ["", "BLACK IN",  5, true];
 
-// Init the spectator mode if available, TODO: disable respawn counter when no respawn is available
-//if (MF_var_respawn_tickets == 0) then {
-//  setPlayerRespawnTime 999999;
-//  ["Initialize", [player, [], false, false, true, false, false, false, false, true]] call BIS_fnc_EGSpectator;
-//} else {
+  ["Initialize", [player, [], false, false, true, false, false, false, false, true]] call BIS_fnc_EGSpectator;
+} else {
+  uiSleep 5;
+  cutText  ["", "BLACK IN",  5, true];
+  
   ["Initialize", [player, [], false, false, true, false, false, false, false, true]] call BIS_fnc_EGSpectator;
 
-//  MF_var_respawn_tickets = MF_var_respawn_tickets - 1;
+  MF_var_respawn_tickets = MF_var_respawn_tickets - 1;
 };
 
 // Stop the snow script if enabled

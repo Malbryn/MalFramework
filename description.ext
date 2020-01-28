@@ -10,7 +10,7 @@ class Header {
 OnLoadName = "operation_name";  // Name of the operation
 onLoadMission = "mission_description";  // Mission description
 author = "mission_maker";  // Author of the mission
-loadScreen = "mission_framework\settings\img\loading_screen.jpg";  // Loading screen image
+loadScreen = "mission_framework\config\img\loading_screen.jpg";  // Loading screen image
 
 
 // Respawn settings
@@ -42,17 +42,23 @@ wreckRemovalMinTime = 600;
 wreckRemovalMaxTime = 900;
 
 
-// Debrief settings
+// Tasks
+taskManagement_markers2D = 0;  // Use 2D markers
+taskManagement_markers3D = 0;  // Use 3D markers
+taskManagement_propagate = 1;  // Propagate shared tasks to subordinates
+
+
+// Debrief config
 class CfgDebriefing {
-    #include "mission_framework\settings\debriefing\CfgDebriefing.hpp"
+    #include "mission_framework\config\debriefing\CfgDebriefing.hpp"
 };
 
 class CfgDebriefingSections {
-    #include "mission_framework\settings\debriefing\CfgDebriefingSections.hpp"
+    #include "mission_framework\config\debriefing\CfgDebriefingSections.hpp"
 };
 
 
-// Remote exec rules
+// Remote exec rules config
 class CfgRemoteExec {
     class Functions {
         mode = 2;
@@ -61,33 +67,13 @@ class CfgRemoteExec {
 };
 
 
-// Tasks
-taskManagement_markers2D = 0;  // Use 2D markers
-taskManagement_markers3D = 0;  // Use 3D markers
-taskManagement_propagate = 1;  // Propagate shared tasks to subordinates
-
-
-// Functions library
-class CfgFunctions {
-    class MissionFramework {
-        tag = "MF";
-
-        #include "mission_framework\core\activate_modules.hpp"
-    };
-};
-
-
 // Notifications config
 class CfgNotifications {
-    #include "mission_framework\core\notifications\CfgNotifications.hpp"
+    #include "mission_framework\root\MF_Cfg\CfgNotifications\CfgNotifications.hpp"
 };
 
 
-// Custom ambient sounds
-// Using the SWU Immersion pack
-// Uncomment if the pack is used
-/*
+// Custom sounds config
 class CfgSounds {
-    #include "mission_framework\core\swu_sounds\CfgSounds.hpp"
+    #include "mission_framework\root\MF_Cfg\CfgSounds\CfgSounds.hpp"
 };
-*/

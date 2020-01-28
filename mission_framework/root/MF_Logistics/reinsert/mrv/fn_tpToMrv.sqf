@@ -1,0 +1,30 @@
+/*
+ * Author:
+ * Malbryn
+ *
+ * Description:
+ * Teleports the player into the MRV
+ *
+ * Arguments:
+ * -
+ *
+ * Return Value:
+ * void
+ *
+ * Example:
+ * [] spawn MF_fnc_tpToMrv
+ *
+ */
+
+if (!hasInterface) exitWith {};
+
+_mrv = missionNamespace getVariable "MF_var_mrv";
+
+if (_mrv emptyPositions "cargo" == 0) exitWith {
+  ["Warning", ["Target vehicle is full!"]] call BIS_fnc_showNotification;
+};
+
+cutText ["You are being reinserted back to the AO", "BLACK OUT", 2, true];
+uiSleep 4;
+player moveInCargo _mrv;
+cutText ["", "BLACK IN", 3, true];
