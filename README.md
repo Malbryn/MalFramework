@@ -1,5 +1,5 @@
 # MalFramework
-Welcome to Malbryn's Mission Framework. This framework was made for my Arma 3 scripted missions and it is based on some other Arma 3 mission framework. Some scripts are made by other people, they are credited in the script header as well as in the Credits section.
+Welcome to Malbryn's Mission Framework. This framework was made for my Arma 3 scripted missions and it is based on some other Arma 3 mission frameworks. Some scripts were made by other people, they are credited in the script header as well as in the Credits section. This script library was suited for scripted CO-OP PvE missions.
 
 ## Current Features
 
@@ -18,6 +18,7 @@ Welcome to Malbryn's Mission Framework. This framework was made for my Arma 3 sc
 ### MF_Diary
  - Briefing script
  - Orbat & player loadouts
+ - Intel framework
 
 ### MF_Effects
  - Ambient flyby
@@ -44,16 +45,18 @@ Welcome to Malbryn's Mission Framework. This framework was made for my Arma 3 sc
    - Task check
    - Extraction check
  - Scenario control
+ - End mission statistics
 
 ### MF_Player
  - Gear script
  - Grass cutter
  - Assign team colour
  - Force weapon safety on mission start
+ - No damage ending
 
 ### Other features
+ - Briefing & debriefing templates
  - Mission time limit
- - Preparation time limit
  - Respawn tickets
  - View distance control
  - Time accelaration control
