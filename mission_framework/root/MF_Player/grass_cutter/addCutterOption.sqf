@@ -16,10 +16,11 @@
  *
  */
 
-if (!hasInterface) exitWith {};
+if (hasInterface) then {
+  
+  private _menu = ['Cut grass', 'Cut grass', '', {
+    [] spawn MF_fnc_cutGrass;
+  }, {true}] call ace_interact_menu_fnc_createAction;
 
-private _menu = ['Cut grass', 'Cut grass', '', {
-  [] spawn MF_fnc_cutGrass;
-}, {true}] call ace_interact_menu_fnc_createAction;
-
-[player, 1, ["ACE_SelfActions", "ACE_Equipment"], _menu] call ace_interact_menu_fnc_addActionToObject;
+  [player, 1, ["ACE_SelfActions", "ACE_Equipment"], _menu] call ace_interact_menu_fnc_addActionToObject;
+};

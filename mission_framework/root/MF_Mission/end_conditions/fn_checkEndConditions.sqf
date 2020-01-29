@@ -34,7 +34,7 @@ if (MF_var_end_time_enabled) then {
 
     ["TimeLimit", false, true, true, true] remoteExecCall ["BIS_FNC_EndMission", 0, true];
 
-    if (MF_var_nd_ending_enabled) {
+    if (MF_var_nd_ending_enabled) then {
       [] remoteExecCall ["MF_fnc_noDamageEnding", 0];
     };
 
@@ -55,7 +55,7 @@ if (MF_var_end_cas_enabled) then {
 
     ["CasualtyLimit", false, true, true, true] remoteExecCall ["BIS_FNC_EndMission", 0, true];
 
-    if (MF_var_nd_ending_enabled) {
+    if (MF_var_nd_ending_enabled) then {
       [] remoteExecCall ["MF_fnc_noDamageEnding", 0];
     };
 
@@ -79,7 +79,7 @@ if (MF_var_end_task_enabled) then {
 
     ["MissionSuccess", true, true, true, true] remoteExecCall ["BIS_FNC_EndMission", 0, true];
 
-    if (MF_var_nd_ending_enabled) {
+    if (MF_var_nd_ending_enabled) then {
       [] remoteExecCall ["MF_fnc_noDamageEnding", 0];
     };
 
@@ -99,7 +99,7 @@ if (MF_var_end_ex_enabled) then {
 
     ["MissionSuccess", true, true, true, true] remoteExecCall ["BIS_FNC_EndMission", 0, true];
 
-    if (MF_var_nd_ending_enabled) {
+    if (MF_var_nd_ending_enabled) then {
       [] remoteExecCall ["MF_fnc_noDamageEnding", 0];
     };
 

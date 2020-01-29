@@ -18,7 +18,7 @@ respawn = "BASE";  // Respawn type ("NONE", "BASE")
 respawnButton = 0;  // Enable/disable the respawn button
 respawnDelay = 30;  // Respawn delay in seconds
 respawnVehicleDelay = 60;  // Vehicle respawn delay in seconds
-respawnDialog = 1;  // Displays the respawn dialog ("BASE" respawn only)
+respawnDialog = 0;  // Displays the respawn dialog ("BASE" respawn only)
 respawnOnStart = -1;  // -1 = Don't respawn on start and don't run the respawn script, 0 = Don't respawn on start and run the respawn script, 1 = Respawn on start and run the respawn script
 //respawnTemplates[] = {};  // Pre-defined respawn templates
 
@@ -28,6 +28,7 @@ cba_settings_hasSettingsFile = 1;  // Enable CBA settings file
 disableChannels[] = {0, 2, 4, 5};  // Disable certain comms channels
 disabledAI = 1;  // Enable/disable AI
 enableDebugConsole = 1;  // Enable debug console (0 = disable, 1 = logged in admin or host)
+enableTargetDebug = 1;
 
 
 // Garbage collector settings

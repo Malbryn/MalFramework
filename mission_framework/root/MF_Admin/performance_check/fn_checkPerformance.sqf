@@ -18,10 +18,10 @@
 
 if (!hasInterface) exitWith {};
 
-_serverFps = diag_fps;
+_serverFps = MF_var_server_fps;
 _serverMinFps = MF_var_server_fps_min;
-_serverTime = serverTime;
-_missionTime = CBA_missionTime;
+_serverTime = ceil (serverTime / 60);
+_missionTime = ceil (CBA_missionTime / 60);
 _date = date;
 
 _units = count allUnits;

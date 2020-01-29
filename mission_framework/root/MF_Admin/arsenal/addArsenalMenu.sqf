@@ -16,9 +16,7 @@
  *
  */
 
-if (!hasInterface) exitWith {};
-
-if (serverCommandAvailable "#kick") then {
+if (hasInterface && serverCommandAvailable "#kick") then {
   private _menu = ['Open Arsenal', 'Open Arsenal', '', {
     [player, player, true] call ace_arsenal_fnc_openBox;
   }, {true}] call ace_interact_menu_fnc_createAction;

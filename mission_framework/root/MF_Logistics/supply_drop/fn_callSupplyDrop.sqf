@@ -70,9 +70,9 @@ _wp1 setWaypointType "MOVE";
 waitUntil {alive chute};
 
 // Teleport and attach the crate to the parachute
-_crate allowDamage false;
-_crate setPos (getPos chute);
-_crate attachTo [chute, [0, 0, -0.85]];
+{_crate allowDamage false;} remoteExec ["bis_fnc_call", 2, false];
+{_crate setPos (getPos chute);} remoteExec ["bis_fnc_call", 2, false];
+{_crate attachTo [chute, [0, 0, -0.85]];} remoteExec ["bis_fnc_call", 2, false];
 
 // Spawn smoke
 _signal = "SmokeShellYellow" createVehicle position _crate;

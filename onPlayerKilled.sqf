@@ -24,15 +24,24 @@ if (side _killer == playerSide) then {
 
 // Init the spectator mode
 if (MF_var_respawn_tickets == 0) then {
+
   setPlayerRespawnTime 999999;
-  cutText  ["", "BLACK IN",  5, true];
 
   ["Initialize", [player, [], false, false, true, false, false, false, false, true]] call BIS_fnc_EGSpectator;
-} else {
+
   uiSleep 5;
-  cutText  ["", "BLACK IN",  5, true];
-  
+  cutText  ["", "BLACK IN",  3, true];
+  "dynamicBlur" ppEffectAdjust [0];
+  "dynamicBlur" ppEffectCommit 3;
+
+} else {
+
   ["Initialize", [player, [], false, false, true, false, false, false, false, true]] call BIS_fnc_EGSpectator;
+
+  uiSleep 5;
+  cutText  ["", "BLACK IN",  3, true];
+  "dynamicBlur" ppEffectAdjust [0];
+  "dynamicBlur" ppEffectCommit 3;
 
   MF_var_respawn_tickets = MF_var_respawn_tickets - 1;
 };

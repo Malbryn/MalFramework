@@ -14,12 +14,14 @@
  *
  * Example:
  * // Use this method after mission init
- *   [] call MF_fnc_initIntel
+ *   ["obj", 0] call MF_fnc_initIntel
  *
  * // Use this method in the init field of the object
- *   [] execVM "mission_framework\root\MF_Diary\intel\fn_addIntel.sqf"
+ *   [this, 1] execVM "mission_framework\root\MF_Diary\intel\fn_initIntel.sqf"
  *
  */
+
+if (!hasInterface) exitWith {};
 
 #include "..\..\..\config\intel\intel.sqf"
 
@@ -55,4 +57,4 @@ _delete = _intel select 3;
   20,
   true,
   false
-] remoteExec ["BIS_fnc_holdActionAdd", 0, _object];
+] call BIS_fnc_holdActionAdd;
