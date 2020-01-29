@@ -16,9 +16,7 @@
  *
  */
 
-if (!hasInterface) exitWith {};
-
-if (serverCommandAvailable "#kick") then {
+if (hasInterface && serverCommandAvailable "#kick") then {
   [{ !isNil "MF_var_server_fps" },
     {
       [{

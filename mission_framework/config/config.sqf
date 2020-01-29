@@ -105,9 +105,8 @@ MF_var_use_rp = true;  // Squad Rally Point
 
 
 // SNOWFALL
-//#include "..\root\MF_Effects\snowfall\fncInit.sqf"
-MF_var_snowfall_enabled = false;  // Don't comment out this line!
-//#include "..\root\MF_Effects\snowfall\init.sqf"
+#include "..\root\MF_Effects\snowfall\fncInit.sqf"
+#include "..\root\MF_Effects\snowfall\init.sqf"
 
 
 // SUPPLY DROP
@@ -116,7 +115,7 @@ MF_var_supply_drop_crates = [
 	[crate1, "Ammo Resupply"],
 	[crate2, "Medic Resupply"]
 ];
-MF_var_supply_drop_plane = "LIB_C47_Skytrain";
+MF_var_supply_drop_plane = "B_T_VTOL_01_vehicle_F";
 #include "..\root\MF_Logistics\supply_drop\addSupplyDropMenu.sqf"
 
 

@@ -16,9 +16,9 @@
  *
  */
 
-if (!hasInterface) exitWith {};
+if (hasInterface) then {
+  #include "briefingMacros.sqf"
+  #include "..\..\..\config\briefing\briefing.sqf"
 
-#include "briefingMacros.sqf"
-#include "..\..\..\config\briefing\briefing.sqf"
-
-DISPLAYBRIEFING();
+  DISPLAYBRIEFING();
+};

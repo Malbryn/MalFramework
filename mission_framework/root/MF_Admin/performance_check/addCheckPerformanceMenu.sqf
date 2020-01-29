@@ -16,9 +16,7 @@
  *
  */
 
-if (!hasInterface) exitWith {};
-
-if (serverCommandAvailable "#kick") then {
+if (hasInterface && serverCommandAvailable "#kick") then {
   private _menu = ['Check Performance', 'Check Performance', '', {
     [] spawn MF_fnc_checkPerformance;
   }, {true}] call ace_interact_menu_fnc_createAction;
