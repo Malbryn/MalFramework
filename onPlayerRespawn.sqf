@@ -1,6 +1,3 @@
-// Exit the spectator voice channel
-[player, false] call TFAR_fnc_forceSpectator;
-
 // Screen effects
 cutText  ["", "BLACK FADED", 5, true];
 uiSleep 1;
@@ -15,17 +12,18 @@ cutText  ["", "BLACK IN", 5, true];
 // Close the spectator mode
 ["Terminate"] call BIS_fnc_EGSpectator;
 
-// Load the player's loadout
-if (!((player getVariable "MF_var_current_loadout") isEqualTo objNull)) then {
-    [player, [player, "MF_var_current_loadout"]] call BIS_fnc_loadInventory;
-};
+// Exit the spectator voice channel
+[player, false] call TFAR_fnc_forceSpectator;
 
-// Start the snows script if enabled
-if (MF_var_snowfall_enabled) then {
-  [] spawn MF_fnc_startSnowfall;
-};
+// Load the player's loadout
+private _loadout = player getVariable "MF_var_current_loadout";
+player setUnitLoadout _loadout;
 
 // Remaining respawn tickets hint
 if (MF_var_respawn_tickets == -1) exitWith {};
+[format ["Respawns available:<br/>%1", MF_var_respawn_tickets], 2, ace_player, 12] call ace_common_fnc_displayTextStructured;
 
-[format ["Respawns available:<br/>%1", MF_var_respawn_tickets], 2, ace_player, 12] call ace_common_fnc_displayTextStructured
+// Start the snow script if enabled
+if (MF_var_snowfall_enabled) then {
+  [] spawn MF_fnc_startSnowfall;
+};

@@ -23,5 +23,5 @@ params ["_unit", "_gear"];
 _unit setUnitLoadout _gear;
 
 // Save the current loadout
-private _loadout = [player, [player, "MF_var_current_loadout"]] call BIS_fnc_saveInventory;
-player setVariable ["MF_var_current_loadout", _loadout];
+private _loadout = getUnitLoadout _unit;
+player setVariable ["MF_var_current_loadout", _loadout, false];

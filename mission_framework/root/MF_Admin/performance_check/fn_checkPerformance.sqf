@@ -43,8 +43,8 @@ _viewDistanceServer = MF_var_view_distance_server;
   SERVER:<br/>
     Server FPS: %1<br/>
 	Minimum server FPS: %2<br/>
-	Server uptime: %3<br/>
-	Mission time: %4<br/>
+	Server uptime: %3 minutes<br/>
+	Mission time: %4 minutes<br/>
 	Date: %5<br/>
   <br/>
   UNITS:<br/>

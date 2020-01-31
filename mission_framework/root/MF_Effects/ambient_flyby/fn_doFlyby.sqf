@@ -22,14 +22,15 @@
 params ["_type", "_startPos", "_wp1Pos", "_wp2Pos"];
 
 _plane = createVehicle [_type, _startPos, [], 0, "FLY"];
+createVehicleCrew _plane;
 
-_planePilot setCombatMode "BLUE";
-_planePilot setBehaviour "CARELESS";
+group _plane setCombatMode "BLUE";
+group _plane setBehaviour "CARELESS";
 
-_wp1 = _planeCrew addWaypoint [_wp1Pos, 5];
+_wp1 = group _plane addWaypoint [_wp1Pos, 5];
 _wp1 setWaypointType "MOVE";
 
-_wp2 = _planeCrew addWaypoint [_wp2Pos, 5];
+_wp2 = group _plane addWaypoint [_wp2Pos, 5];
 _wp2 setWaypointType "MOVE";
 
 sleep 145;
