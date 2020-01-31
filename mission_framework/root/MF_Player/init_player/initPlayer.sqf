@@ -24,12 +24,15 @@ if (!hasInterface) exitWith {};
 
 params ["_unit", "_role", ["_isCO", false], ["_colour", "MAIN"]];
 
+// Fixing locality issues
+if (!local _unit) exitWith {};
+
 // Gear script
 [_unit, _role] execVM "mission_framework\root\MF_Player\gear\gearCore.sqf";
 
 
 // Command element = can end the mission and/or call in supply drops
-[_unit] execVM "mission_framework\root\MF_Mission\scenario_control\assignCO.sqf";
+[_unit, _isCO] execVM "mission_framework\root\MF_Player\init_player\assignCO.sqf";
 
 
 // Assign team colour
@@ -53,6 +56,6 @@ if ((roleDescription _unit) find "Pilot" >= 0) then {
 
 
 // Assign group leader rally point menu
-if ((leader group player) == player) then {
+if ((leader group _unit) == _unit) then {
   [] execVM "mission_framework\root\MF_Logistics\reinsert\rally_point\addRpMenu.sqf";
 };

@@ -26,6 +26,7 @@ if (hasInterface) then {
 
     [player, 1, ["ACE_SelfActions", "Admin Menu"], _switch] call ace_interact_menu_fnc_addActionToObject;
 
+
     // Mission Success
     private _switch = ['Mission Success', 'Mission Success', '', {
       [] call MF_fnc_getStats;
@@ -39,6 +40,7 @@ if (hasInterface) then {
 
     [player, 1, ["ACE_SelfActions", "Admin Menu", "Scenario Flow"], _switch] call ace_interact_menu_fnc_addActionToObject;
 
+
     // Mission Fail
     private _switch = ['Mission Fail', 'Mission Fail', '', {
       [] call MF_fnc_getStats;
@@ -51,6 +53,7 @@ if (hasInterface) then {
     }, {true}] call ace_interact_menu_fnc_createAction;
 
     [player, 1, ["ACE_SelfActions", "Admin Menu", "Scenario Flow"], _switch] call ace_interact_menu_fnc_addActionToObject;
+
 
     // Mission Terminated
     private _switch = ['Terminate Mission', 'Terminate Mission', '', {

@@ -35,11 +35,10 @@ if (isServer) then {
   // Mission end conditions check loop on server
   MF_var_mission_ended = false;
 
-  waitUntil { CBA_missionTime > 0 };
+  waitUntil { CBA_missionTime > 1 };
 
-  MF_EndCheck = [] spawn {
-    while {!MF_var_mission_ended} do {
-      [] call MF_fnc_checkEndConditions;
-    };
-  };
+  // End conditions check
+  MF_EndCheck = [{
+    [] call MF_fnc_checkEndConditions;
+  }, 10] call CBA_fnc_addPerFrameHandler;
 };

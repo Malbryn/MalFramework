@@ -1,7 +1,7 @@
 #define MINUTES *60  // DO NOT REMOVE
 
 
-/* ---------------------------MISSION PARAMETERS----------------------------- */
+/* ----------------------------MISSION PARAMETERS---------------------------- */
 MF_var_player_side = west;  // Defining the players' side (needed in some server side scripts)
 
 // End conditions core
@@ -13,7 +13,7 @@ MF_var_end_time_limit = 90 MINUTES;  // Mission time limit in seconds
 
 // End condition: casualty check
 MF_var_end_cas_enabled = false;  // Mission fail if the casualty rate is too high on/off
-MF_var_end_cas_rate = 80;  // Casualty rate in percentage (80 = 80% of the unit is dead)
+MF_var_end_cas_rate = 75;  // Casualty rate in percentage (75 = 75% of the unit is dead)
 
 // End condition: tasks
 MF_var_end_task_enabled = true;  // Mission end if all task was completed
@@ -22,7 +22,7 @@ MF_var_end_task_number = 1;  // Number of completed tasks that triggers this con
 // End condition: extraction
 MF_var_end_ex_enabled = false;  // Mission end if x% of the platoon reaches the extraction marker on/off
 MF_var_end_ex_marker = "extraction";  // Name of the area marker used for extraction
-MF_var_end_ex_threshold = 50;  // 50% of the unit should be inside the exfil marker
+MF_var_end_ex_threshold = 50;  // 50% of the players should be inside the exfil marker
 
 // Respawn tickets
 MF_var_respawn_tickets = 1;  // How many times the player can respawn (-1 = disabled)
@@ -36,7 +36,7 @@ MF_var_time_acceleration = 1;  // Time acceleration between 0.1 - 120
 
 
 
-/* -------------------------------MODULES------------------------------------ */
+/* ---------------------------------MODULES---------------------------------- */
 // AMBIENT FLYBY
 #include "..\root\MF_Effects\ambient_flyby\fncInit.sqf"
 

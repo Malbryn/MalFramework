@@ -19,7 +19,8 @@
 if (hasInterface) then {
 
   if (didJIP) then {
-    sleep 20;
+    waitUntil {!isNull findDisplay 46};
+    uisleep MF_var_title_delay;
   };
 
   private _intro =

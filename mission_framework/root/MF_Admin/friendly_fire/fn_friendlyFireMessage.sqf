@@ -19,10 +19,8 @@
 
 params ["_killed", "_killer"];
 
-if (hasInterface) then {
-  if (serverCommandAvailable "#kick") then {
-    systemChat format ["[FRIENDLY FIRE] %1 was killed by %2!", _killed, _killer];
-  };
+if (hasInterface && serverCommandAvailable "#kick") then {
+  systemChat format ["[FRIENDLY FIRE] %1 was killed by %2!", _killed, _killer];
 };
 
 // End statistics
