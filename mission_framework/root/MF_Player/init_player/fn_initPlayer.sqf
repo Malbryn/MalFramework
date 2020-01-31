@@ -16,7 +16,7 @@
  * void
  *
  * Example:
- * [this, "PLTHQ", true, "YELLOW"] execVM "mission_framework\root\MF_Player\init_player\initPlayer.sqf"
+ * [this, "PLTHQ", true, "YELLOW"] call MF_fnc_initPlayer"
  *
  */
 
@@ -27,12 +27,12 @@ params ["_unit", "_role", ["_isCO", false], ["_colour", "MAIN"]];
 // Fixing locality issues
 if (!local _unit) exitWith {};
 
-// Gear script
-[_unit, _role] execVM "mission_framework\root\MF_Player\gear\gearCore.sqf";
 
+// Gear script
+[_unit, _role] call MF_fnc_setGear;
 
 // Command element = can end the mission and/or call in supply drops
-[_unit, _isCO] execVM "mission_framework\root\MF_Player\init_player\assignCO.sqf";
+[_unit, _isCO] call MF_fnc_assignCO;
 
 
 // Assign team colour
@@ -55,7 +55,8 @@ if ((roleDescription _unit) find "Pilot" >= 0) then {
 };
 
 
+
 // Assign group leader rally point menu
 if ((leader group _unit) == _unit) then {
-  [] execVM "mission_framework\root\MF_Logistics\reinsert\rally_point\addRpMenu.sqf";
+  [] call MF_fnc_addRPMenu;
 };

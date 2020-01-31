@@ -19,8 +19,13 @@
 if (hasInterface) then {
 
   if (didJIP) then {
-    waitUntil {!isNull findDisplay 46};
-    uisleep MF_var_title_delay;
+    [{
+      if (MF_var_jip_is_available) then {
+        ["JipTeleport"] call BIS_fnc_showNotification;
+      } else {
+        ["Warning", ["JIP teleport is not available in this mission!"]] call BIS_fnc_showNotification;
+      };
+    }, [], MF_var_title_delay] call CBA_fnc_waitAndExecute;
   };
 
   private _intro =

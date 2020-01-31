@@ -68,6 +68,12 @@ class CfgRemoteExec {
 };
 
 
+// CBA Pre-Init Eventhandlers
+class Extended_PreInit_EventHandlers {
+    #include "mission_framework\root\MF_Cfg\PreInit\MF_PreInit.hpp"
+};
+
+
 // Notifications config
 class CfgNotifications {
     #include "mission_framework\root\MF_Cfg\CfgNotifications\CfgNotifications.hpp"

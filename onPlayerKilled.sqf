@@ -27,6 +27,7 @@ uiSleep 5;
 if (MF_var_respawn_tickets == 0) then {
 
   setPlayerRespawnTime 999999;
+  ["No more respawns remaining"], 2, ace_player, 12] call ace_common_fnc_displayTextStructured;
 
   ["Initialize", [player, [], false, false, true, false, false, false, false, true]] call BIS_fnc_EGSpectator;
 

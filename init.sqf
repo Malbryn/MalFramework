@@ -27,7 +27,7 @@ if (hasInterface) then {
 // Run on the server
 if (isServer) then {
 
-  MF_var_stat_ff = ["FRIENDLY FIRE INCIDENTS:<br/>"];
+  MF_var_stat_ff = ["FRIENDLY FIRE INCIDENTS: "];
 
   setViewDistance MF_var_view_distance_server;
   setTimeMultiplier MF_var_time_acceleration;
