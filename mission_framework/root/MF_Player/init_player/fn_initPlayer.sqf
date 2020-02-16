@@ -16,7 +16,7 @@
  * void
  *
  * Example:
- * [this, "PLTHQ", true, "YELLOW"] call MF_fnc_initPlayer"
+ * [this, "PLTHQ", true, "YELLOW"] spawn MF_fnc_initPlayer
  *
  */
 
@@ -25,7 +25,8 @@ if (!hasInterface) exitWith {};
 params ["_unit", "_role", ["_isCO", false], ["_colour", "MAIN"]];
 
 // Fixing locality issues
-if (!local _unit) exitWith {};
+waitUntil {!isNull player};
+if (!local _unit) exitWith {systemChat format ["Object locality error! Object: %1 | Local: %2", _unit, local _unit];};
 
 
 // Gear script
@@ -58,5 +59,5 @@ if ((roleDescription _unit) find "Pilot" >= 0) then {
 
 // Assign group leader rally point menu
 if ((leader group _unit) == _unit) then {
-  [] call MF_fnc_addRPMenu;
+  [] execVM "mission_framework\root\MF_Logistics\reinsert\rally_point\addRpMenu.sqf"
 };

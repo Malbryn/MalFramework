@@ -50,11 +50,6 @@ MF_var_ao = "ao";  // Name of the AO marker
 #include "..\root\MF_Misc\cover_map\init.sqf"
 
 
-// NO DAMAGE ENDING
-#include "..\root\MF_Player\no_damage_ending\fncInit.sqf"
-MF_var_nd_ending_enabled = true;  // Don't comment it out
-
-
 // GRASS CUTTER
 #include "..\root\MF_Player\grass_cutter\fncInit.sqf"
 #include "..\root\MF_Player\grass_cutter\init.sqf"
@@ -74,6 +69,11 @@ MF_var_title_delay = 20;
 
 // MORTAR FIRE
 #include "..\root\MF_Effects\mortar_fire\fncInit.sqf"
+
+
+// NO DAMAGE ENDING
+#include "..\root\MF_Player\no_damage_ending\fncInit.sqf"
+#include "..\root\MF_Player\no_damage_ending\init.sqf"
 
 
 // JIP TELEPORT

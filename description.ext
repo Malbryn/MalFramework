@@ -1,8 +1,8 @@
 // Mission parameters
 class Header {
     gameType =  Coop;    // Game type
-	  minPlayers =  1;    // Minimum number of players
-	  maxPlayers = 10;    // Maximum number of players
+	minPlayers =  1;    // Minimum number of players
+	maxPlayers = 10;    // Maximum number of players
 };
 
 
@@ -28,7 +28,7 @@ cba_settings_hasSettingsFile = 1;  // Enable CBA settings file
 disableChannels[] = {0, 2, 4, 5};  // Disable certain comms channels
 disabledAI = 1;  // Enable/disable AI
 enableDebugConsole = 1;  // Enable debug console (0 = disable, 1 = logged in admin or host)
-enableTargetDebug = 1;
+enableTargetDebug = 1;  // Target debugging
 
 
 // Garbage collector settings
@@ -55,7 +55,7 @@ class CfgDebriefing {
 };
 
 class CfgDebriefingSections {
-    #include "mission_framework\config\debriefing\CfgDebriefingSections.hpp"
+    #include "mission_framework\root\MF_Cfg\CfgDebriefingSections\CfgDebriefingSections.hpp"
 };
 
 
@@ -68,9 +68,11 @@ class CfgRemoteExec {
 };
 
 
-// CBA Pre-Init Eventhandlers
+// CBA Pre-Init Eventhandler
 class Extended_PreInit_EventHandlers {
-    #include "mission_framework\root\MF_Cfg\PreInit\MF_PreInit.hpp"
+    class MF_PreInit {
+	    init = "'' call compile preprocessFileLineNumbers 'mission_framework\root\MF_Cfg\PreInit\preInit.sqf'";
+    };
 };
 
 

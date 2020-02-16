@@ -29,7 +29,7 @@ if (hasInterface) then {
   _density = 50;  // Snow density at start
   _nextChange = time + 30;
 
-  MF_var_snowfall_inside = {
+  MF_snowfall_inside = {
     _center = _this;
     _inside = false;
     _worldPos = getPosWorld _center;
@@ -44,7 +44,7 @@ if (hasInterface) then {
     _inside
   };
 
-  MF_var_snowfall_fog_effect = {
+  MF_snowfall_fog_effect = {
     _fog = "#particlesource" createVehicleLocal _pos;
     _fog setParticleParams [
       ["\Ca\Data\ParticleEffects\Universal\universal.p3d" , 16, 12, 13, 0], "", "Billboard", 1, 10,
@@ -63,11 +63,11 @@ if (hasInterface) then {
   while {MF_var_snowfall_start} do {
     _a = 0;
     while { _a < _density } do {
-      _inside = player call MF_var_snowfall_inside;
+      _inside = player call MF_snowfall_inside;
       if (!_inside) then {
         _pos = getPosATL (vehicle _obj);
         if (isNil "_fog" && _density > 4000) then {
-          _fog = call MF_var_snowfall_fog_effect;
+          _fog = call MF_snowfall_fog_effect;
         };
 
         if (!isNil "_fog") then {_fog setpos _pos;};
