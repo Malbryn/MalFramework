@@ -20,7 +20,7 @@ NEWTAB("II. Situation")
 <br/><font color='#21749c' size='16' face='PuristaSemiBold'>Weather</font>
 <br/><font size='14' face='PuristaMedium'>Current:</font>
 <br/> - Wind:
-<br/> - Rain:
+<br/> - Rain or snow:
 <br/> - Sky:
 <br/> - Fog:
 <br/>
@@ -92,6 +92,9 @@ NEWTAB("VI. Mission notes:")
 <br/><font color='#21749c' size='16' face='PuristaSemiBold'>Player respawn</font>
 <br/>player_respawn_info
 <br/>
+<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Reinsertion</font>
+<br/>reinsertion_info
+<br/>
 <br/><font color='#21749c' size='16' face='PuristaSemiBold'>Asset respawn</font>
 <br/>asset_respawn_info
 <br/>
@@ -114,4 +117,8 @@ NEWTAB("VI. Mission notes:")
 <br/>
 <br/><font color='#21749c' size='18' face='PuristaBold'>JIP</font>
 <br/>jip_info
+<br/>
+<br/>
+<br/><font color='#21749c' size='18' face='PuristaBold'>Mission made by</font>
+<br/> - Malbryn
 ENDTAB;

@@ -8,23 +8,29 @@
  * Arguments:
  * _this select 0: STRING - Name of the trigger
  * _this select 1: NUMBER - Number of the shells dropped
- * _this select 2: NUMBER - Safe distance from the player (Optional, default: 60)
- * _this select 3: STRING - Shell type (Optional, default: "Sh_82mm_AMOS")
+ * _this select 2: NUMBER - Safe distance from the player
  *
  * Return Value:
  * void
  *
  * Example:
- * ["mortarTrigger", 6] spawn MF_fnc_mortarFire
+ * ["mortarTrigger", 6, 50] spawn MF_fnc_mortarFire
  *
  */
 
 if (!isServer) exitWith {};
 
-params ["_trigger", "_shellCount", ["_safeDistance", 60], ["shellType", "Sh_82mm_AMOS"]];
+//params ["_trigger", "_shellCount", ["_safeDistance", 60], ["shellType", "Sh_82mm_AMOS"]];
 
-private _triggerPos = getPos _trigger;
-private _triggerRadius = (triggerArea _trigger) select 0;
+private ["_trigger", "_shellCount", "_safeDistance", "_shellType", "_triggerPos", "_triggerRadius"];
+
+_trigger = _this select 0;
+_shellCount = _this select 1;
+_safeDistance = _this select 2;
+_shellType = "Sh_82mm_AMOS";
+
+_triggerPos = getPos _trigger;
+_triggerRadius = (triggerArea _trigger) select 0;
 
 for "_index" from 1 to _shellCount do {
   _posToFireAt = [];

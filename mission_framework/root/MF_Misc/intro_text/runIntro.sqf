@@ -18,11 +18,6 @@
 
 if (hasInterface) then {
 
-  if (didJIP) then {
-    waitUntil {!isNull findDisplay 46};
-    uisleep MF_var_title_delay;
-  };
-
   private _intro =
   [
     [MF_var_title, "size='1.5' font='PuristaBold'"],

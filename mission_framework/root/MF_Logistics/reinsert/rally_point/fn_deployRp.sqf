@@ -18,6 +18,12 @@
 
 if (!hasInterface) exitWith {};
 
+// Check if it is enabled
+if (!MF_var_use_rp) exitWith {
+  ["Warning", ["Squad rally point system is not available in this mission!"]] call BIS_fnc_showNotification;
+};
+
+
 // Define squad members
 private _unitArray = (units group player);
 _unitArray deleteAt 0;

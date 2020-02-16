@@ -25,6 +25,7 @@ if (hasInterface && serverCommandAvailable "#kick") then {
 
 // End statistics
 if (isServer) then {
-  _text = format ["%1 was killed by %2<br/>", _killed, _killer];
+  _time = ceil (CBA_missionTime / 60);
+  _text = format ["Minute %1  :  %2 was killed by %3 <br/ >", _time, _killed, _killer];
   MF_var_stat_ff pushBack _text;
 };

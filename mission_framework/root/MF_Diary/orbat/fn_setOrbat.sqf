@@ -154,15 +154,15 @@ MF_loadoutIndex = {
         _allMags = _allMags - _secondaryMags;
         _allMags = _allMags - _handgunMags;
 
-        private _radios = [];
+        private _radio = [];
         private _allItems = items _unit;
 
         {
-          if !((toLower _x) find "acre_" isEqualto -1) then {
-            _radios pushBack _x;
+          if !((toLower _x) find "tfar_" isEqualto -1) then {
+            _radio pushBack _x;
           };
         } forEach _allItems;
-        _allItems = _allItems - _radios;
+        _allItems = _allItems - _radio;
 
         _textToDisplay = _textToDisplay + format ["<font color='#FFFF00'>Magazines and items: </font>(Click count for info.)<br/>", _x];
 
@@ -176,7 +176,7 @@ MF_loadoutIndex = {
             _textToDisplay = _textToDisplay + ([_name, [32,32], _cfgType] call _getPicture) + format ["<execute expression='systemChat ""%2""'>x%1</execute>  ", _itemCount, _displayName];
             _items = _items - [_name];
           };
-        } forEach [[_radios, "CfgWeapons"], [_allMags, "CfgMagazines"], [_allItems, "CfgWeapons"], [assignedItems _unit, "CfgWeapons"]];
+        } forEach [[_radio, "CfgWeapons"], [_allMags, "CfgMagazines"], [_allItems, "CfgWeapons"], [assignedItems _unit, "CfgWeapons"]];
         _textToDisplay = _textToDisplay + "<br/>============================================================<br/>";
         _show = true;
       };
@@ -211,12 +211,13 @@ MF_loadoutIndex = {
       _text = _text + format ["<font size='20' color='#FFFF00'>%1</font>", groupID _x] + "<br/>";
       {
         private _unit = _x;
-        private _radios = "";
+        
+        private _radio = "";
         {
-          if !((toLower _x) find "acre_" isEqualto -1) then {
-          _radios = _radios + ([_x, [28,28]] call _getPicture);
+          if !((toLower _x) find "tfar_" isEqualto -1) then {
+          _radio = _radio + ([_x, [28,28]] call _getPicture);
           };
-        } forEach items _unit;
+        } foreach (items _unit + assignedItems _unit);
 
         private _optics = "";
         private _opticsClasses = ["UK3CB_BAF_Soflam_Laserdesignator","Laserdesignator","Laserdesignator_01_khk_F","Laserdesignator_02","Laserdesignator_02_ghex_F","Laserdesignator_03","rhsusf_bino_lerca_1200_black","rhsusf_bino_lerca_1200_tan","ACE_VectorDay","ACE_Vector","rhs_pdu4","rhsusf_bino_lrf_Vector21","Rangefinder","ACE_Yardage450","ACE_MX2A","Binocular","rhsusf_bino_m24_ARD","rhsusf_bino_m24","rhsusf_bino_leopold_mk4"];
@@ -237,7 +238,7 @@ MF_loadoutIndex = {
           if (_unit isEqualto player) then {"#5555FF"} else {"#FFFFFF"},
           name _unit,
           _lobbyName,
-          _radios,
+          _radio,
           ((round ((loadAbs _unit) * 0.45359237)) / 10),
           if !(primaryWeapon _unit isEqualto "") then {[primaryWeapon _unit, [56,28]] call _getPicture} else {if !(handgunWeapon _unit isEqualto "") then {[handgunWeapon _unit, [56,28]] call _getPicture} else {""}},
           if !(secondaryWeapon _unit isEqualto "") then {[secondaryWeapon _unit, [56,28]] call _getPicture} else {""},

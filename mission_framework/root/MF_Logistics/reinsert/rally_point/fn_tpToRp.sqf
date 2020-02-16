@@ -25,6 +25,7 @@ if (isNil "_coord") exitWith {
 };
 
 cutText ["You are being teleported to your squad's Rally Point", "BLACK OUT", 2, true];
-uiSleep 4;
+uiSleep 2;
 player setPos _coord;
+uiSleep 1;
 cutText ["", "BLACK IN", 3, true];

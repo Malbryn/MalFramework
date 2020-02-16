@@ -19,11 +19,12 @@ cutText  ["", "BLACK IN", 5, true];
 private _loadout = player getVariable "MF_var_current_loadout";
 player setUnitLoadout _loadout;
 
+// Start the snow script if enabled
+if (MF_var_snowfall_enabled) then {
+  missionNameSpace setVariable ["MF_var_snowfall_start", true];
+  [] spawn MF_fnc_startSnowfall;
+};
+
 // Remaining respawn tickets hint
 if (MF_var_respawn_tickets == -1) exitWith {};
 [format ["Respawns available:<br/>%1", MF_var_respawn_tickets], 2, ace_player, 12] call ace_common_fnc_displayTextStructured;
-
-// Start the snow script if enabled
-if (MF_var_snowfall_enabled) then {
-  [] spawn MF_fnc_startSnowfall;
-};

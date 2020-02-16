@@ -26,7 +26,7 @@ if (player != leader group player && {alive leader group player}) then {
 
 // If player is the leader or the leader is dead then pick the next best one
 if (player == leader group player || {!alive leader group player}) then {
-  _partGroup = _patrGroup - [(leader group player)];
+  _partGroup = _partGroup - [(leader group player)];
   _target = _partGroup select (_partGroup findIf {alive _x});
 };
 

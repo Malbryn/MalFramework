@@ -24,8 +24,9 @@ if (isNil (player getVariable "MF_var_death_pos")) exitWith {
 
 player setPos (player getVariable "MF_var_death_pos");
 
-cutText ["You are being paradropped back into the AO", "BLACK OUT", 2, true];
-uiSleep 4;
+cutText ["You are being paradropped into the AO", "BLACK OUT", 2, true];
+uiSleep 2;
 player setPosATL [getposATL player select 0, getpos player select 1, 1500];
 [player] spawn MF_fnc_addParachute;
+uiSleep 1;
 cutText ["", "BLACK IN", 3, true];

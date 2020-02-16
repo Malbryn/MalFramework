@@ -18,16 +18,14 @@
 
 if (hasInterface) then {
 
-  // Wait until the mission display is initialised
-  waitUntil {!isNull findDisplay 46};
-  
-
   // Init checks
-  if (MF_var_jip_is_available) then {
-    ["JipTeleport"] call BIS_fnc_showNotification;
-  } else {
-    ["Warning", ["JIP teleport is not available in this mission!"]] call BIS_fnc_showNotification;
-  };
+  [{
+    if (MF_var_jip_is_available) then {
+      ["JipTeleport"] call BIS_fnc_showNotification;
+    } else {
+      ["Warning", ["JIP teleport is not available in this mission!"]] call BIS_fnc_showNotification;
+    };
+  }, [], 20] call CBA_fnc_waitAndExecute;
 
 
   // Code executed by the ACE interaction menu
@@ -37,7 +35,7 @@ if (hasInterface) then {
       private _vicSpot = [_target] call MF_fnc_checkEmptySeats;
 
       // Check the distance from the squad
-      if ((([] call cba_fnc_players) - [player]) findif {_x distance2D player < 100} != 1) exitWith {
+      if ((([] call cba_fnc_players) - [player]) findif {_x distance2D player < 100} != -1) exitWith {
         ["Warning", ["JIP TP aborted. You're too close to your squad"]] call BIS_fnc_showNotification;
       };
 
