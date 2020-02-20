@@ -71,7 +71,15 @@ class CfgRemoteExec {
 // CBA Pre-Init Eventhandler
 class Extended_PreInit_EventHandlers {
     class MF_PreInit {
-	    init = "'' call compile preprocessFileLineNumbers 'mission_framework\root\MF_Cfg\PreInit\preInit.sqf'";
+	    init = "'' call compile preprocessFileLineNumbers 'mission_framework\root\MF_Cfg\cba_xeh\preInit.sqf'";
+    };
+};
+
+
+// CBA Post-Init Eventhandler
+class Extended_PostInit_EventHandlers {
+    class MF_PostInit {
+	    init = "'' call compile preprocessFileLineNumbers 'mission_framework\root\MF_Cfg\cba_xeh\postInit.sqf'";
     };
 };
 

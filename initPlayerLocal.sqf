@@ -18,7 +18,7 @@ MF_var_stat_ff = ["FRIENDLY FIRE INCIDENTS: "];
 
 enableSaving [false, false];
 enableEnvironment [false, true];
-enableSentences false;
+enableSentences true;
 enableRadio false;
 
 setViewDistance MF_var_view_distance_player;

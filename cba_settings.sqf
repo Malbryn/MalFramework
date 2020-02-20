@@ -131,27 +131,27 @@ force force ace_map_gestures_interval = 0.03;
 force force ace_map_gestures_maxRange = 7;
 
 // ACE Medical
-force force ace_medical_ai_enabledFor = 2;
-force force ace_medical_AIDamageThreshold = 1;
-force force ace_medical_bleedingCoefficient = 1;
+force force ace_medical_ai_enabledFor = 0;
+force force ace_medical_AIDamageThreshold = 2;
+force force ace_medical_bleedingCoefficient = 0.3;
 force force ace_medical_blood_bloodLifetime = 600;
 force force ace_medical_blood_enabledFor = 2;
 force force ace_medical_blood_maxBloodObjects = 500;
 force force ace_medical_fatalDamageSource = 2;
 force force ace_medical_fractures = 2;
 force force ace_medical_gui_enableMedicalMenu = 1;
-force force ace_medical_gui_maxDistance = 3;
+force force ace_medical_gui_maxDistance = 4;
 force force ace_medical_gui_openAfterTreatment = true;
-force force ace_medical_ivFlowRate = 1;
+force force ace_medical_ivFlowRate = 2;
 force force ace_medical_limping = 1;
 force force ace_medical_painCoefficient = 1;
-force force ace_medical_playerDamageThreshold = 1;
-force force ace_medical_spontaneousWakeUpChance = 0.05;
-force force ace_medical_spontaneousWakeUpEpinephrineBoost = 1;
+force force ace_medical_playerDamageThreshold = 4;
+force force ace_medical_spontaneousWakeUpChance = 0.5;
+force force ace_medical_spontaneousWakeUpEpinephrineBoost = 30;
 force force ace_medical_statemachine_AIUnconsciousness = true;
-force force ace_medical_statemachine_cardiacArrestTime = 30;
-force force ace_medical_statemachine_fatalInjuriesAI = 0;
-force force ace_medical_statemachine_fatalInjuriesPlayer = 0;
+force force ace_medical_statemachine_cardiacArrestTime = 1;
+force force ace_medical_statemachine_fatalInjuriesAI = 2;
+force force ace_medical_statemachine_fatalInjuriesPlayer = 2;
 force force ace_medical_treatment_advancedBandages = true;
 force force ace_medical_treatment_advancedDiagnose = true;
 force force ace_medical_treatment_advancedMedication = true;
@@ -232,10 +232,10 @@ force force ace_scopes_zeroReferenceHumidity = 0;
 force force ace_scopes_zeroReferenceTemperature = 15;
 
 // ACE Spectator
-force force ace_spectator_enableAI = true;
+force force ace_spectator_enableAI = false;
 force force ace_spectator_maxFollowDistance = 10;
-force force ace_spectator_restrictModes = 0;
-force force ace_spectator_restrictVisions = 0;
+force force ace_spectator_restrictModes = 4;
+force force ace_spectator_restrictVisions = 3;
 
 // ACE Switch Units
 force force ace_switchunits_enableSafeZone = true;
@@ -296,7 +296,7 @@ force force ace_winddeflection_vehicleEnabled = true;
 
 // ACE Zeus
 force force ace_zeus_autoAddObjects = true;
-force force ace_zeus_canCreateZeus = 0;
+force force ace_zeus_canCreateZeus = 1;
 force force ace_zeus_radioOrdnance = false;
 force force ace_zeus_remoteWind = false;
 force force ace_zeus_revealMines = 0;
@@ -399,7 +399,7 @@ force force TFAR_setting_DefaultRadio_Rifleman_East = "TFAR_fadak";
 force force TFAR_setting_DefaultRadio_Rifleman_Independent = "TFAR_anprc154";
 force force TFAR_setting_DefaultRadio_Rifleman_West = "TFAR_anprc152";
 force force TFAR_ShowDiaryRecord = false;
-force force TFAR_spectatorCanHearEnemyUnits = true;
+force force TFAR_spectatorCanHearEnemyUnits = false;
 force force TFAR_spectatorCanHearFriendlies = true;
 force force TFAR_takingRadio = 1;
 force force TFAR_Teamspeak_Channel_Name = "TaskForceRadio";

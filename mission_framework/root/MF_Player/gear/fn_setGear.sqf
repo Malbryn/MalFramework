@@ -14,7 +14,7 @@
  * void
  *
  * Example:
- * [this, "SL"] call MF_fnc_setCore
+ * [this, "SL"] call MF_fnc_setGear
  *
  */
 
@@ -65,5 +65,4 @@ _unit setUnitLoadout _gear;
 
 
 // Save the current loadout
-private _loadout = getUnitLoadout _unit;
-player setVariable ["MF_var_current_loadout", _loadout, false];
+player setVariable ["MF_var_current_loadout", _role, true];
