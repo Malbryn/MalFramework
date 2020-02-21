@@ -26,11 +26,12 @@ params ["_unit", "_role", ["_isCO", false], ["_colour", "MAIN"]];
 
 // Fixing locality issues
 waitUntil {!isNull player};
-if (!local _unit) exitWith {systemChat format ["Object locality error! Object: %1 | Local: %2", _unit, local _unit];};
+if (!local _unit) exitWith {};
 
 
 // Gear script
 [_unit, _role] call MF_fnc_setGear;
+
 
 // Command element = can end the mission and/or call in supply drops
 [_unit, _isCO] call MF_fnc_assignCO;

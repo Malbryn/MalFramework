@@ -4,7 +4,7 @@
 /* ------------------- CUSTOMISABLE BUT DO NOT REMOVE---------------------- */
 
 class MissionSuccess {
-    title = "Mission Completed";      // Closing shot - Main title
+    title = "Mission Success";      // Closing shot - Main title
     subtitle = "";                    // Closing shot - Short description
     description = "";                 // Debriefing - Summary of the mission
     pictureBackground = "";           // Debriefing - 2:1 picture as background
@@ -45,6 +45,15 @@ class MissionTerminated {
     description = "Due to technical reasons the mission was terminated";
     pictureBackground = "";
     picture = "mil_warning";
+    pictureColor[] = {0.9, 0, 0, 1};
+};
+
+class Retreat {
+    title = "Retreat";
+    subtitle = "Retreat was called by the CO";
+    description = "The CO called retreat ending the mission earlier. Consider this a minor success.";
+    pictureBackground = "";
+    picture = "mil_flag";
     pictureColor[] = {0.9, 0, 0, 1};
 };
 

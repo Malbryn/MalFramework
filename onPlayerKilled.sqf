@@ -1,6 +1,3 @@
-// Save the death location
-player setVariable ["MF_var_death_pos", getPos player];
-
 // Put the player into the spectator voice channel
 [player, true] call TFAR_fnc_forceSpectator;
 
@@ -12,6 +9,9 @@ private _nameKilled = name player;
 if (side _killer == playerSide) then {
   [_nameKilled, _nameKiller] remoteExec ["MF_fnc_friendlyFireMessage", 0];
 };
+
+// Save the death location
+player setVariable ["MF_var_death_pos", getPos player];
 
 // Screen effects
 "dynamicBlur" ppEffectEnable true;
@@ -42,7 +42,7 @@ if (MF_var_respawn_tickets == 0) then {
   cutText  ["", "BLACK IN",  3, true];
   "dynamicBlur" ppEffectAdjust [0];
   "dynamicBlur" ppEffectCommit 3;
-  
+
   if (MF_var_respawn_tickets != -1) then {
     MF_var_respawn_tickets = MF_var_respawn_tickets - 1;
   };

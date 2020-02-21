@@ -83,11 +83,6 @@ MF_var_jipTimer = 3 MINUTES;  // How many seconds the player has to TP back to t
 #include "..\root\MF_Logistics\jip\init.sqf"
 
 
-// ORBAT
-#include "..\root\MF_Diary\orbat\fncInit.sqf"
-#include "..\root\MF_Diary\orbat\init.sqf"
-
-
 // REINSERT
 #include "..\root\MF_Logistics\reinsert\fncInit.sqf"
 MF_var_use_halo = true;  // HALO drop

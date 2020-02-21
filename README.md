@@ -12,6 +12,7 @@ Welcome to Malbryn's Mission Framework. This framework was made for my Arma 3 sc
  - Task & scenario control
 
 ### MF_Cfg
+ - Custom end mission stats
  - Custom notifications
  - Custom sounds
 
@@ -23,6 +24,7 @@ Welcome to Malbryn's Mission Framework. This framework was made for my Arma 3 sc
 ### MF_Effects
  - Ambient flyby
  - Mortar fire
+ - Snowfall
 
 ### MF_Logistics
  - JIP teleport
@@ -36,7 +38,6 @@ Welcome to Malbryn's Mission Framework. This framework was made for my Arma 3 sc
 ### MF_Misc
  - Map cover
  - Intro text
- - Snowfall
 
 ### MF_Mission
  - End condition check

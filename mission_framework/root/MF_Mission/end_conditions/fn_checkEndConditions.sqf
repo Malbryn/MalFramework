@@ -30,15 +30,7 @@ if (MF_var_end_time_enabled) then {
   private _time = CBA_missionTime;
 
   if (_time > MF_var_end_time_limit) then {
-    [] call MF_fnc_saveMissionTime;
-
-    ["TimeLimit", false, true, true, true] remoteExec ["BIS_FNC_endMission", 0, true];
-
-    if (MF_var_nd_ending_enabled) then {
-      [] remoteExecCall ["MF_fnc_noDamageEnding", 0];
-    };
-
-    [MF_EndCheck] call CBA_fnc_removePerFrameHandler;
+    ["TimeLimit", false] call MF_fnc_endMission;
   };
 };
 
@@ -51,15 +43,7 @@ if (MF_var_end_cas_enabled) then {
   private _percentage = (_allPlayers - _alive) / (_allPlayers * 0.01);
 
   if (_percentage >= MF_var_end_cas_rate) then {
-    [] call MF_fnc_saveMissionTime;
-
-    ["CasualtyLimit", false, true, true, true] remoteExec ["BIS_FNC_endMission", 0, true];
-
-    if (MF_var_nd_ending_enabled) then {
-      [] remoteExecCall ["MF_fnc_noDamageEnding", 0];
-    };
-
-	  [MF_EndCheck] call CBA_fnc_removePerFrameHandler;
+    ["CasualtyLimit", false] call MF_fnc_endMission;
   };
 };
 
@@ -75,15 +59,7 @@ if (MF_var_end_task_enabled) then {
   } forEach _taskList;
 
   if (_count >= MF_var_end_task_number) then {
-    [] call MF_fnc_saveMissionTime;
-
-    ["MissionSuccess", true, true, true, true] remoteExec ["BIS_FNC_endMission", 0, true];
-
-    if (MF_var_nd_ending_enabled) then {
-      [] remoteExecCall ["MF_fnc_noDamageEnding", 0];
-    };
-
-	  [MF_EndCheck] call CBA_fnc_removePerFrameHandler;
+    ["MissionSuccess", true] call MF_fnc_endMission;
   };
 };
 
@@ -94,15 +70,7 @@ if (MF_var_end_ex_enabled) then {
     side _x == MF_var_player_side && [_x, MF_var_end_ex_marker] call MF_fnc_unitInArea;
   } count allUnits;
 
-  if (_count >= (_allPlayers * 0.5)) then {
-    [] call MF_fnc_saveMissionTime;
-
-    ["MissionSuccess", true, true, true, true] remoteExec ["BIS_FNC_endMission", 0, true];
-
-    if (MF_var_nd_ending_enabled) then {
-      [] remoteExecCall ["MF_fnc_noDamageEnding", 0];
-    };
-
-	  [MF_EndCheck] call CBA_fnc_removePerFrameHandler;
+  if (_count >= (_allPlayers * MF_var_end_ex_threshold)) then {
+    ["MissionSuccess", true] call MF_fnc_endMission;
   };
 };
