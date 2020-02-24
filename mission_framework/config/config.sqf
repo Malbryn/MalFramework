@@ -1,11 +1,9 @@
 #define MINUTES *60  // DO NOT REMOVE
+#include "..\root\MF_Mission\end_conditions\fncInit.sqf"  // DO NOT REMOVE
 
 
-/* ----------------------------MISSION PARAMETERS---------------------------- */
-MF_var_player_side = west;  // Defining the players' side (needed in some server side scripts)
-
-// End conditions core
-#include "..\root\MF_Mission\end_conditions\fncInit.sqf"
+/* -------------------------------- MISSION PARAMETERS -------------------------------- */
+/* ------------------------- DON'T REMOVE OR COMMENT OUT THESE ------------------------ */
 
 // End condition: time limit
 MF_var_end_time_enabled = true;  // Mission time limit on/off
@@ -36,7 +34,8 @@ MF_var_time_acceleration = 1;  // Time acceleration between 0.1 - 120
 
 
 
-/* ---------------------------------MODULES---------------------------------- */
+/* --------------------------------- OPTIONAL MODULES --------------------------------- */
+
 // AMBIENT FLYBY
 #include "..\root\MF_Effects\ambient_flyby\fncInit.sqf"
 
@@ -46,7 +45,8 @@ MF_var_time_acceleration = 1;  // Time acceleration between 0.1 - 120
 
 
 // COVER MAP
-MF_var_ao = "ao";  // Name of the AO marker
+MF_var_cover_ao = "ao";  // Name of the AO marker
+MF_var_cover_colour = "Color4_FD_F";  // https://community.bistudio.com/wiki/Arma_3_CfgMarkerColors
 #include "..\root\MF_Misc\cover_map\init.sqf"
 
 
@@ -107,12 +107,8 @@ MF_var_use_rp = true;  // Squad Rally Point
 // SUPPLY DROP
 #include "..\root\MF_Logistics\supply_drop\fncInit.sqf"
 MF_var_supply_drop_crates = [
-	[crate1, "Ammo Resupply"],
-	[crate2, "Medic Resupply"]
+  [crate1, "Ammo Resupply"],
+  [crate2, "Medic Resupply"]
 ];
 MF_var_supply_drop_plane = "B_T_VTOL_01_vehicle_F";
 #include "..\root\MF_Logistics\supply_drop\addSupplyDropMenu.sqf"
-
-
-// VEHICLE RESPAWN
-#include "..\root\MF_Logistics\vehicle_respawn\fncInit.sqf"

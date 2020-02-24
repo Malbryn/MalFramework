@@ -344,8 +344,8 @@ force force diwako_dui_indicators_range = 20;
 force force diwako_dui_compassRange = 35;
 force force diwako_dui_enable_occlusion = true;
 force force diwako_dui_radar_occlusion_fade_time = 10;
-force force diwako_dui_radar_sortType = "fireteam";
 force force diwako_dui_radar_sqlFirst = true;
+force force diwako_dui_show_squadbar = false;
 
 // LAxemann's Suppress
 force force L_Suppress_buildup = 2;

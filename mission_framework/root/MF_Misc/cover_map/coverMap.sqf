@@ -18,7 +18,7 @@
 
 if (hasinterface) then {
 
-  _marker = MF_var_ao;
+  _marker = MF_var_cover_ao;
 
   private _sx = (getMarkerSize _marker) select 0;
   private _sy = (getMarkerSize _marker) select 1;
@@ -40,7 +40,7 @@ if (hasinterface) then {
 	  _sy = _temp;
   };
 
-  private _customColour = "Color4_FD_F";
+  private _customColour = MF_var_cover_colour;
   private _colours = ["colorBlack", "colorBlack", _customColour, "colorGreen", _customColour, /**/"colorBlack"/**/, _customColour, _customColour];
 
   {

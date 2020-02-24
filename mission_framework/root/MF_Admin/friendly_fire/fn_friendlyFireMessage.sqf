@@ -23,7 +23,7 @@ if (hasInterface && serverCommandAvailable "#kick") then {
   systemChat format ["[FRIENDLY FIRE] %1 was killed by %2!", _killed, _killer];
 };
 
-// End statistics
+// End mission statistics
 if (isServer) then {
   _time = ceil (CBA_missionTime / 60);
   _text = format ["Minute %1  :  %2 was killed by %3 <br/ >", _time, _killed, _killer];
