@@ -37,10 +37,9 @@ if (MF_var_end_time_enabled) then {
 
 // Casualty check
 if (MF_var_end_cas_enabled) then {
-  private _alive = { alive _x } count allPlayers;
   private _dead = { !alive _x } count allPlayers;
 
-  private _percentage = (_allPlayers - _alive) / (_allPlayers * 0.01);
+  private _percentage = _dead / (_allPlayers * 0.01);
 
   if (_percentage >= MF_var_end_cas_rate) then {
     ["CasualtyLimit", false] call MF_fnc_endMission;
@@ -67,10 +66,10 @@ if (MF_var_end_task_enabled) then {
 // Extraction check
 if (MF_var_end_ex_enabled) then {
   private _count = {
-    side _x == MF_var_player_side && [_x, MF_var_end_ex_marker] call MF_fnc_unitInArea;
-  } count allUnits;
+    [_x, MF_var_end_ex_marker] call MF_fnc_unitInArea;
+  } count _allPlayers;
 
-  if (_count >= (_allPlayers * MF_var_end_ex_threshold)) then {
+  if (_count >= (_allPlayers * MF_var_end_ex_threshold * 0.01)) then {
     ["MissionSuccess", true] call MF_fnc_endMission;
   };
 };

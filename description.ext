@@ -1,8 +1,8 @@
 // Mission parameters
 class Header {
-    gameType =  Coop;    // Game type
-	minPlayers =  1;    // Minimum number of players
-	maxPlayers = 10;    // Maximum number of players
+    gameType =  Coop;  // Game type
+	minPlayers =  1;  // Minimum number of players
+	maxPlayers = 10;  // Maximum number of players
 };
 
 
@@ -15,7 +15,7 @@ loadScreen = "mission_framework\config\img\loading_screen.jpg";  // Loading scre
 
 // Respawn settings
 respawn = "BASE";  // Respawn type ("NONE", "BASE")
-respawnButton = 0;  // Enable/disable the respawn button
+respawnButton = 0;  // Enable/disable the respawn button (in the Esc menu)
 respawnDelay = 30;  // Respawn delay in seconds
 respawnVehicleDelay = 60;  // Vehicle respawn delay in seconds
 respawnDialog = 0;  // Displays the respawn dialog ("BASE" respawn only)
@@ -33,7 +33,7 @@ enableTargetDebug = 1;  // Target debugging
 
 // Garbage collector settings
 corpseManagerMode = 1;
-corpseLimit = 25;
+corpseLimit = 30;
 corpseRemovalMinTime = 300;
 corpseRemovalMaxTime = 600;
 

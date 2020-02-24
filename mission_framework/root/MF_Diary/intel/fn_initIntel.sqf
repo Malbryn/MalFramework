@@ -7,14 +7,14 @@
  *
  * Arguments:
  * _this select 0: OBJECT - Intel object
- * _this select 1: SCALAR - ID of the intel (see: intel.sqf in config)
+ * _this select 1: SCALAR - ID of the intel (see intel.sqf in config)
  *
  * Return Value:
  * void
  *
  * Example:
  * // Use this method after mission init
- *   ["obj", 0] call MF_fnc_initIntel
+ *   [<obj>, 0] call MF_fnc_initIntel
  *
  * // Use this method in the init field of the object
  *   [this, 1] execVM "mission_framework\root\MF_Diary\intel\fn_initIntel.sqf"

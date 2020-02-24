@@ -6,6 +6,7 @@
 
 // Logistics functions
 #include "..\..\MF_Logistics\jip\fncInit.sqf"
+#include "..\..\MF_Logistics\vehicle_respawn\fncInit.sqf"
 
 // Mission functions
 #include "..\..\MF_Mission\end_conditions\fncInit.sqf"
