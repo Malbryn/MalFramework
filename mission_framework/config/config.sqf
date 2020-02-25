@@ -112,3 +112,8 @@ MF_var_supply_drop_crates = [
 ];
 MF_var_supply_drop_plane = "B_T_VTOL_01_vehicle_F";
 #include "..\root\MF_Logistics\supply_drop\addSupplyDropMenu.sqf"
+
+
+// TIME LIMIT CHECK
+#include "..\root\MF_Mission\check_time_limit\fncInit.sqf"
+#include "..\root\MF_Mission\check_time_limit\init.sqf"
