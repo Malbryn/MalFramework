@@ -47,9 +47,9 @@ if (MF_var_end_cas_enabled) then {
 };
 
 
-// Task check --- NEEDS FIXING
+// Task check
 if (MF_var_end_task_enabled) then {
-  private _taskList = player call BIS_fnc_tasksUnit;
+  private _taskList = playerSide call BIS_fnc_tasksUnit;
   private _count = 0;
   {
     if (_x call BIS_fnc_taskCompleted) then {

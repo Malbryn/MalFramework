@@ -56,7 +56,7 @@ if (hasInterface) then {
   if ((player getVariable "MF_var_is_CO") && !(serverCommandAvailable "#kick")) then {
 
     // Scenario control category
-    private _switch = ['Scenario flow', 'Scenario flow', '', {}, {true}] call ace_interact_menu_fnc_createAction;
+    private _switch = ['Scenario flow', 'Scenario flow', '\a3\ui_f\data\Map\Diary\Icons\taskSucceeded_ca.paa', {}, {true}] call ace_interact_menu_fnc_createAction;
 
     [player, 1, ["ACE_SelfActions"], _switch] call ace_interact_menu_fnc_addActionToObject;
 

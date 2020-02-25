@@ -17,9 +17,10 @@
  *
  */
 
-if (hasInterface && serverCommandAvailable "#kick") then {
+if (hasInterface) then {
   ["addAdminMenu", {
     [] execVM "mission_framework\root\MF_Admin\init.sqf";
+    [] execVM "mission_framework\root\MF_Mission\scenario_control\init.sqf";
     systemChat "Adding admin menu...";
   }, "admin"] call CBA_fnc_registerChatCommand;
 };

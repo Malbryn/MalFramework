@@ -17,7 +17,7 @@ cutText  ["", "BLACK IN", 5, true];
 
 // Load the player's loadout
 private _loadout = player getVariable "MF_var_current_loadout";
-player setUnitLoadout _loadout;
+[player, _loadout] call MF_fnc_setGear;
 
 // Start the snow script if enabled
 if (MF_var_snowfall_enabled) then {
