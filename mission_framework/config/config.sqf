@@ -15,15 +15,15 @@ MF_var_end_cas_rate = 75;  // Casualty rate in percentage (75 = 75% of the unit 
 
 // End condition: tasks
 MF_var_end_task_enabled = true;  // Mission end if all task was completed
-MF_var_end_task_number = 1;  // Number of completed tasks that triggers this condition
+MF_var_end_task_number = 2;  // Number of completed tasks that triggers this condition
 
 // End condition: extraction
-MF_var_end_ex_enabled = false;  // Mission end if x% of the platoon reaches the extraction marker on/off
+MF_var_end_ex_enabled = true;  // Mission end if x% of the platoon reaches the extraction marker on/off
 MF_var_end_ex_marker = "extraction";  // Name of the area marker used for extraction
 MF_var_end_ex_threshold = 50;  // 50% of the players should be inside the exfil marker
 
 // Respawn tickets
-MF_var_respawn_tickets = 1;  // How many times the player can respawn (-1 = disabled)
+MF_var_respawn_tickets = 2;  // How many times the player can respawn (-1 = disabled)
 
 // View distances
 MF_var_view_distance_server = 2500;  // Server view distance (= AI view distance)

@@ -1,6 +1,6 @@
 _briefing = [];
 
-#define NEWTAB(NAME) _briefing set [count _briefing, ["Diary",[NAME,"
+#define NEWTAB(NAME) _briefing set [count _briefing, ["Diary", [NAME, "
 #define ENDTAB "]]];
 
 #define DISPLAYBRIEFING() \

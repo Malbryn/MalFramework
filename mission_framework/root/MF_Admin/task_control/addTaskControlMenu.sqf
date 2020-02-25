@@ -17,18 +17,15 @@
  *
  */
 
-if (hasInterface) then {
+if (hasInterface && serverCommandAvailable "#kick") then {
 
   // Put all tasks into an array
   _taskList = player call BIS_fnc_tasksUnit;
 
   // Create the Tasks parent
-  if (serverCommandAvailable "#kick") then {
-    private _menu = ['Tasks', 'Tasks', '', {
-    }, {true}] call ace_interact_menu_fnc_createAction;
+  private _menu = ['Tasks', 'Tasks', '', {}, {true}] call ace_interact_menu_fnc_createAction;
 
-    [player, 1, ["ACE_SelfActions", "Admin Menu"], _menu] call ace_interact_menu_fnc_addActionToObject;
-  };
+  [player, 1, ["ACE_SelfActions", "Admin Menu"], _menu] call ace_interact_menu_fnc_addActionToObject;
 
   // Iterate through the tasks and add each task to the Tasks parent menu
   _task = [];

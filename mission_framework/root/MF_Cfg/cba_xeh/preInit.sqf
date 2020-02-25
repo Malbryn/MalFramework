@@ -10,6 +10,7 @@
 
 // Mission functions
 #include "..\..\MF_Mission\end_conditions\fncInit.sqf"
+#include "..\..\MF_Mission\end_mission\fncInit.sqf"
 #include "..\..\MF_Mission\mission_statistics\fncInit.sqf"
 
 // Player functions

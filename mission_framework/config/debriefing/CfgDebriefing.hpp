@@ -42,7 +42,7 @@ class CasualtyLimit {
 class MissionTerminated {
     title = "Mission Terminated";
     subtitle = "The mission was terminated by admin";
-    description = "Due to technical reasons the mission was terminated";
+    description = "Due to technical reasons the mission was terminated.";
     pictureBackground = "";
     picture = "mil_warning";
     pictureColor[] = {0.9, 0, 0, 1};
@@ -51,7 +51,7 @@ class MissionTerminated {
 class Retreat {
     title = "Retreat";
     subtitle = "Retreat was called by the CO";
-    description = "The CO called retreat ending the mission earlier. Consider this a minor success.";
+    description = "The CO called retreat ending the mission earlier.";
     pictureBackground = "";
     picture = "mil_flag";
     pictureColor[] = {0.9, 0, 0, 1};
