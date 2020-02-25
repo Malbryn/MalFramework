@@ -66,7 +66,7 @@ if (MF_var_end_task_enabled) then {
 // Extraction check
 if (MF_var_end_ex_enabled) then {
   private _count = {
-    [_x, MF_var_end_ex_marker] call MF_fnc_unitInArea;
+    _x inArea MF_var_end_ex_marker;
   } count _allPlayers;
 
   if (_count >= (_allPlayers * MF_var_end_ex_threshold * 0.01)) then {
