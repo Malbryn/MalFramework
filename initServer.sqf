@@ -21,6 +21,12 @@ MF_var_mission_ended = false;
 
 waitUntil { CBA_missionTime > 1 };
 
+// Check the tasks array
+if (MF_var_end_task_enabled && (count MF_var_tasks == 0)) then {
+  ["[MF WARNING] Tasks end condition is enabled but the tasks array is empty!"] remoteExec ["systemChat", 0];
+};
+
+// End mission check loop
 MF_EndCheck = [{
   [] call MF_fnc_checkEndConditions;
 }, 10] call CBA_fnc_addPerFrameHandler;

@@ -44,7 +44,7 @@ if (hasInterface) then {
       // Direction control
       _menu = ['Ingress: North', 'Ingress: North', '', {
         [(_this select 2) select 0, "north", 500, getPos player, _id] remoteExec ["MF_fnc_callSupplyDrop", 2, false];
-        systemChat "HQ: Supply drop is on the way. ETA 1 minute, out.";
+        systemChat "CROSSROADS: Supply drop is on the way. ETA 1 minute, out.";
 
         [player, 1, ["ACE_SelfActions", "Supply drop", (_this select 2) select 1]] call ace_interact_menu_fnc_removeActionFromObject;
       }, {true}, {}, _x] call ace_interact_menu_fnc_createAction;
@@ -54,7 +54,7 @@ if (hasInterface) then {
 
       _menu = ['Ingress: East', 'Ingress: East', '', {
         [(_this select 2) select 0, "east", 500, getPos player, _id] remoteExec ["MF_fnc_callSupplyDrop", 2, false];
-        systemChat "HQ: Supply drop is on the way. ETA 1 minute, out.";
+        systemChat "CROSSROADS: Supply drop is on the way. ETA 1 minute, out.";
 
         [player, 1, ["ACE_SelfActions", "Supply drop", (_this select 2) select 1]] call ace_interact_menu_fnc_removeActionFromObject;
       }, {true}, {}, _x] call ace_interact_menu_fnc_createAction;
@@ -64,7 +64,7 @@ if (hasInterface) then {
 
       _menu = ['Ingress: South', 'Ingress: South', '', {
         [(_this select 2) select 0, "south", 500, getPos player, _id] remoteExec ["MF_fnc_callSupplyDrop", 2, false];
-        systemChat "HQ: Supply drop is on the way. ETA 1 minute, out.";
+        systemChat "CROSSROADS: Supply drop is on the way. ETA 1 minute, out.";
 
         [player, 1, ["ACE_SelfActions", "Supply drop", (_this select 2) select 1]] call ace_interact_menu_fnc_removeActionFromObject;
       }, {true}, {}, _x] call ace_interact_menu_fnc_createAction;
@@ -74,7 +74,7 @@ if (hasInterface) then {
 
       _menu = ['Ingress: West', 'Ingress: West', '', {
         [(_this select 2) select 0, "west", 500, getPos player, _id] remoteExec ["MF_fnc_callSupplyDrop", 2, false];
-        systemChat "HQ: Supply drop is on the way. ETA 1 minute, out.";
+        systemChat "CROSSROADS: Supply drop is on the way. ETA 1 minute, out.";
 
         [player, 1, ["ACE_SelfActions", "Supply drop", (_this select 2) select 1]] call ace_interact_menu_fnc_removeActionFromObject;
       }, {true}, {}, _x] call ace_interact_menu_fnc_createAction;

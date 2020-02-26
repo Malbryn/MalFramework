@@ -55,7 +55,7 @@ switch _role do {
   #include "..\..\..\config\gear\gear.sqf"
 
   default {
-    systemChat format ["ERROR: Undefined role in the loadout: %1", _role];
+    systemChat format ["[MF WARNING] Undefined role in the loadout: %1", _role];
   };
 };
 

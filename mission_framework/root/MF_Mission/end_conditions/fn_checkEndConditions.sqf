@@ -49,10 +49,11 @@ if (MF_var_end_cas_enabled) then {
 
 // Task check
 if (MF_var_end_task_enabled) then {
-  private _taskList = playerSide call BIS_fnc_tasksUnit;
+  private _taskList = MF_var_tasks;
   private _count = 0;
   {
-    if (_x call BIS_fnc_taskCompleted) then {
+    _taskState = [_x] call BIS_fnc_taskState;
+    if (_taskState == "SUCCEEDED") then {
 	  _count = _count + 1
 	  };
   } forEach _taskList;
@@ -67,9 +68,9 @@ if (MF_var_end_task_enabled) then {
 if (MF_var_end_ex_enabled) then {
   private _count = {
     _x inArea MF_var_end_ex_marker;
-  } count _allPlayers;
+  } count allPlayers;
 
-  if (_count >= (_allPlayers * MF_var_end_ex_threshold * 0.01)) then {
+  if (_count >= (_allPlayers * MF_var_end_ex_threshold * 0.01) && (_allPlayers != 0)) then {
     ["MissionSuccess", true] call MF_fnc_endMission;
   };
 };

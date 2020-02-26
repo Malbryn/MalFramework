@@ -41,7 +41,7 @@ for "_index" from 1 to _shellCount do {
 	} forEach allUnits;
   };
 
-  //systemChat format ["Shell Incomming [%1]", (player distance _posToFireAt)];
+  // systemChat format ["Shell Incomming [%1]", (player distance _posToFireAt)];
 
   _posToFireAt set [2, 800];
   _shell = _shellType createVehicle _posToFireAt;
