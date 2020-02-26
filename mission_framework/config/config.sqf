@@ -36,6 +36,10 @@ MF_var_time_acceleration = 1;  // Time acceleration between 0.1 - 120
 
 /* --------------------------------- OPTIONAL MODULES --------------------------------- */
 
+// AI SCRIPTS
+#include "..\root\MF_AI\ai_scripts\fncInit.sqf"
+
+
 // AMBIENT FLYBY
 #include "..\root\MF_Effects\ambient_flyby\fncInit.sqf"
 
