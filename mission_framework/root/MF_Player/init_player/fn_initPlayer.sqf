@@ -33,7 +33,7 @@ if (!local _unit) exitWith {};
 [_unit, _role] call MF_fnc_setGear;
 
 
-// Command element = can end the mission and/or call in supply drops
+// Command element == can call retreat and/or call in supply drops
 [_unit, _isCO] call MF_fnc_assignCO;
 
 

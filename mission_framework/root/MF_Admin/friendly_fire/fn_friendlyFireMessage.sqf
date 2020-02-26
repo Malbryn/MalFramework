@@ -20,7 +20,7 @@
 params ["_killed", "_killer"];
 
 if (hasInterface && serverCommandAvailable "#kick") then {
-  systemChat format ["[FRIENDLY FIRE] %1 was killed by %2!", _killed, _killer];
+  systemChat format ["[MF WARNING] %1 was killed by %2!", _killed, _killer];
 };
 
 // End mission statistics

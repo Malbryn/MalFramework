@@ -38,6 +38,7 @@ CREDITS:<br/>
  - F3 Framework<br/>
  - FK Framework<br/>
  - Olsen Framework<br/>
+ - STB_A3 Framework<br/>
  - UO Briefing Kit mod<br/>
 <br/>
  - Curator scripts by Commy2<br/>

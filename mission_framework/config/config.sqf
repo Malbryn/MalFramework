@@ -10,12 +10,12 @@ MF_var_end_time_enabled = true;  // Mission time limit on/off
 MF_var_end_time_limit = 90 MINUTES;  // Mission time limit in seconds
 
 // End condition: casualty check
-MF_var_end_cas_enabled = false;  // Mission fail if the casualty rate is too high on/off
+MF_var_end_cas_enabled = true;  // Mission fail if the casualty rate is too high on/off
 MF_var_end_cas_rate = 75;  // Casualty rate in percentage (75 = 75% of the unit is dead)
 
 // End condition: tasks
 MF_var_end_task_enabled = true;  // Mission end if all task was completed
-MF_var_end_task_number = 2;  // Number of completed tasks that triggers this condition
+MF_var_end_task_number = 2;  // Number of successfully completed tasks that triggers this condition
 
 // End condition: extraction
 MF_var_end_ex_enabled = true;  // Mission end if x% of the platoon reaches the extraction marker on/off
@@ -35,10 +35,6 @@ MF_var_time_acceleration = 1;  // Time acceleration between 0.1 - 120
 
 
 /* --------------------------------- OPTIONAL MODULES --------------------------------- */
-
-// AI SCRIPTS
-#include "..\root\MF_AI\ai_scripts\fncInit.sqf"
-
 
 // AMBIENT FLYBY
 #include "..\root\MF_Effects\ambient_flyby\fncInit.sqf"

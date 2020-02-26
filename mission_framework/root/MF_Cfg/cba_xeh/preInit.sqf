@@ -1,6 +1,9 @@
 // Admin functions
 #include "..\..\MF_Admin\fncInit.sqf"
 
+// AI functions
+#include "..\..\MF_AI\ai_scripts\fncInit.sqf"
+
 // Diary functions
 #include "..\..\MF_Diary\orbat\fncInit.sqf"
 
@@ -21,3 +24,4 @@
 // Defining some global variables which need default values
 MF_var_nd_ending_enabled = false;
 MF_var_snowfall_enabled = false;
+MF_var_tasks = [];

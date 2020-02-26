@@ -23,7 +23,7 @@ if (hasInterface && serverCommandAvailable "#kick") then {
 	      _aiCount = {!isPlayer _x} count allUnits;
          _deadUnits = count allDeadMen;
 
-		    systemChat format ["[WARNING] Server FPS is low!   FPS: %1  |  AI count: %2  |  Dead units: %3", MF_var_server_fps, _aiCount, _deadUnits];
+		    systemChat format ["[MF WARNING] Server FPS is low!   FPS: %1  |  AI count: %2  |  Dead units: %3", MF_var_server_fps, _aiCount, _deadUnits];
 	    };
     }, 3] call CBA_fnc_addPerFrameHandler;
   }] call CBA_fnc_waitUntilAndExecute;

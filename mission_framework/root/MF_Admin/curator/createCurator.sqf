@@ -30,6 +30,6 @@ if (isServer) then {
 	  _curator addCuratorEditableObjects [(allMissionObjects "LandVehicle"), true];
 	  _curator addCuratorEditableObjects [(allMissionObjects "Man"), true];
 
-    "Logged-in admin: Registered as Curator." remoteExec ["systemChat", _unit];
+    "[MF INFO] Logged-in admin: Registered as Curator." remoteExec ["systemChat", _unit];
   }] call CBA_fnc_addEventHandler;
 };
