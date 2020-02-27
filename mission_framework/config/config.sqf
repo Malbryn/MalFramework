@@ -10,11 +10,11 @@ MF_var_end_time_enabled = true;  // Mission time limit on/off
 MF_var_end_time_limit = 90 MINUTES;  // Mission time limit in seconds
 
 // End condition: casualty check
-MF_var_end_cas_enabled = true;  // Mission fail if the casualty rate is too high on/off
+MF_var_end_cas_enabled = false;  // Mission fail if the casualty rate is too high on/off
 MF_var_end_cas_rate = 75;  // Casualty rate in percentage (75 = 75% of the unit is dead)
 
 // End condition: tasks
-MF_var_end_task_enabled = true;  // Mission end if all task was completed
+MF_var_end_task_enabled = false;  // Mission end if all task was completed
 MF_var_end_task_number = 2;  // Number of successfully completed tasks that triggers this condition
 
 // End condition: extraction
@@ -97,6 +97,7 @@ MF_var_use_rp = true;  // Squad Rally Point
 
 // SCENARIO CONTROL
 #include "..\root\MF_Mission\scenario_control\init.sqf"
+MF_var_success_rate = 50;  // Rate of the completed tasks to call it a success when Retreat is called by the CO (50 = 50% completed)
 
 
 // SNOWFALL

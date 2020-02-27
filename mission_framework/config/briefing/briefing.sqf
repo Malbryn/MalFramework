@@ -83,7 +83,7 @@ NEWTAB("V. Support & Logistics:")
 <br/><font color='#21749c' size='16' face='PuristaSemiBold'>Smoke signals</font>
 <br/>designated_smoke_signals
 <br/>
-<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Challenge and posswords</font>
+<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Challenge and passwords</font>
 <br/>designated_passwords
 ENDTAB;
 

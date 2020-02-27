@@ -5,6 +5,7 @@
  * Description:
  * Registers the task to be monitored by the server.
  * Use this only if MF_var_end_task_enabled == true.
+ * Put this in the init field of the task module.
  *
  * Arguments:
  * _this select 0: STRING - Unique Task ID
