@@ -1,4 +1,5 @@
 #include "admin_menu\addAdminMenu.sqf"
+#include "admin_scenario_control\addAdminScenarioEndControl.sqf"
 #include "performance_check\initFpsCheck.sqf"
 #include "performance_check\fpsNotification.sqf"
 #include "performance_check\addCheckPerformanceMenu.sqf"

@@ -23,7 +23,7 @@ uiSleep 1;
 cutText  ["", "BLACK OUT", 5, true];
 uiSleep 5;
 
-// Init the spectator mode
+// Init the spectator mode along with some other stuff
 if (MF_var_respawn_tickets == 0) then {
 
   setPlayerRespawnTime 999999;
@@ -36,6 +36,28 @@ if (MF_var_respawn_tickets == 0) then {
   "dynamicBlur" ppEffectAdjust [0];
   "dynamicBlur" ppEffectCommit 3;
 
+  // Transfer SL modules to the next player in command (Squad Rally Point)
+  if (player == leader group player && MF_var_use_rp) then {
+    private _partGroup = _partGroup - [(leader group player)];
+    private _target = _partGroup select (_partGroup findIf {alive _x});
+
+    [] remoteExec ["MF_fnc_addRpMenu", _target];
+  };
+
+  // Transfer CO modules to the next player in command (Supply Drop, Scenario End Control)
+  if (player getVariable "MF_var_is_CO" && MF_var_use_supply_drop) then {
+    private _partGroup = _partGroup - [(leader group player)];
+    private _target = _partGroup select (_partGroup findIf {alive _x});
+
+    [] remoteExec ["MF_fnc_addSupplyDropMenu", _target];
+  };
+
+  if (player getVariable "MF_var_is_CO" && MF_var_sc_enabled) then {
+    private _partGroup = _partGroup - [(leader group player)];
+    private _target = _partGroup select (_partGroup findIf {alive _x});
+
+    [] remoteExec ["MF_fnc_addScenarioEndControl", _target];
+  };
 } else {
 
   ["Initialize", [player, [], false, false, true, false, false, false, false, true]] call BIS_fnc_EGSpectator;
