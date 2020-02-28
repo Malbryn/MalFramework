@@ -12,6 +12,7 @@ Welcome to Malbryn's Mission Framework. This framework was made for my Arma 3 sc
 
 ### MF_AI
  - AI task scripts (Creep, Hunt, Rush)
+  - Global AI skill settings
 
 ### MF_Cfg
  - Custom end mission stats

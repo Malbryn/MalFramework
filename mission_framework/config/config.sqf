@@ -14,7 +14,7 @@ MF_var_end_cas_enabled = false;  // Mission fail if the casualty rate is too hig
 MF_var_end_cas_rate = 75;  // Casualty rate in percentage (75 = 75% of the unit is dead)
 
 // End condition: tasks
-MF_var_end_task_enabled = false;  // Mission end if all task was completed
+MF_var_end_task_enabled = true;  // Mission end if all task was completed
 MF_var_end_task_number = 2;  // Number of successfully completed tasks that triggers this condition
 
 // End condition: extraction
@@ -23,7 +23,7 @@ MF_var_end_ex_marker = "extraction";  // Name of the area marker used for extrac
 MF_var_end_ex_threshold = 50;  // 50% of the players should be inside the exfil marker
 
 // Respawn tickets
-MF_var_respawn_tickets = 2;  // How many times the player can respawn (-1 = disabled)
+MF_var_respawn_tickets = 3;  // How many times the player can respawn (-1 = disabled)
 
 // View distances
 MF_var_view_distance_server = 2500;  // Server view distance (= AI view distance)
@@ -35,6 +35,7 @@ MF_var_time_acceleration = 1;  // Time acceleration between 0.1 - 120
 
 
 /* --------------------------------- OPTIONAL MODULES --------------------------------- */
+/* ----------------------- COMMENT OUT THOSE THAT ARE NOT NEEDED ---------------------- */
 
 // AMBIENT FLYBY
 #include "..\root\MF_Effects\ambient_flyby\fncInit.sqf"
@@ -79,7 +80,7 @@ MF_var_title_delay = 20;
 // JIP TELEPORT
 #include "..\root\MF_Logistics\jip\fncInit.sqf"
 MF_var_jip_is_available = true;  // If teleport to squad is available for JIP players
-MF_var_jipTimer = 3 MINUTES;  // How many seconds the player has to TP back to their squad before the option expires
+MF_var_jip_timer = 3 MINUTES;  // How many seconds the player has to TP back to their squad before the option expires
 #include "..\root\MF_Logistics\jip\init.sqf"
 
 
@@ -96,8 +97,9 @@ MF_var_use_rp = true;  // Squad Rally Point
 
 
 // SCENARIO CONTROL
-#include "..\root\MF_Mission\scenario_control\init.sqf"
+MF_var_sc_enabled = true;
 MF_var_success_rate = 50;  // Rate of the completed tasks to call it a success when Retreat is called by the CO (50 = 50% completed)
+[] call MF_fnc_addScenarioEndControl;
 
 
 // SNOWFALL
@@ -107,12 +109,13 @@ MF_var_success_rate = 50;  // Rate of the completed tasks to call it a success w
 
 // SUPPLY DROP
 #include "..\root\MF_Logistics\supply_drop\fncInit.sqf"
+MF_var_use_supply_drop = true;
 MF_var_supply_drop_crates = [
   [crate1, "Ammo Resupply"],
   [crate2, "Medic Resupply"]
 ];
 MF_var_supply_drop_plane = "B_T_VTOL_01_vehicle_F";
-#include "..\root\MF_Logistics\supply_drop\addSupplyDropMenu.sqf"
+[] call MF_fnc_addSupplyDropMenu;
 
 
 // TIME LIMIT CHECK

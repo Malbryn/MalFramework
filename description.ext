@@ -84,6 +84,14 @@ class Extended_PostInit_EventHandlers {
 };
 
 
+// CBA Init Eventhandler
+class Extended_Init_EventHandlers {
+    class CAManBase {
+        init = "[_this] call MF_fnc_setAISkill";
+    };
+};
+
+
 // Notifications config
 class CfgNotifications {
     #include "mission_framework\root\MF_Cfg\CfgNotifications\CfgNotifications.hpp"

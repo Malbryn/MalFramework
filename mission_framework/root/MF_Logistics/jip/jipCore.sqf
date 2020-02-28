@@ -78,5 +78,5 @@ if (hasInterface) then {
   [{
     [player, 1, ["ACE_SelfActions","Teleport to squad"]] call ace_interact_menu_fnc_removeActionFromObject;
     ["Warning", ["JIP teleport is no longer available!"]] call BIS_fnc_showNotification;
-  }, [], MF_var_jipTimer] call CBA_fnc_waitAndExecute;
+  }, [], MF_var_jip_timer] call CBA_fnc_waitAndExecute;
 };
