@@ -3,6 +3,7 @@
 
 // AI functions
 #include "..\..\MF_AI\ai_scripts\fncInit.sqf"
+#include "..\..\MF_AI\set_ai_skill\fncInit.sqf"
 
 // Diary functions
 #include "..\..\MF_Diary\orbat\fncInit.sqf"
@@ -21,7 +22,7 @@
 #include "..\..\MF_Player\init_player\fncInit.sqf"
 
 
-// Compiling those functions that are transferable (i.e. CO dies, next in command can use the support modules)
+// Compiling those functions that are transferable (i.e. CO dies, next in command can use the support modules) for easier remote execution
 MF_fnc_addRpMenu = compile preprocessFileLineNumbers "mission_framework\root\MF_Logistics\reinsert\rally_point\fn_addRpMenu.sqf";
 MF_fnc_addSupplyDropMenu = compile preprocessFileLineNumbers "mission_framework\root\MF_Logistics\supply_drop\fn_addSupplyDropMenu.sqf";
 MF_fnc_addScenarioEndControl = compile preprocessFileLineNumbers "mission_framework\root\MF_Mission\scenario_control\fn_addScenarioEndControl.sqf";

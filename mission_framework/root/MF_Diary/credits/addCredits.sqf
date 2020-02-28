@@ -45,6 +45,7 @@ CREDITS:<br/>
  - Friendly fire script by NeilZar<br/>
  - Server FPS notification script by NeilZar<br/>
  - AI task scripts by Nkenny<br/>
+ - Global AI skill settings by joko // Jonas<br/>
  - Briefing scripts by Perfks and Pax'Jarome<br/>
  - Diary scripts by NeilZar<br/>
  - Intel scripts by Kex<br/>
