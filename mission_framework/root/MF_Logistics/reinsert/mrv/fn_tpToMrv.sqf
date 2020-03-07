@@ -20,8 +20,12 @@ if (!hasInterface) exitWith {};
 
 _mrv = missionNamespace getVariable "MF_var_mrv";
 
+if (!alive _mrv) exitWith {
+    ["Warning", ["Target vehicle was destroyed!"]] call BIS_fnc_showNotification;
+};
+
 if (_mrv emptyPositions "cargo" == 0) exitWith {
-  ["Warning", ["Target vehicle is full!"]] call BIS_fnc_showNotification;
+    ["Warning", ["Target vehicle is full!"]] call BIS_fnc_showNotification;
 };
 
 cutText ["You are being reinserted to the AO", "BLACK OUT", 2, true];

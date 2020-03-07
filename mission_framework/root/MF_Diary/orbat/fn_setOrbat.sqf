@@ -193,6 +193,7 @@ MF_loadoutIndex = {
   reverse _grpArray;
   {player createDiaryRecord _x;} foreach _grpArray;
 
+
   MF_showOrbat = {
     private _text = "<br/><execute expression='[] call MF_fnc_refreshOrbat'>Refresh</execute> (click to show JIPs)<br/><br/>";
 
@@ -205,6 +206,7 @@ MF_loadoutIndex = {
     if ((_image find ".paa") isEqualto -1) then {_image = _image + ".paa";};
     format ["<img image='%1' width='%2' height='%3'/>", _image, _dimensions select 0, _dimensions select 1]
   };
+
 
   {
     if (((side _x) isEqualto (side player)) && {!isNull leader _x} && {(isPlayer leader _x) || !(isMultiplayer)}) then {

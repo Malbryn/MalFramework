@@ -17,8 +17,6 @@
  *
  */
 
- // functions ---
-
 MF_fnc_findTarget = {
     _newDist = _range; 
     _all = (switchableUnits + playableUnits - entities "HeadlessClient_F");
@@ -61,7 +59,6 @@ MF_fnc_rushOrders = {
     _group enableGunLights "forceOn";
 }; 
 
-// functions end ---
 
 // init
 params ["_group",["_range",500],["_cycle",15]];

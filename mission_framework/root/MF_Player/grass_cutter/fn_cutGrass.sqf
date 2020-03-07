@@ -26,8 +26,8 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
 
 // ACE progress bar
 [12, [], {
-  _grassCutter = createVehicle ["Land_ClutterCutter_medium_F", position player, [], 0, "CAN_COLLIDE"];
+    _grassCutter = createVehicle ["Land_ClutterCutter_medium_F", position player, [], 0, "CAN_COLLIDE"];
 }, {
-  // Stop the animation if the progress bar was cancelled
-  player switchMove "";
+    // Stop the animation if the progress bar was cancelled
+    player switchMove "";
 }, "Cutting grass"] call ace_common_fnc_progressBar;

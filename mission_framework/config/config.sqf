@@ -111,8 +111,8 @@ MF_var_success_rate = 50;  // Rate of the completed tasks to call it a success w
 #include "..\root\MF_Logistics\supply_drop\fncInit.sqf"
 MF_var_use_supply_drop = true;
 MF_var_supply_drop_crates = [
-  [crate1, "Ammo Resupply"],
-  [crate2, "Medic Resupply"]
+    [crate1, "Ammo Resupply"],
+    [crate2, "Medic Resupply"]
 ];
 MF_var_supply_drop_plane = "B_T_VTOL_01_vehicle_F";
 [] call MF_fnc_addSupplyDropMenu;

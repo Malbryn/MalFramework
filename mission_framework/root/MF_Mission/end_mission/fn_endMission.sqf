@@ -31,7 +31,7 @@ params ["_ending", "_isVictory"];
 
 // Disabling damage if it's on - FIX
 if (MF_var_nd_ending_enabled) then {
-  [] remoteExec ["MF_fnc_noDamageEnding", 0];
+    [] remoteExec ["MF_fnc_noDamageEnding", 0];
 };
 
 // Remove the end mission conditions loop

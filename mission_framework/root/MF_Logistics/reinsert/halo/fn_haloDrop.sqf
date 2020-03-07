@@ -19,7 +19,7 @@
  if (!hasInterface) exitWith {};
 
 if (isNil (player getVariable "MF_var_death_pos")) exitWith {
-  ["Warning", ["Target destination does not exist!"]] call BIS_fnc_showNotification;
+    ["Warning", ["Target destination does not exist!"]] call BIS_fnc_showNotification;
 };
 
 player setPos (player getVariable "MF_var_death_pos");

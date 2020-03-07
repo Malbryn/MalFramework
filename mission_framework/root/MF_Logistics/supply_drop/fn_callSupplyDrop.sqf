@@ -33,22 +33,22 @@ _endPos = _playerPos;
 
 // Calculate the spawning and drop positions
 switch (_dir) do {
-  case "north" : {
-    _startPos = [(_playerPos select 0), (_playerPos select 1) + 5000, _alt];
-    _endPos = [(_playerPos select 0), (_playerPos select 1) - 150, _alt];
-  };
-  case "east" : {
-    _startPos = [(_playerPos select 0) + 5000, (_playerPos select 1), _alt];
-    _endPos = [(_playerPos select 0) - 150, (_playerPos select 1), _alt];
-  };
-  case "south" : {
-    _startPos = [(_playerPos select 0), ((_playerPos) select 1) - 5000, _alt];
-    _endPos = [(_playerPos select 0), (_playerPos select 1) + 150, _alt];
-  };
-  case "west" : {
-    _startPos = [(_playerPos select 0) - 5000, (_playerPos select 1), _alt];
-    _endPos = [(_playerPos select 0) + 150, (_playerPos select 1), _alt];
-  };
+    case "north" : {
+        _startPos = [(_playerPos select 0), (_playerPos select 1) + 5000, _alt];
+        _endPos = [(_playerPos select 0), (_playerPos select 1) - 150, _alt];
+    };
+    case "east" : {
+        _startPos = [(_playerPos select 0) + 5000, (_playerPos select 1), _alt];
+        _endPos = [(_playerPos select 0) - 150, (_playerPos select 1), _alt];
+    };
+    case "south" : {
+        _startPos = [(_playerPos select 0), ((_playerPos) select 1) - 5000, _alt];
+        _endPos = [(_playerPos select 0), (_playerPos select 1) + 150, _alt];
+    };
+    case "west" : {
+        _startPos = [(_playerPos select 0) - 5000, (_playerPos select 1), _alt];
+        _endPos = [(_playerPos select 0) + 150, (_playerPos select 1), _alt];
+    };
 };
 
 // Spawn smoke

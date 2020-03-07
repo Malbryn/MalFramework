@@ -17,25 +17,24 @@
  */
 
 if (hasInterface) then {
+    // Option #1 - Paradrop
+    if (MF_var_use_halo) then {
+        tpPole addAction ["Reinsert - Paradrop", {
+            [] spawn MF_fnc_haloDrop;
+        }];
+    };
 
-  // Option #1 - Paradrop
-  if (MF_var_use_halo) then {
-    tpPole addAction ["Reinsert - Paradrop", {
-      [] spawn MF_fnc_haloDrop;
-    }];
-  };
+    // Option #2 - MRV
+    if (MF_var_use_mrv) then {
+        tpPole addAction ["Reinsert - MRV", {
+            [] spawn MF_fnc_tpToMrv;
+        }];
+    };
 
-  // Option #2 - MRV
-  if (MF_var_use_mrv) then {
-    tpPole addAction ["Reinsert - MRV", {
-      [] spawn MF_fnc_tpToMrv;
-    }];
-  };
-
-  // Option #3 - Squad rally point
-  if (MF_var_use_rp) then {
-    tpPole addAction ["Reinsert - Squad Rally Point", {
-      [] spawn MF_fnc_tpToRp;
-    }];
-  };
+    // Option #3 - Squad rally point
+    if (MF_var_use_rp) then {
+        tpPole addAction ["Reinsert - Squad Rally Point", {
+            [] spawn MF_fnc_tpToRp;
+        }];
+    };
 };

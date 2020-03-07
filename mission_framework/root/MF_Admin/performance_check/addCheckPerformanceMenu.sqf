@@ -17,9 +17,9 @@
  */
 
 if (hasInterface && serverCommandAvailable "#kick") then {
-  private _menu = ['Check Performance', 'Check Performance', '', {
-    [] spawn MF_fnc_checkPerformance;
-  }, {true}] call ace_interact_menu_fnc_createAction;
+    private _menu = ['Check Performance', 'Check Performance', '', {
+        [] spawn MF_fnc_checkPerformance;
+    }, {true}] call ace_interact_menu_fnc_createAction;
 
-  [player, 1, ["ACE_SelfActions", "Admin Menu"], _menu] call ace_interact_menu_fnc_addActionToObject;
+    [player, 1, ["ACE_SelfActions", "Admin Menu"], _menu] call ace_interact_menu_fnc_addActionToObject;
 };

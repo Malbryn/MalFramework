@@ -23,9 +23,14 @@
 
 
 // Compiling those functions that are transferable (i.e. CO dies, next in command can use the support modules) for easier remote execution
-MF_fnc_addRpMenu = compile preprocessFileLineNumbers "mission_framework\root\MF_Logistics\reinsert\rally_point\fn_addRpMenu.sqf";
-MF_fnc_addSupplyDropMenu = compile preprocessFileLineNumbers "mission_framework\root\MF_Logistics\supply_drop\fn_addSupplyDropMenu.sqf";
-MF_fnc_addScenarioEndControl = compile preprocessFileLineNumbers "mission_framework\root\MF_Mission\scenario_control\fn_addScenarioEndControl.sqf";
+MF_fnc_addRpMenu =
+	compile preprocessFileLineNumbers "mission_framework\root\MF_Logistics\reinsert\rally_point\fn_addRpMenu.sqf";
+
+MF_fnc_addSupplyDropMenu =
+	compile preprocessFileLineNumbers "mission_framework\root\MF_Logistics\supply_drop\fn_addSupplyDropMenu.sqf";
+
+MF_fnc_addScenarioEndControl =
+	compile preprocessFileLineNumbers "mission_framework\root\MF_Mission\scenario_control\fn_addScenarioEndControl.sqf";
 
 
 // Defining some global variables which need default values
@@ -34,3 +39,7 @@ MF_var_sc_enabled = false;
 MF_var_nd_ending_enabled = false;
 MF_var_snowfall_enabled = false;
 MF_var_tasks = [];
+
+
+// Compiling the AI skills array
+call compile preprocessFileLineNumbers "mission_framework\config\ai_skill\ai_skill.sqf";

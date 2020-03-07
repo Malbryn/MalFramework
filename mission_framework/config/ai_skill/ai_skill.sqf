@@ -1,8 +1,8 @@
 // These skills will apply to every AI in the mission.
 // Also will apply to any AI spawned after the mission init
 
-_skill = [
-	0.5,	// General (Higher = Better)
+MF_ai_skills = [
+  0.5,	// General (Higher = Better)
 	0.5,	// Commanding (Higher = Better)
 	0.5,	// Courage (Higher = Better)
 	0.5,	// Aiming Accuracy (Higher = Better)

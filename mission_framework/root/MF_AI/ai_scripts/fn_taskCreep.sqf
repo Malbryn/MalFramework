@@ -18,8 +18,6 @@
  *
  */
 
-// functions ---
-
 MF_fnc_findTarget = {
     _newDist = _range; 
     _all = (switchableUnits + playableUnits - entities "HeadlessClient_F");
@@ -55,8 +53,6 @@ MF_fnc_creepOrders = {
         _x doMove (_target getPos [random 10 + _foreachIndex * 5,random 360]);
     } foreach units _group;
 };
-
-// functions end ---
 
 // init
 params ["_group",["_range",500],["_cycle",15]];

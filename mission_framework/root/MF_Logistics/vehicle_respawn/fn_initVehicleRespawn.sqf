@@ -27,48 +27,48 @@ if (!isServer) exitWith {};
 private ["_inventory", "_paint", "_parts", "_vehicleData"];
 
 params [
-  ["_vehicle", objNull, [objNull]],
-  ["_delay", 5, [0]],
-  ["_init", {}, [{}]],
-  ["_respawnLimit", -1, [0]],
-  ["_deleteWreck", false, [false]],
-  ["_loadout", true, [true]],
-  ["_savePaint", true, [true]]
+    ["_vehicle", objNull, [objNull]],
+    ["_delay", 5, [0]],
+    ["_init", {}, [{}]],
+    ["_respawnLimit", -1, [0]],
+    ["_deleteWreck", false, [false]],
+    ["_loadout", true, [true]],
+    ["_savePaint", true, [true]]
 ];
 
 _limitEnabled = false;
 if (_respawnLimit != -1) then {
-  _vehicle setVariable ["MF_var_VRRespawnLimit", _respawnLimit, true];
-  _limitEnabled = true;
+    _vehicle setVariable ["MF_var_VRRespawnLimit", _respawnLimit, true];
+    _limitEnabled = true;
 };
 
 _inventory = [];
 if _loadout then {
-  _items = getItemCargo _vehicle;
-  _magazines = getMagazineCargo _vehicle;
-  _weapons = getWeaponCargo _vehicle;
-  _backpacks = getBackpackCargo _vehicle;
-  _inventory = [_items, _magazines, _weapons, _backpacks];
+    _items = getItemCargo _vehicle;
+    _magazines = getMagazineCargo _vehicle;
+    _weapons = getWeaponCargo _vehicle;
+    _backpacks = getBackpackCargo _vehicle;
+    _inventory = [_items, _magazines, _weapons, _backpacks];
 };
 
 _paint = "";
 _parts = [];
 if _savePaint then {
-  _customization = [_vehicle] call BIS_fnc_getVehicleCustomization;
-  _paint = (_customization select 0) select 0;
-  _parts = _customization select 1;
+    _customization = [_vehicle] call BIS_fnc_getVehicleCustomization;
+    _paint = (_customization select 0) select 0;
+    _parts = _customization select 1;
 };
 
 _vehicleData = [
-  _delay, _init, _loadout, vehicleVarName _vehicle, getPosASL _vehicle,
-  getDir _vehicle, typeOf _vehicle, _inventory, _savePaint, _paint, _parts,
-  _deleteWreck, _limitEnabled
+    _delay, _init, _loadout, vehicleVarName _vehicle, getPosASL _vehicle,
+    getDir _vehicle, typeOf _vehicle, _inventory, _savePaint, _paint, _parts,
+    _deleteWreck, _limitEnabled
 ];
 
 if (isNil "MF_var_VRMonitor") then {
-  MF_var_TotalVRArray = [];
-  [] spawn MF_fnc_initVehicleMonitor;
-  MF_var_VRMonitor = 1;
+    MF_var_TotalVRArray = [];
+    [] spawn MF_fnc_initVehicleMonitor;
+    MF_var_VRMonitor = 1;
 };
 
 MF_var_TotalVRArray pushBack [_vehicle, _vehicleData];

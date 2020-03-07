@@ -20,12 +20,12 @@
 params ["_killed", "_killer"];
 
 if (hasInterface && serverCommandAvailable "#kick") then {
-  systemChat format ["[MF WARNING] %1 was killed by %2!", _killed, _killer];
+    systemChat format ["[MF WARNING] %1 was killed by %2!", _killed, _killer];
 };
 
 // End mission statistics
 if (isServer) then {
-  _time = ceil (CBA_missionTime / 60);
-  _text = format ["Minute %1  :  %2 was killed by %3 <br/ >", _time, _killed, _killer];
-  MF_var_stat_ff pushBack _text;
+    _time = ceil (CBA_missionTime / 60);
+    _text = format ["Minute %1  :  %2 was killed by %3 <br/ >", _time, _killed, _killer];
+    MF_var_stat_ff pushBack _text;
 };
