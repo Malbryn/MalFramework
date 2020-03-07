@@ -18,8 +18,8 @@
  */
 
 if (hasInterface) then {
-  ["addAdminMenu", {
-    [] execVM "mission_framework\root\MF_Admin\init.sqf";
-    systemChat "[MF INFO] Adding admin menu...";
-  }, "admin"] call CBA_fnc_registerChatCommand;
+    ["addAdminMenu", {
+        [] execVM "mission_framework\root\MF_Admin\init.sqf";
+        systemChat "[MF INFO] Adding admin menu...";
+    }, "admin"] call CBA_fnc_registerChatCommand;
 };

@@ -23,8 +23,7 @@ _unit = _unit select 0;
 // If the unit is not local or is a player, then exit
 if (!local _unit || isPlayer _unit) exitWith {};
 
-// Include the sub-skills defined by the mission maker
-#include "..\..\..\config\ai_skill\ai_skill.sqf"
+_skill = MF_ai_skills;
 
 // Set the sub-skills
 _unit setSkill ["general", _skill select 0];

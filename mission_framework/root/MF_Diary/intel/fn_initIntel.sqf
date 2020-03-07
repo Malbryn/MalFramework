@@ -34,27 +34,27 @@ _duration = _intel select 2;
 _delete = _intel select 3;
 
 [
-  _object,
-  "Search for intel",
-  "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa",
-  "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa",
-  "_this distance _target < 3",
-  "_caller distance _target < 3",
-  {},
-  {},
-  {
-    params ["_object", "_finder", "_ID", "_arguments"];
-    _arguments params ["_title", "_text", "_delete"];
+    _object,
+    "Search for intel",
+    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa",
+    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa",
+    "_this distance _target < 3",
+    "_caller distance _target < 3",
+    {},
+    {},
+    {
+        params ["_object", "_finder", "_ID", "_arguments"];
+        _arguments params ["_title", "_text", "_delete"];
 
-    [_title, _text, name _finder] remoteExec ["MF_fnc_addIntelToDiary", 0, true];
-    ["IntelAdded", [format ["Intel: %1<br/>Found by %2", _title, name _finder]]] remoteExec ["BIS_fnc_showNotification", 0, false];
+        [_title, _text, name _finder] remoteExec ["MF_fnc_addIntelToDiary", 0, true];
+        ["IntelAdded", [format ["Intel: %1<br/>Found by %2", _title, name _finder]]] remoteExec ["BIS_fnc_showNotification", 0, false];
 
-    if (_delete) then { deleteVehicle _object };
-  },
-  {},
-  [_title, _text, _delete],
-  _duration,
-  20,
-  true,
-  false
+        if (_delete) then { deleteVehicle _object };
+    },
+    {},
+    [_title, _text, _delete],
+    _duration,
+    20,
+    true,
+    false
 ] call BIS_fnc_holdActionAdd;

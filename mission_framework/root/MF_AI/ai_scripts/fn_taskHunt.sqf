@@ -17,8 +17,6 @@
  *
  */
 
- // functions ---
-
 MF_fnc_findTarget = {
     _newDist = _range; 
     _all = (switchableUnits + playableUnits - entities "HeadlessClient_F");
@@ -44,7 +42,6 @@ MF_fnc_suppress = {
     } count units _group;
 };
 
-// functions end ---
 
 // init
 params ["_group",["_range",500],["_cycle",60 + random 30]];

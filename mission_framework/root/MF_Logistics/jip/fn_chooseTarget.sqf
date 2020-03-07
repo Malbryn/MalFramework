@@ -21,13 +21,13 @@ private _partGroup = units group player;
 
 // If player is not the leader and the leader is alive then the leader is the target
 if (player != leader group player && {alive leader group player}) then {
-  _target = leader group player;
+    _target = leader group player;
 };
 
 // If player is the leader or the leader is dead then pick the next best one
 if (player == leader group player || {!alive leader group player}) then {
-  _partGroup = _partGroup - [(leader group player)];
-  _target = _partGroup select (_partGroup findIf {alive _x});
+    _partGroup = _partGroup - [(leader group player)];
+    _target = _partGroup select (_partGroup findIf {alive _x});
 };
 
 //Return

@@ -21,7 +21,7 @@ if (!hasInterface) exitWith {};
 _coord = (leader player) getVariable "rpPos";
 
 if (isNil "_coord") exitWith {
-  ["Warning", ["TP destination does not exist"]] call BIS_fnc_showNotification
+    ["Warning", ["TP destination does not exist"]] call BIS_fnc_showNotification
 };
 
 cutText ["You are being teleported to your squad's Rally Point", "BLACK OUT", 2, true];

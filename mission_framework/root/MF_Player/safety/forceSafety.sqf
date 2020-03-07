@@ -19,12 +19,12 @@
 //params [["_unit", player]];
 
 if (hasInterface) then {
-   [] spawn {
-     params [["_unit", player]];
-     sleep 0.01;
+    [] spawn {
+        params [["_unit", player]];
+        sleep 0.01;
 
-     if (currentWeapon _unit != "") then {
-       [_unit, currentWeapon _unit, currentMuzzle _unit] call ace_safemode_fnc_lockSafety;
-     };
-  };
+        if (currentWeapon _unit != "") then {
+            [_unit, currentWeapon _unit, currentMuzzle _unit] call ace_safemode_fnc_lockSafety;
+        };
+    };
 };

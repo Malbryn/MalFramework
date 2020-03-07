@@ -26,7 +26,7 @@ private _hasDriver = vehicle _target emptyPositions "driver";
 private _hasCargo = vehicle _target emptyPositions "cargo";
 
 if (_hasDriver > 0 || _hasCommander > 0 || _hasGunner > 0 || _hasDriver > 0 || _hasCargo > 0) then {
-  _freeSeat = true;
+    _freeSeat = true;
 };
 
 // Return

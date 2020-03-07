@@ -26,11 +26,11 @@ private _menu = ['Rally Point', 'Rally Point', '\a3\ui_f\data\GUI\Cfg\Hints\icon
 
 // Create child category
 _menu = ['Deploy Rally Point', 'Deploy Rally Point', '', {
-  if (MF_var_use_rp) then {
-    [] call MF_fnc_deployRp;
-  } else {
-    ["Warning", ["Rally Point system is disabled in this mission"]] call BIS_fnc_showNotification;
-  };
+    if (MF_var_use_rp) then {
+        [] call MF_fnc_deployRp;
+    } else {
+        ["Warning", ["Rally Point system is disabled in this mission"]] call BIS_fnc_showNotification;
+    };
 }, {true}] call ace_interact_menu_fnc_createAction;
 
 [player, 1, ["ACE_SelfActions", "Rally Point"], _menu] call ace_interact_menu_fnc_addActionToObject;

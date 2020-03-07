@@ -21,8 +21,8 @@ private _loadout = player getVariable "MF_var_current_loadout";
 
 // Start the snow script if enabled
 if (MF_var_snowfall_enabled) then {
-  missionNameSpace setVariable ["MF_var_snowfall_start", true];
-  [] spawn MF_fnc_startSnowfall;
+    missionNameSpace setVariable ["MF_var_snowfall_start", true];
+    [] spawn MF_fnc_startSnowfall;
 };
 
 // Remaining respawn tickets hint

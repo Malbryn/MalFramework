@@ -25,9 +25,11 @@ params ["_title", "_text", "_finder"];
 private _diaryId = "MF_Intel";
 
 if !(player diarySubjectExists _diaryId) then {
-  player createDiarySubject [_diaryId, "Mission Intel"];
+    player createDiarySubject [_diaryId, "Mission Intel"];
 };
 
 player createDiaryRecord [_diaryId, [_title, _text]];
 
-if (name player == _finder) then { openMap [true, false] };
+if (name player == _finder) then {
+    openMap [true, false];
+};

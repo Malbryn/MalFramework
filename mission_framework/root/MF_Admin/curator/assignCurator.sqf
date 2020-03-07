@@ -17,11 +17,11 @@
  */
 
 if (hasInterface) then {
-  0 spawn {
-    waitUntil {!isNull player && CBA_missionTime > 1};
+    0 spawn {
+        waitUntil {!isNull player && CBA_missionTime > 1};
 
-    if (serverCommandAvailable "#kick") then {
-      ["MF_registerCurator", player] call CBA_fnc_serverEvent;
+        if (serverCommandAvailable "#kick") then {
+            ["MF_registerCurator", player] call CBA_fnc_serverEvent;
+        };
     };
-  };
 };

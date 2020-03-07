@@ -16,9 +16,9 @@
  *
  */
 
- // Check if the RP tent is in range
+// Check if the RP tent is in range
  if (player distance RPTent > 5) exitWith {
-  ["Warning", ["You are too far from the RP"]] call BIS_fnc_showNotification
+    ["Warning", ["You are too far from the RP"]] call BIS_fnc_showNotification
 };
 
 
@@ -28,19 +28,19 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
 
 // Display ACE progress bar
 [12, [], {
-  // Create RP tent and save the coordinates
-  deleteVehicle RPTent;
-  (leader player) setVariable ["rpPos", nil, true];
+    // Create RP tent and save the coordinates
+    deleteVehicle RPTent;
+    (leader player) setVariable ["rpPos", nil, true];
 
-  // Remove Remove menu
-  [player, 1, ["ACE_SelfActions", "Rally Point", "Remove Rally Point"]] call ace_interact_menu_fnc_removeActionFromObject;
+    // Remove Remove menu
+    [player, 1, ["ACE_SelfActions", "Rally Point", "Remove Rally Point"]] call ace_interact_menu_fnc_removeActionFromObject;
 
-  // Create Deploy menu
-  _menu = ['Deploy Rally Point', 'Deploy Rally Point', '', {
-    [] call MF_fnc_deployRp;
-  }, {true}] call ace_interact_menu_fnc_createAction;
-  [player, 1, ["ACE_SelfActions", "Rally Point"], _menu] call ace_interact_menu_fnc_addActionToObject;
+    // Create Deploy menu
+    _menu = ['Deploy Rally Point', 'Deploy Rally Point', '', {
+        [] call MF_fnc_deployRp;
+    }, {true}] call ace_interact_menu_fnc_createAction;
+    [player, 1, ["ACE_SelfActions", "Rally Point"], _menu] call ace_interact_menu_fnc_addActionToObject;
 }, {
-  // Stop the animation if the progress bar was cancelled
-  player playMove "";
+    // Stop the animation if the progress bar was cancelled
+    player playMove "";
 }, "Removing Rally Point"] call ace_common_fnc_progressBar;
