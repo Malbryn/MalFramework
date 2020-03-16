@@ -24,9 +24,9 @@ class JipTeleport {
     title = "JIP";
     iconPicture = "\A3\ui_f\data\GUI\Cfg\Hints\Timing_ca.paa";
     iconText = "";
-    description = "Join In Progress: Use self-interaction to TP back to your squad";
+    description = "Join In Progress: Use self-interaction to TP back to your squad.";
     color[] = {1, 1, 1, 1};
-    duration = 10;
+    duration = 5;
     priority = 4;
     difficulty[] = {};
 };

@@ -19,23 +19,30 @@
 if (hasInterface) then {
     // Init checks
     [{
-        if (MF_var_jip_is_available) then {
-            ["JipTeleport"] call BIS_fnc_showNotification;
-        } else {
+        // JIP TP is not avilable
+        if !(MF_var_jip_is_available) exitWith {
             ["Warning", ["JIP teleport is not available in this mission!"]] call BIS_fnc_showNotification;
         };
-    }, [], 20] call CBA_fnc_waitAndExecute;
+
+        // JIP TP is available
+        ["JipTeleport"] call BIS_fnc_showNotification;
+    }, [], 10] call CBA_fnc_waitAndExecute;
 
 
     // Code executed by the ACE interaction menu
     private _jipActionCode = {
         [] spawn {
             private _target = [] call MF_fnc_chooseTarget;
+
+            if (isNull _target) then {
+                systemChat ["[MF ERROR] Target object does not exist."];
+            };
+
             private _vicSpot = [_target] call MF_fnc_checkEmptySeats;
 
             // Check the distance from the squad
             if ((([] call cba_fnc_players) - [player]) findif {_x distance2D player < 100} != -1) exitWith {
-                ["Warning", ["JIP TP aborted. You're too close to your squad"]] call BIS_fnc_showNotification;
+                ["Warning", ["JIP TP aborted. You're too close to one of your squad members!"]] call BIS_fnc_showNotification;
             };
 
             // Check if there are other people in the squad
@@ -58,7 +65,7 @@ if (hasInterface) then {
             };
             cutText ["", "BLACK IN", 2, true];
 
-            // Disable JIP teleport after the player was teleported
+            // Remove JIP teleport action after the player was teleported
             MF_var_jip_is_available = false;
             [player, 1, ["ACE_SelfActions", "Teleport to squad"]] call ace_interact_menu_fnc_removeActionFromObject;
         };
@@ -73,9 +80,11 @@ if (hasInterface) then {
     [player, 1, ["ACE_SelfActions"], _jipTeleportAction] call ace_interact_menu_fnc_addActionToObject;
 
 
-    // Remove option after 3 minutes
+    // Remove option after x minutes (defined in config)
     [{
-        [player, 1, ["ACE_SelfActions","Teleport to squad"]] call ace_interact_menu_fnc_removeActionFromObject;
-        ["Warning", ["JIP teleport is no longer available!"]] call BIS_fnc_showNotification;
+        if (MF_var_jip_is_available) then {
+            [player, 1, ["ACE_SelfActions", "Teleport to squad"]] call ace_interact_menu_fnc_removeActionFromObject;
+            ["Warning", ["JIP teleport is no longer available!"]] call BIS_fnc_showNotification;
+        };
     }, [], MF_var_jip_timer] call CBA_fnc_waitAndExecute;
 };

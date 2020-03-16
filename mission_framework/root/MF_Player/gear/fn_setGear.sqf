@@ -41,17 +41,24 @@ switch _role do {
 
     default {
         systemChat format ["[MF WARNING] Undefined role in the loadout: %1", _role];
+        diag_log format ["[MF WARNING] Undefined role in the loadout: %1", _role];
     };
 };
+
+diag_log format ["[MF LOG] Role found: %1. Applying loadout...", _role];
 
 
 // Apply the selected loadout
 if !(count _gear == 0) then {
     _unit setUnitLoadout _gear;
 } else {
-    systemChat format ["[MF WARNING] Empty gear array"];
+    systemChat "[MF ERROR] Empty gear array";
+    diag_log "[MF ERROR] Empty gear array";
 };
 
+diag_log "[MF LOG] Loadout applied. Saving...";
 
 // Save the current loadout
 player setVariable ["MF_var_current_loadout", _role];
+
+diag_log format ["[MF LOG] Loadout saved: %1. Gear script done.", player getVariable "MF_var_current_loadout"];

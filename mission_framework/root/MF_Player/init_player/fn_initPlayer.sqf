@@ -24,6 +24,8 @@ if (!hasInterface) exitWith {};
 
 params [["_unit", player], "_role", ["_isCO", false], ["_colour", "MAIN"]];
 
+diag_log format ["[MF LOG] Initialising unit: %1 (Local: %2)", _unit, local _unit];
+
 // Fixing locality issues
 waitUntil {!isNull _unit};
 if (!local _unit) exitWith {};
