@@ -51,6 +51,7 @@ Welcome to Malbryn's Mission Framework. This framework was made for my Arma 3 sc
  - Scenario control
  - End mission statistics
  - Time limit check
+ - Wave respawn option
 
 ### MF_Player
  - Gear script

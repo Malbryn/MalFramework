@@ -121,3 +121,10 @@ MF_var_supply_drop_plane = "B_T_VTOL_01_vehicle_F";
 // TIME LIMIT CHECK
 #include "..\root\MF_Mission\check_time_limit\fncInit.sqf"
 #include "..\root\MF_Mission\check_time_limit\init.sqf"
+
+
+// WAVE RESPAWN
+#include "..\root\MF_Mission\respawn_wave\fncInit.sqf"
+MF_var_wave_respawn_enabled = true;
+MF_var_wave_respawn_count = 2;  // Maximum amout of respawn waves
+[] call MF_fnc_addCallRespawnMenu;
