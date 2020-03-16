@@ -23,8 +23,14 @@ if (hasInterface) then {
         params [["_unit", player]];
         sleep 0.01;
 
+        /*
         if (currentWeapon _unit != "") then {
             [_unit, currentWeapon _unit, currentMuzzle _unit] call ace_safemode_fnc_lockSafety;
         };
+        */
+
+        // Putting the weapon on the back instead of safety
+        // Players tend to forget about the safety it seems
+        player action ["SWITCHWEAPON", player, player, -1];
     };
 };

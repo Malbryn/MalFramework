@@ -1,7 +1,5 @@
-if (hasInterface) then {
+if (hasInterface && didJIP) then {
     [] spawn {
-        if (didJIP) then {
-            #include "jipCore.sqf"
-        };
+        #include "jipCore.sqf"
     };
 };

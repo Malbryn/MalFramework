@@ -6,7 +6,7 @@
  * Sets up the player entity
  *
  * Arguments:
- * _this select 0: OBJECT - The player unit
+ * _this select 0: OBJECT - The unit (Optional, default: player)
  * _this select 1: STRING - Role of the unit, see: gear script
  * _this select 2: BOOLEAN - True if the unit is a command element (the CO can end the mission and/or call in supply drops)
  *                           (Optional, default: false)
@@ -22,10 +22,12 @@
 
 if (!hasInterface) exitWith {};
 
-params ["_unit", "_role", ["_isCO", false], ["_colour", "MAIN"]];
+params [["_unit", player], "_role", ["_isCO", false], ["_colour", "MAIN"]];
+
+diag_log format ["[MF LOG] Initialising unit: %1 (Local: %2)", _unit, local _unit];
 
 // Fixing locality issues
-waitUntil {!isNull player};
+waitUntil {!isNull _unit};
 if (!local _unit) exitWith {};
 
 
@@ -33,16 +35,13 @@ if (!local _unit) exitWith {};
 [_unit, _role] call MF_fnc_setGear;
 
 
-// Command element == can call retreat and/or call in supply drops
+// Command element (can call retreat and call in supply drops)
 [_unit, _isCO] call MF_fnc_assignCO;
 
 
 // Assign team colour
 _unit assignTeam _colour;
 
-
-// ACE player role variables
-//_unit setVariable ["ACE_isEngineer", 1, true];
 
 if ((roleDescription _unit) find "Medic" >= 0) then {
     _unit setVariable ["ACE_medical_medicClass", 1, true];

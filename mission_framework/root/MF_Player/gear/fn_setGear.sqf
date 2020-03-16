@@ -32,21 +32,6 @@ removeAllWeapons _unit;
 removeAllAssignedItems _unit;
 
 
-// Blacklist the stupid goggles
-_gogglesBlacklist = [
-    "G_AirPurifyingRespirator_02_black_F", "G_AirPurifyingRespirator_02_olive_F",
-    "G_AirPurifyingRespirator_02_sand_F", "G_AirPurifyingRespirator_01_F", "G_Blindfold_01_black_F",
-    "G_Blindfold_01_white_F", "G_RegulatorMask_F", "G_Respirator_blue_F",
-    "G_Respirator_white_F", "G_Respirator_yellow_F", "G_Balaclava_TI_blk_F"
-];
-
-_goggles = goggles _unit;
-
-if (_goggles in _gogglesBlacklist) then {
-    removeGoggles _unit;
-};
-
-
 // Find the role of the unit
 _gear = [];
 
@@ -56,13 +41,24 @@ switch _role do {
 
     default {
         systemChat format ["[MF WARNING] Undefined role in the loadout: %1", _role];
+        diag_log format ["[MF WARNING] Undefined role in the loadout: %1", _role];
     };
 };
 
+diag_log format ["[MF LOG] Role found: %1. Applying loadout...", _role];
+
 
 // Apply the selected loadout
-_unit setUnitLoadout _gear;
+if !(count _gear == 0) then {
+    _unit setUnitLoadout _gear;
+} else {
+    systemChat "[MF ERROR] Empty gear array";
+    diag_log "[MF ERROR] Empty gear array";
+};
 
+diag_log "[MF LOG] Loadout applied. Saving...";
 
 // Save the current loadout
-player setVariable ["MF_var_current_loadout", _role, true];
+player setVariable ["MF_var_current_loadout", _role];
+
+diag_log format ["[MF LOG] Loadout saved: %1. Gear script done.", player getVariable "MF_var_current_loadout"];

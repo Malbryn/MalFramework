@@ -1,7 +1,7 @@
 if (hasInterface) then {
     [] spawn {
-        [{CBA_missionTime > MF_var_title_delay}, {
+        [{
             #include "runIntro.sqf"
-        }] call CBA_fnc_waitUntilAndExecute;
+        }, [], MF_var_title_delay] call CBA_fnc_waitAndExecute;
     };
 };
