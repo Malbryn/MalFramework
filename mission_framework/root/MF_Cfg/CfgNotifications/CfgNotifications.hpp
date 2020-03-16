@@ -41,3 +41,14 @@ class IntelAdded {
     priority = 3;
     difficulty[] = {};
 };
+
+class RespawnCalled {
+    title = "Respawn";
+    iconPicture = "\A3\ui_f\data\Map\Markers\Military\flag_CA.paa";
+    iconText = "";
+    description = "The CO has called for reinforcements. Respawning in 5 seconds...";
+    color[] = {0, 0.8, 0, 1};
+    duration = 5;
+    priority = 5;
+    difficulty[] = {};
+};
