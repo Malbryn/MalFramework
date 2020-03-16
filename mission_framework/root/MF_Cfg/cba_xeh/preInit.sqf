@@ -41,5 +41,4 @@ MF_var_snowfall_enabled = false;
 MF_var_tasks = [];
 
 
-// Compiling the AI skills array
 call compile preprocessFileLineNumbers "mission_framework\config\ai_skill\ai_skill.sqf";
