@@ -19,4 +19,4 @@
 
 params ["_unit", ["_check", true]];
 
-_unit setVariable ["MF_var_is_CO", _check, true];
+_unit setVariable ["MF_var_is_CO", _check];

@@ -32,21 +32,6 @@ removeAllWeapons _unit;
 removeAllAssignedItems _unit;
 
 
-// Blacklist the stupid goggles
-_gogglesBlacklist = [
-    "G_AirPurifyingRespirator_02_black_F", "G_AirPurifyingRespirator_02_olive_F",
-    "G_AirPurifyingRespirator_02_sand_F", "G_AirPurifyingRespirator_01_F", "G_Blindfold_01_black_F",
-    "G_Blindfold_01_white_F", "G_RegulatorMask_F", "G_Respirator_blue_F",
-    "G_Respirator_white_F", "G_Respirator_yellow_F", "G_Balaclava_TI_blk_F"
-];
-
-_goggles = goggles _unit;
-
-if (_goggles in _gogglesBlacklist) then {
-    removeGoggles _unit;
-};
-
-
 // Find the role of the unit
 _gear = [];
 
@@ -61,8 +46,12 @@ switch _role do {
 
 
 // Apply the selected loadout
-_unit setUnitLoadout _gear;
+if !(count _gear == 0) then {
+    _unit setUnitLoadout _gear;
+} else {
+    systemChat format ["[MF WARNING] Empty gear array"];
+};
 
 
 // Save the current loadout
-player setVariable ["MF_var_current_loadout", _role, true];
+player setVariable ["MF_var_current_loadout", _role];
