@@ -14,7 +14,7 @@
  * void
  *
  * Example:
- * ["mortarTrigger", 6, 50] spawn MF_fnc_mortarFire
+ * [mortarTrigger, 6, 50] spawn MF_fnc_mortarFire
  *
  */
 

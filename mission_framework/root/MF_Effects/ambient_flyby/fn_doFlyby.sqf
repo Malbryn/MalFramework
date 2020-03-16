@@ -7,7 +7,7 @@
  *
  * Arguments:
  * _this select 0: STRING - Classname of the plane
- * _this select 1: ARRAY - Starting position of the plane (note: 3rd coordinate is the height of the plane)
+ * _this select 1: ARRAY - Starting position of the plane (note: 3rd coordinate is the altitude of the plane)
  * _this select 2: ARRAY - First waypoint position
  * _this select 3: ARRAY - Second waypoint position
  *

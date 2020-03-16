@@ -15,7 +15,7 @@ loadScreen = "mission_framework\config\img\loading_screen.jpg";  // Loading scre
 
 // Respawn settings
 respawn = "BASE";  // Respawn type ("NONE", "BASE")
-respawnButton = 0;  // Enable/disable the respawn button (in the Esc menu)
+respawnButton = 1;  // Enable/disable the respawn button (in the Esc menu)
 respawnDelay = 30;  // Respawn delay in seconds
 respawnVehicleDelay = 60;  // Vehicle respawn delay in seconds
 respawnDialog = 0;  // Displays the respawn dialog ("BASE" respawn only)
@@ -46,7 +46,7 @@ wreckRemovalMaxTime = 900;
 // Tasks
 taskManagement_markers2D = 0;  // Use 2D markers
 taskManagement_markers3D = 0;  // Use 3D markers
-taskManagement_propagate = 1;  // Propagate shared tasks to subordinates
+taskManagement_propagate = 0;  // Propagate shared tasks to subordinates
 
 
 // Debrief config
@@ -71,7 +71,7 @@ class CfgRemoteExec {
 // CBA Pre-Init Eventhandler
 class Extended_PreInit_EventHandlers {
     class MF_PreInit {
-	    init = "'' call compile preprocessFileLineNumbers 'mission_framework\root\MF_Cfg\cba_xeh\preInit.sqf'";
+	    init = "call compile preprocessFileLineNumbers 'mission_framework\root\MF_Cfg\cba_xeh\preInit.sqf'";
     };
 };
 
@@ -79,7 +79,7 @@ class Extended_PreInit_EventHandlers {
 // CBA Post-Init Eventhandler
 class Extended_PostInit_EventHandlers {
     class MF_PostInit {
-	    init = "'' call compile preprocessFileLineNumbers 'mission_framework\root\MF_Cfg\cba_xeh\postInit.sqf'";
+	    init = "call compile preprocessFileLineNumbers 'mission_framework\root\MF_Cfg\cba_xeh\postInit.sqf'";
     };
 };
 
