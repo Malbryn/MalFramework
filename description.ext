@@ -1,3 +1,6 @@
+// Set the UID of the mission maker (to access the admin menu during the mission)
+__EXEC(MISSION_MAKER = "76561198066551781";)  // Malbryn's UID
+
 // Mission parameters
 class Header {
     gameType =  Coop;  // Game type

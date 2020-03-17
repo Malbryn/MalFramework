@@ -16,7 +16,7 @@
  *
  */
 
-if (hasInterface && serverCommandAvailable "#kick") then {
+if (hasInterface && (serverCommandAvailable "#logout" || getPlayerUID player == parsingNamespace getVariable "MISSION_MAKER")) then {
     [{!isNil "MF_var_server_fps"}, {
         [{
             if (MF_var_server_fps < 15 && !isServer) then {

@@ -17,7 +17,7 @@
  *
  */
 
-if (hasInterface && serverCommandAvailable "#kick") then {
+if (hasInterface && (serverCommandAvailable "#logout" || getPlayerUID player == parsingNamespace getVariable "MISSION_MAKER")) then {
     // Put all tasks into an array
     _taskList = player call BIS_fnc_tasksUnit;
 

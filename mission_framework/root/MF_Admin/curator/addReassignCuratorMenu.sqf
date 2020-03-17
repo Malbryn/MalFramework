@@ -16,7 +16,7 @@
  *
  */
 
-if (hasInterface && serverCommandAvailable "#kick") then {
+if (hasInterface && (serverCommandAvailable "#logout" || getPlayerUID player == parsingNamespace getVariable "MISSION_MAKER")) then {
     private _menu = ['Reassign Curator', 'Reassign Curator', '', {
         ["MF_registerCurator", player] call CBA_fnc_serverEvent;
     }, {true}] call ace_interact_menu_fnc_createAction;
