@@ -16,10 +16,10 @@
  *
  */
 
-if (hasInterface && (player getvariable "MF_var_is_CO")) then {
+if (hasInterface && (player getvariable "MF_var_is_CO") && MF_var_wave_respawn_enabled) then {
 
 	// Respawn category
-    private _menu = ['Reinforcements', 'Reinforcements', '\a3\ui_f\data\Map\VehicleIcons\iconParachute_ca.paa', {}, {true}] call ace_interact_menu_fnc_createAction;
+    private _menu = ['Reinforcements', 'Reinforcements', '\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\meet_ca.paa', {}, {true}] call ace_interact_menu_fnc_createAction;
 
     [player, 1, ["ACE_SelfActions"], _menu] call ace_interact_menu_fnc_addActionToObject;
 

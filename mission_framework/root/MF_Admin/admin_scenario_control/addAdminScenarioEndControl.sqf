@@ -16,7 +16,7 @@
  *
  */
 
-if (hasInterface && serverCommandAvailable "#kick") then {
+if (hasInterface && (serverCommandAvailable "#logout" || getPlayerUID player == parsingNamespace getVariable "MISSION_MAKER")) then {
     // Scenario control category
     private _switch = ['Scenario Flow', 'Scenario Flow', '', {}, {true}] call ace_interact_menu_fnc_createAction;
 

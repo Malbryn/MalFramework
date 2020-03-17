@@ -19,7 +19,7 @@
 
 params ["_killed", "_killer"];
 
-if (hasInterface && serverCommandAvailable "#kick") then {
+if (hasInterface && (serverCommandAvailable "#logout" || getPlayerUID player == parsingNamespace getVariable "MISSION_MAKER")) then {
     systemChat format ["[MF WARNING] %1 was killed by %2!", _killed, _killer];
 };
 
