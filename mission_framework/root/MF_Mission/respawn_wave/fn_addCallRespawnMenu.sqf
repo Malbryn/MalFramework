@@ -32,7 +32,7 @@ if (hasInterface && (player getvariable "MF_var_is_CO") && MF_var_wave_respawn_e
 
 			private _count = count _deadPlayers;
 			if (_count == 0) exitWith { [["There are no dead players"], 2, ace_player, 12] call ace_common_fnc_displayTextStructured; };
-			[["Reinforcements:<br/>%1 players", _count], 2, ace_player, 12] call ace_common_fnc_displayTextStructured;
+			[["Reinforcements:<br/>%1 player(s)", _count], 2, ace_player, 12] call ace_common_fnc_displayTextStructured;
 
 			remoteExec ["MF_fnc_callRespawnWave", _deadPlayers];
 
