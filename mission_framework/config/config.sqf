@@ -23,7 +23,7 @@ MF_var_end_ex_marker = "extraction";  // Name of the area marker used for extrac
 MF_var_end_ex_threshold = 50;  // 50% of the players should be inside the exfil marker
 
 // Respawn tickets
-MF_var_respawn_tickets = 3;  // How many times the player can respawn (-1 = disabled)
+MF_var_respawn_tickets = 2;  // How many times the player can respawn (-1 = disabled)
 
 // View distances
 MF_var_view_distance_server = 2500;  // Server view distance (= AI view distance)
@@ -126,5 +126,5 @@ MF_var_supply_drop_plane = "B_T_VTOL_01_vehicle_F";
 // WAVE RESPAWN
 #include "..\root\MF_Mission\respawn_wave\fncInit.sqf"
 MF_var_wave_respawn_enabled = true;
-MF_var_wave_respawn_count = 2;  // Maximum amout of respawn waves
+MF_var_wave_respawn_count = 2;  // Maximum amout of respawn waves (note: MF_var_respawn_tickets <= MF_var_wave_respawn_count)
 [] call MF_fnc_addCallRespawnMenu;

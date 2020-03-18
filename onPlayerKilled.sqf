@@ -35,7 +35,7 @@ if (MF_var_respawn_tickets == 0) then {
 
     ["Initialize", [player, [], false, false, true, false, false, false, false, true]] call BIS_fnc_EGSpectator;
 
-    ["No more respawns remaining", 2, ace_player, 12] call ace_common_fnc_displayTextStructured;
+    ["Warning", ["No more respawns ramaining!"]] call BIS_fnc_showNotification;
 
     cutText  ["", "BLACK IN",  3, true];
     "dynamicBlur" ppEffectAdjust [0];
@@ -71,10 +71,6 @@ if (MF_var_respawn_tickets == 0) then {
     cutText  ["", "BLACK IN",  3, true];
     "dynamicBlur" ppEffectAdjust [0];
     "dynamicBlur" ppEffectCommit 3;
-
-    if (MF_var_respawn_tickets != -1) then {
-        MF_var_respawn_tickets = MF_var_respawn_tickets - 1;
-    };
 };
 
 
@@ -85,6 +81,12 @@ if (player getVariable "MF_var_is_CO" && MF_var_wave_respawn_enabled) then {
     private _target = _partGroup select (_partGroup findIf {alive _x});
 
     [] remoteExec ["MF_fnc_addCallRespawnMenu", _target];
+};
+
+
+// Notify the player if there won@t be any respawn wave left
+if (MF_var_wave_respawn_count == 0) then {
+    ["Warning", ["No more reinforcement wave ramaining!"]] call BIS_fnc_showNotification;
 };
 
 
