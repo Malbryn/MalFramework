@@ -1,4 +1,4 @@
-# MalFramework v1.01
+# MalFramework v1.1
 Welcome to Malbryn's Mission Framework. This framework was made for my Arma 3 scripted missions and it is based on some other Arma 3 mission frameworks. Some scripts were made by other people, they are credited in the script headers as well as in the Credits section. This script library was suited for scripted CO-OP PvE missions.
 
 ## Current Features:
@@ -75,8 +75,14 @@ Welcome to Malbryn's Mission Framework. This framework was made for my Arma 3 sc
  - TFAR
 
 ## Optional mods:
- - ASR AI (pre-set in the CBA settings)
- - CUP Core (Snowfall module)
- - DUI Radar (pre-set in the CBA settings)
- - Suppress (pre-set in the CBA settings)
- - SWU Sounds Pack (pre-set in the CfgSounds)
+ - CUP Core (required by the Snowfall module)
+ - SWU Sounds Pack (custom sounds already defined in CfgSounds)
+
+### These mods have custom settings already defined in the CBA settings:
+ - ASR AI
+ - DUI Radar
+ - IFA3 Liberation
+ - LAMBS Danger FSM
+ - Suppress
+ - VET Unflipping
+ - VCOM AI
