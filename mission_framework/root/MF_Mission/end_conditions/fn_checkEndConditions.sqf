@@ -66,11 +66,31 @@ if (MF_var_end_task_enabled) then {
 
 // Extraction check
 if (MF_var_end_ex_enabled) then {
-    private _count = {
+
+    // Count the rate of the not successful tasks
+    private _taskList = MF_var_tasks;
+
+    private _taskCount = 0;
+    {
+        private _state = _x call BIS_fnc_taskState;
+        if (_state == "CREATED" || _state == "FAILED" || _state == "CANCELED") then {
+            _taskCount = _taskCount + 1;
+        };
+    } forEach _taskList;
+
+    _rate = _taskCount / count _taskList;
+
+    // Count the players inside the extraction zone
+    private _playerCount = {
         _x inArea MF_var_end_ex_marker;
     } count allPlayers;
 
-    if (_count >= (_allPlayers * MF_var_end_ex_threshold * 0.01) && (_allPlayers != 0)) then {
-        ["MissionSuccess", true] call MF_fnc_endMission;
+    // End the mission accordingly
+    if (_playerCount >= (_allPlayers * MF_var_end_ex_threshold * 0.01) && (_allPlayers != 0)) then {
+        if (_rate >= (MF_var_end_task_threshold * 0.01)) then {
+            ["MissionFail", false] call MF_fnc_endMission;
+        } else {
+            ["MissionSuccess", true] call MF_fnc_endMission;
+        };
     };
 };
