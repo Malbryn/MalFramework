@@ -21,6 +21,7 @@ MF_var_end_task_number = 2;  // Number of successfully completed tasks that trig
 MF_var_end_ex_enabled = true;  // Mission end if x% of the platoon reaches the extraction marker on/off
 MF_var_end_ex_marker = "extraction";  // Name of the area marker used for extraction
 MF_var_end_ex_threshold = 50;  // 50% of the players should be inside the exfil marker
+MF_var_end_task_threshold = 66;  // 66% of the tasks should be completed inn order to call it a mission success
 
 // Respawn tickets
 MF_var_respawn_tickets = 2;  // How many times the player can respawn (-1 = disabled)
