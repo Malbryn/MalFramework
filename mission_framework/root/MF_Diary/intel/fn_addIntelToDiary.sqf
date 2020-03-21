@@ -29,6 +29,7 @@ if !(player diarySubjectExists _diaryId) then {
 };
 
 player createDiaryRecord [_diaryId, [_title, _text]];
+player createDiaryRecord [_diaryId, [_title, "--------------------------------"]];
 
 if (name player == _finder) then {
     openMap [true, false];

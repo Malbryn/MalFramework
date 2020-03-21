@@ -22,8 +22,8 @@ MF_var_mission_ended = false;
 waitUntil { CBA_missionTime > 1 };
 
 // Check the tasks array
-if (MF_var_end_task_enabled && (count MF_var_tasks == 0)) then {
-    ["[MF WARNING] Tasks end condition is enabled but the tasks array is empty!"] remoteExec ["systemChat", 0];
+if ((MF_var_end_task_enabled && (count MF_var_tasks == 0)) || (MF_var_end_ex_enabled && (count MF_var_tasks == 0))) then {
+    ["[MF ERROR] The task array is empty. The end conditions will not work properly! Please add your tasks to the tasks array."] remoteExec ["systemChat", 0];
 };
 
 // End mission check loop
