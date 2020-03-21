@@ -73,7 +73,7 @@ if (MF_var_end_ex_enabled) then {
     private _taskCount = 0;
     {
         private _state = _x call BIS_fnc_taskState;
-        if (_state == "CREATED" || _state == "FAILED" || _state == "CANCELED") then {
+        if (_state == "SUCCEEDED") then {
             _taskCount = _taskCount + 1;
         };
     } forEach _taskList;
@@ -88,9 +88,9 @@ if (MF_var_end_ex_enabled) then {
     // End the mission accordingly
     if (_playerCount >= (_allPlayers * MF_var_end_ex_threshold * 0.01) && (_allPlayers != 0)) then {
         if (_rate >= (MF_var_end_task_threshold * 0.01)) then {
-            ["MissionFail", false] call MF_fnc_endMission;
-        } else {
             ["MissionSuccess", true] call MF_fnc_endMission;
+        } else {
+            ["MissionFail", false] call MF_fnc_endMission;
         };
     };
 };

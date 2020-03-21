@@ -4,7 +4,7 @@
  *
  * Description:
  * Registers the task to be monitored by the server.
- * Use this only if MF_var_end_task_enabled == true.
+ * Use this only if MF_var_end_task_enabled == true or MF_var_end_ex_enabled == true.
  * Put this in the init field of the task module.
  *
  * Arguments:
