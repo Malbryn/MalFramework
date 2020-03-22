@@ -59,6 +59,6 @@ if !(count _gear == 0) then {
 diag_log "[MF LOG] Loadout applied. Saving...";
 
 // Save the current loadout
-player setVariable ["MF_var_current_loadout", _role];
+_unit setVariable ["MF_var_current_loadout", _role, true];
 
-diag_log format ["[MF LOG] Loadout saved: %1. Gear script done.", player getVariable "MF_var_current_loadout"];
+diag_log format ["[MF LOG] Loadout saved: %1. Gear script done.", _unit getVariable "MF_var_current_loadout"];
