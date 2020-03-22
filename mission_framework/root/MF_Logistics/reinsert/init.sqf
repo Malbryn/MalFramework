@@ -4,6 +4,7 @@
  *
  * Description:
  * Adds different options to an object ("TP pole") for reinsertion
+ * Also adds the rally point menu to the squad leader
  *
  * Arguments:
  * _this select 0: OBJECT - Object that acts as a TP pole
@@ -17,6 +18,8 @@
  */
 
 if (hasInterface) then {
+    if (isNull tpPole) exitWith { systemChat "[MF ERROR] Teleport pole does not exist!" };
+
     // Option #1 - Paradrop
     if (MF_var_use_halo) then {
         tpPole addAction ["Reinsert - Paradrop", {
@@ -37,4 +40,10 @@ if (hasInterface) then {
             [] spawn MF_fnc_tpToRp;
         }];
     };
+};
+
+
+// Assigning the RP menu to the squad leaders
+if (hasInterface && MF_var_use_rp && ((leader group player) == player)) then {
+    [] call MF_fnc_addRpMenu;
 };

@@ -42,7 +42,9 @@ MF_var_sc_enabled = false;
 MF_var_nd_ending_enabled = false;
 MF_var_snowfall_enabled = false;
 MF_var_wave_respawn_enabled = false;
+MF_var_wave_respawn_count = -1;
 MF_var_tasks = [];
 
 
+// Compile the AI skills
 call compile preprocessFileLineNumbers "mission_framework\config\ai_skill\ai_skill.sqf";
