@@ -1,5 +1,7 @@
 // Set the UID of the mission maker (to access the admin menu during the mission)
-__EXEC(MISSION_MAKER = "76561198066551781";)  // Malbryn's UID
+#define UID "76561198066551781"  // Malbryn's UID
+__EXEC(MISSION_MAKER = UID;)
+
 
 // Mission parameters
 class Header {
@@ -22,7 +24,7 @@ respawnButton = 1;  // Enable/disable the respawn button (in the Esc menu)
 respawnDelay = 999999;  // Respawn delay in seconds (set this to 999999 if MF_var_wave_respawn_enabled == true)
 respawnVehicleDelay = 60;  // Vehicle respawn delay in seconds
 respawnDialog = 0;  // Displays the respawn dialog ("BASE" respawn only)
-respawnOnStart = -1;  // -1 = Don't respawn on start and don't run the respawn script, 0 = Don't respawn on start and run the respawn script, 1 = Respawn on start and run the respawn script
+respawnOnStart = -1;  // https://community.bistudio.com/wiki/Description.ext#respawnOnStart
 //respawnTemplates[] = {};  // Pre-defined respawn templates
 
 
@@ -30,7 +32,7 @@ respawnOnStart = -1;  // -1 = Don't respawn on start and don't run the respawn s
 cba_settings_hasSettingsFile = 1;  // Enable CBA settings file
 disableChannels[] = {0, 2, 4, 5};  // Disable certain comms channels
 disabledAI = 1;  // Enable/disable AI
-enableDebugConsole = 1;  // Enable debug console (0 = disable, 1 = logged in admin or host)
+enableDebugConsole[] = { UID };  // Enable the debug console for the mission maker + logged in admin or host
 enableTargetDebug = 1;  // Target debugging
 
 

@@ -1,9 +1,15 @@
-// Import admin scripts
-#include "mission_framework\root\MF_Admin\fncInit.sqf"
-#include "mission_framework\root\MF_Admin\init.sqf"
+// Don't run these twice on local host
+if (isDedicated) then {
+    // Import admin scripts
+    #include "mission_framework\root\MF_Admin\fncInit.sqf"
+    #include "mission_framework\root\MF_Admin\init.sqf"
 
-// Import the mission framework settings
-#include "mission_framework\config\config.sqf"
+    // Import the mission framework settings
+    #include "mission_framework\config\config.sqf"
+
+    setViewDistance MF_var_view_distance_server;
+    setTimeMultiplier MF_var_time_acceleration;
+};
 
 // Init end mission statistics
 #include "mission_framework\root\MF_Mission\mission_statistics\fncInit.sqf"
@@ -12,9 +18,6 @@ MF_var_stat_ff = ["FRIENDLY FIRE INCIDENTS: "];
 enableSaving [false, false];
 enableEnvironment [false, true];
 enableSentences true;
-
-setViewDistance MF_var_view_distance_server;
-setTimeMultiplier MF_var_time_acceleration;
 
 // Mission end conditions check loop on server
 MF_var_mission_ended = false;
