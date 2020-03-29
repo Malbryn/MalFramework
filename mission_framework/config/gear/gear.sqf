@@ -6,6 +6,16 @@
  *       GEAR_START
  *           [pasteExportedGearHere]
  *       GEAR_END
+ *
+ *
+ * Use selectRandom to randomise stuff. Example:
+ *
+ * case "SL"
+ *     _randomWeapon = selectRandom ["weapon_classname_1", "weapon_classname_2"];
+ *
+ *     GEAR_START
+ *         [[_randomWeapon], ...]
+ *     GEAR_END
  */
 
 case "SL"
