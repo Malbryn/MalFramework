@@ -151,7 +151,7 @@ force force ace_medical_gui_openAfterTreatment = true;
 force force ace_medical_ivFlowRate = 2;
 force force ace_medical_limping = 1;
 force force ace_medical_painCoefficient = 1;
-force force ace_medical_playerDamageThreshold = 3;
+force force ace_medical_playerDamageThreshold = 2;
 force force ace_medical_spontaneousWakeUpChance = 0.5;
 force force ace_medical_spontaneousWakeUpEpinephrineBoost = 30;
 force force ace_medical_statemachine_AIUnconsciousness = true;
@@ -355,6 +355,7 @@ force force diwako_dui_enable_occlusion = true;
 force force diwako_dui_radar_occlusion_fade_time = 10;
 force force diwako_dui_radar_sortType = "fireteam";
 force force diwako_dui_radar_sqlFirst = true;
+force force diwako_dui_enable_compass_dir = 1;
 
 // LAxemann's Suppress
 force force L_Suppress_buildup = 2;

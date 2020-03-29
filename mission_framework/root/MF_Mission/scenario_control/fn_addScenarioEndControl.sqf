@@ -24,28 +24,37 @@ if (hasInterface && (player getVariable "MF_var_is_CO")) then {
 
 
     // Call retreat
-    private _switch = ['Call retreat', 'Call retreat', '', {
+    private _switch = ['Call mission', 'Call mission', '', {
 
         // Put the tasks into an array
         private _taskList = player call BIS_fnc_tasksUnit;
 
-        // Count failed or cancelled tasks
+        // Count the succeeded tasks
         _count = 0;
         {
             private _state = _x call BIS_fnc_taskState;
-            if (_state == "CREATED" || _state == "FAILED" || _state == "CANCELED") then {
+            if (_state == "SUCCEEDED") then {
                 _count = _count + 1;
             };
         } forEach _taskList;
 
-        // Calculate the rate of the failed tasks
+        // Calculate the rate of the successful tasks
         _rate = _count / count _taskList;
 
         // Call the mission end on the server accordingly
-        if (_rate >= (MF_var_success_rate * 0.01)) then {
-            ["RetreatLose", false] remoteExec ["MF_fnc_endMission", 2];
-        } else {
-            ["RetreatWin", true] remoteExec ["MF_fnc_endMission", 2];
+        switch (true) do {
+            case (_rate == 1) : {
+                ["MissionSuccess", true] remoteExec ["MF_fnc_endMission", 2];
+            };
+            case ((MF_var_success_rate * 0.01) <= _rate && _rate < 1) : {
+                ["RetreatWin", true] remoteExec ["MF_fnc_endMission", 2];
+            };
+            case (0 < _rate && _rate < (MF_var_success_rate * 0.01)) : {
+                ["RetreatLose", false] remoteExec ["MF_fnc_endMission", 2];
+            };
+            case (_rate == 0) : {
+                ["MissionFail", false] remoteExec ["MF_fnc_endMission", 2];
+            };
         };
     }, {true}] call ace_interact_menu_fnc_createAction;
 

@@ -5,7 +5,7 @@ __EXEC(MISSION_MAKER = UID;)
 
 // Mission parameters
 class Header {
-    gameType =  Coop;  // Game type
+  gameType =  Coop;  // Game type
 	minPlayers =  1;  // Minimum number of players
 	maxPlayers = 10;  // Maximum number of players
 };
