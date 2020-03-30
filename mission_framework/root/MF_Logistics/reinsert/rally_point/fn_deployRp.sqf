@@ -24,6 +24,12 @@ if (!MF_var_use_rp) exitWith {
 };
 
 
+// Check if the rally point is already deployed
+if !(isNil { (group player) getVariable "RPTent" }) exitWith {
+    ["Warning", ["The RP is already deployed"]] call BIS_fnc_showNotification
+};
+
+
 // Define squad members
 private _unitArray = (units group player);
 _unitArray deleteAt 0;
@@ -47,18 +53,16 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
 
 // Display ACE progress bar
 [12, [], {
-    // Create RP tent and save the coordinates
-    RPTent = createVehicle ["Land_TentA_F", player getPos [3, getDir player], [], 0, "CAN_COLLIDE"];
-    (leader player) setVariable ["rpPos", getPos player, true];
+    // Create RP tent and save the netId so other people can remove it as well
+    private _RPTent = createVehicle ["Land_TentA_F", player getPos [3, getDir player], [], 0, "CAN_COLLIDE"];
+    private _id = netId _RPTent;
+    (group player) setVariable ["RPTent", _id, true];
 
-    // Remove Deploy menu
-    [player, 1, ["ACE_SelfActions", "Rally Point", "Deploy Rally Point"]] call ace_interact_menu_fnc_removeActionFromObject;
-
-    // Create Remove menu
-    _menu = ['Remove Rally Point', 'Remove Rally Point', '', {
-        [] call MF_fnc_removeRp;
-    }, {true}] call ace_interact_menu_fnc_createAction;
-    [player, 1, ["ACE_SelfActions", "Rally Point"], _menu] call ace_interact_menu_fnc_addActionToObject;
+    // Send notification to the squad memebers
+    private _unitArray = (units group player);
+    _unitArray deleteAt 0;
+    ["Info", ["You have deployed the RP"]] call BIS_fnc_showNotification;
+    ["Info", ["Your SL has deployed the RP"]] remoteExec ["BIS_fnc_showNotification", _unitArray];
 }, {
     // Stop the animation if the progress bar was cancelled
     player switchMove "";

@@ -44,6 +44,6 @@ if (hasInterface) then {
 
 
 // Assigning the RP menu to the squad leaders
-if (hasInterface && MF_var_use_rp && ((leader group player) == player)) then {
+if (hasInterface && MF_var_use_rp && (player getVariable "MF_var_is_SL")) then {
     [] call MF_fnc_addRpMenu;
 };
