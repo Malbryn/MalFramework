@@ -119,6 +119,10 @@ MF_var_supply_drop_plane = "B_T_VTOL_01_vehicle_F";
 [] call MF_fnc_addSupplyDropMenu;
 
 
+// TFAR SETUP
+#include "..\root\MF_Player\tfar_setup\init.sqf"
+
+
 // TIME LIMIT CHECK
 #include "..\root\MF_Mission\check_time_limit\fncInit.sqf"
 #include "..\root\MF_Mission\check_time_limit\init.sqf"
