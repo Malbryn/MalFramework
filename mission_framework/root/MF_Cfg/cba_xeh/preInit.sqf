@@ -20,6 +20,7 @@
 // Player functions
 #include "..\..\MF_Player\gear\fncInit.sqf"
 #include "..\..\MF_Player\init_player\fncInit.sqf"
+#include "..\..\MF_Player\tfar_setup\fncInit.sqf"
 
 
 // Compiling those functions that are transferable (i.e. CO dies, next in command can use the support modules) for easier remote execution
