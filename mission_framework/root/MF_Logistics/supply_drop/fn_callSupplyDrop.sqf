@@ -23,13 +23,15 @@ if (!isServer) exitWith {};
 
 params ["_crate", ["_dir", "north"], ["_alt", 500], "_playerPos"];
 
-_type = MF_var_supply_drop_plane;
+private _type = MF_var_supply_drop_plane;
+
+missionNamespace setVariable ["MF_drop_available", false, true];
 
 // Declare some variables
 plane = objNull;
 chute = objNull;
-_startPos = [0, 0, 500];
-_endPos = _playerPos;
+private _startPos = [0, 0, 500];
+private _endPos = _playerPos;
 
 // Calculate the spawning and drop positions
 switch (_dir) do {
@@ -52,7 +54,7 @@ switch (_dir) do {
 };
 
 // Spawn smoke
-_signal = "SmokeShellBlue" createVehicle _playerPos;
+private _signal = "SmokeShellBlue" createVehicle _playerPos;
 
 // Create the plane
 plane = createVehicle [_type, _startPos, [], 0, "FLY"];
@@ -78,7 +80,7 @@ _signal attachTo [_crate, [0, 0, 0.1]];
 
 // Second waypoint, delete plane
 _wp2 = group plane addWaypoint [_startPos, 20];
-_wp2 setWaypointStatements ["true", "{deleteVehicle _x} forEach crew plane; deleteVehicle plane;"];
+_wp2 setWaypointStatements ["true", "{deleteVehicle _x} forEach crew plane; deleteVehicle plane; missionNamespace setVariable ['MF_drop_available', true, true];"];
 _wp2 setWaypointType "MOVE";
 
 sleep 45;
