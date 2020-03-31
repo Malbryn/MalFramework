@@ -53,8 +53,8 @@ MF_var_cover_colour = "Color4_FD_F";  // https://community.bistudio.com/wiki/Arm
 
 
 // GRASS CUTTER
-#include "..\root\MF_Player\grass_cutter\fncInit.sqf"
-#include "..\root\MF_Player\grass_cutter\init.sqf"
+#include "..\root\MF_Misc\grass_cutter\fncInit.sqf"
+#include "..\root\MF_Misc\grass_cutter\init.sqf"
 
 
 // INTEL

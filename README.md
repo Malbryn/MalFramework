@@ -41,6 +41,8 @@ Welcome to Malbryn's Mission Framework. This framework was made for my Arma 3 sc
 ### MF_Misc
  - Map cover
  - Intro text
+ - Grass cutter
+ - Forced weapon safety
 
 ### MF_Mission
  - End condition check
@@ -55,9 +57,7 @@ Welcome to Malbryn's Mission Framework. This framework was made for my Arma 3 sc
 
 ### MF_Player
  - Gear script
- - Grass cutter
  - Assign team colour
- - Force weapon safety on mission start
  - No damage ending
  - TFAR radio channel setup
 
