@@ -12,4 +12,5 @@ enableSaving [false, false];
 enableEnvironment [false, true];
 enableSentences true;
 
-setViewDistance MF_var_view_distance_player;
+[] call MF_fnc_setViewDistance;
+[] spawn MF_fnc_setChannels;

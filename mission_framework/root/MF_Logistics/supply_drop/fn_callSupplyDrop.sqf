@@ -26,6 +26,7 @@ params ["_crate", ["_dir", "north"], ["_alt", 500], "_playerPos"];
 private _type = MF_var_supply_drop_plane;
 
 missionNamespace setVariable ["MF_drop_available", false, true];
+_crate setVariable ["MF_sd_available", false, true];
 
 // Declare some variables
 plane = objNull;

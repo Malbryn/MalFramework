@@ -11,18 +11,19 @@
  * _this select 2: INTEGER - Unit traits (Optional):
  *                             0 - Default, no special ability
  *                             1 - Squad level leadership (SL, FTL), can deploy Rally Poins
- *                             2 - Platoon level leadership (PLTHQ, PLTSGT), can call respawns, resupply and retreat
+ *                             2 - Platoon level leadership (PLTHQ, PLTSGT), can call respawns, resupply and tactical withdrawal
  * _this select 4: STRING - Assigned fireteam colour (Optional, default: white (= "MAIN"))
+ * _this select 5: INTEGER - Unit's view distance (Optional, default: -1 (default value defined in config.sqf))
  *
  * Return Value:
  * void
  *
  * Example:
- * [this, "PLTHQ", 2, "YELLOW"] call MF_fnc_initPlayer
+ * [this, "PLTHQ", 2, "YELLOW", 2500] call MF_fnc_initPlayer
  *
  */
 
-params ["_unit", "_role", ["_traits", 0], ["_colour", "MAIN"]];
+params ["_unit", "_role", ["_traits", 0], ["_colour", "MAIN"], ["_viewDistance", -1]];
 
 diag_log format ["[MF LOG] Initialising unit: %1 (Local: %2)", _unit, local _unit];
 
@@ -40,6 +41,10 @@ if !(local _unit) exitWith {};
 
 // Assign team colour
 _unit assignTeam _colour;
+
+
+// Assign view distance
+_unit setVariable ["MF_var_vd", _viewDistance, true];
 
 
 // ACE player variables

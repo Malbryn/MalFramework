@@ -7,8 +7,8 @@ if (isDedicated) then {
     // Import the mission framework settings
     #include "mission_framework\config\config.sqf"
 
-    setViewDistance MF_var_view_distance_server;
     setTimeMultiplier MF_var_time_acceleration;
+    [] call MF_fnc_setViewDistance;
 };
 
 // Init end mission statistics

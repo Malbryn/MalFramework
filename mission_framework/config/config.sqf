@@ -27,8 +27,8 @@ MF_var_end_task_threshold = 66;  // 66% of the tasks should be completed inn ord
 MF_var_respawn_tickets = 2;  // How many times the player can respawn (-1 = disabled)
 
 // View distances
-MF_var_view_distance_server = 2500;  // Server view distance (= AI view distance)
-MF_var_view_distance_player = 2500;  // Player view distance
+MF_var_view_distance_server = 2000;  // Server view distance (= AI view distance)
+MF_var_view_distance_player = 2000;  // Player view distance
 
 // Time acceleration
 MF_var_time_acceleration = 1;  // Time acceleration between 0.1 - 120
@@ -74,8 +74,8 @@ MF_var_title_delay = 20;
 
 
 // NO DAMAGE ENDING
-#include "..\root\MF_Player\no_damage_ending\fncInit.sqf"
-#include "..\root\MF_Player\no_damage_ending\init.sqf"
+#include "..\root\MF_Misc\no_damage_ending\fncInit.sqf"
+#include "..\root\MF_Misc\no_damage_ending\init.sqf"
 
 
 // JIP TELEPORT
@@ -94,12 +94,12 @@ MF_var_use_rp = true;  // Squad Rally Point
 
 
 // SAFETY
-#include "..\root\MF_Player\safety\init.sqf"
+#include "..\root\MF_Misc\safety\init.sqf"
 
 
 // SCENARIO CONTROL
 MF_var_sc_enabled = true;
-MF_var_success_rate = 50;  // Rate of the completed tasks to call it a success when Retreat is called by the CO (50 = 50% completed)
+MF_var_success_rate = 50;  // Rate of the completed tasks to call it a success when Tactical withdrawal is called by the CO (50 = 50% completed)
 [] call MF_fnc_addScenarioEndControl;
 
 
@@ -117,10 +117,6 @@ MF_var_supply_drop_crates = [
 ];
 MF_var_supply_drop_plane = "B_T_VTOL_01_vehicle_F";
 [] call MF_fnc_addSupplyDropMenu;
-
-
-// TFAR SETUP
-#include "..\root\MF_Player\tfar_setup\init.sqf"
 
 
 // TIME LIMIT CHECK

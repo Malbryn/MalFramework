@@ -12,7 +12,7 @@
  * void
  *
  * Example:
- * [] spawm MF_fnc_callRespawnWave
+ * [] spawn MF_fnc_callRespawnWave
  *
  */
 

@@ -3,7 +3,7 @@
  * Malbryn
  *
  * Description:
- * Creates ACE self-interaction menu for the CO to be able to call retreat and end the mission
+ * Creates ACE self-interaction menu for the CO to be able to call tactical withdrawal and end the mission
  *
  * Arguments:
  * -
@@ -18,13 +18,13 @@
 
 if (hasInterface && (player getVariable "MF_var_is_CO")) then {
     // Scenario control category
-    private _switch = ['Scenario flow', 'Scenario flow', '\a3\ui_f\data\Map\Diary\Icons\taskSucceeded_ca.paa', {}, {true}] call ace_interact_menu_fnc_createAction;
+    private _switch = ['End scenario', 'End scenario', '\a3\ui_f\data\Map\Diary\Icons\taskSucceeded_ca.paa', {}, {true}] call ace_interact_menu_fnc_createAction;
 
     [player, 1, ["ACE_SelfActions"], _switch] call ace_interact_menu_fnc_addActionToObject;
 
 
-    // Call retreat
-    private _switch = ['Call mission', 'Call mission', '', {
+    // Call tactical withdrawal
+    private _switch = ['Tactical withdrawal', 'Tactical withdrawal', '', {
 
         // Put the tasks into an array
         private _taskList = player call BIS_fnc_tasksUnit;
@@ -47,10 +47,10 @@ if (hasInterface && (player getVariable "MF_var_is_CO")) then {
                 ["MissionSuccess", true] remoteExec ["MF_fnc_endMission", 2];
             };
             case ((MF_var_success_rate * 0.01) <= _rate && _rate < 1) : {
-                ["RetreatWin", true] remoteExec ["MF_fnc_endMission", 2];
+                ["WithdrawalWin", true] remoteExec ["MF_fnc_endMission", 2];
             };
             case (0 < _rate && _rate < (MF_var_success_rate * 0.01)) : {
-                ["RetreatLose", false] remoteExec ["MF_fnc_endMission", 2];
+                ["WithdrawalLose", false] remoteExec ["MF_fnc_endMission", 2];
             };
             case (_rate == 0) : {
                 ["MissionFail", false] remoteExec ["MF_fnc_endMission", 2];
@@ -58,5 +58,5 @@ if (hasInterface && (player getVariable "MF_var_is_CO")) then {
         };
     }, {true}] call ace_interact_menu_fnc_createAction;
 
-    [player, 1, ["ACE_SelfActions", "Scenario flow"], _switch] call ace_interact_menu_fnc_addActionToObject;
+    [player, 1, ["ACE_SelfActions", "End scenario"], _switch] call ace_interact_menu_fnc_addActionToObject;
 };
