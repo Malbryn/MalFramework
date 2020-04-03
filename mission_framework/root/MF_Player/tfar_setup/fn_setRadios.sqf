@@ -35,8 +35,13 @@ params ["_unit", ["_srCh", -1], ["_lrCh", -1]];
 if !(local _unit) exitWith {};
 
 // Convert the channel number to an array pointer
-_srCh = _srCh - 1;
-_lrCh = _lrCh - 1;
+if (_srCh != -1) then {
+	_srCh = _srCh - 1;
+};
+
+if (_lrCh != -1) then {
+	_lrCh = _lrCh - 1;
+};
 
 private _channels = [_srCh, _lrCh];
-_unit setVariable ["MF_radio_channels", _channels];
+_unit setVariable ["MF_var_radio_channels", _channels, true];

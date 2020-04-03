@@ -48,19 +48,19 @@ class MissionTerminated {
     pictureColor[] = {0.9, 0, 0, 1};
 };
 
-class RetreatWin {
+class WithdrawalWin {
     title = "Minor Success";
-    subtitle = "Retreat was called by the CO";
-    description = "The CO called retreat ending the mission earlier. Consider this a minor success.";
+    subtitle = "Tactical withdrawal was called by the CO";
+    description = "The CO called tactical withdrawal ending the mission earlier. Consider this a minor success.";
     pictureBackground = "";
     picture = "mil_flag";
     pictureColor[] = {0, 0.8, 0, 1};
 };
 
-class RetreatLose {
+class WithdrawalLose {
     title = "Minor Defeat";
-    subtitle = "Retreat was called by the CO";
-    description = "The CO called retreat ending the mission earlier. Consider this a minor defeat.";
+    subtitle = "Tactical withdrawal was called by the CO";
+    description = "The CO called tactical withdrawal ending the mission earlier. Consider this a minor defeat.";
     pictureBackground = "";
     picture = "mil_flag";
     pictureColor[] = {0.9, 0, 0, 1};

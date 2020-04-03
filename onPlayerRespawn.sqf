@@ -22,6 +22,8 @@ cutText  ["", "BLACK IN", 5, true];
 private _loadout = player getVariable "MF_var_current_loadout";
 [player, _loadout] call MF_fnc_setGear;
 
+// Set the radios
+[] spawn MF_fnc_setChannels;
 
 // Remaining respawn tickets
 if (MF_var_respawn_tickets == -1) exitWith {};

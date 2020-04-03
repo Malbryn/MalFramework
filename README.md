@@ -1,5 +1,10 @@
-# MalFramework v1.03
-Welcome to Malbryn's Mission Framework. This framework was made for my Arma 3 scripted missions and it is based on some other Arma 3 mission frameworks. Some scripts were made by other people, they are credited in the script headers as well as in the Credits section. This script library was suited for scripted CO-OP PvE missions.
+<p align="center">
+    <img src="https://i.imgur.com/Lq5Do49.png">
+    <a href="https://github.com/Malbryn/MalFramework/releases/tag/v1.02">
+        <img src="https://img.shields.io/badge/version-1.03-brightgreen" alt="MalFramework Version">
+    </a>
+
+Welcome to **Malbryn's Mission Framework**. This framework was made for my Arma 3 scripted missions and it is based on some other Arma 3 mission frameworks. Some scripts were made by other people, they are credited in the script headers as well as in the Credits section. This script library was suited for scripted CO-OP PvE missions.
 
 ## Current Features:
 ### MF_Admin
@@ -43,6 +48,7 @@ Welcome to Malbryn's Mission Framework. This framework was made for my Arma 3 sc
  - Intro text
  - Grass cutter
  - Forced weapon safety
+ - No damage ending
 
 ### MF_Mission
  - End condition check
@@ -58,7 +64,6 @@ Welcome to Malbryn's Mission Framework. This framework was made for my Arma 3 sc
 ### MF_Player
  - Gear script
  - Assign team colour
- - No damage ending
  - TFAR radio channel setup
 
 ### Other features

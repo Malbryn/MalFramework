@@ -47,13 +47,14 @@ if (MF_var_respawn_tickets == 0 ||  MF_var_wave_respawn_count == 0) then {
     "dynamicBlur" ppEffectCommit 3;
 
     // Transfer SL modules to the next player in command (Squad Rally Point)
-    if (player == leader group player && MF_var_use_rp) then {
+    if (player getVariable "MF_var_is_SL" && MF_var_use_rp) then {
         private _partGroup = units group player;
         private _target = objNull;
         _partGroup = _partGroup - [(leader group player)];
         _target = _partGroup select (_partGroup findIf {alive _x});
 
-        if !(_target getVariable "MF_var_is_CO") then {
+        if !(_target getVariable "MF_var_is_SL" && isNull _target) then {
+            _target setVariable ["MF_var_is_SL", true, true];
             [] remoteExec ["MF_fnc_addRpMenu", _target];
         };
     };
@@ -65,7 +66,8 @@ if (MF_var_respawn_tickets == 0 ||  MF_var_wave_respawn_count == 0) then {
         _partGroup = _partGroup - [(leader group player)];
         _target = _partGroup select (_partGroup findIf {alive _x});
 
-        if !(_target getVariable "MF_var_is_CO") then {
+        if !(_target getVariable "MF_var_is_CO" && isNull _target) then {
+            _target setVariable ["MF_var_is_CO", true, true];
             [] remoteExec ["MF_fnc_addSupplyDropMenu", _target];
         };
     };
@@ -76,7 +78,8 @@ if (MF_var_respawn_tickets == 0 ||  MF_var_wave_respawn_count == 0) then {
         _partGroup = _partGroup - [(leader group player)];
         _target = _partGroup select (_partGroup findIf {alive _x});
 
-        if !(_target getVariable "MF_var_is_CO") then {
+        if !(_target getVariable "MF_var_is_CO" && isNull _target) then {
+            _target setVariable ["MF_var_is_CO", true, true];
             [] remoteExec ["MF_fnc_addScenarioEndControl", _target];
         };
     };
@@ -99,7 +102,8 @@ if (player getVariable "MF_var_is_CO" && MF_var_wave_respawn_enabled) then {
     _partGroup = _partGroup - [(leader group player)];
     _target = _partGroup select (_partGroup findIf {alive _x});
 
-    if !(_target getVariable "MF_var_is_CO") then {
+    if !(_target getVariable "MF_var_is_CO" && isNull _target) then {
+        _target setVariable ["MF_var_is_CO", true, true];
         [] remoteExec ["MF_fnc_addCallRespawnMenu", _target];
     };
 };

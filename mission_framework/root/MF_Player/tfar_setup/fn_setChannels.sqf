@@ -12,13 +12,16 @@
  * void
  *
  * Example:
- * [] execVM "mission_framework\root\MF_Player\tfar_setup\init.sqf"
+ * [] spawn MF_fnc_setChannels
  *
  */
 
 if (hasInterface) then {
 	[{[] call TFAR_fnc_haveSWRadio}, {
-		private _channels = player getVariable ["MF_radio_channels", []];
+		private _channels = player getVariable ["MF_var_radio_channels", []];
+
+		if (count _channels == 0) exitWith {};
+
 		private _srCh = _channels select 0;
 		private _lrCh = _channels select 1;
 

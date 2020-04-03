@@ -37,6 +37,7 @@ if (hasInterface && (player getvariable "MF_var_is_CO") && MF_var_wave_respawn_e
 			remoteExec ["MF_fnc_callRespawnWave", _deadPlayers];
 
 			MF_var_wave_respawn_count = MF_var_wave_respawn_count - 1;
+			publicVariable "MF_var_wave_respawn_count";
 		} else {
 			["Warning", ["No more reinforcement wave ramaining!"]] call BIS_fnc_showNotification;
 		};
