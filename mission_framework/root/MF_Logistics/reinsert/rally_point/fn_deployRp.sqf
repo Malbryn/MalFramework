@@ -32,7 +32,7 @@ if !(isNil { (group player) getVariable "RPTent" }) exitWith {
 
 // Define squad members
 private _unitArray = (units group player);
-_unitArray deleteAt 0;
+_unitArray deleteAt 0; //ISSUE HERE 
 
 
 // Check if there's any squad member nearby

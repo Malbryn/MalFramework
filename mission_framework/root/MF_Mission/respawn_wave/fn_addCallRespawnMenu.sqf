@@ -16,7 +16,7 @@
  *
  */
 
-if (hasInterface && (player getvariable "MF_var_is_CO") && MF_var_wave_respawn_enabled) then {
+if (hasInterface && player getvariable "MF_var_is_CO" && MF_var_wave_respawn_enabled) then {
 
 	// Respawn category
     private _menu = ['Reinforcements', 'Reinforcements', '\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\meet_ca.paa', {}, {true}] call ace_interact_menu_fnc_createAction;
@@ -29,8 +29,19 @@ if (hasInterface && (player getvariable "MF_var_is_CO") && MF_var_wave_respawn_e
 	_menu = ['Call reinforcements', 'Call reinforcements', '', {
 		if (MF_var_wave_respawn_count > 0) then {
 			private _deadPlayers = (allPlayers select {!alive _x});
+			private _count = 0;
 
-			private _count = count _deadPlayers;
+			// Check if the player has respawn tickets left
+			if (player getVariable "MF_tickets" != -1) then { // Respawn tickets are enabled - count players with remaining tickets only
+				{
+					if (_x getVariable "MF_tickets" > 0) then {
+						_count = _count + 1;
+					};
+				} forEach _deadPlayers;
+			} else { // Respawn tickets are disabled - count every dead player
+				_count = count _deadPlayers;
+			};
+
 			if (_count == 0) exitWith { [["There are no dead players"], 2, ace_player, 12] call ace_common_fnc_displayTextStructured; };
 			[["Reinforcements:<br/>%1 player(s)", _count], 2, ace_player, 12] call ace_common_fnc_displayTextStructured;
 

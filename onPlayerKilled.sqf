@@ -28,13 +28,13 @@ uiSleep 5;
 
 
 // Init the spectator mode along with some other stuff
-if (MF_var_respawn_tickets == 0 ||  MF_var_wave_respawn_count == 0) then {
+if (player getVariable "MF_tickets" == 0 ||  MF_var_wave_respawn_count == 0) then {
 
     setPlayerRespawnTime 999999;
 
     ["Initialize", [player, [], false, true, true, false, true, false, false, true]] call BIS_fnc_EGSpectator;
 
-    if (MF_var_respawn_tickets == 0) then {
+    if (player getVariable "MF_tickets" == 0) then {
         ["Warning", ["You have no more respawn tickets!"]] call BIS_fnc_showNotification;
     };
 
@@ -99,7 +99,7 @@ if (MF_var_respawn_tickets == 0 ||  MF_var_wave_respawn_count == 0) then {
 if (player getVariable "MF_var_is_CO" && MF_var_wave_respawn_enabled) then {
     private _partGroup = units group player;
     private _target = objNull;
-    _partGroup = _partGroup - [(leader group player)];
+    _partGroup = _partGroup - [player]; //ISSUE WHEN ACE MEDICAL DEATH
     _target = _partGroup select (_partGroup findIf {alive _x});
 
     if !(_target getVariable "MF_var_is_CO" && isNull _target) then {

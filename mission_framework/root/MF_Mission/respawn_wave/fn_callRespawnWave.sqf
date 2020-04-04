@@ -17,7 +17,7 @@
  */
 
 // Check if the respawn tickets are enabled
-if (MF_var_respawn_tickets != 0) then {
+if (player getVariable "MF_tickets" != 0) then {
 
     setPlayerRespawnTime 6;
 
