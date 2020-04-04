@@ -57,7 +57,7 @@ if (player getVariable "MF_tickets" == 0 ||  MF_var_wave_respawn_count == 0) the
 
         _target = _partGroup select (_partGroup findIf {alive _x});
 
-        if !(_target getVariable "MF_var_is_SL" && isNull _target) then {
+        if !(_target getVariable "MF_var_is_SL") then {
             _target setVariable ["MF_var_is_SL", true, true];
             [] remoteExec ["MF_fnc_addRpMenu", _target];
             ["Info", ["You can now deploy squad rally point"]] remoteExec ["BIS_fnc_showNotification", _target];
@@ -75,7 +75,7 @@ if (player getVariable "MF_tickets" == 0 ||  MF_var_wave_respawn_count == 0) the
 
         _target = _partGroup select (_partGroup findIf {alive _x});
 
-        if !(_target getVariable "MF_var_is_CO" && isNull _target) then {
+        if !(_target getVariable "MF_var_is_CO") then {
             _target setVariable ["MF_var_is_CO", true, true];
             [] remoteExec ["MF_fnc_addSupplyDropMenu", _target];
             ["Info", ["You can now call in supply drops"]] remoteExec ["BIS_fnc_showNotification", _target];
@@ -92,7 +92,7 @@ if (player getVariable "MF_tickets" == 0 ||  MF_var_wave_respawn_count == 0) the
 
         _target = _partGroup select (_partGroup findIf {alive _x});
 
-        if !(_target getVariable "MF_var_is_CO" && isNull _target) then {
+        if !(_target getVariable "MF_var_is_CO") then {
             _target setVariable ["MF_var_is_CO", true, true];
             [] remoteExec ["MF_fnc_addScenarioEndControl", _target];
             ["Info", ["You can now cann tactical withdrawal"]] remoteExec ["BIS_fnc_showNotification", _target];
@@ -121,7 +121,7 @@ if (player getVariable "MF_var_is_CO" && MF_var_wave_respawn_enabled) then {
 
     _target = _partGroup select (_partGroup findIf {alive _x});
 
-    if !(_target getVariable "MF_var_is_CO" && isNull _target) then {
+    if !(_target getVariable "MF_var_is_CO") then {
         _target setVariable ["MF_var_is_CO", true, true];
         [] remoteExec ["MF_fnc_addCallRespawnMenu", _target];
         ["Info", ["You can now call in reinforcements"]] remoteExec ["BIS_fnc_showNotification", _target];
