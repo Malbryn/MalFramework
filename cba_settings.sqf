@@ -346,6 +346,7 @@ force force asr_ai3_skills_setskills = true;
 force force asr_ai3_skills_teamsuperai = true;
 */
 
+/*
 // DUI - Squad Radar - Indicators
 force force diwako_dui_indicators_range = 20;
 
@@ -356,7 +357,10 @@ force force diwako_dui_radar_occlusion_fade_time = 10;
 force force diwako_dui_radar_sortType = "fireteam";
 force force diwako_dui_radar_sqlFirst = true;
 force force diwako_dui_enable_compass_dir = 1;
+*/
 
+
+/*
 // LAxemann's Suppress
 force force L_Suppress_buildup = 2;
 force force L_Suppress_enabled = true;
@@ -366,6 +370,8 @@ force force L_Suppress_halting = true;
 force force L_Suppress_intensity = 0.5;
 force force L_Suppress_playerSwabEnabled = false;
 force force L_Suppress_recovery = 2;
+*/
+
 
 // TFAR - Global settings
 force force TFAR_AICanHearPlayer = false;
@@ -417,6 +423,8 @@ force force tfar_terrain_interception_coefficient = 7;
 force force TFAR_voiceCone = true;
 force force TFAR_ShowDiaryRecord = false;
 
+
+/*
 // IFA3 Liberation
 force force ifa3_plane_Script_cba_eng = true;
 force force ifa3_plane_Script_cba_fuel = true;
@@ -437,7 +445,10 @@ force force ifa3lib_tank_cba_engine = true;
 force force ifa3lib_tank_cba_fuel = true;
 force force ifa3lib_tank_cba_radio = false;
 force force ifa3lib_tank_cba_trans = true;
+*/
 
+
+/*
 // LAMBS Danger
 force force lambs_danger_autoAddArtillery = false;
 force force lambs_danger_CQB_formations_COLUMN = false;
@@ -472,10 +483,15 @@ force force lambs_danger_radio_shout = 50;
 force force lambs_danger_radio_WEST = 500;
 force force lambs_danger_RenderExpectedDestination = false;
 
+
+
 // LAMBS Danger Eventhandlers
 force force lambs_eventhandlers_ExplosionEventHandlerEnabled = true;
 force force lambs_eventhandlers_ExplosionReactionTime = 9;
+*/
 
+
+/*
 // VET_Unflipping
 force force vet_unflipping_require_serviceVehicle = false;
 force force vet_unflipping_require_toolkit = false;
@@ -483,7 +499,10 @@ force force vet_unflipping_time = 8;
 force force vet_unflipping_unit_man_limit = 3;
 force force vet_unflipping_unit_mass_limit = 3000;
 force force vet_unflipping_vehicle_mass_limit = 100000;
+*/
 
+
+/*
 // VCOM SETTINGS
 force force VCM_ActivateAI = true;
 force force VCM_ADVANCEDMOVEMENT = true;
@@ -514,3 +533,4 @@ force force VCM_TURRETUNLOAD = false;
 force force VCM_USECBASETTINGS = true;
 force force VCM_WARNDELAY = 30;
 force force VCM_WARNDIST = 500;
+*/
