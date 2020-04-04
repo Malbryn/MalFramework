@@ -26,8 +26,9 @@ private _loadout = player getVariable "MF_var_current_loadout";
 [] spawn MF_fnc_setChannels;
 
 // Remaining respawn tickets
-if (MF_var_respawn_tickets == -1) exitWith {};
+if (player getVariable "MF_tickets" == -1) exitWith {};
 
-MF_var_respawn_tickets = MF_var_respawn_tickets - 1;
+private _amount = (player getVariable "MF_tickets") - 1;
+[player, _amount] call MF_fnc_setRespawnTickets;
 
-[format ["Respawns available:<br/>%1", MF_var_respawn_tickets], 2, ace_player, 12] call ace_common_fnc_displayTextStructured;
+[format ["Respawns available:<br/>%1", _amount], 2, ace_player, 12] call ace_common_fnc_displayTextStructured;

@@ -22,6 +22,7 @@
 #include "..\..\MF_Player\init_player\fncInit.sqf"
 #include "..\..\MF_Player\tfar_setup\fncInit.sqf"
 #include "..\..\MF_Player\view_distance\fncInit.sqf"
+#include "..\..\MF_Player\respawn_tickets\fncInit.sqf"
 
 
 // Compiling those functions that are transferable (i.e. CO dies, next in command can use the support modules) for easier remote execution

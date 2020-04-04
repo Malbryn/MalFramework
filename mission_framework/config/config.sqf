@@ -126,6 +126,6 @@ MF_var_supply_drop_plane = "B_T_VTOL_01_vehicle_F";
 
 // WAVE RESPAWN
 #include "..\root\MF_Mission\respawn_wave\fncInit.sqf"
-MF_var_wave_respawn_enabled = false;
+MF_var_wave_respawn_enabled = true;
 MF_var_wave_respawn_count = 2;  // Maximum amout of respawn waves (note: MF_var_respawn_tickets <= MF_var_wave_respawn_count)
 [] call MF_fnc_addCallRespawnMenu;

@@ -21,7 +21,7 @@ loadScreen = "mission_framework\config\img\loading_screen.jpg";  // Loading scre
 // Respawn settings
 respawn = "BASE";  // Respawn type ("NONE", "BASE")
 respawnButton = 1;  // Enable/disable the respawn button (in the Esc menu)
-respawnDelay = 30;  // Respawn delay in seconds (set this to 999999 if MF_var_wave_respawn_enabled == true)
+respawnDelay = 999999;  // Respawn delay in seconds (set this to 999999 if MF_var_wave_respawn_enabled == true)
 respawnVehicleDelay = 60;  // Vehicle respawn delay in seconds
 respawnDialog = 0;  // Displays the respawn dialog ("BASE" respawn only)
 respawnOnStart = -1;  // https://community.bistudio.com/wiki/Description.ext#respawnOnStart
