@@ -34,14 +34,16 @@ if (hasInterface) then {
         [] spawn {
             private _target = [] call MF_fnc_chooseTarget;
 
+            /*
             if (isNull _target) then {
                 systemChat ["[MF ERROR] Target object does not exist."];
             };
+            */
 
             private _vicSpot = [_target] call MF_fnc_checkEmptySeats;
 
             // Check the distance from the squad
-            if ((([] call cba_fnc_players) - [player]) findif {_x distance2D player < 100} != -1) exitWith {
+            if ((([] call cba_fnc_players) - [player]) findif {_x distance2D player < 50} != -1) exitWith {
                 ["Warning", ["JIP TP aborted. You're too close to one of your squad members!"]] call BIS_fnc_showNotification;
             };
 
