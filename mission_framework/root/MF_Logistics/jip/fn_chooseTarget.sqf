@@ -26,8 +26,12 @@ if (player != leader group player && {alive leader group player}) then {
 
 // If player is the leader or the leader is dead then pick the next best one
 if (player == leader group player || {!alive leader group player}) then {
-    _partGroup = _partGroup - [(leader group player)];
-    _target = _partGroup select (_partGroup findIf {alive _x});
+    _partGroup = _partGroup - [player];
+
+    // Check if part group is empty
+    if !(count _partGroup == 0) then {
+        _target = _partGroup select (_partGroup findIf {alive _x});
+    };
 };
 
 //Return
