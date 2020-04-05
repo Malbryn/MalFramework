@@ -4,6 +4,7 @@
 // AI functions
 #include "..\..\MF_AI\ai_scripts\fncInit.sqf"
 #include "..\..\MF_AI\set_ai_skill\fncInit.sqf"
+#include "..\..\MF_AI\vcom\fncInit.sqf"
 
 // Diary functions
 #include "..\..\MF_Diary\orbat\fncInit.sqf"

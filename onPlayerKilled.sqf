@@ -1,7 +1,3 @@
-// Put the player into the spectator voice channel
-[player, true] call TFAR_fnc_forceSpectator;
-
-
 // Log if friendly fire happened
 private _killer = player getVariable ["ace_medical_lastDamageSource", objNull];
 private _nameKiller = name _killer;
