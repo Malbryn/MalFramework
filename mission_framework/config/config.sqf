@@ -124,6 +124,10 @@ MF_var_supply_drop_plane = "B_T_VTOL_01_vehicle_F";
 #include "..\root\MF_Mission\check_time_limit\init.sqf"
 
 
+// VCOM AI
+#include "..\root\MF_AI\vcom\init.sqf"
+
+
 // WAVE RESPAWN
 #include "..\root\MF_Mission\respawn_wave\fncInit.sqf"
 MF_var_wave_respawn_enabled = true;

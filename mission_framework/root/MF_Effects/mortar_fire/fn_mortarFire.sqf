@@ -7,8 +7,8 @@
  *
  * Arguments:
  * _this select 0: STRING - Name of the trigger
- * _this select 1: NUMBER - Number of the shells dropped
- * _this select 2: NUMBER - Safe distance from the player
+ * _this select 1: SCALAR - Number of the shells dropped
+ * _this select 2: SCALAR - Safe distance from the player
  *
  * Return Value:
  * void

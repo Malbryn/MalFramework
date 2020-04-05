@@ -7,7 +7,7 @@
  *
  * Arguments:
  * _this select 0: OBJECT - The unit
- * _this select 1: INTEGER - Unit traits (Optional):
+ * _this select 1: SCALAR - Unit traits (Optional):
  *                             0 - Default, no special ability
  *                             1 - Squad level leadership (SL, FTL), can deploy Rally Poins
  *                             2 - Platoon level leadership (PLTHQ, PLTSGT), can call respawns, resupply and tactical withdrawal

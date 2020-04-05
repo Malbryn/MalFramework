@@ -7,7 +7,7 @@
  *
  * Arguments:
  * _this select 0: OBJECT - Unit (Optional, default: player)
- * _this select 1: NUMBER - Number of respawn tickets (Optional, default: MF_var_respawn_tickets)
+ * _this select 1: SCALAR - Number of respawn tickets (Optional, default: MF_var_respawn_tickets)
  *
  * Return Value:
  * void
