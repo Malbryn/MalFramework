@@ -23,7 +23,6 @@ If something is broken, contact **Malbryn**.
 ### MF_AI
  - AI task scripts (Creep, Hunt, Rush)
  - Global AI skill settings
- - VCOM AI script version
 
 ### MF_Cfg
  - Custom end mission stats
@@ -71,12 +70,12 @@ If something is broken, contact **Malbryn**.
  - Gear script
  - Assign team colour
  - TFAR radio channel setup
- - View distance control
 
 ### Other features
  - Briefing & debriefing templates
  - Mission time limit
  - Respawn tickets
+ - View distance control
  - Time accelaration control
  - Custom debriefing screens
  - Placeholder loading screen
@@ -88,7 +87,7 @@ If something is broken, contact **Malbryn**.
 
 ## Optional mods:
  - CUP Core (required by the Snowfall module)
- - SWU Sounds Pack (some custom sounds already defined in CfgSounds)
+ - SWU Sounds Pack (custom sounds already defined in CfgSounds)
 
 ### These mods have custom settings already defined in the CBA settings:
  - ASR AI
@@ -97,4 +96,4 @@ If something is broken, contact **Malbryn**.
  - LAMBS Danger FSM
  - Suppress
  - VET Unflipping
- - VCOM AI (script version included in the framework)
+ - VCOM AI
