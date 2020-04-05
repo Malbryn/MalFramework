@@ -19,8 +19,8 @@
  *
  * Arguments:
  * _this select 0: OBJECT - Player unit
- * _this select 1: INTEGER - Short range radio channel (between 1 and 9) (Optional, default: -1)
- * _this select 2: INTEGER - Long range radio channel (between 1 and 9) (Optional, default: -1)
+ * _this select 1: SCALAR - Short range radio channel (between 1 and 9) (Optional, default: -1)
+ * _this select 2: SCALAR - Long range radio channel (between 1 and 9) (Optional, default: -1)
  *
  * Return Value:
  * void
