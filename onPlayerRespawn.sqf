@@ -9,8 +9,14 @@ cutText  ["", "BLACK IN", 5, true];
 "dynamicBlur" ppEffectAdjust [0.0];
 "dynamicBlur" ppEffectCommit 3;
 
+
 // Close the spectator mode
 ["Terminate"] call BIS_fnc_EGSpectator;
+
+
+// Exit the spectator voice channel
+[player, false] call TFAR_fnc_forceSpectator;
+
 
 // Load the player's loadout
 private _loadout = player getVariable "MF_var_current_loadout";
