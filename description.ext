@@ -1,4 +1,4 @@
-// Set the UID of the mission maker (to access the admin menu during the mission)
+// Set the UID of the mission maker (to access the admin menu and debug console during the mission)
 #define UID "76561198066551781"  // Malbryn's UID
 __EXEC(MISSION_MAKER = UID;)
 
@@ -12,7 +12,6 @@ class Header {
 
 
 // Loading screen settings
-overviewText = "mission_description";  // Description of the mission on the slotting screen
 onLoadName = "operation_name";  // Name of the operation
 onLoadMission = "mission_description";  // Mission description
 author = "mission_maker";  // Author of the mission

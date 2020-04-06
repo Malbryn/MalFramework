@@ -1,6 +1,4 @@
 [] spawn {
-	systemChat "[MF INFO] VCOM AI initialised";
-
 	//Parameters
 	VCM_PublicScript = compileFinal "[] call (_this select 0);";
 	VCM_ServerAsk = compileFinal "(_this select 1) publicVariableClient (_this select 0);";
