@@ -1,4 +1,4 @@
-// Set the UID of the mission maker (to access the admin menu during the mission)
+// Set the UID of the mission maker (to access the admin menu and debug console during the mission)
 #define UID "76561198066551781"  // Malbryn's UID
 __EXEC(MISSION_MAKER = UID;)
 
@@ -95,6 +95,12 @@ class Extended_Init_EventHandlers {
         init = "[_this] call MF_fnc_setAISkill";
     };
 };
+
+
+// Functions library
+class CfgFunctions {
+    #include "mission_framework\root\MF_Cfg\CfgFunctions\CfgFunctions.hpp"
+}
 
 
 // Notifications config

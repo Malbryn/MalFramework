@@ -10,7 +10,7 @@ MF_var_end_time_enabled = true;  // Mission time limit on/off
 MF_var_end_time_limit = 90 MINUTES;  // Mission time limit in seconds
 
 // End condition: casualty check
-MF_var_end_cas_enabled = false;  // Mission fail if the casualty rate is too high on/off
+MF_var_end_cas_enabled = true;  // Mission fail if the casualty rate is too high on/off
 MF_var_end_cas_rate = 75;  // Casualty rate in percentage (75 = 75% of the unit is dead)
 
 // End condition: tasks
@@ -122,6 +122,10 @@ MF_var_supply_drop_plane = "B_T_VTOL_01_vehicle_F";
 // TIME LIMIT CHECK
 #include "..\root\MF_Mission\check_time_limit\fncInit.sqf"
 #include "..\root\MF_Mission\check_time_limit\init.sqf"
+
+
+// VCOM AI
+#include "..\root\MF_AI\vcom\init.sqf"
 
 
 // WAVE RESPAWN

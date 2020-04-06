@@ -8,12 +8,12 @@
  * Arguments:
  * _this select 0: OBJECT - The unit
  * _this select 1: STRING - Role of the unit, see: gear script
- * _this select 2: INTEGER - Unit traits (Optional):
+ * _this select 2: SCALAR - Unit traits (Optional):
  *                             0 - Default, no special ability
  *                             1 - Squad level leadership (SL, FTL), can deploy Rally Poins
  *                             2 - Platoon level leadership (PLTHQ, PLTSGT), can call respawns, resupply and tactical withdrawal
  * _this select 4: STRING - Assigned fireteam colour (Optional, default: white (= "MAIN"))
- * _this select 5: INTEGER - Unit's view distance (Optional, default: -1 (default value defined in config.sqf))
+ * _this select 5: SCALAR - Unit's view distance (Optional, default: -1 (default value defined in config.sqf))
  *
  * Return Value:
  * void
