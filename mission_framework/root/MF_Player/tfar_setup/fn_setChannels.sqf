@@ -29,7 +29,7 @@ if (hasInterface) then {
 			[(call TFAR_fnc_activeSwRadio), _srCh] call TFAR_fnc_setSwChannel;
 		};
 
-		if (0 <= _srCh && _srCh <= 8) then {
+		if (0 <= _lrCh && _lrCh <= 8) then {
 			[(call TFAR_fnc_activeLrRadio), _lrCh] call TFAR_fnc_setLrChannel;
 		};
 	}] call CBA_fnc_waitUntilAndExecute;
