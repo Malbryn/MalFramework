@@ -18,7 +18,7 @@
  *
  */
 
-#define GEAR_START  : { _gear =
+#define GEAR_START  : {
 #define GEAR_END ;};
 
 params ["_unit", "_role"];
