@@ -10,7 +10,7 @@ MF_var_end_time_enabled = true;  // Mission time limit on/off
 MF_var_end_time_limit = 90 MINUTES;  // Mission time limit in seconds
 
 // End condition: casualty check
-MF_var_end_cas_enabled = true;  // Mission fail if the casualty rate is too high on/off
+MF_var_end_cas_enabled = false;  // Mission fail if the casualty rate is too high on/off
 MF_var_end_cas_rate = 75;  // Casualty rate in percentage (75 = 75% of the unit is dead)
 
 // End condition: tasks
@@ -31,7 +31,7 @@ MF_var_view_distance_server = 2000;  // Server view distance (= AI view distance
 MF_var_view_distance_player = 2000;  // Player view distance
 
 // Time acceleration
-MF_var_time_acceleration = 1;  // Time acceleration between 0.1 - 120
+MF_var_time_acceleration = 1;  // Time acceleration between 0.1 - 120 (Note: this has no effect during local hosted sessions)
 
 
 
@@ -67,6 +67,10 @@ MF_var_date = "TEST DATE";
 MF_var_location = "TEST LOCATION";
 MF_var_title_delay = 20;
 #include "..\root\MF_Misc\intro_text\init.sqf"
+
+
+// LOS TOOL
+#include "..\root\MF_Diary\check_los\init.sqf"
 
 
 // MORTAR FIRE
@@ -131,5 +135,5 @@ MF_var_supply_drop_plane = "B_T_VTOL_01_vehicle_F";
 // WAVE RESPAWN
 #include "..\root\MF_Mission\respawn_wave\fncInit.sqf"
 MF_var_wave_respawn_enabled = true;
-MF_var_wave_respawn_count = 2;  // Maximum amout of respawn waves (note: MF_var_respawn_tickets <= MF_var_wave_respawn_count)
+MF_var_wave_respawn_count = 2;  // Maximum amout of respawn waves (Note: MF_var_respawn_tickets <= MF_var_wave_respawn_count)
 [] call MF_fnc_addCallRespawnMenu;

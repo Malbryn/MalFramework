@@ -6,7 +6,7 @@
  * Ends the mission on every client
  *
  * Arguments:
- * _this select 0: STRING - Name of the ending (in CfgDebriefing)
+ * _this select 0: STRING - Class name of the ending (defined in CfgDebriefing)
  * _this select 1: BOOLEAN - Is victory
  *
  * Return Value:
