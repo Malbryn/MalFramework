@@ -2,7 +2,7 @@
 // Also will apply to any AI spawned after the mission init
 
 MF_ai_skills = [
-  0.5,	// General (Higher = Better)
+	0.5,	// General (Higher = Better)
 	0.5,	// Commanding (Higher = Better)
 	0.5,	// Courage (Higher = Better)
 	0.5,	// Aiming Accuracy (Higher = Better)

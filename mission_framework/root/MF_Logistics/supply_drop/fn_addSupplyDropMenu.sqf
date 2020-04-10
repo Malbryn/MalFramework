@@ -16,7 +16,7 @@
  *
  */
 
-missionNamespace setVariable ["MF_drop_available", true];
+missionNamespace setVariable ["MF_drop_available", true, true];
 
 if (hasInterface && (player getVariable "MF_var_is_CO")) then {
     // Supply drop category

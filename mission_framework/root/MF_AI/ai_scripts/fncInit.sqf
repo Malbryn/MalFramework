@@ -6,3 +6,6 @@ MF_fnc_taskHunt =
 
 MF_fnc_taskRush =
 	compile preprocessFileLineNumbers "mission_framework\root\MF_AI\ai_scripts\fn_taskRush.sqf";
+
+MF_fnc_taskCQB =
+	compile preprocessFileLineNumbers "mission_framework\root\MF_AI\ai_scripts\fn_taskCQB.sqf";
