@@ -34,6 +34,8 @@ If something is broken, contact **Malbryn**.
  - Briefing script
  - Orbat & player loadouts
  - Intel framework
+ - Check LOS tool
+ - Draw terrain profile tool
 
 ### MF_Effects
  - Ambient flyby

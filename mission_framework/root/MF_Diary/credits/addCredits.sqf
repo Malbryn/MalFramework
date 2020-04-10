@@ -57,6 +57,8 @@ CREDITS:<br/>
  - Vehicle respawn scripts by Fredrik Eriksson<br/>
  - Cover map script by BlackHawk, PIZZADOX and Karel Moricky<br/>
  - Mission time script by Starfox64<br/>
- - No-damage ending script by Starfox64<br/></font>
+ - No-damage ending script by Starfox64<br/>
+ - LOS and terrain profile tools by BlackHawk<br/>
+</font>
 "
 DIARY_RECORD_END;

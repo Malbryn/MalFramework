@@ -69,6 +69,10 @@ MF_var_title_delay = 20;
 #include "..\root\MF_Misc\intro_text\init.sqf"
 
 
+// LOS TOOL
+#include "..\root\MF_Diary\check_los\init.sqf"
+
+
 // MORTAR FIRE
 #include "..\root\MF_Effects\mortar_fire\fncInit.sqf"
 
