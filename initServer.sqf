@@ -1,4 +1,3 @@
-// Don't run these twice on local host
 if (isDedicated) then {
     // Import admin scripts
     #include "mission_framework\root\MF_Admin\fncInit.sqf"
@@ -20,8 +19,6 @@ enableEnvironment [false, true];
 enableSentences true;
 
 // Mission end conditions check loop on server
-MF_var_mission_ended = false;
-
 waitUntil { CBA_missionTime > 1 };
 
 // Check the tasks array
