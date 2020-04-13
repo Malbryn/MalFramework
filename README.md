@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://i.imgur.com/Lq5Do49.png">
-  <a href="https://github.com/Malbryn/MalFramework/releases/tag/v1.04">
-    <img src="https://img.shields.io/badge/version-1.04-brightgreen" alt="MalFramework Version">
+  <a href="https://github.com/Malbryn/MalFramework/releases/tag/v1.05">
+    <img src="https://img.shields.io/badge/version-1.05-brightgreen" alt="MalFramework Version">
   </a>
 </p>
 
@@ -41,6 +41,7 @@ If something is broken, contact **Malbryn**.
  - Ambient flyby
  - Mortar fire
  - Snowfall
+ - Remotely detonated IED
 
 ### MF_Logistics
  - JIP teleport

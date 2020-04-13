@@ -9,6 +9,9 @@
 // Diary functions
 #include "..\..\MF_Diary\orbat\fncInit.sqf"
 
+// Effects functions
+#include "..\..\MF_Effects\ied_detonator\fncInit.sqf"
+
 // Logistics functions
 #include "..\..\MF_Logistics\jip\fncInit.sqf"
 #include "..\..\MF_Logistics\vehicle_respawn\fncInit.sqf"
