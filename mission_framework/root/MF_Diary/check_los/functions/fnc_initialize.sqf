@@ -29,9 +29,11 @@ call FUNC(determineEnvironment);
         QGVAR(ID2) call FUNC(terminateEarly);
         QGVAR(ID3) call FUNC(terminateEarly);
     };
+
     if (count GVAR(markers) > 0) then {
         call FUNC(removeMarkers);
     };
+
     if (isMultiplayer && GVAR(disableAfterStart)) then {
         call FUNC(disable);
     };

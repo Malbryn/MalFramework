@@ -94,6 +94,7 @@ MF_var_jip_timer = 3 MINUTES;  // How many seconds the player has to TP back to 
 MF_var_use_halo = true;  // HALO drop
 MF_var_use_mrv = true;  // Mobile Respawn Vehicle
 MF_var_use_rp = true;  // Squad Rally Point
+MF_var_rp_tent = "Land_TentA_F";  // Custom tent (or any object) used as the Rally Point
 #include "..\root\MF_Logistics\reinsert\init.sqf"
 
 
