@@ -20,7 +20,7 @@ missionNamespace setVariable ["MF_drop_available", true, true];
 
 if (hasInterface && (player getVariable "MF_var_is_CO")) then {
     // Supply drop category
-    private _switch = ['Supply drop', 'Supply drop', '\a3\ui_f\data\Map\VehicleIcons\iconParachute_ca.paa', {}, {true}] call ace_interact_menu_fnc_createAction;
+    private _switch = ['Supply drop', 'Supply drop', '\a3\ui_f\data\Map\VehicleIcons\iconParachute_ca.paa', {}, {!visibleMap}] call ace_interact_menu_fnc_createAction;
 
     [player, 1, ["ACE_SelfActions"], _switch] call ace_interact_menu_fnc_addActionToObject;
 

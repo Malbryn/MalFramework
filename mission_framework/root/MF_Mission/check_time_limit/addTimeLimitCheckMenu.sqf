@@ -19,7 +19,7 @@
 if (hasInterface && MF_var_end_time_enabled) then {
     private _menu = ['Check remaining time', 'Check remaining time', '\a3\ui_f\data\GUI\Rsc\RscDisplayArsenal\watch_ca.paa', {
         [] call MF_fnc_checkTimeLimit;
-    }, {true}] call ace_interact_menu_fnc_createAction;
+    }, {!visibleMap}] call ace_interact_menu_fnc_createAction;
 
     [player, 1, ["ACE_SelfActions"], _menu] call ace_interact_menu_fnc_addActionToObject;
 };

@@ -18,7 +18,7 @@
 
 if (hasInterface && (player getVariable "MF_var_is_CO")) then {
     // Scenario control category
-    private _switch = ['End scenario', 'End scenario', '\a3\ui_f\data\Map\Diary\Icons\taskSucceeded_ca.paa', {}, {true}] call ace_interact_menu_fnc_createAction;
+    private _switch = ['End scenario', 'End scenario', '\a3\ui_f\data\Map\Diary\Icons\taskSucceeded_ca.paa', {}, {!visibleMap}] call ace_interact_menu_fnc_createAction;
 
     [player, 1, ["ACE_SelfActions"], _switch] call ace_interact_menu_fnc_addActionToObject;
 

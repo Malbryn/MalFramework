@@ -77,7 +77,7 @@ if (hasInterface) then {
     // Create ACE self-interaction option
     player setVariable ["_spawnPos", getPos player];
 
-    private _jipTeleportAction = ["Teleport to squad", "Teleport to squad", "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\transport_ca.paa", _jipActionCode, {player distance2D (player getvariable ["_spawnPos", [0, 0, 0]]) < 200}] call ace_interact_menu_fnc_createAction;
+    private _jipTeleportAction = ["Teleport to squad", "Teleport to squad", "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\transport_ca.paa", _jipActionCode, {!visibleMap && (player distance2D (player getvariable ["_spawnPos", [0, 0, 0]]) < 200)}] call ace_interact_menu_fnc_createAction;
 
     [player, 1, ["ACE_SelfActions"], _jipTeleportAction] call ace_interact_menu_fnc_addActionToObject;
 
