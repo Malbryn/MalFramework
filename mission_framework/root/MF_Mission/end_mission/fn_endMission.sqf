@@ -25,6 +25,7 @@ params ["_ending", "_isVictory"];
 // Save end mission stats
 [] call MF_fnc_saveMissionTime;
 [] call MF_fnc_saveFriendlyFires;
+[] call MF_fnc_saveCivilianKills;
 
 // Calling the end mission screen
 [_ending, _isVictory, true, true, true] remoteExec ["BIS_FNC_endMission", 0, true];

@@ -19,7 +19,7 @@
 if (!isServer) exitWith {};
 
 // Terminate the end condition checking loop if there's no condition defined
-if !(MF_var_end_time_enabled || MF_var_end_cas_enabled || MF_var_end_task_enabled || MF_var_end_ex_enabled) then {
+if !(MF_var_end_time_enabled || MF_var_end_cas_enabled || MF_var_end_task_enabled || MF_var_end_ex_enabled || MF_var_end_civ_cas_enabled) then {
     [MF_EndCheck] call CBA_fnc_removePerFrameHandler;
 };
 
@@ -35,7 +35,7 @@ if (MF_var_end_time_enabled) then {
 };
 
 
-// Casualty check
+// Friendly casualty check
 if (MF_var_end_cas_enabled) then {
     private _dead = { !alive _x } count allPlayers;
 
@@ -43,6 +43,18 @@ if (MF_var_end_cas_enabled) then {
 
     if (_percentage >= MF_var_end_cas_rate) then {
         ["CasualtyLimit", false] call MF_fnc_endMission;
+    };
+};
+
+
+// Civilian casualty check
+if (MF_var_end_civ_cas_enabled && count MF_var_civs != 0) then {
+    private _dead = MF_var_civ_cas;
+
+    private _percentage = _dead / (count MF_var_civs * 0.01);
+
+    if (_percentage >= MF_var_end_civ_cas_rate) then {
+        ["CivCasualtyLimit", false] call MF_fnc_endMission;
     };
 };
 

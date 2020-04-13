@@ -21,3 +21,6 @@
 
 // Get friendly fires
 [] remoteExec ["MF_fnc_saveFriendlyFires", 2];
+
+// Get civilian kills
+[] remoteExec ["MF_fnc_saveCivilianKills", 2];

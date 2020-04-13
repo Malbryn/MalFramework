@@ -6,3 +6,6 @@ MF_fnc_saveFriendlyFires =
 
 MF_fnc_saveMissionTime =
 	compile preprocessFileLineNumbers "mission_framework\root\MF_Mission\mission_statistics\fn_saveMissionTime.sqf";
+
+MF_fnc_saveCivilianKills =
+	compile preprocessFileLineNumbers "mission_framework\root\MF_Mission\mission_statistics\fn_saveCivilianKills.sqf";

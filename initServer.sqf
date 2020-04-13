@@ -12,7 +12,9 @@ if (isDedicated) then {
 
 // Init end mission statistics
 #include "mission_framework\root\MF_Mission\mission_statistics\fncInit.sqf"
+#include "mission_framework\root\MF_Mission\mission_statistics\addCivilianKillEH.sqf"
 MF_var_stat_ff = ["FRIENDLY FIRE INCIDENTS: "];
+MF_var_stat_ck = ["CIVILIAN KILLS: "];
 
 enableSaving [false, false];
 enableEnvironment [false, true];
@@ -26,6 +28,17 @@ if ((MF_var_end_task_enabled && (count MF_var_tasks == 0)) || (MF_var_end_ex_ena
     ["[MF ERROR] The task array is empty. The end conditions will not work properly! Please add your tasks to the tasks array."] remoteExec ["systemChat", 0];
     MF_var_end_task_enabled = false;
     MF_var_end_ex_enabled = false;
+};
+
+// Register the civilians
+if (MF_var_end_civ_cas_enabled) then {
+    MF_var_civs = [];
+
+    {
+        if ((side _x) == civilian) then {
+            MF_var_civs pushBack _x;
+        };
+    } forEach allUnits;
 };
 
 // End mission check loop

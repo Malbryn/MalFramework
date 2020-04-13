@@ -39,6 +39,15 @@ class CasualtyLimit {
     pictureColor[] = {0.6, 0.1, 0.2, 1};
 };
 
+class CivCasualtyLimit {
+    title = "Mission Failed";
+    subtitle = "Civilian casualty limit reached";
+    description = "The number of civilian casualties was too high. Watch your fire next time.";
+    pictureBackground = "";
+    picture = "KIA";
+    pictureColor[] = {0.6, 0.1, 0.2, 1};
+};
+
 class MissionTerminated {
     title = "Mission Terminated";
     subtitle = "The mission was terminated by admin";
