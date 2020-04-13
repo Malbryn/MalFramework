@@ -7,3 +7,8 @@ class FriendlyFires {
     title = "Friendly fires";
     variable = "MF_var_stat_ff";
 };
+
+class CivilianKills {
+    title = "Civilian kills";
+    variable = "MF_var_stat_ck";
+};

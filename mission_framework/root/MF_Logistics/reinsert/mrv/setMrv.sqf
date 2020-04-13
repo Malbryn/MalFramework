@@ -20,4 +20,3 @@
 params ["_vehicle"];
 
 missionNamespace setVariable ["MF_var_mrv", _vehicle, true];
-publicVariable "MF_var_mrv";

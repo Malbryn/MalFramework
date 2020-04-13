@@ -61,7 +61,8 @@ If something is broken, contact **Malbryn**.
 ### MF_Mission
  - End condition check
    - Time limit
-   - Casualty check
+   - Friendly casualty check
+   - Civilian casualty check
    - Task check
    - Extraction check
  - Tactical withdrawal

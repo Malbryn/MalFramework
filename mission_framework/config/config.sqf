@@ -9,9 +9,13 @@
 MF_var_end_time_enabled = true;  // Mission time limit on/off
 MF_var_end_time_limit = 90 MINUTES;  // Mission time limit in seconds
 
-// End condition: casualty check
+// End condition: friendly casualties
 MF_var_end_cas_enabled = false;  // Mission fail if the casualty rate is too high on/off
-MF_var_end_cas_rate = 75;  // Casualty rate in percentage (75 = 75% of the unit is dead)
+MF_var_end_cas_rate = 75;  // Casualty rate in percentage (75 = 75% of the unit are dead)
+
+// End condition: civilian casualties
+MF_var_end_civ_cas_enabled = true;  // Mission fail if the casualty rate is too high on/off
+MF_var_end_civ_cas_rate = 50;  // Casualty rate in percentage (50 = 50% of the civilians are dead)
 
 // End condition: tasks
 MF_var_end_task_enabled = true;  // Mission end if all task was completed

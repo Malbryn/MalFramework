@@ -18,6 +18,10 @@
 
 missionNamespace setVariable ["MF_drop_available", true, true];
 
+if (count MF_var_supply_drop_crates == 0) exitWith {
+    systemChat "[MF ERROR] The array of the supply drop crates is empty";
+};
+
 if (hasInterface && (player getVariable "MF_var_is_CO")) then {
     // Supply drop category
     private _switch = ['Supply drop', 'Supply drop', '\a3\ui_f\data\Map\VehicleIcons\iconParachute_ca.paa', {}, {!visibleMap}] call ace_interact_menu_fnc_createAction;
