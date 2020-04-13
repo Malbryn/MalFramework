@@ -54,7 +54,7 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
 // Display ACE progress bar
 [12, [], {
     // Create RP tent and save the netId so other people can remove it as well
-    private _RPTent = createVehicle ["Land_TentA_F", player getPos [3, getDir player], [], 0, "CAN_COLLIDE"];
+    private _RPTent = createVehicle [MF_var_rp_tent, player getPos [3, getDir player], [], 0, "CAN_COLLIDE"];
     private _id = netId _RPTent;
     (group player) setVariable ["RPTent", _id, true];
 
