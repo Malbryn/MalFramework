@@ -25,25 +25,24 @@ if (!MF_var_use_rp) exitWith {
 
 
 // Check if the rally point is already deployed
-if !(isNil { (group player) getVariable "RPTent" }) exitWith {
-    ["Warning", ["The RP is already deployed"]] call BIS_fnc_showNotification
+if !(isNil {(group player) getVariable "RPTent"}) exitWith {
+    ["Warning", ["The RP is already deployed"]] call BIS_fnc_showNotification;
 };
 
 
 // Define squad members
-private _unitArray = (units group player);
-_unitArray deleteAt 0; //ISSUE HERE 
+private _unitArray = (units group player) - [player];
 
 
 // Check if there's any squad member nearby
-if !((_unitArray findIf {_x distance player < 15}) > -1) exitWith {
-    ["Warning", ["You need one more squad member nearby to be able to deploy a RP"]] call BIS_fnc_showNotification
+if !((_unitArray findIf {(_x distance player < 15) && alive _x}) > -1) exitWith {
+    ["Warning", ["You need one more squad member nearby to be able to deploy a RP"]] call BIS_fnc_showNotification;
 };
 
 
 // Check if there's enemy nearby
 if !(allUnits findIf {side _x getFriend side player < 0.6 && _x distance player < 50} == -1) exitWith {
-    ["Warning", ["Cannot deploy a RP when enemies are nearby"]] call BIS_fnc_showNotification
+    ["Warning", ["Cannot deploy a RP when enemies are nearby"]] call BIS_fnc_showNotification;
 };
 
 
@@ -59,8 +58,7 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
     (group player) setVariable ["RPTent", _id, true];
 
     // Send notification to the squad memebers
-    private _unitArray = (units group player);
-    _unitArray deleteAt 0;
+    private _unitArray = (units group player) - [player];
     ["Info", ["You have deployed the RP"]] call BIS_fnc_showNotification;
     ["Info", ["Your SL has deployed the RP"]] remoteExec ["BIS_fnc_showNotification", _unitArray];
 }, {

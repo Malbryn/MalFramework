@@ -43,8 +43,7 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
     (group player) setVariable ["RPTent", nil, true];
 
     // Send notification to the squad memebers
-    private _unitArray = (units group player);
-    _unitArray deleteAt 0;
+    private _unitArray = (units group player) - [player];
     ["Info", ["You have picked up the RP"]] call BIS_fnc_showNotification;
     ["Info", ["Your SL has picked up the RP"]] remoteExec ["BIS_fnc_showNotification", _unitArray];
 }, {
