@@ -5,7 +5,7 @@
 private ["_version", "_title", "_author", "_text"];
 
 // Framework version
-_version = "v1.04";
+_version = "v1.05";
 
 // Title of the mission
 _title = briefingName;
