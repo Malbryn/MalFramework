@@ -3,8 +3,7 @@
  * Malbryn
  *
  * Description:
- * Starts other scripts to remove the unit's current gear and
- * then applies a custom loadout
+ * Starts other scripts to remove the unit's current gear and then applies the custom loadout
  *
  * Arguments:
  * _this select 0: OBJECT - Unit

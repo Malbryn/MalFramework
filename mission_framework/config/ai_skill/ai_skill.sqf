@@ -1,4 +1,4 @@
-// These skills will apply to every AI in the mission.
+// These skills will apply to every AI in the mission
 // Also will apply to any AI spawned after the mission init
 
 MF_ai_skills = [

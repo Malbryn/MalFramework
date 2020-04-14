@@ -3,7 +3,7 @@
  * Malbryn
  *
  * Description:
- * Creates ACE self-interaction menu for the logged-in admin which checks the server performance and mission statistics
+ * Creates ACE self-interaction menu for the logged-in admin and mission creator which checks the server performance and mission statistics
  *
  * Arguments:
  * -

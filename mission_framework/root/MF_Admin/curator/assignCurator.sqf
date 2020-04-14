@@ -3,7 +3,7 @@
  * Commy2
  *
  * Description:
- * Assigns curator to the logged in admin
+ * Assigns curator to the logged in admin and mission creator
  *
  * Arguments:
  * -

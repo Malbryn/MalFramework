@@ -10,32 +10,32 @@ MF_var_end_time_enabled = true;  // Mission time limit on/off
 MF_var_end_time_limit = 90 MINUTES;  // Mission time limit in seconds
 
 // End condition: friendly casualties
-MF_var_end_cas_enabled = false;  // Mission fail if the casualty rate is too high on/off
-MF_var_end_cas_rate = 75;  // Casualty rate in percentage (75 = 75% of the unit are dead)
+MF_var_end_cas_enabled = false;  // Mission fail if the casualty rate is too high
+MF_var_end_cas_rate = 75;  // Casualty rate in percentage (75 = 75% of the platoon is dead)
 
 // End condition: civilian casualties
-MF_var_end_civ_cas_enabled = true;  // Mission fail if the casualty rate is too high on/off
+MF_var_end_civ_cas_enabled = true;  // Mission fail if the casualty rate is too high
 MF_var_end_civ_cas_rate = 50;  // Casualty rate in percentage (50 = 50% of the civilians are dead)
 
 // End condition: tasks
-MF_var_end_task_enabled = true;  // Mission end if all task was completed
+MF_var_end_task_enabled = true;  // Mission end if certain amount of tasks were completed
 MF_var_end_task_number = 2;  // Number of successfully completed tasks that triggers this condition
 
 // End condition: extraction
-MF_var_end_ex_enabled = true;  // Mission end if x% of the platoon reaches the extraction marker on/off
+MF_var_end_ex_enabled = true;  // Mission end if x% of the platoon reach the extraction marker
 MF_var_end_ex_marker = "extraction";  // Name of the area marker used for extraction
-MF_var_end_ex_threshold = 50;  // 50% of the players should be inside the exfil marker
-MF_var_end_task_threshold = 66;  // 66% of the tasks should be completed inn order to call it a mission success
+MF_var_end_ex_threshold = 50;  // 50% of the players should be inside the exfil marker to trigger the mission end
+MF_var_end_task_threshold = 66;  // 66% of the tasks should be completed to be a mission success
 
 // Respawn tickets
 MF_var_respawn_tickets = 2;  // How many times the player can respawn (-1 = disabled)
 
 // View distances
 MF_var_view_distance_server = 2000;  // Server view distance (= AI view distance)
-MF_var_view_distance_player = 2000;  // Player view distance
+MF_var_view_distance_player = 2000;  // Player view distance (dafult, can be overwritten in player init)
 
 // Time acceleration
-MF_var_time_acceleration = 1;  // Time acceleration between 0.1 - 120 (Note: this has no effect during local hosted sessions)
+MF_var_time_acceleration = 1;  // Time acceleration between 0.1 - 120 (Note: this has no effect in local hosted sessions)
 
 
 
@@ -107,7 +107,7 @@ MF_var_rp_tent = "Land_TentA_F";  // Custom tent (or any object) used as the Ral
 
 
 // SCENARIO CONTROL
-MF_var_sc_enabled = true;
+MF_var_sc_enabled = true;  // Unlocks the Tactical withdrawal option for the CO
 MF_var_success_rate = 50;  // Rate of the completed tasks to call it a success when Tactical withdrawal is called by the CO (50 = 50% completed)
 [] call MF_fnc_addScenarioEndControl;
 
@@ -120,11 +120,11 @@ MF_var_success_rate = 50;  // Rate of the completed tasks to call it a success w
 // SUPPLY DROP
 #include "..\root\MF_Logistics\supply_drop\fncInit.sqf"
 MF_var_use_supply_drop = true;
-MF_var_supply_drop_crates = [
+MF_var_supply_drop_crates = [  // Array of the crates (format: [crateVariable, "Name shown in the menu"])
     [crate1, "Ammo Resupply"],
     [crate2, "Medic Resupply"]
 ];
-MF_var_supply_drop_plane = "B_T_VTOL_01_vehicle_F";
+MF_var_supply_drop_plane = "B_T_VTOL_01_vehicle_F";  // Classname of the plane or helicopter
 [] call MF_fnc_addSupplyDropMenu;
 
 

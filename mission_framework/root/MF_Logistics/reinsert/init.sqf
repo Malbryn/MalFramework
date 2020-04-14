@@ -4,7 +4,7 @@
  *
  * Description:
  * Adds different options to an object ("TP pole") for reinsertion
- * Also adds the rally point menu to the squad leader
+ * Also adds the rally point menu to the squad leader(s)
  *
  * Arguments:
  * _this select 0: OBJECT - Object that acts as a TP pole

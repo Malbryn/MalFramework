@@ -21,7 +21,7 @@ If something is broken, contact **Malbryn**.
  - Task & scenario control
 
 ### MF_AI
- - AI task scripts (Creep, Hunt, Rush)
+ - AI task scripts (Creep, Hunt, Rush, CQB)
  - Global AI skill settings
  - VCOM AI script version
 
@@ -32,7 +32,7 @@ If something is broken, contact **Malbryn**.
 
 ### MF_Diary
  - Briefing script
- - Orbat & player loadouts
+ - ORBAT & player loadouts
  - Intel framework
  - Check LOS tool
  - Draw terrain profile tool
@@ -45,7 +45,7 @@ If something is broken, contact **Malbryn**.
 
 ### MF_Logistics
  - JIP teleport
- - Reinsertion
+ - Reinsertion modules:
    - HALO drop
    - Mobile Respawn Vehicle
    - Squad Rally Point
@@ -76,11 +76,11 @@ If something is broken, contact **Malbryn**.
  - Assign team colour
  - TFAR radio channel setup
  - View distance control
+ - Respawn tickets
 
 ### Other features
  - Briefing & debriefing templates
- - Mission time limit
- - Respawn tickets
+ - Mission time limit check
  - Time accelaration control
  - Custom debriefing screens
  - Placeholder loading screen

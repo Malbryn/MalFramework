@@ -3,7 +3,7 @@
  * NeilZar (modified by Malbryn)
  *
  * Description:
- * Monitors the server FPS. If it goes below 15, it sends a notification to the logged in admin.
+ * Monitors the server FPS. If it goes below 15, it sends a notification to the logged in admin and mission creator
  *
  * Arguments:
  * -

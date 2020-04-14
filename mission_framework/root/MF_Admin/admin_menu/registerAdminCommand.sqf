@@ -3,7 +3,7 @@
  * Malbryn
  *
  * Description:
- * Registers chat commands that can be used by the logged-in admin.
+ * Registers chat commands that can be used by the logged-in admin and mission creator
  *
  * Arguments:
  * -

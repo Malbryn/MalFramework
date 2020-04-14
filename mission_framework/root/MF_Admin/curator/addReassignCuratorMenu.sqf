@@ -3,7 +3,7 @@
  * Malbryn
  *
  * Description:
- * Adds option to reassign admin zeus in case of JIP
+ * Adds option to reassign admin zeus in case of JIP or death
  *
  * Arguments:
  * -

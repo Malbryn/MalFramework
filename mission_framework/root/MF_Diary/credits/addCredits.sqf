@@ -1,3 +1,21 @@
+/*
+ * Author:
+ * Malbryn
+ *
+ * Description:
+ * Adds a "Credits" diary record to the players diary
+ *
+ * Arguments:
+ * -
+ *
+ * Return Value:
+ * void
+ *
+ * Example:
+ * [] execVM "mission_framework\root\MF_Diary\credits\addCredits.sqf"
+ *
+ */
+
 #define DIARY_SUBJECT(ID) player createDiarySubject [toLower ID, ID]
 #define DIARY_RECORD_START(ID, TITLE) player createDiaryRecord [toLower ID, [TITLE,
 #define DIARY_RECORD_END ]]

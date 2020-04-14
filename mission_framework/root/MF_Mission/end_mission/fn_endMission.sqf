@@ -3,7 +3,7 @@
  * Malbryn
  *
  * Description:
- * Ends the mission on every client
+ * Ends the mission on the server and on every client
  *
  * Arguments:
  * _this select 0: STRING - Class name of the ending (defined in CfgDebriefing)

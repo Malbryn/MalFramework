@@ -1,5 +1,3 @@
-waitUntil {!isNull player};
-
 // Import admin scripts
 #include "mission_framework\root\MF_Admin\fncInit.sqf"
 #include "mission_framework\root\MF_Admin\init.sqf"
