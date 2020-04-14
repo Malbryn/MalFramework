@@ -3,7 +3,7 @@
  * Malbryn
  *
  * Description:
- * Teleports the player to their death location, HALO drop
+ * Teleports the player to their death location using HALO drop
  *
  * Arguments:
  * -

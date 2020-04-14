@@ -4,9 +4,9 @@
 /* ------------------- CUSTOMISABLE BUT DO NOT REMOVE---------------------- */
 
 class MissionSuccess {
-    title = "Mission Success";      // Closing shot - Main title
-    subtitle = "";                    // Closing shot - Short description
-    description = "";                 // Debriefing - Summary of the mission
+    title = "Mission Success";        // Closing shot - Main title
+    subtitle = "default_text";        // Closing shot - Short description
+    description = "default_text";     // Debriefing - Summary of the mission
     pictureBackground = "";           // Debriefing - 2:1 picture as background
     picture = "mil_end";              // Closing shot - 1:1 icon in the middle of the screen
     pictureColor[] = {0, 0.8, 0, 1};  // Closing shot - Icon colour
@@ -14,8 +14,8 @@ class MissionSuccess {
 
 class MissionFail {
     title = "Mission Failed";
-    subtitle = "";
-    description = "";
+    subtitle = "default_text";
+    description = "default_text";
     pictureBackground = "";
     picture = "KIA";
     pictureColor[] = {0.6, 0.1, 0.2, 1};

@@ -3,7 +3,7 @@
  * Malbryn
  *
  * Description:
- * Creates ACE self-interaction menu for the logged-in admin
+ * Creates ACE self-interaction menu for the logged-in admin and mission creator
  *
  * Arguments:
  * -

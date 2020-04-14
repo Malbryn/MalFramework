@@ -3,7 +3,7 @@
  * NeilZar
  *
  * Description:
- * Sends a notification to the logged-in admin when FF happens
+ * Sends a notification to the logged-in admin and mission creator when FF happens
  *
  * Arguments:
  * _this select 0: OBJECT - Name of the player who was killed

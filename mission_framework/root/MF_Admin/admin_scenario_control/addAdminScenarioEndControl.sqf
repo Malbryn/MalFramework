@@ -3,7 +3,7 @@
  * Malbryn
  *
  * Description:
- * Creates ACE self-interaction menu for the the logged-in admin to control the scenario end
+ * Creates ACE self-interaction menu for the the logged-in admin and mission creator to control the scenario end
  *
  * Arguments:
  * -

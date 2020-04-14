@@ -1,3 +1,21 @@
+/*
+ * Author:
+ * Malbryn
+ *
+ * Description:
+ * Sets the player's view distance
+ *
+ * Arguments:
+ * -
+ *
+ * Return Value:
+ * void
+ *
+ * Example:
+ * [] call MF_fnc_setViewDistance
+ *
+ */
+
 if (hasInterface) then {
 	private _viewDistance = player getVariable ["MF_var_vd", -1];
 

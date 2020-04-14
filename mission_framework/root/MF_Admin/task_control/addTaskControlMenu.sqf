@@ -3,8 +3,7 @@
  * Malbryn
  *
  * Description:
- * Creates ACE self-interaction menu for the logged-in admin and adds the ability of controlling task states
- * TODO: Refresh when new task is created
+ * Creates ACE self-interaction menu for the logged-in admin and mission creator and adds the ability of controlling task states
  *
  * Arguments:
  * -
