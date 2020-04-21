@@ -111,7 +111,7 @@ if (player getVariable "MF_var_is_CO" && MF_var_wave_respawn_enabled) then {
     private _partGroup = units group player;
     private _target = objNull;
     _partGroup = _partGroup - [player];
-    
+
     // Check if part group is empty
     if (count _partGroup == 0) exitWith {};
 
@@ -122,4 +122,10 @@ if (player getVariable "MF_var_is_CO" && MF_var_wave_respawn_enabled) then {
         [] remoteExec ["MF_fnc_addCallRespawnMenu", _target];
         ["Info", ["You can now call in reinforcements"]] remoteExec ["BIS_fnc_showNotification", _target];
     };
+};
+
+
+// Snow effect
+if (MF_var_snowfall_enabled) then {
+    missionNameSpace setVariable ["MF_var_snowfall_start", false];
 };

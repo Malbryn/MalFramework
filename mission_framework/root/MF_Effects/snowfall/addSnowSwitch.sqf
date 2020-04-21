@@ -25,6 +25,7 @@ if (hasInterface) then {
     // Turn snow script on
     private _switch = ['Snow Script - On', 'Snow Script - On', '', {
         [] spawn MF_fnc_startSnowfall;
+        MF_var_snowfall_enabled = true;
         systemChat "[MF INFO] Snow script is ON";
     }, {true}] call ace_interact_menu_fnc_createAction;
 
@@ -34,6 +35,7 @@ if (hasInterface) then {
     // Turn snow script off
     private _switch = ['Snow Script - Off', 'Snow Script - Off', '', {
         missionNameSpace setVariable ["MF_var_snowfall_start", false];
+        MF_var_snowfall_enabled = false;
         systemChat "[MF INFO] Snow script is OFF";
     }, {true}] call ace_interact_menu_fnc_createAction;
 
