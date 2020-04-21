@@ -40,8 +40,8 @@ if !(local _unit) exitWith {};
 
 
 // Assign team colour
-[_units, _colour] spawn {
-  _this select 0 assignTeam _this select 1;
+[_unit, _colour] spawn {
+  (_this select 0) assignTeam (_this select 1);
 };
 
 
