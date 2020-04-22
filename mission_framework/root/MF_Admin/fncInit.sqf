@@ -3,3 +3,6 @@ MF_fnc_checkPerformance =
 
 MF_fnc_friendlyFireMessage =
 	compile preprocessFileLineNumbers "mission_framework\root\MF_Admin\friendly_fire\fn_friendlyFireMessage.sqf";
+
+MF_fnc_reassignCurator =
+compile preprocessFileLineNumbers "mission_framework\root\MF_Admin\curator\fn_reassignCurator.sqf";
