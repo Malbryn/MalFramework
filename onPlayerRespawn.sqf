@@ -19,6 +19,11 @@ private _loadout = player getVariable "MF_var_current_loadout";
 // Set the radios
 [] spawn MF_fnc_setChannels;
 
+// Reassign curator
+if (serverCommandAvailable "#logout" || getPlayerUID player == parsingNamespace getVariable "MISSION_MAKER") then {
+    [player] remoteExec ["MF_fnc_reassignCurator", 2];
+};
+
 // Remaining respawn tickets
 if (player getVariable "MF_tickets" == -1) exitWith {};
 
@@ -26,7 +31,6 @@ private _amount = (player getVariable "MF_tickets") - 1;
 [player, _amount] call MF_fnc_setRespawnTickets;
 
 [format ["Respawns available:<br/>%1", _amount], 2, ace_player, 12] call ace_common_fnc_displayTextStructured;
-
 
 // Snow effect
 if (MF_var_snowfall_enabled) then {
