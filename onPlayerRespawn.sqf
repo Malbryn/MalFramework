@@ -36,3 +36,8 @@ private _amount = (player getVariable "MF_tickets") - 1;
 if (MF_var_snowfall_enabled) then {
     [] spawn MF_fnc_startSnowfall;
 };
+
+// Delete old body
+if (MF_var_body_removal) then {
+    hideBody (_this select 1);
+}

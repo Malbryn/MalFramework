@@ -18,7 +18,7 @@ MF_var_end_civ_cas_enabled = true;  // Mission fail if the casualty rate is too 
 MF_var_end_civ_cas_rate = 50;  // Casualty rate in percentage (50 = 50% of the civilians are dead)
 
 // End condition: tasks
-MF_var_end_task_enabled = true;  // Mission end if certain amount of tasks were completed
+MF_var_end_task_enabled = true;  // Mission success if certain amount of tasks was completed in any order
 MF_var_end_task_number = 2;  // Number of successfully completed tasks that triggers this condition
 
 // End condition: extraction
@@ -30,9 +30,12 @@ MF_var_end_task_threshold = 66;  // 66% of the tasks should be completed to be a
 // Respawn tickets
 MF_var_respawn_tickets = 2;  // How many times the player can respawn (-1 = disabled)
 
+// Body removal upon respawn
+MF_var_body_removal = false;  // If the players' corpses should be deleted upon respawn
+
 // View distances
 MF_var_view_distance_server = 2000;  // Server view distance (= AI view distance)
-MF_var_view_distance_player = 2000;  // Player view distance (dafult, can be overwritten in player init)
+MF_var_view_distance_player = 2000;  // Player view distance (default for everyone, can be overwritten in the player init)
 
 // Time acceleration
 MF_var_time_acceleration = 1;  // Time acceleration between 0.1 - 120 (Note: this has no effect in local hosted sessions)
@@ -52,7 +55,7 @@ MF_var_time_acceleration = 1;  // Time acceleration between 0.1 - 120 (Note: thi
 
 // COVER MAP
 MF_var_cover_ao = "ao";  // Name of the AO marker
-MF_var_cover_colour = "Color4_FD_F";  // https://community.bistudio.com/wiki/Arma_3_CfgMarkerColors
+MF_var_cover_colour = "Color4_FD_F";  // See: https://community.bistudio.com/wiki/Arma_3_CfgMarkerColors
 #include "..\root\MF_Misc\cover_map\init.sqf"
 
 
@@ -140,5 +143,5 @@ MF_var_supply_drop_plane = "B_T_VTOL_01_vehicle_F";  // Classname of the plane o
 // WAVE RESPAWN
 #include "..\root\MF_Mission\respawn_wave\fncInit.sqf"
 MF_var_wave_respawn_enabled = true;
-MF_var_wave_respawn_count = 2;  // Maximum amout of respawn waves (Note: MF_var_respawn_tickets <= MF_var_wave_respawn_count)
+MF_var_wave_respawn_count = 2;  // Maximum amout of respawn waves (If used with respawn tickets then: MF_var_respawn_tickets <= MF_var_wave_respawn_count)
 [] call MF_fnc_addCallRespawnMenu;
