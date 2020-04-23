@@ -21,7 +21,7 @@ if (!hasInterface) exitWith {};
 _mrv = missionNamespace getVariable ["MF_var_mrv", -1];
 
 if (!alive _mrv) exitWith {
-    ["Warning", ["Target vehicle was destroyed!"]] call BIS_fnc_showNotification;
+    ["Warning", ["The Mobile Respawn Vehicle was destroyed!"]] call BIS_fnc_showNotification;
 };
 
 if (_mrv emptyPositions "cargo" == 0) exitWith {
