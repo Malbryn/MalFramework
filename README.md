@@ -1,13 +1,13 @@
 <p align="center">
   <img src="https://i.imgur.com/Lq5Do49.png">
-  <a href="https://github.com/Malbryn/MalFramework/releases/tag/v1.05">
-    <img src="https://img.shields.io/badge/version-1.05-brightgreen" alt="MalFramework Version">
+  <a href="https://github.com/Malbryn/MalFramework/releases/tag/v1.06">
+    <img src="https://img.shields.io/badge/version-1.06-brightgreen" alt="MalFramework Version">
   </a>
 </p>
 
 Welcome to **Malbryn's Mission Framework**. This framework was made for my Arma 3 scripted missions and it is based on some other Arma 3 mission frameworks. Some scripts were made by other people, they are credited in the script headers as well as in the Credits section. This script library was suited for scripted CO-OP PvE missions.
 
-If something is broken, contact **Malbryn**.
+If something is broken, contact **[Malbryn](https://www.fkgaming.eu/profile/4189-malbryn/)**.
 
 [Click here for the Wiki](https://github.com/Malbryn/MalFramework/wiki)
 
@@ -73,7 +73,7 @@ If something is broken, contact **Malbryn**.
 
 ### MF_Player
  - Gear script
- - Assign team colour
+ - Custom team colour
  - TFAR radio channel setup
  - View distance control
  - Respawn tickets
@@ -82,7 +82,7 @@ If something is broken, contact **Malbryn**.
  - Briefing & debriefing templates
  - Mission time limit check
  - Time accelaration control
- - Custom debriefing screens
+ - Custom end mission screens
  - Placeholder loading screen
 
 ## Required mods:
