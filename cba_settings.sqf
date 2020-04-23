@@ -346,7 +346,7 @@ force force asr_ai3_skills_setskills = true;
 force force asr_ai3_skills_teamsuperai = true;
 */
 
-/*
+
 // DUI - Squad Radar - Indicators
 force force diwako_dui_indicators_range = 20;
 
@@ -357,7 +357,7 @@ force force diwako_dui_radar_occlusion_fade_time = 10;
 force force diwako_dui_radar_sortType = "fireteam";
 force force diwako_dui_radar_sqlFirst = true;
 force force diwako_dui_enable_compass_dir = 1;
-*/
+
 
 
 /*
