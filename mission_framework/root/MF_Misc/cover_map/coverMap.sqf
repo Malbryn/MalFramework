@@ -21,7 +21,7 @@ if (hasinterface) then {
 
     // Check if the marker exists
     if (getMarkerType _marker == "") then {
-        systemChat "[MF ERROR] Map Cover: AO marker does not exist";
+        systemChat "[MF WARNING] Map cover module: AO marker does not exist!";
     };
 
     private _sx = (getMarkerSize _marker) select 0;

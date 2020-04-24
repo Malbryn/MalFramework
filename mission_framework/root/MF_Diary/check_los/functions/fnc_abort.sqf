@@ -1,7 +1,6 @@
 #include "script_component.hpp"
 
-//A or M
-//
+// A or M
 if (!GVAR(aborted) && ((_this select 1) == 30 || (_this select 1) == 50)) then {
     GVAR(aborted) = true; //protection from user holding button
     if (GVAR(generating)) then {

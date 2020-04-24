@@ -3,8 +3,9 @@
  * _this select 0: OBJECT - Intel object
  * _this select 1: SCALAR - ID of the intel
  *
- * Example:
+ * Examples:
  * [this, 1] execVM "mission_framework\root\MF_Diary\intel\fn_initIntel.sqf"
+ * [laptop, 1] execVM "mission_framework\root\MF_Diary\intel\fn_initIntel.sqf"
  *
  */
 
@@ -14,15 +15,15 @@ MF_var_intel_list = [
     [
         "Test title 1",       // Title of the intel
         "Test text 1",        // Intel text
-        3,                  // Pick-up duration
-        true                // Delete object after it was acquired
+        3,                    // Pick-up duration
+        true                  // Delete the object after it was acquired
     ],
 
 
 // ID: 1
     [
         "Test title 2",
-        "Test text 2", 
+        "Test text 2",
         10,
         false
     ]

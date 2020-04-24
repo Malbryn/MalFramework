@@ -3,7 +3,7 @@
  * Malbryn
  *
  * Description:
- * Starts other scripts to remove the unit's current gear and then applies the custom loadout
+ * Sets the unit's gear according to their role (defined in \config\gear\gear.sqf)
  *
  * Arguments:
  * _this select 0: OBJECT - Unit
@@ -39,8 +39,8 @@ switch _role do {
     #include "..\..\..\config\gear\gear.sqf"
 
     default {
-        systemChat format ["[MF WARNING] Undefined role in the loadout: %1", _role];
-        diag_log format ["[MF WARNING] Undefined role in the loadout: %1", _role];
+        systemChat format ["[MF WARNING] Player init module: Undefined role in the loadout: %1", _role];
+        diag_log format ["[MF WARNING] Player init module: Undefined role in the loadout: %1", _role];
     };
 };
 
@@ -51,8 +51,8 @@ diag_log format ["[MF LOG] Role found: %1. Applying loadout...", _role];
 if !(count _gear == 0) then {
     _unit setUnitLoadout _gear;
 } else {
-    systemChat "[MF ERROR] Empty gear array";
-    diag_log "[MF ERROR] Empty gear array";
+    systemChat "[MF ERROR] Player init module: Empty gear array!";
+    diag_log "[MF ERROR] Player init module: Empty gear array!";
 };
 
 diag_log "[MF LOG] Loadout applied. Saving...";

@@ -47,7 +47,7 @@ _delete = _intel select 3;
         _arguments params ["_title", "_text", "_delete"];
 
         [_title, _text, name _finder] remoteExec ["MF_fnc_addIntelToDiary", 0, true];
-        ["IntelAdded", [format ["Intel: %1<br/>Found by %2", _title, name _finder]]] remoteExec ["BIS_fnc_showNotification", 0, false];
+        ["IntelAdded", [format ["Intel: %1<br/>was found by %2", _title, name _finder]]] remoteExec ["BIS_fnc_showNotification", 0, false];
 
         if (_delete) then { deleteVehicle _object };
     },

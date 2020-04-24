@@ -19,7 +19,7 @@
 missionNamespace setVariable ["MF_drop_available", true, true];
 
 if (count MF_var_supply_drop_crates == 0) exitWith {
-    systemChat "[MF ERROR] The array of the supply drop crates is empty";
+    systemChat "[MF WARNING] Supply drop module: The supply drop crate array is empty!";
 };
 
 if (hasInterface && (player getVariable "MF_var_is_CO")) then {

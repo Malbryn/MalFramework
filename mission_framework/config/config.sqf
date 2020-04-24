@@ -6,7 +6,7 @@
 /* ------------------------- DON'T REMOVE OR COMMENT OUT THESE ------------------------ */
 
 // End condition: time limit
-MF_var_end_time_enabled = true;  // Mission time limit on/off
+MF_var_end_time_enabled = true;  // Mission time limit
 MF_var_end_time_limit = 90 MINUTES;  // Mission time limit in seconds
 
 // End condition: friendly casualties
@@ -14,15 +14,15 @@ MF_var_end_cas_enabled = false;  // Mission fail if the casualty rate is too hig
 MF_var_end_cas_rate = 75;  // Casualty rate in percentage (75 = 75% of the platoon is dead)
 
 // End condition: civilian casualties
-MF_var_end_civ_cas_enabled = true;  // Mission fail if the casualty rate is too high
+MF_var_end_civ_cas_enabled = true;  // Mission fail if the friendly casualty rate is too high
 MF_var_end_civ_cas_rate = 50;  // Casualty rate in percentage (50 = 50% of the civilians are dead)
 
 // End condition: tasks
-MF_var_end_task_enabled = true;  // Mission success if certain amount of tasks was completed in any order
-MF_var_end_task_number = 2;  // Number of successfully completed tasks that triggers this condition
+MF_var_end_task_enabled = true;  // Mission success if the minimum number of tasks were completed (in any order)
+MF_var_end_task_number = 2;  // Number of successfully completed tasks to trigger this condition
 
 // End condition: extraction
-MF_var_end_ex_enabled = true;  // Mission end if x% of the platoon reach the extraction marker
+MF_var_end_ex_enabled = true;  // Mission end if x% of the platoon reaches the extraction marker
 MF_var_end_ex_marker = "extraction";  // Name of the area marker used for extraction
 MF_var_end_ex_threshold = 50;  // 50% of the players should be inside the exfil marker to trigger the mission end
 MF_var_end_task_threshold = 66;  // 66% of the tasks should be completed to be a mission success
@@ -35,7 +35,7 @@ MF_var_body_removal = false;  // If the players' corpses should be deleted upon 
 
 // View distances
 MF_var_view_distance_server = 2000;  // Server view distance (= AI view distance)
-MF_var_view_distance_player = 2000;  // Player view distance (default for everyone, can be overwritten in the player init)
+MF_var_view_distance_player = 2000;  // Player view distance (default for everyone, can be overwritten for individual units in the player init)
 
 // Time acceleration
 MF_var_time_acceleration = 1;  // Time acceleration between 0.1 - 120 (Note: this has no effect in local hosted sessions)
@@ -124,8 +124,8 @@ MF_var_success_rate = 50;  // Rate of the completed tasks to call it a success w
 #include "..\root\MF_Logistics\supply_drop\fncInit.sqf"
 MF_var_use_supply_drop = true;
 MF_var_supply_drop_crates = [  // Array of the crates (format: [crateVariable, "Name shown in the menu"])
-    [crate1, "Ammo Resupply"],
-    [crate2, "Medic Resupply"]
+    //[crate1, "Ammo Resupply"],
+    //[crate2, "Medic Resupply"]
 ];
 MF_var_supply_drop_plane = "B_T_VTOL_01_vehicle_F";  // Classname of the plane or helicopter
 [] call MF_fnc_addSupplyDropMenu;
