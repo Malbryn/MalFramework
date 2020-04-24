@@ -1,3 +1,6 @@
+// Do not edit unless you know what you're doing
+// To access the basic settings open the description.hpp in mission_framework\config\
+
 // Importing the custom settings
 #include "mission_framework\config\description.hpp"
 __EXEC(MISSION_MAKER = UID;)
@@ -59,7 +62,7 @@ class CfgRemoteExec {
 // CBA Pre-Init Eventhandler
 class Extended_PreInit_EventHandlers {
     class MF_PreInit {
-	    init = "call compile preprocessFileLineNumbers 'mission_framework\root\MF_Cfg\cba_xeh\preInit.sqf'";
+        init = "call compile preprocessFileLineNumbers 'mission_framework\root\MF_Cfg\cba_xeh\preInit.sqf'";
     };
 };
 
@@ -67,7 +70,7 @@ class Extended_PreInit_EventHandlers {
 // CBA Post-Init Eventhandler
 class Extended_PostInit_EventHandlers {
     class MF_PostInit {
-	    init = "call compile preprocessFileLineNumbers 'mission_framework\root\MF_Cfg\cba_xeh\postInit.sqf'";
+        init = "call compile preprocessFileLineNumbers 'mission_framework\root\MF_Cfg\cba_xeh\postInit.sqf'";
     };
 };
 

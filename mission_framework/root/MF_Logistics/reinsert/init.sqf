@@ -18,7 +18,7 @@
  */
 
 if (hasInterface) then {
-    if (isNil "tpPole") exitWith { systemChat "[MF ERROR] Teleport pole does not exist!" };
+    if (isNil "tpPole") exitWith { systemChat "[MF WARNING] Reinsert module: Teleport pole does not exist!" };
 
     // Option #1 - Paradrop
     if (MF_var_use_halo) then {

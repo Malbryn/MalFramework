@@ -4,7 +4,7 @@
 
 // Mission parameters
 class Header {
-    gameType =  Coop;  // Game type (Coop for regular scripted missions)
+    gameType =  Coop;  // Game type (use Coop for regular scripted missions)
     minPlayers =  1;  // Minimum number of players
     maxPlayers = 8;  // Maximum number of players
 };
@@ -24,4 +24,4 @@ loadScreen = "mission_framework\config\img\loading_screen.jpg";  // Loading scre
 
 // Respawn settings
 respawnButton = 1;  // Enable/disable the respawn button (in the Esc menu)
-respawnDelay = 30;  // Respawn delay in seconds (this is ignored when using the wave respawn module)
+respawnDelay = 30;  // Respawn delay in seconds (this is overwritten by the framework when using the wave respawn module)

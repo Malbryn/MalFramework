@@ -36,7 +36,7 @@ if (hasInterface) then {
 
             /*
             if (isNull _target) then {
-                systemChat ["[MF ERROR] Target object does not exist."];
+                systemChat ["[MF ERROR] JIP module: Target object does not exist."];
             };
             */
 

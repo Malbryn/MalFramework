@@ -23,20 +23,20 @@
 params ["_unit", ["_traits", 0]];
 
 switch (_traits) do {
-	case 0 : {
-		_unit setVariable ["MF_var_is_SL", false, true];
-		_unit setVariable ["MF_var_is_CO", false, true];
-	};
-	case 1 : {
-		_unit setVariable ["MF_var_is_SL", true, true];
-		_unit setVariable ["MF_var_is_CO", false, true];
-	};
-	case 2 : {
-		_unit setVariable ["MF_var_is_SL", true, true];
-		_unit setVariable ["MF_var_is_CO", true, true];
-	};
-	default {
-		systemChat format ["[MF ERROR] Invalid unit trait value (%1) of unit (%2)", _traits, _unit];
-		diag_log format ["[MF ERROR] Invalid unit trait value (%1) of unit (%2)", _traits, _unit];
-	};
+    case 0 : {
+        _unit setVariable ["MF_var_is_SL", false, true];
+        _unit setVariable ["MF_var_is_CO", false, true];
+    };
+    case 1 : {
+        _unit setVariable ["MF_var_is_SL", true, true];
+        _unit setVariable ["MF_var_is_CO", false, true];
+    };
+    case 2 : {
+        _unit setVariable ["MF_var_is_SL", true, true];
+        _unit setVariable ["MF_var_is_CO", true, true];
+    };
+    default {
+        systemChat format ["[MF WARNING] Player init module: Invalid unit trait value (%1) of unit (%2)!", _traits, _unit];
+        diag_log format ["[MF WARNING] Player init module: Invalid unit trait value (%1) of unit (%2)!", _traits, _unit];
+    };
 };

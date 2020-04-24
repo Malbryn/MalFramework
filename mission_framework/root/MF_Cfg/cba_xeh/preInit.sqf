@@ -31,16 +31,16 @@
 
 // Compiling those functions that are transferable (i.e. CO dies, next in command can use the support modules) for easier remote execution
 MF_fnc_addRpMenu =
-	compile preprocessFileLineNumbers "mission_framework\root\MF_Logistics\reinsert\rally_point\fn_addRpMenu.sqf";
+    compile preprocessFileLineNumbers "mission_framework\root\MF_Logistics\reinsert\rally_point\fn_addRpMenu.sqf";
 
 MF_fnc_addSupplyDropMenu =
-	compile preprocessFileLineNumbers "mission_framework\root\MF_Logistics\supply_drop\fn_addSupplyDropMenu.sqf";
+    compile preprocessFileLineNumbers "mission_framework\root\MF_Logistics\supply_drop\fn_addSupplyDropMenu.sqf";
 
 MF_fnc_addScenarioEndControl =
-	compile preprocessFileLineNumbers "mission_framework\root\MF_Mission\scenario_control\fn_addScenarioEndControl.sqf";
+    compile preprocessFileLineNumbers "mission_framework\root\MF_Mission\scenario_control\fn_addScenarioEndControl.sqf";
 
 MF_fnc_addCallRespawnMenu =
-	compile preprocessFileLineNumbers "mission_framework\root\MF_Mission\respawn_wave\fn_addCallRespawnMenu.sqf";
+    compile preprocessFileLineNumbers "mission_framework\root\MF_Mission\respawn_wave\fn_addCallRespawnMenu.sqf";
 
 
 // Defining some global variables which need default values

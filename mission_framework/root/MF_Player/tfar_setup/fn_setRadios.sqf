@@ -36,11 +36,11 @@ if !(local _unit) exitWith {};
 
 // Convert the channel number to an array pointer
 if (_srCh != -1) then {
-	_srCh = _srCh - 1;
+    _srCh = _srCh - 1;
 };
 
 if (_lrCh != -1) then {
-	_lrCh = _lrCh - 1;
+    _lrCh = _lrCh - 1;
 };
 
 private _channels = [_srCh, _lrCh];

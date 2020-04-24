@@ -21,7 +21,7 @@ params ["_unit"];
 _curatorObj = _unit getVariable ["MF_curator", objNull];
 
 if (isNull _curatorObj) exitWith {
-    ["[MF ERROR] Curator object does not exist"] remoteExec ["systemChat", _unit];
+    ["[MF ERROR] Admin curator module: Curator object does not exist!"] remoteExec ["systemChat", _unit];
 };
 
 unassignCurator _curatorObj;

@@ -91,7 +91,7 @@ if (player getVariable "MF_tickets" == 0 ||  MF_var_wave_respawn_count == 0) the
         if !(_target getVariable "MF_var_is_CO") then {
             _target setVariable ["MF_var_is_CO", true, true];
             [] remoteExec ["MF_fnc_addScenarioEndControl", _target];
-            ["Info", ["You can now cann tactical withdrawal"]] remoteExec ["BIS_fnc_showNotification", _target];
+            ["Info", ["You can now call tactical withdrawal"]] remoteExec ["BIS_fnc_showNotification", _target];
         };
     };
 
