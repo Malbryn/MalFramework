@@ -25,7 +25,7 @@ force force ace_arsenal_allowSharedLoadouts = true;
 force force ace_arsenal_EnableRPTLog = true;
 
 // ACE Artillery
-force force ace_artillerytables_advancedCorrections = true;
+force force ace_artillerytables_advancedCorrections = false;
 force force ace_artillerytables_disableArtilleryComputer = true;
 force force ace_mk6mortar_airResistanceEnabled = true;
 force force ace_mk6mortar_allowCompass = true;
@@ -40,9 +40,9 @@ force force ace_captives_requireSurrenderAi = false;
 
 // ACE Common
 force force ace_common_allowFadeMusic = true;
-force force ace_common_checkPBOsAction = 0;
-force force ace_common_checkPBOsCheckAll = false;
-force force ace_common_checkPBOsWhitelist = "[]";
+force ace_common_checkPBOsAction = 0;
+force ace_common_checkPBOsCheckAll = false;
+force ace_common_checkPBOsWhitelist = "[]";
 force force ace_noradio_enabled = true;
 force force ace_parachute_hideAltimeter = true;
 
@@ -54,8 +54,8 @@ force force ace_cookoff_enableAmmoCookoff = true;
 force force ace_cookoff_probabilityCoef = 0.3;
 
 // ACE Crew Served Weapons
-force force ace_csw_ammoHandling = 1;
-force force ace_csw_defaultAssemblyMode = true;
+force force ace_csw_ammoHandling = 2;
+force force ace_csw_defaultAssemblyMode = false;
 force force ace_csw_handleExtraMagazines = true;
 force force ace_csw_progressBarTimeCoefficent = 1;
 
@@ -66,7 +66,7 @@ force force ace_explosives_requireSpecialist = false;
 
 // ACE Fragmentation Simulation
 force force ace_frag_enabled = true;
-force force ace_frag_maxTrack = 10;
+force force ace_frag_maxTrack = 20;
 force force ace_frag_maxTrackPerFrame = 10;
 force force ace_frag_reflectionsEnabled = false;
 force force ace_frag_spallEnabled = false;
@@ -116,9 +116,9 @@ force force ace_magazinerepack_timePerBeltLink = 8;
 force force ace_magazinerepack_timePerMagazine = 2;
 
 // ACE Map
-force force ace_map_BFT_Enabled = false;
+force force ace_map_BFT_Enabled = true;
 force force ace_map_BFT_HideAiGroups = true;
-force force ace_map_BFT_Interval = 1;
+force force ace_map_BFT_Interval = 0.5;
 force force ace_map_BFT_ShowPlayerNames = false;
 force force ace_map_DefaultChannel = 1;
 force force ace_map_mapGlow = true;
@@ -131,7 +131,7 @@ force force ace_markers_moveRestriction = 5;
 // ACE Map Gestures
 force force ace_map_gestures_enabled = true;
 force force ace_map_gestures_interval = 0.03;
-force force ace_map_gestures_maxRange = 8;
+force force ace_map_gestures_maxRange = 7;
 
 // ACE Medical
 force force ace_medical_ai_enabledFor = 0;
@@ -186,7 +186,7 @@ force force ace_medical_treatment_timeCoefficientPAK = 0.75;
 
 // ACE Name Tags
 force force ace_nametags_playerNamesMaxAlpha = 0.8;
-force force ace_nametags_playerNamesViewDistance = 12;
+force force ace_nametags_playerNamesViewDistance = 8;
 force force ace_nametags_showCursorTagForVehicles = false;
 
 // ACE Nightvision
@@ -310,6 +310,7 @@ force force ace_zeus_revealMines = 0;
 force force ace_zeus_zeusAscension = false;
 force force ace_zeus_zeusBird = false;
 
+
 /*
 // ASR AI3
 force force asr_ai3_control_onteamswitchleader = true;
@@ -347,6 +348,7 @@ force force asr_ai3_skills_teamsuperai = true;
 */
 
 
+
 // DUI - Squad Radar - Indicators
 force force diwako_dui_indicators_range = 20;
 
@@ -357,6 +359,7 @@ force force diwako_dui_radar_occlusion_fade_time = 10;
 force force diwako_dui_radar_sortType = "fireteam";
 force force diwako_dui_radar_sqlFirst = true;
 force force diwako_dui_enable_compass_dir = 1;
+
 
 
 
@@ -492,17 +495,6 @@ force force lambs_eventhandlers_ExplosionReactionTime = 9;
 
 
 /*
-// VET_Unflipping
-force force vet_unflipping_require_serviceVehicle = false;
-force force vet_unflipping_require_toolkit = false;
-force force vet_unflipping_time = 8;
-force force vet_unflipping_unit_man_limit = 3;
-force force vet_unflipping_unit_mass_limit = 3000;
-force force vet_unflipping_vehicle_mass_limit = 100000;
-*/
-
-
-/*
 // VCOM SETTINGS
 force force VCM_ActivateAI = true;
 force force VCM_ADVANCEDMOVEMENT = true;
@@ -534,3 +526,45 @@ force force VCM_USECBASETTINGS = true;
 force force VCM_WARNDELAY = 30;
 force force VCM_WARNDIST = 500;
 */
+
+
+// Advanced Urban Rappelling
+force force AUR_ADVANCED_RAPPELING_ITEMS_NEEDED = 0;
+force force AUR_ADVANCED_RAPPELING_NEW_ACTION = false;
+force force AUR_ADVANCED_RAPPELING_NEW_ACTION_TIME = 3;
+force force AUR_ADVANCED_RAPPELING_ROPES_HANDLING = 0;
+force force AUR_ADVANCED_RAPPELING_VELOCITY = 1;
+
+// CBA Weapons
+force force cba_disposable_replaceDisposableLauncher = true;
+
+// GRAD Trenches
+force force grad_trenches_functions_bigEnvelopeDigTime = 40;
+force force grad_trenches_functions_buildFatigueFactor = 1;
+force force grad_trenches_functions_giantEnvelopeDigTime = 90;
+force force grad_trenches_functions_LongEnvelopeDigTime = 100;
+force force grad_trenches_functions_shortEnvelopeDigTime = 20;
+force force grad_trenches_functions_smallEnvelopeDigTime = 30;
+force force grad_trenches_functions_stopBuildingAtFatigueMax = false;
+force force grad_trenches_functions_vehicleEnvelopeDigTime = 120;
+
+// MrSanchez' Headlamp
+force force SAN_Headlamp_Arcade = true;
+force force SAN_Headlamp_RenderDistance = 1500;
+
+// NIArms
+force force niarms_accswitch = true;
+force force niarms_magSwitch = true;
+
+// VET_Unflipping
+force force vet_unflipping_require_serviceVehicle = false;
+force force vet_unflipping_require_toolkit = false;
+force force vet_unflipping_time = 5;
+force force vet_unflipping_unit_man_limit = 7;
+force force vet_unflipping_unit_mass_limit = 3000;
+force force vet_unflipping_vehicle_mass_limit = 100000;
+
+// Zeus Enhanced
+force force zen_common_autoAddObjects = false;
+force force zen_compat_ace_hideModules = false;
+force force zen_editor_parachuteSounds = true;
