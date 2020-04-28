@@ -99,6 +99,13 @@ If something is broken, contact **[Malbryn](https://www.fkgaming.eu/profile/4189
  - DUI Radar
  - IFA3 Liberation
  - LAMBS Danger FSM
- - Suppress
+ - LAxemann's Suppress
  - VET Unflipping
  - VCOM AI (script version included in the framework)
+ - Advanced Urban Rappelling
+ - CBA Weapons
+ - GRAD Trenches
+ - MrSanchez' Headlamp
+ - NIArms
+ - VET_Unflipping
+ - Zeus Enhanced
