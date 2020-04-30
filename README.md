@@ -7,9 +7,12 @@
 
 Welcome to **Malbryn's Mission Framework**. This framework was made for my Arma 3 scripted missions and it is based on some other Arma 3 mission frameworks. Some scripts were made by other people, they are credited in the script headers as well as in the Credits section. This script library was suited for scripted CO-OP PvE missions.
 
-If something is broken, contact **[Malbryn](https://www.fkgaming.eu/profile/4189-malbryn/)**.
+If something is broken, contact **[Malbryn](https://www.fkgaming.eu/profile/4189-malbryn/)** or open a new issue on **[GitHub](https://github.com/Malbryn/MalFramework/issues)**.
 
-[Click here for the Wiki](https://github.com/Malbryn/MalFramework/wiki)
+</br>
+
+**[Click here for the Wiki](https://github.com/Malbryn/MalFramework/wiki)**
+</br>
 
 ## Current Features:
 ### MF_Admin
