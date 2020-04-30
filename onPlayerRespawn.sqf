@@ -24,14 +24,6 @@ if (serverCommandAvailable "#logout" || getPlayerUID player == parsingNamespace 
     [player] remoteExec ["MF_fnc_reassignCurator", 2];
 };
 
-// Remaining respawn tickets
-if (player getVariable "MF_tickets" == -1) exitWith {};
-
-private _amount = (player getVariable "MF_tickets") - 1;
-[player, _amount] call MF_fnc_setRespawnTickets;
-
-[format ["Respawns available:<br/>%1", _amount], 2, ace_player, 12] call ace_common_fnc_displayTextStructured;
-
 // Snow effect
 if (MF_var_snowfall_enabled) then {
     [] spawn MF_fnc_startSnowfall;
@@ -40,4 +32,12 @@ if (MF_var_snowfall_enabled) then {
 // Delete old body
 if (MF_var_body_removal) then {
     hideBody (_this select 1);
-}
+};
+
+// Remaining respawn tickets
+if (player getVariable "MF_tickets" == -1) exitWith {};
+
+private _amount = (player getVariable "MF_tickets") - 1;
+[player, _amount] call MF_fnc_setRespawnTickets;
+
+[format ["Respawns available:<br/>%1", _amount], 2, ace_player, 12] call ace_common_fnc_displayTextStructured;
