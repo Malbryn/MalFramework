@@ -10,6 +10,7 @@ enableSaving [false, false];
 enableEnvironment [false, true];
 enableSentences true;
 
+[] call MF_fnc_setTeamColour;
 [] call MF_fnc_setViewDistance;
 [] call MF_fnc_setRespawnTickets;
 [] spawn MF_fnc_setChannels;
