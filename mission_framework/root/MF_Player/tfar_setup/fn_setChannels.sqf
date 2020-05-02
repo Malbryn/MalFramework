@@ -17,7 +17,7 @@
  */
 
 if (hasInterface) then {
-    [{[] call TFAR_fnc_haveSWRadio}, {
+    [{[] call TFAR_fnc_haveSWRadio || [] call TFAR_fnc_haveLRRadio}, {
         private _channels = player getVariable ["MF_var_radio_channels", []];
 
         if (count _channels == 0) exitWith {};

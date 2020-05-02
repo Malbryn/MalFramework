@@ -40,9 +40,7 @@ if !(local _unit) exitWith {};
 
 
 // Assign team colour
-[_unit, _colour] spawn {
-  (_this select 0) assignTeam (_this select 1);
-};
+_unit setVariable ["MF_var_tc", _colour, true];
 
 
 // Assign view distance
