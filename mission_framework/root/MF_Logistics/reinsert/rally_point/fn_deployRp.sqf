@@ -34,10 +34,12 @@ if !(isNil {(group player) getVariable "RPTent"}) exitWith {
 private _unitArray = (units group player) - [player];
 
 
+/*
 // Check if there's any squad member nearby
 if !((_unitArray findIf {(_x distance player < 15) && alive _x}) > -1) exitWith {
     ["Warning", ["You need one more squad member nearby to be able to deploy a RP"]] call BIS_fnc_showNotification;
 };
+*/
 
 
 // Check if there's enemy nearby
