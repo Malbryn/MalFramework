@@ -21,7 +21,7 @@ if (!hasInterface) exitWith {};
 private _id = (group player) getVariable ["RPTent", nil];
 
 if (isNil "_id") exitWith {
-    ["Warning", ["Your squad RP is not deployed at this time"]] call BIS_fnc_showNotification;
+    ["Warning", ["Your squad RP is not deployed at this time, please stand by"]] call BIS_fnc_showNotification;
 
     private _notify = ((units group player) select { _x getVariable "MF_var_is_SL" }) - [player];
     ["Info", ["A squad member is waiting for the RP to be deployed"]] remoteExec ["BIS_fnc_showNotification", _notify];

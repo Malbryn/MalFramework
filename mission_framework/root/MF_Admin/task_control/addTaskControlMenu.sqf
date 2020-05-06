@@ -17,15 +17,15 @@
  */
 
 if (hasInterface && (serverCommandAvailable "#logout" || getPlayerUID player == parsingNamespace getVariable "MISSION_MAKER")) then {
-    // Put all tasks into an array
+    // Put every task into an array
     _taskList = player call BIS_fnc_tasksUnit;
 
-    // Create the Tasks parent
+    // Create the Tasks category
     private _menu = ['Tasks', 'Tasks', '', {}, {true}] call ace_interact_menu_fnc_createAction;
 
     [player, 1, ["ACE_SelfActions", "Admin Menu"], _menu] call ace_interact_menu_fnc_addActionToObject;
 
-    // Iterate through the tasks and add each task to the Tasks parent menu
+    // Iterate the tasks and add each task to the Tasks category
     _task = [];
     _taskName = "";
 

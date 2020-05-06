@@ -3,7 +3,7 @@
  * Malbryn
  *
  * Description:
- * Spawns a plane that drops a crate in as resupply
+ * Spawns the resupply plane which then drops the supplies
  *
  * Arguments:
  * _this select 0: OBJECT - Pre-placed resupply box

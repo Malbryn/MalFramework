@@ -1,3 +1,6 @@
+// Clickable link to marker:
+// <marker name='nameOfTheMarker'>Click here</marker>
+
 NEWTAB("I. Organization")
 <br/><font color='#21749c' size='18' face='PuristaBold'>ORBAT</font>
 <br/>
@@ -38,7 +41,7 @@ NEWTAB("II. Situation")
 <br/><font color='#21749c' size='18' face='PuristaBold'>ENEMY FORCES</font>
 <br/><font color='#21749c' size='16' face='PuristaSemiBold'>Composition and Strength</font>
 <br/>description_of_the_enemy_composition_weapons_and_assets
-<br/>enemy_qrf_composition_strength
+<br/>enemy_qrf_composition_and_strength
 <br/>
 <br/><font color='#21749c' size='16' face='PuristaSemiBold'>Capabilities:</font>
 <br/><font size='14' face='PuristaMedium'>Fire support:</font>
@@ -124,6 +127,7 @@ NEWTAB("VI. Mission notes:")
 <br/>
 <br/><font color='#21749c' size='18' face='PuristaBold'>Mission maker's notes</font>
 <br/> - mission_notes
+<br/> - other_technical_information
 <br/>
 <br/>
 <br/><font color='#21749c' size='18' face='PuristaBold'>Mission made by</font>

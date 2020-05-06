@@ -18,7 +18,7 @@
 
 MF_var_civ_cas = 0;
 
-// The eventhandler only counts the civilian casualties only if it was caused by the player side
+// The eventhandler counts the civilian casualties only if it was caused by the player side
 addMissionEventHandler ["EntityKilled", {
     params ["_unit", "_killer", "_triggerMan"];
 

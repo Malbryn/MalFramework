@@ -1,5 +1,5 @@
 // These skills will apply to every AI in the mission
-// Also will apply to any AI spawned after the mission init
+// Also will apply to any AI spawned during the mission
 
 MF_ai_skills = [
     0.5,	// General (Higher = Better)

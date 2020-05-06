@@ -1,4 +1,4 @@
-// These mission endings are currently hardcoded, do not remove
+// These mission endings are currently hardcoded, do not remove these
 
 /* ----------------------------DEFAULT ENDINGS----------------------------- */
 /* ------------------- CUSTOMISABLE BUT DO NOT REMOVE---------------------- */
