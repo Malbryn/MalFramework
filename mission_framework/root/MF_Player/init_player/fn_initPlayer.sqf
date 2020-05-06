@@ -48,14 +48,19 @@ _unit setVariable ["MF_var_vd", _viewDistance, true];
 
 
 // ACE player variables
+// Medic
 if ((roleDescription _unit) find "Medic" >= 0) then {
     _unit setVariable ["ACE_medical_medicClass", 1, true];
 } else {
     _unit setVariable ["ACE_medical_medicClass", 0, true];
 };
 
+// Pilot
 if ((roleDescription _unit) find "Pilot" >= 0) then {
     _unit setVariable ["ACE_GForceCoef", 0.5, true];
 } else {
     _unit setVariable ["ACE_GForceCoef", 1.0, true];
 };
+
+// Engineer
+_unit setVariable ["ACE_isEngineer", 0, true];

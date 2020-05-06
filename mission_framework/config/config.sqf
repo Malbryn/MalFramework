@@ -10,7 +10,7 @@ MF_var_end_time_enabled = true;  // Mission time limit
 MF_var_end_time_limit = 90 MINUTES;  // Mission time limit in seconds
 
 // End condition: friendly casualties
-MF_var_end_cas_enabled = false;  // Mission fail if the friendly casualty rate is too high
+MF_var_end_cas_enabled = true;  // Mission fail if the friendly casualty rate is too high
 MF_var_end_cas_rate = 75;  // Casualty rate in percentage (75 = 75% of the platoon is dead)
 
 // End condition: civilian casualties
@@ -123,7 +123,8 @@ MF_var_success_rate = 50;  // Rate of the completed tasks to call it a success w
 // SUPPLY DROP
 #include "..\root\MF_Logistics\supply_drop\fncInit.sqf"
 MF_var_use_supply_drop = true;
-MF_var_supply_drop_crates = [  // Array of the crates (format: [crateVariable, "Name shown in the menu"])
+MF_var_supply_drop_crates = [
+    // Array of the crates (format: [crateVariable, "Name shown in the menu"])
     //[crate1, "Ammo Resupply"],
     //[crate2, "Medic Resupply"]
 ];
