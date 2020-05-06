@@ -38,7 +38,10 @@ switch (_cat) do {
     };
 
     case "mission" : {
-        _date = date;
+        _date = format ["%1-%2-%3",
+        date select 0,
+        (if (date select 1 < 10) then { "0" } else { "" }) + str (date select 1),
+        (if (date select 2 < 10) then { "0" } else { "" }) + str (date select 2)];
         _missionTime = ceil (CBA_missionTime / 60);
         _viewDistancePlayer = MF_var_view_distance_player;
         _viewDistanceServer = MF_var_view_distance_server;

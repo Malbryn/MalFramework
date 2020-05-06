@@ -44,7 +44,7 @@ MF_fnc_addCallRespawnMenu =
     compile preprocessFileLineNumbers "mission_framework\root\MF_Mission\respawn_wave\fn_addCallRespawnMenu.sqf";
 
 
-// Defining some global variables which need default values
+// Defining some global variables which require default values
 MF_var_use_supply_drop = false;
 MF_var_sc_enabled = false;
 MF_var_nd_ending_enabled = false;

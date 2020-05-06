@@ -28,7 +28,7 @@ if (_mrv emptyPositions "cargo" == 0) exitWith {
     ["Warning", ["Target vehicle is full!"]] call BIS_fnc_showNotification;
 };
 
-cutText ["You are being reinserted to the AO", "BLACK OUT", 2, true];
+cutText ["You are being reinserted into the AO", "BLACK OUT", 2, true];
 uiSleep 2;
 player moveInCargo _mrv;
 uiSleep 1;

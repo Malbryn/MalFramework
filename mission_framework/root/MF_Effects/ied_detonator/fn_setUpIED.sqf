@@ -26,4 +26,4 @@ _id = str (netId _obj);
 _trigger = createTrigger ["EmptyDetector", getPos _obj, false];
 _trigger setTriggerActivation ["ANYPLAYER", "PRESENT", false];
 _trigger setTriggerArea [_radius, _radius, 0, false, _radius];
-_trigger setTriggerStatements ["this", format ["if (alive %1) then { [%2] spawn MF_fnc_detonateIED; };", _owner, _id], ""];
+_trigger setTriggerStatements ["this && isServer", format ["if (alive %1) then { [%2] spawn MF_fnc_detonateIED; };", _owner, _id], ""];

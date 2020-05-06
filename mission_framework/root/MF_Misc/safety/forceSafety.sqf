@@ -3,7 +3,8 @@
  * Malbryn
  *
  * Description:
- * Puts on safety on the unit's weapon
+ * (Puts on safety on the unit's weapon)
+ * Puts the player's weapon away
  *
  * Arguments:
  * _this select 0: OBJECT - Unit which should be safety enabled (Optional, default: player)
@@ -29,8 +30,8 @@ if (hasInterface) then {
         };
         */
 
-        // Putting the weapon on the back instead of safety
-        // Players tend to forget about the safety it seems
+        // Putting the weapon on the back instead of forcing safety
+        // Players tend to forget about the safety...
         player action ["SWITCHWEAPON", player, player, -1];
     };
 };

@@ -56,7 +56,7 @@ if (player getVariable "MF_tickets" == 0 ||  MF_var_wave_respawn_count == 0) the
         if !(_target getVariable "MF_var_is_SL") then {
             _target setVariable ["MF_var_is_SL", true, true];
             [] remoteExec ["MF_fnc_addRpMenu", _target];
-            ["Info", ["You can now deploy squad rally point"]] remoteExec ["BIS_fnc_showNotification", _target];
+            ["Info", ["You can now deploy the squad rally point"]] remoteExec ["BIS_fnc_showNotification", _target];
         };
     };
 

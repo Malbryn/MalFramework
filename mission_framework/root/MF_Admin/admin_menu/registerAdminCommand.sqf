@@ -17,7 +17,7 @@
  */
 
 if (hasInterface) then {
-    // Adds admin menu to the self-nteraction options
+    // Adds admin menu to the self-interaction options
     // Use this if the admin logs in after mission init
     ["addAdminMenu", {
         [] execVM "mission_framework\root\MF_Admin\init.sqf";

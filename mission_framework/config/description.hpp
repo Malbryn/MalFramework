@@ -1,4 +1,4 @@
-// Set the UID of the mission maker (to access the admin menu and debug console during the mission)
+// The UID of the mission maker (to access the admin menu and debug console during the mission)
 #define UID "76561198066551781"  // Malbryn's UID
 
 
@@ -19,7 +19,7 @@ overviewText = "mission_info";  // Mission info on the mission selection screen 
 onLoadName = "operation_name";  // Name of the operation on the loading screen (you can drop the [CO-XX] part here)
 onLoadMission = "mission_description";  // Mission description on the loading screen
 author = "mission_maker";  // Author of the mission
-loadScreen = "mission_framework\config\img\loading_screen.jpg";  // Loading screen image
+loadScreen = "mission_framework\config\img\loading_screen.jpg";  // Loading screen image (use 2:1 image ratio)
 
 
 // Respawn settings

@@ -1,5 +1,5 @@
 // Do not edit unless you know what you're doing
-// To access the basic settings open the description.hpp in mission_framework\config\
+// To access the basic settings open the description.hpp in 'mission_framework\config\'
 
 // Importing the custom settings
 #include "mission_framework\config\description.hpp"
@@ -17,7 +17,7 @@ respawnOnStart = -1;  // See: https://community.bistudio.com/wiki/Description.ex
 // Mission settings
 cba_settings_hasSettingsFile = 1;  // Enable CBA settings file
 disableChannels[] = {0, 2, 4, 5};  // Disable certain comms channels
-disabledAI = 1;  // Enable/disable AI
+disabledAI = 1;  // Enable/disable AI in player slots
 enableDebugConsole[] = { UID };  // Enable the debug console for the mission maker + logged in admin or host
 enableTargetDebug = 1;  // Target debugging
 

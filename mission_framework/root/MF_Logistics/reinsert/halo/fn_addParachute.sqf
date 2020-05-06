@@ -20,7 +20,7 @@ params ["_unit"];
 
 private _backpack_class = backpack _unit;
 
-// If the unit already have a chute
+// If the unit already has a chute
 if (backpack _unit != "" and {getText (configfile >> "CfgVehicles" >> backpack _unit >> "backpackSimulation") isEqualTo "ParachuteSteerable"}) then {
     _backpack_class = "";
 };

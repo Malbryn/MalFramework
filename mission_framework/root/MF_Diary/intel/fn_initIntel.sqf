@@ -14,7 +14,7 @@
  *
  * Example:
  * // Use this method after mission init
- *   [<obj>, 0] call MF_fnc_initIntel
+ *   [objName, 0] call MF_fnc_initIntel
  *
  * // Use this method in the init field of the object
  *   [this, 1] execVM "mission_framework\root\MF_Diary\intel\fn_initIntel.sqf"

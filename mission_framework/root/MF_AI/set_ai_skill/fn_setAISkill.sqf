@@ -3,7 +3,7 @@
  * joko // Jonas (modified by Malbryn)
  *
  * Description:
- * Sets the AI skill globally
+ * Sets the AI skill
  *
  * Arguments:
  * _this select 0: OBJECT - The selected AI unit

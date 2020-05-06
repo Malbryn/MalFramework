@@ -10,11 +10,11 @@ MF_var_end_time_enabled = true;  // Mission time limit
 MF_var_end_time_limit = 90 MINUTES;  // Mission time limit in seconds
 
 // End condition: friendly casualties
-MF_var_end_cas_enabled = false;  // Mission fail if the casualty rate is too high
+MF_var_end_cas_enabled = false;  // Mission fail if the friendly casualty rate is too high
 MF_var_end_cas_rate = 75;  // Casualty rate in percentage (75 = 75% of the platoon is dead)
 
 // End condition: civilian casualties
-MF_var_end_civ_cas_enabled = true;  // Mission fail if the friendly casualty rate is too high
+MF_var_end_civ_cas_enabled = true;  // Mission fail if the civilian casualty rate is too high
 MF_var_end_civ_cas_rate = 50;  // Casualty rate in percentage (50 = 50% of the civilians are dead)
 
 // End condition: tasks
@@ -143,5 +143,5 @@ MF_var_supply_drop_plane = "B_T_VTOL_01_vehicle_F";  // Classname of the plane o
 // WAVE RESPAWN
 #include "..\root\MF_Mission\respawn_wave\fncInit.sqf"
 MF_var_wave_respawn_enabled = true;
-MF_var_wave_respawn_count = 2;  // Maximum amout of respawn waves (If used with respawn tickets then: MF_var_respawn_tickets <= MF_var_wave_respawn_count)
+MF_var_wave_respawn_count = 3;  // Maximum amout of respawn waves (If used together with respawn tickets then: MF_var_respawn_tickets <= MF_var_wave_respawn_count)
 [] call MF_fnc_addCallRespawnMenu;

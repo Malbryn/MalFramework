@@ -3,7 +3,7 @@
  * Malbryn
  *
  * Description:
- * Sets the player's view distance
+ * Sets the player's and server's view distance
  *
  * Arguments:
  * -

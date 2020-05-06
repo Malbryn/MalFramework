@@ -55,7 +55,6 @@ if !(count _gear == 0) then {
     diag_log "[MF ERROR] Player init module: Empty gear array!";
 };
 
-diag_log "[MF LOG] Loadout applied. Saving...";
 
 // Save the current loadout
 _unit setVariable ["MF_var_current_loadout", _role, true];

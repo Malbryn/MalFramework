@@ -26,7 +26,7 @@ if (player getVariable "MF_tickets" != 0) then {
     [{alive player}, {
         setPlayerRespawnTime 999999;
     }] call CBA_fnc_waitUntilAndExecute;
-    
+
 } else {
-    ["Warning", ["The CO called for reinforcements but you don't have any respawns left."]] call BIS_fnc_showNotification;
+    ["Warning", ["The CO requested reinforcements but you don't have any respawns left."]] call BIS_fnc_showNotification;
 };

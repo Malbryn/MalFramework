@@ -41,7 +41,7 @@ if (MF_var_end_civ_cas_enabled) then {
     } forEach allUnits;
 };
 
-// End mission check loop
+// End mission check loop (checks every 10 seconds)
 MF_EndCheck = [{
     [] call MF_fnc_checkEndConditions;
 }, 10] call CBA_fnc_addPerFrameHandler;
