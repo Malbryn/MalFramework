@@ -1,0 +1,104 @@
+// Do not edit unless you know what you're doing
+// To access the basic settings open the description.hpp in 'mission_framework\config\'
+
+// Importing the custom settings
+#include "mission_framework\config\description.hpp"
+__EXEC(MF_missionMaker = UID;)
+
+
+// Respawn settings
+respawn = "BASE";  // Respawn type ("NONE", "BASE")
+respawnVehicleDelay = 60;  // Vehicle respawn delay in seconds (use the Vehicle respawn module instead)
+respawnDialog = 0;  // Displays the respawn dialog
+respawnOnStart = -1;  // See: https://community.bistudio.com/wiki/Description.ext#respawnOnStart
+//respawnTemplates[] = {};  // Pre-defined respawn templates
+
+
+// Mission settings
+cba_settings_hasSettingsFile = 1;  // Enable CBA settings file
+disableChannels[] = {0, 2, 4, 5};  // Disable certain comms channels
+disabledAI = 1;  // Enable/disable AI in player slots
+enableDebugConsole[] = { UID };  // Enable the debug console for the mission maker + logged in admin or host
+enableTargetDebug = 1;  // Target debugging
+
+
+// Garbage collector settings
+corpseManagerMode = 1;
+corpseLimit = 30;
+corpseRemovalMinTime = 300;
+corpseRemovalMaxTime = 600;
+
+wreckManagerMode = 1;
+wreckLimit = 15;
+wreckRemovalMinTime = 600;
+wreckRemovalMaxTime = 900;
+
+
+// Tasks
+taskManagement_markers2D = 0;  // Use 2D markers
+taskManagement_markers3D = 0;  // Use 3D markers
+taskManagement_propagate = 0;  // Propagate shared tasks to subordinates
+
+/*
+// Debrief config
+class CfgDebriefing {
+    #include "mission_framework\config\debriefing\CfgDebriefing.hpp"
+};
+
+class CfgDebriefingSections {
+    #include "mission_framework\root\MF_Cfg\CfgDebriefingSections\CfgDebriefingSections.hpp"
+};
+
+
+// Remote exec rules config
+class CfgRemoteExec {
+    class Functions {
+        mode = 2;
+        jip = 1;
+    };
+};
+
+
+// CBA Pre-Init Eventhandler
+class Extended_PreInit_EventHandlers {
+    class MF_PreInit {
+        init = "call compile preprocessFileLineNumbers 'mission_framework\root\MF_Cfg\cba_xeh\preInit.sqf'";
+    };
+};
+
+
+// CBA Post-Init Eventhandler
+class Extended_PostInit_EventHandlers {
+    class MF_PostInit {
+        init = "call compile preprocessFileLineNumbers 'mission_framework\root\MF_Cfg\cba_xeh\postInit.sqf'";
+    };
+};
+
+
+// CBA Init Eventhandler
+class Extended_Init_EventHandlers {
+    class CAManBase {
+        init = "[_this] call MF_fnc_setAISkill";
+    };
+};
+
+
+// Functions library
+class CfgFunctions {
+    #include "mission_framework\root\MF_Cfg\CfgFunctions\CfgFunctions.hpp"
+}
+
+
+// Notifications config
+class CfgNotifications {
+    #include "mission_framework\root\MF_Cfg\CfgNotifications\CfgNotifications.hpp"
+};
+
+
+// Custom sounds config
+class CfgSounds {
+    #include "mission_framework\root\MF_Cfg\CfgSounds\CfgSounds.hpp"
+};
+*/
+
+#include "mission_framework\core\main\CfgEventHandlers.hpp"
