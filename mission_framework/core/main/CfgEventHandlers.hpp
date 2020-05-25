@@ -46,6 +46,14 @@ class Extended_PreInit_EventHandlers {
     class GVAR(main) {
         init = PATH_PRE(main);
     };
+
+    class GVAR(performance) {
+        init = PATH_PRE(performance);
+    };
+
+    class GVAR(task_control) {
+        init = PATH_PRE(task_control);
+    };
 };
 
 
@@ -72,5 +80,13 @@ class Extended_PostInit_EventHandlers {
 
     class GVAR(main) {
         init = PATH_POST(main);
+    };
+
+    class GVAR(performance) {
+        init = PATH_POST(performance);
+    };
+
+    class GVAR(task_control) {
+        init = PATH_POST(task_control);
     };
 };

@@ -25,8 +25,8 @@ switch (_category) do {
     case "server" : {
         private ["_serverFps", "_serverMinFps", "_serverTime", "_missionTime"];
 
-        _serverFps = GVARMAIN(server_fps);
-        _serverMinFps = GVARMAIN(server_fps_min);
+        _serverFps = GVAR(serverFPS);
+        _serverMinFps = GVAR(serverFPSMin);
         _serverTime = ceil (serverTime / 60);
         _missionTime = ceil (CBA_missionTime / 60);
 
