@@ -11,12 +11,18 @@
         -
 
     Example:
-        [] call MF_main_fnc_initCustomEHs
+        call MF_main_fnc_initCustomEHs
 
     Returns:
         void
 */
 
-[{!(isNull (findDisplay 46) && CBA_missionTime > 1)}, {
+[{(!isNull (findDisplay 46) && CBA_missionTime > 1)}, {
     [QGVARMAIN(initFramework), []] call CFUNC(localEvent);
-}] call CBA_fnc_waitUntilAndExecute;
+}] call CFUNC(waitUntilAndExecute);
+
+
+[QGVARMAIN(systemMessage), {
+    params ["_message"];
+    systemChat format ["%1", _message];
+}] call CFUNC(addEventHandler);

@@ -11,7 +11,7 @@
         -
 
     Example:
-        [] call MF_blank_fnc_blank
+        call MF_blank_fnc_blank
 
     Returns:
         void

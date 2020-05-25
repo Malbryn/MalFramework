@@ -1,3 +1,5 @@
 #include "script_component.hpp"
 
-call FUNC(registerChatCommands);
+if (hasInterface) then {
+    call FUNC(registerChatCommands);
+};

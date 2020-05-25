@@ -11,7 +11,7 @@
         -
 
     Example:
-        [] call MF_admin_menu_fnc_addAdminMenu
+        call MF_admin_menu_fnc_addAdminMenu
 
     Returns:
         void

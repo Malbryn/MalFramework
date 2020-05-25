@@ -1,5 +1,7 @@
 #include "script_component.hpp"
 
-[QGVARMAIN(initFramework), {
-    [] call FUNC(addArsenalMenu);
-}] call CBA_fnc_addEventHandler;
+if (hasInterface) then {
+    [QGVARMAIN(initFramework), {
+        call FUNC(addArsenalMenu);
+    }] call CFUNC(addEventHandler);
+};
