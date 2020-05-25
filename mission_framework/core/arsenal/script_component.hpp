@@ -5,7 +5,7 @@
 // #define DISABLE_COMPILE_CACHE
 // #define ENABLE_PERFORMANCE_COUNTERS
 
-#ifdef DEBUG_ENABLED_arsenal
+#ifdef DEBUG_ENABLED_ARSENAL
     #define DEBUG_MODE_FULL
 #endif
 

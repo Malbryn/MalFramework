@@ -9,14 +9,14 @@ if (hasInterface) then {
 
 
 if (isServer) then {
-    [QGVARMAIN(registerCurator), {
+    [QGVAR(registerCurator), {
         params ["_unit"];
 
         [_unit] call FUNC(createCurator);
     }] call CFUNC(addEventHandler);
     
 
-    [QGVARMAIN(reassignCurator), {
+    [QGVAR(reassignCurator), {
         params ["_unit"];
 
         [_unit] call FUNC(reassignCurator);

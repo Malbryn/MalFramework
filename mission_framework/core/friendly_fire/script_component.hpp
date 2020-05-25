@@ -1,11 +1,11 @@
-#define COMPONENT chat_commands
+#define COMPONENT friendly_fire
 
 #define DEBUG_MODE_MINIMAL
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE
 // #define ENABLE_PERFORMANCE_COUNTERS
 
-#ifdef DEBUG_ENABLED_CHAT_COMMANDS
+#ifdef DEBUG_ENABLED_FRIENDLY_FIRE
     #define DEBUG_MODE_FULL
 #endif
 

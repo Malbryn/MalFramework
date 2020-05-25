@@ -30,6 +30,6 @@ _logic addCuratorEditableObjects [(allMissionObjects "Ship"), true];
 _logic addCuratorEditableObjects [(allMissionObjects "LandVehicle"), true];
 _logic addCuratorEditableObjects [(allMissionObjects "Man"), true];
 
-SETPVAR(_unit,GVARMAIN(curator),_logic);
+SETPVAR(_unit,GVAR(curator),_logic);
 
-[QGVARMAIN(systemMessage), ["[MF INFO] Registered as Curator."], _unit] call CFUNC(targetEvent);
+[QGVARMAIN(systemMessage), ["INFO", "Registered as Curator"], _unit] call CFUNC(targetEvent);

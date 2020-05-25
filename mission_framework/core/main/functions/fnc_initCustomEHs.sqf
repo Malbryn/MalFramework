@@ -23,6 +23,7 @@
 
 
 [QGVARMAIN(systemMessage), {
-    params ["_message"];
-    systemChat format ["%1", _message];
+    params ["_level", "_message"];
+    
+    MSG(_level,_message);
 }] call CFUNC(addEventHandler);

@@ -19,4 +19,4 @@
 
 if !(IS_ADMIN_LOGGED || getPlayerUID player == GETPAVAR(GVARMAIN(missionMaker),"")) exitWith {};
 
-[QGVARMAIN(registerCurator), [player]] call CFUNC(serverEvent);
+[QGVAR(registerCurator), [player]] call CFUNC(serverEvent);

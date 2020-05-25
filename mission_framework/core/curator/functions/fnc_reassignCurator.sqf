@@ -24,12 +24,14 @@ _logic = GETVAR(GVARMAIN(_unit),GVARMAIN(curator),objNull);
 
 if (isNull _logic) exitWith {
     INFO_2("Curator object does not exist!",_unit,_logic);
-    [QGVARMAIN(systemMessage), ["[MF ERROR] (curator) Curator object does not exist!"], _unit] call CFUNC(targetEvent);
+
+    [QGVARMAIN(systemMessage), ["ERROR", "Curator object does not exist!"], _unit] call CFUNC(targetEvent);
 };
 
 unassignCurator _logic;
 
-[{isNull (getAssignedCuratorLogic (_this select 0))}, {
-    (_this select 0) assignCurator (_this select 1);
-    [QGVARMAIN(systemMessage), ["[MF INFO] Registered as Curator."], _unit] call CFUNC(targetEvent);
+[{isNull (getAssignedCuratorLogic _this#0)}, {
+    _this#0 assignCurator _this#1;
+
+    [QGVARMAIN(systemMessage), ["INFO", "Registered as Curator"], _unit] call CFUNC(targetEvent);
 }, [_unit, _logic]] call CFUNC(waitUntilAndExecute);

@@ -23,46 +23,54 @@ class Extended_PostInit_EventHandlers {
 
 
 class Extended_PreInit_EventHandlers {
-    class GVARMAIN(admin_menu) {
+    class GVAR(admin_menu) {
         init = PATH_PRE(admin_menu);
     };
 
-    class GVARMAIN(arsenal) {
+    class GVAR(arsenal) {
         init = PATH_PRE(arsenal);
     };
 
-    class GVARMAIN(chat_commands) {
+    class GVAR(chat_commands) {
         init = PATH_PRE(chat_commands);
     };
 
-    class GVARMAIN(curator) {
+    class GVAR(curator) {
         init = PATH_PRE(curator);
     };
 
-    class GVARMAIN(main) {
+    class GVAR(friendly_fire) {
+        init = PATH_PRE(friendly_fire);
+    };
+
+    class GVAR(main) {
         init = PATH_PRE(main);
     };
 };
 
 
 class Extended_PostInit_EventHandlers {
-    class GVARMAIN(admin_menu) {
+    class GVAR(admin_menu) {
         init = PATH_POST(admin_menu);
     };
 
-    class GVARMAIN(arsenal) {
+    class GVAR(arsenal) {
         init = PATH_POST(arsenal);
     };
 
-    class GVARMAIN(chat_commands) {
+    class GVAR(chat_commands) {
         init = PATH_POST(chat_commands);
     };
 
-    class GVARMAIN(curator) {
+    class GVAR(curator) {
         init = PATH_POST(curator);
     };
 
-    class GVARMAIN(main) {
+    class GVAR(friendly_fire) {
+        init = PATH_POST(friendly_fire);
+    };
+
+    class GVAR(main) {
         init = PATH_POST(main);
     };
 };
