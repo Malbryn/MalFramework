@@ -1,4 +1,4 @@
-#include "..\script_component.hpp"
+#include "script_component.hpp"
 
 /*
     Author:
@@ -44,9 +44,9 @@ switch (_category) do {
         private ["_date", "_missionTime", "_viewDistancePlayer", "_viewDistanceServer"];
 
         _date = format ["%1-%2-%3",
-        date select 0,
-        (if (date select 1 < 10) then { "0" } else { "" }) + str (date select 1),
-        (if (date select 2 < 10) then { "0" } else { "" }) + str (date select 2)];
+        date#0,
+        (if (date#1 < 10) then { "0" } else { "" }) + str (date#1),
+        (if (date#2 < 10) then { "0" } else { "" }) + str (date#2)];
         _missionTime = ceil (CBA_missionTime / 60);
         _viewDistancePlayer = GVARMAIN(view_distance_player);
         _viewDistanceServer = GVARMAIN(view_distance_server);

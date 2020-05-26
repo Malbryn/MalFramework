@@ -1,5 +1,6 @@
 #include "script_component.hpp"
-#include "..\..\config\config.sqf"
+
+if !(GVARMAIN(moduleAmbientFlyby)) exitWith{};
 
 ADDON = false;
 
