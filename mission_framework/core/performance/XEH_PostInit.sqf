@@ -17,8 +17,8 @@ if (hasInterface) then {
 
 if (isServer) then {
     [{
-        GVAR(serverFPS) = diag_fps;
-        GVAR(serverFPSMin) = diag_fpsMin;
+        GVAR(serverFPS) = parseNumber (diag_fps toFixed 2);
+        GVAR(serverFPSMin) = parseNumber (diag_fpsMin toFixed 2);
         publicVariable QGVAR(serverFPS);
         publicVariable QGVAR(serverFPSMin);
 

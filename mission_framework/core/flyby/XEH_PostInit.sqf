@@ -1,3 +1,3 @@
 #include "script_component.hpp"
 
-if !(GVARMAIN(moduleAmbientFlyby)) exitWith{};
+if !(GVARMAIN(moduleFlyby)) exitWith{};

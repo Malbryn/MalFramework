@@ -1,0 +1,42 @@
+#include "script_component.hpp"
+
+/*
+    Author:
+        Malbryn
+
+    Description:
+        Creates ACE self-interaction menu to control the snowfall script
+
+    Arguments:
+        -
+
+    Example:
+        call MF_snowfall_fnc_addSnowMenu
+
+    Returns:
+        void
+*/
+
+private ["_menu"];
+
+// Snow script category
+_menu = ['Snow Script', 'Snow Script', '\a3\ui_f\data\IGUI\Cfg\Cursors\unitHealer_ca.paa', {}, {!visibleMap}] call AFUNC(interact_menu,createAction);
+[player, 1, ["ACE_SelfActions"], _menu] call AFUNC(interact_menu,addActionToObject);
+
+// Turn snow script on
+_menu = ['Snow Script - On', 'Snow Script - On', '', {
+    [] call FUNC(startSnowfall);
+    GVARMAIN(moduleSnowfall) = true;
+    MSG("INFO","Snow script is ON");
+}, {true}] call AFUNC(interact_menu,createAction);
+
+[player, 1, ["ACE_SelfActions", "Snow Script"], _menu] call AFUNC(interact_menu,addActionToObject);
+
+// Turn snow script off
+_menu = ['Snow Script - Off', 'Snow Script - Off', '', {
+    [GVAR(snowfallPFH)] call CBA_fnc_removePerFrameHandler;
+    GVARMAIN(moduleSnowfall) = false;
+    MSG("INFO","Snow script is OFF");
+}, {true}] call AFUNC(interact_menu,createAction);
+
+[player, 1, ["ACE_SelfActions", "Snow Script"], _menu] call AFUNC(interact_menu,addActionToObject);

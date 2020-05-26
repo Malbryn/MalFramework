@@ -17,6 +17,10 @@ class Extended_PreInit_EventHandlers {
         init = PATH_PRE(chat_commands);
     };
 
+    class GVARMAIN(Common) {
+        init = PATH_PRE(common);
+    };
+
     class GVARMAIN(Curator) {
         init = PATH_PRE(curator);
     };
@@ -29,8 +33,20 @@ class Extended_PreInit_EventHandlers {
         init = PATH_PRE(friendly_fire);
     };
 
+    class GVARMAIN(IED) {
+        init = PATH_PRE(ied);
+    };
+
+    class GVARMAIN(Mortar) {
+        init = PATH_PRE(mortar);
+    };
+
     class GVARMAIN(Performance) {
         init = PATH_PRE(performance);
+    };
+
+    class GVARMAIN(Snowfall) {
+        init = PATH_PRE(snowfall);
     };
 
     class GVARMAIN(TaskControl) {
@@ -56,6 +72,10 @@ class Extended_PostInit_EventHandlers {
         init = PATH_POST(chat_commands);
     };
 
+    class GVARMAIN(Common) {
+        init = PATH_POST(common);
+    };
+
     class GVARMAIN(Curator) {
         init = PATH_POST(curator);
     };
@@ -68,8 +88,20 @@ class Extended_PostInit_EventHandlers {
         init = PATH_POST(friendly_fire);
     };
 
+    class GVARMAIN(IED) {
+        init = PATH_POST(ied);
+    };
+
+    class GVARMAIN(Mortar) {
+        init = PATH_POST(mortar);
+    };
+
     class GVARMAIN(Performance) {
         init = PATH_POST(performance);
+    };
+
+    class GVARMAIN(Snowfall) {
+        init = PATH_POST(snowfall);
     };
 
     class GVARMAIN(TaskControl) {

@@ -1,7 +1,5 @@
 #include "script_component.hpp"
 
-if !(GVARMAIN(moduleFlyby)) exitWith{};
-
 ADDON = false;
 
 PREP_RECOMPILE_START;
