@@ -45,12 +45,24 @@ class Extended_PreInit_EventHandlers {
         init = PATH_PRE(performance);
     };
 
+    class GVARMAIN(Reinsert) {
+        init = PATH_PRE(reinsert);
+    };
+
     class GVARMAIN(Snowfall) {
         init = PATH_PRE(snowfall);
     };
 
+    class GVARMAIN(SupplyDrop) {
+        init = PATH_PRE(supply_drop);
+    };
+
     class GVARMAIN(TaskControl) {
         init = PATH_PRE(task_control);
+    };
+
+    class GVARMAIN(VehicleRespawn) {
+        init = PATH_PRE(vehicle_respawn);
     };
 };
 
@@ -100,12 +112,24 @@ class Extended_PostInit_EventHandlers {
         init = PATH_POST(performance);
     };
 
+    class GVARMAIN(Reinsert) {
+        init = PATH_POST(reinsert);
+    };
+
     class GVARMAIN(Snowfall) {
         init = PATH_POST(snowfall);
     };
 
+    class GVARMAIN(SupplyDrop) {
+        init = PATH_POST(supply_drop);
+    };
+
     class GVARMAIN(TaskControl) {
         init = PATH_POST(task_control);
+    };
+
+    class GVARMAIN(VehicleRespawn) {
+        init = PATH_POST(vehicle_respawn);
     };
 };
 

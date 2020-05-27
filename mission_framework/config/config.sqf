@@ -1,18 +1,41 @@
 #define MINUTES *60  // DO NOT REMOVE
 
+
 // Ambient fly-by
 GVARMAIN(moduleFlyby) = true;
+
 
 // IED
 GVARMAIN(moduleIED) = true;
 
+
 // JIP
 GVARMAIN(moduleJIP) = true;
-GVARMAIN(JIPTimer) = 3 MINUTES;
+EGVAR(jip,JIPTimer) = 3 MINUTES;
+
 
 // Mortar fire
 GVARMAIN(moduleMortar) = true;
 
+
+// Reinsert
+GVARMAIN(moduleHALO) = true;
+
+GVARMAIN(moduleMRV) = true;
+
+GVARMAIN(moduleRP) = true;
+EGVAR(reinsert,RPTentObject) = "Land_TentA_F";
+
+
 // Snowfall
-GVARMAIN(moduleSnowfall) = true;
+GVARMAIN(moduleSnowfall) = false;
 EGVAR(snowfall,maxDensity) = 50;
+
+
+// Supply drop
+GVARMAIN(moduleSupplyDrop) = true;
+EGVAR(supply_drop,supplyDropPlane) = "B_T_VTOL_01_vehicle_F";
+
+
+// Vehicle respawn
+GVARMAIN(moduleVehicleRespawn) = true;

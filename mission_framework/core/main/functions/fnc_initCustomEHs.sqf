@@ -27,3 +27,17 @@
     
     MSG(_level,_message);
 }] call CFUNC(addEventHandler);
+
+
+[QGVARMAIN(notification_1), {
+    params ["_cat"];
+    
+    [_cat] call BFUNC(showNotification);
+}] call CFUNC(addEventHandler);
+
+
+[QGVARMAIN(notification_2), {
+    params ["_cat", "_message"];
+    
+    [_cat, [_message]] call BFUNC(showNotification);
+}] call CFUNC(addEventHandler);
