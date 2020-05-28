@@ -24,7 +24,7 @@ if (!hasInterface) exitWith {};
 if (isNil {GETVAR((group player),GVAR(RPTent),nil)}) exitWith {
     ["Warning", ["Your squad RP is not deployed at this time, please stand by"]] call BFUNC(showNotification);
 
-    _notify = ((units group player) select { GETVAR(_x,GVARMAIN(isSL),false) }) - [player];
+    _notify = ((units group player) select { GETVAR(_x,EGVAR(player,isSL),false) }) - [player];
 
     [QGVARMAIN(notification_2), ["Info", "A squad member is waiting for the RP to be deployed"], _notify] call CFUNC(targetEvent);
 };

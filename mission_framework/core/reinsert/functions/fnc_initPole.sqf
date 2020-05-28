@@ -47,6 +47,6 @@ if (GVARMAIN(moduleRP)) then {
 
 
 // Assigning the RP menu to the squad leaders
-if (GVARMAIN(moduleRP) && GETVAR(player,GVARMAIN(isSL),false)) then {
+if (GVARMAIN(moduleRP) && GETVAR(player,EGVAR(player,isSL),false)) then {
     [] call FUNC(addRPMenu);
 };

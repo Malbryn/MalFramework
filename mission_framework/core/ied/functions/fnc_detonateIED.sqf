@@ -28,5 +28,6 @@ playSound3D ["z\ace\addons\explosives\Data\Audio\Cellphone_Ring.wss", _obj, fals
 
 [{
     private _ied = "Bo_GBU12_LGB" createVehicle (getPos _this);
+    hideObjectGlobal _ied;
     _this setDamage 1;
 }, _obj, 2] call CFUNC(waitAndExecute);

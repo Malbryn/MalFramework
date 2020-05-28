@@ -21,7 +21,7 @@ params ["_menu"];
 
 if !(didJIP) exitWith {};
 
-["JipTeleport"] call BIS_fnc_showNotification;
+["JipTeleport"] call BFUNC(showNotification);
 SETVAR(player,GVAR(spawnPos),getPos player);
 
 _menu = ["Teleport to squad", "Teleport to squad", "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\transport_ca.paa", {

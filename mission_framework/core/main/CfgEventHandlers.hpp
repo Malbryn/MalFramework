@@ -33,20 +33,40 @@ class Extended_PreInit_EventHandlers {
         init = PATH_PRE(friendly_fire);
     };
 
+    class GVARMAIN(Gear) {
+        init = PATH_PRE(gear);
+    };
+
     class GVARMAIN(IED) {
         init = PATH_PRE(ied);
+    };
+
+    class GVARMAIN(Intel) {
+        init = PATH_PRE(intel);
     };
 
     class GVARMAIN(Mortar) {
         init = PATH_PRE(mortar);
     };
 
+    class GVARMAIN(Orbat) {
+        init = PATH_PRE(orbat);
+    };
+
     class GVARMAIN(Performance) {
         init = PATH_PRE(performance);
     };
 
+    class GVARMAIN(Player) {
+        init = PATH_PRE(player);
+    };
+
     class GVARMAIN(Reinsert) {
         init = PATH_PRE(reinsert);
+    };
+
+    class GVARMAIN(RespawnTickets) {
+        init = PATH_PRE(respawn_tickets);
     };
 
     class GVARMAIN(Snowfall) {
@@ -61,8 +81,20 @@ class Extended_PreInit_EventHandlers {
         init = PATH_PRE(task_control);
     };
 
+    class GVARMAIN(TeamColour) {
+        init = PATH_PRE(team_colour);
+    };
+
+    class GVARMAIN(TFAR) {
+        init = PATH_PRE(tfar);
+    };
+
     class GVARMAIN(VehicleRespawn) {
         init = PATH_PRE(vehicle_respawn);
+    };
+
+    class GVARMAIN(ViewDistance) {
+        init = PATH_PRE(view_distance);
     };
 };
 
@@ -100,20 +132,40 @@ class Extended_PostInit_EventHandlers {
         init = PATH_POST(friendly_fire);
     };
 
+    class GVARMAIN(Gear) {
+        init = PATH_POST(gear);
+    };
+
     class GVARMAIN(IED) {
         init = PATH_POST(ied);
+    };
+
+    class GVARMAIN(Intel) {
+        init = PATH_POST(intel);
     };
 
     class GVARMAIN(Mortar) {
         init = PATH_POST(mortar);
     };
 
+    class GVARMAIN(Orbat) {
+        init = PATH_POST(orbat);
+    };
+
     class GVARMAIN(Performance) {
         init = PATH_POST(performance);
     };
 
+    class GVARMAIN(Player) {
+        init = PATH_POST(player);
+    };
+
     class GVARMAIN(Reinsert) {
         init = PATH_POST(reinsert);
+    };
+
+    class GVARMAIN(RespawnTickets) {
+        init = PATH_POST(respawn_tickets);
     };
 
     class GVARMAIN(Snowfall) {
@@ -128,8 +180,19 @@ class Extended_PostInit_EventHandlers {
         init = PATH_POST(task_control);
     };
 
+    class GVARMAIN(TeamColour) {
+        init = PATH_POST(team_colour);
+    };
+
+    class GVARMAIN(TFAR) {
+        init = PATH_POST(tfar);
+    };
+
     class GVARMAIN(VehicleRespawn) {
         init = PATH_POST(vehicle_respawn);
     };
-};
 
+    class GVARMAIN(ViewDistance) {
+        init = PATH_POST(view_distance);
+    };
+};
