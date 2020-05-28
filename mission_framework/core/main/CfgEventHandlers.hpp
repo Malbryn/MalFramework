@@ -21,6 +21,10 @@ class Extended_PreInit_EventHandlers {
         init = PATH_PRE(common);
     };
 
+    class GVARMAIN(Credits) {
+        init = PATH_PRE(credits);
+    };
+
     class GVARMAIN(Curator) {
         init = PATH_PRE(curator);
     };
@@ -43,6 +47,14 @@ class Extended_PreInit_EventHandlers {
 
     class GVARMAIN(Intel) {
         init = PATH_PRE(intel);
+    };
+
+    class GVARMAIN(JIP) {
+        init = PATH_PRE(jip);
+    };
+
+    class GVARMAIN(LOSTool) {
+        init = PATH_PRE(los_tool);
     };
 
     class GVARMAIN(Mortar) {
@@ -120,6 +132,10 @@ class Extended_PostInit_EventHandlers {
         init = PATH_POST(common);
     };
 
+    class GVARMAIN(Credits) {
+        init = PATH_POST(credits);
+    };
+
     class GVARMAIN(Curator) {
         init = PATH_POST(curator);
     };
@@ -142,6 +158,14 @@ class Extended_PostInit_EventHandlers {
 
     class GVARMAIN(Intel) {
         init = PATH_POST(intel);
+    };
+
+    class GVARMAIN(JIP) {
+        init = PATH_POST(jip);
+    };
+
+    class GVARMAIN(LOSTool) {
+        init = PATH_POST(los_tool);
     };
 
     class GVARMAIN(Mortar) {
