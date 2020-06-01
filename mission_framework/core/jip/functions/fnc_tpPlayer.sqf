@@ -19,11 +19,11 @@
 
 private ["_target", "vicSpot"];
 
-_target = [] call FUNC(chooseTarget);
+_target = call FUNC(chooseTarget);
 _vicSpot = [_target] call FUNC(checkEmptySeats);
 
 // Check the distance from the squad
-if ((([] call CFUNC(players)) - [player]) findif {_x distance2D player < 50} != -1) exitWith {
+if (((call CFUNC(players)) - [player]) findif {_x distance2D player < 50} != -1) exitWith {
     ["Warning", ["JIP TP aborted. You're too close to one of your squad members!"]] call BFUNC(showNotification);
 };
 

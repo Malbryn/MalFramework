@@ -68,7 +68,7 @@ _vehicleData = [
 
 if (isNil QGVAR(vehicleMonitor)) then {
     GVAR(totalArray) = [];
-    [] call FUNC(initVehicleMonitor);
+    call FUNC(initVehicleMonitor);
     GVAR(vehicleMonitor) = 1;
 };
 

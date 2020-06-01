@@ -25,7 +25,7 @@ if (count GVAR(supplyCrates) == 0) exitWith {
     MSG("WARNING","Supply drop module: The supply drop crate array is empty! Please configure the module in the config.sqf");
 };
 
-//if (GETVAR(player,GVARMAIN(isCO),false)) then {
+if (GETVAR(player,EGVAR(player,isCO),false)) then {
     private ["_menu", "_crate", "_crateName"];
 
     // Supply drop category
@@ -106,4 +106,4 @@ if (count GVAR(supplyCrates) == 0) exitWith {
             [player, 1, ["ACE_SelfActions", "Supply drop", _crateName], _menu] call AFUNC(interact_menu,addActionToObject);
         };
     } forEach GVAR(supplyCrates);
-//};
+};

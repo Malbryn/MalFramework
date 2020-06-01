@@ -17,8 +17,12 @@
         void
 */
 
+if (!isMultiplayer) exitWith {
+	MSG("INFO","TFAR module does not work in single player");
+};
+
 // Short range
-[{ [] call TFUNC(haveSWRadio) }, {
+[{ call TFUNC(haveSWRadio) }, {
     private ["_channels", "_srCh"];
 
     _channels = GETVAR(player,GVAR(radioChannels),[]);
@@ -33,7 +37,7 @@
 }] call CFUNC(waitUntilAndExecute);
 
 // Long range
-[{ [] call TFUNC(haveLRRadio) }, {
+[{ call TFUNC(haveLRRadio) }, {
     private ["_channels", "_lrCh"];
 
     _channels = GETVAR(player,GVAR(radioChannels),[]);

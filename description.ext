@@ -39,67 +39,14 @@ taskManagement_markers2D = 0;  // Use 2D markers
 taskManagement_markers3D = 0;  // Use 3D markers
 taskManagement_propagate = 0;  // Propagate shared tasks to subordinates
 
-/*
+
 // Debrief config
 class CfgDebriefing {
     #include "mission_framework\config\debriefing\CfgDebriefing.hpp"
 };
 
-class CfgDebriefingSections {
-    #include "mission_framework\root\MF_Cfg\CfgDebriefingSections\CfgDebriefingSections.hpp"
-};
 
-
-// Remote exec rules config
-class CfgRemoteExec {
-    class Functions {
-        mode = 2;
-        jip = 1;
-    };
-};
-
-
-// CBA Pre-Init Eventhandler
-class Extended_PreInit_EventHandlers {
-    class MF_PreInit {
-        init = "call compile preprocessFileLineNumbers 'mission_framework\root\MF_Cfg\cba_xeh\preInit.sqf'";
-    };
-};
-
-
-// CBA Post-Init Eventhandler
-class Extended_PostInit_EventHandlers {
-    class MF_PostInit {
-        init = "call compile preprocessFileLineNumbers 'mission_framework\root\MF_Cfg\cba_xeh\postInit.sqf'";
-    };
-};
-
-
-// CBA Init Eventhandler
-class Extended_Init_EventHandlers {
-    class CAManBase {
-        init = "[_this] call MF_fnc_setAISkill";
-    };
-};
-
-
-// Functions library
-class CfgFunctions {
-    #include "mission_framework\root\MF_Cfg\CfgFunctions\CfgFunctions.hpp"
-}
-
-
-// Notifications config
-class CfgNotifications {
-    #include "mission_framework\root\MF_Cfg\CfgNotifications\CfgNotifications.hpp"
-};
-
-
-// Custom sounds config
-class CfgSounds {
-    #include "mission_framework\root\MF_Cfg\CfgSounds\CfgSounds.hpp"
-};
-*/
+#include "mission_framework\core\main\CfgDebriefingSections.hpp"
 
 #include "mission_framework\core\main\CfgEventHandlers.hpp"
 

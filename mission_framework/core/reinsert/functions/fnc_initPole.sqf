@@ -27,26 +27,26 @@ if (isNil "tpPole") exitWith {
 // Option #1 - Paradrop
 if (GVARMAIN(moduleHALO)) then {
     tpPole addAction ["Reinsert - Paradrop", {
-        [] call FUNC(haloDrop);
+        call FUNC(haloDrop);
     }];
 };
 
 // Option #2 - MRV
 if (GVARMAIN(moduleMRV)) then {
     tpPole addAction ["Reinsert - MRV", {
-        [] call FUNC(tpToMRV);
+        call FUNC(tpToMRV);
     }];
 };
 
 // Option #3 - Squad rally point
 if (GVARMAIN(moduleRP)) then {
     tpPole addAction ["Reinsert - Squad Rally Point", {
-        [] call FUNC(tpToRP);
+        call FUNC(tpToRP);
     }];
 };
 
 
 // Assigning the RP menu to the squad leaders
 if (GVARMAIN(moduleRP) && GETVAR(player,EGVAR(player,isSL),false)) then {
-    [] call FUNC(addRPMenu);
+    call FUNC(addRPMenu);
 };

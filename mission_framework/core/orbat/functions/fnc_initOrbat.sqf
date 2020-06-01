@@ -36,7 +36,7 @@ _groupArray = [];
         _textToDisplay = "";
 
         {
-            private ["_unit", "_lobbyName", ];
+            private ["_unit", "_lobbyName"];
 
             _unit = _x;
 
@@ -249,4 +249,4 @@ _groupArray = [];
 reverse _groupArray;
 {player createDiaryRecord _x;} foreach _groupArray;
 
-[] call FUNC(showOrbat);
+call FUNC(showOrbat);

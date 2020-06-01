@@ -17,7 +17,7 @@
 
 private ["_text", "_getPicture", "_unit", "_radio", "_image", "_optics", "_opticsClasses", "_class", "_lobbyName"];
 
-_text = "<br/><execute expression='[] call MF_orbat_fnc_refreshOrbat'>Refresh</execute> (click to show JIPs)<br/><br/>";
+_text = "<br/><execute expression='call MF_orbat_fnc_refreshOrbat'>Refresh</execute> (click to show JIPs)<br/><br/>";
 
 _getPicture = {
     params ["_name", "_dimensions", ["_type", "CfgWeapons"]];

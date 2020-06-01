@@ -3,14 +3,42 @@
 /* -------------------------------- MISSION PARAMETERS -------------------------------- */
 /* ------------------------- DON'T REMOVE OR COMMENT OUT THESE ------------------------ */
 
+GVARMAIN(moduleTimeLimit) = true;
+EGVAR(end_conditions,timeLimit) = 90 MINUTES;
+
+GVARMAIN(moduleFriendlyCasualties) = true;
+EGVAR(end_conditions,friendlyCasLimit) = 75;
+
+GVARMAIN(moduleCivilianCasualties) = true;
+EGVAR(aend_conditions,civilianCasLimit) = 50;
+
+GVARMAIN(moduleTaskLimit) = true;
+EGVAR(end_conditions,taskLimit) = 2;
+
+GVARMAIN(moduleExtraction) = true;
+EGVAR(end_conditions,extMarker) = "mrk_ext";
+EGVAR(end_conditions,playerThreshold) = 50;
+EGVAR(end_conditions,taskThreshold) = 66;
+
+GVARMAIN(respawnTickets) = 2;
+
 GVARMAIN(playerViewDistance) = 2000;
 GVARMAIN(serverViewDistance) = 2000;
-
 
 /* --------------------------------- OPTIONAL MODULES --------------------------------- */
 
 // Ambient fly-by
 GVARMAIN(moduleFlyby) = true;
+
+
+// Cover map
+GVARMAIN(moduleCoverMap) = true;
+EGVAR(cover_map,aoMarker) = "ao";
+EGVAR(cover_map,colour) = "Color4_FD_F";
+
+
+// Grass cutter
+GVARMAIN(moduleGrassCutter) = true;
 
 
 // IED
@@ -21,6 +49,14 @@ GVARMAIN(moduleIED) = true;
 GVARMAIN(moduleIntel) = true;
 
 
+// Intro text
+GVARMAIN(moduleIntroText) = true;
+EGVAR(intro_text,title) = "TEST TITLE";
+EGVAR(intro_text,date) = "TEST DATE";
+EGVAR(intro_text,location) = "TEST LOCATION";
+EGVAR(intro_text,delay) = 20;
+
+
 // JIP
 GVARMAIN(moduleJIP) = true;
 EGVAR(jip,JIPTimer) = 3 MINUTES;
@@ -28,6 +64,10 @@ EGVAR(jip,JIPTimer) = 3 MINUTES;
 
 // Mortar fire
 GVARMAIN(moduleMortar) = true;
+
+
+// No damage ending
+GVARMAIN(moduleDisableDamage) = true;
 
 
 // ORBAT
@@ -43,6 +83,15 @@ GVARMAIN(moduleRP) = true;
 EGVAR(reinsert,RPTentObject) = "Land_TentA_F";
 
 
+// Safety start
+GVARMAIN(moduleSafetyStart) = true;
+
+
+// Scenario control
+GVARMAIN(moduleScenarioControl) = true;
+EGVAR(scenario_control,successRate) = 50;
+
+
 // Snowfall
 GVARMAIN(moduleSnowfall) = false;
 EGVAR(snowfall,maxDensity) = 50;
@@ -53,5 +102,14 @@ GVARMAIN(moduleSupplyDrop) = true;
 EGVAR(supply_drop,supplyDropPlane) = "B_T_VTOL_01_vehicle_F";
 
 
+// Time limit check
+GVARMAIN(moduleTimeLimitCheck) = true;
+
+
 // Vehicle respawn
 GVARMAIN(moduleVehicleRespawn) = true;
+
+
+// Wave respawn
+GVARMAIN(moduleWaveRespawn) = true;
+EGVAR(respawn_wave,availableWaves) = 3;

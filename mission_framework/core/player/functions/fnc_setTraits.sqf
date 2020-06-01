@@ -15,7 +15,7 @@
             2 - Platoon level leadership (PLTHQ, PLTSGT), can call respawns, resupply and tactical withdrawal
 
     Example:
-        call MF_player_fnc_setTraits
+        [player, 2] call MF_player_fnc_setTraits
 
     Returns:
         void

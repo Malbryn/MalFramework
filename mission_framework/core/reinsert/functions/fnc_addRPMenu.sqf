@@ -11,7 +11,7 @@
         -
 
     Example:
-        [] call MF_reinsert_fnc_addRPMenu
+        call MF_reinsert_fnc_addRPMenu
 
     Returns:
         void
@@ -28,7 +28,7 @@ private _menu = ['Rally Point', 'Rally Point', '\a3\ui_f\data\GUI\Cfg\Hints\icon
 // Deploy menu
 _menu = ['Deploy Rally Point', 'Deploy Rally Point', '', {
     if (GVARMAIN(moduleRP)) then {
-        [] call FUNC(deployRp);
+        call FUNC(deployRp);
     } else {
         ["Warning", ["Rally Point system is disabled in this mission"]] call BFUNC(showNotification);
     };
@@ -40,7 +40,7 @@ _menu = ['Deploy Rally Point', 'Deploy Rally Point', '', {
 // Remove menu
 _menu = ['Remove Rally Point', 'Remove Rally Point', '', {
     if (GVARMAIN(moduleRP)) then {
-        [] call FUNC(removeRp);
+        call FUNC(removeRp);
     } else {
         ["Warning", ["Rally Point system is disabled in this mission"]] call BFUNC(showNotification);
     };

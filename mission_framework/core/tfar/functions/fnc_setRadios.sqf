@@ -36,10 +36,6 @@ private ["_channels"];
 
 if !(local _unit) exitWith {};
 
-if (!isMultiplayer) exitWith {
-	MSG("INFO","TFAR module does not work in single player");
-};
-
 // Convert the channel number to an array pointer
 if (_srCh != -1) then {
     _srCh = _srCh - 1;

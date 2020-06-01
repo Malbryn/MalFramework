@@ -25,7 +25,7 @@ _menu = ['Snow Script', 'Snow Script', '\a3\ui_f\data\IGUI\Cfg\Cursors\unitHeale
 
 // Turn snow script on
 _menu = ['Snow Script - On', 'Snow Script - On', '', {
-    [] call FUNC(startSnowfall);
+    call FUNC(startSnowfall);
     GVARMAIN(moduleSnowfall) = true;
     MSG("INFO","Snow script is ON");
 }, {true}] call AFUNC(interact_menu,createAction);

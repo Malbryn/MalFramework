@@ -9,7 +9,7 @@
 
     Arguments:
         0: OBJECT - Unit (Optional, default: player)
-        1: SCALAR - Number of respawn tickets (Optional, default: MF_var_respawn_tickets)
+        1: SCALAR - Number of respawn tickets (Optional, default: GVARMAIN(respawnTickets))
 
     Example:
         [player, 3] call MF_respawn_tickets_fnc_setRespawnTickets

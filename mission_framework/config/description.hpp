@@ -11,8 +11,8 @@ class Header {
 
 
 // Mission selection screen
-briefingName = "[CO-XX] Operation Name";  // Mission name on the mission selection screen (please keep this naming convention)
-overviewText = "mission_info";  // Mission info on the mission selection screen (e.g. mission assets, factions etc.)
+briefingName = "[CO-XX] Operation Name";  // Mission name on the mission selection screen where XX = max. player number (please keep this naming convention)
+overviewText = "mission_info";  // Mission info on the mission selection screen (e.g. mission assets, factions, time limit etc.)
 
 
 // Loading screen settings

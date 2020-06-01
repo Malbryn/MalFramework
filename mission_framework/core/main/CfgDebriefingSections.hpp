@@ -1,16 +1,18 @@
 #include "script_component.hpp"
 
-class GVARMAIN(MissionTime) {
-    title = "Mission time";
-    variable = "MF_var_stat_mission_time";
-};
+class CfgDebriefingSections {
+    class GVARMAIN(MissionTime) {
+        title = "Mission time";
+        variable = QEGVAR(mission_stat,missionTime);
+    };
 
-class GVARMAIN(FriendlyFires) {
-    title = "Friendly fires";
-    variable = QEGVAR(friendly_fire,stat_ff);
-};
+    class GVARMAIN(FriendlyFires) {
+        title = "Friendly fires";
+        variable = QEGVAR(mission_stat,friendlyFires);
+    };
 
-class GVARMAIN(CivilianKills) {
-    title = "Civilian kills";
-    variable = "MF_var_stat_ck";
+    class GVARMAIN(CivilianKills) {
+        title = "Civilian kills";
+        variable = QEGVAR(mission_stat,civilianKills);
+    };
 };

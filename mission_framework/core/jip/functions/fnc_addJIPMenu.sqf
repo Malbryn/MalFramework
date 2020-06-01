@@ -25,8 +25,8 @@ if !(didJIP) exitWith {};
 SETVAR(player,GVAR(spawnPos),getPos player);
 
 _menu = ["Teleport to squad", "Teleport to squad", "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\transport_ca.paa", {
-    [] call FUNC(tpPlayer);
-}, {!visibleMap && (player distance2D GETVAR(player,GVAR(spawnPos),[0, 0, 0]) < 200)}] call AFUNC(interact_menu,createAction);
+    call FUNC(tpPlayer);
+}, {!visibleMap && (player distance2D GETVAR(player,GVAR(spawnPos),0) < 200)}] call AFUNC(interact_menu,createAction);
 
 [player, 1, ["ACE_SelfActions"], _menu] call AFUNC(interact_menu,addActionToObject);
 
