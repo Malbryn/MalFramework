@@ -1,6 +1,9 @@
 // The UID of the mission maker (to access the admin menu and debug console during the mission)
 #define UID "76561198066551781"  // Malbryn's UID
 
+// VCOM AI
+#define VCOMAI
+
 
 // Mission parameters
 class Header {

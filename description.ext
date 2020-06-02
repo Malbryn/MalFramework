@@ -51,3 +51,7 @@ class CfgDebriefing {
 #include "mission_framework\core\main\CfgEventHandlers.hpp"
 
 #include "mission_framework\core\main\CfgNotifications.hpp"
+
+#ifdef VCOMAI
+    #include "mission_framework\core\vcom\CfgFunctions.hpp"
+#endif

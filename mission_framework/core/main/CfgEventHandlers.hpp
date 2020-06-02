@@ -9,6 +9,14 @@ class Extended_PreInit_EventHandlers {
         init = PATH_PRE(admin_menu);
     };
 
+    class GVARMAIN(AIScripts) {
+        init = PATH_PRE(ai_scripts);
+    };
+
+    class GVARMAIN(AISkills) {
+        init = PATH_PRE(ai_skills);
+    };
+
     class GVARMAIN(Arsenal) {
         init = PATH_PRE(arsenal);
     };
@@ -168,6 +176,14 @@ class Extended_PostInit_EventHandlers {
         init = PATH_POST(admin_menu);
     };
 
+    class GVARMAIN(AIScripts) {
+        init = PATH_POST(ai_scripts);
+    };
+
+    class GVARMAIN(AISkills) {
+        init = PATH_POST(ai_skills);
+    };
+
     class GVARMAIN(Arsenal) {
         init = PATH_POST(arsenal);
     };
@@ -314,5 +330,12 @@ class Extended_PostInit_EventHandlers {
 
     class GVARMAIN(ViewDistance) {
         init = PATH_POST(view_distance);
+    };
+};
+
+
+class Extended_Init_EventHandlers {
+    class CAManBase {
+        init = QUOTE([_this] call FUNC(setAISkills));
     };
 };

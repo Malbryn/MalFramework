@@ -25,6 +25,19 @@ GVARMAIN(respawnTickets) = 2;
 GVARMAIN(playerViewDistance) = 2000;
 GVARMAIN(serverViewDistance) = 2000;
 
+EGVAR(ai_skills,skillSet) = [
+    0.5,	// General (Higher = Better)
+    0.5,	// Commanding (Higher = Better)
+    0.5,	// Courage (Higher = Better)
+    0.5,	// Aiming Accuracy (Higher = Better)
+    0.5,	// Aiming Shake (Higher = Less)
+    0.5,	// Aiming Speed (Higher = Faster)
+    0.5,	// Reload Speed (Higher = Faster)
+    0.5,	// Spotting Distance (Higher = Further)
+    0.5		// Spotting Time (Higher = Faster)
+];
+
+
 /* --------------------------------- OPTIONAL MODULES --------------------------------- */
 
 // Ambient fly-by
