@@ -1,9 +1,9 @@
-// Do not edit unless you know what you're doing
+// DO NOT EDIT (unless you know what you are doing)
 // To access the basic settings open the description.hpp in 'mission_framework\config\'
 
 // Importing the custom settings
 #include "mission_framework\config\description.hpp"
-__EXEC(MISSION_MAKER = UID;)
+__EXEC(MF_missionMaker = UID;)
 
 
 // Respawn settings
@@ -40,62 +40,19 @@ taskManagement_markers3D = 0;  // Use 3D markers
 taskManagement_propagate = 0;  // Propagate shared tasks to subordinates
 
 
-// Debrief config
-class CfgDebriefing {
-    #include "mission_framework\config\debriefing\CfgDebriefing.hpp"
-};
+// Debriefing config
+#include "mission_framework\root\main\CfgDebriefing.hpp"
 
-class CfgDebriefingSections {
-    #include "mission_framework\root\MF_Cfg\CfgDebriefingSections\CfgDebriefingSections.hpp"
-};
-
-
-// Remote exec rules config
-class CfgRemoteExec {
-    class Functions {
-        mode = 2;
-        jip = 1;
-    };
-};
-
-
-// CBA Pre-Init Eventhandler
-class Extended_PreInit_EventHandlers {
-    class MF_PreInit {
-        init = "call compile preprocessFileLineNumbers 'mission_framework\root\MF_Cfg\cba_xeh\preInit.sqf'";
-    };
-};
-
-
-// CBA Post-Init Eventhandler
-class Extended_PostInit_EventHandlers {
-    class MF_PostInit {
-        init = "call compile preprocessFileLineNumbers 'mission_framework\root\MF_Cfg\cba_xeh\postInit.sqf'";
-    };
-};
-
-
-// CBA Init Eventhandler
-class Extended_Init_EventHandlers {
-    class CAManBase {
-        init = "[_this] call MF_fnc_setAISkill";
-    };
-};
-
-
-// Functions library
-class CfgFunctions {
-    #include "mission_framework\root\MF_Cfg\CfgFunctions\CfgFunctions.hpp"
-}
-
+// Debriefing sections config
+#include "mission_framework\core\main\CfgDebriefingSections.hpp"
 
 // Notifications config
-class CfgNotifications {
-    #include "mission_framework\root\MF_Cfg\CfgNotifications\CfgNotifications.hpp"
-};
+#include "mission_framework\core\main\CfgNotifications.hpp"
 
+// CBA Extended Event handlers
+#include "mission_framework\core\main\CfgEventHandlers.hpp"
 
-// Custom sounds config
-class CfgSounds {
-    #include "mission_framework\root\MF_Cfg\CfgSounds\CfgSounds.hpp"
-};
+// VCOM functions
+#ifdef VCOMAI
+    #include "mission_framework\core\vcom\CfgFunctions.hpp"
+#endif

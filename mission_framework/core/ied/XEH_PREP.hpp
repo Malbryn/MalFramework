@@ -1,0 +1,2 @@
+PREP(detonateIED);
+PREP(setUpIED);

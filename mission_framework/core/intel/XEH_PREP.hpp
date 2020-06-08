@@ -1,0 +1,2 @@
+PREP(addIntelToDiary);
+PREP(initIntel);

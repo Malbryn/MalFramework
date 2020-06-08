@@ -1,0 +1,2 @@
+PREP(addCallRespawnMenu);
+PREP(respawnPlayer);
