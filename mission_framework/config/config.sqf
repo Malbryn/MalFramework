@@ -48,6 +48,10 @@ EGVAR(ai_skills,skillSet) = [
 GVARMAIN(moduleFlyby) = true;
 
 
+// Briefing
+GVARMAIN(moduleBriefing) = true;
+
+
 // Cover map
 GVARMAIN(moduleCoverMap) = true;
 EGVAR(cover_map,aoMarker) = "ao";

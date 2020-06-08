@@ -26,7 +26,6 @@
 
 // Add an option to terminate the mission as admin
 ["terminateMission", {
-    // TODO: Rewrite this
-    ["MissionTerminated", false] remoteExec ["MF_fnc_endMission", 2];
+    [QGVARMAIN(missionEnd), ["MissionTerminated", false]] call CFUNC(serverEvent);
     MSG("INFO","Terminating mission...");
 }, "admin"] call CFUNC(registerChatCommand);
