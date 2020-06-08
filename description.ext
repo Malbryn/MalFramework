@@ -1,4 +1,4 @@
-// Do not edit unless you know what you're doing
+// DO NOT EDIT (unless you know what you are doing)
 // To access the basic settings open the description.hpp in 'mission_framework\config\'
 
 // Importing the custom settings
@@ -40,18 +40,19 @@ taskManagement_markers3D = 0;  // Use 3D markers
 taskManagement_propagate = 0;  // Propagate shared tasks to subordinates
 
 
-// Debrief config
-class CfgDebriefing {
-    #include "mission_framework\config\debriefing\CfgDebriefing.hpp"
-};
+// Debriefing config
+#include "mission_framework\root\main\CfgDebriefing.hpp"
 
-
+// Debriefing sections config
 #include "mission_framework\core\main\CfgDebriefingSections.hpp"
 
-#include "mission_framework\core\main\CfgEventHandlers.hpp"
-
+// Notifications config
 #include "mission_framework\core\main\CfgNotifications.hpp"
 
+// CBA Extended Event handlers
+#include "mission_framework\core\main\CfgEventHandlers.hpp"
+
+// VCOM functions
 #ifdef VCOMAI
     #include "mission_framework\core\vcom\CfgFunctions.hpp"
 #endif
