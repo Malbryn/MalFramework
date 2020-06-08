@@ -12,7 +12,7 @@
         1: BOOLEAN - Is victory
 
     Example:
-        ["MissionSuccess", true] call MF_end_mission_fnc_end_mission
+        ["MissionSuccess", true] call MF_end_mission_fnc_endMission
 
     Returns:
         void
@@ -28,10 +28,11 @@ call EFUNC(mission_stats,saveFriendlyFires);
 call EFUNC(mission_stats,saveCivilianKills);
 
 // Calling the end mission screen
-[QGVAR(missionEnd), [_ending, _isVictory]] call CFUNC(globalEvent);
+[_ending, _isVictory, true, true, true] call BFUNC(endMission);
+INFO_2("Ending mission... (Ending: %1, Victory: %2)",_ending,_isVictory);
 
 // Disable damage
 if (GVARMAIN(moduleDisableDamage)) then {
     [QGVARMAIN(damageDisabled), []] call CFUNC(globalEvent);
-    MSG("INFO","DAM DIS");
+    INFO("Player damage disabled");
 };

@@ -17,7 +17,8 @@
         -
 */
 
-private ["_enemy", "_bulding", "_buildingPos", "_group"];
+params ["_group", "_building", "_enemy"];
+private ["_enemy", "_buildingPos"];
 
 if (!isNull _enemy) exitWith {
 
@@ -56,8 +57,7 @@ _buildingPos = _building getVariable ["LAMBS_CQB_cleared_" + str (side _group), 
         };
     };
 
-true
-
+    true
 } count units _group;
 
 _building setVariable ["LAMBS_CQB_cleared_" + str (side _group), _buildingPos];

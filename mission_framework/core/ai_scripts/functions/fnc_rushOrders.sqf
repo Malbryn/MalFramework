@@ -17,6 +17,8 @@
         -
 */
 
+params ["_group", "_target"];
+
 if ((leader _group distance2d _target < 220) && {vehicle _target isKindOf "Air"}) exitWith {
     {
         _x commandSuppressiveFire getposASL _target;

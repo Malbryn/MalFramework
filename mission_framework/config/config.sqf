@@ -4,13 +4,13 @@
 /* ------------------------- DON'T REMOVE OR COMMENT OUT THESE ------------------------ */
 
 GVARMAIN(moduleTimeLimit) = true;
-EGVAR(end_conditions,timeLimit) = 90 MINUTES;
+EGVAR(end_conditions,timeLimit) = 60 MINUTES;
 
 GVARMAIN(moduleFriendlyCasualties) = true;
 EGVAR(end_conditions,friendlyCasLimit) = 75;
 
 GVARMAIN(moduleCivilianCasualties) = true;
-EGVAR(aend_conditions,civilianCasLimit) = 50;
+EGVAR(end_conditions,civilianCasLimit) = 50;
 
 GVARMAIN(moduleTaskLimit) = true;
 EGVAR(end_conditions,taskLimit) = 2;
@@ -48,6 +48,10 @@ EGVAR(ai_skills,skillSet) = [
 GVARMAIN(moduleFlyby) = true;
 
 
+// Arsenal
+GVARMAIN(moduleArsenal) = true;
+
+
 // Briefing
 GVARMAIN(moduleBriefing) = true;
 
@@ -56,6 +60,10 @@ GVARMAIN(moduleBriefing) = true;
 GVARMAIN(moduleCoverMap) = true;
 EGVAR(cover_map,aoMarker) = "ao";
 EGVAR(cover_map,colour) = "Color4_FD_F";
+
+
+// Curator
+GVARMAIN(moduleCurator) = true;
 
 
 // Grass cutter

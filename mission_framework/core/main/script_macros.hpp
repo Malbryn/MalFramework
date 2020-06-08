@@ -1,6 +1,10 @@
 #define PREFIX MF
 #define VERSION QUOTE(v1.07)
 
+// DEBUGGING
+#ifndef DEBUG_MODE_NORMAL
+    #define DEBUG_MODE_NORMAL
+#endif
 
 #include "script_macros_common.hpp"
 #include "script_macros_mission.hpp"
@@ -44,7 +48,7 @@
 #define PATH_POST(var1) CCOMP('mission_framework\core\var1\XEH_PostInit.sqf')
 
 #define MSG_SYS(LEVEL,MESSAGE) format ["[MF %1] %2", LEVEL, MESSAGE]
-#define MSG(LEVEL,MESSAGE) systemChat MSG_SYS(LEVEL,MESSAGE)
+#define MSG(LEVEL,MESSAGE) systemChat MSG_SYS(LEVEL,MESSAGE); [MSG_SYS(LEVEL,MESSAGE)] call CFUNC(log)
 #define MSG_1(LEVEL,MESSAGE,ARG1) MSG(LEVEL,FORMAT_1(MESSAGE,ARG1))
 #define MSG_2(LEVEL,MESSAGE,ARG1,ARG2) MSG(LEVEL,FORMAT_2(MESSAGE,ARG1,ARG2))
 #define MSG_3(LEVEL,MESSAGE,ARG1,ARG2,ARG3) MSG(LEVEL,FORMAT_3(MESSAGE,ARG1,ARG2,ARG3))

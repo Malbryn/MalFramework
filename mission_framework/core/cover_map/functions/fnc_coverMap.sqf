@@ -5,7 +5,7 @@
         BlackHawk, PIZZADOX (original A2 script by Karel Moricky)
 
     Description:
-        Draw the AO and cover the area outside
+        Draw the AO and cover the outside area
 
     Arguments:
         0: STRING - Name of AO marker
@@ -61,12 +61,12 @@ _colours = ["colorBlack", "colorBlack", _customColour, "colorGreen", _customColo
     if (_a < 0) then {_a = _a + 360};
 
     _s = _sx;
-    _w = 2*_mainS+_sy;
+    _w = 2 * _mainS+_sy;
     _bw = _sy + _mainBS;
 
-    if !((_a > 0 && _a <= 90) || (_a >180 && _a <=270)) then {
+    if !((_a > 0 && _a <= 90) || (_a > 180 && _a <= 270)) then {
         _s = _sy;
-        _w = _sx + 2*_mainBS;
+        _w = _sx + 2 * _mainBS;
         _bw = _sx + _mainBS;
     };
 
@@ -93,8 +93,8 @@ _colours = ["colorBlack", "colorBlack", _customColour, "colorGreen", _customColo
     } forEach _colours;
 
 
-    _pos_x = _px + (sin _a) * (_mainBS/2 + _s);
-    _pos_y = _py + (cos _a) * (_mainBS/2 + _s);
+    _pos_x = _px + (sin _a) * (_mainBS / 2 + _s);
+    _pos_y = _py + (cos _a) * (_mainBS / 2 + _s);
 
     for "_m" from 0 to 7 do {
         _marker = createMarkerLocal ["ao_w_" + str _i + str _m,[_pos_x, _pos_y]];
@@ -106,7 +106,7 @@ _colours = ["colorBlack", "colorBlack", _customColour, "colorGreen", _customColo
         _marker setMarkerColorLocal "colorwhite";
     };
 
-} forEach [_a, _a+90, _a+180, _a+270];
+} forEach [_a, _a + 90, _a + 180, _a + 270];
 
 _marker = createMarkerLocal ["ao_b_1", [_px, _py]];
 
@@ -125,10 +125,10 @@ _marker setMarkerBrushLocal "border";
 _marker setMarkerColorLocal "colorBlack";
 
 [_zoomlevel, _p] spawn {
-    params [["_zoomlevel",0.4],"_p"];
+    params [["_zoomlevel", 0.4], "_p"];
     disableSerialization;
-    waitUntil{visibleMap};
+    waitUntil {visibleMap};
     MapAnimAdd [0, _zoomlevel, _p];
     MapAnimCommit;
-    waitUntil{mapAnimDone};
+    waitUntil {mapAnimDone};
 };

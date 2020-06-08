@@ -5,7 +5,7 @@
         Perfks (modified by Pax'Jarome)
 
     Description:
-        Display the briefing for everyone on the map screen
+        Display the "Briefing" diary record
 
     Arguments:
         -
@@ -16,6 +16,10 @@
     Returns:
         void
 */
+
+private ["_briefing"];
+
+_briefing = [];
 
 #include "..\..\..\config\briefing\briefing.sqf"
 

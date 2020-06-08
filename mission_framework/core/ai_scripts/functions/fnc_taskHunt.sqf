@@ -12,7 +12,7 @@
         1: SCALAR - Range of the task
 
     Example:
-        [this, 300] call MF_ai_scripts_fnc_taskHunt
+        [this, 300] spawn MF_ai_scripts_fnc_taskHunt
 
     Returns:
         BOOLEAN
@@ -37,7 +37,7 @@ while {{alive _x} count units _group > 0} do {
     _combat = behaviour leader _group isEqualTo "COMBAT";
     _onFoot = (isNull objectParent (leader _group));
 
-    _target = call FUNC(findTarget);
+    _target = [_group] call FUNC(findTarget);
 
     if (!isNull _target) then {
         _group move (_target getPos [random 100,random 360]);
@@ -47,11 +47,11 @@ while {{alive _x} count units _group > 0} do {
         _group enableIRLasers true;
         
         if (!_combat && {_onFoot} && {random 1 > 0.8}) then {
-            call FUNC(flare);
+            [_group] call FUNC(flare);
         };
         
         if (_combat && {(nearestBuilding _target distance2d _target < 25)}) then {
-            call FUNC(suppress);
+            [_group, _target] call FUNC(suppress);
         };
     };
 

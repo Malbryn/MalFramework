@@ -17,7 +17,7 @@
         -
 */
 
-private ["_target", "_group"];
+params ["_group", "_target"];
 
 {
     _x doSuppressiveFire ((getposASL _target) vectorAdd [random 2, random 2,0.5 + random 3]);

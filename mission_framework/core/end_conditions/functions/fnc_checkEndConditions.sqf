@@ -17,9 +17,9 @@
         void
 */
 
-if !(isServer) exitWith {};
-
 private ["_allPlayers"];
+
+if !(isServer) exitWith {};
 
 _allPlayers = count allPlayers;
 
@@ -28,7 +28,7 @@ if (GVARMAIN(moduleTimeLimit)) then {
     private ["_time"];
 
     _time = CBA_missionTime;
-
+    
     if (_time > GVAR(timeLimit)) then {
         [GVAR(endConditionCheck)] call CFUNC(removePerFrameHandler);
         [QGVARMAIN(missionEnd), ["TimeLimit", false]] call CFUNC(localEvent);
@@ -108,7 +108,7 @@ if (GVARMAIN(moduleExtraction)) then {
 
     // Count the players inside the extraction zone
     _playerCount = {
-        _x inArea GVAR(extractionMarker);
+        _x inArea GVAR(extMarker);
     } count allPlayers;
 
     // End the mission accordingly

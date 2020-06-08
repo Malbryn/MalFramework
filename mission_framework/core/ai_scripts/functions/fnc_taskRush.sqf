@@ -12,7 +12,7 @@
         1: SCALAR - Range of the task
 
     Example:
-        [this, 300] call MF_ai_scripts_fnc_taskRush
+        [this, 300] spawn MF_ai_scripts_fnc_taskRush
 
     Returns:
         BOOLEAN
@@ -40,11 +40,11 @@ while {{alive _x} count units _group > 0} do {
         simulationenabled leader _group
     };
     
-    _target = call FUNC(findTarget);
+    _target = [_group] call FUNC(findTarget);
     
     // act
     if (!isNull _target) then {
-        call FUNC(rushOrders);
+        [_group, _target] call FUNC(rushOrders);
         _cycle = 15;
     } else {
         _cycle = 60;

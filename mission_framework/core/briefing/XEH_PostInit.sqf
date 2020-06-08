@@ -3,7 +3,5 @@
 if !(GVARMAIN(moduleBriefing)) exitWith{};
 
 if (hasInterface) then {
-    [QGVARMAIN(initFramework), {
-        call FUNC(setBriefing);
-    }] call CFUNC(addEventHandler);
+    call FUNC(setBriefing);
 };

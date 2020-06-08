@@ -41,7 +41,7 @@ taskManagement_propagate = 0;  // Propagate shared tasks to subordinates
 
 
 // Debriefing config
-#include "mission_framework\root\main\CfgDebriefing.hpp"
+#include "mission_framework\core\main\CfgDebriefing.hpp"
 
 // Debriefing sections config
 #include "mission_framework\core\main\CfgDebriefingSections.hpp"

@@ -13,7 +13,7 @@
         1: SCALAR - Range of the task
 
     Example:
-        [this, 300] call MF_ai_scripts_fnc_taskCreep
+        [this, 300] spawn MF_ai_scripts_fnc_taskCreep
 
     Returns:
         BOOLEAN
@@ -52,10 +52,10 @@ while {{alive _x} count units _group > 0} do {
         simulationenabled leader _group
     }; 
 
-    _target = call FUNC(findTarget);
+    _target = [_group] call FUNC(findTarget);
 
     if (!isNull _target) then {
-        call FUNC(creepOrders);
+        [_group, _target] call FUNC(creepOrders);
         _cycle = 30;
     } else {
         _cycle = 120;

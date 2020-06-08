@@ -13,7 +13,7 @@
         1: SCALAR - Range of the task
 
     Example:
-        [this, 300] call MF_ai_scripts_fnc_taskCQB
+        [this, 300] spawn MF_ai_scripts_fnc_taskCQB
 
     Returns:
         BOOLEAN
@@ -45,11 +45,11 @@ while {{alive _x} count units _group > 0} do {
     }; 
 
     _building = call FUNC(findBuilding);
-    _enemy = call FUNC(findEnemy);
+    _enemy = [_group, _building] call FUNC(findEnemy);
 
     if (isNull _building && {isNull _enemy}) exitWith {};
 
-    call FUNC(act);
+    [_group, _building, _enemy] call FUNC(act);
 
     sleep _cycle;
 };

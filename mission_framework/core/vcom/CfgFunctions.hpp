@@ -186,7 +186,7 @@ class VCOM {
         
     };
 
-    class Functions {
+    class Init {
         file = "mission_framework\core\vcom";
 
         class InitVCOM {

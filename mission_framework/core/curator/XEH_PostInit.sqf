@@ -1,5 +1,7 @@
 #include "script_component.hpp"
 
+if !(GVARMAIN(moduleCurator)) exitWith{};
+
 if (hasInterface) then {
     [QGVARMAIN(initFramework), {
         call FUNC(addReassignCuratorMenu);
@@ -9,14 +11,14 @@ if (hasInterface) then {
 
 
 if (isServer) then {
-    [QGVAR(registerCurator), {
+    [QGVARMAIN(registerCurator), {
         params ["_unit"];
 
         [_unit] call FUNC(createCurator);
     }] call CFUNC(addEventHandler);
     
 
-    [QGVAR(reassignCurator), {
+    [QGVARMAIN(reassignCurator), {
         params ["_unit"];
 
         [_unit] call FUNC(reassignCurator);

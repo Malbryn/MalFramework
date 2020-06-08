@@ -17,6 +17,7 @@
         -
 */
 
+params ["_group", "_building"];
 private ["_pos"];
 
 _pos = [getpos _building, getpos leader _group] select isNull _building;

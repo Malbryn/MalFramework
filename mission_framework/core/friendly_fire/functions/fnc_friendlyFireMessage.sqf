@@ -22,12 +22,9 @@
 params ["_killed", "_killer"];
 private ["_time", "_text"];
 
+// Notifying game masters
 if (hasInterface && (IS_ADMIN_LOGGED || getPlayerUID player == GETPAVAR(GVARMAIN(missionMaker),""))) then {
-    // Send message
     MSG_2("WARNING","%1 was killed by %2",_killed,_killer);
-
-    // Log
-    INFO_2("%1 was killed by %2",_killed,_killer);
 };
 
 

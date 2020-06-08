@@ -344,6 +344,6 @@ class Extended_PostInit_EventHandlers {
 
 class Extended_Init_EventHandlers {
     class CAManBase {
-        init = QUOTE([_this] call FUNC(setAISkills));
+        init = QUOTE([_this] call EFUNC(ai_skills,setAISkills));
     };
 };

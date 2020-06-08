@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Registers an object as an IED and a unit as the detonator of the IED
+        Register an object as an IED and a unit as the "detonator" of the IED
 
     Arguments:
         0: OBJECT - Variable name of the IED

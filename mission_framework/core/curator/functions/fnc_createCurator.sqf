@@ -5,7 +5,7 @@
         Commy2 (modified by Malbryn)
 
     Description:
-        Creates a curator
+        Create a curator logic for the game masters
 
     Arguments:
         -
@@ -30,6 +30,6 @@ _logic addCuratorEditableObjects [(allMissionObjects "Ship"), true];
 _logic addCuratorEditableObjects [(allMissionObjects "LandVehicle"), true];
 _logic addCuratorEditableObjects [(allMissionObjects "Man"), true];
 
-SETPVAR(_unit,GVAR(curator),_logic);
+SETPVAR(_unit,GVAR(curatorLogic),_logic);
 
-[QGVARMAIN(systemMessage), ["INFO", "Registered as Curator"], _unit] call CFUNC(targetEvent);
+[QGVARMAIN(systemMessage), ["INFO", "Game Master: Registered as Curator"], _unit] call CFUNC(targetEvent);

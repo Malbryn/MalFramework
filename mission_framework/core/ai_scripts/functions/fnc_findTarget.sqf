@@ -17,7 +17,8 @@
         -
 */
 
-private ["_newDist", "_all", "_target", "_group", "_distance"];
+params ["_group"];
+private ["_newDist", "_all", "_target", "_distance"];
 
 _newDist = _range; 
 _all = (switchableUnits + playableUnits - entities "HeadlessClient_F");

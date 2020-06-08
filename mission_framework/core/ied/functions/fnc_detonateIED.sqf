@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Detonates a previously registered IED
+        Detonate a previously registered IED
 
     Arguments:
         0: STRING - Net ID of the IED object

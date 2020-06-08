@@ -57,24 +57,24 @@ CREDITS:<br/>
  - STB_A3 Framework<br/>
  - UO Briefing Kit mod<br/>
 <br/>
- - Curator scripts by Commy2<br/>
- - Friendly fire script by NeilZar<br/>
- - Server FPS notification script by NeilZar<br/>
  - AI task scripts by Nkenny<br/>
- - Global AI skill settings by joko // Jonas<br/>
  - Briefing scripts by Perfks and Pax'Jarome<br/>
- - Diary scripts by NeilZar<br/>
- - Intel scripts by Kex<br/>
- - ORBAT script by BlackHawk<br/>
- - Mortar fire script by PabstMirror<br/>
- - Snowfall script by AZCoder and JW<br/>
- - JIP teleport scripts by Diwako<br/>
- - Parachute script by Kex and cobra4v320<br/>
- - Vehicle respawn scripts by Fredrik Eriksson<br/>
  - Cover map script by BlackHawk, PIZZADOX and Karel Moricky<br/>
- - Mission time script by Starfox64<br/>
- - No-damage ending script by Starfox64<br/>
+ - Curator scripts by Commy2<br/>
+ - Diary scripts by NeilZar<br/>
+ - Friendly fire script by NeilZar<br/>
+ - Global AI skill settings by joko // Jonas<br/>
+ - Intel scripts by Kex<br/>
+ - JIP teleport scripts by Diwako<br/>
  - LOS and terrain profile tools by BlackHawk<br/>
+ - Mission time script by Starfox64<br/>
+ - Mortar fire script by PabstMirror<br/>
+ - No-damage ending script by Starfox64<br/>
+ - ORBAT script by BlackHawk<br/>
+ - Parachute script by Kex and cobra4v320<br/>
+ - Server FPS notification script by NeilZar<br/>
+ - Snowfall script by AZCoder and JW<br/>
+ - Vehicle respawn scripts by Fredrik Eriksson<br/>
 </font>
 "
 DIARY_RECORD_END;
