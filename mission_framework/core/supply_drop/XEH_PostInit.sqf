@@ -6,6 +6,10 @@ if (hasInterface) then {
     [QGVARMAIN(initFramework), {
         call FUNC(addSupplyDropMenu);
     }] call CFUNC(addEventHandler);
+
+    [QGVARMAIN(transferSD), {
+        call FUNC(addSupplyDropMenu);
+    }] call CFUNC(addEventHandler);
 };
 
 if (isServer) then {

@@ -10,4 +10,8 @@ if (hasInterface) then {
     [QGVARMAIN(respawnWaveCalled), {
         call FUNC(respawnPlayer);
     }] call CFUNC(addEventHandler);
+
+    [QGVARMAIN(transferWR), {
+        call FUNC(addCallRespawnMenu);
+    }] call CFUNC(addEventHandler);
 };

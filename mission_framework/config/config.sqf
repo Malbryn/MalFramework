@@ -22,8 +22,12 @@ EGVAR(end_conditions,taskThreshold) = 66;
 
 GVARMAIN(respawnTickets) = 2;
 
+GVARMAIN(bodyRemoval) = false;
+
 GVARMAIN(playerViewDistance) = 2000;
 GVARMAIN(serverViewDistance) = 2000;
+
+GVARMAIN(timeAcceleration) = 1;
 
 EGVAR(ai_skills,skillSet) = [
     0.5,	// General (Higher = Better)
@@ -89,9 +93,7 @@ GVARMAIN(moduleOrbat) = true;
 
 // Reinsert
 GVARMAIN(moduleHALO) = true;
-
 GVARMAIN(moduleMRV) = true;
-
 GVARMAIN(moduleRP) = true;
 EGVAR(reinsert,RPTentObject) = "Land_TentA_F";
 

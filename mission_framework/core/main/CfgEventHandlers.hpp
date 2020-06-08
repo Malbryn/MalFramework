@@ -117,6 +117,10 @@ class Extended_PreInit_EventHandlers {
         init = PATH_PRE(reinsert);
     };
 
+    class GVARMAIN(Respawn) {
+        init = PATH_PRE(respawn);
+    };
+
     class GVARMAIN(RespawnTickets) {
         init = PATH_PRE(respawn_tickets);
     };
@@ -282,6 +286,10 @@ class Extended_PostInit_EventHandlers {
 
     class GVARMAIN(Reinsert) {
         init = PATH_POST(reinsert);
+    };
+
+    class GVARMAIN(Respawn) {
+        init = PATH_POST(respawn);
     };
 
     class GVARMAIN(RespawnTickets) {

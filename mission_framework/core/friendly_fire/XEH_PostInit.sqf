@@ -7,7 +7,7 @@
     [_unit, _killer] call FUNC(friendlyFireMessage);
 }] call CFUNC(addEventHandler);
 
-
+/*
 if (hasInterface) then {
     [player, "Killed", {
         params ["_unit", "_killer", "_instigator", "_useEffects"];
@@ -20,3 +20,4 @@ if (hasInterface) then {
         };
     }] call CFUNC(addBISEventHandler);
 };
+*/

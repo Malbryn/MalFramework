@@ -34,7 +34,7 @@ _menu = ['Snow Script - On', 'Snow Script - On', '', {
 
 // Turn snow script off
 _menu = ['Snow Script - Off', 'Snow Script - Off', '', {
-    [GVAR(snowfallPFH)] call CBA_fnc_removePerFrameHandler;
+    [GVAR(snowfallPFH)] call CFUNC(removePerFrameHandler);
     GVARMAIN(moduleSnowfall) = false;
     MSG("INFO","Snow script is OFF");
 }, {true}] call AFUNC(interact_menu,createAction);

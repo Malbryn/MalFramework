@@ -68,4 +68,4 @@ GVAR(snowfallPFH) = [{
         _density = _density + 500;
         _nextChange = _nextChange + 30;
     };
-}, 0.2, []] call CBA_fnc_addPerFrameHandler;
+}, 0.2, []] call CFUNC(addPerFrameHandler);
