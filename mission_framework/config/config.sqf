@@ -125,7 +125,7 @@ EGVAR(scenario_control,successRate) = 50;
 
 
 // Snowfall
-GVARMAIN(moduleSnowfall) = true;
+GVARMAIN(moduleSnowfall) = false;
 EGVAR(snowfall,maxDensity) = 50;
 
 

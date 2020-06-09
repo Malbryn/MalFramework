@@ -109,7 +109,7 @@ if (side _instigator == playerSide) then {
                 setPlayerRespawnTime GVARMAIN(respawnTimer);
             };
             
-            // Init spectator screen
+            // Init the complainer mode
             ["Initialize", [player, [], false, false, true, false, true, false, false, true]] call BFUNC(EGSpectator);
 
             cutText  ["", "BLACK IN",  3, true];

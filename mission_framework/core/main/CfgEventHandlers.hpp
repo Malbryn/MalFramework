@@ -61,6 +61,10 @@ class Extended_PreInit_EventHandlers {
         init = PATH_PRE(flyby);
     };
 
+    class GVARMAIN(ForceEnd) {
+        init = PATH_PRE(force_end);
+    };
+
     class GVARMAIN(FriendlyFire) {
         init = PATH_PRE(friendly_fire);
     };
@@ -230,6 +234,10 @@ class Extended_PostInit_EventHandlers {
 
     class GVARMAIN(Flyby) {
         init = PATH_POST(flyby);
+    };
+
+    class GVARMAIN(ForceEnd) {
+        init = PATH_POST(force_end);
     };
 
     class GVARMAIN(FriendlyFire) {

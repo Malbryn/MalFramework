@@ -21,7 +21,9 @@ private ["_id", "_notify", "_RPTent"];
 
 if !(hasInterface) exitWith {};
 
-if (isNil {GETVAR((group player),GVAR(RPTent),nil)}) exitWith {
+_id = GETVAR((group player),GVAR(RPTent),nil);
+
+if (isNil "_id") exitWith {
     ["Warning", ["Your squad RP is not deployed at this time, please stand by"]] call BFUNC(showNotification);
 
     _notify = ((units group player) select { GETVAR(_x,EGVAR(player,isSL),false) }) - [player];
@@ -34,7 +36,7 @@ _RPTent = objectFromNetId _id;
 cutText ["You are being teleported to your squad's Rally Point", "BLACK OUT", 2, true];
 
 [{
-    player setPos [(getPos _RPTent)#0, ((getPos _RPTent)#1) - 4, (getPos _RPTent)#2];
+    player setPos [(getPos _this)#0, ((getPos _this)#1) - 4, (getPos _this)#2];
     player setDir 0;
 
     [{

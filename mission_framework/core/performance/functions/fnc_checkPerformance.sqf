@@ -31,13 +31,9 @@ switch (_category) do {
         _missionTime = ceil (CBA_missionTime / 60);
 
         [[
-            "--- SERVER ---<br/>
-            Current server FPS: %1<br/>
-            Minimum server FPS: %2<br/>
-            Server uptime: %3 minutes<br/>
-            Mission time: %4 minutes",
+            "--- SERVER ---<br/><br/>Current server FPS: %1<br/>Minimum server FPS: %2<br/>Server uptime: %3 minutes<br/>Mission time: %4 minutes",
             _serverFps, _serverMinFps, _serverTime, _missionTime
-        ], 5, ace_player, 12] call AFUNC(common,displayTextStructured);
+        ], 4, ace_player, 12] call AFUNC(common,displayTextStructured);
     };
 
     case "mission" : {
@@ -48,17 +44,13 @@ switch (_category) do {
         (if (date#1 < 10) then { "0" } else { "" }) + str (date#1),
         (if (date#2 < 10) then { "0" } else { "" }) + str (date#2)];
         _missionTime = ceil (CBA_missionTime / 60);
-        _viewDistancePlayer = GVARMAIN(view_distance_player);
-        _viewDistanceServer = GVARMAIN(view_distance_server);
+        _viewDistancePlayer = GVARMAIN(playerViewDistance);
+        _viewDistanceServer = GVARMAIN(serverViewDistance);
 
         [[
-            "--- MISSION ---<br/>
-            Date: %1<br/>
-            Mission time: %2 minutes<br/>
-            View distance (player): %3m<br/>
-            View distance (server): %4m",
+            "--- MISSION ---<br/><br/>Date: %1<br/>Mission time: %2 minutes<br/>View distance (player): %3m<br/>View distance (server): %4m",
             _date, _missionTime, _viewDistancePlayer, _viewDistanceServer
-        ], 5, ace_player, 12] call AFUNC(common,displayTextStructured);
+        ], 4, ace_player, 12] call AFUNC(common,displayTextStructured);
     };
 
     case "units" : {
@@ -73,16 +65,9 @@ switch (_category) do {
         _unitsDead = count allDeadMen;
 
         [[
-            "--- UNITS ---<br/>
-            All units: %1<br/>
-            Players: %2<br/>
-            Units (BLUFOR): %3<br/>
-            Units (REDFOR): %4<br/>
-            Units (INDFOR): %5<br/>
-            Units (CIVFOR): %6<br/>
-            Dead units: %7<br/>",
+            "--- UNITS ---<br/><br/>All units: %1<br/>Players: %2<br/>Units (BLUFOR): %3<br/>Units (REDFOR): %4<br/>Units (INDFOR): %5<br/>Units (CIVFOR): %6<br/>Dead units: %7<br/>",
             _units, _players, _unitsBlufor, _unitsRedfor, _unitsGreenfor, _unitsCivfor, _unitsDead
-        ], 5, ace_player, 12] call AFUNC(common,displayTextStructured);
+        ], 5.5, ace_player, 12] call AFUNC(common,displayTextStructured);
     };
 
     case "objects" : {
@@ -92,10 +77,8 @@ switch (_category) do {
         _objectsVehicles = (count (vehicles select {_x isKindOf "Tank" || _x isKindOf "Car" || _x isKindOf "Air"}));
 
         [[
-            "--- OBJECTS ---<br/>
-            Objects: %1<br/>
-            Vehicles: %2<br/>",
+            "--- OBJECTS ---<br/><br/>Objects: %1<br/>Vehicles: %2<br/>",
             _objects, _objectsVehicles
-        ], 5, ace_player, 12] call AFUNC(common,displayTextStructured);
+        ], 3, ace_player, 12] call AFUNC(common,displayTextStructured);
     };
 };
