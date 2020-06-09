@@ -26,7 +26,7 @@ _menu = ['Snow Script', 'Snow Script', '\a3\ui_f\data\IGUI\Cfg\Cursors\unitHeale
 // Turn snow script on
 _menu = ['Snow Script - On', 'Snow Script - On', '', {
     call FUNC(startSnowfall);
-    GVARMAIN(moduleSnowfall) = true;
+    GVAR(enabled) = true;
     MSG("INFO","Snow script is ON");
 }, {true}] call AFUNC(interact_menu,createAction);
 
@@ -35,7 +35,7 @@ _menu = ['Snow Script - On', 'Snow Script - On', '', {
 // Turn snow script off
 _menu = ['Snow Script - Off', 'Snow Script - Off', '', {
     [GVAR(snowfallPFH)] call CFUNC(removePerFrameHandler);
-    GVARMAIN(moduleSnowfall) = false;
+    GVAR(enabled) = false;
     MSG("INFO","Snow script is OFF");
 }, {true}] call AFUNC(interact_menu,createAction);
 

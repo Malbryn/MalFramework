@@ -13,6 +13,6 @@ class CfgDebriefingSections {
 
     class GVARMAIN(CivilianKills) {
         title = "Civilian kills";
-        variable = QEGVAR(mission_stat,civilianKills);
+        variable = QEGVAR(mission_stats,civilianKills);
     };
 };

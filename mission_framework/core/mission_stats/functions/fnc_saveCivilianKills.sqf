@@ -19,5 +19,6 @@
 
 private ["_text"];
 
-_text = GVAR(stat_ck) joinString "<br/>";
+_text = GVAR(civilianKills) joinString "<br/>";
+
 SETPMVAR(GVAR(civilianKills),_text);

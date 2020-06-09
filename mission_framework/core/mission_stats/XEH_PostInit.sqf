@@ -10,8 +10,8 @@ if (isServer) then {
 
             // Log the name of the killer
             _time = [CBA_missionTime] call BFUNC(secondsToString);
-            _text = format ["%1  :  A civilian was killed by %2 <br/ >", _time, name _killer];
-            PUSH(GVAR(stat_ck),_text);
+            _text = format ["%1  :  A civilian was killed by %2 <br/>", _time, name _killer];
+            PUSH(GVAR(civilianKills),_text);
             
             INFO_1("A civilian was killed by %1",name _killer);
         };

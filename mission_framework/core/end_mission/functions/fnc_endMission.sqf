@@ -28,6 +28,11 @@ call EFUNC(mission_stats,saveMissionTime);
 call EFUNC(mission_stats,saveFriendlyFires);
 call EFUNC(mission_stats,saveCivilianKills);
 
+// Stop the end condition check
+if (GVARMAIN(moduleTimeLimit) || GVARMAIN(moduleFriendlyCasualties) || GVARMAIN(moduleTaskLimit) || GVARMAIN(moduleExtraction) || GVARMAIN(moduleCivilianCasualties)) then {
+    [EGVAR(end_conditions,endConditionCheck)] call CFUNC(removePerFrameHandler);
+};
+
 // Calling the end mission screen
 [_ending, _isVictory, true, true, true] call BFUNC(endMission);
 

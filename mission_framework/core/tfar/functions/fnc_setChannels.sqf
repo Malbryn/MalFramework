@@ -17,7 +17,7 @@
         void
 */
 
-if (!isMultiplayer) exitWith {
+if !(isMultiplayer) exitWith {
 	MSG("INFO","TFAR module does not work in single player");
 };
 

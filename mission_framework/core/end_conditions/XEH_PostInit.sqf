@@ -2,9 +2,7 @@
 
 if (isServer) then {
     // Terminate the end condition checking loop if there's no condition defined
-    if !(GVARMAIN(moduleTimeLimit) || GVARMAIN(moduleFriendlyCasualties) || GVARMAIN(moduleTaskLimit) || GVARMAIN(moduleExtraction) || GVARMAIN(moduleCivilianCasualties)) exitWith {
-        INFO("No end condition is active. Terminating condition check...");
-    };
+    if !(GVARMAIN(moduleTimeLimit) || GVARMAIN(moduleFriendlyCasualties) || GVARMAIN(moduleTaskLimit) || GVARMAIN(moduleExtraction) || GVARMAIN(moduleCivilianCasualties)) exitWith {};
 
     [QGVARMAIN(initFramework), {
         // Check the tasks array

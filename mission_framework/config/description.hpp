@@ -20,7 +20,3 @@ onLoadName = "operation_name";  // Name of the operation on the loading screen (
 onLoadMission = "mission_description";  // Mission description on the loading screen
 author = "mission_maker";  // Author of the mission
 loadScreen = "mission_framework\config\img\loading_screen.jpg";  // Loading screen image (use 2:1 image ratio)
-
-// Respawn settings
-respawnButton = 1;  // Enable/disable the respawn button (in the Esc menu)
-respawnDelay = 30;  // Respawn delay in seconds (this is overwritten by the framework when using the Wave respawn module)

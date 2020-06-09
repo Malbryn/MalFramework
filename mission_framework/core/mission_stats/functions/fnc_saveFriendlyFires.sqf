@@ -19,5 +19,6 @@
 
 private ["_text"];
 
-_text = GVAR(stat_ff) joinString "<br/>";
+_text = GVAR(friendlyFires) joinString "<br/>";
+
 SETPMVAR(GVAR(friendlyFires),_text);

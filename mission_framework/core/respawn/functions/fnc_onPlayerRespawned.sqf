@@ -23,6 +23,7 @@ params ["_unit", "_corpse"];
 cutText ["", "BLACK FADED", 5, true];
 
 [{
+    params ["_unit", "_corpse"];
     private ["_loadout", "_tickets"];
 
     cutText  ["", "BLACK IN", 5, true];
@@ -48,20 +49,20 @@ cutText ["", "BLACK FADED", 5, true];
     };
 
     // Snow effect
-    if (GVARMAIN(moduleSnowfall)) then {
+    if (GVARMAIN(moduleSnowfall) && EGVAR(snowfall,enabled)) then {
         call EFUNC(snowfall,startSnowfall);
     };
 
     // Delete old body
-    if (GVARMAIN(bodyRemoval)) then {
+    if (GVARMAIN(removePlayerCorpses)) then {
         hideBody (_corpse);
     };
 
     // Remaining respawn tickets
-    if (GETVAR(_unit,EGVAR(respawn_tickets,amount),-1)) exitWith {};
+    if (GETVAR(_unit,EGVAR(respawn_tickets,amount),-1) == -1) exitWith {};
 
-    _tickets = (GETVAR(_unit,EGVAR(respawn_tickets,amount),-1)) - 1;
+    private _tickets = (GETVAR(_unit,EGVAR(respawn_tickets,amount),-1)) - 1;
     [_unit, _tickets] call EFUNC(respawn_tickets,setRespawnTickets);
 
     [format ["Respawns available:<br/>%1", _tickets], 2, ace_player, 12] call AFUNC(common,displayTextStructured);
-}, [], 1] call CFUNC(waitAndExecute);
+}, [_unit, _corpse], 1] call CFUNC(waitAndExecute);

@@ -9,4 +9,5 @@ PREP_RECOMPILE_END;
 ADDON = true;
 
 // Global variables
-GVAR(stat_ck) = [];
+GVAR(friendlyFires) = ["FRIENDLY FIRE INCIDENTS: "];
+GVAR(civilianKills) = ["CIVILIAN KILLS: "];

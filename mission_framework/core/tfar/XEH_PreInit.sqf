@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if (GVARMAIN(moduleTFAR)) exitWith {};
+if !(GVARMAIN(moduleTFAR)) exitWith {};
 
 ADDON = false;
 

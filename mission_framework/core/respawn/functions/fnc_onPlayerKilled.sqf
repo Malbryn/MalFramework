@@ -19,6 +19,8 @@
 
 params ["_unit", "_killer", "_instigator", "_useEffects"];
 
+setPlayerRespawnTime 999999;
+
 // Friendly fire
 if (side _instigator == playerSide) then {
     _nameKiller = name _instigator;
@@ -42,8 +44,6 @@ if (side _instigator == playerSide) then {
         SETVAR(player,EGVAR(reinsert,deathPos),getPos player);
 
         if (GETVAR(player,EGVAR(respawn_tickets,amount),-1) == 0 || EGVAR(respawn_wave,availableWaves) == 0) then {
-            setPlayerRespawnTime 999999;
-
             // Init spectator screen
             ["Initialize", [player, [], false, true, true, false, true, false, false, true]] call BFUNC(EGSpectator);
 
@@ -105,6 +105,9 @@ if (side _instigator == playerSide) then {
             };
 
         } else {
+            if !(GVARMAIN(moduleWaveRespawn)) then {
+                setPlayerRespawnTime GVARMAIN(respawnTimer);
+            };
             
             // Init spectator screen
             ["Initialize", [player, [], false, false, true, false, true, false, false, true]] call BFUNC(EGSpectator);
@@ -135,8 +138,7 @@ if (side _instigator == playerSide) then {
 
         // Disable snow effect
         if (GVARMAIN(moduleSnowfall)) then {
-            [GVAR(snowfallPFH)] call CFUNC(removePerFrameHandler);
-            GVARMAIN(moduleSnowfall) = false;
+            [EGVAR(snowfall,snowfallPFH)] call CFUNC(removePerFrameHandler);
         };
     }, [], 5] call CFUNC(waitAndExecute);
 }, [], 1] call CFUNC(waitAndExecute);

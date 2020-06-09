@@ -6,7 +6,7 @@
 GVARMAIN(moduleTimeLimit) = true;
 EGVAR(end_conditions,timeLimit) = 60 MINUTES;
 
-GVARMAIN(moduleFriendlyCasualties) = true;
+GVARMAIN(moduleFriendlyCasualties) = false;
 EGVAR(end_conditions,friendlyCasLimit) = 75;
 
 GVARMAIN(moduleCivilianCasualties) = true;
@@ -20,9 +20,10 @@ EGVAR(end_conditions,extMarker) = "mrk_ext";
 EGVAR(end_conditions,playerThreshold) = 50;
 EGVAR(end_conditions,taskThreshold) = 66;
 
+GVARMAIN(respawnTimer) = 30;
 GVARMAIN(respawnTickets) = 2;
 
-GVARMAIN(bodyRemoval) = false;
+GVARMAIN(removePlayerCorpses) = true;
 
 GVARMAIN(playerViewDistance) = 2000;
 GVARMAIN(serverViewDistance) = 2000;
@@ -124,7 +125,7 @@ EGVAR(scenario_control,successRate) = 50;
 
 
 // Snowfall
-GVARMAIN(moduleSnowfall) = false;
+GVARMAIN(moduleSnowfall) = true;
 EGVAR(snowfall,maxDensity) = 50;
 
 

@@ -17,8 +17,6 @@
         void
 */
 
-GVAR(snowfallStart) = true;
-
 setWind [0, -1, true];
 
 GVAR(snowfallPFH) = [{
@@ -30,7 +28,6 @@ GVAR(snowfallPFH) = [{
     _inside = false;
 
     while {_a < _density} do {
-        systemChat "snofall woo";
         _inside = [player] call EFUNC(common,isInside);
 
         if !(_inside) then {
