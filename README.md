@@ -15,7 +15,7 @@ If something is broken, contact **[Malbryn](https://www.fkgaming.eu/profile/4189
 </br>
 
 ## Current Features:
-### MF_Admin
+### Admin
  - Admin menu
  - Curator for admins
  - FPS & friendly-fire warning
@@ -23,30 +23,29 @@ If something is broken, contact **[Malbryn](https://www.fkgaming.eu/profile/4189
  - Performance check
  - Task & scenario control
 
-### MF_AI
+### AI
  - AI task scripts (Creep, Hunt, Rush, CQB)
  - Global AI skill settings
  - VCOM AI script version
 
-### MF_Cfg
+### Cfg
  - Custom end mission stats
  - Custom notifications
- - Custom sounds
 
-### MF_Diary
+### Diary
  - Briefing script
  - ORBAT & player loadouts
  - Intel framework
  - Check LOS tool
  - Draw terrain profile tool
 
-### MF_Effects
+### Effects
  - Ambient flyby
  - Mortar fire
  - Snowfall
  - Remotely detonated IED
 
-### MF_Logistics
+### Logistics
  - JIP teleport
  - Reinsertion modules:
    - HALO drop
@@ -55,14 +54,14 @@ If something is broken, contact **[Malbryn](https://www.fkgaming.eu/profile/4189
  - Supply drop system
  - Vehicle respawn system
 
-### MF_Misc
+### Misc
  - Map cover
  - Intro text
  - Grass cutter
  - Forced weapon safety
  - No damage ending
 
-### MF_Mission
+### Mission
  - End condition check
    - Time limit
    - Friendly casualty check
@@ -74,7 +73,7 @@ If something is broken, contact **[Malbryn](https://www.fkgaming.eu/profile/4189
  - Time limit check
  - Wave respawn option
 
-### MF_Player
+### Player
  - Gear script
  - Custom team colour
  - TFAR radio channel setup

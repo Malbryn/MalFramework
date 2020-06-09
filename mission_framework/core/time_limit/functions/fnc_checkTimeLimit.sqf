@@ -17,10 +17,8 @@
         void
 */
 
-if (GVARMAIN(moduleTimeLimit)) then {
-    private ["_time"];
+private ["_time"];
 
-    _time = ceil((EGVAR(end_conditions,timeLimit) - CBA_missionTime) / 60);
+_time = ceil ((EGVAR(end_conditions,timeLimit) - CBA_missionTime) / 60);
 
-    [format ["Remaining time:<br/>%1 minutes", _time], 2, ace_player, 12] call AFUNC(common,displayTextStructured);
-};
+[format ["Remaining time:<br/>%1 minutes", _time], 2, ace_player, 12] call AFUNC(common,displayTextStructured);

@@ -20,9 +20,11 @@
 params ["_unit", "_corpse"];
 
 // Screen effects
-cutText  ["", "BLACK FADED", 5, true];
+cutText ["", "BLACK FADED", 5, true];
 
 [{
+    private ["_loadout", "_tickets"];
+
     cutText  ["", "BLACK IN", 5, true];
     "dynamicBlur" ppEffectEnable true;
     "dynamicBlur" ppEffectAdjust [6];
@@ -34,11 +36,11 @@ cutText  ["", "BLACK FADED", 5, true];
     ["Terminate"] call BFUNC(EGSpectator);
 
     // Load the gear
-    private _loadout = GETVAR(_unit,EGVAR(gear,currentLoadout),"");
-    [_unit, _loadout] call MF_gear_fnc_setGear;
+    _loadout = GETVAR(_unit,EGVAR(gear,currentLoadout),"");
+    [_unit, _loadout] call EFUNC(gear,setGear);
 
     // Set radios
-    call MF_tfar_fnc_setChannels;
+    call EFUNC(tfar,setChannels);
 
     // Reassign curator
     if (IS_ADMIN_LOGGED || getPlayerUID _unit == GETPAVAR(GVARMAIN(missionMaker),"")) then {
@@ -58,8 +60,8 @@ cutText  ["", "BLACK FADED", 5, true];
     // Remaining respawn tickets
     if (GETVAR(_unit,EGVAR(respawn_tickets,amount),-1)) exitWith {};
 
-    private _amount = (GETVAR(_unit,EGVAR(respawn_tickets,amount),-1)) - 1;
-    [_unit, _amount] call EFUNC(respawn_tickets,setRespawnTickets);
+    _tickets = (GETVAR(_unit,EGVAR(respawn_tickets,amount),-1)) - 1;
+    [_unit, _tickets] call EFUNC(respawn_tickets,setRespawnTickets);
 
-    [format ["Respawns available:<br/>%1", _amount], 2, ace_player, 12] call AFUNC(common,displayTextStructured);
+    [format ["Respawns available:<br/>%1", _tickets], 2, ace_player, 12] call AFUNC(common,displayTextStructured);
 }, [], 1] call CFUNC(waitAndExecute);

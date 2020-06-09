@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if !(GVARMAIN(moduleVehicleRespawn)) exitWith{};
+if !(GVARMAIN(moduleVehicleRespawn)) exitWith {};
 
 ADDON = false;
 

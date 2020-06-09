@@ -1,5 +1,5 @@
 #include "script_component.hpp"
-#include "..\..\config\config.sqf"
+#include "..\..\config\config.sqf"  // Import framework settings
 
 ADDON = false;
 

@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if !(GVARMAIN(moduleSupplyDrop)) exitWith{};
+if !(GVARMAIN(moduleSupplyDrop)) exitWith {};
 
 ADDON = false;
 
@@ -12,3 +12,5 @@ ADDON = true;
 
 // Global variables
 GVAR(supplyCrates) = [];
+GVAR(plane) = objNull;
+GVAR(chute) = objNull;

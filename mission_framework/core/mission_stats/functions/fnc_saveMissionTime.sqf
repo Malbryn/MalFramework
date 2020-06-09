@@ -20,11 +20,11 @@
 private ["_time", "_timeLimit", "_text"];
 
 _time = [CBA_missionTime] call BFUNC(secondsToString);
-_timeLimit = ceil (EGVAR(end_conditions,timeLimit) / 60);
+_timeLimit = [EGVAR(end_conditions,timeLimit)] call BFUNC(secondsToString);
 _text = "";
 
 if (GVARMAIN(moduleTimeLimit)) then {
-    _text = format ["MISSION TIME:<br/>%1 out of %2 minutes", _time, _timeLimit];
+    _text = format ["MISSION TIME:<br/>%1 out of %2", _time, _timeLimit];
 } else {
     _text = format ["MISSION TIME:<br/>%1 minutes", _time];
 };

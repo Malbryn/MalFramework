@@ -5,7 +5,7 @@
         Diwako
 
     Description:
-        Checks if there's free seat in the target unit's vehicle
+        Check if there's free seat in the target unit's vehicle
 
     Arguments:
         0: OBJECT - Target unit to check

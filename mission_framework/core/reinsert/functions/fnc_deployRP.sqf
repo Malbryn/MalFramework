@@ -19,7 +19,7 @@
 
 private ["_unitArray"];
 
-if (!hasInterface) exitWith {};
+if !(hasInterface) exitWith {};
 
 // Check if it is enabled
 if !(GVARMAIN(moduleRP)) exitWith {
@@ -31,10 +31,11 @@ if !(isNil {GETVAR((group player),GVAR(RPTent),nil)}) exitWith {
     ["Warning", ["The RP is already deployed"]] call BFUNC(showNotification);
 };
 
+/* CURRENTLY DISABLED
 // Define squad members
 _unitArray = (units group player) - [player];
 
-/* CURRENTLY DISABLED
+
 // Check if there's any squad member nearby
 if !((_unitArray findIf {(_x distance player < 15) && alive _x}) > -1) exitWith {
     ["Warning", ["You need one more squad member nearby to be able to deploy a RP"]] call BFUNC(showNotification);

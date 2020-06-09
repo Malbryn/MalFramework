@@ -53,7 +53,7 @@ if (_backpackClass != "") then {
             _packHolder attachTo [vehicle _unit, [-0.07, 0.67, -0.13], "pelvis"];
             [_packHolder, [[0, -0.2, -1], [0, 1, 0]]] remoteExecCall ["setVectorDirAndUp", 0, _packHolder];
 
-            [{isTouchingGround _unit or (getPos _unit select 2) < 1 or (!alive _unit)}, {
+            [{isTouchingGround _unit or (getPos _unit#2) < 1 or (!alive _unit)}, {
                 params ["_packHolder", "_unit", "_backpackClass", "_container", "_weaponCargo", "_magazineCargo", "_itemCargo"];
 
                 removeBackpack _unit;
@@ -61,9 +61,9 @@ if (_backpackClass != "") then {
                 _unit addBackpack _backpackClass;
                 clearAllItemsFromBackpack _unit;
                 _container = backpackContainer _unit;
-                {_container addWeaponCargo [_x, (_weaponCargo select 1) select _forEachIndex]} forEach (_weaponCargo select 0);
-                {_container addMagazineCargo [_x, (_magazineCargo select 1) select _forEachIndex]} forEach (_magazineCargo select 0);
-                {_container addItemCargo [_x, (_itemCargo select 1) select _forEachIndex]} forEach (_itemCargo select 0);
+                {_container addWeaponCargo [_x, (_weaponCargo#1) select _forEachIndex]} forEach (_weaponCargo#0);
+                {_container addMagazineCargo [_x, (_magazineCargo#1) select _forEachIndex]} forEach (_magazineCargo#0);
+                {_container addItemCargo [_x, (_itemCargo#1) select _forEachIndex]} forEach (_itemCargo#0);
             }, [_packHolder, _unit, _backpackClass, _container, _weaponCargo, _magazineCargo, _itemCargo]] call CFUNC(waitUntilAndExecute);
         }, [_packHolder, _unit, _backpackClass, _container, _weaponCargo, _magazineCargo, _itemCargo]] call CFUNC(waitUntilAndExecute);
     }, [_packHolder, _unit, _backpackClass, _container, _weaponCargo, _magazineCargo, _itemCargo]] call CFUNC(waitUntilAndExecute);

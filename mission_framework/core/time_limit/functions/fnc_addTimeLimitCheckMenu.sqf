@@ -17,12 +17,10 @@
         void
 */
 
-if (GVARMAIN(moduleTimeLimit)) then {
-    private ["_menu"];
+private ["_menu"];
 
-    _menu = ['Check remaining time', 'Check remaining time', '\a3\ui_f\data\GUI\Rsc\RscDisplayArsenal\watch_ca.paa', {
-        call FUNC(checkTimeLimit);
-    }, {!visibleMap}] call AFUNC(interact_menu,createAction);
+_menu = ['Check remaining time', 'Check remaining time', '\a3\ui_f\data\GUI\Rsc\RscDisplayArsenal\watch_ca.paa', {
+    call FUNC(checkTimeLimit);
+}, {!visibleMap}] call AFUNC(interact_menu,createAction);
 
-    [player, 1, ["ACE_SelfActions"], _menu] call AFUNC(interact_menu,addActionToObject);
-};
+[player, 1, ["ACE_SelfActions"], _menu] call AFUNC(interact_menu,addActionToObject);

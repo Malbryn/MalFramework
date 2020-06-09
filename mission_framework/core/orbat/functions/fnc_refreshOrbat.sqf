@@ -18,4 +18,4 @@
 */
 
 player removeDiarySubject "GearIndex";
-[] spawn FUNC(setOrbat);
+[] spawn FUNC(initOrbat);

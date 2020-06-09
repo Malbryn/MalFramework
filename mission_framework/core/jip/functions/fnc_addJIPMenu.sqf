@@ -2,10 +2,10 @@
 
 /*
     Author:
-        Diwako (customised by Malbryn)
+        Diwako (modified by Malbryn)
 
     Description:
-        Initialises the JIP teleport system, adds an ACE self-interaction option to the player
+        Initialise the JIP teleport system and add an ACE self-interaction option to the player
 
     Arguments:
         -

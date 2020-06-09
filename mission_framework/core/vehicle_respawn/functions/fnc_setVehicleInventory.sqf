@@ -18,10 +18,9 @@
         void
 */
 
-if (!isServer) exitWith {};
+if !(isServer) exitWith {};
 
 params [["_vehicle", objNull, [objNull]], ["_inventoryArray", [], [[]]]];
-
 private ["_itemArray", "_magazineArray", "_weaponArray", "_backpackArray"];
 
 clearItemCargoGlobal _vehicle;

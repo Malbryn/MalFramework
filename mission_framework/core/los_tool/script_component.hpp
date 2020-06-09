@@ -1,8 +1,8 @@
 #define COMPONENT los_tool
 
-#define DEBUG_MODE_MINIMAL
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE
+// #define CBA_DEBUG_SYNCHRONOUS
 // #define ENABLE_PERFORMANCE_COUNTERS
 
 #ifdef DEBUG_ENABLED_LOS_TOOL
@@ -11,6 +11,7 @@
 
 #include "..\main\script_macros.hpp"
 
+// Custom macros
 #define STR_TELEMETRY_LOG "[checkLOS] %5 generated %2m area, %1 cells, size %3m, in %4s."
 
 #define STR_FINISHED_MESSAGE "Finished\ndrawn cells: %1\ncell size: %2m\ntime taken: %3s"

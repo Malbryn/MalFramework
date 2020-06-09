@@ -5,13 +5,13 @@
         Malbryn
 
     Description:
-        Creates ACE self-interaction menu which adds the ability of controlling task states
+        Create ACE self-interaction menu which adds the ability of controlling task states
 
     Arguments:
         -
 
     Example:
-        call MF_blank_fnc_blank
+        call MF_task_control_fnc_addTaskControlMenu
 
     Returns:
         void

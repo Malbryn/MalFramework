@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if !(GVARMAIN(moduleJIP)) exitWith{};
+if !(GVARMAIN(moduleJIP)) exitWith {};
 
 ADDON = false;
 

@@ -5,13 +5,13 @@
         Malbryn
 
     Description:
-        Checks the performance of the server and the mission
+        Check the server performance and other mission related stats
 
     Arguments:
         0: STRING - Performance category (available: server, mission, units, objects)
 
     Example:
-        call MF_performance_fnc_checkPerformance
+        ["units"] call MF_performance_fnc_checkPerformance
 
     Returns:
         void
@@ -19,7 +19,7 @@
 
 params ["_category"];
 
-if (!hasInterface) exitWith {};
+if !(hasInterface) exitWith {};
 
 switch (_category) do {
     case "server" : {
@@ -32,11 +32,11 @@ switch (_category) do {
 
         [[
             "--- SERVER ---<br/>
-                Current server FPS: %1<br/>
-                Minimum server FPS: %2<br/>
-                Server uptime: %3 minutes<br/>
-                Mission time: %4 minutes
-            ", _serverFps, _serverMinFps, _serverTime, _missionTime
+            Current server FPS: %1<br/>
+            Minimum server FPS: %2<br/>
+            Server uptime: %3 minutes<br/>
+            Mission time: %4 minutes",
+            _serverFps, _serverMinFps, _serverTime, _missionTime
         ], 5, ace_player, 12] call AFUNC(common,displayTextStructured);
     };
 
@@ -53,11 +53,11 @@ switch (_category) do {
 
         [[
             "--- MISSION ---<br/>
-                Date: %1<br/>
-                Mission time: %2 minutes<br/>
-                View distance (player): %3m<br/>
-                View distance (server): %4m
-            ", _date, _missionTime, _viewDistancePlayer, _viewDistanceServer
+            Date: %1<br/>
+            Mission time: %2 minutes<br/>
+            View distance (player): %3m<br/>
+            View distance (server): %4m",
+            _date, _missionTime, _viewDistancePlayer, _viewDistanceServer
         ], 5, ace_player, 12] call AFUNC(common,displayTextStructured);
     };
 
@@ -74,14 +74,14 @@ switch (_category) do {
 
         [[
             "--- UNITS ---<br/>
-                All units: %1<br/>
-                Players: %2<br/>
-                Units (BLUFOR): %3<br/>
-                Units (REDFOR): %4<br/>
-                Units (INDFOR): %5<br/>
-                Units (CIVFOR): %6<br/>
-                Dead units: %7<br/>
-            ", _units, _players, _unitsBlufor, _unitsRedfor, _unitsGreenfor, _unitsCivfor, _unitsDead
+            All units: %1<br/>
+            Players: %2<br/>
+            Units (BLUFOR): %3<br/>
+            Units (REDFOR): %4<br/>
+            Units (INDFOR): %5<br/>
+            Units (CIVFOR): %6<br/>
+            Dead units: %7<br/>",
+            _units, _players, _unitsBlufor, _unitsRedfor, _unitsGreenfor, _unitsCivfor, _unitsDead
         ], 5, ace_player, 12] call AFUNC(common,displayTextStructured);
     };
 
@@ -93,9 +93,9 @@ switch (_category) do {
 
         [[
             "--- OBJECTS ---<br/>
-                Objects: %1<br/>
-                Vehicles: %2<br/>
-            ", _objects, _objectsVehicles
-        ], 5, ace_player, 12] call ace_common_fnc_displayTextStructured;
+            Objects: %1<br/>
+            Vehicles: %2<br/>",
+            _objects, _objectsVehicles
+        ], 5, ace_player, 12] call AFUNC(common,displayTextStructured);
     };
 };

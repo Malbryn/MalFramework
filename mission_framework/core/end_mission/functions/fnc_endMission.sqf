@@ -21,6 +21,7 @@
 if !(isServer) exitWith {};
 
 params ["_ending", "_isVictory"];
+private ["_time"];
 
 // Save end mission stats
 call EFUNC(mission_stats,saveMissionTime);
@@ -29,7 +30,9 @@ call EFUNC(mission_stats,saveCivilianKills);
 
 // Calling the end mission screen
 [_ending, _isVictory, true, true, true] call BFUNC(endMission);
-INFO_2("Ending mission... (Ending: %1, Victory: %2)",_ending,_isVictory);
+
+_time = [CBA_missionTime] call BFUNC(secondsToString);
+INFO_3("Ending mission... (Ending: %1 | Victory: %2 | Mission time: %3)",_ending,_isVictory,_time);
 
 // Disable damage
 if (GVARMAIN(moduleDisableDamage)) then {

@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if !(GVARMAIN(moduleSafetyStart)) exitWith{};
+if !(GVARMAIN(moduleSafetyStart)) exitWith {};
 
 if (hasInterface) then {
     [QGVARMAIN(initFramework), {

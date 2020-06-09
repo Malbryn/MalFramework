@@ -19,7 +19,7 @@
 
 private ["_id", "_notify", "_RPTent"];
 
-if (!hasInterface) exitWith {};
+if !(hasInterface) exitWith {};
 
 if (isNil {GETVAR((group player),GVAR(RPTent),nil)}) exitWith {
     ["Warning", ["Your squad RP is not deployed at this time, please stand by"]] call BFUNC(showNotification);

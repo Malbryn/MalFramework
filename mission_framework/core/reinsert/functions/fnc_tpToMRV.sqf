@@ -17,7 +17,7 @@
         void
 */
 
-if (!hasInterface) exitWith {};
+if !(hasInterface) exitWith {};
 
 private ["_mrv"];
 
@@ -36,7 +36,7 @@ if (_mrv emptyPositions "cargo" == 0) exitWith {
 };
 
 
-cutText ["You are being paradropped into the AO", "BLACK OUT", 2, true];
+cutText ["You are being teleported back to the AO", "BLACK OUT", 2, true];
 
 [{
     player moveInCargo _this;

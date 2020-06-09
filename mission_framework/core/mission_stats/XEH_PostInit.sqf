@@ -12,6 +12,8 @@ if (isServer) then {
             _time = [CBA_missionTime] call BFUNC(secondsToString);
             _text = format ["%1  :  A civilian was killed by %2 <br/ >", _time, name _killer];
             PUSH(GVAR(stat_ck),_text);
+            
+            INFO_1("A civilian was killed by %1",name _killer);
         };
     }];
 };

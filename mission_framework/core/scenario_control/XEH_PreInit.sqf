@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if !(GVARMAIN(moduleScenarioControl)) exitWith{};
+if !(GVARMAIN(moduleScenarioControl)) exitWith {};
 
 ADDON = false;
 

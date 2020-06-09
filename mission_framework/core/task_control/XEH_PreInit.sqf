@@ -1,5 +1,7 @@
 #include "script_component.hpp"
 
+if !(GVARMAIN(moduleTaskControl)) exitWith {};
+
 ADDON = false;
 
 PREP_RECOMPILE_START;

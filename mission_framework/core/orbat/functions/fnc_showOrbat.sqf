@@ -1,9 +1,9 @@
 /*
     Author:
-        Malbryn
+        BlackHawk
 
     Description:
-        Stuff
+        -
 
     Arguments:
         -
@@ -12,7 +12,7 @@
         call MF_orbat_fnc_refreshOrbat
 
     Returns:
-        void
+        -
 */
 
 private ["_text", "_getPicture", "_unit", "_radio", "_image", "_optics", "_opticsClasses", "_class", "_lobbyName"];

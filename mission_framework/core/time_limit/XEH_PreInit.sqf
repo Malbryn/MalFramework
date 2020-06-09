@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if !(GVARMAIN(moduleTimeLimitCheck)) exitWith{};
+if !(GVARMAIN(moduleTimeLimitCheck)) exitWith {};
 
 ADDON = false;
 

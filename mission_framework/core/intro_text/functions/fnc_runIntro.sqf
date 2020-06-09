@@ -17,9 +17,9 @@
         void
 */
 
-private ["_text", "_output"];
-
 [{
+    private ["_text", "_output"];
+
     _text =
     [
         [GVAR(title), "size='1.5' font='PuristaBold'"],

@@ -91,6 +91,10 @@ GVARMAIN(moduleJIP) = true;
 EGVAR(jip,JIPTimer) = 3 MINUTES;
 
 
+// LOS Tool
+GVARMAIN(moduleLOSTool) = true;
+
+
 // Mortar fire
 GVARMAIN(moduleMortar) = true;
 
@@ -127,6 +131,14 @@ EGVAR(snowfall,maxDensity) = 50;
 // Supply drop
 GVARMAIN(moduleSupplyDrop) = true;
 EGVAR(supply_drop,supplyDropPlane) = "B_T_VTOL_01_vehicle_F";
+
+
+// Task control
+GVARMAIN(moduleTaskControl) = true;
+
+
+// TFAR
+GVARMAIN(moduleTFAR) = true;
 
 
 // Time limit check

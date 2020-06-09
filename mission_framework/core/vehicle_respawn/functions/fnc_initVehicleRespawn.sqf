@@ -23,7 +23,7 @@
         void
 */
 
-if (!isServer) exitWith {};
+if !(isServer) exitWith {};
 
 private ["_inventory", "_paint", "_parts", "_vehicleData"];
 
@@ -38,12 +38,14 @@ params [
 ];
 
 _limitEnabled = false;
+
 if (_respawnLimit != -1) then {
     SETPVAR(_vehicle,GVAR(respawnLimit),_respawnLimit);
     _limitEnabled = true;
 };
 
 _inventory = [];
+
 if (_loadout) then {
     _items = getItemCargo _vehicle;
     _magazines = getMagazineCargo _vehicle;
@@ -54,6 +56,7 @@ if (_loadout) then {
 
 _paint = "";
 _parts = [];
+
 if (_savePaint) then {
     _customization = [_vehicle] call BFUNC(getVehicleCustomization);
     _paint = (_customization#0)#0;

@@ -1,5 +1,7 @@
 #include "script_component.hpp"
 
+if !(GVARMAIN(moduleLOSTool)) exitWith {};
+
 ADDON = false;
 
 PREP_RECOMPILE_START;
@@ -7,6 +9,13 @@ PREP_RECOMPILE_START;
 PREP_RECOMPILE_END;
 
 ADDON = true;
+
+GVAR(telemetryEnabled) = true;
+//GVAR(observerHeight) = 1.8;
+GVAR(targetMinHeight) = 1.0;
+//GVAR(cellCount) = 10000;
+GVAR(disableAfterStart) = true;
+GVAR(chartAccuracy) = 5;
 
 [
     QGVAR(cellCount),

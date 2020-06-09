@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Create ACE self-interaction menu for the logged-in admin and mission creator
+        Create ACE self-interaction menu for the game masters
 
     Arguments:
         -

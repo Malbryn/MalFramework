@@ -2,10 +2,10 @@
 
 /*
     Author:
-        Diwako (customised by Malbryn)
+        Diwako (modified by Malbryn)
 
     Description:
-        Checks target for a valid unit in the player's group
+        Check target for a valid unit in the player's group
 
     Arguments:
         -

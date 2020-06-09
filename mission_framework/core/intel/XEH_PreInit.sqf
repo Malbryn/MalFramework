@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if !(GVARMAIN(moduleIntel)) exitWith{};
+if !(GVARMAIN(moduleIntel)) exitWith {};
 
 ADDON = false;
 

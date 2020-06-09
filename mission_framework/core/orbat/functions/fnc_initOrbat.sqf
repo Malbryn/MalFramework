@@ -2,7 +2,7 @@
 
 /*
     Author:
-        Malbryn
+        BlackHawk
 
     Description:
         Add a Diary tab that shows the current ORBAT and player loadouts

@@ -1,5 +1,7 @@
 #include "script_component.hpp"
 
+if (GVARMAIN(moduleTFAR)) exitWith {};
+
 ADDON = false;
 
 PREP_RECOMPILE_START;

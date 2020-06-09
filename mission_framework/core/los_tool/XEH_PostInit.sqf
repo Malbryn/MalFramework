@@ -1,5 +1,7 @@
 #include "script_component.hpp"
 
-if !(isServer) then {
+if !(GVARMAIN(moduleLOSTool)) exitWith {};
+
+if (hasInterface) then {
     call FUNC(initialize); 
 };

@@ -1,3 +1,3 @@
 #include "script_component.hpp"
 
-if !(GVARMAIN(moduleIED)) exitWith{};
+if !(GVARMAIN(moduleIED)) exitWith {};

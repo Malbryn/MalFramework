@@ -17,10 +17,12 @@
         void
 */
 
-if (!hasInterface) exitWith {};
+private ["_menu"];
+
+if !(hasInterface) exitWith {};
 
 // Create parent category
-private _menu = ['Rally Point', 'Rally Point', '\a3\ui_f\data\GUI\Cfg\Hints\icon_text\b_inf_ca.paa', {}, {!visibleMap}] call AFUNC(interact_menu,createAction);
+_menu = ['Rally Point', 'Rally Point', '\a3\ui_f\data\GUI\Cfg\Hints\icon_text\b_inf_ca.paa', {}, {!visibleMap}] call AFUNC(interact_menu,createAction);
 [player, 1, ["ACE_SelfActions"], _menu] call AFUNC(interact_menu,addActionToObject);
 
 

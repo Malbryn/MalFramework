@@ -10,3 +10,4 @@ ADDON = true;
 
 // Global variables
 GVAR(tasks) = [];
+GVAR(civCas) = 0;

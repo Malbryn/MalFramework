@@ -2,7 +2,7 @@
 
 /*
     Author:
-        Diwako (customised by Malbryn)
+        Diwako (modified by Malbryn)
 
     Description:
         Teleport the player back to their squad
@@ -36,10 +36,6 @@ if !(count units group player > 1) exitWith {
 if !({alive _x} count units group player > 1) exitWith {
     ["Warning", ["JIP TP aborted. No one is alive in your squad!"]] call BFUNC(showNotification);
 };
-
-// Remove JIP teleport action after the player was teleported
-GVAR(jipAvailable) = false;
-[player, 1, ["ACE_SelfActions", "Teleport to squad"]] call AFUNC(interact_menu,removeActionFromObject);
 
 // Teleport section
 cutText ["You are being teleported back to your squad", "BLACK OUT", 2, true];
