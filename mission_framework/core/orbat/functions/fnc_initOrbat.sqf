@@ -20,7 +20,7 @@
 private ["_newIndex", "_playerSide", "_groupArray"];
 
 _newIndex = player createDiarySubject ["GearIndex", "ORBAT"];
-_playerSide = side player;
+_playerSide = playerSide;
 _groupArray = [];
 
 {

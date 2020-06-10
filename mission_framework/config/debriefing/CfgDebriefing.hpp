@@ -76,7 +76,7 @@ class WithdrawalLose {
 };
 
 // TvT endings
-class WestWin {
+class BluforWin {
     title = "insert_faction Win";
     subtitle = "default_text";
     description = "default_text";
@@ -85,22 +85,13 @@ class WestWin {
     pictureColor[] = {0, 0.3, 0.6, 1};
 };
 
-class EastWin {
+class RedforWin {
     title = "insert_faction Win";
     subtitle = "default_text";
     description = "default_text";
     pictureBackground = "";
     picture = "o_unknown";
     pictureColor[] = {0.5, 0, 0, 1};
-};
-
-class IndependentWin {
-    title = "insert_faction Win";
-    subtitle = "default_text";
-    description = "default_text";
-    pictureBackground = "";
-    picture = "n_unknown";
-    pictureColor[] = {0, 0.5, 0, 1};
 };
 
 /* ------------------------CUSTOM ENDINGS BELOW------------------------ */
