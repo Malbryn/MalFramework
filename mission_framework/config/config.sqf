@@ -132,6 +132,7 @@ EGVAR(snowfall,maxDensity) = 50;
 // Supply drop
 GVARMAIN(moduleSupplyDrop) = true;
 EGVAR(supply_drop,supplyDropPlane) = "B_T_VTOL_01_vehicle_F";
+EGVAR(supply_drop,useFlare) = true;
 
 
 // Task control
