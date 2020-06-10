@@ -21,6 +21,18 @@ private ["_briefing"];
 
 _briefing = [];
 
-#include "..\..\..\config\briefing\briefing.sqf"
+switch (side player) do {
+    case west : {
+        #include "..\..\..\config\briefing\west_briefing.sqf"
+    };
+
+    case east : {
+        #include "..\..\..\config\briefing\east_briefing.sqf"
+    };
+
+    case independent : {
+        #include "..\..\..\config\briefing\independent_briefing.sqf"
+    };
+};
 
 DISPLAYBRIEFING();
