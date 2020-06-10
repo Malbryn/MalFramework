@@ -44,53 +44,54 @@ case "SL" : {
         // Binos
         ["Rangefinder","","","",[],[],""],
         // Linked items
-        ["ItemMap","ItemGPS","ItemRadio","ItemCompass","ItemWatch","O_NVGoggles_grn_F"]]
+        ["ItemMap","ItemGPS","ItemRadio","ItemCompass","ItemWatch","O_NVGoggles_grn_F"]
+    ];
 };
 
 
 case "MEDIC" : {
     _gear = [
-        ["arifle_Mk20_pointer_F","","acc_pointer_IR","",["30Rnd_556x45_Stanag",30],[],""],
+        ["arifle_AK12U_lush_holo_pointer_F","","acc_pointer_IR","optic_Holosight_lush_F",["30rnd_762x39_AK12_Lush_Mag_F",30],[],""],
         [],
-        ["hgun_ACPC2_F","","","",["9Rnd_45ACP_Mag",8],[],""],
-        ["U_I_CombatUniform_shortsleeve",[["FirstAidKit",1],["30Rnd_556x45_Stanag",3,30],["SmokeShell",1,1]]],
-        ["V_PlateCarrierIA2_dgtl",[["30Rnd_556x45_Stanag",2,30],["9Rnd_45ACP_Mag",2,8],["SmokeShellGreen",1,1],["SmokeShellOrange",1,1],["SmokeShellPurple",1,1],["Chemlight_green",2,1]]],
-        ["I_Fieldpack_oli_Medic",[["Medikit",1],["FirstAidKit",10]]],
-        "H_HelmetIA",
+        ["hgun_Rook40_F","","","",["16Rnd_9x21_Mag",17],[],""],
+        ["U_O_R_Gorka_01_camo_F",[["FirstAidKit",1],["30rnd_762x39_AK12_Lush_Mag_F",2,30]]],
+        ["V_SmershVest_01_F",[["30rnd_762x39_AK12_Lush_Mag_F",3,30],["16Rnd_9x21_Mag",2,17],["SmokeShell",1,1],["SmokeShellRed",1,1],["SmokeShellOrange",1,1],["SmokeShellYellow",1,1],["Chemlight_red",2,1]]],
+        ["B_FieldPack_taiga_Medic_F",[["Medikit",1],["FirstAidKit",10],["SmokeShellRed",1,1],["SmokeShellBlue",1,1],["SmokeShellOrange",1,1]]],
+        "H_HelmetAggressor_cover_taiga_F",
         "",
         [],
-        ["ItemMap","","TFAR_anprc154","ItemCompass","TFAR_microdagr","NVGoggles_INDEP"]
+        ["ItemMap","","ItemRadio","ItemCompass","ItemWatch","O_NVGoggles_grn_F"]
     ];
 };
 
 
 case "AR" : {
     _gear = [
-        ["LMG_Mk200_LP_BI_F","","acc_pointer_IR","",["200Rnd_65x39_cased_Box",200],[],"bipod_03_F_blk"],
+        ["arifle_RPK12_lush_arco_pointer_F","","acc_pointer_IR","optic_Arco_AK_lush_F",["75rnd_762x39_AK12_Lush_Mag_F",75],[],""],
         [],
-        ["hgun_ACPC2_F","","","",["9Rnd_45ACP_Mag",8],[],""],
-        ["U_I_CombatUniform_shortsleeve",[["FirstAidKit",1],["9Rnd_45ACP_Mag",2,8],["HandGrenade",1,1],["SmokeShell",1,1],["SmokeShellGreen",1,1]]],
-        ["V_PlateCarrierIA2_dgtl",[["200Rnd_65x39_cased_Box",2,200],["Chemlight_green",2,1]]],
+        ["hgun_Rook40_F","","","",["16Rnd_9x21_Mag",17],[],""],
+        ["U_O_R_Gorka_01_camo_F",[["FirstAidKit",1],["SmokeShell",1,1]]],
+        ["V_SmershVest_01_F",[["75rnd_762x39_AK12_Lush_Mag_F",5,75],["16Rnd_9x21_Mag",2,17],["HandGrenade",1,1],["SmokeShellRed",1,1],["Chemlight_red",2,1]]],
         [],
-        "H_HelmetIA_camo",
-        "",
+        "H_HelmetAggressor_cover_taiga_F",
+        "G_Balaclava_blk",
         [],
-        ["ItemMap","","TFAR_anprc152","ItemCompass","ItemWatch","NVGoggles_INDEP"]
+        ["ItemMap","","ItemRadio","ItemCompass","ItemWatch","O_NVGoggles_grn_F"]
     ];
 };
 
 
 case "RM" : {
     _gear = [
-        ["arifle_Mk20_ACO_pointer_F","","acc_pointer_IR","optic_ACO_grn",["30Rnd_556x45_Stanag",30],[],""],
-        ["ACE_launch_NLAW_ready_F","","","",["NLAW_F",1],[],""],
-        ["hgun_ACPC2_F","","","",["9Rnd_45ACP_Mag",8],[],""],
-        ["U_I_CombatUniform",[["FirstAidKit",1],["30Rnd_556x45_Stanag",3,30],["SmokeShell",1,1]]],
-        ["V_PlateCarrierIA2_dgtl",[["30Rnd_556x45_Stanag",2,30],["9Rnd_45ACP_Mag",2,8],["SmokeShellGreen",1,1],["Chemlight_green",2,1]]],
-        ["I_Fieldpack_oli_LAT",[["NLAW_F",2,1]]],
-        "H_HelmetIA",
-        "",
+        ["arifle_AK12U_lush_holo_pointer_F","","acc_pointer_IR","optic_Holosight_lush_F",["30rnd_762x39_AK12_Lush_Mag_F",30],[],""],
+        ["launch_RPG32_green_F","","","",["RPG32_F",1],[],""],
+        ["hgun_Rook40_F","","","",["16Rnd_9x21_Mag",17],[],""],
+        ["U_O_R_Gorka_01_camo_F",[["FirstAidKit",1],["30rnd_762x39_AK12_Lush_Mag_F",2,30]]],
+        ["V_SmershVest_01_F",[["30rnd_762x39_AK12_Lush_Mag_F",3,30],["16Rnd_9x21_Mag",2,17],["SmokeShell",1,1],["SmokeShellRed",1,1],["Chemlight_red",2,1]]],
+        ["B_FieldPack_taiga_RPG_AT_F",[["RPG32_F",2,1],["RPG32_HE_F",2,1]]],
+        "H_HelmetAggressor_cover_taiga_F",
+        "G_Balaclava_blk",
         [],
-        ["ItemMap","","TFAR_anprc152","ItemCompass","ItemWatch","NVGoggles_INDEP"]
+        ["ItemMap","","ItemRadio","ItemCompass","ItemWatch","O_NVGoggles_grn_F"]
     ];
 };

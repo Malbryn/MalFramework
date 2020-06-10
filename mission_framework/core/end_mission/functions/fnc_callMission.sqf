@@ -12,7 +12,7 @@
         1: BOOLEAN - Is victory
 
     Example:
-        ["MissionSuccess", true] call MF_end_mission_fnc_endMission
+        ["MissionSuccess", true] call MF_end_mission_fnc_callMission
 
     Returns:
         void
