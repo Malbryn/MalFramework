@@ -50,7 +50,7 @@ class CivCasualtyLimit {
 
 class MissionTerminated {
     title = "Mission Terminated";
-    subtitle = "The mission was terminated by admin";
+    subtitle = "The mission was terminated by a game master";
     description = "Due to technical reasons the mission was terminated.";
     pictureBackground = "";
     picture = "mil_warning";

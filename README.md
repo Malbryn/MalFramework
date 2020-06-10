@@ -1,11 +1,11 @@
 <p align="center">
   <img src="https://i.imgur.com/Lq5Do49.png">
   <a href="https://github.com/Malbryn/MalFramework/releases/tag/v1.06">
-    <img src="https://img.shields.io/badge/version-1.06-brightgreen" alt="MalFramework Version">
+    <img src="https://img.shields.io/badge/version-1.07-brightgreen" alt="MalFramework Version">
   </a>
 </p>
 
-Welcome to **Malbryn's Mission Framework**. This framework was made for my Arma 3 scripted missions and it is based on some other Arma 3 mission frameworks. Some scripts were made by other people, they are credited in the script headers as well as in the Credits section. This script library was suited for scripted CO-OP PvE missions.
+Welcome to **Malbryn's Mission Framework**. This framework was made for my Arma 3 scripted missions and it is based on some other Arma 3 mission frameworks. Some scripts were made by other people, they are credited in the script headers as well as in the Credits section. This script library was suited for scripted PvE missions.
 
 If something is broken, contact **[Malbryn](https://www.fkgaming.eu/profile/4189-malbryn/)** or open a new issue on **[GitHub](https://github.com/Malbryn/MalFramework/issues)**.
 
@@ -15,7 +15,7 @@ If something is broken, contact **[Malbryn](https://www.fkgaming.eu/profile/4189
 </br>
 
 ## Current Features:
-### MF_Admin
+### Admin
  - Admin menu
  - Curator for admins
  - FPS & friendly-fire warning
@@ -23,30 +23,29 @@ If something is broken, contact **[Malbryn](https://www.fkgaming.eu/profile/4189
  - Performance check
  - Task & scenario control
 
-### MF_AI
+### AI
  - AI task scripts (Creep, Hunt, Rush, CQB)
  - Global AI skill settings
  - VCOM AI script version
 
-### MF_Cfg
+### Cfg
  - Custom end mission stats
  - Custom notifications
- - Custom sounds
 
-### MF_Diary
+### Diary
  - Briefing script
  - ORBAT & player loadouts
  - Intel framework
  - Check LOS tool
  - Draw terrain profile tool
 
-### MF_Effects
+### Effects
  - Ambient flyby
  - Mortar fire
  - Snowfall
  - Remotely detonated IED
 
-### MF_Logistics
+### Logistics
  - JIP teleport
  - Reinsertion modules:
    - HALO drop
@@ -55,14 +54,14 @@ If something is broken, contact **[Malbryn](https://www.fkgaming.eu/profile/4189
  - Supply drop system
  - Vehicle respawn system
 
-### MF_Misc
+### Misc
  - Map cover
  - Intro text
  - Grass cutter
  - Forced weapon safety
  - No damage ending
 
-### MF_Mission
+### Mission
  - End condition check
    - Time limit
    - Friendly casualty check
@@ -74,7 +73,7 @@ If something is broken, contact **[Malbryn](https://www.fkgaming.eu/profile/4189
  - Time limit check
  - Wave respawn option
 
-### MF_Player
+### Player
  - Gear script
  - Custom team colour
  - TFAR radio channel setup
@@ -91,11 +90,10 @@ If something is broken, contact **[Malbryn](https://www.fkgaming.eu/profile/4189
 ## Required mods:
  - ACE
  - CBA
- - TFAR
 
 ## Optional mods:
  - CUP Core (required by the Snowfall module)
- - SWU Sounds Pack (some custom sounds already defined in CfgSounds)
+ - TFAR (required by the Radio channel setup module)
 
 ### These mods have custom settings already defined in the CBA settings:
  - ASR AI

@@ -1,16 +1,14 @@
 /*
- * Arguments:
- * _this select 0: OBJECT - Intel object
- * _this select 1: SCALAR - ID of the intel
- *
- * Examples:
- * [this, 1] execVM "mission_framework\root\MF_Diary\intel\fn_initIntel.sqf"
- * [laptop, 1] execVM "mission_framework\root\MF_Diary\intel\fn_initIntel.sqf"
- *
+    Arguments:
+        0: OBJECT - Intel object
+        1: SCALAR - ID of the intel
+
+    Examples:
+        [this, 1] call MF_intel_fnc_initIntel
+        [objName, 2] call MF_intel_fnc_initIntel
  */
 
-MF_var_intel_list = [
-
+EGVAR(intel,intelList) = [
 // ID: 0
     [
         "Test title 1",       // Title of the intel
@@ -19,7 +17,6 @@ MF_var_intel_list = [
         true                  // Delete the object after it was acquired
     ],
 
-
 // ID: 1
     [
         "Test title 2",
@@ -27,5 +24,4 @@ MF_var_intel_list = [
         10,
         false
     ]
-
 ];
