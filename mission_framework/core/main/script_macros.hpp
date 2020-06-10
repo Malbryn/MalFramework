@@ -62,9 +62,6 @@
 
 #define ROUND_2D(var1) (round ((var1) * 100.0) / 100.0)
 
-#define GEAR_START  : {
-#define GEAR_END ;};
-
 #define DIARY_SUBJECT(ID) player createDiarySubject [toLower ID, ID]
 #define DIARY_RECORD_START(ID, TITLE) player createDiaryRecord [toLower ID, [TITLE,
 #define DIARY_RECORD_END ]]
