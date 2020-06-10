@@ -39,7 +39,7 @@ _getPicture = {
 };
 
 {
-    if (((side _x) isEqualto (side player)) && {!isNull leader _x} && {(isPlayer leader _x) || !(isMultiplayer)}) then {
+    if (((side _x) isEqualto (playerSide)) && {!isNull leader _x} && {(isPlayer leader _x) || !(isMultiplayer)}) then {
         _text = _text + format ["<font size='20' color='#FFFF00'>%1</font>", groupID _x] + "<br/>";
 
         {
