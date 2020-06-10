@@ -6,8 +6,8 @@ if (isServer) then {
 
     [QGVARMAIN(initFramework), {
         // Check the tasks array
-        if ((GVARMAIN(moduleTaskLimit) && (count MF_end_conditions_tasks == 0)) ||
-        (GVARMAIN(moduleExtraction) && (count MF_end_conditions_tasks == 0))) then {
+        if ((GVARMAIN(moduleTaskLimit) && (count GVAR(tasks) == 0)) ||
+        (GVARMAIN(moduleExtraction) && (count GVAR(tasks) == 0))) then {
             [QGVARMAIN(systemMessage), ["WARNING", "The task array is empty. The end conditions will not work properly! Add your tasks to the tasks array."]] call CFUNC(globalEvent);
             GVARMAIN(moduleTaskLimit) = false;
             GVARMAIN(moduleExtraction) = false;

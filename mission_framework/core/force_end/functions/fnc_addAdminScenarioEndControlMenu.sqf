@@ -23,31 +23,31 @@ if !(IS_ADMIN_LOGGED || getPlayerUID player == GETPAVAR(GVARMAIN(missionMaker),"
 
 
 // Scenario control category
-_menu = ['Scenario Flow', 'Scenario Flow', '', {}, {true}] call AFUNC(interact_menu,createAction);
+_menu = ['End Mission', 'End Mission', '', {}, {true}] call AFUNC(interact_menu,createAction);
 [player, 1, ["ACE_SelfActions", "Admin Menu"], _menu] call AFUNC(interact_menu,addActionToObject);
 
 
 // Mission Success
 _menu = ['Mission Success', 'Mission Success', '', {
-    [QGVARMAIN(missionEnd), ["MissionSuccess", true]] call CFUNC(serverEvent);
+    [QGVARMAIN(callMission), ["MissionSuccess", true]] call CFUNC(serverEvent);
 }, {true}] call AFUNC(interact_menu,createAction);
 
-[player, 1, ["ACE_SelfActions", "Admin Menu", "Scenario Flow"], _menu] call AFUNC(interact_menu,addActionToObject);
+[player, 1, ["ACE_SelfActions", "Admin Menu", "End Mission"], _menu] call AFUNC(interact_menu,addActionToObject);
 
 
 // Mission Fail
 _menu = ['Mission Fail', 'Mission Fail', '', {
-    [QGVARMAIN(missionEnd), ["MissionFail", false]] call CFUNC(serverEvent);
+    [QGVARMAIN(callMission), ["MissionFail", false]] call CFUNC(serverEvent);
 }, {true}] call AFUNC(interact_menu,createAction);
 
-[player, 1, ["ACE_SelfActions", "Admin Menu", "Scenario Flow"], _menu] call AFUNC(interact_menu,addActionToObject);
+[player, 1, ["ACE_SelfActions", "Admin Menu", "End Mission"], _menu] call AFUNC(interact_menu,addActionToObject);
 
 
 // Mission Terminated
 _menu = ['Terminate Mission', 'Terminate Mission', '', {
-    [QGVARMAIN(missionEnd), ["MissionTerminated", false]] call CFUNC(serverEvent);
+    [QGVARMAIN(callMission), ["MissionTerminated", false]] call CFUNC(serverEvent);
 }, {true}] call AFUNC(interact_menu,createAction);
 
 
-[player, 1, ["ACE_SelfActions", "Admin Menu", "Scenario Flow"], _menu] call AFUNC(interact_menu,addActionToObject);
-[player, 1, ["ACE_SelfActions", "Scenario flow"], _menu] call AFUNC(interact_menu,addActionToObject);
+[player, 1, ["ACE_SelfActions", "Admin Menu", "End Mission"], _menu] call AFUNC(interact_menu,addActionToObject);
+[player, 1, ["ACE_SelfActions", "End Mission"], _menu] call AFUNC(interact_menu,addActionToObject);

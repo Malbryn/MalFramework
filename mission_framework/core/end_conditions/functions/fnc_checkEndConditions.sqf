@@ -30,7 +30,7 @@ if (GVARMAIN(moduleTimeLimit)) then {
     _time = CBA_missionTime;
     
     if (_time > GVAR(timeLimit)) then {
-        [QGVARMAIN(missionEnd), ["TimeLimit", false]] call CFUNC(localEvent);
+        [QGVARMAIN(callMission), ["TimeLimit", false]] call CFUNC(localEvent);
     };
 };
 
@@ -43,7 +43,7 @@ if (GVARMAIN(moduleFriendlyCasualties)) then {
     _percentage = _dead / (_allPlayers * 0.01);
 
     if (_percentage >= GVAR(friendlyCasLimit)) then {
-        [QGVARMAIN(missionEnd), ["CasualtyLimit", false]] call CFUNC(localEvent);
+        [QGVARMAIN(callMission), ["CasualtyLimit", false]] call CFUNC(localEvent);
     };
 };
 
@@ -56,7 +56,7 @@ if (GVARMAIN(moduleCivilianCasualties) && count GVAR(civs) != 0) then {
     _percentage = _dead / (count GVAR(civs) * 0.01);
 
     if (_percentage >= GVAR(civilianCasLimit)) then {
-        [QGVARMAIN(missionEnd), ["CivCasualtyLimit", false]] call CFUNC(localEvent);
+        [QGVARMAIN(callMission), ["CivCasualtyLimit", false]] call CFUNC(localEvent);
     };
 };
 
@@ -77,7 +77,7 @@ if (GVARMAIN(moduleTaskLimit)) then {
     } forEach _taskList;
 
     if (_count >= GVAR(taskLimit)) then {
-        [QGVARMAIN(missionEnd), ["MissionSuccess", true]] call CFUNC(localEvent);
+        [QGVARMAIN(callMission), ["MissionSuccess", true]] call CFUNC(localEvent);
     };
 };
 
@@ -110,9 +110,9 @@ if (GVARMAIN(moduleExtraction)) then {
     // End the mission accordingly
     if (_playerCount >= (_allPlayers * GVAR(playerThreshold) * 0.01) && (_allPlayers != 0)) then {
         if (_rate >= (GVAR(taskThreshold) * 0.01)) then {
-            [QGVARMAIN(missionEnd), ["MissionSuccess", true]] call CFUNC(localEvent);
+            [QGVARMAIN(callMission), ["MissionSuccess", true]] call CFUNC(localEvent);
         } else {
-            [QGVARMAIN(missionEnd), ["MissionFail", false]] call CFUNC(localEvent);
+            [QGVARMAIN(callMission), ["MissionFail", false]] call CFUNC(localEvent);
         };
     };
 };

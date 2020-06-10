@@ -19,6 +19,11 @@
 
 private ["_text"];
 
-_text = GVAR(civilianKills) joinString "<br/>";
+// Checking if there's multiple items in the array otherwise it breaks joinString
+if (count GVAR(civilianKills) != 1) then {
+    _text = GVAR(civilianKills) joinString "<br/>";
+} else {
+    _text = format ["%1", GVAR(civilianKills)#0];
+};
 
 SETPMVAR(GVAR(civilianKills),_text);

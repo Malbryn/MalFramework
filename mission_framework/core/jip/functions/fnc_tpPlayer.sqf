@@ -17,7 +17,7 @@
         void
 */
 
-private ["_target", "vicSpot"];
+private ["_target", "_vicSpot"];
 
 _target = call FUNC(chooseTarget);
 _vicSpot = [_target] call FUNC(checkEmptySeats);

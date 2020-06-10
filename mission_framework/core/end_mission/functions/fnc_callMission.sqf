@@ -34,8 +34,9 @@ if (GVARMAIN(moduleTimeLimit) || GVARMAIN(moduleFriendlyCasualties) || GVARMAIN(
 };
 
 // Calling the end mission screen
-[_ending, _isVictory, true, true, true] call BFUNC(endMission);
+[QGVARMAIN(missionEnd), [_ending, _isVictory]] call CFUNC(globalEvent);
 
+// Logging
 _time = [CBA_missionTime] call BFUNC(secondsToString);
 INFO_3("Ending mission... (Ending: %1 | Victory: %2 | Mission time: %3)",_ending,_isVictory,_time);
 

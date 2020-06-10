@@ -35,7 +35,6 @@ _text = format ["
   <font size='14' face='PuristaMedium'>Framework version:</font> <font color='#21749c' size='14' face='PuristaSemiBold'>%3</font>
 ", _title, _author, _version];
 
-
 DIARY_SUBJECT("Credits");
 
 DIARY_RECORD_START("Credits", "Scenario")
@@ -78,3 +77,7 @@ CREDITS:<br/>
 </font>
 "
 DIARY_RECORD_END;
+
+[{!isNil "cba_help_DiaryRecordAddons"}, {
+    player removeDiarySubject "cba_help_docs";
+}] call CFUNC(waitUntilAndExecute);

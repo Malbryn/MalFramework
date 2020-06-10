@@ -17,9 +17,15 @@
         void
 */
 
-[{(!isNull (findDisplay 46) && CBA_missionTime > 1)}, {
-    [QGVARMAIN(initFramework), []] call CFUNC(localEvent);
-}] call CFUNC(waitUntilAndExecute);
+if (hasInterface) then {
+    [{(!isNull (findDisplay 46) && CBA_missionTime > 1)}, {
+        [QGVARMAIN(initFramework), []] call CFUNC(localEvent);
+    }] call CFUNC(waitUntilAndExecute);
+} else {
+    [{CBA_missionTime > 1}, {
+        [QGVARMAIN(initFramework), []] call CFUNC(localEvent);
+    }] call CFUNC(waitUntilAndExecute);
+};
 
 
 [QGVARMAIN(systemMessage), {
