@@ -6,7 +6,7 @@
 
 // Mission parameters
 class Header {
-    gameType =  Coop;  // Game type (use Coop for regular scripted missions)
+    gameType =  TDM;  // Game type (use Coop for PvE, TDM for TvT)
     minPlayers =  1;  // Minimum number of players
     maxPlayers = 8;  // Maximum number of players
 };

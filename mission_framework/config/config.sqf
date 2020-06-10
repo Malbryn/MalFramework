@@ -3,6 +3,8 @@
 /* -------------------------------- MISSION PARAMETERS -------------------------------- */
 /* ------------------------- DON'T REMOVE OR COMMENT OUT THESE ------------------------ */
 
+GVARMAIN(isTvT) = true;
+
 GVARMAIN(moduleTimeLimit) = true;
 EGVAR(end_conditions,timeLimit) = 60 MINUTES;
 
