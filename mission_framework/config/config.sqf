@@ -58,7 +58,7 @@ GVARMAIN(moduleBriefing) = true;
 
 
 // Cover map
-GVARMAIN(moduleCoverMap) = true;
+GVARMAIN(moduleCoverMap) = false;
 EGVAR(cover_map,aoMarker) = "ao";
 EGVAR(cover_map,colour) = "Color4_FD_F";
 
@@ -127,6 +127,10 @@ EGVAR(scenario_control,successRate) = 50;
 // Snowfall
 GVARMAIN(moduleSnowfall) = false;
 EGVAR(snowfall,maxDensity) = 50;
+
+
+// Static line paradrop
+GVARMAIN(moduleStaticLine) = true;
 
 
 // Supply drop
