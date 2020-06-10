@@ -21,18 +21,10 @@ private ["_briefing"];
 
 _briefing = [];
 
-switch (side player) do {
-    case west : {
-        #include "..\..\..\config\briefing\west_briefing.sqf"
-    };
-
-    case east : {
-        #include "..\..\..\config\briefing\east_briefing.sqf"
-    };
-
-    case independent : {
-        #include "..\..\..\config\briefing\independent_briefing.sqf"
-    };
+if (playerSide == west) then {
+    #include "..\..\..\config\briefing\blufor_briefing.sqf"
+} else {
+    #include "..\..\..\config\briefing\redfor_briefing.sqf"
 };
 
 DISPLAYBRIEFING();

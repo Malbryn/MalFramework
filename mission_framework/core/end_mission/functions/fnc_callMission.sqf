@@ -34,7 +34,21 @@ if (GVARMAIN(moduleTimeLimit) || GVARMAIN(moduleFriendlyCasualties) || GVARMAIN(
 };
 
 // Calling the end mission screen
-[QGVARMAIN(missionEnd), [_ending, _isVictory]] call CFUNC(globalEvent);
+switch _ending do {
+    case "BluforWin" : {
+        [QGVARMAIN(missionEnd), ["BluforWin", true], allPlayers select {side _x == west}] call CFUNC(targetEvent);
+        [QGVARMAIN(missionEnd), ["BluforWin", false], allPlayers select {side _x == east}] call CFUNC(targetEvent);
+    };
+
+    case "RedforWin" : {
+        [QGVARMAIN(missionEnd), ["RedforWin", false], allPlayers select {side _x == west}] call CFUNC(targetEvent);
+        [QGVARMAIN(missionEnd), ["RedforWin", true], allPlayers select {side _x == east}] call CFUNC(targetEvent);
+    };
+
+    default {
+        [QGVARMAIN(missionEnd), [_ending, _isVictory]] call CFUNC(globalEvent);
+    };
+};
 
 // Logging
 _time = [CBA_missionTime] call BFUNC(secondsToString);
