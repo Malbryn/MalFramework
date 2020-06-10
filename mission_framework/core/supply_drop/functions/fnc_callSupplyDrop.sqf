@@ -57,7 +57,9 @@ switch (_dir) do {
 };
 
 // Spawn smoke
-_signal = "SmokeShellBlue" createVehicle _playerPos;
+if !(GVAR(useFlare)) then {
+    _signal = "SmokeShellBlue" createVehicle _playerPos;
+};
 
 // Create the plane
 GVAR(plane) = createVehicle [_type, _startPos, [], 0, "FLY"];
@@ -80,8 +82,13 @@ _wp1 setWaypointType "MOVE";
     _crate setPos (getPos GVAR(chute));
     _crate attachTo [GVAR(chute), [0, 0, 0.5]];
 
-    // Spawn smoke
-    _signal = "SmokeShellYellow" createVehicle position _crate;
+    // Spawn smoke/flare
+    if (GVAR(useFlare)) then {
+        _signal = "F_40mm_Green" createVehicle position _crate;
+    } else {
+        _signal = "SmokeShellYellow" createVehicle position _crate;
+    };
+
     _signal attachTo [_crate, [0, 0, 0.1]];
 
     // Second waypoint, delete plane
@@ -92,7 +99,12 @@ _wp1 setWaypointType "MOVE";
     [{
         params ["_crate", "_signal"];
         
-        _signal = "SmokeShellYellow" createVehicle position _crate;
+        if (GVAR(useFlare)) then {
+            _signal = "Chemlight_green" createVehicle position _crate;
+        } else {
+            _signal = "SmokeShellYellow" createVehicle position _crate;
+        };
+
         _signal attachTo [_crate, [0, 0, 0.1]];
     }, [_crate, _signal], 45] call CFUNC(waitAndExecute);
 }, [_crate, _signal, _startPos]] call CFUNC(waitUntilAndExecute);
