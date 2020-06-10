@@ -45,7 +45,7 @@ if (side _instigator == playerSide) then {
 
         if (GETVAR(player,EGVAR(respawn_tickets,amount),-1) == 0 || EGVAR(respawn_wave,availableWaves) == 0) then {
             // Init spectator screen
-            ["Initialize", [player, [], false, true, true, false, true, false, false, true]] call BFUNC(EGSpectator);
+            ["Initialize", [player, [playerSide], false, true, true, false, true, false, false, true]] call BFUNC(EGSpectator);
 
             if (GETVAR(player,EGVAR(respawn_tickets,amount),-1) == 0) then {
                 [QGVARMAIN(notification_2), ["Warning", "You have no more respawn tickets!"]] call CFUNC(localEvent);
