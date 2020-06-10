@@ -33,12 +33,35 @@ removeAllAssignedItems _unit;
 // Find the role of the unit
 _gear = [];
 
-switch _role do {
+switch (side _unit) do {
+    case west : {
+        switch _role do {
+            #include "..\..\..\config\gear\west_gear.sqf"
 
-    #include "..\..\..\config\gear\gear.sqf"
+            default {
+                MSG_1("WARNING","Player init: Undefined role in the loadout: %1 (west_gear.sqf)",_role);
+            };
+        };
+    };
 
-    default {
-        MSG_1("WARNING","Player init: Undefined role in the loadout: %1",_role);
+    case east : {
+        switch _role do {
+            #include "..\..\..\config\gear\east_gear.sqf"
+
+            default {
+                MSG_1("WARNING","Player init: Undefined role in the loadout: %1 (east_gear.sqf)",_role);
+            };
+        };
+    };
+
+    case independent : {
+        switch _role do {
+            #include "..\..\..\config\gear\independent_gear.sqf"
+
+            default {
+                MSG_1("WARNING","Player init: Undefined role in the loadout: %1 (independent_gear.sqf)",_role);
+            };
+        };
     };
 };
 
