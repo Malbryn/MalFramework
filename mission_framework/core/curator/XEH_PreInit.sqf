@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if !(GVARMAIN(moduleCurator)) exitWith {};
+if (!GVARMAIN(moduleCurator) || GVARMAIN(isTvT)) exitWith {};
 
 ADDON = false;
 
