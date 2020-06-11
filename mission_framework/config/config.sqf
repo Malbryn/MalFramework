@@ -5,19 +5,19 @@
 
 GVARMAIN(isTvT) = true;
 
-GVARMAIN(moduleTimeLimit) = true;
+GVARMAIN(moduleTimeLimit) = false;
 EGVAR(end_conditions,timeLimit) = 60 MINUTES;
 
 GVARMAIN(moduleFriendlyCasualties) = false;
 EGVAR(end_conditions,friendlyCasLimit) = 75;
 
-GVARMAIN(moduleCivilianCasualties) = true;
+GVARMAIN(moduleCivilianCasualties) = false;
 EGVAR(end_conditions,civilianCasLimit) = 50;
 
 GVARMAIN(moduleTaskLimit) = true;
 EGVAR(end_conditions,taskLimit) = 2;
 
-GVARMAIN(moduleExtraction) = true;
+GVARMAIN(moduleExtraction) = false;
 EGVAR(end_conditions,extMarker) = "mrk_ext";
 EGVAR(end_conditions,playerThreshold) = 50;
 EGVAR(end_conditions,taskThreshold) = 66;

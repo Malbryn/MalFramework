@@ -74,6 +74,8 @@ CREDITS:<br/>
  - Server FPS notification script by NeilZar<br/>
  - Snowfall script by AZCoder and JW<br/>
  - Vehicle respawn scripts by Fredrik Eriksson<br/>
+<br/>
+Special thanks to <font color='#21749c'>kMaN</font> for his support and help with testing this framework.
 </font>
 "
 DIARY_RECORD_END;
