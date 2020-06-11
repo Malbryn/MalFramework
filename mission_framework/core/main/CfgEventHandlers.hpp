@@ -101,6 +101,10 @@ class Extended_PreInit_EventHandlers {
         init = PATH_PRE(los_tool);
     };
 
+    class GVARMAIN(MarkerSide) {
+        init = PATH_PRE(marker_side);
+    };
+
     class GVARMAIN(MissionStats) {
         init = PATH_PRE(mission_stats);
     };
@@ -278,6 +282,10 @@ class Extended_PostInit_EventHandlers {
 
     class GVARMAIN(LOSTool) {
         init = PATH_POST(los_tool);
+    };
+
+    class GVARMAIN(MarkerSide) {
+        init = PATH_POST(marker_side);
     };
 
     class GVARMAIN(MissionStats) {
