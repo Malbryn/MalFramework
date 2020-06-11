@@ -27,20 +27,21 @@ _menu = ['End Mission', 'End Mission', '', {}, {true}] call AFUNC(interact_menu,
 [player, 1, ["ACE_SelfActions", "Admin Menu"], _menu] call AFUNC(interact_menu,addActionToObject);
 
 
-// Mission Success
-_menu = ['Mission Success', 'Mission Success', '', {
-    [QGVARMAIN(callMission), ["MissionSuccess", true]] call CFUNC(serverEvent);
-}, {true}] call AFUNC(interact_menu,createAction);
+if !(GVARMAIN(isTvT)) then {
+    // Mission Success
+    _menu = ['Mission Success', 'Mission Success', '', {
+        [QGVARMAIN(callMission), ["MissionSuccess", true]] call CFUNC(serverEvent);
+    }, {true}] call AFUNC(interact_menu,createAction);
 
-[player, 1, ["ACE_SelfActions", "Admin Menu", "End Mission"], _menu] call AFUNC(interact_menu,addActionToObject);
+    [player, 1, ["ACE_SelfActions", "Admin Menu", "End Mission"], _menu] call AFUNC(interact_menu,addActionToObject);
 
+    // Mission Fail
+    _menu = ['Mission Fail', 'Mission Fail', '', {
+        [QGVARMAIN(callMission), ["MissionFail", false]] call CFUNC(serverEvent);
+    }, {true}] call AFUNC(interact_menu,createAction);
 
-// Mission Fail
-_menu = ['Mission Fail', 'Mission Fail', '', {
-    [QGVARMAIN(callMission), ["MissionFail", false]] call CFUNC(serverEvent);
-}, {true}] call AFUNC(interact_menu,createAction);
-
-[player, 1, ["ACE_SelfActions", "Admin Menu", "End Mission"], _menu] call AFUNC(interact_menu,addActionToObject);
+    [player, 1, ["ACE_SelfActions", "Admin Menu", "End Mission"], _menu] call AFUNC(interact_menu,addActionToObject);
+};
 
 
 // Mission Terminated
