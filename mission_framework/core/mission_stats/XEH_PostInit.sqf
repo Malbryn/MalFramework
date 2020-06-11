@@ -16,4 +16,122 @@ if (isServer) then {
             INFO_1("A civilian was killed by %1",name _killer);
         };
     }];
+
+
+    // Author: PabstMirror (from ACEX)
+
+    [QGVAR(kill), {
+        params ["_name", "_killInfo"];
+
+        // Increment kill counter
+        GVAR(killCount) = GVAR(killCount) + 1;
+        GVAR(eventsArray) pushBack format ["KILLED: %1 %2", _name, _killInfo];
+        GVAR(kills) = (format ["Total Kills: %1<br/>", GVAR(killCount)]) + (GVAR(eventsArray) joinString "<br/>");
+    }] call CFUNC(addEventHandler);
+
+    [QGVAR(death), {
+        params ["_name", "_killInfo"];
+
+        GVAR(eventsArray) pushBack format ["DIED: %1 %2", _name, _killInfo];
+        GVAR(kills) = (format ["Total Kills: %1<br/>", GVAR(killCount)]) + (GVAR(eventsArray) joinString "<br/>");
+    }] call CFUNC(addEventHandler);
+
+    ["ace_killed", {
+        params ["_unit", "_causeOfDeath", "_killer", "_instigator"];
+        private ["_killInfo", "_unitIsPlayer", "_killerIsPlayer", "_fnc_getSideFromConfig"];
+
+        if !(local _unit) exitWith {};
+
+        _killInfo = [];
+
+        if !(isNull _killer) then {
+            // If killer is a vehicle log the vehicle type
+            if (!(_killer isKindof "CAManBase")) then {
+                _killInfo pushBack format ["Vehicle: %1", getText (configfile >> "CfgVehicles" >> (typeOf _killer) >> "displayName")];
+            };
+
+            if (isNull _instigator) then {
+                _instigator = effectiveCommander _killer;
+            };
+        };
+
+        // isPlayer check will fail at this point
+        _unitIsPlayer = hasInterface && {_unit in [player, ace_player]};
+        _killerIsPlayer = (!isNull _instigator) && {_unit != _instigator} && {[_instigator] call AFUNC(common,isPlayer)};
+
+        // Don't do anything if neither are players
+        if (!(_unitIsPlayer || _killerIsPlayer)) exitWith {};
+
+        // Log firendly fire
+        _fnc_getSideFromConfig = {
+            params ["_object"];
+            switch (getNumber (configFile >> "CfgVehicles" >> (typeOf _object) >> "side")) do {
+                case (0): {east};
+                case (1): {west};
+                case (2): {resistance};
+                default {civilian};
+            };
+        };
+
+        if ((!isNull _instigator) && {_unit != _instigator} && {_instigator isKindOf "CAManBase"}) then {
+            // Because of unconscious group switching/captives it's probably best to just use unit's config side
+            private ["_unitSide", "_killerSide"];
+
+            _unitSide = [_unit] call _fnc_getSideFromConfig;
+            _killerSide = [_instigator] call _fnc_getSideFromConfig;
+
+            if ([_unitSide, _killerSide] call BFUNC(areFriendly)) then {
+                _killInfo pushBack "<t color='#ff0000'>Friendly Fire</t>";
+            };
+        };
+
+        // Rough cause of death from statemachine (e.g. "CardiacArrest:Timeout"), could parse this to be more human readable
+        _killInfo pushBack _causeOfDeath;
+
+        // Parse info into text
+        _killInfo = if (_killInfo isEqualTo []) then {
+            ""
+        } else {
+            format [" - [%1]", (_killInfo joinString ", ")];
+        };
+
+        // If unit was player then send event to self
+        if (_unitIsPlayer) then {
+            private _killerName = "Self?";
+
+            if ((!isNull _killer) && {_unit != _killer}) then {
+                if (_killerIsPlayer) then {
+                    _killerName = [_killer, true, false] call AFUNC(common,getName);
+                } else {
+                    // Allow setting a custom AI name (e.g. VIP Target)
+                    _killerName = _killer getVariable [QGVAR(aiName), ""];
+
+                    if (_killerName == "") then {
+                        _killerName = format ["*AI* - %1", getText (configfile >> "CfgVehicles" >> (typeOf _killer) >> "displayName")];
+                    };
+                };
+            };
+
+            [QGVAR(death), [_killerName, _killInfo]] call CFUNC(localEvent);
+        };
+
+        // If killer was player then send event to killer
+        if (_killerIsPlayer) then {
+            private _unitName = "";
+
+            if (_unitIsPlayer) then {
+                // Should be same as profileName
+                _unitName = [_unit, true, false] call AFUNC(common,getName);
+            } else {
+                // Allow setting a custom AI name (e.g. VIP Target)
+                _unitName = _unit getVariable [QGVAR(aiName), ""];
+
+                if (_unitName == "") then {
+                    _unitName = format ["*AI* - %1", getText (configfile >> "CfgVehicles" >> (typeOf _unit) >> "displayName")];
+                };
+            };
+
+            [QGVAR(kill), [_unitName, _killInfo], _killer] call CFUNC(targetEvent);
+        };
+    }] call CFUNC(addEventHandler);
 };

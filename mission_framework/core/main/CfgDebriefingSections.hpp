@@ -15,4 +15,9 @@ class CfgDebriefingSections {
         title = "Civilian kills";
         variable = QEGVAR(mission_stats,civilianKills);
     };
+
+    class GVARMAIN(KillTracker) {
+        title = "Kills";
+        variable = QEGVAR(mission_stats,kills);
+    };
 };
