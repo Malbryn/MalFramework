@@ -157,6 +157,10 @@ class Extended_PreInit_EventHandlers {
         init = PATH_PRE(snowfall);
     };
 
+    class GVARMAIN(StaticLine) {
+        init = PATH_PRE(static_line);
+    };
+
     class GVARMAIN(SupplyDrop) {
         init = PATH_PRE(supply_drop);
     };
@@ -342,6 +346,10 @@ class Extended_PostInit_EventHandlers {
 
     class GVARMAIN(Snowfall) {
         init = PATH_POST(snowfall);
+    };
+
+    class GVARMAIN(StaticLine) {
+        init = PATH_POST(static_line);
     };
 
     class GVARMAIN(SupplyDrop) {
