@@ -23,7 +23,7 @@ EGVAR(end_conditions,playerThreshold) = 50;
 EGVAR(end_conditions,taskThreshold) = 66;
 
 GVARMAIN(respawnTimer) = 30;
-GVARMAIN(respawnTickets) = 2;
+GVARMAIN(respawnTickets) = 0;
 
 GVARMAIN(removePlayerCorpses) = true;
 
@@ -94,6 +94,10 @@ GVARMAIN(moduleJIP) = true;
 EGVAR(jip,JIPTimer) = 3 MINUTES;
 
 
+// Killcam
+GVARMAIN(moduleKillcam) = true;
+
+
 // LOS Tool
 GVARMAIN(moduleLOSTool) = true;
 
@@ -154,5 +158,5 @@ GVARMAIN(moduleVehicleRespawn) = true;
 
 
 // Wave respawn
-GVARMAIN(moduleWaveRespawn) = true;
+GVARMAIN(moduleWaveRespawn) = false;
 EGVAR(respawn_wave,availableWaves) = 3;

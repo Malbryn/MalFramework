@@ -93,6 +93,10 @@ class Extended_PreInit_EventHandlers {
         init = PATH_PRE(jip);
     };
 
+    class GVARMAIN(Killcam) {
+        init = PATH_PRE(killcam);
+    };
+
     class GVARMAIN(LOSTool) {
         init = PATH_PRE(los_tool);
     };
@@ -266,6 +270,10 @@ class Extended_PostInit_EventHandlers {
 
     class GVARMAIN(JIP) {
         init = PATH_POST(jip);
+    };
+
+    class GVARMAIN(Killcam) {
+        init = PATH_POST(killcam);
     };
 
     class GVARMAIN(LOSTool) {
