@@ -37,9 +37,13 @@ if (side _instigator == playerSide) then {
 "dynamicBlur" ppEffectCommit 6;
 
 [{
+    params ["_unit", "_killer"];
+
     cutText  ["", "BLACK OUT", 5, true];
 
     [{
+        params ["_unit", "_killer"];
+
         // Save death location of the player
         SETVAR(player,EGVAR(reinsert,deathPos),getPos player);
 
@@ -104,6 +108,11 @@ if (side _instigator == playerSide) then {
                 };
             };
 
+            // Killcam
+            if (GVARMAIN(moduleKillcam)) then {
+                [player, _killer] call EFUNC(killcam,initKillcam);
+            };
+
         } else {
             if !(GVARMAIN(moduleWaveRespawn)) then {
                 setPlayerRespawnTime GVARMAIN(respawnTimer);
@@ -140,5 +149,5 @@ if (side _instigator == playerSide) then {
         if (GVARMAIN(moduleSnowfall)) then {
             [EGVAR(snowfall,snowfallPFH)] call CFUNC(removePerFrameHandler);
         };
-    }, [], 5] call CFUNC(waitAndExecute);
-}, [], 1] call CFUNC(waitAndExecute);
+    }, [_unit, _killer], 5] call CFUNC(waitAndExecute);
+}, [_unit, _killer], 1] call CFUNC(waitAndExecute);
