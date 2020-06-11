@@ -48,6 +48,7 @@ DIARY_RECORD_START("Credits", "Mission Framework")
 This mission framework is based on some other Arma 3 frameworks and some other scripts. See the original authors below.<br/>
 <br/>
 CREDITS:<br/>
+ - ACEX mod<br/>
  - Achilles mod<br/>
  - F3 Framework<br/>
  - FK Framework<br/>
@@ -65,6 +66,8 @@ CREDITS:<br/>
  - Global AI skill settings by joko // Jonas<br/>
  - Intel scripts by Kex<br/>
  - JIP teleport scripts by Diwako<br/>
+ - Killcam script by Perfk and BlackHawk<br/>
+ - Kill tracker script by PabstMirror<br/>
  - LOS and terrain profile tools by BlackHawk<br/>
  - Mission time script by Starfox64<br/>
  - Mortar fire script by PabstMirror<br/>
