@@ -18,11 +18,12 @@
         void
 */
 
-params ["_display"],
+//params ["_display"];
 private ["_ctrlTitle", "_ctrlTitleBG", "_ctrlTime", "_endTime", "_nextBeep", "_break"];
 
 disableSerialization;
 
+_display = _this#0;
 _ctrlTitle = _display displayCtrl 1001;
 _ctrlTitleBG = _display displayCtrl 1002;
 _ctrlTime = _display displayCtrl 1003;
@@ -39,13 +40,14 @@ GVAR(displayAOLimitWarning) = [{
     private ["_timeLeft", "_colorSet", "_color"];
 
     _shouldDisplay = GETMVAR(GVAR(display),false);
-
+/*
     if (serverTime >= _nextBeep) then {
         _nextBeep = _nextBeep + 1;
         playSound "Beep_Target";
 	};
-
+*/
     _timeLeft = _endTime - serverTime;
+    MSG_2("DEBUG","%1 / %2",_timeLeft,_endTime);
     _colorSet = ["IGUI", "TEXT_RGB"];
 
     if (_timeLeft <= 10) then {
@@ -63,7 +65,7 @@ GVAR(displayAOLimitWarning) = [{
         _ctrlTime ctrlSetText ([_timeLeft, "MM:SS.MS"] call BFUNC(secondsToString));
     } else {
         _ctrlTime ctrlSetText "00:00.000";
-        player setDamage 1;
+        //player setDamage 1;
         _break = true;
     };
 

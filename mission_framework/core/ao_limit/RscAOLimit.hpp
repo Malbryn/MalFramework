@@ -13,7 +13,7 @@ class RscAOLimit {
 			};
 			idc = 1002;
 			x = "13.5 * (((safezoneW / safezoneH) min 1.2) / 40) + (safezoneX + (safezoneW - ((safezoneW / safezoneH) min 1.2))/2)";
-			y = "30.7 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + (safezoneY + (safezoneH - (((safezoneW / safezoneH) min 1.2) / 1.2))/2)";
+			y = "20.7 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + (safezoneY + (safezoneH - (((safezoneW / safezoneH) min 1.2) / 1.2))/2)";
 			w = "12 * (((safezoneW / safezoneH) min 1.2) / 40)";
 			h = "1.5 *((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 			style = 0;
@@ -33,7 +33,7 @@ class RscAOLimit {
 		class Title {
 			idc = 1001;
 			x = "13.5 * (((safezoneW / safezoneH) min 1.2) / 40) + (safezoneX + (safezoneW - ((safezoneW / safezoneH) min 1.2))/2)";
-			y = "30.7 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + (safezoneY + (safezoneH - (((safezoneW / safezoneH) min 1.2) / 1.2))/2)";
+			y = "20.7 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + (safezoneY + (safezoneH - (((safezoneW / safezoneH) min 1.2) / 1.2))/2)";
 			w = "12 * (((safezoneW / safezoneH) min 1.2) / 40)";
 			h = "1.5 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 			colorBackground[] = {0, 0, 0, 0.5};
@@ -55,7 +55,7 @@ class RscAOLimit {
 			idc = 1003;
 			text = "  --:--.---";
 			x = "18 * (((safezoneW / safezoneH) min 1.2) / 40) + (safezoneX + (safezoneW - ((safezoneW / safezoneH) min 1.2))/2)";
-			y = "30.6 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + (safezoneY + (safezoneH - (((safezoneW / safezoneH) min 1.2) / 1.2))/2)";
+			y = "20.6 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + (safezoneY + (safezoneH - (((safezoneW / safezoneH) min 1.2) / 1.2))/2)";
 			w = "7 * (((safezoneW / safezoneH) min 1.2) / 40)";
 			h = "1.5 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 			sizeEx = "1.7 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";

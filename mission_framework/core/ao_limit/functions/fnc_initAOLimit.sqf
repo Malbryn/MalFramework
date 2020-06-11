@@ -23,9 +23,9 @@ if !(hasInterface) exitWith {};
 
 _ao = [];
 
-_ao set [count _marker, [sideLogic, GVAR(aoMarkerAll)]];
-_ao set [count _marker, [west, GVAR(aoMarkerBlufor)]];
-_ao set [count _marker, [east, GVAR(aoMarkerRedfor)]];
+_ao set [count _ao, [sideLogic, GVAR(aoMarkerAll)]];
+_ao set [count _ao, [west, GVAR(aoMarkerBlufor)]];
+_ao set [count _ao, [east, GVAR(aoMarkerRedfor)]];
 
 _markers = [];
 _allowedOutside = true;
@@ -39,9 +39,10 @@ _vehicle = vehicle player;
             _allowedOutside = true;
         };
     };
-} forEach _ao#0;
+} forEach _ao;
 
 GVAR(aoCheck) = [{
+    params ["_markers"];
     private ["_vehicle", "_air", "_allowedOutside", "_outside"];
 
     _vehicle = vehicle player;
@@ -66,11 +67,11 @@ GVAR(aoCheck) = [{
                 GVAR(timerLand)
             };
 
-            SETMVAR(GVAR(display),_timeLeft);
+            SETMVAR(GVAR(timeLeft),_timeLeft);
 
             cutRsc ["RscAOLimit", "PLAIN", 0.5, false];
         };
     } else {
         _allowedOutside = false;
     };
-}, 1] call CFUNC(addPerFrameHandler);
+}, 1, _markers] call CFUNC(addPerFrameHandler);
