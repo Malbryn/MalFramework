@@ -41,19 +41,19 @@ if (_backpackClass != "") then {
     _packHolder = createVehicle ["groundWeaponHolder", [0,0,0], [], 0, "can_collide"];
     _packHolder addBackpackCargoGlobal [_backpackClass, 1];
 
-    [{animationState _unit == "HaloFreeFall_non" or (!alive _unit)}, {
+    [{animationState (_this#1) == "HaloFreeFall_non" || !(alive (_this#1))}, {
         params ["_packHolder", "_unit", "_backpackClass", "_container", "_weaponCargo", "_magazineCargo", "_itemCargo"];
 
         _packHolder attachTo [_unit, [-0.12, -0.02, -.74], "pelvis"];
         [_packHolder, [[0, -1, -0.05], [0, 0, -1]]] remoteExecCall ["setVectorDirAndUp", 0, _packHolder];
 
-        [{animationState _unit == "para_pilot" or (!alive _unit)}, {
+        [{animationState (_this#1) == "para_pilot" || !(alive (_this#1))}, {
             params ["_packHolder", "_unit", "_backpackClass", "_container", "_weaponCargo", "_magazineCargo", "_itemCargo"];
 
             _packHolder attachTo [vehicle _unit, [-0.07, 0.67, -0.13], "pelvis"];
             [_packHolder, [[0, -0.2, -1], [0, 1, 0]]] remoteExecCall ["setVectorDirAndUp", 0, _packHolder];
 
-            [{isTouchingGround _unit or (getPos _unit#2) < 1 or (!alive _unit)}, {
+            [{isTouchingGround (_this#1) || (getPos (_this#1))#2 < 1 || !(alive (_this#1))}, {
                 params ["_packHolder", "_unit", "_backpackClass", "_container", "_weaponCargo", "_magazineCargo", "_itemCargo"];
 
                 removeBackpack _unit;
@@ -69,9 +69,10 @@ if (_backpackClass != "") then {
     }, [_packHolder, _unit, _backpackClass, _container, _weaponCargo, _magazineCargo, _itemCargo]] call CFUNC(waitUntilAndExecute);
 
 } else {
-    _unit addBackpack "b_parachute";
 
-    [{isTouchingGround _unit or (getPos _unit#2) < 1 or (!alive _unit)}, {
+    [{isTouchingGround _unit || (getPos _unit)#2 < 1 || (!alive _unit)}, {
+        params ["_unit"];
+
         removeBackpack _unit;
-    }, []] call CFUNC(waitUntilAndExecute);
+    }, [_unit]] call CFUNC(waitUntilAndExecute);
 };
