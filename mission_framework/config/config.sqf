@@ -98,8 +98,18 @@ EGVAR(jip,JIPTimer) = 3 MINUTES;
 GVARMAIN(moduleKillcam) = true;
 
 
+// Kill tracker
+GVARMAIN(moduleKillTracker) = true;
+
+
 // LOS Tool
 GVARMAIN(moduleLOSTool) = true;
+
+
+// Marker side
+GVARMAIN(moduleMarkerSide) = true;
+EGVAR(marker_side,markersBlufor) = ["mrk_blufor"];
+EGVAR(marker_side,markersRedfor) = ["mrk_redfor"];
 
 
 // Mortar fire
