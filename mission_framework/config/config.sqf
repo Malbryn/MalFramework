@@ -51,6 +51,15 @@ EGVAR(ai_skills,skillSet) = [
 GVARMAIN(moduleFlyby) = true;
 
 
+// AO limit
+GVARMAIN(moduleAOLimit) = true;
+EGVAR(ao_limit,timerLand) = 10;
+EGVAR(ao_limit,timerAir) = -1;
+EGVAR(ao_limit,aoMarkerAll) = "allLimit";
+EGVAR(ao_limit,aoMarkerBlufor) = "";
+EGVAR(ao_limit,aoMarkerRedfor) = "";
+
+
 // Arsenal
 GVARMAIN(moduleArsenal) = true;
 
