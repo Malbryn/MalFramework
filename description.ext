@@ -58,3 +58,7 @@ taskManagement_propagate = 0;  // Propagate shared tasks to subordinates
 #ifdef VCOMAI
     #include "mission_framework\core\vcom\CfgFunctions.hpp"
 #endif
+
+class rscTitles {
+    #include "mission_framework\core\ao_limit\RscAOLimit.hpp"
+};
