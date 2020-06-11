@@ -20,7 +20,7 @@
 private ["_target", "_vicSpot"];
 
 _target = call FUNC(chooseTarget);
-_vicSpot = [_target] call FUNC(checkEmptySeats);
+_vicSpot = [_target] call FUNC(checkEmptySeat);
 
 // Check the distance from the squad
 if (((call CFUNC(players)) - [player]) findif {_x distance2D player < 50} != -1) exitWith {
@@ -41,14 +41,17 @@ if !({alive _x} count units group player > 1) exitWith {
 cutText ["You are being teleported back to your squad", "BLACK OUT", 2, true];
 
 [{
-    if (_this#0) then {
-        player moveInAny vehicle _this#1;
+    params ["_target", "_vicSpot"];
+
+    if (_vicSpot) then {
+        player moveInAny vehicle _target;
     } else {
-        player setPosATL (_this#1 getPos [3, getDir _this#1 - 180]);
+        player setPosATL (_target getPos [3, getDir _target - 180]);
     };
+
     cutText ["", "BLACK IN", 2, true];
 
     // Remove JIP teleport action after the player was teleported
     GVAR(jipAvailable) = false;
-    [player, 1, ["ACE_SelfActions", "Teleport to squad"]] call ace_interact_menu_fnc_removeActionFromObject;
-}, [_vicSpot, _target], 3] call CFUNC(waitAndExecute);
+    [player, 1, ["ACE_SelfActions", "Teleport to squad"]] call AFUNC(interact_menu,removeActionFromObject);
+}, [_target, _vicSpot], 3] call CFUNC(waitAndExecute);
