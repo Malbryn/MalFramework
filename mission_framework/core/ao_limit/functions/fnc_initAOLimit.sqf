@@ -23,9 +23,21 @@ if !(hasInterface) exitWith {};
 
 _ao = [];
 
-_ao set [count _ao, [sideLogic, GVAR(aoMarkerAll)]];
-_ao set [count _ao, [west, GVAR(aoMarkerBlufor)]];
-_ao set [count _ao, [east, GVAR(aoMarkerRedfor)]];
+if !(GVAR(aoMarkerAll) == "") then {
+    _ao set [count _ao, [sideLogic, GVAR(aoMarkerAll)]];
+};
+
+if !(GVAR(aoMarkerBlufor) == "") then {
+    _ao set [count _ao, [west, GVAR(aoMarkerBlufor)]];
+};
+
+if !(GVAR(aoMarkerRedfor) == "") then {
+    _ao set [count _ao, [east, GVAR(aoMarkerRedfor)]];
+};
+
+if (count _ao == 0) exitWith {
+    MSG("WARNING","AO limit module: No AO was defined in the config");
+};
 
 _markers = [];
 _allowedOutside = true;
@@ -41,8 +53,10 @@ _vehicle = vehicle player;
     };
 } forEach _ao;
 
+if (count _markers == 0) exitWith {};
+
 GVAR(aoCheck) = [{
-    params ["_markers"];
+    _this#0 params ["_markers"];
     private ["_vehicle", "_air", "_allowedOutside", "_outside"];
 
     _vehicle = vehicle player;
@@ -74,4 +88,4 @@ GVAR(aoCheck) = [{
     } else {
         _allowedOutside = false;
     };
-}, 1, _markers] call CFUNC(addPerFrameHandler);
+}, 0.5, [_markers]] call CFUNC(addPerFrameHandler);
