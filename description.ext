@@ -61,4 +61,5 @@ taskManagement_propagate = 0;  // Propagate shared tasks to subordinates
 
 class rscTitles {
     #include "mission_framework\core\ao_limit\RscAOLimit.hpp"
+    #include "mission_framework\core\setup_timer\RscSetupTimer.hpp"
 };
