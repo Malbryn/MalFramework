@@ -55,9 +55,9 @@ GVARMAIN(moduleFlyby) = true;
 GVARMAIN(moduleAOLimit) = true;
 EGVAR(ao_limit,timerLand) = 10;
 EGVAR(ao_limit,timerAir) = -1;
-EGVAR(ao_limit,aoMarkerAll) = "allLimit";
-EGVAR(ao_limit,aoMarkerBlufor) = "";
-EGVAR(ao_limit,aoMarkerRedfor) = "";
+EGVAR(ao_limit,aoMarkerAll) = "mrk_aoLimitAll";
+EGVAR(ao_limit,aoMarkerBlufor) = "mrk_aoLimitBlufor";
+EGVAR(ao_limit,aoMarkerRedfor) = "mrk_aoLimitRedfor";
 
 
 // Arsenal
@@ -69,7 +69,7 @@ GVARMAIN(moduleBriefing) = true;
 
 
 // Cover map
-GVARMAIN(moduleCoverMap) = false;
+GVARMAIN(moduleCoverMap) = true;
 EGVAR(cover_map,aoMarker) = "ao";
 EGVAR(cover_map,colour) = "Color4_FD_F";
 
