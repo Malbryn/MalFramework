@@ -29,7 +29,7 @@ if (hasInterface && (IS_ADMIN_LOGGED || getPlayerUID player == GETPAVAR(GVARMAIN
 
 
 // End mission stats
-if (isServer) then{
+if (isServer) then {
     _time = [CBA_missionTime] call BFUNC(secondsToString);
     _text = format ["%1  -  %2 was killed by %3 <br/>", _time, _killed, _killer];
     PUSH(EGVAR(mission_stats,friendlyFires),_text);
