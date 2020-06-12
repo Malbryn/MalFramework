@@ -17,6 +17,10 @@ class Extended_PreInit_EventHandlers {
         init = PATH_PRE(ai_skills);
     };
 
+    class GVARMAIN(AOLimit) {
+        init = PATH_PRE(ao_limit);
+    };
+
     class GVARMAIN(Arsenal) {
         init = PATH_PRE(arsenal);
     };
@@ -202,6 +206,10 @@ class Extended_PostInit_EventHandlers {
 
     class GVARMAIN(AISkills) {
         init = PATH_POST(ai_skills);
+    };
+
+    class GVARMAIN(AOLimit) {
+        init = PATH_POST(ao_limit);
     };
 
     class GVARMAIN(Arsenal) {
