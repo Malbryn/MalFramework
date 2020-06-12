@@ -30,28 +30,24 @@ _endTime = serverTime + GETMVAR(GVAR(timeLeft),0);
 
 GVAR(nextBeep) = _endTime - 10;
 
-["AOLimitWarning"] call BFUNC(showNotification);
-
-GVAR(displayAOLimitWarning) = [{
+GVAR(displaySetupTimer) = [{
     _this#0 params ["_endTime", "_ctrlTime", "_display"];
     private ["_timeLeft", "_colorSet", "_color"];
-
-    _shouldDisplay = GETMVAR(GVAR(display),false);
 
     if (serverTime >= GVAR(nextBeep)) then {
         INC(GVAR(nextBeep));
         playSound "Beep_Target";
-	};
+    };
 
     _timeLeft = _endTime - serverTime;
     _colorSet = ["IGUI", "TEXT_RGB"];
 
-    if (_timeLeft <= 10) then {
-        _colorSet = ["IGUI", "WARNING_RGB"];
+    if (_timeLeft <= 30) then {
+        _colorSet = ["IGUI","WARNING_RGB"];
     };
 
-    if (_timeLeft <= 5) then {
-        _colorSet = ["IGUI", "ERROR_RGB"];
+    if (_timeLeft <= 10) then {
+        _colorSet = ["IGUI","ERROR_RGB"];
     };
 
     _color = _colorSet call BFUNC(displayColorGet);
@@ -61,14 +57,14 @@ GVAR(displayAOLimitWarning) = [{
         _ctrlTime ctrlSetText ([_timeLeft, "MM:SS.MS"] call BFUNC(secondsToString));
     } else {
         _ctrlTime ctrlSetText "00:00.000";
-        player setDamage 1;
+        ["SetupTimerEnded"] call BFUNC(showNotification);
         _display closeDisplay 1;
-        
-        [GVAR(displayAOLimitWarning)] call CFUNC(removePerFrameHandler);
-    };
 
-    if (!_shouldDisplay) exitWith {
-        _display closeDisplay 1;
-        [GVAR(displayAOLimitWarning)] call CFUNC(removePerFrameHandler);
+        // Remove framehandler
+        [GVAR(displaySetupTimer)] call CFUNC(removePerFrameHandler);
+
+        // Remove GVARs
+        GVAR(nextBeep) = nil;
+        GVAR(timeLeft) = nil;
     };
 }, 0.08, [_endTime, _ctrlTime, _display]] call CFUNC(addPerFrameHandler);
