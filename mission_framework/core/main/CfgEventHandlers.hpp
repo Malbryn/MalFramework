@@ -153,6 +153,10 @@ class Extended_PreInit_EventHandlers {
         init = PATH_PRE(scenario_control);
     };
 
+    class GVARMAIN(SetupTimer) {
+        init = PATH_PRE(setup_timer);
+    };
+
     class GVARMAIN(Snowfall) {
         init = PATH_PRE(snowfall);
     };
@@ -342,6 +346,10 @@ class Extended_PostInit_EventHandlers {
 
     class GVARMAIN(ScenarioControl) {
         init = PATH_POST(scenario_control);
+    };
+
+    class GVARMAIN(SetupTimer) {
+        init = PATH_POST(setup_timer);
     };
 
     class GVARMAIN(Snowfall) {

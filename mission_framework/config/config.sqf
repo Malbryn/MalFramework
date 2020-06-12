@@ -144,6 +144,14 @@ EGVAR(reinsert,RPTentObject) = "Land_TentA_F";
 GVARMAIN(moduleSafetyStart) = true;
 
 
+// Setup timer
+GVARMAIN(moduleSetupTimer) = true;
+EGVAR(setup_timer,markerBlufor) = "mrk_setupBlufor";
+EGVAR(setup_timer,timerBlufor) = 60;
+EGVAR(setup_timer,markerRedfor) = "mrk_setupRedfor";
+EGVAR(setup_timer,timerRedfor) = 90;
+
+
 // Scenario control
 GVARMAIN(moduleScenarioControl) = true;
 EGVAR(scenario_control,successRate) = 50;

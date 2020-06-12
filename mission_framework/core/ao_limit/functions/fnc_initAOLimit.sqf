@@ -17,7 +17,7 @@
         void
 */
 
-private ["_markers", "_allowedOutside"];
+private ["_markers", "_allowedOutside", "_ao"];
 
 if !(hasInterface) exitWith {};
 
@@ -75,7 +75,7 @@ GVAR(aoCheck) = [{
 
     if (_outside) then {
         if (!(_allowedOutside) && !_displayed && (alive _vehicle)) then {
-            _timeLeft = if (_air) then {
+            private _timeLeft = if (_air) then {
                 GVAR(timerAir)
             } else {
                 GVAR(timerLand)
