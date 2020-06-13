@@ -10,6 +10,7 @@
     Arguments:
         0: STRING - Class name of the ending (defined in CfgDebriefing)
         1: BOOLEAN - Is victory
+        2: SIDE - 
 
     Example:
         ["MissionSuccess", true] call MF_end_mission_fnc_callMission
@@ -20,7 +21,7 @@
 
 if !(isServer) exitWith {};
 
-params ["_ending", "_isVictory"];
+params ["_ending", "_isVictory", ["_side", sideUnknown]];
 private ["_time"];
 
 // Save end mission stats
@@ -29,28 +30,32 @@ call EFUNC(mission_stats,saveFriendlyFires);
 call EFUNC(mission_stats,saveCivilianKills);
 
 // Stop the end condition check
-if (GVARMAIN(moduleTimeLimit) || GVARMAIN(moduleFriendlyCasualties) || GVARMAIN(moduleTaskLimit) || GVARMAIN(moduleExtraction) || GVARMAIN(moduleCivilianCasualties)) then {
+if !(isNil EGVAR(end_conditions,endConditionCheck)) then {
     [EGVAR(end_conditions,endConditionCheck)] call CFUNC(removePerFrameHandler);
 };
-
+/*
 // Calling the end mission screen
-switch _ending do {
-    case "BluforWin" : {
-        [QGVARMAIN(missionEnd), ["BluforWin", true], allPlayers select {side _x == west}] call CFUNC(targetEvent);
-        [QGVARMAIN(missionEnd), ["BluforWin", false], allPlayers select {side _x == east}] call CFUNC(targetEvent);
-        [QGVARMAIN(missionEnd), ["BluforWin", true]] call CFUNC(localEvent);
+switch _side do {
+    case west : {
+        [QGVARMAIN(missionEnd), [_ending, _isVictory], allPlayers select {side _x == west}] call CFUNC(targetEvent);
+        [QGVARMAIN(missionEnd), [_ending, !(_isVictory)], allPlayers select {side _x == east}] call CFUNC(targetEvent);
+        //[QGVARMAIN(missionEnd), [_ending, true]] call CFUNC(localEvent);
     };
 
-    case "RedforWin" : {
-        [QGVARMAIN(missionEnd), ["RedforWin", false], allPlayers select {side _x == west}] call CFUNC(targetEvent);
-        [QGVARMAIN(missionEnd), ["RedforWin", true], allPlayers select {side _x == east}] call CFUNC(targetEvent);
-        [QGVARMAIN(missionEnd), ["RedforWin", true]] call CFUNC(localEvent);
+    case east : {
+        [QGVARMAIN(missionEnd), [_ending, !(_isVictory)], allPlayers select {side _x == west}] call CFUNC(targetEvent);
+        [QGVARMAIN(missionEnd), [_ending, _isVictory], allPlayers select {side _x == east}] call CFUNC(targetEvent);
+        //[QGVARMAIN(missionEnd), [_ending, true]] call CFUNC(localEvent);
     };
 
     default {
         [QGVARMAIN(missionEnd), [_ending, _isVictory]] call CFUNC(globalEvent);
     };
 };
+*/
+
+[QGVARMAIN(missionEnd), [_ending, _isVictory], allPlayers] call CFUNC(targetEvent);
+//[QGVARMAIN(missionEnd), [_ending, true]] call CFUNC(localEvent);
 
 // Logging
 _time = [CBA_missionTime] call BFUNC(secondsToString);
