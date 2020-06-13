@@ -1,2 +1,3 @@
-PREP(checkEndConditions);
+PREP(checkEndConditionsCoop);
+PREP(checkEndConditionsTvT);
 PREP(registerTask);

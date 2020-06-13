@@ -11,58 +11,64 @@
         -
 
     Example:
-        call MF_end_conditions_fnc_checkEndConditions
+        call MF_end_conditions_fnc_checkEndConditionsCoop
 
     Returns:
         void
 */
 
-private ["_allPlayers"];
+scopeName QGVAR(main);
+
+private ["_allPlayers", "_ended"];
 
 if !(isServer) exitWith {};
 
 _allPlayers = count allPlayers;
+_ended = false;
 
 // Time limit check
-if (GVARMAIN(moduleTimeLimit)) then {
+if (GVARMAIN(moduleTimeLimit) && !_ended) then {
     private ["_time"];
 
     _time = CBA_missionTime;
     
     if (_time > GVAR(timeLimit)) then {
         [QGVARMAIN(callMission), ["TimeLimit", false]] call CFUNC(localEvent);
+        _ended = true;
     };
 };
 
 
 // Friendly casualty check
-if (GVARMAIN(moduleFriendlyCasualties)) then {
+if (GVARMAIN(modulePlayerCasualties) && !_ended) then {
     private ["_dead", "_ratio"];
 
     _dead = {!alive _x} count allPlayers;
-    _percentage = _dead / (_allPlayers * 0.01);
+    _ratio = _dead / (_allPlayers * 0.01);
 
-    if (_percentage >= GVAR(friendlyCasLimit)) then {
-        [QGVARMAIN(callMission), ["CasualtyLimit", false]] call CFUNC(localEvent);
+    if (_ratio >= GVAR(playerCasLimit)) then {
+        [QGVARMAIN(callMission), ["PlayerCasLimit", false]] call CFUNC(localEvent);
+        _ended = true;
     };
 };
 
 
 // Civilian casualty check
-if (GVARMAIN(moduleCivilianCasualties) && count GVAR(civs) != 0) then {
+if (GVARMAIN(moduleCivilianCasualties) && count GVAR(civs) != 0 && !_ended) then {
     private ["_dead", "_ratio"];
 
     _dead = GVAR(civCas);
-    _percentage = _dead / (count GVAR(civs) * 0.01);
+    _ratio = _dead / (count GVAR(civs) * 0.01);
 
-    if (_percentage >= GVAR(civilianCasLimit)) then {
-        [QGVARMAIN(callMission), ["CivCasualtyLimit", false]] call CFUNC(localEvent);
+    if (_ratio >= GVAR(civilianCasLimit)) then {
+        [QGVARMAIN(callMission), ["CivCasLimit", false]] call CFUNC(localEvent);
+        _ended = true;
     };
 };
 
 
 // Task check
-if (GVARMAIN(moduleTaskLimit)) then {
+if (GVARMAIN(moduleTaskLimit) && !_ended) then {
     private ["_taskList", "_count"];
 
     _taskList = GVAR(tasks);
@@ -78,12 +84,13 @@ if (GVARMAIN(moduleTaskLimit)) then {
 
     if (_count >= GVAR(taskLimit)) then {
         [QGVARMAIN(callMission), ["MissionSuccess", true]] call CFUNC(localEvent);
+        _ended = true;
     };
 };
 
 
 // Extraction check
-if (GVARMAIN(moduleExtraction)) then {
+if (GVARMAIN(moduleExtraction) && !_ended) then {
     private ["_taskList", "_taskCount", "_playerCount"];
 
     // Count the rate of the not successful tasks

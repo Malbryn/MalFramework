@@ -5,11 +5,14 @@
 
 GVARMAIN(isTvT) = true;
 
-GVARMAIN(moduleTimeLimit) = false;
+GVARMAIN(moduleTimeLimit) = true;
 EGVAR(end_conditions,timeLimit) = 60 MINUTES;
+EGVAR(end_conditions,favouredSide) = 0; // 0: none, 1: west, 2: east
 
-GVARMAIN(moduleFriendlyCasualties) = false;
-EGVAR(end_conditions,friendlyCasLimit) = 75;
+GVARMAIN(modulePlayerCasualties) = true;
+EGVAR(end_conditions,playerCasLimit) = 75;
+EGVAR(end_conditions,bluforCasLimit) = 75;
+EGVAR(end_conditions,redforCasLimit) = 75;
 
 GVARMAIN(moduleCivilianCasualties) = false;
 EGVAR(end_conditions,civilianCasLimit) = 50;
@@ -24,6 +27,8 @@ EGVAR(end_conditions,taskThreshold) = 66;
 
 GVARMAIN(respawnTimer) = 30;
 GVARMAIN(respawnTickets) = 0;
+GVARMAIN(respawnTicketsBlufor) = -1; // TODO
+GVARMAIN(respawnTicketsRedfor) = -1;
 
 GVARMAIN(removePlayerCorpses) = true;
 

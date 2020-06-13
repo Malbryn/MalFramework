@@ -29,6 +29,11 @@ if (side _instigator == playerSide) then {
     [QEGVAR(friendly_fire,logFF), [_nameKilled, _nameKiller]] call CFUNC(globalEvent);
 };
 
+// Side update
+if (GVARMAIN(isTvT)) then {
+    [QEGVAR(common,sideSet), [playerSide, 0, -1, -1]] call CFUNC(serverEvent);
+};
+
 // Screen effects
 "dynamicBlur" ppEffectEnable true;
 "dynamicBlur" ppEffectAdjust [0];
@@ -114,6 +119,7 @@ if (side _instigator == playerSide) then {
             };
 
         } else {
+
             if !(GVARMAIN(moduleWaveRespawn)) then {
                 setPlayerRespawnTime GVARMAIN(respawnTimer);
             };
