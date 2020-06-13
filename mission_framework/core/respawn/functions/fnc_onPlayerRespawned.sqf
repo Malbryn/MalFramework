@@ -19,6 +19,11 @@
 
 params ["_unit", "_corpse"];
 
+// Side update
+if (GVARMAIN(isTvT)) then {
+    [QEGVAR(common,sideSet), [playerSide, 0, 1, 1]] call CFUNC(serverEvent);
+};
+
 // Screen effects
 cutText ["", "BLACK FADED", 5, true];
 

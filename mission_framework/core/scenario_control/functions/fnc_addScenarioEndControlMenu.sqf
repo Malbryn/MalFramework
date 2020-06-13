@@ -63,9 +63,9 @@ if (GETVAR(player,EGVAR(player,isCO),false)) then {
             };
         } else {
             if (playerSide == west) then {
-                [QGVARMAIN(callMission), ["RedforWin", false]] call CFUNC(serverEvent);
+                [QGVARMAIN(callMission), ["WithdrawalRedfor", true, east]] call CFUNC(serverEvent);
             } else {
-                [QGVARMAIN(callMission), ["BluforWin", false]] call CFUNC(serverEvent);
+                [QGVARMAIN(callMission), ["WithdrawalBlufor", true, west]] call CFUNC(serverEvent);
             };
         };
     }, {true}] call AFUNC(interact_menu,createAction);
