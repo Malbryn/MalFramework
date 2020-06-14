@@ -69,23 +69,26 @@ if (GVARMAIN(modulePlayerCasualties) && !_ended) then {
     _sideRedfor params ["_redforTotal", "_redforCurrent"];
 
     _bluforDead = _bluforTotal - _bluforCurrent;
-    //_redforDead = _redforTotal - _redforCurrent;
+    _redforDead = _redforTotal - _redforCurrent;
 
-    if (_bluforTotal == 0 && _redforTotal == 0) exitWith {};
+    if (_bluforTotal == 0 || _redforTotal == 0) exitWith {
+        [QGVARMAIN(systemMessage), ["WARNING", "Casualty check: One of the sides has no players"]] call CFUNC(globalEvent);
+        GVARMAIN(modulePlayerCasualties) = false;
+    };
 
     _bluforRatio = _bluforDead / (_bluforTotal * 0.01);
-    //_redforRatio = _redforDead / (_redforTotal * 0.01);
+    _redforRatio = _redforDead / (_redforTotal * 0.01);
 
     if (_bluforRatio >= GVAR(bluforCasLimit)) then {
         [QGVARMAIN(callMission), ["PlayerCasLimitRedfor", true, east]] call CFUNC(localEvent);
         _ended = true;
         breakTo QGVAR(main);
     };
-/*
+
     if (_redforRatio >= GVAR(redforCasLimit)) then {
         [QGVARMAIN(callMission), ["PlayerCasLimitBlufor", true, west]] call CFUNC(localEvent);
         _ended = true;
-    };*/
+    };
 };
 
 // Civilian casualty check

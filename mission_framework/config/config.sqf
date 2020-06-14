@@ -7,9 +7,9 @@ GVARMAIN(isTvT) = true;
 
 GVARMAIN(moduleTimeLimit) = true;
 EGVAR(end_conditions,timeLimit) = 60 MINUTES;
-EGVAR(end_conditions,favouredSide) = 0; // 0: none, 1: west, 2: east
+EGVAR(end_conditions,favouredSide) = 1; // 0: none, 1: west, 2: east
 
-GVARMAIN(modulePlayerCasualties) = false;
+GVARMAIN(modulePlayerCasualties) = true;
 EGVAR(end_conditions,playerCasLimit) = 75;
 EGVAR(end_conditions,bluforCasLimit) = 75;
 EGVAR(end_conditions,redforCasLimit) = 75;

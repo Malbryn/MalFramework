@@ -30,32 +30,15 @@ call EFUNC(mission_stats,saveFriendlyFires);
 call EFUNC(mission_stats,saveCivilianKills);
 
 // Stop the end condition check
-if !(isNil EGVAR(end_conditions,endConditionCheck)) then {
-    [EGVAR(end_conditions,endConditionCheck)] call CFUNC(removePerFrameHandler);
+[EGVAR(end_conditions,endConditionCheck)] call CFUNC(removePerFrameHandler);
+
+// If dedicated, end the mission on the server as well
+if (isDedicated) then {
+    [QGVARMAIN(missionEnd), [_ending, true, _side]] call CFUNC(localEvent);
+    [QGVARMAIN(missionEnd), [_ending, _isVictory, _side], allPlayers] call CFUNC(targetEvent);
+} else {
+    [QGVARMAIN(missionEnd), [_ending, _isVictory, _side], allPlayers] call CFUNC(targetEvent);
 };
-/*
-// Calling the end mission screen
-switch _side do {
-    case west : {
-        [QGVARMAIN(missionEnd), [_ending, _isVictory], allPlayers select {side _x == west}] call CFUNC(targetEvent);
-        [QGVARMAIN(missionEnd), [_ending, !(_isVictory)], allPlayers select {side _x == east}] call CFUNC(targetEvent);
-        //[QGVARMAIN(missionEnd), [_ending, true]] call CFUNC(localEvent);
-    };
-
-    case east : {
-        [QGVARMAIN(missionEnd), [_ending, !(_isVictory)], allPlayers select {side _x == west}] call CFUNC(targetEvent);
-        [QGVARMAIN(missionEnd), [_ending, _isVictory], allPlayers select {side _x == east}] call CFUNC(targetEvent);
-        //[QGVARMAIN(missionEnd), [_ending, true]] call CFUNC(localEvent);
-    };
-
-    default {
-        [QGVARMAIN(missionEnd), [_ending, _isVictory]] call CFUNC(globalEvent);
-    };
-};
-*/
-
-[QGVARMAIN(missionEnd), [_ending, _isVictory], allPlayers] call CFUNC(targetEvent);
-//[QGVARMAIN(missionEnd), [_ending, true]] call CFUNC(localEvent);
 
 // Logging
 _time = [CBA_missionTime] call BFUNC(secondsToString);

@@ -31,7 +31,7 @@ if (GVARMAIN(isTvT)) then {
         };
 
         case east : {
-            _side = EGVAR(common,sideBlufor);
+            _side = EGVAR(common,sideRedfor);
 
             if (0 < _side#2) then {
                 [QEGVAR(common,sideSet), [playerSide, 0, 1, -1]] call CFUNC(serverEvent);
