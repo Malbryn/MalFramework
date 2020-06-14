@@ -17,11 +17,11 @@ if (isServer) then {
         if (GVARMAIN(moduleCivilianCasualties)) then {
             GVAR(civs) = [];
 
-            {
+            allUnits apply {
                 if ((side _x) == civilian) then {
                     PUSH(GVAR(civs),_x);
                 };
-            } forEach allUnits;
+            };
         };
 
         // Add per frame handler

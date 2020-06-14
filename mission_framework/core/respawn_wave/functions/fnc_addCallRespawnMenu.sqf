@@ -36,11 +36,11 @@ if (GETVAR(player,EGVAR(player,isCO),false) && GVARMAIN(moduleWaveRespawn)) then
 
             // Check if the player has respawn tickets left
             if (GETVAR(player,EGVAR(respawn_tickets,amount),-1) != -1) then { // Respawn tickets are enabled - count players with remaining tickets only
-                {
+                _deadPlayers apply {
                     if (GETVAR(_x,EGVAR(respawn_tickets,amount),-1) > 0) then {
                         _count = _count + 1;
                     };
-                } forEach _deadPlayers;
+                };
             } else { // Respawn tickets are disabled - count every dead player
                 _count = count _deadPlayers;
             };

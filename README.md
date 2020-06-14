@@ -5,87 +5,16 @@
   </a>
 </p>
 
-Welcome to **Malbryn's Mission Framework**. This framework was made for my Arma 3 scripted missions and it is based on some other Arma 3 mission frameworks. Some scripts were made by other people, they are credited in the script headers as well as in the Credits section. This script library was suited for scripted PvE missions.
+Welcome to **Malbryn's Mission Framework**. This framework was made for my Arma 3 scripted missions and it is based on some other Arma 3 mission frameworks. Some scripts were made by other people, the original authors are credited in the script headers as well as in the Credits section. This script library was suited for scripted PvE and TvT missions.
 
 If something is broken, contact **[Malbryn](https://www.fkgaming.eu/profile/4189-malbryn/)** or open a new issue on **[GitHub](https://github.com/Malbryn/MalFramework/issues)**.
 
 </br>
 
-**[Click here for the Wiki](https://github.com/Malbryn/MalFramework/wiki)**
+**[Click here for the Wiki](https://github.com/Malbryn/MalFramework/wiki)**<br/>
+*(The repository is currently private, ask Malbryn for access.)*<br/>
 </br>
 
-## Current Features:
-### Admin
- - Admin menu
- - Curator for admins
- - FPS & friendly-fire warning
- - Open ACE Arsenal
- - Performance check
- - Task & scenario control
-
-### AI
- - AI task scripts (Creep, Hunt, Rush, CQB)
- - Global AI skill settings
- - VCOM AI script version
-
-### Cfg
- - Custom end mission stats
- - Custom notifications
-
-### Diary
- - Briefing script
- - ORBAT & player loadouts
- - Intel framework
- - Check LOS tool
- - Draw terrain profile tool
-
-### Effects
- - Ambient flyby
- - Mortar fire
- - Snowfall
- - Remotely detonated IED
-
-### Logistics
- - JIP teleport
- - Reinsertion modules:
-   - HALO drop
-   - Mobile Respawn Vehicle
-   - Squad Rally Point
- - Supply drop system
- - Vehicle respawn system
-
-### Misc
- - Map cover
- - Intro text
- - Grass cutter
- - Forced weapon safety
- - No damage ending
-
-### Mission
- - End condition check
-   - Time limit
-   - Friendly casualty check
-   - Civilian casualty check
-   - Task check
-   - Extraction check
- - Tactical withdrawal
- - End mission statistics
- - Time limit check
- - Wave respawn option
-
-### Player
- - Gear script
- - Custom team colour
- - TFAR radio channel setup
- - View distance control
- - Respawn tickets
-
-### Other features
- - Briefing & debriefing templates
- - Mission time limit check
- - Time accelaration control
- - Custom end mission screens
- - Placeholder loading screen
 
 ## Required mods:
  - ACE

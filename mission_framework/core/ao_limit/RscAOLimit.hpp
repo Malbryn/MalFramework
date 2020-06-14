@@ -1,5 +1,5 @@
 class RscAOLimit {
-	onLoad  =  "_this call MF_ao_limit_fnc_displayAOLimitWarning;";
+	onLoad  =  "call MF_ao_limit_fnc_displayAOLimitWarning;";
 	idd = -1;
 	duration = 1200;
 	movingEnable = 0;

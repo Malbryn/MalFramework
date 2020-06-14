@@ -25,11 +25,11 @@ if (hasInterface) then {
     private _zone = [];
 
     if !(GVAR(markerBlufor) == "") then {
-        _zone set [count _zone, [west, GVAR(timerBlufor), GVAR(markerBlufor)]];
+        _zone pushBack [west, GVAR(timerBlufor), GVAR(markerBlufor)];
     };
 
     if !(GVAR(markerRedfor) == "") then {
-        _zone set [count _zone, [east, GVAR(timerRedfor), GVAR(markerRedfor)]];
+        _zone pushBack [east, GVAR(timerRedfor), GVAR(markerRedfor)];
     };
 
     if (count _zone == 0) exitWith {
@@ -38,13 +38,13 @@ if (hasInterface) then {
 
     GVAR(marker) = [];
     
-    {
+    _zone apply {
         if (((_x#0) == playerSide) && (vehicle player) inArea (_x#2)) then {
             GVAR(marker) = [(_x#1), (_x#2)];
         } else {
             (_x#2) setMarkerAlphaLocal 0;
         };
-    } forEach _zone;
+    };
 
     if (count GVAR(marker) == 0) exitWith {};
 

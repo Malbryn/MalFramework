@@ -74,13 +74,13 @@ if (GVARMAIN(moduleTaskLimit) && !_ended) then {
     _taskList = GVAR(tasks);
     _count = 0;
 
-    {
+    _taskList apply {
         _taskState = [_x] call BFUNC(taskState);
 
         if (_taskState == "SUCCEEDED") then {
             _count = _count + 1
         };
-    } forEach _taskList;
+    };
 
     if (_count >= GVAR(taskLimit)) then {
         [QGVARMAIN(callMission), ["MissionSuccess", true]] call CFUNC(localEvent);
@@ -97,7 +97,7 @@ if (GVARMAIN(moduleExtraction) && !_ended) then {
     _taskList = GVAR(tasks);
     _taskCount = 0;
 
-    {
+    _taskList apply {
         private ["_state"];
 
         _state = _x call BFUNC(taskState);
@@ -105,7 +105,7 @@ if (GVARMAIN(moduleExtraction) && !_ended) then {
         if (_state == "SUCCEEDED") then {
             _taskCount = _taskCount + 1;
         };
-    } forEach _taskList;
+    };
 
     _rate = _taskCount / count _taskList;
 
