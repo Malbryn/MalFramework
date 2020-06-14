@@ -31,7 +31,7 @@ if (side _instigator == playerSide) then {
 
 // Side update
 if (GVARMAIN(isTvT)) then {
-    [QEGVAR(common,sideSet), [playerSide, 0, -1, -1]] call CFUNC(serverEvent);
+    [QEGVAR(common,sideSet), [playerSide, 0, -1, 0]] call CFUNC(serverEvent);
 };
 
 // Screen effects

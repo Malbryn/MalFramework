@@ -7,7 +7,7 @@ if (isServer) then {
 
             if (side group _unit == civilian) then {
                 switch (side _killer) do {
-                    case "west" : {
+                    case west : {
                         INC(EGVAR(end_conditions,civCasBlufor));
 
                         // Log the name of the killer
@@ -18,7 +18,7 @@ if (isServer) then {
                         INFO_1("A civilian was killed by %1 (BLUFOR)",name _killer);
                     };
 
-                    case "east" : {
+                    case east : {
                         INC(EGVAR(end_conditions,civCasRedfor));
 
                         // Log the name of the killer
