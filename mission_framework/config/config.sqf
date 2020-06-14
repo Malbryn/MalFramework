@@ -3,7 +3,7 @@
 /* -------------------------------- MISSION PARAMETERS -------------------------------- */
 /* ------------------------- DON'T REMOVE OR COMMENT OUT THESE ------------------------ */
 
-GVARMAIN(isTvT) = true;
+GVARMAIN(isTvT) = false;
 
 GVARMAIN(moduleTimeLimit) = true;
 EGVAR(end_conditions,timeLimit) = 60 MINUTES;
@@ -34,7 +34,7 @@ GVARMAIN(respawnTickets) = -1;
 
 GVARMAIN(removePlayerCorpses) = true;
 
-GVARMAIN(playerViewDistance) = 2000;
+GVARMAIN(playerViewDistance) = 2500;
 GVARMAIN(serverViewDistance) = 2000;
 
 GVARMAIN(timeAcceleration) = 1;
@@ -59,7 +59,7 @@ GVARMAIN(moduleFlyby) = true;
 
 
 // AO limit
-GVARMAIN(moduleAOLimit) = true;
+GVARMAIN(moduleAOLimit) = false;
 EGVAR(ao_limit,timerLand) = 10;
 EGVAR(ao_limit,timerAir) = -1;
 EGVAR(ao_limit,aoMarkerAll) = "mrk_aoLimitAll";

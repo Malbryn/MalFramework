@@ -3,5 +3,5 @@
 if !(GVARMAIN(moduleLOSTool)) exitWith {};
 
 if (hasInterface) then {
-    call FUNC(initialize); 
+    call FUNC(initialize);
 };
