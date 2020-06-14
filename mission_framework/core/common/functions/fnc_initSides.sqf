@@ -27,6 +27,7 @@ _current = _total;
 _tickets = GVARMAIN(respawnTicketsBlufor);
 
 GVAR(sideBlufor) = [_total, _current, _tickets];
+publicVariable QGVAR(sideBlufor);
 
 
 // REDFOR
@@ -35,3 +36,4 @@ _current = _total;
 _tickets = GVARMAIN(respawnTicketsRedfor);
 
 GVAR(sideRedfor) = [_total, _current, _tickets];
+publicVariable QGVAR(sideRedfor);

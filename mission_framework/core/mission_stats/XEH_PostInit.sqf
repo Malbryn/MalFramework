@@ -106,9 +106,6 @@ if (GVARMAIN(moduleKillTracker)) then {
         // Don't do anything if neither are players
         if (!(_unitIsPlayer || _killerIsPlayer)) exitWith {};
 
-        // Rough cause of death from statemachine (e.g. "CardiacArrest:Timeout"), could parse this to be more human readable
-        _killInfo pushBack _causeOfDeath;
-
         // Parse info into text
         _killInfo = if (_killInfo isEqualTo []) then {
             ""
