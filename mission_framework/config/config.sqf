@@ -59,7 +59,7 @@ GVARMAIN(moduleFlyby) = true;
 
 
 // AO limit
-GVARMAIN(moduleAOLimit) = false;
+GVARMAIN(moduleAOLimit) = true;
 EGVAR(ao_limit,timerLand) = 10;
 EGVAR(ao_limit,timerAir) = -1;
 EGVAR(ao_limit,aoMarkerAll) = "mrk_aoLimitAll";
@@ -152,7 +152,7 @@ GVARMAIN(moduleSafetyStart) = true;
 
 
 // Setup timer
-GVARMAIN(moduleSetupTimer) = false;
+GVARMAIN(moduleSetupTimer) = true;
 EGVAR(setup_timer,markerBlufor) = "mrk_setupBlufor";
 EGVAR(setup_timer,timerBlufor) = 60;
 EGVAR(setup_timer,markerRedfor) = "mrk_setupRedfor";

@@ -35,7 +35,7 @@ if (GETVAR(player,EGVAR(player,isCO),false)) then {
     _crate = [];
     _crateName = "";
 
-    {
+    GVAR(supplyCrates) apply {
         // Create a supply drop sub-menu under the Supply drop main category
         _crate = _x#0;
         _crateName = _x#1;
@@ -105,5 +105,5 @@ if (GETVAR(player,EGVAR(player,isCO),false)) then {
 
             [player, 1, ["ACE_SelfActions", "Supply drop", _crateName], _menu] call AFUNC(interact_menu,addActionToObject);
         };
-    } forEach GVAR(supplyCrates);
+    };
 };

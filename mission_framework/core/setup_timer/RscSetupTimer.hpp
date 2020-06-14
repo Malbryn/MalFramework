@@ -1,5 +1,5 @@
 class RscSetupTimer {
-	onLoad = "_this call MF_setup_timer_fnc_displaySetupTimer;";
+	onLoad = "call MF_setup_timer_fnc_displaySetupTimer;";
 	idd = -1;
 	duration = 1200;
 	movingEnable = 0;

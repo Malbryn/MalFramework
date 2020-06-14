@@ -23,7 +23,7 @@ _markersBLU = GVAR(markersBlufor);
 _markersRED = GVAR(markersRedfor);
 
 if (playerSide == west) then {
-    {deleteMarkerLocal _x;} forEach _markersRED;
+    _markersRED apply {deleteMarkerLocal _x};
 } else {
-    {deleteMarkerLocal _x;} forEach _markersBLU;
+    _markersBLU apply {deleteMarkerLocal _x};
 };

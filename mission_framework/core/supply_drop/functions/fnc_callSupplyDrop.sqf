@@ -93,7 +93,7 @@ _wp1 setWaypointType "MOVE";
 
     // Second waypoint, delete plane
     _wp2 = group GVAR(plane) addWaypoint [_startPos, 20];
-    _wp2 setWaypointStatements ["true", QUOTE({deleteVehicle _x} forEach crew GVAR(plane); deleteVehicle GVAR(plane); SETPMVAR(QGVAR(dropAvailable),true);)];
+    _wp2 setWaypointStatements ["true", QUOTE(crew GVAR(plane) apply {deleteVehicle _x}; deleteVehicle GVAR(plane); SETPMVAR(QGVAR(dropAvailable),true);)];
     _wp2 setWaypointType "MOVE";
 
     [{

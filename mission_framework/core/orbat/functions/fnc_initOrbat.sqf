@@ -23,7 +23,7 @@ _newIndex = player createDiarySubject ["GearIndex", "ORBAT"];
 _playerSide = playerSide;
 _groupArray = [];
 
-{
+allGroups apply {
     private ["_groupText"];
 
     _groupText = "";
@@ -35,7 +35,7 @@ _groupArray = [];
         _show = false;
         _textToDisplay = "";
 
-        {
+         units _group apply {
             private ["_unit", "_lobbyName"];
 
             _unit = _x;
@@ -104,7 +104,7 @@ _groupArray = [];
                     };
                 };
 
-                {_textToDisplay = _textToDisplay + (_x call _getApparelPicture)} forEach [uniform _unit, vest _unit, backpack _unit, headgear _unit];
+                [uniform _unit, vest _unit, backpack _unit, headgear _unit] apply {_textToDisplay = _textToDisplay + (_x call _getApparelPicture)};
 
                 _textToDisplay = _textToDisplay + "<br/>";
 
@@ -116,11 +116,11 @@ _groupArray = [];
                     _str = "";
                     if !(_weaponName isEqualto "") then {
                         _str = _str + ([_weaponName, [80, 40]] call _getPicture);
-                        {
+                        _weaponItems apply {
                             if !(_x isEqualto "") then {
                                 _str = _str + ([_x, [40, 40]] call _getPicture);
                             };
-                        } forEach _weaponItems;
+                        };
                     };
 
                     _str
@@ -129,14 +129,14 @@ _groupArray = [];
                 // Display array of magazines
                 _displayMags = {
                     _textToDisplay = _textToDisplay + "  ";
-                    {
+                    _this apply {
                         private ["_name", "_itemCount", "_displayName"];
 
                         _name = _x;
                         _itemCount = {_x isEqualto _name} count _allMags;
                         _displayName = getText(configFile >> "CfgMagazines" >> _name >> "displayName");
                         _textToDisplay = _textToDisplay + ([_name, [32,32], "CfgMagazines"] call _getPicture) + format ["<execute expression='systemChat ""%2""'>x%1</execute> ", _itemCount, _displayName];
-                    } forEach _this;
+                    };
 
                     _textToDisplay = _textToDisplay + "<br/>";
                 };
@@ -146,11 +146,11 @@ _groupArray = [];
                     private ["_result"];
 
                     _result = getArray(configFile >> "CfgWeapons" >> _this >> "magazines");
-                        {
+                        getArray (configFile >> "CfgWeapons" >> _this >> "muzzles") apply {
                             if (!(_x isEqualto "this") && {!(_x isEqualto "SAFE")}) then {
-                                {_result pushBackUnique _x} forEach getArray (configFile >> "CfgWeapons" >> _this >> _x >> "magazines");
+                                getArray (configFile >> "CfgWeapons" >> _this >> _x >> "magazines") apply {_result pushBackUnique _x};
                             };
-                        } forEach getArray (configFile >> "CfgWeapons" >> _this >> "muzzles");
+                        };
 
                     _result = _result apply {toLower _x};
                     _result
@@ -206,18 +206,18 @@ _groupArray = [];
                 _radio = [];
                 _allItems = items _unit;
 
-                {
+                _allItems apply {
                     if !((toLower _x) find "tfar_" isEqualto -1) then {
                         _radio pushBack _x;
                     };
-                } forEach _allItems;
+                };
 
                 _allItems = _allItems - _radio;
 
                 _textToDisplay = _textToDisplay + format ["<font color='#FFFF00'>Magazines and items: </font>(Click count for info.)<br/>", _x];
 
                 // Display radios, then magazines, inventory items and assigned items
-                {
+                 [[_radio, "CfgWeapons"], [_allMags, "CfgMagazines"], [_allItems, "CfgWeapons"], [assignedItems _unit, "CfgWeapons"]] apply {
                     _x params ["_items", "_cfgType"];
                     while {count _items > 0} do {
                         private ["_name", "_itemCount", "_displayName"];
@@ -228,25 +228,25 @@ _groupArray = [];
                         _textToDisplay = _textToDisplay + ([_name, [32,32], _cfgType] call _getPicture) + format ["<execute expression='systemChat ""%2""'>x%1</execute>  ", _itemCount, _displayName];
                         _items = _items - [_name];
                     };
-                } forEach [[_radio, "CfgWeapons"], [_allMags, "CfgMagazines"], [_allItems, "CfgWeapons"], [assignedItems _unit, "CfgWeapons"]];
+                };
 
                 _textToDisplay = _textToDisplay + "<br/>============================================================<br/>";
                 _show = true;
 
             };
-        } foreach units _group;
+        };
 
         if _show then {
             _groupText = _groupText + _textToDisplay;
         };
 
         if !(_groupText isEqualto "") then {
-            _groupArray set [count _groupArray, ["GearIndex", [groupID _group, _groupText]]]
+            _groupArray pushBack ["GearIndex", [groupID _group, _groupText]]
         };
     };
-} foreach allGroups;
+};
 
 reverse _groupArray;
-{player createDiaryRecord _x;} foreach _groupArray;
+_groupArray apply {player createDiaryRecord _x};
 
 call FUNC(showOrbat);

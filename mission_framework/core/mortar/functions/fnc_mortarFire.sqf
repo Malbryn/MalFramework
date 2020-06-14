@@ -30,9 +30,9 @@ for "_index" from 1 to _shellCount do {
     _posToFireAt = [];
     while {(count _posToFireAt) == 0} do {
         _posToFireAt = [_triggerPos, (random _triggerRadius), (random 360)] call BFUNC(relPos);
-        {
+        allUnits apply {
             if ((_x distance _posToFireAt) < _safeDistance) exitWith {_posToFireAt = [];};
-        } forEach allUnits;
+        };
     };
 
     _posToFireAt set [2, 800];

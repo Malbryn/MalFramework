@@ -38,19 +38,19 @@ _getPicture = {
     format ["<img image='%1' width='%2' height='%3'/>", _image, _dimensions#0, _dimensions#1];
 };
 
-{
+allGroups apply {
     if (((side _x) isEqualto (playerSide)) && {!isNull leader _x} && {(isPlayer leader _x) || !(isMultiplayer)}) then {
         _text = _text + format ["<font size='20' color='#FFFF00'>%1</font>", groupID _x] + "<br/>";
 
-        {
+        [leader _x] + (units _x - [leader _x]) apply {
             _unit = _x;
             _radio = "";
 
-            {
+            (items _unit + assignedItems _unit) apply {
                 if !((toLower _x) find "tfar_" isEqualto -1) then {
                     _radio = _radio + ([_x, [28,28]] call _getPicture);
                 };
-            } foreach (items _unit + assignedItems _unit);
+            };
 
             _optics = "";
             _opticsClasses = [
@@ -75,13 +75,13 @@ _getPicture = {
                 "rhsusf_bino_leopold_mk4"
             ];
             
-            {
+            _opticsClasses apply {
                 _class = _x;
 
                 if (_class in (items _unit + assignedItems _unit)) exitwith {
                     _optics = ([_class, [28,28]] call _getPicture);
                 };
-            } foreach _opticsClasses;
+            };
 
             _lobbyName = if !(((roleDescription _unit) find "@") isEqualto -1) then {
                 ((roleDescription _unit) splitString "@") select 0} else {roleDescription _unit
@@ -105,9 +105,9 @@ _getPicture = {
                 if !(backpack _unit isEqualto "") then {[backpack _unit, [28,28], "CfgVehicles"] call _getPicture} else {""},
                 _optics
             ];
-        } forEach [leader _x] + (units _x - [leader _x]);
+        };
     };
-} forEach allGroups;
+};
 
 _text = _text + "<br/>============================================================";
 _text = _text + "<br/>============================================================";
