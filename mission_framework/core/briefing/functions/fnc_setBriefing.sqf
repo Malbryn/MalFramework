@@ -21,6 +21,10 @@ private ["_briefing"];
 
 _briefing = [];
 
-#include "..\..\..\config\briefing\briefing.sqf"
+if (playerSide == west) then {
+    #include "..\..\..\config\briefing\blufor_briefing.sqf"
+} else {
+    #include "..\..\..\config\briefing\redfor_briefing.sqf"
+};
 
 DISPLAYBRIEFING();

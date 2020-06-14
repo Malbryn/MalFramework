@@ -48,6 +48,7 @@ DIARY_RECORD_START("Credits", "Mission Framework")
 This mission framework is based on some other Arma 3 frameworks and some other scripts. See the original authors below.<br/>
 <br/>
 CREDITS:<br/>
+ - ACEX mod<br/>
  - Achilles mod<br/>
  - F3 Framework<br/>
  - FK Framework<br/>
@@ -57,6 +58,7 @@ CREDITS:<br/>
  - UO Briefing Kit mod<br/>
 <br/>
  - AI task scripts by Nkenny<br/>
+ - AO limit scripts by Olsen and Starfox64<br/>
  - Briefing scripts by Perfks and Pax'Jarome<br/>
  - Cover map script by BlackHawk, PIZZADOX and Karel Moricky<br/>
  - Curator scripts by Commy2<br/>
@@ -65,6 +67,8 @@ CREDITS:<br/>
  - Global AI skill settings by joko // Jonas<br/>
  - Intel scripts by Kex<br/>
  - JIP teleport scripts by Diwako<br/>
+ - Killcam script by Perfk and BlackHawk<br/>
+ - Kill tracker script by PabstMirror<br/>
  - LOS and terrain profile tools by BlackHawk<br/>
  - Mission time script by Starfox64<br/>
  - Mortar fire script by PabstMirror<br/>
@@ -74,6 +78,8 @@ CREDITS:<br/>
  - Server FPS notification script by NeilZar<br/>
  - Snowfall script by AZCoder and JW<br/>
  - Vehicle respawn scripts by Fredrik Eriksson<br/>
+<br/>
+Special thanks to <font color='#21749c'>kMaN</font> for his support and help with testing this framework.
 </font>
 "
 DIARY_RECORD_END;

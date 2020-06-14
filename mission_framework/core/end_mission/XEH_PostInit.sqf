@@ -1,14 +1,18 @@
 #include "script_component.hpp"
 
 [QGVARMAIN(callMission), {
-    params ["_ending", "_isVictory"];
+    params ["_ending", "_isVictory", ["_side", nil]];
 
-    [_ending, _isVictory] call FUNC(callMission);
+    [_ending, _isVictory, _side] call FUNC(callMission);
 }] call CFUNC(addEventHandler);
 
 
 [QGVARMAIN(missionEnd), {
-    params ["_ending", "_isVictory"];
+    params ["_ending", "_isVictory", ["_side", sideUnknown]];
 
-    [_ending, _isVictory, true, true, true] call BFUNC(endMission);
+    if (playerSide == _side) then {
+        [_ending, _isVictory, true, true, true] call BFUNC(endMission);
+    } else {
+        [_ending, !_isVictory, true, true, true] call BFUNC(endMission);
+    };
 }] call CFUNC(addEventHandler);

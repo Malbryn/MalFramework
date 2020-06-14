@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if !(GVARMAIN(moduleTaskControl)) exitWith {};
+if (!GVARMAIN(moduleTaskControl) || GVARMAIN(isTvT)) exitWith {};
 
 ADDON = false;
 

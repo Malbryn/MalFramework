@@ -33,12 +33,21 @@ removeAllAssignedItems _unit;
 // Find the role of the unit
 _gear = [];
 
-switch _role do {
+if ((side _unit) == west) then {
+    switch _role do {
+        #include "..\..\..\config\gear\blufor_gear.sqf"
 
-    #include "..\..\..\config\gear\gear.sqf"
+        default {
+            MSG_1("WARNING","Player init: Undefined role in the loadout: %1 (blufor_gear.sqf)",_role);
+        };
+    };
+} else {
+    switch _role do {
+        #include "..\..\..\config\gear\redfor_gear.sqf"
 
-    default {
-        MSG_1("WARNING","Player init: Undefined role in the loadout: %1",_role);
+        default {
+            MSG_1("WARNING","Player init: Undefined role in the loadout: %1 (redfor_gear.sqf)",_role);
+        };
     };
 };
 

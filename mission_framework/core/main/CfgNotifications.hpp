@@ -66,4 +66,24 @@ class CfgNotifications {
         priority = 4;
         difficulty[] = {};
     };
+
+    class AOLimitWarning {
+        title = "AO LIMIT";
+        iconPicture = "\a3\Ui_f\data\GUI\Cfg\Debriefing\endDefault_ca.paa";
+        description = "<t align='left'>Where do you think you're going?</t>";
+        color[] = {1, 1, 1, 1};
+        colorIconPicture[] = {1, 1, 1, 0.8};
+        colorIconText[] = {1, 1, 1, 1};
+        duration = 5;
+    };
+
+    class SetupTimerEnded {
+        title = "SETUP TIMER";
+        iconPicture = "\a3\Ui_f\data\GUI\Cfg\Notifications\tridentEnemy_ca.paa";
+        description = "<t>Setup Timer Over, Fight!</t>";
+        color[] = {1, 1, 1, 1};
+        colorIconPicture[] = {0.5, 0, 0, 0.5};
+        colorIconText[] = {1, 1, 1, 1};
+        duration = 5;
+    };
 };

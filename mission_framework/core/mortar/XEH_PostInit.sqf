@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if !(GVARMAIN(moduleMortar)) exitWith {};
+if (!GVARMAIN(moduleMortar) || GVARMAIN(isTvT)) exitWith {};
 
 if (isServer) then {
     [QGVAR(mortarFire), {

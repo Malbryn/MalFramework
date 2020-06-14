@@ -19,6 +19,31 @@
 
 params ["_unit", "_corpse"];
 
+// Side update
+if (GVARMAIN(isTvT)) then {
+    switch playerSide do {
+        case west : {
+            _side = EGVAR(common,sideBlufor);
+
+            if (0 < _side#2) then {
+                [QEGVAR(common,sideSet), [playerSide, 0, 1, -1]] call CFUNC(serverEvent);
+            };
+        };
+
+        case east : {
+            _side = EGVAR(common,sideRedfor);
+
+            if (0 < _side#2) then {
+                [QEGVAR(common,sideSet), [playerSide, 0, 1, -1]] call CFUNC(serverEvent);
+            };
+        };
+
+        default {
+            MSG_1("ERROR","Side ticket: invlaid side of player (%1)",playerSide);
+        };
+    };
+};
+
 // Screen effects
 cutText ["", "BLACK FADED", 5, true];
 

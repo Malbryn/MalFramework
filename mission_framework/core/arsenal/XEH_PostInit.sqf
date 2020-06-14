@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if !(GVARMAIN(moduleCurator)) exitWith {};
+if (!GVARMAIN(moduleArsenal) || GVARMAIN(isTvT)) exitWith {};
 
 if (hasInterface) then {
     [QGVARMAIN(initFramework), {

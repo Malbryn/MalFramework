@@ -1,0 +1,2 @@
+PREP(initKillcam);
+PREP(toggleKillcam);

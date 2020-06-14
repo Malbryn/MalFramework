@@ -2,7 +2,7 @@
 
 if (isServer) then {
     // Terminate the end condition checking loop if there's no condition defined
-    if !(GVARMAIN(moduleTimeLimit) || GVARMAIN(moduleFriendlyCasualties) || GVARMAIN(moduleTaskLimit) || GVARMAIN(moduleExtraction) || GVARMAIN(moduleCivilianCasualties)) exitWith {};
+    if !(GVARMAIN(moduleTimeLimit) || GVARMAIN(modulePlayerCasualties) || GVARMAIN(moduleTaskLimit) || GVARMAIN(moduleExtraction) || GVARMAIN(moduleCivilianCasualties)) exitWith {};
 
     [QGVARMAIN(initFramework), {
         // Check the tasks array
@@ -25,8 +25,14 @@ if (isServer) then {
         };
 
         // Add per frame handler
-        GVAR(endConditionCheck) = [{
-            call FUNC(checkEndConditions);
-        }, 10] call CFUNC(addPerFrameHandler);
+        if (GVARMAIN(isTvT)) then {
+            GVAR(endConditionCheckTvT) = [{
+                call FUNC(checkEndConditionsTvT);
+            }, 3] call CFUNC(addPerFrameHandler);
+        } else {
+            GVAR(endConditionCheck) = [{
+                call FUNC(checkEndConditionsCoop);
+            }, 10] call CFUNC(addPerFrameHandler);
+        };
     }] call CFUNC(addEventHandler);
 };

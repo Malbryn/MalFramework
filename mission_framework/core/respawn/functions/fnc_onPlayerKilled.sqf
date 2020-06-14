@@ -29,6 +29,11 @@ if (side _instigator == playerSide) then {
     [QEGVAR(friendly_fire,logFF), [_nameKilled, _nameKiller]] call CFUNC(globalEvent);
 };
 
+// Side update
+if (GVARMAIN(isTvT)) then {
+    [QEGVAR(common,sideSet), [playerSide, 0, -1, 0]] call CFUNC(serverEvent);
+};
+
 // Screen effects
 "dynamicBlur" ppEffectEnable true;
 "dynamicBlur" ppEffectAdjust [0];
@@ -37,13 +42,17 @@ if (side _instigator == playerSide) then {
 "dynamicBlur" ppEffectCommit 6;
 
 [{
+    params ["_unit", "_killer"];
+
     cutText  ["", "BLACK OUT", 5, true];
 
     [{
+        params ["_unit", "_killer"];
+
         // Save death location of the player
         SETVAR(player,EGVAR(reinsert,deathPos),getPos player);
 
-        if (GETVAR(player,EGVAR(respawn_tickets,amount),-1) == 0 || EGVAR(respawn_wave,availableWaves) == 0) then {
+        if (GETVAR(player,EGVAR(respawn_tickets,amount),-1) == 0 || (GVARMAIN(moduleWaveRespawn) && EGVAR(respawn_wave,availableWaves) == 0)) then {
             // Init spectator screen
             ["Initialize", [player, [], false, true, true, false, true, false, false, true]] call BFUNC(EGSpectator);
 
@@ -104,13 +113,19 @@ if (side _instigator == playerSide) then {
                 };
             };
 
+            // Killcam
+            if (GVARMAIN(moduleKillcam)) then {
+                [player, _killer] call EFUNC(killcam,initKillcam);
+            };
+
         } else {
+
             if !(GVARMAIN(moduleWaveRespawn)) then {
                 setPlayerRespawnTime GVARMAIN(respawnTimer);
             };
             
             // Init the complainer mode
-            ["Initialize", [player, [], false, false, true, false, true, false, false, true]] call BFUNC(EGSpectator);
+            ["Initialize", [player, [playerSide], false, false, true, false, true, false, false, true]] call BFUNC(EGSpectator);
 
             cutText  ["", "BLACK IN",  3, true];
             "dynamicBlur" ppEffectAdjust [0];
@@ -140,5 +155,5 @@ if (side _instigator == playerSide) then {
         if (GVARMAIN(moduleSnowfall)) then {
             [EGVAR(snowfall,snowfallPFH)] call CFUNC(removePerFrameHandler);
         };
-    }, [], 5] call CFUNC(waitAndExecute);
-}, [], 1] call CFUNC(waitAndExecute);
+    }, [_unit, _killer], 5] call CFUNC(waitAndExecute);
+}, [_unit, _killer], 1] call CFUNC(waitAndExecute);

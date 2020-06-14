@@ -65,7 +65,7 @@ if (GETVAR(player,EGVAR(player,isCO),false) && GVARMAIN(moduleWaveRespawn)) then
     // Check
     _menu = ['Check remaining reinforcement waves', 'Check remaining reinforcement waves', '', {
         [["Remaining reinforcement waves:<br/>%1", GVAR(availableWaves)], 2, ace_player, 12] call AFUNC(common,displayTextStructured);
-    }, {true}] call ace_interact_menu_fnc_createAction;
+    }, {true}] call AFUNC(interact_menu,createAction);
 
     [player, 1, ["ACE_SelfActions", "Reinforcements"], _menu] call AFUNC(interact_menu,addActionToObject);
 };

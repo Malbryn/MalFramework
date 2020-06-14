@@ -19,6 +19,19 @@
 
 private ["_time"];
 
-_time = ceil ((EGVAR(end_conditions,timeLimit) - CBA_missionTime) / 60);
+_timeSeconds = ceil (EGVAR(end_conditions,timeLimit) - CBA_missionTime);
+_timeMinutes = ceil (_timeSeconds / 60);
 
-[format ["Remaining time:<br/>%1 minutes", _time], 2, ace_player, 12] call AFUNC(common,displayTextStructured);
+switch true do {
+    case (60 < _timeSeconds) : {
+        [format ["Remaining time:<br/>%1 minutes", _timeMinutes], 2, ace_player, 12] call AFUNC(common,displayTextStructured);
+    };
+
+    case (0 < _timeSeconds && _timeSeconds <= 60) : {
+        [format ["Remaining time:<br/>%1 seconds", _timeSeconds], 2, ace_player, 12] call AFUNC(common,displayTextStructured);
+    };
+
+    default {
+        [format ["Time's up!"], 2, ace_player, 12] call AFUNC(common,displayTextStructured);
+    };
+};

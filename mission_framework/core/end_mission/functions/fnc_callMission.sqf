@@ -10,9 +10,10 @@
     Arguments:
         0: STRING - Class name of the ending (defined in CfgDebriefing)
         1: BOOLEAN - Is victory
+        2: SIDE - 
 
     Example:
-        ["MissionSuccess", true] call MF_end_mission_fnc_endMission
+        ["MissionSuccess", true] call MF_end_mission_fnc_callMission
 
     Returns:
         void
@@ -20,7 +21,7 @@
 
 if !(isServer) exitWith {};
 
-params ["_ending", "_isVictory"];
+params ["_ending", "_isVictory", ["_side", sideUnknown]];
 private ["_time"];
 
 // Save end mission stats
@@ -29,12 +30,15 @@ call EFUNC(mission_stats,saveFriendlyFires);
 call EFUNC(mission_stats,saveCivilianKills);
 
 // Stop the end condition check
-if (GVARMAIN(moduleTimeLimit) || GVARMAIN(moduleFriendlyCasualties) || GVARMAIN(moduleTaskLimit) || GVARMAIN(moduleExtraction) || GVARMAIN(moduleCivilianCasualties)) then {
-    [EGVAR(end_conditions,endConditionCheck)] call CFUNC(removePerFrameHandler);
-};
+[EGVAR(end_conditions,endConditionCheck)] call CFUNC(removePerFrameHandler);
 
-// Calling the end mission screen
-[QGVARMAIN(missionEnd), [_ending, _isVictory]] call CFUNC(globalEvent);
+// If dedicated, end the mission on the server as well
+if (isDedicated) then {
+    [QGVARMAIN(missionEnd), [_ending, true, _side]] call CFUNC(localEvent);
+    [QGVARMAIN(missionEnd), [_ending, _isVictory, _side], allPlayers] call CFUNC(targetEvent);
+} else {
+    [QGVARMAIN(missionEnd), [_ending, _isVictory, _side], allPlayers] call CFUNC(targetEvent);
+};
 
 // Logging
 _time = [CBA_missionTime] call BFUNC(secondsToString);

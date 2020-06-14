@@ -17,6 +17,10 @@ class Extended_PreInit_EventHandlers {
         init = PATH_PRE(ai_skills);
     };
 
+    class GVARMAIN(AOLimit) {
+        init = PATH_PRE(ao_limit);
+    };
+
     class GVARMAIN(Arsenal) {
         init = PATH_PRE(arsenal);
     };
@@ -93,8 +97,16 @@ class Extended_PreInit_EventHandlers {
         init = PATH_PRE(jip);
     };
 
+    class GVARMAIN(Killcam) {
+        init = PATH_PRE(killcam);
+    };
+
     class GVARMAIN(LOSTool) {
         init = PATH_PRE(los_tool);
+    };
+
+    class GVARMAIN(MarkerSide) {
+        init = PATH_PRE(marker_side);
     };
 
     class GVARMAIN(MissionStats) {
@@ -141,8 +153,16 @@ class Extended_PreInit_EventHandlers {
         init = PATH_PRE(scenario_control);
     };
 
+    class GVARMAIN(SetupTimer) {
+        init = PATH_PRE(setup_timer);
+    };
+
     class GVARMAIN(Snowfall) {
         init = PATH_PRE(snowfall);
+    };
+
+    class GVARMAIN(StaticLine) {
+        init = PATH_PRE(static_line);
     };
 
     class GVARMAIN(SupplyDrop) {
@@ -190,6 +210,10 @@ class Extended_PostInit_EventHandlers {
 
     class GVARMAIN(AISkills) {
         init = PATH_POST(ai_skills);
+    };
+
+    class GVARMAIN(AOLimit) {
+        init = PATH_POST(ao_limit);
     };
 
     class GVARMAIN(Arsenal) {
@@ -268,8 +292,16 @@ class Extended_PostInit_EventHandlers {
         init = PATH_POST(jip);
     };
 
+    class GVARMAIN(Killcam) {
+        init = PATH_POST(killcam);
+    };
+
     class GVARMAIN(LOSTool) {
         init = PATH_POST(los_tool);
+    };
+
+    class GVARMAIN(MarkerSide) {
+        init = PATH_POST(marker_side);
     };
 
     class GVARMAIN(MissionStats) {
@@ -316,8 +348,16 @@ class Extended_PostInit_EventHandlers {
         init = PATH_POST(scenario_control);
     };
 
+    class GVARMAIN(SetupTimer) {
+        init = PATH_POST(setup_timer);
+    };
+
     class GVARMAIN(Snowfall) {
         init = PATH_POST(snowfall);
+    };
+
+    class GVARMAIN(StaticLine) {
+        init = PATH_POST(static_line);
     };
 
     class GVARMAIN(SupplyDrop) {

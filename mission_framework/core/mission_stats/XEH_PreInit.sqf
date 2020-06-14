@@ -11,3 +11,6 @@ ADDON = true;
 // Global variables
 GVAR(friendlyFires) = ["FRIENDLY FIRE INCIDENTS: "];
 GVAR(civilianKills) = ["CIVILIAN KILLS: "];
+GVAR(eventsArray) = [];
+GVAR(kills) = "Total kills: 0";
+GVAR(killCount) = 0;

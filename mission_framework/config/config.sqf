@@ -3,14 +3,23 @@
 /* -------------------------------- MISSION PARAMETERS -------------------------------- */
 /* ------------------------- DON'T REMOVE OR COMMENT OUT THESE ------------------------ */
 
+GVARMAIN(isTvT) = false;
+
 GVARMAIN(moduleTimeLimit) = true;
 EGVAR(end_conditions,timeLimit) = 60 MINUTES;
+EGVAR(end_conditions,favouredSide) = 1; // 0: none, 1: west, 2: east
 
-GVARMAIN(moduleFriendlyCasualties) = false;
-EGVAR(end_conditions,friendlyCasLimit) = 75;
+GVARMAIN(modulePlayerCasualties) = true;
+EGVAR(end_conditions,playerCasLimit) = 75;
+EGVAR(end_conditions,bluforCasLimit) = 75;
+EGVAR(end_conditions,redforCasLimit) = 75;
 
 GVARMAIN(moduleCivilianCasualties) = true;
 EGVAR(end_conditions,civilianCasLimit) = 50;
+
+GVARMAIN(moduleRespawnTickets) = true;
+GVARMAIN(respawnTicketsBlufor) = 2;
+GVARMAIN(respawnTicketsRedfor) = -1;
 
 GVARMAIN(moduleTaskLimit) = true;
 EGVAR(end_conditions,taskLimit) = 2;
@@ -21,11 +30,11 @@ EGVAR(end_conditions,playerThreshold) = 50;
 EGVAR(end_conditions,taskThreshold) = 66;
 
 GVARMAIN(respawnTimer) = 30;
-GVARMAIN(respawnTickets) = 2;
+GVARMAIN(respawnTickets) = -1;
 
 GVARMAIN(removePlayerCorpses) = true;
 
-GVARMAIN(playerViewDistance) = 2000;
+GVARMAIN(playerViewDistance) = 2500;
 GVARMAIN(serverViewDistance) = 2000;
 
 GVARMAIN(timeAcceleration) = 1;
@@ -47,6 +56,15 @@ EGVAR(ai_skills,skillSet) = [
 
 // Ambient fly-by
 GVARMAIN(moduleFlyby) = true;
+
+
+// AO limit
+GVARMAIN(moduleAOLimit) = false;
+EGVAR(ao_limit,timerLand) = 10;
+EGVAR(ao_limit,timerAir) = -1;
+EGVAR(ao_limit,aoMarkerAll) = "mrk_aoLimitAll";
+EGVAR(ao_limit,aoMarkerBlufor) = "mrk_aoLimitBlufor";
+EGVAR(ao_limit,aoMarkerRedfor) = "mrk_aoLimitRedfor";
 
 
 // Arsenal
@@ -92,8 +110,22 @@ GVARMAIN(moduleJIP) = true;
 EGVAR(jip,JIPTimer) = 3 MINUTES;
 
 
+// Killcam
+GVARMAIN(moduleKillcam) = true;
+
+
+// Kill tracker
+GVARMAIN(moduleKillTracker) = true;
+
+
 // LOS Tool
 GVARMAIN(moduleLOSTool) = true;
+
+
+// Marker side
+GVARMAIN(moduleMarkerSide) = true;
+EGVAR(marker_side,markersBlufor) = ["mrk_blufor"];
+EGVAR(marker_side,markersRedfor) = ["mrk_redfor"];
 
 
 // Mortar fire
@@ -119,6 +151,14 @@ EGVAR(reinsert,RPTentObject) = "Land_TentA_F";
 GVARMAIN(moduleSafetyStart) = true;
 
 
+// Setup timer
+GVARMAIN(moduleSetupTimer) = false;
+EGVAR(setup_timer,markerBlufor) = "mrk_setupBlufor";
+EGVAR(setup_timer,timerBlufor) = 60;
+EGVAR(setup_timer,markerRedfor) = "mrk_setupRedfor";
+EGVAR(setup_timer,timerRedfor) = 90;
+
+
 // Scenario control
 GVARMAIN(moduleScenarioControl) = true;
 EGVAR(scenario_control,successRate) = 50;
@@ -127,6 +167,10 @@ EGVAR(scenario_control,successRate) = 50;
 // Snowfall
 GVARMAIN(moduleSnowfall) = false;
 EGVAR(snowfall,maxDensity) = 50;
+
+
+// Static line paradrop
+GVARMAIN(moduleStaticLine) = true;
 
 
 // Supply drop
@@ -152,5 +196,5 @@ GVARMAIN(moduleVehicleRespawn) = true;
 
 
 // Wave respawn
-GVARMAIN(moduleWaveRespawn) = true;
+GVARMAIN(moduleWaveRespawn) = false;
 EGVAR(respawn_wave,availableWaves) = 3;
