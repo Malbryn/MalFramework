@@ -2,4 +2,6 @@
 
 if !(GVARMAIN(moduleAOLimit)) exitWith {};
 
-call FUNC(initAOLimit);
+if (hasInterface) then {
+    call FUNC(initAOLimit);
+};

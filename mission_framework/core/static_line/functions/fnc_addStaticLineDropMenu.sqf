@@ -22,8 +22,13 @@ private ["_menu"];
 
 if !(hasInterface) exitWith {};
 
-_menu = ['Static line drop', 'Static line drop', '\a3\ui_f\data\Map\VehicleIcons\iconParachute_ca.paa', {
+// Main catefory
+_menu = ['Static line', 'Static line', '\a3\ui_f\data\Map\VehicleIcons\iconParachute_ca.paa', {}, {player == driver (_this select 0)}, {}, [_plane]] call AFUNC(interact_menu,createAction);
+[_plane, 1, ["ACE_SelfActions"], _menu] call AFUNC(interact_menu,addActionToObject);
+
+// Sub-category
+_menu = ['Drop infantry', 'Drop infantry', '', {
     [_this#0] spawn FUNC(doParadrop);
 }, {player == driver (_this select 0)}, {}, [_plane]] call AFUNC(interact_menu,createAction);
 
-[_plane, 1, ["ACE_SelfActions"], _menu] call AFUNC(interact_menu,addActionToObject);
+[_plane, 1, ["ACE_SelfActions", "Static line"], _menu] call AFUNC(interact_menu,addActionToObject);

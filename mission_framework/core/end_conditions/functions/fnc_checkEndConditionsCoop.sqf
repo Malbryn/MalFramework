@@ -40,7 +40,7 @@ if (GVARMAIN(moduleTimeLimit) && !_ended) then {
 
 
 // Friendly casualty check
-if (GVARMAIN(modulePlayerCasualties) && !_ended) then {
+if (GVARMAIN(modulePlayerCasualties) && _allPlayers != 0 && !_ended) then {
     private ["_dead", "_ratio"];
 
     _dead = {!alive _x} count allPlayers;

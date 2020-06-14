@@ -23,6 +23,7 @@ private ["_cargoList"];
 _cargoList = (crew _plane) select {(assignedVehicleRole _x)#0 isEqualTo "cargo"};
 
 {
-    _x action ["GetOut", vehicle _x];
-    sleep 0.5;
+    [{  
+        _this action ["GetOut", (vehicle _this)];
+    }, _x, _forEachIndex + .2] call CFUNC(waitAndExecute);
 } forEach _cargoList;
