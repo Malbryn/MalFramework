@@ -27,6 +27,8 @@ switch _side do {
         _array set [0, _total + _changeTotal];
         _array set [1, _current + _changeCurrent];
         _array set [2, _tickets + _changeTickets];
+        
+        publicVariable QGVAR(sideBlufor);
     };
 
     case east : {
@@ -35,7 +37,9 @@ switch _side do {
 
         _array set [0, _total + _changeTotal];
         _array set [1, _current + _changeCurrent];
-        _array set [1, _tickets + _changeTickets];
+        _array set [2, _tickets + _changeTickets];
+
+        publicVariable QGVAR(sideRedfor);
     };
 
     default {
