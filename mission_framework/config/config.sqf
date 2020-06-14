@@ -9,26 +9,28 @@ GVARMAIN(moduleTimeLimit) = true;
 EGVAR(end_conditions,timeLimit) = 60 MINUTES;
 EGVAR(end_conditions,favouredSide) = 0; // 0: none, 1: west, 2: east
 
-GVARMAIN(modulePlayerCasualties) = true;
+GVARMAIN(modulePlayerCasualties) = false;
 EGVAR(end_conditions,playerCasLimit) = 75;
 EGVAR(end_conditions,bluforCasLimit) = 75;
 EGVAR(end_conditions,redforCasLimit) = 75;
 
-GVARMAIN(moduleCivilianCasualties) = false;
+GVARMAIN(moduleCivilianCasualties) = true;
 EGVAR(end_conditions,civilianCasLimit) = 50;
+
+GVARMAIN(moduleRespawnTickets) = true;
+GVARMAIN(respawnTicketsBlufor) = 2;
+GVARMAIN(respawnTicketsRedfor) = -1;
 
 GVARMAIN(moduleTaskLimit) = true;
 EGVAR(end_conditions,taskLimit) = 2;
 
-GVARMAIN(moduleExtraction) = false;
+GVARMAIN(moduleExtraction) = true;
 EGVAR(end_conditions,extMarker) = "mrk_ext";
 EGVAR(end_conditions,playerThreshold) = 50;
 EGVAR(end_conditions,taskThreshold) = 66;
 
 GVARMAIN(respawnTimer) = 30;
-GVARMAIN(respawnTickets) = 0;
-GVARMAIN(respawnTicketsBlufor) = -1; // TODO
-GVARMAIN(respawnTicketsRedfor) = -1;
+GVARMAIN(respawnTickets) = -1;
 
 GVARMAIN(removePlayerCorpses) = true;
 
@@ -150,7 +152,7 @@ GVARMAIN(moduleSafetyStart) = true;
 
 
 // Setup timer
-GVARMAIN(moduleSetupTimer) = true;
+GVARMAIN(moduleSetupTimer) = false;
 EGVAR(setup_timer,markerBlufor) = "mrk_setupBlufor";
 EGVAR(setup_timer,timerBlufor) = 60;
 EGVAR(setup_timer,markerRedfor) = "mrk_setupRedfor";

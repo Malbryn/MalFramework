@@ -169,6 +169,26 @@ class WithdrawalRedfor {
 };
 
 
+// Respawn tickets - TvT
+class TicketsBlufor {
+    title = "blufor_faction Win";
+    subtitle = "redfor_faction ran out of manpower";
+    description = "redfor_faction ran out of manpower. blufor_faction win.";
+    pictureBackground = "";
+    picture = "b_unknown";
+    pictureColor[] = {0, 0.3, 0.6, 1};
+};
+
+class TicketsRedfor {
+    title = "redfor_faction Win";
+    subtitle = "blufor_faction ran out of manpower";
+    description = "blufor_faction ran out of manpower. redfor_faction win.";
+    pictureBackground = "";
+    picture = "o_unknown";
+    pictureColor[] = {0.5, 0, 0, 1};
+};
+
+
 // Game master
 class MissionTerminated {
     title = "Mission Terminated";

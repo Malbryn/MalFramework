@@ -69,23 +69,23 @@ if (GVARMAIN(modulePlayerCasualties) && !_ended) then {
     _sideRedfor params ["_redforTotal", "_redforCurrent"];
 
     _bluforDead = _bluforTotal - _bluforCurrent;
-    _redforDead = _redforTotal - _redforCurrent;
+    //_redforDead = _redforTotal - _redforCurrent;
 
     if (_bluforTotal == 0 && _redforTotal == 0) exitWith {};
 
     _bluforRatio = _bluforDead / (_bluforTotal * 0.01);
-    _redforRatio = _redforDead / (_redforTotal * 0.01);
+    //_redforRatio = _redforDead / (_redforTotal * 0.01);
 
     if (_bluforRatio >= GVAR(bluforCasLimit)) then {
         [QGVARMAIN(callMission), ["PlayerCasLimitRedfor", true, east]] call CFUNC(localEvent);
         _ended = true;
         breakTo QGVAR(main);
     };
-
+/*
     if (_redforRatio >= GVAR(redforCasLimit)) then {
         [QGVARMAIN(callMission), ["PlayerCasLimitBlufor", true, west]] call CFUNC(localEvent);
         _ended = true;
-    };
+    };*/
 };
 
 // Civilian casualty check
@@ -106,8 +106,20 @@ if (GVARMAIN(moduleCivilianCasualties) && !_ended) then {
 
     if (_ratioRedfor >= GVAR(civilianCasLimit)) then {
         [QGVARMAIN(callMission), ["CivCasLimitBlufor", true, west]] call CFUNC(localEvent);
+        _ended = true;
     };
 };
 
 // Respawn tickets check
-// TODO
+if (GVARMAIN(moduleRespawnTickets) && !_ended) then {
+    if (GVARMAIN(respawnTicketsBlufor) != -1 && EGVAR(common,sideBlufor)#2 == 0) then {
+        [QGVARMAIN(callMission), ["TicketsRedfor", true, east]] call CFUNC(localEvent);
+        _ended = true;
+        breakTo QGVAR(main);
+    };
+
+    if (GVARMAIN(respawnTicketsRedfor) != -1 && EGVAR(common,sideRedfor)#2 == 0) then {
+        [QGVARMAIN(callMission), ["TicketsBlufor", true, west]] call CFUNC(localEvent);
+        _ended = true;
+    };
+};
