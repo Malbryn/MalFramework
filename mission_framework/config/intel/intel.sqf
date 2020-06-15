@@ -4,7 +4,10 @@
         1: SCALAR - ID of the intel
 
     Examples:
+        // In the init field of the object
         [this, 1] call MF_intel_fnc_initIntel
+
+        // In an external script
         [objName, 2] call MF_intel_fnc_initIntel
  */
 

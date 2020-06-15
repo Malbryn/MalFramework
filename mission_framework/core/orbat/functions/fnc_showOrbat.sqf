@@ -42,7 +42,7 @@ allGroups apply {
     if (((side _x) isEqualto (playerSide)) && {!isNull leader _x} && {(isPlayer leader _x) || !(isMultiplayer)}) then {
         _text = _text + format ["<font size='20' color='#FFFF00'>%1</font>", groupID _x] + "<br/>";
 
-        [leader _x] + (units _x - [leader _x]) apply {
+        {
             _unit = _x;
             _radio = "";
 
@@ -105,7 +105,7 @@ allGroups apply {
                 if !(backpack _unit isEqualto "") then {[backpack _unit, [28,28], "CfgVehicles"] call _getPicture} else {""},
                 _optics
             ];
-        };
+        } forEach [leader _x] + (units _x - [leader _x]);
     };
 };
 
