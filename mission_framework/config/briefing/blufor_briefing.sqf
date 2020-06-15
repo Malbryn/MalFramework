@@ -2,10 +2,10 @@
 // <marker name='nameOfTheMarker'>Click here</marker>
 
 NEWTAB("I. Organization")
-<br/><font color='#21749c' size='18' face='PuristaBold'>ORBAT</font>
+<br/><font color='#21749c' size='18' face='PuristaBold'>BLUFOR ORBAT</font>
 <br/>
 <br/><font color='#21749c' size='16' face='PuristaSemiBold'>player_unit_or_faction</font>
-<br/>list_of_the_squads(BLUFOR)
+<br/>list_of_the_squads
 <br/>
 <br/><font color='#21749c' size='16' face='PuristaSemiBold'>assets_unit_or_faction</font>
 <br/>list_of_the_friendly_assets

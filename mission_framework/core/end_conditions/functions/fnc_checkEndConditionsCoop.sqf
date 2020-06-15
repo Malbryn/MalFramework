@@ -112,7 +112,7 @@ if (GVARMAIN(moduleExtraction) && !_ended) then {
     // Count the players inside the extraction zone
     _playerCount = {
         _x inArea GVAR(extMarker);
-    } count allPlayers;
+    } count (allPlayers select {alive _x});
 
     // End the mission accordingly
     if (_playerCount >= (_allPlayers * GVAR(playerThreshold) * 0.01) && (_allPlayers != 0)) then {
