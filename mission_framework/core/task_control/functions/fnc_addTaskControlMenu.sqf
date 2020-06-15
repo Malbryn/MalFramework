@@ -32,7 +32,7 @@ _menu = ['Tasks', 'Tasks', '', {}, {true}] call AFUNC(interact_menu,createAction
 _task = [];
 _taskName = "";
 
-{
+_taskList apply {
     // Create a task sub-menu under the Tasks main category
     _task = _x call BFUNC(taskDescription);
     _taskName = (_task#1) joinString "";
@@ -68,4 +68,4 @@ _taskName = "";
     }, {true}, {}, _x] call AFUNC(interact_menu,createAction);
 
     [player, 1, ["ACE_SelfActions", "Admin Menu", "Tasks", _taskName], _menu] call AFUNC(interact_menu,addActionToObject);
-} forEach _taskList;
+};

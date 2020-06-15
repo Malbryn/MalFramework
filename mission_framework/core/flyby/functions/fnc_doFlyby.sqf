@@ -33,5 +33,5 @@ _wp1 = group _plane addWaypoint [_wp1Pos, 5];
 _wp1 setWaypointType "MOVE";
 
 _wp2 = group _plane addWaypoint [_wp2Pos, 5];
-_wp2 setWaypointStatements ["true", QUOTE(deleteVehicle (vehicle this); {deleteVehicle _x} forEach crew (vehicle this);)];
+_wp2 setWaypointStatements ["true", QUOTE(deleteVehicle (vehicle this); crew (vehicle this) apply {deleteVehicle _x})];
 _wp2 setWaypointType "MOVE";

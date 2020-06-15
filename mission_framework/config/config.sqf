@@ -3,198 +3,207 @@
 /* -------------------------------- MISSION PARAMETERS -------------------------------- */
 /* ------------------------- DON'T REMOVE OR COMMENT OUT THESE ------------------------ */
 
-GVARMAIN(isTvT) = false;
+GVARMAIN(isTvT) = false;  // If the mission is a TvT mission
 
-GVARMAIN(moduleTimeLimit) = true;
-EGVAR(end_conditions,timeLimit) = 60 MINUTES;
-EGVAR(end_conditions,favouredSide) = 1; // 0: none, 1: west, 2: east
+// End condition - Time limit
+GVARMAIN(moduleTimeLimit) = true;  // Coop & TvT
+EGVAR(end_conditions,timeLimit) = 60 MINUTES;  // Mission time limit in seconds
+EGVAR(end_conditions,favouredSide) = 1;  // TVT: Favoured side (0: NONE, 1: BLUFOR, 2: REDFOR)
 
-GVARMAIN(modulePlayerCasualties) = true;
-EGVAR(end_conditions,playerCasLimit) = 75;
-EGVAR(end_conditions,bluforCasLimit) = 75;
-EGVAR(end_conditions,redforCasLimit) = 75;
+// End condition - Player casualty limit
+GVARMAIN(modulePlayerCasualties) = true;  // Coop & TvT
+EGVAR(end_conditions,playerCasLimit) = 75;  // Coop: Percentage of the max. allowed player casualty
+EGVAR(end_conditions,bluforCasLimit) = 75;  // TvT: Percentage of the max. allowed player casualty for the BLUFOR side
+EGVAR(end_conditions,redforCasLimit) = 75;  // TvT: Percentage of the max. allowed player casualty for the REDFOR side
 
-GVARMAIN(moduleCivilianCasualties) = true;
-EGVAR(end_conditions,civilianCasLimit) = 50;
+// End condition - Civilian casualty limit
+GVARMAIN(moduleCivilianCasualties) = true;  // Coop & TvT
+EGVAR(end_conditions,civilianCasLimit) = 50;  // Percentage of the max. allowed civilian casualty
 
-GVARMAIN(moduleRespawnTickets) = true;
-GVARMAIN(respawnTicketsBlufor) = 2;
-GVARMAIN(respawnTicketsRedfor) = -1;
+// End condition - Side respawn tickets
+GVARMAIN(moduleRespawnTickets) = true;  // TvT
+GVARMAIN(respawnTicketsBlufor) = 2;  // Respawn tickets for BLUFOR (-1: disabled)
+GVARMAIN(respawnTicketsRedfor) = -1;  // Respawn tickets for BLUFOR (-1: disabled)
 
-GVARMAIN(moduleTaskLimit) = true;
-EGVAR(end_conditions,taskLimit) = 2;
+// End condition - Task limit
+GVARMAIN(moduleTaskLimit) = true;  // Coop
+EGVAR(end_conditions,taskLimit) = 2;  // Minimum number of completed tasks
 
-GVARMAIN(moduleExtraction) = true;
-EGVAR(end_conditions,extMarker) = "mrk_ext";
-EGVAR(end_conditions,playerThreshold) = 50;
-EGVAR(end_conditions,taskThreshold) = 66;
+// End condition - Extraction
+GVARMAIN(moduleExtraction) = true;  // Coop
+EGVAR(end_conditions,extMarker) = "mrk_ext";  // Name of the extraction marker
+EGVAR(end_conditions,playerThreshold) = 50;  // Percentage of the alive players that have to be in the extraction zone
+EGVAR(end_conditions,taskThreshold) = 66;  // Percentage of the tasks that have to be completed
 
-GVARMAIN(respawnTimer) = 30;
-GVARMAIN(respawnTickets) = -1;
+// Respawn rules
+GVARMAIN(respawnTimer) = 30;  // Respawn timer in seconds
+GVARMAIN(respawnTickets) = -1;  // Individual respawn tickets (-1: disabled)
+GVARMAIN(removePlayerCorpses) = true;  // Remove player corpse upon respawn
 
-GVARMAIN(removePlayerCorpses) = true;
+// View distances
+GVARMAIN(playerViewDistance) = 2500;  // Player view distance
+GVARMAIN(serverViewDistance) = 2000;  // Server view distance (= AI view distance)
 
-GVARMAIN(playerViewDistance) = 2500;
-GVARMAIN(serverViewDistance) = 2000;
-
+// Time acceleration
 GVARMAIN(timeAcceleration) = 1;
 
+// AI skills
 EGVAR(ai_skills,skillSet) = [
-    0.5,	// General (Higher = Better)
-    0.5,	// Commanding (Higher = Better)
-    0.5,	// Courage (Higher = Better)
-    0.5,	// Aiming Accuracy (Higher = Better)
-    0.5,	// Aiming Shake (Higher = Less)
-    0.5,	// Aiming Speed (Higher = Faster)
-    0.5,	// Reload Speed (Higher = Faster)
-    0.5,	// Spotting Distance (Higher = Further)
-    0.5		// Spotting Time (Higher = Faster)
+    0.5,  // General (Higher = Better)
+    0.5,  // Commanding (Higher = Better)
+    0.5,  // Courage (Higher = Better)
+    0.5,  // Aiming Accuracy (Higher = Better)
+    0.5,  // Aiming Shake (Higher = Less)
+    0.5,  // Aiming Speed (Higher = Faster)
+    0.5,  // Reload Speed (Higher = Faster)
+    0.5,  // Spotting Distance (Higher = Further)
+    0.5   // Spotting Time (Higher = Faster)
 ];
 
 
 /* --------------------------------- OPTIONAL MODULES --------------------------------- */
 
 // Ambient fly-by
-GVARMAIN(moduleFlyby) = true;
+GVARMAIN(moduleFlyby) = true;  // Coop
 
 
 // AO limit
-GVARMAIN(moduleAOLimit) = false;
-EGVAR(ao_limit,timerLand) = 10;
-EGVAR(ao_limit,timerAir) = -1;
-EGVAR(ao_limit,aoMarkerAll) = "mrk_aoLimitAll";
-EGVAR(ao_limit,aoMarkerBlufor) = "mrk_aoLimitBlufor";
-EGVAR(ao_limit,aoMarkerRedfor) = "mrk_aoLimitRedfor";
+GVARMAIN(moduleAOLimit) = true;  // Coop & TvT
+EGVAR(ao_limit,timerLand) = 10;  // Timer for any land based vehicle/unit (-1: disabled)
+EGVAR(ao_limit,timerAir) = -1;  // Timer for any air vehicle (-1: disabled)
+EGVAR(ao_limit,aoMarkerAll) = "mrk_aoLimitAll";  // AO limit marker for every player
+EGVAR(ao_limit,aoMarkerBlufor) = "mrk_aoLimitBlufor";  // AO limit marker for BLUFOR players
+EGVAR(ao_limit,aoMarkerRedfor) = "mrk_aoLimitRedfor";  // AO limit marker for REDFOR players
 
 
 // Arsenal
-GVARMAIN(moduleArsenal) = true;
+GVARMAIN(moduleArsenal) = true;  // Coop
 
 
 // Briefing
-GVARMAIN(moduleBriefing) = true;
+GVARMAIN(moduleBriefing) = true;  // Coop & TvT
 
 
 // Cover map
-GVARMAIN(moduleCoverMap) = true;
-EGVAR(cover_map,aoMarker) = "ao";
-EGVAR(cover_map,colour) = "Color4_FD_F";
+GVARMAIN(moduleCoverMap) = true;  // Coop & TvT
+EGVAR(cover_map,aoMarker) = "ao";  // AO marker
+EGVAR(cover_map,colour) = "Color4_FD_F";  // Colour of the covered area
 
 
 // Curator
-GVARMAIN(moduleCurator) = true;
+GVARMAIN(moduleCurator) = true;  // Coop
 
 
 // Grass cutter
-GVARMAIN(moduleGrassCutter) = true;
+GVARMAIN(moduleGrassCutter) = true;  // Coop & TvT
 
 
 // IED
-GVARMAIN(moduleIED) = true;
+GVARMAIN(moduleIED) = true;  // Coop
 
 
 // Intel
-GVARMAIN(moduleIntel) = true;
+GVARMAIN(moduleIntel) = true;  // Coop
 
 
 // Intro text
-GVARMAIN(moduleIntroText) = true;
-EGVAR(intro_text,title) = "TEST TITLE";
-EGVAR(intro_text,date) = "TEST DATE";
-EGVAR(intro_text,location) = "TEST LOCATION";
-EGVAR(intro_text,delay) = 20;
+GVARMAIN(moduleIntroText) = true;  // Coop & TvT
+EGVAR(intro_text,title) = "TEST TITLE";  // Title
+EGVAR(intro_text,date) = "TEST DATE";  // Date
+EGVAR(intro_text,location) = "TEST LOCATION";  // Location
+EGVAR(intro_text,delay) = 20;  // Delay after loading in
 
 
 // JIP
-GVARMAIN(moduleJIP) = true;
-EGVAR(jip,JIPTimer) = 3 MINUTES;
+GVARMAIN(moduleJIP) = true;  // Coop & TvT
+EGVAR(jip,JIPTimer) = 3 MINUTES;  // For how long the TP is available after joining the mission
 
 
 // Killcam
-GVARMAIN(moduleKillcam) = true;
+GVARMAIN(moduleKillcam) = true;  // Coop & TvT
 
 
 // Kill tracker
-GVARMAIN(moduleKillTracker) = true;
+GVARMAIN(moduleKillTracker) = true;  // Coop & TvT
 
 
 // LOS Tool
-GVARMAIN(moduleLOSTool) = true;
+GVARMAIN(moduleLOSTool) = true;  // Coop & TvT
 
 
 // Marker side
-GVARMAIN(moduleMarkerSide) = true;
-EGVAR(marker_side,markersBlufor) = ["mrk_blufor"];
-EGVAR(marker_side,markersRedfor) = ["mrk_redfor"];
+GVARMAIN(moduleMarkerSide) = true;  // TvT
+EGVAR(marker_side,markersBlufor) = ["mrk_blufor"];  // BLUFOR markers
+EGVAR(marker_side,markersRedfor) = ["mrk_redfor"];  // REDFOR markers
 
 
 // Mortar fire
-GVARMAIN(moduleMortar) = true;
+GVARMAIN(moduleMortar) = true;  // Coop
 
 
 // No damage ending
-GVARMAIN(moduleDisableDamage) = true;
+GVARMAIN(moduleDisableDamage) = true;  // Coop & TvT
 
 
 // ORBAT
-GVARMAIN(moduleOrbat) = true;
+GVARMAIN(moduleOrbat) = true;  // Coop & TvT
 
 
 // Reinsert
-GVARMAIN(moduleHALO) = true;
-GVARMAIN(moduleMRV) = true;
-GVARMAIN(moduleRP) = true;
-EGVAR(reinsert,RPTentObject) = "Land_TentA_F";
+GVARMAIN(moduleHALO) = true;  // Coop & TvT
+GVARMAIN(moduleMRV) = true;  // Coop & TvT
+GVARMAIN(moduleRP) = true;  // Coop & TvT
+EGVAR(reinsert,RPTentObject) = "Land_TentA_F";  // Object used as the rally point
 
 
 // Safety start
-GVARMAIN(moduleSafetyStart) = true;
+GVARMAIN(moduleSafetyStart) = true;  // Coop & TvT
 
 
 // Setup timer
-GVARMAIN(moduleSetupTimer) = false;
-EGVAR(setup_timer,markerBlufor) = "mrk_setupBlufor";
-EGVAR(setup_timer,timerBlufor) = 60;
-EGVAR(setup_timer,markerRedfor) = "mrk_setupRedfor";
-EGVAR(setup_timer,timerRedfor) = 90;
+GVARMAIN(moduleSetupTimer) = true;  // Coop & TvT
+EGVAR(setup_timer,markerBlufor) = "mrk_setupBlufor";  // Setup area for the BLUFOR side
+EGVAR(setup_timer,timerBlufor) = 60;  // Setup timer for the BLUFOR side
+EGVAR(setup_timer,markerRedfor) = "mrk_setupRedfor";  // Setup area for the REDFOR side
+EGVAR(setup_timer,timerRedfor) = 90;  // Setup timer for the REDFOR side
 
 
 // Scenario control
-GVARMAIN(moduleScenarioControl) = true;
-EGVAR(scenario_control,successRate) = 50;
+GVARMAIN(moduleScenarioControl) = true;  // Coop & TvT
+EGVAR(scenario_control,successRate) = 50;  // Percentage of the tasks that have to be completed
 
 
 // Snowfall
-GVARMAIN(moduleSnowfall) = false;
-EGVAR(snowfall,maxDensity) = 50;
+GVARMAIN(moduleSnowfall) = false;  // Coop & TvT
+EGVAR(snowfall,maxDensity) = 50;  // Intensity of the snowfall
 
 
 // Static line paradrop
-GVARMAIN(moduleStaticLine) = true;
+GVARMAIN(moduleStaticLine) = true;  // Coop & TvT
 
 
 // Supply drop
-GVARMAIN(moduleSupplyDrop) = true;
-EGVAR(supply_drop,supplyDropPlane) = "B_T_VTOL_01_vehicle_F";
-EGVAR(supply_drop,useFlare) = true;
+GVARMAIN(moduleSupplyDrop) = true;  // Coop
+EGVAR(supply_drop,supplyDropPlane) = "B_T_VTOL_01_vehicle_F";  // Plane or helicopter used for the supply drop
+EGVAR(supply_drop,useFlare) = true;  // Use flares to mark the crate instead of smokes (night ops)
 
 
 // Task control
-GVARMAIN(moduleTaskControl) = true;
+GVARMAIN(moduleTaskControl) = true;  // Coop
 
 
 // TFAR
-GVARMAIN(moduleTFAR) = true;
+GVARMAIN(moduleTFAR) = true;  // Coop & TvT
 
 
 // Time limit check
-GVARMAIN(moduleTimeLimitCheck) = true;
+GVARMAIN(moduleTimeLimitCheck) = true;  // Coop & TvT
 
 
 // Vehicle respawn
-GVARMAIN(moduleVehicleRespawn) = true;
+GVARMAIN(moduleVehicleRespawn) = true;  // Coop & TvT
 
 
 // Wave respawn
-GVARMAIN(moduleWaveRespawn) = false;
-EGVAR(respawn_wave,availableWaves) = 3;
+GVARMAIN(moduleWaveRespawn) = false;  // Coop
+EGVAR(respawn_wave,availableWaves) = 3;  // Number of the available respawn waves

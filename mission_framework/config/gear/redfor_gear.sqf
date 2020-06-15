@@ -1,23 +1,19 @@
 /*
-    Create a loadout in the ACE Arsenal then click 'Export'. Paste the exported array between the keywords
+    Create a loadout in the ACE Arsenal, click 'Export' and then paste the exported array.
 
-    Defining new roles:
-        case "newRole"
-            GEAR_START
-                [pasteExportedGearHere]
-            GEAR_END
+    Use selectRandom to randomise stuff.
+    Example:
 
+    case "SL" : {
+        _randomStuff = selectRandom ["stuff1_classname", "stuff2_classname"];
 
-    Use selectRandom to randomise stuff. Example:
-
-    case "SL"
-        GEAR_START
-            _randomStuff = selectRandom ["stuff1_classname", "stuff2_classname"];
-
-             _gear = [..., _randomStuff, ...]
-        GEAR_END
+        _gear = [
+            ...,
+            _randomStuff,
+            ...
+        ];
+    };
  */
-
 
 // SPETSNAZ 2035
 

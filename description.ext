@@ -5,24 +5,20 @@
 #include "mission_framework\config\description.hpp"
 __EXEC(MF_missionMaker = UID;)
 
-
 // Respawn settings
-respawn = "BASE";  // Respawn type ("NONE", "BASE")
-respawnDelay = 30;  // Respawn delay in seconds (this is overwritten by the framework when using the Wave respawn module)
+respawn = "BASE";  // Respawn type
+respawnDelay = 30;  // Respawn delay in seconds (this is overwritten by the framework)
 respawnVehicleDelay = 60;  // Vehicle respawn delay in seconds (use the Vehicle respawn module instead)
 respawnDialog = 0;  // Displays the respawn dialog
-respawnButton = 1;  // Enable/disable the respawn button (in the Esc menu)
-respawnOnStart = -1;  // See: https://community.bistudio.com/wiki/Description.ext#respawnOnStart
-//respawnTemplates[] = {};  // Pre-defined respawn templates
-
+respawnButton = 1;  // If the Respawn button is enabled in the Esc menu
+respawnOnStart = -1;  // Respawn script at mission start
 
 // Mission settings
 cba_settings_hasSettingsFile = 1;  // Enable CBA settings file
 disableChannels[] = {0, 2, 4, 5};  // Disable certain comms channels
 disabledAI = 1;  // Enable/disable AI in player slots
-enableDebugConsole[] = { UID };  // Enable the debug console for the mission maker + logged in admin or host
+enableDebugConsole[] = {UID};  // Enable the debug console for the mission maker + logged in admin or host
 enableTargetDebug = 1;  // Target debugging
-
 
 // Garbage collector settings
 corpseManagerMode = 1;
@@ -35,12 +31,10 @@ wreckLimit = 15;
 wreckRemovalMinTime = 600;
 wreckRemovalMaxTime = 900;
 
-
 // Tasks
 taskManagement_markers2D = 0;  // Use 2D markers
 taskManagement_markers3D = 0;  // Use 3D markers
 taskManagement_propagate = 0;  // Propagate shared tasks to subordinates
-
 
 // Debriefing config
 #include "mission_framework\core\main\CfgDebriefing.hpp"
@@ -51,15 +45,13 @@ taskManagement_propagate = 0;  // Propagate shared tasks to subordinates
 // Notifications config
 #include "mission_framework\core\main\CfgNotifications.hpp"
 
-// CBA Extended Event handlers
+// CBA Event handlers
 #include "mission_framework\core\main\CfgEventHandlers.hpp"
+
+// RscTitles
+#include "mission_framework\core\main\rscTitles.hpp.hpp"
 
 // VCOM functions
 #ifdef VCOMAI
     #include "mission_framework\core\vcom\CfgFunctions.hpp"
 #endif
-
-class rscTitles {
-    #include "mission_framework\core\ao_limit\RscAOLimit.hpp"
-    #include "mission_framework\core\setup_timer\RscSetupTimer.hpp"
-};

@@ -24,15 +24,15 @@ if !(hasInterface) exitWith {};
 _ao = [];
 
 if !(GVAR(aoMarkerAll) == "") then {
-    _ao set [count _ao, [sideLogic, GVAR(aoMarkerAll)]];
+    _ao pushBack [sideLogic, GVAR(aoMarkerAll)];
 };
 
 if !(GVAR(aoMarkerBlufor) == "") then {
-    _ao set [count _ao, [west, GVAR(aoMarkerBlufor)]];
+    _ao pushBack [sideLogic, GVAR(aoMarkerBlufor)];
 };
 
 if !(GVAR(aoMarkerRedfor) == "") then {
-    _ao set [count _ao, [east, GVAR(aoMarkerRedfor)]];
+    _ao pushBack [sideLogic, GVAR(aoMarkerRedfor)];
 };
 
 if (count _ao == 0) exitWith {
@@ -43,15 +43,15 @@ _markers = [];
 _allowedOutside = true;
 _vehicle = vehicle player;
 
-{
+_ao apply {
     if ((_x#0) == playerSide || (_x#0) == sideLogic) then {
-        _markers set [count _markers, (_x#1)];
+        _markers pushBack _x#1;
 
         if (_vehicle inArea (_x#1)) then {
             _allowedOutside = true;
         };
     };
-} forEach _ao;
+};
 
 if (count _markers == 0) exitWith {};
 
@@ -64,11 +64,11 @@ GVAR(aoCheck) = [{
     _allowedOutside = (GVAR(timerLand) < 0 && !_air) || (GVAR(timerAir) < 0 && _air);
     _outside = true;
 
-    {
+    _markers apply {
         if (_vehicle inArea _x) exitWith {
             _outside = false;
         };
-    } forEach _markers;
+    };
 
     _displayed = GETMVAR(GVAR(display),false);
     SETMVAR(GVAR(display),_outside);

@@ -33,14 +33,14 @@ if (GETVAR(player,EGVAR(player,isCO),false)) then {
 
         // Count the succeeded tasks
         _count = 0;
-        {
+        _taskList apply {
             private ["_state"];
 
             _state = _x call BFUNC(taskState);
             if (_state == "SUCCEEDED") then {
                 _count = _count + 1;
             };
-        } forEach _taskList;
+        };
 
         // Calculate the rate of the successful tasks
         _rate = _count / count _taskList;

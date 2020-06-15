@@ -39,7 +39,7 @@ addMissionEventHandler ["PlayerConnected", {
 
             _array set [0, _total + 1];
             _array set [1, _current + 1];
-            _array set [1, _tickets + 1];
+            _array set [2, _tickets + 1];
         };
 
         default {

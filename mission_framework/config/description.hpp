@@ -2,17 +2,17 @@
 #define UID "76561198066551781"  // Malbryn's UID
 
 // VCOM AI
-#define VCOMAI  // Comment out this line if VCOM is not used in the mission
+#define VCOMAI  // Comment out this line if you don't want to load VCOM AI
 
 // Mission parameters
 class Header {
-    gameType =  TDM;  // Game type (use Coop for PvE, TDM for TvT)
+    gameType =  TDM;  // Game type (use 'Coop' for PvE and 'TDM' for TvT)
     minPlayers =  1;  // Minimum number of players
     maxPlayers = 12;  // Maximum number of players
 };
 
 // Mission selection screen
-briefingName = "[CO-XX] Operation Name";  // Mission name on the mission selection screen where XX = max. player number (please keep this naming convention)
+briefingName = "[TVT-12] operation_name";  // Mission name on the mission selection screen (use [CO-XX] or [TVT-XX] where XX is the max. player number)
 overviewText = "mission_info";  // Mission info on the mission selection screen (e.g. mission assets, factions, time limit etc.)
 
 // Loading screen settings
