@@ -49,7 +49,7 @@ taskManagement_propagate = 0;  // Propagate shared tasks to subordinates
 #include "mission_framework\core\main\CfgEventHandlers.hpp"
 
 // RscTitles
-#include "mission_framework\core\main\rscTitles.hpp.hpp"
+#include "mission_framework\core\main\rscTitles.hpp"
 
 // VCOM functions
 #ifdef VCOMAI

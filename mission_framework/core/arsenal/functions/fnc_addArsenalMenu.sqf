@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Create ACE self-interaction menu for the game masters which opens the ACE Arsenal
+        Creates an ACE self-interaction menu for the game masters which opens the ACE Arsenal.
 
     Arguments:
         -
@@ -17,11 +17,11 @@
         void
 */
 
-private ["_menu"];
+if !(hasInterface) exitWith {};
 
 if !(IS_ADMIN_LOGGED || getPlayerUID player == GETPAVAR(GVARMAIN(missionMaker),"")) exitWith {};
 
-_menu = ['Open Arsenal', 'Open Arsenal', '', {
+private _menu = ['Open Arsenal', 'Open Arsenal', '', {
     [player, player, true] call AFUNC(arsenal,openBox);
 }, {true}] call AFUNC(interact_menu,createAction);
 

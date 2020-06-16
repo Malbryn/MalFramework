@@ -9,3 +9,6 @@ PREP_RECOMPILE_START;
 PREP_RECOMPILE_END;
 
 ADDON = true;
+
+// Global variables
+GVAR(jipAvailable) = true;

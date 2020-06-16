@@ -2,22 +2,30 @@
 
 /*
     Author:
-        AZCoder (originally by JW)
+        Malbryn
 
     Description:
-        Checks if the unit is inside
+        Sets a value of the given side in a TvT.
 
     Arguments:
-        0: OBJECT - Unit to check
+        0: SIDE - Side to change
+        1: SCALAR - Change of the total player number of the side
+        2: SCALAR - Change of the current player number of the side
+        3: SCALAR - Change of the respawn tickets of the side
 
     Example:
-        [player] call MF_snowfall_fnc_isInside
+        [east, 0, 1, 1] call MF_common_fnc_setSideValue
+        [west, -1, 0, -1] call MF_common_fnc_setSideValue
 
     Returns:
-        BOOLEAN
+        -
 */
 
+if !(isServer) exitWith {};
+
 params [["_side", sideUnknown], ["_changeTotal", 0], ["_changeCurrent", 0], ["_changeTickets", 0]];
+
+private _array = [];
 
 switch _side do {
     case west : {
@@ -43,6 +51,6 @@ switch _side do {
     };
 
     default {
-        MSG_2("WARNING","Set side: invalid side of unit: %1 (%2)",_unit,_side);
+        WARNING_1("Cannot set side value. Invalid player side: %1",_side);
     };
 };

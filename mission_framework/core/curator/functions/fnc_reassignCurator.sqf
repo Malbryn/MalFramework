@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Reassign the curator module
+        Reassigns the curator module
 
     Arguments:
         0: OBJECT - Player unit who has curator access
@@ -18,12 +18,11 @@
 */
 
 params ["_unit"];
-private ["_logic"];
 
-_logic = GETVAR(_unit,GVAR(curatorLogic),objNull);
+private _logic = GETVAR(_unit,GVAR(curatorLogic),objNull);
 
 if (isNull _logic) exitWith {
-    ERROR_2("Curator object does not exist!",_unit,_logic);
+    WARNING_2("Curator object does not exist!",_unit,_logic);
 
     [QGVARMAIN(systemMessage), ["ERROR", "Curator object does not exist!"], _unit] call CFUNC(targetEvent);
 };

@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 
 [QGVARMAIN(callMission), {
-    params ["_ending", "_isVictory", ["_side", nil]];
+    params ["_ending", "_isVictory", ["_side", sideUnknown]];
 
     [_ending, _isVictory, _side] call FUNC(callMission);
 }] call CFUNC(addEventHandler);

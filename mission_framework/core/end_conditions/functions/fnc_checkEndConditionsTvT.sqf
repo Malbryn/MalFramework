@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Check if any of the end conditions is true (in TvT missions)
+        Checks if any of the end conditions is true (in TvT missions)
 
     Arguments:
         -
@@ -17,20 +17,16 @@
         void
 */
 
-scopeName QGVAR(main);
-
-private ["_allPlayers", "_ended"];
-
 if !(isServer) exitWith {};
 
-_allPlayers = count allPlayers;
-_ended = false;
+scopeName QGVAR(main);
+
+private _allPlayers = count allPlayers;
+private _ended = false;
 
 // Time limit check
 if (GVARMAIN(moduleTimeLimit) && !_ended) then {
-    private ["_time"];
-
-    _time = CBA_missionTime;
+    private _time = CBA_missionTime;
     
     if (_time > GVAR(timeLimit)) then {
         switch (GVAR(favouredSide)) do {
@@ -59,25 +55,22 @@ if (GVARMAIN(moduleTimeLimit) && !_ended) then {
 
 // Player casualty check
 if (GVARMAIN(modulePlayerCasualties) && !_ended) then {
-    private ["_sideBlufor", "_sideRedfor", "_bluforDead", "_redforDead", "_bluforRatio", "_redforRatio"];
-
-
-    _sideBlufor = EGVAR(common,sideBlufor);
-    _sideRedfor = EGVAR(common,sideRedfor);
+    private _sideBlufor = EGVAR(common,sideBlufor);
+    private _sideRedfor = EGVAR(common,sideRedfor);
 
     _sideBlufor params ["_bluforTotal", "_bluforCurrent"];
     _sideRedfor params ["_redforTotal", "_redforCurrent"];
 
-    _bluforDead = _bluforTotal - _bluforCurrent;
-    _redforDead = _redforTotal - _redforCurrent;
+    private _bluforDead = _bluforTotal - _bluforCurrent;
+    private _redforDead = _redforTotal - _redforCurrent;
 
     if (_bluforTotal == 0 || _redforTotal == 0) exitWith {
         [QGVARMAIN(systemMessage), ["WARNING", "Casualty check: One of the sides has no players"]] call CFUNC(globalEvent);
         GVARMAIN(modulePlayerCasualties) = false;
     };
 
-    _bluforRatio = _bluforDead / (_bluforTotal * 0.01);
-    _redforRatio = _redforDead / (_redforTotal * 0.01);
+    private _bluforRatio = _bluforDead / (_bluforTotal * 0.01);
+    private _redforRatio = _redforDead / (_redforTotal * 0.01);
 
     if (_bluforRatio >= GVAR(bluforCasLimit)) then {
         [QGVARMAIN(callMission), ["PlayerCasLimitRedfor", true, east]] call CFUNC(localEvent);
@@ -93,13 +86,11 @@ if (GVARMAIN(modulePlayerCasualties) && !_ended) then {
 
 // Civilian casualty check
 if (GVARMAIN(moduleCivilianCasualties) && !_ended) then {
-    private ["_killedByBlufor", "_ratioBlufor", "_killedByRedfor", "_ratioRedfor"];
+    private _killedByBlufor = GVAR(civCasBlufor);
+    private _ratioBlufor = _killedByBlufor / (count GVAR(civs) * 0.01);
 
-    _killedByBlufor = GVAR(civCasBlufor);
-    _ratioBlufor = _killedByBlufor / (count GVAR(civs) * 0.01);
-
-    _killedByRedfor = GVAR(civCasRedfor);
-    _ratioRedfor = _killedByRedfor / (count GVAR(civs) * 0.01);
+    private _killedByRedfor = GVAR(civCasRedfor);
+    private _ratioRedfor = _killedByRedfor / (count GVAR(civs) * 0.01);
 
     if (_ratioBlufor >= GVAR(civilianCasLimit)) then {
         [QGVARMAIN(callMission), ["CivCasLimitRedfor", true, east]] call CFUNC(localEvent);

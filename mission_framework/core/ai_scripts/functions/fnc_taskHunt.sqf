@@ -5,7 +5,7 @@
         nkenny (modified by Malbryn)
 
     Description:
-        Slower, more deliberate tracking and attacking script, spawns flares to coordinate
+        Slower, more deliberate tracking and attacking script, spawns flares to coordinate.
 
     Arguments:
         0: GROUP or OBJECT - Group to perform this task
@@ -18,7 +18,7 @@
         BOOLEAN
 */
 
-params ["_group",["_range",500],["_cycle",60 + random 30]];
+params ["_group", ["_range", 500], ["_cycle", 60 + random 30]];
 
 if (!local _group) exitWith {};
 

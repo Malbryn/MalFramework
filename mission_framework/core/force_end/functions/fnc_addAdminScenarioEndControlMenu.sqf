@@ -46,7 +46,7 @@ if !(GVARMAIN(isTvT)) then {
 
 // Mission Terminated
 _menu = ['Terminate Mission', 'Terminate Mission', '', {
-    [QGVARMAIN(callMission), ["MissionTerminated", false]] call CFUNC(serverEvent);
+    [QGVARMAIN(callMission), ["MissionTerminated", false, playerSide]] call CFUNC(serverEvent);
 }, {true}] call AFUNC(interact_menu,createAction);
 
 

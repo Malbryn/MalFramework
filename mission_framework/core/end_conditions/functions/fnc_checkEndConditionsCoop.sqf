@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Check if any of the end conditions is true
+        Checks if any of the end conditions is true (in Coop missions)
 
     Arguments:
         -
@@ -17,20 +17,16 @@
         void
 */
 
-scopeName QGVAR(main);
-
-private ["_allPlayers", "_ended"];
-
 if !(isServer) exitWith {};
 
-_allPlayers = count allPlayers;
-_ended = false;
+scopeName QGVAR(main);
+
+private _allPlayers = count allPlayers;
+private _ended = false;
 
 // Time limit check
 if (GVARMAIN(moduleTimeLimit) && !_ended) then {
-    private ["_time"];
-
-    _time = CBA_missionTime;
+    private _time = CBA_missionTime;
     
     if (_time > GVAR(timeLimit)) then {
         [QGVARMAIN(callMission), ["TimeLimit", false]] call CFUNC(localEvent);
@@ -38,13 +34,10 @@ if (GVARMAIN(moduleTimeLimit) && !_ended) then {
     };
 };
 
-
 // Friendly casualty check
 if (GVARMAIN(modulePlayerCasualties) && _allPlayers != 0 && !_ended) then {
-    private ["_dead", "_ratio"];
-
-    _dead = {!alive _x} count allPlayers;
-    _ratio = _dead / (_allPlayers * 0.01);
+    private _dead = {!alive _x} count allPlayers;
+    private _ratio = _dead / (_allPlayers * 0.01);
 
     if (_ratio >= GVAR(playerCasLimit)) then {
         [QGVARMAIN(callMission), ["PlayerCasLimit", false]] call CFUNC(localEvent);
@@ -52,13 +45,10 @@ if (GVARMAIN(modulePlayerCasualties) && _allPlayers != 0 && !_ended) then {
     };
 };
 
-
 // Civilian casualty check
 if (GVARMAIN(moduleCivilianCasualties) && count GVAR(civs) != 0 && !_ended) then {
-    private ["_dead", "_ratio"];
-
-    _dead = GVAR(civCas);
-    _ratio = _dead / (count GVAR(civs) * 0.01);
+    private _dead = GVAR(civCas);
+    private _ratio = _dead / (count GVAR(civs) * 0.01);
 
     if (_ratio >= GVAR(civilianCasLimit)) then {
         [QGVARMAIN(callMission), ["CivCasLimit", false]] call CFUNC(localEvent);
@@ -66,13 +56,10 @@ if (GVARMAIN(moduleCivilianCasualties) && count GVAR(civs) != 0 && !_ended) then
     };
 };
 
-
 // Task check
 if (GVARMAIN(moduleTaskLimit) && !_ended) then {
-    private ["_taskList", "_count"];
-
-    _taskList = GVAR(tasks);
-    _count = 0;
+    private _taskList = GVAR(tasks);
+    private _count = 0;
 
     _taskList apply {
         _taskState = [_x] call BFUNC(taskState);
@@ -88,26 +75,21 @@ if (GVARMAIN(moduleTaskLimit) && !_ended) then {
     };
 };
 
-
 // Extraction check
 if (GVARMAIN(moduleExtraction) && !_ended) then {
-    private ["_taskList", "_taskCount", "_playerCount"];
-
     // Count the rate of the not successful tasks
-    _taskList = GVAR(tasks);
-    _taskCount = 0;
+    private _taskList = GVAR(tasks);
+    private _taskCount = 0;
 
     _taskList apply {
-        private ["_state"];
-
-        _state = _x call BFUNC(taskState);
+        private _state = _x call BFUNC(taskState);
 
         if (_state == "SUCCEEDED") then {
             _taskCount = _taskCount + 1;
         };
     };
 
-    _rate = _taskCount / count _taskList;
+    private _rate = _taskCount / count _taskList;
 
     // Count the players inside the extraction zone
     _playerCount = {

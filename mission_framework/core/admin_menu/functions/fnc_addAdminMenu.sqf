@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Create ACE self-interaction menu parent for the game masters
+        Creates the admin menu for the game masters.
 
     Arguments:
         -
@@ -17,9 +17,10 @@
         void
 */
 
-private ["_menu"];
+if !(hasInterface) exitWith {};
 
 if !(IS_ADMIN_LOGGED || getPlayerUID player == GETPAVAR(GVARMAIN(missionMaker),"")) exitWith {};
 
-_menu = ['Admin Menu', 'Admin Menu', '\a3\ui_f\data\GUI\Cfg\Hints\Commanding_ca.paa', {}, {!visibleMap}] call AFUNC(interact_menu,createAction);
+private _menu = ['Admin Menu', 'Admin Menu', '\a3\ui_f\data\GUI\Cfg\Hints\Commanding_ca.paa', {}, {!visibleMap}] call AFUNC(interact_menu,createAction);
+
 [player, 1, ["ACE_SelfActions"], _menu] call AFUNC(interact_menu,addActionToObject);
