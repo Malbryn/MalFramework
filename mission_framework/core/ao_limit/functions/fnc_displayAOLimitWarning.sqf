@@ -6,27 +6,27 @@
         Malbryn
 
     Description:
-        blank
+        Displays the AO limit warning screen fi the player leaves the AO.
 
     Arguments:
         -
 
     Example:
-        call MF_blank_fnc_blank
+        call MF_ao_limit_fnc_displayAOLimitWarning
 
     Returns:
         void
 */
 
-private ["_display", "_ctrlTitle", "_ctrlTitleBG", "_ctrlTime", "_endTime"];
+if !(hasInterface) exitWith {};
 
 disableSerialization;
 
-_display = _this#0;
-_ctrlTitle = _display displayCtrl 1001;
-_ctrlTitleBG = _display displayCtrl 1002;
-_ctrlTime = _display displayCtrl 1003;
-_endTime = serverTime + GETMVAR(GVAR(timeLeft),0);
+private _display = _this#0;
+private _ctrlTitle = _display displayCtrl 1001;
+private _ctrlTitleBG = _display displayCtrl 1002;
+private _ctrlTime = _display displayCtrl 1003;
+private _endTime = serverTime + GETMVAR(GVAR(timeLeft),0);
 
 GVAR(nextBeep) = _endTime - 10;
 
@@ -34,7 +34,6 @@ GVAR(nextBeep) = _endTime - 10;
 
 GVAR(displayAOLimitWarning) = [{
     _this#0 params ["_endTime", "_ctrlTime", "_display"];
-    private ["_timeLeft", "_colorSet", "_color"];
 
     _shouldDisplay = GETMVAR(GVAR(display),false);
 
@@ -43,8 +42,8 @@ GVAR(displayAOLimitWarning) = [{
         playSound "Beep_Target";
 	};
 
-    _timeLeft = _endTime - serverTime;
-    _colorSet = ["IGUI", "TEXT_RGB"];
+    private _timeLeft = _endTime - serverTime;
+    private _colorSet = ["IGUI", "TEXT_RGB"];
 
     if (_timeLeft <= 10) then {
         _colorSet = ["IGUI", "WARNING_RGB"];
@@ -54,7 +53,7 @@ GVAR(displayAOLimitWarning) = [{
         _colorSet = ["IGUI", "ERROR_RGB"];
     };
 
-    _color = _colorSet call BFUNC(displayColorGet);
+    private _color = _colorSet call BFUNC(displayColorGet);
     _ctrlTime ctrlSetTextColor _color;
 
     if (_timeLeft > 0) then {

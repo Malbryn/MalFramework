@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        -
+        Initialises the player sides in a TvT.
 
     Arguments:
         -
@@ -19,7 +19,9 @@
 
 if !(isServer) exitWith {};
 
-private ["_total", "_current", "_tickets"];
+private _total = 0;
+private _current = 0;
+private _tickets = 0;
 
 // BLUFOR
 _total = west countSide allUnits;
@@ -28,7 +30,6 @@ _tickets = GVARMAIN(respawnTicketsBlufor);
 
 GVAR(sideBlufor) = [_total, _current, _tickets];
 publicVariable QGVAR(sideBlufor);
-
 
 // REDFOR
 _total = east countSide allUnits;

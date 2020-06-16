@@ -2,7 +2,7 @@
 
 /*
     Author:
-        nkenny (modified by Malbryn)
+        nkenny
 
     Description:
         -

@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Add a "Credits" diary record to the players diary
+        Adds a "Credits" diary record to the player's diary.
 
     Arguments:
         -
@@ -17,18 +17,18 @@
         void
 */
 
-private ["_version", "_title", "_author", "_text"];
+if !(hasInterface) exitWith {};
 
 // Framework version
-_version = VERSION;
+private _version = VERSION;
 
 // Title of the mission
-_title = briefingName;
+private _title = briefingName;
 
 // Author
-_author = [missionConfigFile] call BFUNC(overviewAuthor);
+private _author = [missionConfigFile] call BFUNC(overviewAuthor);
 
-_text = format ["
+private _text = format ["
   <font color='#21749c' size='16' face='PuristaSemiBold'>%1</font><br/>
   <font size='14' face='PuristaMedium'>This mission was made</font> <font color='#21749c' size='14' face='PuristaSemiBold'>%2.</font><br/>
   <br/>
@@ -76,6 +76,7 @@ CREDITS:<br/>
  - ORBAT script by BlackHawk<br/>
  - Parachute script by Kex and cobra4v320<br/>
  - Server FPS notification script by NeilZar<br/>
+ - Setup timer script by Olsen<br/>
  - Snowfall script by AZCoder and JW<br/>
  - Vehicle respawn scripts by Fredrik Eriksson<br/>
 <br/>

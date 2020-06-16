@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Add a "Reassign curator" option to the Admin menu
+        Adds a "Reassign curator" option to the Admin menu.
 
     Arguments:
         -
@@ -17,12 +17,12 @@
         void
 */
 
-private ["_menu"];
+if !(hasInterface) exitWith {};
 
 if !(IS_ADMIN_LOGGED || getPlayerUID player == GETPAVAR(GVARMAIN(missionMaker),"")) exitWith {};
 
-_menu = ['Reassign Curator', 'Reassign Curator', '', {
-    [QGVARMAIN(reassignCurator), [player]] call CFUNC(serverEvent);
+private _menu = ['Reassign Curator', 'Reassign Curator', '', {
+    [QGVARMAIN(curatorReassigned), [player]] call CFUNC(serverEvent);
 }, {true}] call AFUNC(interact_menu,createAction);
 
 [player, 1, ["ACE_SelfActions", "Admin Menu"], _menu] call AFUNC(interact_menu,addActionToObject);

@@ -36,4 +36,4 @@ _menu = ["Teleport to squad", "Teleport to squad", "\a3\Ui_f\data\GUI\Cfg\Commun
         [player, 1, ["ACE_SelfActions", "Teleport to squad"]] call AFUNC(interact_menu,removeActionFromObject);
         ["Warning", ["JIP teleport is no longer available!"]] call BFUNC(showNotification);
     };
-}, [], GVAR(JIPTimer)] call CFUNC(waitAndExecute);
+}, [], GVAR(jipTimer)] call CFUNC(waitAndExecute);

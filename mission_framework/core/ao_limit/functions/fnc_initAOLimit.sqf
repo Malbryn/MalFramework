@@ -5,23 +5,24 @@
         Malbryn
 
     Description:
-        blank
+        Initialises the AO limit module.
 
     Arguments:
         -
 
     Example:
-        call MF_blank_fnc_blank
+        call MF_ao_limit_fnc_initAOLimit
 
     Returns:
         void
 */
 
-private ["_markers", "_allowedOutside", "_ao"];
-
 if !(hasInterface) exitWith {};
 
-_ao = [];
+private _ao = [];
+private _markers = [];
+private _allowedOutside = true;
+private _vehicle = vehicle player;
 
 if !(GVAR(aoMarkerAll) == "") then {
     _ao pushBack [sideLogic, GVAR(aoMarkerAll)];
@@ -36,12 +37,8 @@ if !(GVAR(aoMarkerRedfor) == "") then {
 };
 
 if (count _ao == 0) exitWith {
-    MSG("WARNING","AO limit module: No AO was defined in the config");
+    MSG("WARNING","(AO limit) No AO was defined in the config");
 };
-
-_markers = [];
-_allowedOutside = true;
-_vehicle = vehicle player;
 
 _ao apply {
     if ((_x#0) == playerSide || (_x#0) == sideLogic) then {
@@ -57,12 +54,11 @@ if (count _markers == 0) exitWith {};
 
 GVAR(aoCheck) = [{
     _this#0 params ["_markers"];
-    private ["_vehicle", "_air", "_allowedOutside", "_outside"];
 
-    _vehicle = vehicle player;
-    _air = _vehicle isKindOf "Air";
-    _allowedOutside = (GVAR(timerLand) < 0 && !_air) || (GVAR(timerAir) < 0 && _air);
-    _outside = true;
+    private _vehicle = vehicle player;
+    private _air = _vehicle isKindOf "Air";
+    private _allowedOutside = (GVAR(timerLand) < 0 && !_air) || (GVAR(timerAir) < 0 && _air);
+    private _outside = true;
 
     _markers apply {
         if (_vehicle inArea _x) exitWith {

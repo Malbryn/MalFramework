@@ -5,7 +5,7 @@
         BlackHawk, PIZZADOX (original A2 script by Karel Moricky)
 
     Description:
-        Draw the AO and cover the outside area
+        Covers the map area outside of the AO.
 
     Arguments:
         0: STRING - Name of AO marker
@@ -17,26 +17,26 @@
         void
 */
 
-_marker = GVAR(aoMarker);
+if !(hasInterface) exitWith {};
+
+private _marker = GVAR(aoMarker);
 
 // Check if the marker exists
 if (getMarkerType _marker == "") then {
-    MSG("WARNING","Map cover module: AO marker does not exist");
+    MSG("WARNING","(Map cover) AO marker does not exist");
 };
 
-private ["_sx", "_sy", "_p", "_px", "_py", "_a", "_sxo", "_syo", "_mainS", "_mainBS", "_zoomLevel", "_customColour", "_colours"];
-
-_sx = (getMarkerSize _marker)#0;
-_sy = (getMarkerSize _marker)#1;
-_p = getMarkerPos _marker;
-_px = _p#0;
-_py = _p#1;
-_a = markerDir _marker;
-_sxo = _sx;
-_syo = _sy;
-_mainS = 20000;
-_mainBS = 50;
-_zoomlevel = 0.4;
+private _sx = (getMarkerSize _marker)#0;
+private _sy = (getMarkerSize _marker)#1;
+private _p = getMarkerPos _marker;
+private _px = _p#0;
+private _py = _p#1;
+private _a = markerDir _marker;
+private _sxo = _sx;
+private _syo = _sy;
+private _mainS = 20000;
+private _mainBS = 50;
+private _zoomlevel = 0.4;
 
 _marker setMarkerAlphaLocal 0;
 
@@ -48,8 +48,8 @@ if ((_a > 0 && _a <= 90) || (_a > 180 && _a <= 270)) then {
     _sy = _temp;
 };
 
-_customColour = GVAR(colour);
-_colours = ["colorBlack", "colorBlack", _customColour, "colorGreen", _customColour, /**/"colorBlack"/**/, _customColour, _customColour];
+private _customColour = GVAR(colour);
+private _colours = ["colorBlack", "colorBlack", _customColour, "colorGreen", _customColour, /**/"colorBlack"/**/, _customColour, _customColour];
 
 {
     private ["_i", "_s", "_w", "_bw"];

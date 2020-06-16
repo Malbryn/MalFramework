@@ -5,22 +5,20 @@
         Starfox64
 
     Description:
-        Add an eventhandler which prevents players from shooting each other during the end mission screen
+        Adds an eventhandler that prevents players from shooting each other during the end mission screen
 
     Arguments:
         -
 
     Example:
-        call MF_disable_damage_fnc_disableDamage
+        call MF_disable_damage_fnc_eventFired
 
     Returns:
         void
 */
 
 GVAR(playerFired) = player addEventHandler ["Fired", {
-    private ["_p"];
-
-    _p = _this#6;
+    private _p = _this#6;
 
     deleteVehicle _p;
 

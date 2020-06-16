@@ -5,7 +5,7 @@
         nkenny (modified by Malbryn)
 
     Description:
-        Aggressive tracking and attacking script
+        Aggressive tracking and attacking script.
 
     Arguments:
         0: GROUP or OBJECT - Group to perform this task
@@ -17,6 +17,7 @@
     Returns:
         BOOLEAN
 */
+
 params ["_group",["_range",500],["_cycle",15]];
 
 if (!local _group) exitWith {};

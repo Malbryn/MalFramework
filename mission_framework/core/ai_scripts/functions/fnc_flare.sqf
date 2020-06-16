@@ -2,7 +2,7 @@
 
 /*
     Author:
-        nkenny (modified by Malbryn)
+        nkenny
 
     Description:
         -
@@ -18,7 +18,6 @@
 */
 
 params ["_group"];
-private ["_shootFlare"];
 
-_shootflare = "F_20mm_Red" createvehicle ((leader _group) ModelToWorld [0,0,200]);
+private _shootflare = "F_20mm_Red" createvehicle ((leader _group) ModelToWorld [0,0,200]);
 _shootflare setVelocity [0,0,-10];
