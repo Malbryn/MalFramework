@@ -3,17 +3,15 @@
 if (!GVARMAIN(moduleSupplyDrop) || GVARMAIN(isTvT)) exitWith {};
 
 if (hasInterface) then {
-    [QGVARMAIN(initFramework), {
-        call FUNC(addSupplyDropMenu);
-    }] call CFUNC(addEventHandler);
-
     [QGVARMAIN(transferSD), {
         call FUNC(addSupplyDropMenu);
     }] call CFUNC(addEventHandler);
+
+    call FUNC(addSupplyDropMenu);
 };
 
 if (isServer) then {
-    [QGVAR(dropSupply), {
+    [QGVAR(supplyDrop), {
         params ["_crate", "_dir", "_alt", "_playerPos"];
 
         [_crate, _dir, _alt, _playerPos] call FUNC(callSupplyDrop);

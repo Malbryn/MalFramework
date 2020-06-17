@@ -5,7 +5,7 @@
         AZCoder (originally by JW)
 
     Description:
-        Creates snowfall effect around the player
+        Creates a snowfall effect around the player.
 
     Arguments:
         -
@@ -16,6 +16,8 @@
     Returns:
         void
 */
+
+if !(hasInterface) exitWith {};
 
 setWind [0, -1, true];
 

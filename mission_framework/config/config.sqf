@@ -154,6 +154,7 @@ GVARMAIN(moduleHALO) = true;  // Coop & TvT
 GVARMAIN(moduleMRV) = true;  // Coop & TvT
 GVARMAIN(moduleRP) = true;  // Coop & TvT
 EGVAR(reinsert,RPTentObject) = "Land_TentA_F";  // Object used as the rally point
+EGVAR(reinsert,TPPoles) = [pole1];  // Teleport pole object(s)
 
 
 // Safety start

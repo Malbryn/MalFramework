@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Set up the player's radios
+        Sets up the player's radios.
 
     Arguments:
         -
@@ -20,15 +20,15 @@
 private ["_channels", "_srCh", "_lrCh"];
 
 if !(isMultiplayer) exitWith {
-	MSG("INFO","TFAR module does not work in single player");
+	MSG("INFO","(TFAR) The module does not work in single player");
 };
 
-_channels = GETVAR(player,GVAR(radioChannels),[]);
+private _channels = GETVAR(player,GVAR(radioChannels),[]);
 
 if (count _channels == 0) exitWith {};
 
-_srCh = _channels#0;
-_lrCh = _channels#1;
+private _srCh = _channels#0;
+private _lrCh = _channels#1;
 
 // Short range
 if (_srCh != -1) then {

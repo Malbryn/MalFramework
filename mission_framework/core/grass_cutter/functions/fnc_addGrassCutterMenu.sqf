@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Create an ACE self-interaction menu for the Grass cutter script
+        Creates an ACE self-interaction menu that can be used to cut the grass around the player.
 
     Arguments:
         -
@@ -17,9 +17,9 @@
         void
 */
 
-private ["_menu"];
+if !(hasInterface) exitWith {};
 
-_menu = ['Cut grass', 'Cut grass', '', {
+private _menu = ['Cut grass', 'Cut grass', '', {
     call FUNC(cutGrass);
 }, {!visibleMap}] call AFUNC(interact_menu,createAction);
 

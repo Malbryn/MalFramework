@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Display the remaining mission time if there's a time limit set
+        Displays the remaining mission time if there's a time limit set.
 
     Arguments:
         -
@@ -17,10 +17,10 @@
         void
 */
 
-private ["_time"];
+if !(hasInterface) exitWith {};
 
-_timeSeconds = ceil (EGVAR(end_conditions,timeLimit) - CBA_missionTime);
-_timeMinutes = ceil (_timeSeconds / 60);
+private _timeSeconds = ceil (EGVAR(end_conditions,timeLimit) - CBA_missionTime);
+private _timeMinutes = ceil (_timeSeconds / 60);
 
 switch true do {
     case (60 < _timeSeconds) : {

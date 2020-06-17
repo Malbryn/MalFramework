@@ -1,9 +1,9 @@
 #include "script_component.hpp"
 
 if (isServer && GVARMAIN(isTvT)) then {
-    call FUNC(initSides);
-    call FUNC(eventPlayerConnected);
-    call FUNC(eventPlayerDisconnected);
+    [QGVARMAIN(initFramework), {
+        call FUNC(eventHandleDisconnect);
+    }] call CFUNC(addEventHandler);
 
     [QGVAR(sideValueSet), {
         params ["_side", "_changeTotal", "_changeCurrent", "_changeTickets"];
@@ -12,6 +12,8 @@ if (isServer && GVARMAIN(isTvT)) then {
     }] call CFUNC(addEventHandler);
 };
 
-if (hasInterface && GVARMAIN(isTvT) && didJIP) then {
-    [QGVAR(sideValueSet), [playerSide, 1, 1, 0]] call CFUNC(localEvent);
+if (hasInterface && GVARMAIN(isTvT)) then {
+    [QGVARMAIN(initFramework), {
+        [QGVAR(sideValueSet), [playerSide, 1, 1, 0]] call CFUNC(serverEvent);
+    }] call CFUNC(addEventHandler);
 };

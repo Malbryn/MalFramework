@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Teleport the player to their squad's rally point
+        Teleports the player to their squad's rally point.
 
     Arguments:
         -
@@ -17,21 +17,19 @@
         void
 */
 
-private ["_id", "_notify", "_RPTent"];
-
 if !(hasInterface) exitWith {};
 
-_id = GETVAR((group player),GVAR(RPTent),nil);
+private _id = GETVAR((group player),GVAR(RPTent),nil);
 
 if (isNil "_id") exitWith {
     ["Warning", ["Your squad RP is not deployed at this time, please stand by"]] call BFUNC(showNotification);
 
-    _notify = ((units group player) select { GETVAR(_x,EGVAR(player,isSL),false) }) - [player];
+    private _notify = ((units group player) select { GETVAR(_x,EGVAR(player,isSL),false) }) - [player];
 
     [QGVARMAIN(notification_2), ["Info", "A squad member is waiting for the RP to be deployed"], _notify] call CFUNC(targetEvent);
 };
 
-_RPTent = objectFromNetId _id;
+private _RPTent = objectFromNetId _id;
 
 cutText ["You are being teleported to your squad's Rally Point", "BLACK OUT", 2, true];
 

@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Set the player's and server's view distance
+        Sets the view distance of the player or server.
 
     Arguments:
         -
@@ -18,9 +18,7 @@
 */
 
 if (hasInterface) then {
-    private ["_viewDistance"];
-
-    _viewDistance = GETVAR(player,GVAR(viewDistance),-1);
+    private _viewDistance = GETVAR(player,GVAR(viewDistance),-1);
 
     if (_viewDistance == -1) then {
         // Default view distance in config.sqf

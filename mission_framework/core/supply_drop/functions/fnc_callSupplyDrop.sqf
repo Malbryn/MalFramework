@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Spawn the resupply plane which then drops the supplies
+        Spawsn the resupply plane which then drops the supplies.
 
     Arguments:
         0: OBJECT - Pre-placed resupply box
@@ -23,9 +23,8 @@
 if !(isServer) exitWith {};
 
 params ["_crate", ["_dir", "north"], ["_alt", 500], "_playerPos"];
-private ["_type", "_startPos", "_endPos", "_signal", "_wp1"];
 
-_type = GVAR(supplyDropPlane);
+private _type = GVAR(supplyDropPlane);
 
 SETPMVAR(GVAR(dropAvailable),false);
 SETPVAR(_crate,GVAR(crateAvailable),false);
@@ -33,8 +32,8 @@ SETPVAR(_crate,GVAR(crateAvailable),false);
 // Declare some variables
 GVAR(plane) = objNull;
 GVAR(chute) = objNull;
-_startPos = [0, 0, 500];
-_endPos = _playerPos;
+private _startPos = [0, 0, 500];
+private _endPos = _playerPos;
 
 // Calculate the spawning and drop positions
 switch (_dir) do {
@@ -58,7 +57,7 @@ switch (_dir) do {
 
 // Spawn smoke
 if !(GVAR(useFlare)) then {
-    _signal = "SmokeShellBlue" createVehicle _playerPos;
+    private _signal = "SmokeShellBlue" createVehicle _playerPos;
 };
 
 // Create the plane
@@ -68,14 +67,13 @@ group GVAR(plane) setCombatMode "BLUE";
 group GVAR(plane) setBehaviour "CARELESS";
 
 // First waypoint
-_wp1 = group GVAR(plane) addWaypoint [_endPos, 20];
+private _wp1 = group GVAR(plane) addWaypoint [_endPos, 20];
 _wp1 setWaypointStatements ["true", QUOTE(GVAR(chute) = createVehicle [ARR_5('O_Parachute_02_F',getPos GVAR(plane),[],0,'FLY')];)];
 _wp1 setWaypointType "MOVE";
 
 
 [{alive GVAR(chute)}, {
     params ["_crate", "_signal", "_startPos"];
-    private ["_wp2"];
 
     // Teleport and attach the crate to the parachute
     _crate allowDamage false;
@@ -92,7 +90,7 @@ _wp1 setWaypointType "MOVE";
     _signal attachTo [_crate, [0, 0, 0.1]];
 
     // Second waypoint, delete plane
-    _wp2 = group GVAR(plane) addWaypoint [_startPos, 20];
+    private _wp2 = group GVAR(plane) addWaypoint [_startPos, 20];
     _wp2 setWaypointStatements ["true", QUOTE(crew GVAR(plane) apply {deleteVehicle _x}; deleteVehicle GVAR(plane); SETPMVAR(QGVAR(dropAvailable),true);)];
     _wp2 setWaypointType "MOVE";
 

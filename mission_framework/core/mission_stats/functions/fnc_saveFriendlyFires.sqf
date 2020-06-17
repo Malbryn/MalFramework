@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Convert and save the friendly fire incidents in a global variable
+        Saves the friendly fire incidents in a global variable.
 
     Arguments:
         -

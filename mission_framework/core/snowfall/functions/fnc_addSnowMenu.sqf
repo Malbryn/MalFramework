@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Creates ACE self-interaction menu to control the snowfall script
+        Creates an ACE self-interaction menu to control the snowfall script.
 
     Arguments:
         -
@@ -17,10 +17,11 @@
         void
 */
 
-private ["_menu"];
+if !(hasInterface) exitWith {};
 
 // Snow script category
-_menu = ['Snow Script', 'Snow Script', '\a3\ui_f\data\IGUI\Cfg\Cursors\unitHealer_ca.paa', {}, {!visibleMap}] call AFUNC(interact_menu,createAction);
+private _menu = ['Snow Script', 'Snow Script', '\a3\ui_f\data\IGUI\Cfg\Cursors\unitHealer_ca.paa', {}, {!visibleMap}] call AFUNC(interact_menu,createAction);
+
 [player, 1, ["ACE_SelfActions"], _menu] call AFUNC(interact_menu,addActionToObject);
 
 // Turn snow script on

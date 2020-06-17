@@ -5,7 +5,7 @@
         Fredrik Eriksson
 
     Description:
-        Init the vehicle respawn
+        Inits the vehicle respawn module.
 
     Arguments:
         0: OBJECT - Vehicle to be monitored for respawn
@@ -25,10 +25,8 @@
 
 if !(isServer) exitWith {};
 
-private ["_inventory", "_paint", "_parts", "_vehicleData"];
-
 params [
-    ["_vehicle", objNull, [objNull]],
+["_vehicle", objNull, [objNull]],
     ["_delay", 5, [0]],
     ["_init", {}, [{}]],
     ["_respawnLimit", -1, [0]],
@@ -37,14 +35,14 @@ params [
     ["_savePaint", true, [true]]
 ];
 
-_limitEnabled = false;
+private _limitEnabled = false;
 
 if (_respawnLimit != -1) then {
     SETPVAR(_vehicle,GVAR(respawnLimit),_respawnLimit);
     _limitEnabled = true;
 };
 
-_inventory = [];
+private _inventory = [];
 
 if (_loadout) then {
     _items = getItemCargo _vehicle;
@@ -54,8 +52,8 @@ if (_loadout) then {
     _inventory = [_items, _magazines, _weapons, _backpacks];
 };
 
-_paint = "";
-_parts = [];
+private _paint = "";
+private _parts = [];
 
 if (_savePaint) then {
     _customization = [_vehicle] call BFUNC(getVehicleCustomization);
@@ -63,7 +61,7 @@ if (_savePaint) then {
     _parts = _customization#1;
 };
 
-_vehicleData = [
+private _vehicleData = [
     _delay, _init, _loadout, vehicleVarName _vehicle, getPosASL _vehicle,
     getDir _vehicle, typeOf _vehicle, _inventory, _savePaint, _paint, _parts,
     _deleteWreck, _limitEnabled

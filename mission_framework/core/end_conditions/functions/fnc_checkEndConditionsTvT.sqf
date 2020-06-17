@@ -46,7 +46,7 @@ if (GVARMAIN(moduleTimeLimit) && !_ended) then {
             };
 
             default {
-                [QGVARMAIN(systemMessage), ["ERROR", "Time limit module: Wrong favoured side code"]] call CFUNC(globalEvent);
+                [QGVARMAIN(systemMessage), ["ERROR", "(End conditions) Wrong favoured side code in Time limit settings"]] call CFUNC(globalEvent);
                 _ended = true;
             };
         };
@@ -64,8 +64,13 @@ if (GVARMAIN(modulePlayerCasualties) && !_ended) then {
     private _bluforDead = _bluforTotal - _bluforCurrent;
     private _redforDead = _redforTotal - _redforCurrent;
 
-    if (_bluforTotal == 0 || _redforTotal == 0) exitWith {
-        [QGVARMAIN(systemMessage), ["WARNING", "Casualty check: One of the sides has no players"]] call CFUNC(globalEvent);
+    if (_bluforTotal == 0) exitWith {
+        [QGVARMAIN(systemMessage), ["WARNING", "(End conditions) Cannot calculate player casualty, the BLUFOR side has no players"]] call CFUNC(globalEvent);
+        GVARMAIN(modulePlayerCasualties) = false;
+    };
+
+    if (_redforTotal == 0) exitWith {
+        [QGVARMAIN(systemMessage), ["WARNING", "(End conditions) Cannot calculate player casualty, the REDFOR side has no players"]] call CFUNC(globalEvent);
         GVARMAIN(modulePlayerCasualties) = false;
     };
 

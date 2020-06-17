@@ -5,7 +5,7 @@
         Diwako (modified by Malbryn)
 
     Description:
-        Teleport the player back to their squad
+        Teleports the player back to their squad
 
     Arguments:
         -
@@ -17,10 +17,10 @@
         void
 */
 
-private ["_target", "_vicSpot"];
+if !(hasInterface) exitWith {};
 
-_target = call FUNC(chooseTarget);
-_vicSpot = [_target] call FUNC(checkEmptySeat);
+private _target = call FUNC(chooseTarget);
+private _vicSpot = [_target] call FUNC(checkEmptySeat);
 
 // Check the distance from the squad
 if (((call CFUNC(players)) - [player]) findif {_x distance2D player < 50} != -1) exitWith {

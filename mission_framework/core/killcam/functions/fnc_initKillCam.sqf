@@ -5,21 +5,21 @@
         Perfk & BlackHawk (modified by Malbryn)
 
     Description:
-        Renders a line between the killer and killed player. Use this if there's no respawns because the line is persistent!
+        Renders a line between the killer and killed player.
+        Use this if there's no respawns because the line is persistent!
 
     Arguments:
         0: OBJECT - The player object
         1: OBJECT - The killer AI or player
 
     Example:
-        [player, _killer] call MF_killcam_fnc_initKillcam
+        [player, bob] call MF_killcam_fnc_initKillcam
 
     Returns:
         void
 */
 
 params ["_unit", "_killer"];
-private ["_msg", "_pos", "_dir"];
 
 if (vehicle _killer != vehicle _unit && _killer != objNull) then {
     GVAR(unitPos) = ASLtoAGL eyePos _unit;
@@ -27,9 +27,9 @@ if (vehicle _killer != vehicle _unit && _killer != objNull) then {
     GVAR(killerPos) = ASLtoAGL eyePos _killer;
 };
 
-_cam = GETMVAR(BIS_EGSpectatorCamera_camera,objNull);
-_pos = [2000, 2000, 100];
-_dir = 0;
+private _cam = GETMVAR(BIS_EGSpectatorCamera_camera,objNull);
+private _pos = [2000, 2000, 100];
+private _dir = 0;
 
 _pos = [(getpos _unit)#0, (getpos _unit)#1, ((getposATL _unit)#2) + 1.2];
 _dir = getDir _unit;
@@ -66,8 +66,8 @@ GVAR(texture) = "a3\ui_f\data\gui\cfg\debriefing\enddeath_ca.paa";
 GVAR(drawHandle) = addMissionEventHandler ["Draw3D", {
     if (GETMVAR(GVAR(toggle),false)) then {
         if ((GVAR(killerPos)#0) != 0) then {
-            _u = GVAR(unitPos);
-            _k = GVAR(killerPos);
+            private _u = GVAR(unitPos);
+            private _k = GVAR(killerPos);
 
             if ((_u distance _k) < 2000) then {
                 drawLine3D [[(_u#0)+0.01, (_u#1)+0.01, (_u#2)+0.91], [(_k#0)+0.01, (_k#1)+0.01, (_k#2)-0.05], [1,0,0,1]];
@@ -87,5 +87,5 @@ GVAR(drawHandle) = addMissionEventHandler ["Draw3D", {
     };
 }];
 
-_msg = "<t size='0.5' color='#ffffff'>Press <t color='#FFA500'>K</t> to toggle indicator that shows the location where you were killed from.</t>";
+private _msg = "<t size='0.5' color='#ffffff'>Press <t color='#FFA500'>K</t> to toggle indicator that shows the location where you were killed from.</t>";
 [_msg, 0.55, 0.8, 20, 1] spawn BFUNC(dynamicText);

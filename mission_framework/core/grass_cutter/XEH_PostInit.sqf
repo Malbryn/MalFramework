@@ -3,7 +3,5 @@
 if !(GVARMAIN(moduleGrassCutter)) exitWith {};
 
 if (hasInterface) then {
-    [QGVARMAIN(initFramework), {
-        call FUNC(addGrassCutterMenu);
-    }] call CFUNC(addEventHandler);
+    call FUNC(addGrassCutterMenu);
 };

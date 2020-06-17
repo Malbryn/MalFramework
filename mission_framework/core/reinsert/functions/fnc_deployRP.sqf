@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Deploy the Rally Point for the squad
+        Deploys the Rally Point for the squad.
 
     Arguments:
         -
@@ -16,8 +16,6 @@
     Returns:
         void
 */
-
-private ["_unitArray"];
 
 if !(hasInterface) exitWith {};
 
@@ -52,16 +50,14 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
 
 // Display ACE progress bar
 [12, [], {
-    private ["_RPTent", "_id", "_unitArray"];
-
     // Create RP tent and save the netId so other people can remove it as well
-    _RPTent = createVehicle [GVAR(RPTentObject), player getPos [3, getDir player], [], 0, "CAN_COLLIDE"];
+    private _RPTent = createVehicle [GVAR(RPTentObject), player getPos [3, getDir player], [], 0, "CAN_COLLIDE"];
     _RPTent setDir (getDir player);
-    _id = netId _RPTent;
+    private _id = netId _RPTent;
     SETPVAR((group player),GVAR(RPTent),_id);
 
     // Send notification to the squad memebers
-    _unitArray = (units group player) - [player];
+    private _unitArray = (units group player) - [player];
     ["Info", ["You have deployed the RP"]] call BFUNC(showNotification);
     [QGVARMAIN(notification_2), ["Info", "Your SL has deployed the RP"], _unitArray] call CFUNC(targetEvent);
 

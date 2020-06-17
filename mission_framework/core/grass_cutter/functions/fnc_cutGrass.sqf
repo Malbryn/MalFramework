@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Cut the grass around the player
+        Cuts the grass around the player.
 
     Arguments:
         -
@@ -17,8 +17,10 @@
         void
 */
 
+if !(hasInterface) exitWith {};
+
 // Required tool
-_tool = "ACE_EntrenchingTool";
+private _tool = "ACE_EntrenchingTool";
 
 if !(_tool in (items player)) exitWith {
     ["You need an entreching tool<br/>to perform this action", 2, ace_player, 12] call AFUNC(common,displayTextStructured);
@@ -29,7 +31,7 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
 
 // ACE progress bar
 [12, [], {
-    _grassCutter = createVehicle ["Land_ClutterCutter_medium_F", position player, [], 0, "CAN_COLLIDE"];
+    private _grassCutter = createVehicle ["Land_ClutterCutter_medium_F", position player, [], 0, "CAN_COLLIDE"];
 }, {
     // Stop the animation if the progress bar was cancelled
     player switchMove "";

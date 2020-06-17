@@ -4,7 +4,6 @@ if (!GVARMAIN(moduleWaveRespawn) || GVARMAIN(isTvT)) exitWith {};
 
 if (hasInterface) then {
     [QGVARMAIN(initFramework), {
-        call FUNC(addCallRespawnMenu);
         setPlayerRespawnTime 999999;
     }] call CFUNC(addEventHandler);
 
@@ -15,4 +14,6 @@ if (hasInterface) then {
     [QGVARMAIN(transferWR), {
         call FUNC(addCallRespawnMenu);
     }] call CFUNC(addEventHandler);
+
+    call FUNC(addCallRespawnMenu);
 };

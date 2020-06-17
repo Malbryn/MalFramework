@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Save the mission time in a global variable
+        Saves the mission time in a global variable.
 
     Arguments:
         -
@@ -17,11 +17,9 @@
         void
 */
 
-private ["_time", "_timeLimit", "_text"];
-
-_time = [CBA_missionTime] call BFUNC(secondsToString);
-_timeLimit = [EGVAR(end_conditions,timeLimit)] call BFUNC(secondsToString);
-_text = "";
+private _time = [CBA_missionTime] call BFUNC(secondsToString);
+private _timeLimit = [EGVAR(end_conditions,timeLimit)] call BFUNC(secondsToString);
+private _text = "";
 
 if (GVARMAIN(moduleTimeLimit)) then {
     _text = format ["MISSION TIME:<br/>%1 out of %2", _time, _timeLimit];

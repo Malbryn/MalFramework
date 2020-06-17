@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Respawn the dead players
+        Respawn the dead players.
 
     Arguments:
         -
@@ -16,6 +16,8 @@
     Returns:
         void
 */
+
+if !(hasInterface) exitWith {};
 
 // Check if the respawn tickets are enabled
 if (GETVAR(player,EGVAR(respawn_tickets,amount),-1) != 0) then {

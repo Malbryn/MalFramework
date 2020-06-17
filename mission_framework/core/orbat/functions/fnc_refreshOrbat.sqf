@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Refresh the ORBAT diary record
+        Refreshes the ORBAT diary record.
 
     Arguments:
         -
@@ -16,6 +16,8 @@
     Returns:
         void
 */
+
+if !(hasInterface) exitWith {};
 
 player removeDiarySubject "GearIndex";
 [] spawn FUNC(initOrbat);

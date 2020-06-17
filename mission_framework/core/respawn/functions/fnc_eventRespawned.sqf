@@ -5,17 +5,19 @@
         Malbryn
 
     Description:
-        Eventhandler for when the player respawns
+        Adds an event handler that fires when the player respawns.
 
     Arguments:
         -
 
     Example:
-        call MF_respawn_fnc_playerRespawned
+        call MF_respawn_fnc_eventRespawned
 
     Returns:
         void
 */
+
+if !(hasInterface) exitWith {};
 
 params ["_unit", "_corpse"];
 
@@ -42,7 +44,7 @@ cutText ["", "BLACK FADED", 5, true];
     ["Terminate"] call BFUNC(EGSpectator);
 
     // Load the gear
-    _loadout = GETVAR(_unit,EGVAR(gear,currentLoadout),"");
+    private _loadout = GETVAR(_unit,EGVAR(gear,currentLoadout),"");
     [_unit, _loadout] call EFUNC(gear,setGear);
 
     // Set radios

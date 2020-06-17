@@ -2,4 +2,6 @@
 
 if !(GVARMAIN(moduleMarkerSide)) exitWith {};
 
-call FUNC(setMarkerSide);
+if (hasInterface) then {
+    call FUNC(setMarkerSide);
+};

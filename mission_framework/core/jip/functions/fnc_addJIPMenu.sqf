@@ -17,14 +17,16 @@
         void
 */
 
-params ["_menu"];
+if !(hasInterface && didJIP) exitWith {};
 
-if !(didJIP) exitWith {};
+// Delay the notification beacuse of the loading screen
+[{
+    ["JipTeleport"] call BFUNC(showNotification);
+}, [], 20] call CFUNC(waitAndExecute);
 
-["JipTeleport"] call BFUNC(showNotification);
 SETVAR(player,GVAR(spawnPos),getPos player);
 
-_menu = ["Teleport to squad", "Teleport to squad", "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\transport_ca.paa", {
+private _menu = ["Teleport to squad", "Teleport to squad", "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\transport_ca.paa", {
     call FUNC(tpPlayer);
 }, {!visibleMap && (player distance2D GETVAR(player,GVAR(spawnPos),0) < 200)}] call AFUNC(interact_menu,createAction);
 

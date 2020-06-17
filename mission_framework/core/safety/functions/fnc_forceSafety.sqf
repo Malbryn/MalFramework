@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Put the player's weapon away at mission start
+        Puts the player's weapon away.
 
     Arguments:
         -
@@ -16,5 +16,7 @@
     Returns:
         void
 */
+
+if !(hasInterface) exitWith {};
 
 player action ["SWITCHWEAPON", player, player, -1];

@@ -5,7 +5,7 @@
         Kex (based on cobra4v320's AI HALO Jump script)
 
     Description:
-        Add a parachute to the unit then delete it once the unit is on the ground
+        Adds a parachute to the unit then deletes it once the unit is on the ground.
 
     Arguments:
         0: OBJECT - Unit that performs the HALO drop
@@ -19,9 +19,7 @@
 
 params ["_unit"];
 
-private ["_backpackClass"];
-
-_backpackClass = backpack _unit;
+private _backpackClass = backpack _unit;
 
 // If the unit already has a chute
 if (backpack _unit != "" and {getText (configfile >> "CfgVehicles" >> backpack _unit >> "backpackSimulation") isEqualTo "ParachuteSteerable"}) then {
@@ -29,16 +27,14 @@ if (backpack _unit != "" and {getText (configfile >> "CfgVehicles" >> backpack _
 };
 
 if (_backpackClass != "") then {
-    private ["_container", "_weaponCargo", "_magazineCargo", "_itemCargo", "_packHolder"];
-
-    _container = backpackContainer _unit;
-    _weaponCargo = getWeaponCargo _container;
-    _magazineCargo = getMagazineCargo _container;
-    _itemCargo = getItemCargo _container;
+    private _container = backpackContainer _unit;
+    private _weaponCargo = getWeaponCargo _container;
+    private _magazineCargo = getMagazineCargo _container;
+    private _itemCargo = getItemCargo _container;
 
     removeBackpack _unit;
     _unit addBackpack "b_parachute";
-    _packHolder = createVehicle ["groundWeaponHolder", [0,0,0], [], 0, "can_collide"];
+    private _packHolder = createVehicle ["groundWeaponHolder", [0,0,0], [], 0, "can_collide"];
     _packHolder addBackpackCargoGlobal [_backpackClass, 1];
 
     [{animationState (_this#1) == "HaloFreeFall_non" || !(alive (_this#1))}, {
@@ -67,9 +63,7 @@ if (_backpackClass != "") then {
             }, [_packHolder, _unit, _backpackClass, _container, _weaponCargo, _magazineCargo, _itemCargo]] call CFUNC(waitUntilAndExecute);
         }, [_packHolder, _unit, _backpackClass, _container, _weaponCargo, _magazineCargo, _itemCargo]] call CFUNC(waitUntilAndExecute);
     }, [_packHolder, _unit, _backpackClass, _container, _weaponCargo, _magazineCargo, _itemCargo]] call CFUNC(waitUntilAndExecute);
-
 } else {
-
     [{isTouchingGround _unit || (getPos _unit)#2 < 1 || (!alive _unit)}, {
         params ["_unit"];
 

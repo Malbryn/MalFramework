@@ -10,6 +10,7 @@ PREP_RECOMPILE_END;
 
 ADDON = true;
 
+// Global variables
 GVAR(telemetryEnabled) = true;
 //GVAR(observerHeight) = 1.8;
 GVAR(targetMinHeight) = 1.0;
