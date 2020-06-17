@@ -11,7 +11,7 @@
         0: OBJECT - Unit that performs the HALO drop
 
     Example:
-        [player] call MF_reinsert_fnc_addParachute
+        [player] call MF_reinsertion_fnc_addParachute
 
     Returns:
         void

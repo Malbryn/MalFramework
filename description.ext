@@ -53,5 +53,7 @@ taskManagement_propagate = 0;  // Propagate shared tasks to subordinates
 
 // VCOM functions
 #ifdef VCOMAI
-    #include "mission_framework\core\vcom\CfgFunctions.hpp"
+    class CfgFunctions {
+        #include "mission_framework\core\vcom\CfgFunctions.hpp"
+    };
 #endif

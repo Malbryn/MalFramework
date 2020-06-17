@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_reinsert_fnc_deployRP
+        call MF_reinsertion_fnc_deployRP
 
     Returns:
         void

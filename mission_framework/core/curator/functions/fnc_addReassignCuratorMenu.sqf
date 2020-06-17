@@ -22,7 +22,7 @@ if !(hasInterface) exitWith {};
 if !(IS_ADMIN_LOGGED || getPlayerUID player == GETPAVAR(GVARMAIN(missionMaker),"")) exitWith {};
 
 private _menu = ['Reassign Curator', 'Reassign Curator', '', {
-    [QGVARMAIN(curatorReassigned), [player]] call CFUNC(serverEvent);
+    [QGVAR(curatorReassigned), [player]] call CFUNC(serverEvent);
 }, {true}] call AFUNC(interact_menu,createAction);
 
 [player, 1, ["ACE_SelfActions", "Admin Menu"], _menu] call AFUNC(interact_menu,addActionToObject);

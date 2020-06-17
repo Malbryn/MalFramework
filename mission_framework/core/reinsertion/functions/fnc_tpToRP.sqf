@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_reinsert_fnc_tpToRP
+        call MF_reinsertion_fnc_tpToRP
 
     Returns:
         void

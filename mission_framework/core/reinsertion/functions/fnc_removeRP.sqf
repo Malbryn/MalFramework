@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_reinsert_fnc_removeRP
+        call MF_reinsertion_fnc_removeRP
 
     Returns:
         void
