@@ -6,7 +6,6 @@
     [_ending, _isVictory, _side] call FUNC(callMission);
 }] call CFUNC(addEventHandler);
 
-
 [QGVARMAIN(missionEnd), {
     params ["_ending", "_isVictory", ["_side", sideUnknown]];
 

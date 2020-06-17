@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Create ACE self-interaction menu which adds the ability of controlling task states
+        Creates an ACE self-interaction menu which adds the ability of controlling task states.
 
     Arguments:
         -
@@ -17,20 +17,21 @@
         void
 */
 
-private ["_menu", "_taskList", "_task", "_taskName"];
+if !(hasInterface) exitWith {};
 
 if !(IS_ADMIN_LOGGED || getPlayerUID player == GETPAVAR(GVARMAIN(missionMaker),"")) exitWith {};
 
 // Put every task into an array
-_taskList = player call BFUNC(tasksUnit);
+private _taskList = player call BFUNC(tasksUnit);
 
 // Create the Tasks category
-_menu = ['Tasks', 'Tasks', '', {}, {true}] call AFUNC(interact_menu,createAction);
+private _menu = ['Tasks', 'Tasks', '', {}, {true}] call AFUNC(interact_menu,createAction);
+
 [player, 1, ["ACE_SelfActions", "Admin Menu"], _menu] call AFUNC(interact_menu,addActionToObject);
 
 // Iterate the tasks and add each task to the Tasks category
-_task = [];
-_taskName = "";
+private _task = [];
+private _taskName = "";
 
 _taskList apply {
     // Create a task sub-menu under the Tasks main category

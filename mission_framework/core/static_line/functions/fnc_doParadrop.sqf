@@ -5,25 +5,30 @@
         Malbryn
 
     Description:
-        blank
+        Kicks the infantry out of a plane and opens their parachutes simulating a static line paradrop.
 
     Arguments:
         -
 
     Example:
-        [plane1] spawn MF_static_line_fnc_doParadrop
+        [plane1] call MF_static_line_fnc_doParadrop
 
     Returns:
         void
 */
 
-params ["_plane"];
-private ["_cargoList"];
+if !(hasInterface) exitWith {};
 
-_cargoList = (crew _plane) select {(assignedVehicleRole _x)#0 isEqualTo "cargo"};
+params ["_plane"];
+
+private _cargoList = (crew _plane) select {(assignedVehicleRole _x)#0 isEqualTo "cargo"};
 
 {
     [{  
-        _this action ["GetOut", (vehicle _this)];
+        _this action ["Eject", (vehicle _this)];
+        
+        [{
+            _this action ["OpenParachute", _this];
+        }, _this, _forEachIndex + 1] call CFUNC(waitAndExecute);
     }, _x, _forEachIndex + .2] call CFUNC(waitAndExecute);
 } forEach _cargoList;

@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Set the player's team colour
+        Sets the player's team colour.
 
     Arguments:
         -
@@ -17,9 +17,7 @@
         void
 */
 
-private ["_teamColour"];
-
-_teamColour = GETVAR(player,GVAR(teamColour),"MAIN");
+private _teamColour = GETVAR(player,GVAR(teamColour),"MAIN");
 
 if (_teamColour != "MAIN") then {
     player assignTeam _teamColour;

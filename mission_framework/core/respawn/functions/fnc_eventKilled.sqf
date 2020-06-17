@@ -5,17 +5,19 @@
         Malbryn
 
     Description:
-        Eventhandler for when the player dies
+        Adds an event handler that fires when the player dies.
 
     Arguments:
         -
 
     Example:
-        call MF_respawn_fnc_playerKilled
+        call MF_respawn_fnc_eventKilled
 
     Returns:
         void
 */
+
+if !(hasInterface) exitWith {};
 
 params ["_unit", "_killer", "_instigator", "_useEffects"];
 
@@ -23,8 +25,8 @@ setPlayerRespawnTime 999999;
 
 // Friendly fire
 if (side _instigator == playerSide) then {
-    _nameKiller = name _instigator;
-    _nameKilled = name player;
+    private _nameKiller = name _instigator;
+    private _nameKilled = name player;
 
     [QEGVAR(friendly_fire,logFF), [_nameKilled, _nameKiller]] call CFUNC(globalEvent);
 };
@@ -33,7 +35,7 @@ if (side _instigator == playerSide) then {
 if (GVARMAIN(isTvT)) then {
     switch playerSide do {
         case west : {
-            _side = EGVAR(common,sideBlufor);
+            private _side = EGVAR(common,sideBlufor);
 
             if (0 < _side#2) then {
                 [QEGVAR(common,sideValueSet), [playerSide, 0, -1, -1]] call CFUNC(serverEvent);
@@ -43,7 +45,7 @@ if (GVARMAIN(isTvT)) then {
         };
 
         case east : {
-            _side = EGVAR(common,sideRedfor);
+            private _side = EGVAR(common,sideRedfor);
 
             if (0 < _side#2) then {
                 [QEGVAR(common,sideValueSet), [playerSide, 0, -1, -1]] call CFUNC(serverEvent);
@@ -53,7 +55,7 @@ if (GVARMAIN(isTvT)) then {
         };
 
         default {
-            MSG_1("ERROR","Side ticket: invlaid side of player (%1)",playerSide);
+            MSG_1("ERROR","(Side tickets) Invalid side of player (%1)",playerSide);
         };
     };
 };
@@ -95,10 +97,8 @@ if (GVARMAIN(isTvT)) then {
 
             // SL module transfer
             if (GETVAR(player,EGVAR(player,isSL),false) && GVARMAIN(moduleRP)) then {
-                private ["_partGroup", "_target"];
-
-                _partGroup = (units group player) - [player];
-                _target = objNull;
+                private _partGroup = (units group player) - [player];
+                private _target = objNull;
 
                 // Check if empty
                 if (count _partGroup == 0) exitWith {};
@@ -114,10 +114,8 @@ if (GVARMAIN(isTvT)) then {
 
             // CO modules transfer
             if (GETVAR(player,EGVAR(player,isCO),false) && (GVARMAIN(moduleSupplyDrop) || GVARMAIN(moduleScenarioControl))) then {
-                private ["_partGroup", "_target"];
-
-                _partGroup = (units group player) - [player];
-                _target = objNull;
+                private _partGroup = (units group player) - [player];
+                private _target = objNull;
 
                 // Check if empty
                 if (count _partGroup == 0) exitWith {};
@@ -158,10 +156,8 @@ if (GVARMAIN(isTvT)) then {
 
         // Transfer respawn wave module
         if (GETVAR(player,EGVAR(player,isCO),false) && GVARMAIN(moduleWaveRespawn)) then {
-            private ["_partGroup", "_target"];
-
-            _partGroup = (units group player) - [player];
-            _target = objNull;
+            private _partGroup = (units group player) - [player];
+            private _target = objNull;
 
             // Check if empty
             if (count _partGroup == 0) exitWith {};

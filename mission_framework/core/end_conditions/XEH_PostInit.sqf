@@ -2,26 +2,18 @@
 
 if (isServer) then {
     // Terminate the end condition checking loop if there's no condition defined
-    if !(GVARMAIN(moduleTimeLimit) || GVARMAIN(modulePlayerCasualties) || GVARMAIN(moduleTaskLimit) || GVARMAIN(moduleExtraction) || GVARMAIN(moduleCivilianCasualties)) exitWith {};
+    if !(GVARMAIN(moduleTimeLimit) || GVARMAIN(modulePlayerCasualties) || GVARMAIN(moduleTaskLimit) ||
+    GVARMAIN(moduleExtraction) || GVARMAIN(moduleCivilianCasualties)) exitWith {};
 
     [QGVARMAIN(initFramework), {
+        call FUNC(registerCivilians);
+
         // Check the tasks array
         if ((GVARMAIN(moduleTaskLimit) && (count GVAR(tasks) == 0)) ||
         (GVARMAIN(moduleExtraction) && (count GVAR(tasks) == 0))) then {
-            [QGVARMAIN(systemMessage), ["WARNING", "The task array is empty. The end conditions will not work properly! Add your tasks to the tasks array."]] call CFUNC(globalEvent);
+            [QGVARMAIN(systemMessage), ["WARNING", "(End conditions) The task array is empty. Add the tasks to the tasks array."]] call CFUNC(globalEvent);
             GVARMAIN(moduleTaskLimit) = false;
             GVARMAIN(moduleExtraction) = false;
-        };
-
-        // Register the civilians
-        if (GVARMAIN(moduleCivilianCasualties)) then {
-            GVAR(civs) = [];
-
-            allUnits apply {
-                if ((side _x) == civilian) then {
-                    PUSH(GVAR(civs),_x);
-                };
-            };
         };
 
         // Add per frame handler

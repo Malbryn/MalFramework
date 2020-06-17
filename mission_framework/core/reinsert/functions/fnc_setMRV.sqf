@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Set a vehicle as a Mobile Respawn Vehicle
+        Sets a vehicle as a Mobile Respawn Vehicle.
 
     Arguments:
         0: OBJECT - Vehicle that should become a MRV

@@ -5,7 +5,7 @@
         Fredrik Eriksson
 
     Description:
-        Vehicle respawn status monitoring
+        Vehicle respawn status monitoring.
 
     Arguments:
         -
@@ -22,8 +22,6 @@ if !(isServer) exitWith {};
 {
     if !(alive (_x#0)) then {
         _x spawn {
-            private ["_newVehicle", "_respawnCount", "_respawnLimit"];
-
             params [
                 ["_vehicle", objNull, [objNull]],
                 ["_vehicleData", [], [[]]]
@@ -45,8 +43,8 @@ if !(isServer) exitWith {};
                 "_limitEnabled"
             ];
 
-            _respawnCount = GETVAR(_vehicle,GVAR(respawnCount),0);
-            _respawnLimit = GETVAR(_vehicle,GVAR(respawnLimit),0);
+            private _respawnCount = GETVAR(_vehicle,GVAR(respawnCount),0);
+            private _respawnLimit = GETVAR(_vehicle,GVAR(respawnLimit),0);
         
             if (_respawnCount >= _respawnLimit || {GETVAR(_vehicle,GVAR(respawnStop),false)}) exitWith {};
 
@@ -60,7 +58,7 @@ if !(isServer) exitWith {};
 
             uiSleep (_delay + 0.1);
 
-            _newVehicle = _type createVehicle ASLToAGL [0, 0, 100];
+            private _newVehicle = _type createVehicle ASLToAGL [0, 0, 100];
             _newVehicle setPosASL _position;
             _newVehicle setDir _direction;
 

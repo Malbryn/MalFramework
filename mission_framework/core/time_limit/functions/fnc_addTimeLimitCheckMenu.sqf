@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Add an ACE interaction menu to the player to check the remaining mission time
+        Adds an ACE interaction menu to the player that allows the player to check the ramaining mission time.
 
     Arguments:
         -
@@ -17,9 +17,9 @@
         void
 */
 
-private ["_menu"];
+if !(hasInterface) exitWith {};
 
-_menu = ['Check remaining time', 'Check remaining time', '\a3\ui_f\data\GUI\Rsc\RscDisplayArsenal\watch_ca.paa', {
+private _menu = ['Check remaining time', 'Check remaining time', '\a3\ui_f\data\GUI\Rsc\RscDisplayArsenal\watch_ca.paa', {
     call FUNC(checkTimeLimit);
 }, {!visibleMap}] call AFUNC(interact_menu,createAction);
 

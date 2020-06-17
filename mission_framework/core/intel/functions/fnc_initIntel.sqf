@@ -5,7 +5,7 @@
         Kex (modified by Malbryn)
 
     Description:
-        Add a "Search for intel" option to an intel object
+        Adds a "Search for intel" option to an intel object.
 
     Arguments:
         0: OBJECT - Intel object
@@ -18,18 +18,17 @@
         void
 */
 
-params ["_object", "_id"];
-private ["_intel", "_title", "_text", "_duration", "_delete"];
+if !(hasInterface) exitWith {};
 
-if (!hasInterface) exitWith {};
+params ["_object", "_id"];
 
 #include "..\..\..\config\intel\intel.sqf"
 
-_intel = GVAR(intelList) select _id;
-_title = _intel#0;
-_text = _intel#1;
-_duration = _intel#2;
-_delete = _intel#3;
+private _intel = GVAR(intelList) select _id;
+private _title = _intel#0;
+private _text = _intel#1;
+private _duration = _intel#2;
+private _delete = _intel#3;
 
 [
     _object,

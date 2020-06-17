@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Create ACE self-interaction menu for the the CO to be able to call in supply drops
+        Creates a ACE self-interaction menu for the the CO to be able to call in supply drops.
 
     Arguments:
         -
@@ -26,14 +26,13 @@ if (count GVAR(supplyCrates) == 0) exitWith {
 };
 
 if (GETVAR(player,EGVAR(player,isCO),false)) then {
-    private ["_menu", "_crate", "_crateName"];
-
     // Supply drop category
-    _menu = ['Supply drop', 'Supply drop', '\a3\ui_f\data\Map\VehicleIcons\iconParachute_ca.paa', {}, {!visibleMap}] call AFUNC(interact_menu,createAction);
+    private _menu = ['Supply drop', 'Supply drop', '\a3\ui_f\data\Map\VehicleIcons\iconParachute_ca.paa', {}, {!visibleMap}] call AFUNC(interact_menu,createAction);
+    
     [player, 1, ["ACE_SelfActions"], _menu] call AFUNC(interact_menu,addActionToObject);
 
-    _crate = [];
-    _crateName = "";
+    private _crate = [];
+    private _crateName = "";
 
     GVAR(supplyCrates) apply {
         // Create a supply drop sub-menu under the Supply drop main category
@@ -52,7 +51,7 @@ if (GETVAR(player,EGVAR(player,isCO),false)) then {
                     ["Warning", ["Supply drop is on cooldown. Try again in a few minutes."]] call BFUNC(showNotification);
                 };
 
-                [QGVAR(dropSupply), [(_this#2)#0, "north", 500, getPos player]] call CFUNC(serverEvent);
+                [QGVAR(supplyDrop), [(_this#2)#0, "north", 500, getPos player]] call CFUNC(serverEvent);
                 systemChat "CROSSROADS: Supply drop is on the way. ETA 1 minute, out.";
 
                 [player, 1, ["ACE_SelfActions", "Supply drop", (_this#2)#1]] call AFUNC(interact_menu,removeActionFromObject);
@@ -67,7 +66,7 @@ if (GETVAR(player,EGVAR(player,isCO),false)) then {
                     ["Warning", ["Supply drop is on cooldown. Try again in a few minutes."]] call BFUNC(showNotification);
                 };
 
-                [QGVAR(dropSupply), [(_this#2)#0, "east", 500, getPos player]] call CFUNC(serverEvent);
+                [QGVAR(supplyDrop), [(_this#2)#0, "east", 500, getPos player]] call CFUNC(serverEvent);
                 systemChat "CROSSROADS: Supply drop is on the way. ETA 1 minute, out.";
 
                 [player, 1, ["ACE_SelfActions", "Supply drop", (_this#2)#1]] call AFUNC(interact_menu,removeActionFromObject);
@@ -82,7 +81,7 @@ if (GETVAR(player,EGVAR(player,isCO),false)) then {
                     ["Warning", ["Supply drop is on cooldown. Try again in a few minutes."]] call BFUNC(showNotification);
                 };
 
-                [QGVAR(dropSupply), [(_this#2)#0, "south", 500, getPos player]] call CFUNC(serverEvent);
+                [QGVAR(supplyDrop), [(_this#2)#0, "south", 500, getPos player]] call CFUNC(serverEvent);
                 systemChat "CROSSROADS: Supply drop is on the way. ETA 1 minute, out.";
 
                 [player, 1, ["ACE_SelfActions", "Supply drop", (_this#2)#1]] call AFUNC(interact_menu,removeActionFromObject);
@@ -97,7 +96,7 @@ if (GETVAR(player,EGVAR(player,isCO),false)) then {
                     ["Warning", ["Supply drop is on cooldown. Try again in a few minutes."]] call BFUNC(showNotification);
                 };
 
-                [QGVAR(dropSupply), [(_this#2)#0, "west", 500, getPos player]] call CFUNC(serverEvent);
+                [QGVAR(supplyDrop), [(_this#2)#0, "west", 500, getPos player]] call CFUNC(serverEvent);
                 systemChat "CROSSROADS: Supply drop is on the way. ETA 1 minute, out.";
 
                 [player, 1, ["ACE_SelfActions", "Supply drop", (_this#2)#1]] call AFUNC(interact_menu,removeActionFromObject);

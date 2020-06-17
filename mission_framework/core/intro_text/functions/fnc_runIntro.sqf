@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Run the intro text
+        Runs the intro text at mission start.
 
     Arguments:
         -
@@ -18,9 +18,7 @@
 */
 
 [{
-    private ["_text", "_output"];
-
-    _text =
+    private _text =
     [
         [GVAR(title), "size='1.5' font='PuristaBold'"],
         ["", "<br/>"],
@@ -37,5 +35,5 @@
         ["", "<br/>"]
     ];
     
-    _output = [_text, safezoneX - 0.01, safeZoneY + (1 - 0.125) * safeZoneH, true, "<t align='right' size='1,1' >%1</t>"] spawn BFUNC(typeText2);
+    private _output = [_text, safezoneX - 0.01, safeZoneY + (1 - 0.125) * safeZoneH, true, "<t align='right' size='1,1' >%1</t>"] spawn BFUNC(typeText2);
 }, [], GVAR(delay)] call CFUNC(waitAndExecute);

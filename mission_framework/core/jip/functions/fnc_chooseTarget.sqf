@@ -5,7 +5,7 @@
         Diwako (modified by Malbryn)
 
     Description:
-        Check target for a valid unit in the player's group
+        Checks target for a valid unit in the player's group
 
     Arguments:
         -
@@ -17,10 +17,10 @@
         OBJECT
 */
 
-private ["_target", "_partGroup"];
+if !(hasInterface) exitWith {};
 
-_target = objNull;
-_partGroup = units group player;
+private _target = objNull;
+private _partGroup = units group player;
 
 // If player is not the leader and the leader is alive then the leader is the target
 if (player != leader group player && {alive leader group player}) then {

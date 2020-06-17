@@ -27,6 +27,6 @@ if !(hasInterface) exitWith {};
 
 // Add an option to terminate the mission as admin
 ["terminateMission", {
-    [QGVARMAIN(callMission), ["MissionTerminated", false]] call CFUNC(serverEvent);
+    [QGVARMAIN(callMission), ["MissionTerminated", false, playerSide]] call CFUNC(serverEvent);
     MSG("INFO","Terminating mission...");
 }, "admin"] call CFUNC(registerChatCommand);
