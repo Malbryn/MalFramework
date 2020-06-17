@@ -8,7 +8,7 @@
         Creates a curator logic for the game masters.
 
     Arguments:
-        -
+        0: OBJECT - The unit who has the access to curator
 
     Example:
         [_unit] call MF_curator_fnc_createCurator

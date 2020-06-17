@@ -76,7 +76,7 @@ if (GVARMAIN(isTvT)) then {
         params ["_unit", "_killer"];
 
         // Save death location of the player
-        SETVAR(player,EGVAR(reinsert,deathPos),getPos player);
+        SETVAR(player,EGVAR(reinsertion,deathPos),getPos player);
 
         if (GETVAR(player,EGVAR(respawn_tickets,amount),-1) == 0 || (GVARMAIN(moduleWaveRespawn) && EGVAR(respawn_wave,availableWaves) == 0)) then {
             // Init spectator screen

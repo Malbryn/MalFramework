@@ -11,7 +11,7 @@
         0: OBJECT - Vehicle that should become a MRV
 
     Example:
-        [hqVic] call MF_reinsert_fnc_setMRV
+        [hqVic] call MF_reinsertion_fnc_setMRV
 
     Returns:
         void

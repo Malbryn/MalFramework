@@ -128,8 +128,8 @@ class GVARMAIN(Player) {
     init = PATH_PRE(player);
 };
 
-class GVARMAIN(Reinsert) {
-    init = PATH_PRE(reinsert);
+class GVARMAIN(Reinsertion) {
+    init = PATH_PRE(reinsertion);
 };
 
 class GVARMAIN(Respawn) {

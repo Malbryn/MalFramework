@@ -17,7 +17,7 @@ class VCOM {
         // [] spawn VCM_fnc_PLAYERSQUAD
         class PLAYERSQUAD {
             ext = ".fsm";
-        };	
+        };
     };
     
     class Functions {
