@@ -12,7 +12,7 @@
         -
 
     Example:
-        call MF_reinsert_fnc_initPole
+        call MF_reinsertion_fnc_initPole
 
     Returns:
         void
@@ -20,34 +20,40 @@
 
 if !(hasInterface) exitWith {};
 
-private _tpPoles = GVAR(TPPoles);
+private _tpPoles = [];
+private _pole = objNull;
+
+GVAR(TPPoles) apply {
+    _pole = call compile _x;
+    _tpPoles pushBack _pole;
+};
 
 if (count _tpPoles == 0) exitWith {
-    MSG("WARNING","(Reinsert) The teleport pole array is empty");
+    MSG("WARNING","(Reinsertion) The teleport pole array is empty");
 };
 
 _tpPoles apply {
-    if (isNil _x) exitWith {
-        MSG_1("ERROR","(Reinsert) Teleport pole object (%1) does not exist",_x);
-    }
+    if (isNull _x) exitWith {
+        MSG_1("ERROR","(Reinsertion) Teleport pole object (%1) does not exist",_x);
+    };
 
     // Option #1 - Paradrop
     if (GVARMAIN(moduleHALO)) then {
-        _x addAction ["Reinsert - Paradrop", {
+        _x addAction ["Reinsertion - Paradrop", {
             call FUNC(haloDrop);
         }];
     };
 
     // Option #2 - MRV
     if (GVARMAIN(moduleMRV)) then {
-        _x addAction ["Reinsert - MRV", {
+        _x addAction ["Reinsertion - MRV", {
             call FUNC(tpToMRV);
         }];
     };
 
     // Option #3 - Squad rally point
     if (GVARMAIN(moduleRP)) then {
-        _x addAction ["Reinsert - Squad Rally Point", {
+        _x addAction ["Reinsertion - Squad Rally Point", {
             call FUNC(tpToRP);
         }];
     };

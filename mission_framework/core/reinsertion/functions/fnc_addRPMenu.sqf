@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_reinsert_fnc_addRPMenu
+        call MF_reinsertion_fnc_addRPMenu
 
     Returns:
         void

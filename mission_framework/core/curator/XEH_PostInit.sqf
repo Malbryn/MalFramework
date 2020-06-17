@@ -2,23 +2,25 @@
 
 if (!GVARMAIN(moduleCurator) || GVARMAIN(isTvT)) exitWith {};
 
-if (hasInterface) then {
-    call FUNC(addReassignCuratorMenu);
-    call FUNC(assignCurator);
-};
-
-
 if (isServer) then {
-    [QGVARMAIN(curatorRegistered), {
+    [QGVAR(curatorRegistered), {
         params ["_unit"];
 
         [_unit] call FUNC(createCurator);
     }] call CFUNC(addEventHandler);
     
 
-    [QGVARMAIN(curatorReassigned), {
+    [QGVAR(curatorReassigned), {
         params ["_unit"];
 
         [_unit] call FUNC(reassignCurator);
+    }] call CFUNC(addEventHandler);
+};
+
+if (hasInterface) then {
+    call FUNC(addReassignCuratorMenu);
+
+    [QGVARMAIN(initFramework), {
+        call FUNC(assignCurator);
     }] call CFUNC(addEventHandler);
 };

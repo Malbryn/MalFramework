@@ -3,15 +3,15 @@
 /* -------------------------------- MISSION PARAMETERS -------------------------------- */
 /* ------------------------- DON'T REMOVE OR COMMENT OUT THESE ------------------------ */
 
-GVARMAIN(isTvT) = true;  // If the mission is a TvT mission
+GVARMAIN(isTvT) = false;  // If the mission is a TvT mission
 
 // End condition - Time limit
 GVARMAIN(moduleTimeLimit) = true;  // Coop & TvT
 EGVAR(end_conditions,timeLimit) = 60 MINUTES;  // Mission time limit in seconds
-EGVAR(end_conditions,favouredSide) = 1;  // TVT: Favoured side (0: NONE, 1: BLUFOR, 2: REDFOR)
+EGVAR(end_conditions,favouredSide) = 1;  // TvT: Favoured side (0: NONE, 1: BLUFOR, 2: REDFOR)
 
 // End condition - Player casualty limit
-GVARMAIN(modulePlayerCasualties) = true;  // Coop & TvT
+GVARMAIN(modulePlayerCasualties) = false;  // Coop & TvT
 EGVAR(end_conditions,playerCasLimit) = 75;  // Coop: Percentage of the max. allowed player casualty
 EGVAR(end_conditions,bluforCasLimit) = 75;  // TvT: Percentage of the max. allowed player casualty for the BLUFOR side
 EGVAR(end_conditions,redforCasLimit) = 75;  // TvT: Percentage of the max. allowed player casualty for the REDFOR side
@@ -45,7 +45,7 @@ GVARMAIN(playerViewDistance) = 2500;  // Player view distance
 GVARMAIN(serverViewDistance) = 2000;  // Server view distance (= AI view distance)
 
 // Time acceleration
-GVARMAIN(timeAcceleration) = 1;
+GVARMAIN(timeAcceleration) = 2;
 
 // AI skills
 EGVAR(ai_skills,skillSet) = [
@@ -68,7 +68,7 @@ GVARMAIN(moduleFlyby) = true;  // Coop
 
 
 // AO limit
-GVARMAIN(moduleAOLimit) = false;  // Coop & TvT
+GVARMAIN(moduleAOLimit) = true;  // Coop & TvT
 EGVAR(ao_limit,timerLand) = 10;  // Timer for any land based vehicle/unit (-1: disabled)
 EGVAR(ao_limit,timerAir) = -1;  // Timer for any air vehicle (-1: disabled)
 EGVAR(ao_limit,aoMarkerAll) = "mrk_aoLimitAll";  // AO limit marker for every player
@@ -149,12 +149,12 @@ GVARMAIN(moduleDisableDamage) = true;  // Coop & TvT
 GVARMAIN(moduleOrbat) = true;  // Coop & TvT
 
 
-// Reinsert
+// Reinsertion
 GVARMAIN(moduleHALO) = true;  // Coop & TvT
 GVARMAIN(moduleMRV) = true;  // Coop & TvT
 GVARMAIN(moduleRP) = true;  // Coop & TvT
-EGVAR(reinsert,RPTentObject) = "Land_TentA_F";  // Object used as the rally point
-EGVAR(reinsert,TPPoles) = [pole1];  // Teleport pole object(s)
+EGVAR(reinsertion,RPTentObject) = "Land_TentA_F";  // Object used as the rally point
+EGVAR(reinsertion,TPPoles) = ["pole1"];  // Teleport pole object(s)
 
 
 // Safety start
