@@ -1,1 +1,1 @@
-PREP(disableDamage);
+PREP(eventFired);

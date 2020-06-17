@@ -5,8 +5,8 @@
         nkenny (modified by Malbryn)
 
     Description:
-        Unit creeps up as close as possible before opening fire
-        Stance is based on distance, speed is always limited and Hold fire for as long as possible
+        Unit creeps up as close as possible before opening fire.
+        Stance is based on distance, speed is always limited and Hold fire for as long as possible.
 
     Arguments:
         0: GROUP or OBJECT - Group to perform this task
@@ -19,7 +19,7 @@
         BOOLEAN
 */
 
-params ["_group",["_range",500],["_cycle",15]];
+params ["_group", ["_range", 500], ["_cycle", 15]];
 
 if (!local _group) exitWith {};
 

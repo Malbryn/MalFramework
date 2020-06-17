@@ -5,22 +5,24 @@
         Commy2 (modified by Malbryn)
 
     Description:
-        Create a curator logic for the game masters
+        Creates a curator logic for the game masters.
 
     Arguments:
         -
 
     Example:
-        call MF_curator_fnc_createCurator
+        [_unit] call MF_curator_fnc_createCurator
 
     Returns:
         void
 */
 
-params ["_unit"];
-private ["_logic"];
+if !(isServer) exitWith {};
 
-_logic = createGroup sideLogic createUnit ["ModuleCurator_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
+params ["_unit"];
+
+private _logic = createGroup sideLogic createUnit ["ModuleCurator_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
+
 [_logic, _unit, true] call AFUNC(zeus,bi_moduleCurator);
 _unit assignCurator _logic;
 

@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Detonate a previously registered IED
+        Detonates a previously registered IED.
 
     Arguments:
         0: STRING - Net ID of the IED object
@@ -18,10 +18,9 @@
 */
 
 params ["_id"];
-private ["_obj"];
 
 // Get the IED object
-_obj = objectFromNetId _id;
+private _obj = objectFromNetId _id;
 
 // Detonate it
 playSound3D ["z\ace\addons\explosives\Data\Audio\Cellphone_Ring.wss", _obj, false, getPosASL _obj, 5, 1, 50];

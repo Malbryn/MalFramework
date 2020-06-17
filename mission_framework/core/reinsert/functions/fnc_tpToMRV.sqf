@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Teleport the player into the MRV
+        Teleports the player into the MRV.
 
     Arguments:
         -
@@ -19,9 +19,7 @@
 
 if !(hasInterface) exitWith {};
 
-private ["_mrv"];
-
-_mrv = GETMVAR(GVAR(mrv),objNull);
+private _mrv = GETMVAR(GVAR(mrv),objNull);
 
 if (isNull _mrv) exitWith {
     MSG("ERROR","MRV does not exist!");
@@ -32,9 +30,8 @@ if !(alive _mrv) exitWith {
 };
 
 if (_mrv emptyPositions "cargo" == 0) exitWith {
-    ["Warning", ["Target vehicle is full!"]] call BFUNC(showNotification);
+    ["Warning", ["Target vehicle is full! Try again later."]] call BFUNC(showNotification);
 };
-
 
 cutText ["You are being teleported back to the AO", "BLACK OUT", 2, true];
 

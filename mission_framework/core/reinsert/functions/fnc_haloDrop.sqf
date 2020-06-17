@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Teleport the player to their death location using HALO drop
+        Teleports the player to their death location using HALO drop.
 
     Arguments:
         -
@@ -19,9 +19,7 @@
 
 if !(hasInterface) exitWith {};
 
-private ["_pos"];
-
-_pos = (GETVAR(player,GVAR(deathPos),""));
+private _pos = (GETVAR(player,GVAR(deathPos),""));
 
 if (_pos isEqualTo "") exitWith {
     ["Warning", ["Target destination does not exist!"]] call BFUNC(showNotification);

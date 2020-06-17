@@ -5,8 +5,8 @@
         nkenny (modified by Malbryn)
 
     Description:
-        The AI group indentifies buildings, clears them methodically and marks them as safe
-        The gorup then moves to the next building and repeats this until there's no building left
+        The AI group indentifies buildings, clears them methodically and marks them as safe.
+        The gorup then moves to the next building and repeats this until there's no building left.
 
     Arguments:
         0: GROUP or OBJECT - Group to perform this task

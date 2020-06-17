@@ -3,7 +3,7 @@
 /* -------------------------------- MISSION PARAMETERS -------------------------------- */
 /* ------------------------- DON'T REMOVE OR COMMENT OUT THESE ------------------------ */
 
-GVARMAIN(isTvT) = false;  // If the mission is a TvT mission
+GVARMAIN(isTvT) = true;  // If the mission is a TvT mission
 
 // End condition - Time limit
 GVARMAIN(moduleTimeLimit) = true;  // Coop & TvT
@@ -68,7 +68,7 @@ GVARMAIN(moduleFlyby) = true;  // Coop
 
 
 // AO limit
-GVARMAIN(moduleAOLimit) = true;  // Coop & TvT
+GVARMAIN(moduleAOLimit) = false;  // Coop & TvT
 EGVAR(ao_limit,timerLand) = 10;  // Timer for any land based vehicle/unit (-1: disabled)
 EGVAR(ao_limit,timerAir) = -1;  // Timer for any air vehicle (-1: disabled)
 EGVAR(ao_limit,aoMarkerAll) = "mrk_aoLimitAll";  // AO limit marker for every player
@@ -116,7 +116,7 @@ EGVAR(intro_text,delay) = 20;  // Delay after loading in
 
 // JIP
 GVARMAIN(moduleJIP) = true;  // Coop & TvT
-EGVAR(jip,JIPTimer) = 3 MINUTES;  // For how long the TP is available after joining the mission
+EGVAR(jip,jipTimer) = 3 MINUTES;  // For how long the TP is available after joining the mission
 
 
 // Killcam
@@ -154,6 +154,7 @@ GVARMAIN(moduleHALO) = true;  // Coop & TvT
 GVARMAIN(moduleMRV) = true;  // Coop & TvT
 GVARMAIN(moduleRP) = true;  // Coop & TvT
 EGVAR(reinsert,RPTentObject) = "Land_TentA_F";  // Object used as the rally point
+EGVAR(reinsert,TPPoles) = [pole1];  // Teleport pole object(s)
 
 
 // Safety start

@@ -2,7 +2,7 @@
 
 /*
     Author:
-        nkenny (modified by Malbryn)
+        nkenny
 
     Description:
         -
@@ -18,12 +18,12 @@
 */
 
 params ["_group"];
-private ["_newDist", "_all", "_target", "_distance"];
+private ["_distance"];
 
-_newDist = _range; 
-_all = (switchableUnits + playableUnits - entities "HeadlessClient_F");
+private _newDist = _range; 
+private _all = (switchableUnits + playableUnits - entities "HeadlessClient_F");
 _all = _all select {side _x != civilian && {side _x != side _group}};
-_target = objNull;
+private_target = objNull;
 
 {
     _distance = (leader _group) distance2d _x;

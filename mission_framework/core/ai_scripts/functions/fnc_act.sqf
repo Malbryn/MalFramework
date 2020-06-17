@@ -2,7 +2,7 @@
 
 /*
     Author:
-        nkenny (modified by Malbryn)
+        nkenny
 
     Description:
         -
@@ -18,14 +18,13 @@
 */
 
 params ["_group", "_building", "_enemy"];
-private ["_enemy", "_buildingPos"];
 
 if (!isNull _enemy) exitWith {
 
     doStop units _group; 
     leader _group playAction selectRandom ["gestureAttack", "gestureGo", "gestureGoB"];
 
-    _buildingPos = ((nearestBuilding _enemy) buildingPos -1) select {_x distance _enemy < 5};
+    private _buildingPos = ((nearestBuilding _enemy) buildingPos -1) select {_x distance _enemy < 5};
     _buildingPos pushBack getPosATL _enemy;
 
     {_x doMove selectRandom _buildingPos; _x doWatch _enemy; true} count units _group; 

@@ -5,7 +5,7 @@
 // #define CBA_DEBUG_SYNCHRONOUS
 // #define ENABLE_PERFORMANCE_COUNTERS
 
-#ifdef DEBUG_ENABLED_static_line
+#ifdef DEBUG_ENABLED_STATIC_LINE
     #define DEBUG_MODE_FULL
 #endif
 

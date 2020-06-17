@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Save the unit's pre-set radio channels
+        Saves the unit's pre-set radio channels.
         Default channel / freq. table:
 
         [Short range]                        [Long range]
@@ -32,7 +32,6 @@
 */
 
 params ["_unit", ["_srCh", -1], ["_lrCh", -1]];
-private ["_channels"];
 
 if !(local _unit) exitWith {};
 
@@ -45,5 +44,5 @@ if (_lrCh != -1) then {
     _lrCh = _lrCh - 1;
 };
 
-_channels = [_srCh, _lrCh];
+private _channels = [_srCh, _lrCh];
 SETPVAR(_unit,GVAR(radioChannels),_channels);

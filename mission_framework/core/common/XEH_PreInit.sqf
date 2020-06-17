@@ -9,5 +9,5 @@ PREP_RECOMPILE_END;
 ADDON = true;
 
 // Global variables
-GVAR(sideBlufor) = [];
-GVAR(sideRedfor) = [];
+GVAR(sideBlufor) = [0, 0, GVARMAIN(respawnTicketsBlufor)];
+GVAR(sideRedfor) = [0, 0, GVARMAIN(respawnTicketsRedfor)];

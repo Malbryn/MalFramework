@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Set the player's respawn tickets
+        Sets the player's respawn tickets.
 
     Arguments:
         0: OBJECT - Unit (Optional, default: player)

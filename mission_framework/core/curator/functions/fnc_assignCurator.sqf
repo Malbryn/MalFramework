@@ -5,7 +5,7 @@
         Commy2
 
     Description:
-        Assign curator to the game masters
+        Assigns curator to the game masters.
 
     Arguments:
         -
@@ -17,6 +17,8 @@
         void
 */
 
+if !(hasInterface) exitWith {};
+
 if !(IS_ADMIN_LOGGED || getPlayerUID player == GETPAVAR(GVARMAIN(missionMaker),"")) exitWith {};
 
-[QGVARMAIN(registerCurator), [player]] call CFUNC(serverEvent);
+[QGVARMAIN(curatorRegistered), [player]] call CFUNC(serverEvent);

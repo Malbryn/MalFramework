@@ -5,13 +5,13 @@
         Malbryn
 
     Description:
-        Set up the player entity
+        Sets up the player entity.
 
     Arguments:
         0: OBJECT - The player unit
         1: STRING - Role of the unit, see: gear script
-        2: SCALAR - Unit traits (Optional):
-            0 - Default, no special ability
+        2: SCALAR - Unit traits (Optional, default: 0):
+            0 - No special ability
             1 - Squad level leadership (SL, FTL), can deploy Rally Poins
             2 - Platoon level leadership (PLTHQ, PLTSGT), can call respawns, resupply and tactical withdrawal
         4: STRING - Assigned fireteam colour (Optional, default: white (= "MAIN"))
@@ -31,24 +31,19 @@ INFO_2("Initialising unit: %1 (Local: %2)",_unit,local _unit);
 // Locality check
 if !(local _unit) exitWith {};
 
-
 // Gear script
 [_unit, _role] call EFUNC(gear,setGear);
-
 
 // Assign player traits
 [_unit, _traits] call FUNC(setTraits);
 
-
 // Assign team colour
 SETPVAR(_unit,EGVAR(team_colour,teamColour),_colour);
-
 
 // Assign view distance
 SETPVAR(_unit,EGVAR(view_distance,viewDistance),_viewDistance);
 
-
-// ACE player variables
+// Set ACE player variables
 // Medic
 if ((roleDescription _unit) find "Medic" >= 0) then {
     SETPVAR(_unit,ACE_medical_medicClass,1);

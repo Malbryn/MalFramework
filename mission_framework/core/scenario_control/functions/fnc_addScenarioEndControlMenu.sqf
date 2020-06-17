@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Create an ACE self-interaction menu for the CO to be able to call tactical withdrawal and end the mission
+        Creates an ACE self-interaction menu for the CO to be able to call tactical withdrawal and end the mission.
 
     Arguments:
         -
@@ -17,33 +17,29 @@
         void
 */
 
-if (GETVAR(player,EGVAR(player,isCO),false)) then {
-    private ["_menu"];
+if !(hasInterface) exitWith {};
 
+if (GETVAR(player,EGVAR(player,isCO),false)) then {
     // Scenario control category
-    _menu = ['End scenario', 'End scenario', '\a3\ui_f\data\Map\Diary\Icons\taskSucceeded_ca.paa', {}, {!visibleMap}] call AFUNC(interact_menu,createAction);
+    private _menu = ['End scenario', 'End scenario', '\a3\ui_f\data\Map\Diary\Icons\taskSucceeded_ca.paa', {}, {!visibleMap}] call AFUNC(interact_menu,createAction);
     [player, 1, ["ACE_SelfActions"], _menu] call AFUNC(interact_menu,addActionToObject);
 
     // Call tactical withdrawal
     _menu = ['Tactical withdrawal', 'Tactical withdrawal', '', {
-        private ["_taskList"];
-
         // Put the tasks into an array
-        _taskList = player call BFUNC(tasksUnit);
+        private _taskList = player call BFUNC(tasksUnit);
 
         // Count the succeeded tasks
-        _count = 0;
+        private _count = 0;
         _taskList apply {
-            private ["_state"];
-
-            _state = _x call BFUNC(taskState);
+            private _state = _x call BFUNC(taskState);
             if (_state == "SUCCEEDED") then {
                 _count = _count + 1;
             };
         };
 
         // Calculate the rate of the successful tasks
-        _rate = _count / count _taskList;
+        private _rate = _count / count _taskList;
 
         // Call the mission end on the server
         if !(GVARMAIN(isTvT)) then {

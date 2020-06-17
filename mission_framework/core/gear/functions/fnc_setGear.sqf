@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Set the unit's gear according to their role (roles are defined in mission_framework\config\gear\gear.sqf)
+        Sets the unit's gear according to their role (roles are defined in mission_framework\config\gear\gear.sqf).
 
     Arguments:
         0: OBJECT - Player unit
@@ -19,7 +19,6 @@
 */
 
 params ["_unit", "_role"];
-private ["_gear"];
 
 // Remove all gear before applying the loadout
 removeHeadgear _unit;
@@ -29,16 +28,15 @@ removeBackpack _unit;
 removeAllWeapons _unit;
 removeAllAssignedItems _unit;
 
-
 // Find the role of the unit
-_gear = [];
+private _gear = [];
 
 if ((side _unit) == west) then {
     switch _role do {
         #include "..\..\..\config\gear\blufor_gear.sqf"
 
         default {
-            MSG_1("WARNING","Player init: Undefined role in the loadout: %1 (blufor_gear.sqf)",_role);
+            MSG_1("WARNING","(Gear) Undefined role in the loadout: %1 (blufor_gear.sqf)",_role);
         };
     };
 } else {
@@ -46,7 +44,7 @@ if ((side _unit) == west) then {
         #include "..\..\..\config\gear\redfor_gear.sqf"
 
         default {
-            MSG_1("WARNING","Player init: Undefined role in the loadout: %1 (redfor_gear.sqf)",_role);
+            MSG_1("WARNING","(Gear) Undefined role in the loadout: %1 (redfor_gear.sqf)",_role);
         };
     };
 };
@@ -55,11 +53,8 @@ if ((side _unit) == west) then {
 if !(count _gear == 0) then {
     _unit setUnitLoadout _gear;
 } else {
-    MSG("ERROR","Player init: Empty gear array!");
+    MSG("ERROR","(Gear) Empty gear array!");
 };
 
 // Save the current loadout
 SETPVAR(_unit,GVAR(currentLoadout),_role);
-
-// Log
-INFO_1("Player loadout saved: %1",GETVAR(_unit,GVAR(currentLoadout),""));

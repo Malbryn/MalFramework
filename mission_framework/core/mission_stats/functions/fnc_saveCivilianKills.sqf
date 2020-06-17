@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Convert and save the civilian kills in a global variable
+        Saves the civilian kills in a global variable.
 
     Arguments:
         -
@@ -16,6 +16,8 @@
     Returns:
         void
 */
+
+if !(hasInterface) exitWith {};
 
 private ["_text"];
 

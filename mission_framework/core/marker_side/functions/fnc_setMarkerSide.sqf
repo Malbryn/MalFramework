@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        blank
+        Sets the side of the markers in the array.
 
     Arguments:
         -

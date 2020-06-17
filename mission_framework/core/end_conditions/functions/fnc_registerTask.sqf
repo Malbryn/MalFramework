@@ -5,9 +5,9 @@
         Malbryn
 
     Description:
-        Register the task to be monitored by the server
-        Use this only if GVARMAIN(moduleTaskLimit) == true or GVARMAIN(moduleExtraction) == true
-        Put this in the init field of the task module
+        Registers the task to be monitored by the server.
+        Use this only if GVARMAIN(moduleTaskLimit) == true or GVARMAIN(moduleExtraction) == true.
+        Put this in the init field of the task module.
 
     Arguments:
         0: STRING - Unique Task ID

@@ -4,6 +4,7 @@
 // DEBUGGING
 #ifndef DEBUG_MODE_NORMAL
     #define DEBUG_MODE_NORMAL
+    #define DEBUG_MODE_MINIMAL
 #endif
 
 #include "script_macros_common.hpp"

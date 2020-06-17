@@ -3,5 +3,5 @@
 if !(GVARMAIN(moduleDisableDamage)) exitWith {};
 
 [QGVARMAIN(damageDisabled), {
-    call FUNC(disableDamage);
+    call FUNC(eventFired);
 }] call CFUNC(addEventHandler);

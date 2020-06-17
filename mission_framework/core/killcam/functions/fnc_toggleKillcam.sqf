@@ -5,7 +5,7 @@
         Perfk & BlackHawk (modified by Malbryn)
 
     Description:
-        Key handler for the killcam
+        Key handler for the killcam.
 
     Arguments:
         -
@@ -17,7 +17,7 @@
         void
 */
 
-if ((_this select 1) == 37) then {
+if ((_this#1) == 37) then {
     if (GVAR(toggle)) then {
         GVAR(toggle) = false;
         cutText ["", "PLAIN DOWN"];

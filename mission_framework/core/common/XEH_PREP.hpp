@@ -1,5 +1,3 @@
-PREP(eventPlayerConnected);
-PREP(eventPlayerDisconnected);
-PREP(initSides);
+PREP(eventHandleDisconnect);
 PREP(isInside);
-PREP(setSides);
+PREP(setSideValue);

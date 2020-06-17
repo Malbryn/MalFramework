@@ -17,14 +17,16 @@
         void
 */
 
-params ["_menu"];
+if !(hasInterface && didJIP) exitWith {};
 
-if !(didJIP) exitWith {};
+// Delay the notification beacuse of the loading screen
+[{
+    ["JipTeleport"] call BFUNC(showNotification);
+}, [], 20] call CFUNC(waitAndExecute);
 
-["JipTeleport"] call BFUNC(showNotification);
 SETVAR(player,GVAR(spawnPos),getPos player);
 
-_menu = ["Teleport to squad", "Teleport to squad", "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\transport_ca.paa", {
+private _menu = ["Teleport to squad", "Teleport to squad", "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\transport_ca.paa", {
     call FUNC(tpPlayer);
 }, {!visibleMap && (player distance2D GETVAR(player,GVAR(spawnPos),0) < 200)}] call AFUNC(interact_menu,createAction);
 
@@ -36,4 +38,4 @@ _menu = ["Teleport to squad", "Teleport to squad", "\a3\Ui_f\data\GUI\Cfg\Commun
         [player, 1, ["ACE_SelfActions", "Teleport to squad"]] call AFUNC(interact_menu,removeActionFromObject);
         ["Warning", ["JIP teleport is no longer available!"]] call BFUNC(showNotification);
     };
-}, [], GVAR(JIPTimer)] call CFUNC(waitAndExecute);
+}, [], GVAR(jipTimer)] call CFUNC(waitAndExecute);

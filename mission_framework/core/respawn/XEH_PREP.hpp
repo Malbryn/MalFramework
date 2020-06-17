@@ -1,2 +1,2 @@
-PREP(onPlayerKilled);
-PREP(onPlayerRespawned);
+PREP(eventKilled);
+PREP(eventRespawned);

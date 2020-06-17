@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Initialise the custom event handlers
+        Initialises the custom event handlers
 
     Arguments:
         -
@@ -17,6 +17,7 @@
         void
 */
 
+// Mission start on client and on server
 if (hasInterface) then {
     [{(!isNull (findDisplay 46) && CBA_missionTime > 1)}, {
         [QGVARMAIN(initFramework), []] call CFUNC(localEvent);
@@ -27,21 +28,21 @@ if (hasInterface) then {
     }] call CFUNC(waitUntilAndExecute);
 };
 
-
+// Remote messages
 [QGVARMAIN(systemMessage), {
     params ["_level", "_message"];
     
     MSG(_level,_message);
 }] call CFUNC(addEventHandler);
 
-
+// Remote notification
 [QGVARMAIN(notification_1), {
     params ["_cat"];
     
     [_cat] call BFUNC(showNotification);
 }] call CFUNC(addEventHandler);
 
-
+// Remote notification
 [QGVARMAIN(notification_2), {
     params ["_cat", "_message"];
     

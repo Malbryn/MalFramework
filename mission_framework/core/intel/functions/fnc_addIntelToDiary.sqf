@@ -5,7 +5,7 @@
         Kex (modified by Malbryn)
 
     Description:
-        Add a "Mission Intel" diary record to the players diary
+        Adds a "Mission Intel" diary record to the player's diary.
 
     Arguments:
         0: STRING - Title of the intel
@@ -19,12 +19,11 @@
         void
 */
 
-if (!hasInterface) exitWith {};
+if !(hasInterface) exitWith {};
 
 params ["_title", "_text", "_finder"];
-private ["_diaryId"];
 
-_diaryId = QGVAR(intelDiary);
+private _diaryId = QGVAR(intelDiary);
 
 if !(player diarySubjectExists _diaryId) then {
     player createDiarySubject [_diaryId, "Mission Intel"];

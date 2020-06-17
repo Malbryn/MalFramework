@@ -2,7 +2,7 @@
 
 /*
     Author:
-        nkenny (modified by Malbryn)
+        nkenny
 
     Description:
         -
@@ -18,9 +18,8 @@
 */
 
 params ["_group", "_building"];
-private ["_pos"];
 
-_pos = [getpos _building, getpos leader _group] select isNull _building;
+private _pos = [getpos _building, getpos leader _group] select isNull _building;
 _enemy = (leader _group) findNearestEnemy _pos;
 
 if (isNull _enemy || {_pos distance2d _enemy < 25}) exitWith {_enemy};

@@ -5,7 +5,7 @@
         AZCoder (originally by JW)
 
     Description:
-        Creates a fog particle source
+        Creates a fog particle source.
 
     Arguments:
         0: OBJECT - Unit to position the effect
@@ -17,11 +17,12 @@
         OBJECT
 */
 
-params ["_unit"];
-private ["_fog", "_pos"];
+if !(hasInterface) exitWith {};
 
-_pos = position (vehicle _unit);
-_fog = "#particlesource" createVehicleLocal _pos;
+params ["_unit"];
+
+private _pos = position (vehicle _unit);
+private _fog = "#particlesource" createVehicleLocal _pos;
 _fog setParticleParams [
     ["\Ca\Data\ParticleEffects\Universal\universal.p3d" , 16, 12, 13, 0], "", "Billboard", 1, 10,
     [0, 0, -6], [0, 0, 0], 1, 1.275, 1, 0,

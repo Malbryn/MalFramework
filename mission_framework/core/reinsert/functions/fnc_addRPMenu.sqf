@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Create the RP menu for the group leader
+        Creates the RP menu for the group leader.
 
     Arguments:
         -
@@ -17,14 +17,12 @@
         void
 */
 
-private ["_menu"];
-
 if !(hasInterface) exitWith {};
 
 // Create parent category
-_menu = ['Rally Point', 'Rally Point', '\a3\ui_f\data\GUI\Cfg\Hints\icon_text\b_inf_ca.paa', {}, {!visibleMap}] call AFUNC(interact_menu,createAction);
-[player, 1, ["ACE_SelfActions"], _menu] call AFUNC(interact_menu,addActionToObject);
+private  _menu = ['Rally Point', 'Rally Point', '\a3\ui_f\data\GUI\Cfg\Hints\icon_text\b_inf_ca.paa', {}, {!visibleMap}] call AFUNC(interact_menu,createAction);
 
+[player, 1, ["ACE_SelfActions"], _menu] call AFUNC(interact_menu,addActionToObject);
 
 // Create child categories
 // Deploy menu
@@ -37,7 +35,6 @@ _menu = ['Deploy Rally Point', 'Deploy Rally Point', '', {
 }, {true}] call AFUNC(interact_menu,createAction);
 
 [player, 1, ["ACE_SelfActions", "Rally Point"], _menu] call AFUNC(interact_menu,addActionToObject);
-
 
 // Remove menu
 _menu = ['Remove Rally Point', 'Remove Rally Point', '', {

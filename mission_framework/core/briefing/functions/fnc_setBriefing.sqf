@@ -5,7 +5,7 @@
         Perfks (modified by Pax'Jarome)
 
     Description:
-        Display the "Briefing" diary record
+        Displays the "Briefing" diary record for each side.
 
     Arguments:
         -
@@ -17,9 +17,9 @@
         void
 */
 
-private ["_briefing"];
+if (!hasInterface) exitWith {};
 
-_briefing = [];
+private _briefing = [];
 
 if (playerSide == west) then {
     #include "..\..\..\config\briefing\blufor_briefing.sqf"

@@ -5,15 +5,15 @@
         Malbryn
 
     Description:
-        End the mission on the server and on every client
+        Ends the mission on the server and on every client.
 
     Arguments:
         0: STRING - Class name of the ending (defined in CfgDebriefing)
         1: BOOLEAN - Is victory
-        2: SIDE - 
+        2: SIDE - Which side isVictory refers to (TvT missions)
 
     Example:
-        ["MissionSuccess", true] call MF_end_mission_fnc_callMission
+        ["BluforWin", true, west] call MF_end_mission_fnc_callMission
 
     Returns:
         void
@@ -22,7 +22,6 @@
 if !(isServer) exitWith {};
 
 params ["_ending", "_isVictory", ["_side", sideUnknown]];
-private ["_time"];
 
 // Save end mission stats
 call EFUNC(mission_stats,saveMissionTime);
@@ -41,7 +40,7 @@ if (isDedicated) then {
 };
 
 // Logging
-_time = [CBA_missionTime] call BFUNC(secondsToString);
+private _time = [CBA_missionTime] call BFUNC(secondsToString);
 INFO_3("Ending mission... (Ending: %1 | Victory: %2 | Mission time: %3)",_ending,_isVictory,_time);
 
 // Disable damage

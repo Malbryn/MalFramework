@@ -2,7 +2,7 @@
 
 /*
     Author:
-        nkenny (modified by Malbryn)
+        nkenny
 
     Description:
         -
@@ -18,10 +18,9 @@
 */
 
 params ["_group", "_target"];
-private ["_nearDist", "_inForest"];
 
-_nearDist = leader _group distance2d _target;
-_inForest = ((selectBestPlaces [getpos leader _group, 2,"(forest + trees)/2", 1, 1])#0)#1;
+private _nearDist = leader _group distance2d _target;
+private _inForest = ((selectBestPlaces [getpos leader _group, 2,"(forest + trees)/2", 1, 1])#0)#1;
 
 if (behaviour leader _group isEqualTo "COMBAT") exitWith {
     _group setCombatMode "RED";

@@ -1,20 +1,5 @@
 #include "script_component.hpp"
 
-
-if (hasInterface) then {
-    [QGVAR(fpsWarning), {
-        params ["_fps"];
-
-        [_fps] call FUNC(fpsNotification);
-    }] call CFUNC(addEventHandler);
-
-
-    [QGVARMAIN(initFramework), {
-        call FUNC(addCheckPerformanceMenu);
-    }] call CFUNC(addEventHandler);
-};
-
-
 if (isServer) then {
     [{
         GVAR(serverFPS) = parseNumber (diag_fps toFixed 2);
@@ -26,4 +11,14 @@ if (isServer) then {
             [QGVAR(fpsWarning), GVAR(serverFPS)] call CFUNC(globalEvent);
         };
     }, 2] call CFUNC(addPerFrameHandler);
+};
+
+if (hasInterface) then {
+    [QGVAR(fpsWarning), {
+        params ["_fps"];
+
+        [_fps] call FUNC(fpsNotification);
+    }] call CFUNC(addEventHandler);
+
+    call FUNC(addCheckPerformanceMenu);
 };

@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Register an object as an IED and a unit as the "detonator" of the IED
+        Registers an object as an IED and assigns it to a unit who will have the "detonator" of the IED
 
     Arguments:
         0: OBJECT - Variable name of the IED
@@ -20,12 +20,11 @@
 */
 
 params ["_obj", "_owner", "_radius"];
-private ["_id", "_trigger"];
 
-_id = str (netId _obj);
+private _id = str (netId _obj);
 
 // Create activation trigger
-_trigger = createTrigger ["EmptyDetector", getPos _obj, false];
+private _trigger = createTrigger ["EmptyDetector", getPos _obj, false];
 _trigger setTriggerActivation ["ANYPLAYER", "PRESENT", false];
 _trigger setTriggerArea [_radius, _radius, 0, false, _radius];
 _trigger setTriggerStatements ["this && isServer", format ["if (alive %1) then { [%2] call MF_ied_fnc_detonateIED; };", _owner, _id], ""];

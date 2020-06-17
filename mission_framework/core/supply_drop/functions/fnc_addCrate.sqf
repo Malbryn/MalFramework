@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Add a crate to the available supply drops crate
+        Adds a crate to the available supply drops crate.
 
     Arguments:
         0: OBJECT - The object to be added to the array
@@ -18,12 +18,11 @@
         void
 */
 
-params ["_crate", "_name"];
-private ["_array"];
-
 if !(isServer) exitWith {};
 
-_array = [_crate, _name];
+params ["_crate", "_name"];
+
+private _array = [_crate, _name];
 
 PUSH(GVAR(supplyCrates),_array);
 publicVariable QGVAR(supplyCrates);
