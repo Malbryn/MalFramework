@@ -27,7 +27,7 @@ class CfgNotifications {
         title = "JIP";
         iconPicture = "\A3\ui_f\data\GUI\Cfg\Hints\Timing_ca.paa";
         iconText = "";
-        description = "Join In Progress: Use self-interaction to TP back to your squad.";
+        description = "Join In Progress: Use self-interaction to TP back to your squad";
         color[] = {1, 1, 1, 1};
         duration = 5;
         priority = 4;
@@ -36,7 +36,7 @@ class CfgNotifications {
 
     class IntelAdded {
         title = "INTEL FOUND";
-        iconPicture = "\A3\ui_f\data\Map\Markers\Military\warning_CA.paa";
+        iconPicture = "\A3\ui_f\data\GUI\RscCommon\RscButtonSearch\search_start_ca.paa";
         iconText = "";
         description = "%1";
         color[] = {1, 1, 1, 1};
@@ -47,7 +47,7 @@ class CfgNotifications {
 
     class RespawnCalled {
         title = "RESPAWN";
-        iconPicture = "\A3\ui_f\data\Map\Markers\Military\flag_CA.paa";
+        iconPicture = "\A3\modules_f\data\iconSector_ca.paa";
         iconText = "";
         description = "The CO has called for reinforcements. Respawning in 5 seconds...";
         color[] = {0, 0.8, 0, 1};
@@ -70,20 +70,22 @@ class CfgNotifications {
     class AOLimitWarning {
         title = "AO LIMIT";
         iconPicture = "\a3\ui_f\data\GUI\Cfg\Debriefing\endDeath_ca.paa";
-        description = "<t align='left'>Where do you think you're going?</t>";
+        iconText = "";
+        description = "Where are you going? Return to the AO now!";
         color[] = {1, 1, 1, 1};
-        colorIconPicture[] = {1, 1, 1, 0.8};
-        colorIconText[] = {1, 1, 1, 1};
         duration = 5;
+        priority = 4;
+        difficulty[] = {};
     };
 
     class SetupTimerEnded {
         title = "SETUP TIMER";
-        iconPicture = "\a3\ui_f\data\GUI\Cfg\CommunicationMenu\attack_ca.paa";
-        description = "<t>Setup Timer Over, Fight!</t>";
+        iconPicture = "\a3\ui_f\data\IGUI\Cfg\Actions\settimer_ca.paa";
+        iconText = "";
+        description = "Setup phase is over. The mission is a go.";
         color[] = {1, 1, 1, 1};
-        colorIconPicture[] = {0.5, 0, 0, 0.5};
-        colorIconText[] = {1, 1, 1, 1};
         duration = 5;
+        priority = 4;
+        difficulty[] = {};
     };
 };
