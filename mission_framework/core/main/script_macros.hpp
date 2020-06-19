@@ -1,5 +1,5 @@
 #define PREFIX MF
-#define VERSION QUOTE(v1.07)
+#define VERSION QUOTE(v1.07 BETA)
 
 // DEBUGGING
 #ifndef DEBUG_MODE_NORMAL

@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if !(GVARMAIN(moduleHALO) && GVARMAIN(moduleMRV) && GVARMAIN(moduleRP)) exitWith {};
+if (!GVARMAIN(moduleHALO) && !GVARMAIN(moduleMRV) && !GVARMAIN(moduleRP)) exitWith {};
 
 if (hasInterface) then {
     [QGVARMAIN(transferRP), {
