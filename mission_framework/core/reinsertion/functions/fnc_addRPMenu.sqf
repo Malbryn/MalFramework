@@ -20,7 +20,7 @@
 if !(hasInterface) exitWith {};
 
 // Create parent category
-private  _menu = ['Rally Point', 'Rally Point', '\a3\ui_f\data\GUI\Cfg\Hints\icon_text\b_inf_ca.paa', {}, {!visibleMap}] call AFUNC(interact_menu,createAction);
+private  _menu = ['Rally Point', 'Rally Point', '\a3\ui_f\data\GUI\Cfg\Hints\icon_text\b_inf_ca.paa', {}, {!visibleMap && isNull objectParent player}] call AFUNC(interact_menu,createAction);
 
 [player, 1, ["ACE_SelfActions"], _menu] call AFUNC(interact_menu,addActionToObject);
 
@@ -32,7 +32,7 @@ _menu = ['Deploy Rally Point', 'Deploy Rally Point', '', {
     } else {
         ["Warning", ["Rally Point system is disabled in this mission"]] call BFUNC(showNotification);
     };
-}, {!visibleMap && isNull objectParent player}] call AFUNC(interact_menu,createAction);
+}, {true}] call AFUNC(interact_menu,createAction);
 
 [player, 1, ["ACE_SelfActions", "Rally Point"], _menu] call AFUNC(interact_menu,addActionToObject);
 
@@ -43,6 +43,6 @@ _menu = ['Remove Rally Point', 'Remove Rally Point', '', {
     } else {
         ["Warning", ["Rally Point system is disabled in this mission"]] call BFUNC(showNotification);
     };
-}, {!visibleMap && isNull objectParent player}] call AFUNC(interact_menu,createAction);
+}, {true}] call AFUNC(interact_menu,createAction);
 
 [player, 1, ["ACE_SelfActions", "Rally Point"], _menu] call AFUNC(interact_menu,addActionToObject);
