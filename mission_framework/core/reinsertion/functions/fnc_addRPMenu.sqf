@@ -32,7 +32,7 @@ _menu = ['Deploy Rally Point', 'Deploy Rally Point', '', {
     } else {
         ["Warning", ["Rally Point system is disabled in this mission"]] call BFUNC(showNotification);
     };
-}, {true}] call AFUNC(interact_menu,createAction);
+}, {!visibleMap && isNull objectParent player}] call AFUNC(interact_menu,createAction);
 
 [player, 1, ["ACE_SelfActions", "Rally Point"], _menu] call AFUNC(interact_menu,addActionToObject);
 
@@ -43,6 +43,6 @@ _menu = ['Remove Rally Point', 'Remove Rally Point', '', {
     } else {
         ["Warning", ["Rally Point system is disabled in this mission"]] call BFUNC(showNotification);
     };
-}, {true}] call AFUNC(interact_menu,createAction);
+}, {!visibleMap && isNull objectParent player}] call AFUNC(interact_menu,createAction);
 
 [player, 1, ["ACE_SelfActions", "Rally Point"], _menu] call AFUNC(interact_menu,addActionToObject);

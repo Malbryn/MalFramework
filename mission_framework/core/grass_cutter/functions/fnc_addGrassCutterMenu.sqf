@@ -21,6 +21,6 @@ if !(hasInterface) exitWith {};
 
 private _menu = ['Cut grass', 'Cut grass', '', {
     call FUNC(cutGrass);
-}, {!visibleMap}] call AFUNC(interact_menu,createAction);
+}, {!visibleMap && isNull objectParent player}] call AFUNC(interact_menu,createAction);
 
 [player, 1, ["ACE_SelfActions", "ACE_Equipment"], _menu] call AFUNC(interact_menu,addActionToObject);
