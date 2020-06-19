@@ -80,7 +80,7 @@ if (GVARMAIN(isTvT)) then {
 
         if (GETVAR(player,EGVAR(respawn_tickets,amount),-1) == 0 || (GVARMAIN(moduleWaveRespawn) && EGVAR(respawn_wave,availableWaves) == 0)) then {
             // Init spectator screen
-            ["Initialize", [player, [], false, true, true, false, true, false, false, true]] call BFUNC(EGSpectator);
+            ["Initialize", [player, [], false, true, true, false, true, false, true, true]] call BFUNC(EGSpectator);
 
             if (GETVAR(player,EGVAR(respawn_tickets,amount),-1) == 0) then {
                 [QGVARMAIN(notification_2), ["Warning", "You have no more respawn tickets!"]] call CFUNC(localEvent);
@@ -104,7 +104,7 @@ if (GVARMAIN(isTvT)) then {
                 if (count _partGroup == 0) exitWith {};
 
                 _target = _partGroup select (_partGroup findIf {alive _x});
-                
+
                 if !(GETVAR(_target,EGVAR(player,isSL),false)) then {
                     SETPVAR(_target,EGVAR(player,isSL,true));
                     [QGVARMAIN(transferRP), [], _target] call CFUNC(targetEvent);
@@ -145,7 +145,7 @@ if (GVARMAIN(isTvT)) then {
             if !(GVARMAIN(moduleWaveRespawn)) then {
                 setPlayerRespawnTime GVARMAIN(respawnTimer);
             };
-            
+
             // Init the complainer mode
             ["Initialize", [player, [playerSide], false, false, true, false, true, false, false, true]] call BFUNC(EGSpectator);
 
