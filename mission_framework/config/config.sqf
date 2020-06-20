@@ -1,7 +1,6 @@
 #include "..\core\main\script_macros.hpp"  // DO NOT REMOVE
 
 /* -------------------------------- MISSION PARAMETERS -------------------------------- */
-/* ------------------------- DON'T REMOVE OR COMMENT OUT THESE ------------------------ */
 
 GVARMAIN(isTvT) = false;  // If the mission is a TvT mission
 
@@ -37,7 +36,7 @@ EGVAR(end_conditions,taskThreshold) = 66;  // Percentage of the tasks that have 
 
 // Respawn rules
 GVARMAIN(respawnTimer) = 30;  // Respawn timer in seconds
-GVARMAIN(respawnTickets) = -1;  // Individual respawn tickets (-1: disabled)
+GVARMAIN(respawnTickets) = -1;  // Individual respawn tickets (-1: tickets disabled, 0: respawns disabled)
 GVARMAIN(removePlayerCorpses) = true;  // Remove player corpse upon respawn
 
 // View distances
