@@ -26,23 +26,23 @@ if (GETVAR(player,EGVAR(player,isCO),false)) then {
 
     // Call tactical withdrawal
     _menu = ['Tactical withdrawal', 'Tactical withdrawal', '', {
-        // Put the tasks into an array
-        private _taskList = player call BFUNC(tasksUnit);
-
-        // Count the succeeded tasks
-        private _count = 0;
-        _taskList apply {
-            private _state = _x call BFUNC(taskState);
-            if (_state == "SUCCEEDED") then {
-                _count = _count + 1;
-            };
-        };
-
-        // Calculate the rate of the successful tasks
-        private _rate = _count / count _taskList;
-
         // Call the mission end on the server
         if !(GVARMAIN(isTvT)) then {
+            // Put the tasks into an array
+            private _taskList = player call BFUNC(tasksUnit);
+
+            // Count the succeeded tasks
+            private _count = 0;
+            _taskList apply {
+                private _state = _x call BFUNC(taskState);
+                if (_state == "SUCCEEDED") then {
+                    _count = _count + 1;
+                };
+            };
+
+            // Calculate the rate of the successful tasks
+            private _rate = _count / count _taskList;
+
             switch (true) do {
                 case (_rate == 1) : {
                     [QGVARMAIN(callMission), ["MissionSuccess", true]] call CFUNC(serverEvent);

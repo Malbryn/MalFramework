@@ -29,11 +29,11 @@ if !(GVAR(aoMarkerAll) == "") then {
 };
 
 if !(GVAR(aoMarkerBlufor) == "") then {
-    _ao pushBack [sideLogic, GVAR(aoMarkerBlufor)];
+    _ao pushBack [west, GVAR(aoMarkerBlufor)];
 };
 
 if !(GVAR(aoMarkerRedfor) == "") then {
-    _ao pushBack [sideLogic, GVAR(aoMarkerRedfor)];
+    _ao pushBack [east, GVAR(aoMarkerRedfor)];
 };
 
 if (count _ao == 0) exitWith {

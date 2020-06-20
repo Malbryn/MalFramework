@@ -3,21 +3,21 @@
         BlackHawk
 
     Description:
-        Shows the Orbat in the player's diary section.
+        -
 
     Arguments:
         -
 
     Example:
-        call MF_orbat_fnc_showOrbat
+        call MF_orbat_fnc_refreshOrbat
 
     Returns:
         -
 */
 
-if !(hasInterface) exitWith {};
+private ["_text", "_getPicture", "_unit", "_radio", "_image", "_optics", "_opticsClasses", "_class", "_lobbyName"];
 
-private _text = "<br/><execute expression='call MF_orbat_fnc_refreshOrbat'>Refresh</execute> (click to show JIPs)<br/><br/>";
+_text = "<br/><execute expression='call MF_orbat_fnc_refreshOrbat'>Refresh</execute> (click to show JIPs)<br/><br/>";
 
 _getPicture = {
     params ["_name", "_dimensions", ["_type", "CfgWeapons"]];
@@ -25,7 +25,7 @@ _getPicture = {
     if (_name isEqualto "") exitwith {""};
     if !(isText(configFile >> _type >> _name >> "picture")) exitwith {""};
 
-    private _image = getText(configFile >> _type >> _name >> "picture");
+    _image = getText(configFile >> _type >> _name >> "picture");
 
     if (_image isEqualto "") then {
         _image = "\A3\ui_f\data\map\markers\military\unknown_CA.paa";
@@ -43,8 +43,8 @@ allGroups apply {
         _text = _text + format ["<font size='20' color='#FFFF00'>%1</font>", groupID _x] + "<br/>";
 
         {
-            private _unit = _x;
-            private _radio = "";
+            _unit = _x;
+            _radio = "";
 
             (items _unit + assignedItems _unit) apply {
                 if !((toLower _x) find "tfar_" isEqualto -1) then {
@@ -52,8 +52,8 @@ allGroups apply {
                 };
             };
 
-            private _optics = "";
-            private _opticsClasses = [
+            _optics = "";
+            _opticsClasses = [
                 "UK3CB_BAF_Soflam_Laserdesignator",
                 "Laserdesignator",
                 "Laserdesignator_01_khk_F",
@@ -74,16 +74,16 @@ allGroups apply {
                 "rhsusf_bino_m24",
                 "rhsusf_bino_leopold_mk4"
             ];
-            
+
             _opticsClasses apply {
-                private _class = _x;
+                _class = _x;
 
                 if (_class in (items _unit + assignedItems _unit)) exitwith {
                     _optics = ([_class, [28,28]] call _getPicture);
                 };
             };
 
-            private _lobbyName = if !(((roleDescription _unit) find "@") isEqualto -1) then {
+            _lobbyName = if !(((roleDescription _unit) find "@") isEqualto -1) then {
                 ((roleDescription _unit) splitString "@") select 0} else {roleDescription _unit
             };
 

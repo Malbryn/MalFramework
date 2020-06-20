@@ -85,6 +85,11 @@ Special thanks to <font color='#21749c'>kMaN</font> for his support and help wit
 "
 DIARY_RECORD_END;
 
+// Removing some Diary records
 [{!isNil "cba_help_DiaryRecordAddons"}, {
     player removeDiarySubject "cba_help_docs";
+}] call CFUNC(waitUntilAndExecute);
+
+[{player diarySubjectExists "SFP"}, {
+    player removeDiarySubject "SFP";
 }] call CFUNC(waitUntilAndExecute);
