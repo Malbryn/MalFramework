@@ -186,7 +186,7 @@ GVARMAIN(moduleStaticLine) = true;  // Coop & TvT
 // Supply drop
 GVARMAIN(moduleSupplyDrop) = true;  // Coop
 EGVAR(supply_drop,supplyDropPlane) = "B_T_VTOL_01_vehicle_F";  // Plane or helicopter used for the supply drop
-EGVAR(supply_drop,useFlare) = true;  // Use flares to mark the crate instead of smokes (night ops)
+EGVAR(supply_drop,useFlare) = false;  // Use flares to mark the crate instead of smokes (night ops)
 
 
 // Task control
