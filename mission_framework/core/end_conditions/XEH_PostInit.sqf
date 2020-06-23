@@ -17,14 +17,17 @@ if (isServer) then {
         };
 
         // Add per frame handler
-        if (GVARMAIN(isTvT)) then {
-            GVAR(endConditionCheckTvT) = [{
-                call FUNC(checkEndConditionsTvT);
-            }, 3] call CFUNC(addPerFrameHandler);
-        } else {
-            GVAR(endConditionCheck) = [{
-                call FUNC(checkEndConditionsCoop);
-            }, 10] call CFUNC(addPerFrameHandler);
-        };
+        // Adding some delay so the side values are set properly
+        [{
+            if (GVARMAIN(isTvT)) then {
+                GVAR(endConditionCheck) = [{
+                    call FUNC(checkEndConditionsTvT);
+                }, 3] call CFUNC(addPerFrameHandler);
+            } else {
+                GVAR(endConditionCheck) = [{
+                    call FUNC(checkEndConditionsCoop);
+                }, 10] call CFUNC(addPerFrameHandler);
+            };
+        }, [], 5] call CFUNC(waitAndExecute);
     }] call CFUNC(addEventHandler);
 };

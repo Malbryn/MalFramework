@@ -9,8 +9,14 @@ PREP_RECOMPILE_END;
 ADDON = true;
 
 // Global variables
-GVAR(friendlyFires) = ["FRIENDLY FIRE INCIDENTS: "];
-GVAR(civilianKills) = ["CIVILIAN KILLS: "];
-GVAR(eventsArray) = [];
-GVAR(kills) = "Total kills: 0";
+GVAR(kills) = "TOTAL KILLS: 0";
 GVAR(killCount) = 0;
+GVAR(eventsArray) = [];
+
+if (isDedicated) then {
+    GVAR(friendlyFires) = ["FRIENDLY FIRE INCIDENTS: "];
+    GVAR(civilianKills) = ["CIVILIAN KILLS: "];
+} else {
+    GVAR(friendlyFires) = "FRIENDLY FIRE INCIDENTS:<br/>";
+    GVAR(civilianKills) = "CIVILIAN KILLS:<br/>";
+}

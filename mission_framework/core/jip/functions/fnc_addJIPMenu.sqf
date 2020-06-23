@@ -22,7 +22,7 @@ if !(hasInterface && didJIP) exitWith {};
 // Delay the notification beacuse of the loading screen
 [{
     ["JipTeleport"] call BFUNC(showNotification);
-}, [], 20] call CFUNC(waitAndExecute);
+}, [], 15] call CFUNC(waitAndExecute);
 
 SETVAR(player,GVAR(spawnPos),getPos player);
 
