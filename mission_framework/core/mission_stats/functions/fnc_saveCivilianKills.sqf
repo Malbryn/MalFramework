@@ -17,7 +17,7 @@
         void
 */
 
-if !(hasInterface) exitWith {};
+if !(isDedicated) exitWith {};
 
 private ["_text"];
 

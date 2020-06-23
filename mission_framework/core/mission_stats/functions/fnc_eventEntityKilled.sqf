@@ -33,8 +33,13 @@ if (GVARMAIN(isTvT)) then {
                     // Log the name of the killer
                     _time = [CBA_missionTime] call BFUNC(secondsToString);
                     _text = format ["%1  :  A civilian was killed by %2 (BLUFOR)<br/>", _time, name _killer];
-                    PUSH(GVAR(civilianKills),_text);
-            
+
+                    if (isDedicated) then {
+                        PUSH(GVAR(civilianKills),_text);
+                    } else {
+                        GVAR(civilianKills) = GVAR(civilianKills) + _text;
+                    };
+
                     INFO_1("A civilian was killed by %1 (BLUFOR)",name _killer);
                 };
 
@@ -44,8 +49,13 @@ if (GVARMAIN(isTvT)) then {
                     // Log the name of the killer
                     _time = [CBA_missionTime] call BFUNC(secondsToString);
                     _text = format ["%1  :  A civilian was killed by %2 (REDFOR)<br/>", _time, name _killer];
-                    PUSH(GVAR(civilianKills),_text);
-            
+
+                    if (isDedicated) then {
+                        PUSH(GVAR(civilianKills),_text);
+                    } else {
+                        GVAR(civilianKills) = GVAR(civilianKills) + _text;
+                    };
+
                     INFO_1("A civilian was killed by %1 (REDFOR)",name _killer);
                 };
 
@@ -55,8 +65,13 @@ if (GVARMAIN(isTvT)) then {
                     // Log the name of the killer
                     _time = [CBA_missionTime] call BFUNC(secondsToString);
                     _text = format ["%1  :  A civilian was killed by %2<br/>", _time, name _killer];
-                    PUSH(GVAR(civilianKills),_text);
-                    
+
+                    if (isDedicated) then {
+                        PUSH(GVAR(civilianKills),_text);
+                    } else {
+                        GVAR(civilianKills) = GVAR(civilianKills) + _text;
+                    };
+
                     INFO_1("A civilian was killed by %1",name _killer);
                 };
             };
@@ -75,8 +90,13 @@ if (GVARMAIN(isTvT)) then {
             // Log the name of the killer
             _time = [CBA_missionTime] call BFUNC(secondsToString);
             _text = format ["%1  :  A civilian was killed by %2<br/>", _time, name _killer];
-            PUSH(GVAR(civilianKills),_text);
-            
+
+            if (isDedicated) then {
+                PUSH(GVAR(civilianKills),_text);
+            } else {
+                GVAR(civilianKills) = GVAR(civilianKills) + _text;
+            };
+
             INFO_1("A civilian was killed by %1",name _killer);
         };
     }];

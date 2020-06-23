@@ -17,6 +17,8 @@
         void
 */
 
+if !(isDedicated) exitWith {};
+
 private ["_text"];
 
 // Checking if there's multiple items in the array otherwise it breaks joinString
