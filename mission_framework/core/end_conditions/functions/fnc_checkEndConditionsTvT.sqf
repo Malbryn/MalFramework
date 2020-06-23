@@ -27,7 +27,7 @@ private _ended = false;
 // Time limit check
 if (GVARMAIN(moduleTimeLimit) && !_ended) then {
     private _time = CBA_missionTime;
-    
+
     if (_time > GVAR(timeLimit)) then {
         switch (GVAR(favouredSide)) do {
             case 0 : {
