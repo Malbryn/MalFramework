@@ -206,4 +206,4 @@ GVARMAIN(moduleVehicleRespawn) = true;  // Coop & TvT
 
 // Wave respawn
 GVARMAIN(moduleWaveRespawn) = true;  // Coop
-EGVAR(respawn_wave,availableWaves) = 3;  // Number of the available respawn waves
+EGVAR(respawn_wave,availableWaves) = 1;  // Number of the available respawn waves
