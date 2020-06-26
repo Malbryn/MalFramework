@@ -39,12 +39,12 @@ if (isDedicated) then {
     [QGVARMAIN(missionEnd), [_ending, _isVictory, playerSide]] call CFUNC(localEvent);
 };
 
-// Logging
-private _time = [CBA_missionTime] call BFUNC(secondsToString);
-INFO_3("Ending mission... (Ending: %1 | Victory: %2 | Mission time: %3)",_ending,_isVictory,_time);
-
 // Disable damage
 if (GVARMAIN(moduleDisableDamage)) then {
     [QGVARMAIN(damageDisabled), []] call CFUNC(globalEvent);
     INFO("Player damage disabled");
 };
+
+// Logging
+private _time = [CBA_missionTime] call BFUNC(secondsToString);
+INFO_3("Ending mission... (Ending: %1 | Victory: %2 | Mission time: %3)",_ending,_isVictory,_time);
