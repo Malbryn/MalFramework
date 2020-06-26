@@ -3,7 +3,7 @@
 if (!GVARMAIN(moduleSupplyDrop) || GVARMAIN(isTvT)) exitWith {};
 
 if (hasInterface) then {
-    [QGVARMAIN(transferSD), {
+    [QGVAR(transferSD), {
         call FUNC(addSupplyDropMenu);
     }] call CFUNC(addEventHandler);
 

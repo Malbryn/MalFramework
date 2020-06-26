@@ -3,7 +3,7 @@
 if (!GVARMAIN(moduleHALO) && !GVARMAIN(moduleMRV) && !GVARMAIN(moduleRP)) exitWith {};
 
 if (hasInterface) then {
-    [QGVARMAIN(transferRP), {
+    [QGVAR(transferRP), {
         call FUNC(addRPMenu);
     }] call CFUNC(addEventHandler);
 
