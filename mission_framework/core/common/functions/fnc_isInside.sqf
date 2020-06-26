@@ -11,7 +11,7 @@
         0: OBJECT - Unit to check
 
     Example:
-        [player] call MF_snowfall_fnc_isInside
+        [player] call MF_common_fnc_isInside
 
     Returns:
         BOOLEAN

@@ -3,7 +3,7 @@
 if !(GVARMAIN(moduleScenarioControl)) exitWith {};
 
 if (hasInterface) then {
-    [QGVARMAIN(transferSC), {
+    [QGVAR(transferSC), {
         call FUNC(addScenarioEndControlMenu);
     }] call CFUNC(addEventHandler);
 

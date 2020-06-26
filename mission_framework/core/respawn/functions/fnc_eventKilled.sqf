@@ -97,41 +97,31 @@ if (GVARMAIN(isTvT)) then {
 
             // SL module transfer
             if (GETVAR(player,EGVAR(player,isSL),false) && GVARMAIN(moduleRP)) then {
-                private _partGroup = (units group player) - [player];
-                private _target = objNull;
+                private _target = [player] call EFUNC(common,selectTarget);
 
-                // Check if empty
-                if (count _partGroup == 0) exitWith {};
-
-                _target = _partGroup select (_partGroup findIf {alive _x});
-
-                if !(GETVAR(_target,EGVAR(player,isSL),false)) then {
+                if (_target != objNull && {GETVAR(_target,EGVAR(player,isSL),false)}) then {
                     SETPVAR(_target,EGVAR(player,isSL,true));
-                    [QGVARMAIN(transferRP), [], _target] call CFUNC(targetEvent);
+                    [QEGVAR(reinsertion,transferRP), [], _target] call CFUNC(targetEvent);
                     [QGVARMAIN(notification_2), ["Info", "You can now deploy the squad rally point"], _unit] call CFUNC(targetEvent);
                 };
             };
 
             // CO modules transfer
             if (GETVAR(player,EGVAR(player,isCO),false) && (GVARMAIN(moduleSupplyDrop) || GVARMAIN(moduleScenarioControl))) then {
-                private _partGroup = (units group player) - [player];
-                private _target = objNull;
+                private _target = [player] call EFUNC(common,selectTarget);
 
-                // Check if empty
-                if (count _partGroup == 0) exitWith {};
+                if (_target != objNull && {GETVAR(_target,EGVAR(player,isCO),false)}) then {
+                    if (GVARMAIN(moduleSupplyDrop)) then {
+                        SETPVAR(_target,EGVAR(player,isCO,true));
+                        [QEGVAR(supply_drop,transferSD), [], _target] call CFUNC(targetEvent);
+                        [QGVARMAIN(notification_2), ["Info", "You can now call in supply drops"], _unit] call CFUNC(targetEvent);
+                    };
 
-                _target = _partGroup select (_partGroup findIf {alive _x});
-
-                if !(GETVAR(_target,EGVAR(player,isCO),false) && GVARMAIN(moduleSupplyDrop)) then {
-                    SETPVAR(_target,EGVAR(player,isCO,true));
-                    [QGVARMAIN(transferSD), [], _target] call CFUNC(targetEvent);
-                    [QGVARMAIN(notification_2), ["Info", "You can now call in supply drops"], _unit] call CFUNC(targetEvent);
-                };
-
-                if !(GETVAR(_target,EGVAR(player,isCO),false) && GVARMAIN(moduleScenarioControl)) then {
-                    SETPVAR(_target,EGVAR(player,isCO,true));
-                    [QGVARMAIN(transferSC), [], _target] call CFUNC(targetEvent);
-                    [QGVARMAIN(notification_2), ["Info", "You can now call tactical withdrawal"], _unit] call CFUNC(targetEvent);
+                    if (GVARMAIN(moduleScenarioControl)) then {
+                        SETPVAR(_target,EGVAR(player,isCO,true));
+                        [QEGVAR(scenario_control,transferSC), [], _target] call CFUNC(targetEvent);
+                        [QGVARMAIN(notification_2), ["Info", "You can now call tactical withdrawal"], _unit] call CFUNC(targetEvent);
+                    };
                 };
             };
 
@@ -156,15 +146,9 @@ if (GVARMAIN(isTvT)) then {
 
         // Transfer respawn wave module
         if (GETVAR(player,EGVAR(player,isCO),false) && GVARMAIN(moduleWaveRespawn)) then {
-            private _partGroup = (units group player) - [player];
-            private _target = objNull;
+            private _target = [player] call EFUNC(common,selectTarget);
 
-            // Check if empty
-            if (count _partGroup == 0) exitWith {};
-
-            _target = _partGroup select (_partGroup findIf {alive _x});
-
-            if !(GETVAR(_target,EGVAR(player,isCO),false)) then {
+            if (_target != objNull && {GETVAR(_target,EGVAR(player,isCO),false)}) then {
                 SETPVAR(_target,EGVAR(player,isCO,true));
                 [QGVARMAIN(transferWR), [], _target] call CFUNC(targetEvent);
                 [QGVARMAIN(notification_2), ["Info", "You can now call in reinforcements"], _unit] call CFUNC(targetEvent);
