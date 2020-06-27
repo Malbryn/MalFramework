@@ -49,5 +49,5 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
     [QGVARMAIN(notification_2), ["Info", "Your SL has picked up the RP"], _unitArray] call CFUNC(targetEvent);
 }, {
     // Stop the animation if the progress bar was cancelled
-    player switchMove "";
+    [player, ""] remoteExec ["switchMove", 0];
 }, "Removing Rally Point"] call AFUNC(common,progressBar);

@@ -11,7 +11,7 @@ if (hasInterface) then {
         call FUNC(respawnPlayer);
     }] call CFUNC(addEventHandler);
 
-    [QGVARMAIN(transferWR), {
+    [QGVAR(transferWR), {
         call FUNC(addCallRespawnMenu);
     }] call CFUNC(addEventHandler);
 

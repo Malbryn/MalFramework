@@ -87,7 +87,7 @@ if (GVARMAIN(isTvT)) then {
             };
 
             if (EGVAR(respawn_wave,availableWaves) == 0) then {
-                [QGVARMAIN(notification_2), ["Warning", "No more reinforcement wave ramaining!"]] call CFUNC(localEvent);
+                [QGVARMAIN(notification_2), ["Warning", "No more reinforcement wave remaining!"]] call CFUNC(localEvent);
             };
 
             // Screen effects
@@ -100,27 +100,30 @@ if (GVARMAIN(isTvT)) then {
                 private _target = [player] call EFUNC(common,selectTarget);
 
                 if (_target != objNull && {!(GETVAR(_target,EGVAR(player,isSL),false))}) then {
-                    SETPVAR(_target,EGVAR(player,isSL,true));
+                    SETPVAR(_target,EGVAR(player,isSL),true);
                     [QEGVAR(reinsertion,transferRP), [], _target] call CFUNC(targetEvent);
                     [QGVARMAIN(notification_2), ["Info", "You can now deploy the squad rally point"], _target] call CFUNC(targetEvent);
                 };
             };
 
             // CO modules transfer
-            if (GETVAR(player,EGVAR(player,isCO),false) && (GVARMAIN(moduleSupplyDrop) || GVARMAIN(moduleScenarioControl))) then {
+            if (GETVAR(player,EGVAR(player,isCO),false) && (GVARMAIN(moduleSupplyDrop) || GVARMAIN(moduleScenarioControl) || GVARMAIN(moduleWaveRespawn))) then {
                 private _target = [player] call EFUNC(common,selectTarget);
 
                 if (_target != objNull && {!(GETVAR(_target,EGVAR(player,isCO),false))}) then {
+                    SETPVAR(_target,EGVAR(player,isCO),true);
+                    [QGVARMAIN(notification_2), ["Info", "You are now in charge of the platoon"], _target] call CFUNC(targetEvent);
+
                     if (GVARMAIN(moduleSupplyDrop)) then {
-                        SETPVAR(_target,EGVAR(player,isCO,true));
                         [QEGVAR(supply_drop,transferSD), [], _target] call CFUNC(targetEvent);
-                        [QGVARMAIN(notification_2), ["Info", "You can now call in supply drops"], _target] call CFUNC(targetEvent);
                     };
 
                     if (GVARMAIN(moduleScenarioControl)) then {
-                        SETPVAR(_target,EGVAR(player,isCO,true));
                         [QEGVAR(scenario_control,transferSC), [], _target] call CFUNC(targetEvent);
-                        [QGVARMAIN(notification_2), ["Info", "You can now call tactical withdrawal"], _target] call CFUNC(targetEvent);
+                    };
+
+                    if (GVARMAIN(moduleWaveRespawn)) then {
+                        [QEGVAR(respawn_wave,transferWR), [], _target] call CFUNC(targetEvent);
                     };
                 };
             };
@@ -142,17 +145,6 @@ if (GVARMAIN(isTvT)) then {
             cutText  ["", "BLACK IN",  3, true];
             "dynamicBlur" ppEffectAdjust [0];
             "dynamicBlur" ppEffectCommit 3;
-        };
-
-        // Transfer respawn wave module
-        if (GETVAR(player,EGVAR(player,isCO),false) && GVARMAIN(moduleWaveRespawn)) then {
-            private _target = [player] call EFUNC(common,selectTarget);
-
-            if (_target != objNull && {!(GETVAR(_target,EGVAR(player,isCO),false)})) then {
-                SETPVAR(_target,EGVAR(player,isCO,true));
-                [QGVARMAIN(transferWR), [], _target] call CFUNC(targetEvent);
-                [QGVARMAIN(notification_2), ["Info", "You can now call in reinforcements"], _target] call CFUNC(targetEvent);
-            };
         };
 
         // Disable snow effect
