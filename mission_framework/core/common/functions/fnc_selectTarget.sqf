@@ -25,6 +25,12 @@ private _target = objNull;
 // Check if empty
 if (count _partGroup == 0) exitWith {_target};
 
-_target = _partGroup select (_partGroup findIf {alive _x});
+// Find first alive unit
+private _index = _partGroup findIf {alive _x};
+
+if (_index == -1) exitWith {_target};
+
+// If any was found, then it's the target
+_target = _partGroup select _index;
 
 _target

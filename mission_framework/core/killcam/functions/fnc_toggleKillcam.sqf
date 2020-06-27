@@ -23,6 +23,6 @@ if ((_this#1) == 37) then {
         cutText ["", "PLAIN DOWN"];
     } else {
         GVAR(toggle) = true;
-        cutText ["The lines show the LINE OF SIGHT (not the bullets ballistics) from the position of enemy to the player's position at the moment of death.", "PLAIN DOWN"];
+        cutText ["The lines show the LINE OF SIGHT (not the bullet trajectory) from<br/>the position of enemy to the player's position at the moment of death.", "PLAIN DOWN", -1, true, true];
     };
 };

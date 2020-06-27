@@ -29,7 +29,7 @@ if (GVARMAIN(moduleTimeLimit) && !_ended) then {
     private _time = CBA_missionTime;
     
     if (_time > GVAR(timeLimit)) then {
-        [QGVARMAIN(callMission), ["TimeLimit", false, playerSide]] call CFUNC(localEvent);
+        [QGVARMAIN(callMission), ["TimeLimit", false]] call CFUNC(localEvent);
         _ended = true;
     };
 };
@@ -40,7 +40,7 @@ if (GVARMAIN(modulePlayerCasualties) && _allPlayers != 0 && !_ended) then {
     private _ratio = _dead / (_allPlayers * 0.01);
 
     if (_ratio >= GVAR(playerCasLimit)) then {
-        [QGVARMAIN(callMission), ["PlayerCasLimit", false, playerSide]] call CFUNC(localEvent);
+        [QGVARMAIN(callMission), ["PlayerCasLimit", false]] call CFUNC(localEvent);
         _ended = true;
     };
 };
@@ -51,7 +51,7 @@ if (GVARMAIN(moduleCivilianCasualties) && count GVAR(civs) != 0 && !_ended) then
     private _ratio = _dead / (count GVAR(civs) * 0.01);
 
     if (_ratio >= GVAR(civilianCasLimit)) then {
-        [QGVARMAIN(callMission), ["CivCasLimit", false, playerSide]] call CFUNC(localEvent);
+        [QGVARMAIN(callMission), ["CivCasLimit", false]] call CFUNC(localEvent);
         _ended = true;
     };
 };
@@ -70,7 +70,7 @@ if (GVARMAIN(moduleTaskLimit) && !_ended) then {
     };
 
     if (_count >= GVAR(taskLimit)) then {
-        [QGVARMAIN(callMission), ["MissionSuccess", true, playerSide]] call CFUNC(localEvent);
+        [QGVARMAIN(callMission), ["MissionSuccess", true]] call CFUNC(localEvent);
         _ended = true;
     };
 };
@@ -99,9 +99,9 @@ if (GVARMAIN(moduleExtraction) && !_ended) then {
     // End the mission accordingly
     if (_playerCount >= (_allPlayers * GVAR(playerThreshold) * 0.01) && (_allPlayers != 0)) then {
         if (_rate >= (GVAR(taskThreshold) * 0.01)) then {
-            [QGVARMAIN(callMission), ["MissionSuccess", true, playerSide]] call CFUNC(localEvent);
+            [QGVARMAIN(callMission), ["MissionSuccess", true]] call CFUNC(localEvent);
         } else {
-            [QGVARMAIN(callMission), ["MissionFail", false, playerSide]] call CFUNC(localEvent);
+            [QGVARMAIN(callMission), ["MissionFail", false]] call CFUNC(localEvent);
         };
     };
 };
