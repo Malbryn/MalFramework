@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Adds an ACE interaction menu to the player that allows the player to check the ramaining mission time.
+        Adds an ACE interaction menu to the player that allows the player to check the remaining mission time.
 
     Arguments:
         -

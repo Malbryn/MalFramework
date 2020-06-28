@@ -54,7 +54,7 @@ if (GETVAR(player,EGVAR(player,isCO),false) && GVARMAIN(moduleWaveRespawn)) then
             DEC(GVAR(availableWaves));
             publicVariable QGVAR(availableWaves);
         } else {
-            ["Warning", ["No more reinforcement wave ramaining!"]] call BFUNC(showNotification);
+            ["Warning", ["No more reinforcement wave remaining!"]] call BFUNC(showNotification);
         };
     }, {true}] call AFUNC(interact_menu,createAction);
 
