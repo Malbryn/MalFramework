@@ -34,5 +34,5 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
     private _grassCutter = createVehicle ["Land_ClutterCutter_medium_F", position player, [], 0, "CAN_COLLIDE"];
 }, {
     // Stop the animation if the progress bar was cancelled
-    player switchMove "";
+    [player, ""] remoteExec ["switchMove", 0];
 }, "Cutting grass"] call AFUNC(common,progressBar);

@@ -9,7 +9,7 @@
 [QGVARMAIN(missionEnd), {
     params ["_ending", "_isVictory", ["_side", sideUnknown]];
 
-    if (playerSide == _side) then {
+    if (_side == playerSide || _side == sideUnknown) then {
         [_ending, _isVictory, true, true, true] call BFUNC(endMission);
     } else {
         [_ending, !_isVictory, true, true, true] call BFUNC(endMission);

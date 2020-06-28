@@ -25,7 +25,7 @@ GVARMAIN(respawnTicketsBlufor) = 2;  // Respawn tickets for BLUFOR (-1: disabled
 GVARMAIN(respawnTicketsRedfor) = -1;  // Respawn tickets for BLUFOR (-1: disabled)
 
 // End condition - Task limit
-GVARMAIN(moduleTaskLimit) = true;  // Coop
+GVARMAIN(moduleTaskLimit) = false;  // Coop
 EGVAR(end_conditions,taskLimit) = 2;  // Minimum number of completed tasks
 
 // End condition - Extraction
@@ -205,5 +205,5 @@ GVARMAIN(moduleVehicleRespawn) = true;  // Coop & TvT
 
 
 // Wave respawn
-GVARMAIN(moduleWaveRespawn) = false;  // Coop
-EGVAR(respawn_wave,availableWaves) = 3;  // Number of the available respawn waves
+GVARMAIN(moduleWaveRespawn) = true;  // Coop
+EGVAR(respawn_wave,availableWaves) = 1;  // Number of the available respawn waves
