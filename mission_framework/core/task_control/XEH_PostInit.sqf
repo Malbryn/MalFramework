@@ -3,5 +3,7 @@
 if (!GVARMAIN(moduleTaskControl) || GVARMAIN(isTvT)) exitWith {};
 
 if (hasInterface) then {
-    call FUNC(addTaskControlMenu);
+    [QGVARMAIN(initFramework), {
+        call FUNC(addTaskControlMenu);
+    }] call CFUNC(addEventHandler);
 };
