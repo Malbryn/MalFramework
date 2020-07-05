@@ -36,7 +36,7 @@ if (isDedicated) then {
     [QGVARMAIN(missionEnd), [_ending, true, _side]] call CFUNC(localEvent);
     [QGVARMAIN(missionEnd), [_ending, _isVictory, _side], allPlayers] call CFUNC(targetEvent);
 } else {
-    [QGVARMAIN(missionEnd), [_ending, _isVictory, playerSide]] call CFUNC(localEvent);
+    [QGVARMAIN(missionEnd), [_ending, _isVictory, _side]] call CFUNC(localEvent);
 };
 
 // Disable damage

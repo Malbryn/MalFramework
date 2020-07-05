@@ -10,7 +10,7 @@ EGVAR(end_conditions,timeLimit) = 60 MINUTES;  // Mission time limit in seconds
 EGVAR(end_conditions,favouredSide) = 1;  // TvT: Favoured side (0: NONE, 1: BLUFOR, 2: REDFOR)
 
 // End condition - Player casualty limit
-GVARMAIN(modulePlayerCasualties) = false;  // Coop & TvT
+GVARMAIN(modulePlayerCasualties) = true;  // Coop & TvT
 EGVAR(end_conditions,playerCasLimit) = 75;  // Coop: Percentage of the max. allowed player casualty
 EGVAR(end_conditions,bluforCasLimit) = 75;  // TvT: Percentage of the max. allowed player casualty for the BLUFOR side
 EGVAR(end_conditions,redforCasLimit) = 75;  // TvT: Percentage of the max. allowed player casualty for the REDFOR side
