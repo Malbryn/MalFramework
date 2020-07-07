@@ -144,7 +144,6 @@ force force ace_medical_blood_enabledFor = 2;
 force force ace_medical_blood_maxBloodObjects = 500;
 force force ace_medical_fatalDamageSource = 2;
 force force ace_medical_feedback_bloodVolumeEffectType = 2;
-force force ace_medical_feedback_painEffectType = 1;
 force force ace_medical_fractureChance = 0.6;
 force force ace_medical_fractures = 2;
 force force ace_medical_gui_enableMedicalMenu = 1;

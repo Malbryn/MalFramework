@@ -1,6 +1,9 @@
 // Clickable link to marker:
 // <marker name='nameOfTheMarker'>Click here</marker>
 
+// Insert image:
+// <img image='mission_framework\config\img\loading_screen.jpg' width='270' height='378'/>
+
 NEWTAB("I. Organization")
 <br/><font color='#21749c' size='18' face='PuristaBold'>BLUFOR ORBAT</font>
 <br/>
