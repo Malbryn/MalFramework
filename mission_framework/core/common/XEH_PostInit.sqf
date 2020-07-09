@@ -12,13 +12,8 @@ if (isServer && GVARMAIN(isTvT)) then {
     }] call CFUNC(addEventHandler);
 };
 
-if (hasInterface && GVARMAIN(isTvT)) then {
-    [QGVARMAIN(initFramework), {
-        [QGVAR(sideValueSet), [playerSide, 1, 1, 0]] call CFUNC(serverEvent);
-    }] call CFUNC(addEventHandler);
-};
-
 if (hasInterface) then {
+    // Reset rank icons
     [QGVARMAIN(initFramework), {
         [faction player, [
              "\A3\Ui_f\data\GUI\Cfg\Ranks\private_gs.paa",
@@ -30,4 +25,11 @@ if (hasInterface) then {
              "\A3\Ui_f\data\GUI\Cfg\Ranks\colonel_gs.paa"
         ]] call AFUNC(nametags,setFactionRankIcons);
     }] call CFUNC(addEventHandler);
+
+    if (GVARMAIN(isTvT)) then {
+        [QGVARMAIN(initFramework), {
+            // Set side values
+            [QGVAR(sideValueSet), [playerSide, 1, 1, 0]] call CFUNC(serverEvent);
+        }] call CFUNC(addEventHandler);
+    };
 };

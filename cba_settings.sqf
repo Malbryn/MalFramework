@@ -242,8 +242,8 @@ force force ace_scopes_zeroReferenceTemperature = 15;
 // ACE Spectator
 force force ace_spectator_enableAI = false;
 force force ace_spectator_maxFollowDistance = 10;
-force force ace_spectator_restrictModes = 4;
-force force ace_spectator_restrictVisions = 3;
+force force ace_spectator_restrictModes = 1;
+force force ace_spectator_restrictVisions = 1;
 
 // ACE Switch Units
 force force ace_switchunits_enableSafeZone = true;
