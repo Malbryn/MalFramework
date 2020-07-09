@@ -40,9 +40,14 @@ if (abs(_pos#0) < 2 && abs(_pos#1) < 2) then {
 
 SETMVAR(GVAR(toggle),false);
 
-[{!isNull (findDisplay 60492)}, {
-    GVAR(keyHandle) = (findDisplay 60492) displayAddEventHandler ["keyDown", {call FUNC(toggleKillcam);}];
-}, []] call CFUNC(waitUntilAndExecute);
+// Select the correct spectator screen (#60000: ACE, #60492: Vanilla)
+private _display = if (GVARMAIN(useACESpectator)) then [{60000}, {60492}];
+
+[{!isNull (findDisplay _this)}, {
+    params ["_display"];
+
+    GVAR(keyHandle) = (findDisplay _display) displayAddEventHandler ["keyDown", {call FUNC(toggleKillcam)}];
+}, _display] call CFUNC(waitUntilAndExecute);
 
 if !(isNull GVAR(killer)) then {
     GVAR(distance) = GVAR(killer) distance _unit;

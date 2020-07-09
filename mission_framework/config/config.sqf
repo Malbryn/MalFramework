@@ -44,7 +44,10 @@ GVARMAIN(playerViewDistance) = 2500;  // Player view distance
 GVARMAIN(serverViewDistance) = 2000;  // Server view distance (= AI view distance)
 
 // Time acceleration
-GVARMAIN(timeAcceleration) = 2;
+GVARMAIN(timeAcceleration) = 2;  // Value between 0.1 and 120
+
+// ACE spectator
+GVARMAIN(useACESpectator) = true;  // Use the ACE spectator camera instead of the vanilla one (for dead players)
 
 // AI skills
 EGVAR(ai_skills,skillSet) = [
@@ -67,7 +70,7 @@ GVARMAIN(moduleFlyby) = true;  // Coop
 
 
 // AO limit
-GVARMAIN(moduleAOLimit) = true;  // Coop & TvT
+GVARMAIN(moduleAOLimit) = false;  // Coop & TvT
 EGVAR(ao_limit,timerLand) = 10;  // Timer for any land based vehicle/unit (-1: disabled)
 EGVAR(ao_limit,timerAir) = -1;  // Timer for any air vehicle (-1: disabled)
 EGVAR(ao_limit,aoMarkerAll) = "mrk_aoLimitAll";  // AO limit marker for every player
@@ -205,5 +208,5 @@ GVARMAIN(moduleVehicleRespawn) = true;  // Coop & TvT
 
 
 // Wave respawn
-GVARMAIN(moduleWaveRespawn) = true;  // Coop
+GVARMAIN(moduleWaveRespawn) = false;  // Coop
 EGVAR(respawn_wave,availableWaves) = 1;  // Number of the available respawn waves

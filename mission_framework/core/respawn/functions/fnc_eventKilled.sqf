@@ -80,7 +80,11 @@ if (GVARMAIN(isTvT)) then {
 
         if (GETVAR(player,EGVAR(respawn_tickets,amount),-1) == 0 || (GVARMAIN(moduleWaveRespawn) && EGVAR(respawn_wave,availableWaves) == 0)) then {
             // Init spectator screen
-            ["Initialize", [player, [], false, true, true, false, true, false, true, true]] call BFUNC(EGSpectator);
+            if (GVARMAIN(useACESpectator)) then {
+                [true, true, true] call EFUNC(common,initACESpectator);
+            } else {
+                ["Initialize", [player, [], false, true, true, false, true, false, true, true]] call BFUNC(EGSpectator);
+            };
 
             if (GETVAR(player,EGVAR(respawn_tickets,amount),-1) == 0) then {
                 [QGVARMAIN(notification_2), ["Warning", "You have no more respawn tickets!"]] call CFUNC(localEvent);
@@ -140,7 +144,11 @@ if (GVARMAIN(isTvT)) then {
             };
 
             // Init the complainer mode
-            ["Initialize", [player, [playerSide], false, false, true, false, true, false, false, true]] call BFUNC(EGSpectator);
+            if (GVARMAIN(useACESpectator)) then {
+                [true] call EFUNC(common,initACESpectator);
+            } else {
+                ["Initialize", [player, [playerSide], false, false, true, false, true, false, false, true]] call BFUNC(EGSpectator);
+            };
 
             cutText  ["", "BLACK IN",  3, true];
             "dynamicBlur" ppEffectAdjust [0];

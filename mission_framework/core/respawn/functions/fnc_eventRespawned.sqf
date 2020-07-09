@@ -41,7 +41,11 @@ cutText ["", "BLACK FADED", 5, true];
     "dynamicBlur" ppEffectCommit 3;
 
     // Close the spectator mode
-    ["Terminate"] call BFUNC(EGSpectator);
+    if (GVARMAIN(useACESpectator)) then {
+        [false] call EFUNC(common,initACESpectator);
+    } else {
+        ["Terminate"] call BFUNC(EGSpectator);
+    };
 
     // Load the gear
     private _loadout = GETVAR(_unit,EGVAR(gear,currentLoadout),"");
