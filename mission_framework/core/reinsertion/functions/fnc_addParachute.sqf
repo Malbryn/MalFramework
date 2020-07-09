@@ -22,7 +22,7 @@ params ["_unit"];
 private _backpackClass = backpack _unit;
 
 // If the unit already has a chute
-if (backpack _unit != "" and {getText (configfile >> "CfgVehicles" >> backpack _unit >> "backpackSimulation") isEqualTo "ParachuteSteerable"}) then {
+if (backpack _unit != "" && {getText (configfile >> "CfgVehicles" >> backpack _unit >> "backpackSimulation") isEqualTo "ParachuteSteerable"}) then {
     _backpackClass = "";
 };
 
@@ -64,9 +64,11 @@ if (_backpackClass != "") then {
         }, [_packHolder, _unit, _backpackClass, _container, _weaponCargo, _magazineCargo, _itemCargo]] call CFUNC(waitUntilAndExecute);
     }, [_packHolder, _unit, _backpackClass, _container, _weaponCargo, _magazineCargo, _itemCargo]] call CFUNC(waitUntilAndExecute);
 } else {
-    [{isTouchingGround _unit || (getPos _unit)#2 < 1 || (!alive _unit)}, {
+    _unit addBackpack "b_parachute";
+
+    [{isTouchingGround _this || (getPos _this)#2 < 1 || (!alive _this)}, {
         params ["_unit"];
 
         removeBackpack _unit;
-    }, [_unit]] call CFUNC(waitUntilAndExecute);
+    }, _unit] call CFUNC(waitUntilAndExecute);
 };
