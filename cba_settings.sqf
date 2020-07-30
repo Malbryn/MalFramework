@@ -311,6 +311,16 @@ force force ace_zeus_revealMines = 0;
 force force ace_zeus_zeusAscension = false;
 force force ace_zeus_zeusBird = false;
 
+// ACRE2
+force force acre_sys_core_fullDuplex = true;
+force force acre_sys_core_ignoreAntennaDirection = true;
+force force acre_sys_core_interference = true;
+force force acre_sys_core_revealToAI = 0;
+force force acre_sys_core_terrainLoss = 1;
+force force acre_sys_core_ts3ChannelName = "TaskForceRadio";
+force force acre_sys_core_ts3ChannelPassword = "123";
+force force acre_sys_signal_signalModel = 2;
+
 // TFAR - Global settings
 force force TFAR_AICanHearPlayer = false;
 force force TFAR_AICanHearSpeaker = false;
