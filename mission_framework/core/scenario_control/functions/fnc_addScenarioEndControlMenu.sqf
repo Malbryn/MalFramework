@@ -47,11 +47,11 @@ if (GETVAR(player,EGVAR(player,isCO),false)) then {
                 case (_rate == 1) : {
                     [QGVARMAIN(callMission), ["MissionSuccess", true, playerSide]] call CFUNC(serverEvent);
                 };
-                case ((GVAR(successRate) * 0.01) <= _rate && _rate < 1) : {
-                    [QGVARMAIN(callMission), ["WithdrawalWin", true, playerSide]] call CFUNC(serverEvent);
+                case ((GVARMAIN(taskThreshold) * 0.01) <= _rate && _rate < 1) : {
+                    [QGVARMAIN(callMission), ["WithdrawalMinorSuccess", true, playerSide]] call CFUNC(serverEvent);
                 };
-                case (0 < _rate && _rate < (GVAR(successRate) * 0.01)) : {
-                    [QGVARMAIN(callMission), ["WithdrawalLose", false, playerSide]] call CFUNC(serverEvent);
+                case (0 < _rate && _rate < (GVARMAIN(taskThreshold) * 0.01)) : {
+                    [QGVARMAIN(callMission), ["WithdrawalMinorFail", false, playerSide]] call CFUNC(serverEvent);
                 };
                 case (_rate == 0) : {
                     [QGVARMAIN(callMission), ["MissionFail", false, playerSide]] call CFUNC(serverEvent);
