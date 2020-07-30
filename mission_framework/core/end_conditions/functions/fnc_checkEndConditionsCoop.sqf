@@ -36,7 +36,9 @@ _taskList apply {
     };
 };
 
-private _rate = _taskCount / count _taskList;
+if (count _taskList != 0) then {
+    private _rate = _taskCount / count _taskList;
+};
 
 // Time limit check
 if (GVARMAIN(moduleTimeLimit) && !_ended) then {

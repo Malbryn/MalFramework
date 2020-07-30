@@ -11,9 +11,10 @@ if (isServer) then {
         // Check the tasks array
         if ((GVARMAIN(moduleTaskLimit) && (count GVAR(tasks) == 0)) ||
         (GVARMAIN(moduleExtraction) && (count GVAR(tasks) == 0))) then {
-            [QGVARMAIN(systemMessage), ["WARNING", "(End conditions) The task array is empty. Add the tasks to the tasks array."]] call CFUNC(globalEvent);
+            [QGVARMAIN(systemMessage), ["WARNING", "(End conditions) The End conditions module is active but no task was registered. The end condition check won't work properly."]] call CFUNC(globalEvent);
             GVARMAIN(moduleTaskLimit) = false;
             GVARMAIN(moduleExtraction) = false;
+            GVARMAIN(moduleTimeLimit) = false;
         };
 
         // Add per frame handler
