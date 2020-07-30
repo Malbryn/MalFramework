@@ -37,7 +37,7 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
 
 // Display ACE progress bar
 [12, [], {
-    // Remove RP tent and save the coordinates
+    // Remove RP tent and delete the coordinates
     private _id = GETVAR((group player),GVAR(RPTent),nil);
     private _RPTent = objectFromNetId _id;
     deleteVehicle _RPTent;
