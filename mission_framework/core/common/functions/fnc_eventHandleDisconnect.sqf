@@ -11,7 +11,7 @@
         -
 
     Example:
-        [] call MF_comnon_fnc_eventHandleDisconnect
+        call MF_comnon_fnc_eventHandleDisconnect
 
     Returns:
         -

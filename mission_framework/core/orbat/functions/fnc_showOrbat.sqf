@@ -50,6 +50,10 @@ allGroups apply {
                 if !((toLower _x) find "tfar_" isEqualto -1) then {
                     _radio = _radio + ([_x, [28,28]] call _getPicture);
                 };
+
+                if !((toLower _x) find "acre_" isEqualto -1) then {
+                    _radio = _radio + ([_x, [28,28]] call _getPicture);
+                };
             };
 
             _optics = "";

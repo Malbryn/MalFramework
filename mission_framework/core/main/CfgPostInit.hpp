@@ -4,6 +4,10 @@ class GVARMAIN(Main) {  // Main first
     init = PATH_POST(main);
 };
 
+class GVARMAIN(ACRE) {
+    init = PATH_POST(acre);
+};
+
 class GVARMAIN(AdminMenu) {
     init = PATH_POST(admin_menu);
 };

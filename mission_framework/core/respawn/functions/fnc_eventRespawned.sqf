@@ -52,7 +52,11 @@ cutText ["", "BLACK FADED", 5, true];
     [_unit, _loadout] call EFUNC(gear,setGear);
 
     // Set radios
-    call EFUNC(tfar,setChannels);
+    if GVARMAIN(moduleACRE) then {
+        [] call EFUNC(acre,setChannels);
+    } else {
+        [] call EFUNC(tfar,setChannels);
+    };
 
     // Reassign curator
     if (IS_ADMIN_LOGGED || getPlayerUID _unit == GETPAVAR(GVARMAIN(missionMaker),"")) then {
