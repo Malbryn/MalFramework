@@ -25,19 +25,20 @@ if !(GVARMAIN(moduleRP)) exitWith {
 };
 
 // Check if the rally point is already deployed
-if !(isNil {GETVAR((group player),GVAR(RPTent),nil)}) exitWith {
+if (GVAR(RPPickUp) && !(isNil {GETVAR((group player),GVAR(RPTent),nil)})) exitWith {
     ["Warning", ["The RP is already deployed"]] call BFUNC(showNotification);
 };
 
 /* CURRENTLY DISABLED
+
 // Define squad members
 _unitArray = (units group player) - [player];
-
 
 // Check if there's any squad member nearby
 if !((_unitArray findIf {(_x distance player < 15) && alive _x}) > -1) exitWith {
     ["Warning", ["You need one more squad member nearby to be able to deploy a RP"]] call BFUNC(showNotification);
 };
+
 */
 
 // Check if there's enemy nearby
@@ -50,6 +51,14 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
 
 // Display ACE progress bar
 [12, [], {
+    if !(GVAR(RPPickUp)) then {
+        // Remove the previous RP tent and delete the coordinates
+        private _id = GETVAR((group player),GVAR(RPTent),nil);
+        private _RPTent = objectFromNetId _id;
+        deleteVehicle _RPTent;
+        SETPVAR((group player),GVAR(RPTent),nil);
+    };
+
     // Create RP tent and save the netId so other people can remove it as well
     private _RPTent = createVehicle [GVAR(RPTentObject), player getPos [3, getDir player], [], 0, "CAN_COLLIDE"];
     _RPTent setDir (getDir player);
