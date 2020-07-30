@@ -11,7 +11,7 @@
         0: SCALAR - FPS number
 
     Example:
-        [] call MF_performance_fnc_fpsNotification
+        call MF_performance_fnc_fpsNotification
 
     Returns:
         void

@@ -11,7 +11,7 @@
         -
 
     Example:
-        [] call MF_end_conditions_fnc_registerCivilians
+        call MF_end_conditions_fnc_registerCivilians
 
     Returns:
         void

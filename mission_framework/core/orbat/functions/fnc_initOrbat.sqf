@@ -210,6 +210,10 @@ allGroups apply {
                     if !((toLower _x) find "tfar_" isEqualto -1) then {
                         _radio pushBack _x;
                     };
+
+                    if !((toLower _x) find "acre_" isEqualto -1) then {
+                        _radio pushBack _x;
+                    };
                 };
 
                 _allItems = _allItems - _radio;

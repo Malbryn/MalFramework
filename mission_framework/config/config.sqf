@@ -10,7 +10,7 @@ EGVAR(end_conditions,timeLimit) = 60 MINUTES;  // Mission time limit in seconds
 EGVAR(end_conditions,favouredSide) = 1;  // TvT: Favoured side (0: NONE, 1: BLUFOR, 2: REDFOR)
 
 // End condition - Player casualty limit
-GVARMAIN(modulePlayerCasualties) = true;  // Coop & TvT
+GVARMAIN(modulePlayerCasualties) = false;  // Coop & TvT
 EGVAR(end_conditions,playerCasLimit) = 75;  // Coop: Percentage of the max. allowed player casualty
 EGVAR(end_conditions,bluforCasLimit) = 75;  // TvT: Percentage of the max. allowed player casualty for the BLUFOR side
 EGVAR(end_conditions,redforCasLimit) = 75;  // TvT: Percentage of the max. allowed player casualty for the REDFOR side
@@ -64,6 +64,11 @@ EGVAR(ai_skills,skillSet) = [
 
 
 /* --------------------------------- OPTIONAL MODULES --------------------------------- */
+
+// ACRE
+GVARMAIN(moduleACRE) = true;  // Coop & TvT
+EGVAR(acre,useBabel) = true;  // TvT
+
 
 // Ambient fly-by
 GVARMAIN(moduleFlyby) = true;  // Coop
@@ -196,7 +201,7 @@ GVARMAIN(moduleTaskControl) = true;  // Coop
 
 
 // TFAR
-GVARMAIN(moduleTFAR) = true;  // Coop & TvT
+GVARMAIN(moduleTFAR) = false;  // Coop & TvT
 
 
 // Time limit check
