@@ -24,13 +24,44 @@ scopeName QGVAR(main);
 private _allPlayers = count allPlayers;
 private _ended = false;
 
+// Calculate task rate if Time limit or Extraction is enabled
+private _taskList = GVAR(tasks);
+private _taskCount = 0;
+
+_taskList apply {
+    private _state = _x call BFUNC(taskState);
+
+    if (_state == "SUCCEEDED") then {
+        _taskCount = _taskCount + 1;
+    };
+};
+
+private _rate = _taskCount / count _taskList;
+
 // Time limit check
 if (GVARMAIN(moduleTimeLimit) && !_ended) then {
     private _time = CBA_missionTime;
-    
+
+    // End the mission accordingly
     if (_time > GVAR(timeLimit)) then {
-        [QGVARMAIN(callMission), ["TimeLimit", false]] call CFUNC(localEvent);
-        _ended = true;
+        switch (true) do {
+            case (_rate == 1) : {
+                [QGVARMAIN(callMission), ["MissionSuccess", true, playerSide]] call CFUNC(serverEvent);
+                _ended = true;
+            };
+            case ((GVARMAIN(taskThreshold) * 0.01) <= _rate && _rate < 1) : {
+                [QGVARMAIN(callMission), ["TimeLimitMinorSuccess", true, playerSide]] call CFUNC(serverEvent);
+                _ended = true;
+            };
+            case (0 < _rate && _rate < GVARMAIN(taskThreshold) * 0.01) : {
+                [QGVARMAIN(callMission), ["TimeLimitMinorFail", false, playerSide]] call CFUNC(serverEvent);
+                _ended = true;
+            };
+            case (_rate == 0) : {
+                [QGVARMAIN(callMission), ["MissionFail", false, playerSide]] call CFUNC(serverEvent);
+                _ended = true;
+            };
+        };
     };
 };
 
@@ -77,20 +108,6 @@ if (GVARMAIN(moduleTaskLimit) && !_ended) then {
 
 // Extraction check
 if (GVARMAIN(moduleExtraction) && !_ended) then {
-    // Count the rate of the not successful tasks
-    private _taskList = GVAR(tasks);
-    private _taskCount = 0;
-
-    _taskList apply {
-        private _state = _x call BFUNC(taskState);
-
-        if (_state == "SUCCEEDED") then {
-            _taskCount = _taskCount + 1;
-        };
-    };
-
-    private _rate = _taskCount / count _taskList;
-
     // Count the players inside the extraction zone
     _playerCount = {
         _x inArea GVAR(extMarker);
@@ -98,10 +115,23 @@ if (GVARMAIN(moduleExtraction) && !_ended) then {
 
     // End the mission accordingly
     if (_playerCount >= (_allPlayers * GVAR(playerThreshold) * 0.01) && (_allPlayers != 0)) then {
-        if (_rate >= (GVAR(taskThreshold) * 0.01)) then {
-            [QGVARMAIN(callMission), ["MissionSuccess", true]] call CFUNC(localEvent);
-        } else {
-            [QGVARMAIN(callMission), ["MissionFail", false]] call CFUNC(localEvent);
+        switch (true) do {
+            case (_rate == 1) : {
+                [QGVARMAIN(callMission), ["MissionSuccess", true, playerSide]] call CFUNC(serverEvent);
+                _ended = true;
+            };
+            case ((GVARMAIN(taskThreshold) * 0.01) <= _rate && _rate < 1) : {
+                [QGVARMAIN(callMission), ["MinorSuccess", true, playerSide]] call CFUNC(serverEvent);
+                _ended = true;
+            };
+            case (0 < _rate && _rate < GVARMAIN(taskThreshold) * 0.01) : {
+                [QGVARMAIN(callMission), ["MinorFail", false, playerSide]] call CFUNC(serverEvent);
+                _ended = true;
+            };
+            case (_rate == 0) : {
+                [QGVARMAIN(callMission), ["MissionFail", false, playerSide]] call CFUNC(serverEvent);
+                _ended = true;
+            };
         };
     };
 };

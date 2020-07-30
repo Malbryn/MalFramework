@@ -2,6 +2,7 @@
 
 /* -------------------------------- MISSION PARAMETERS -------------------------------- */
 
+// Mission type
 GVARMAIN(isTvT) = false;  // If the mission is a TvT mission
 
 // End condition - Time limit
@@ -32,7 +33,9 @@ EGVAR(end_conditions,taskLimit) = 2;  // Minimum number of completed tasks
 GVARMAIN(moduleExtraction) = true;  // Coop
 EGVAR(end_conditions,extMarker) = "mrk_ext";  // Name of the extraction marker
 EGVAR(end_conditions,playerThreshold) = 50;  // Percentage of the alive players that have to be in the extraction zone
-EGVAR(end_conditions,taskThreshold) = 66;  // Percentage of the tasks that have to be completed
+
+// Task threshold (used by Time limit, Extraction and Tactical Withdrawal)
+GVARMAIN(taskThreshold) = 66;  // Percentage of the tasks that have to be completed
 
 // Respawn rules
 GVARMAIN(respawnTimer) = 30;  // Respawn timer in seconds
@@ -179,7 +182,6 @@ EGVAR(setup_timer,timerRedfor) = 90;  // Setup timer for the REDFOR side
 
 // Scenario control
 GVARMAIN(moduleScenarioControl) = true;  // Coop & TvT
-EGVAR(scenario_control,successRate) = 50;  // Percentage of the tasks that have to be completed
 
 
 // Snowfall

@@ -1,6 +1,6 @@
 /* ----------------------------------- COOP ENDINGS ----------------------------------- */
 
-// Generic success
+// Generic - Major Success
 class MissionSuccess {
     title = "Mission Success";              // Closing shot - Main title
     subtitle = "default_subtitle";          // Closing shot - Short description
@@ -10,7 +10,27 @@ class MissionSuccess {
     pictureColor[] = {0, 0.8, 0, 1};        // Closing shot - Icon colour
 };
 
-// Generic fail
+// Generic - Minor success
+class MinorSuccess {
+    title = "Minor Success";
+    subtitle = "default_subtitle";
+    description = "default_description";
+    pictureBackground = "";
+    picture = "mil_flag";
+    pictureColor[] = {0, 0.8, 0, 1};
+};
+
+// Generic - Minor fail
+class MinorFail {
+    title = "Minor Defeat";
+    subtitle = "default_subtitle";
+    description = "default_description";
+    pictureBackground = "";
+    picture = "mil_flag";
+    pictureColor[] = {0.9, 0, 0, 1};
+};
+
+// Generic - Major Fail
 class MissionFail {
     title = "Mission Failed";
     subtitle = "default_text";
@@ -20,14 +40,24 @@ class MissionFail {
     pictureColor[] = {0.6, 0.1, 0.2, 1};
 };
 
-// Time limit
-class TimeLimit {
-    title = "Mission Failed";
+// Time limit - Minor success
+class TimeLimitMinorSuccess {
+    title = "Minor Success";
     subtitle = "Time limit reached";
-    description = "You've run out of time. Better luck next time.";
+    description = "default_text";
     pictureBackground = "";
-    picture = "KIA";
-    pictureColor[] = {0.6, 0.1, 0.2, 1};
+    picture = "mil_flag";
+    pictureColor[] = {0, 0.8, 0, 1};
+};
+
+// Time limit - Minor fail
+class TimeLimitMinorFail {
+    title = "Minor Defeat";
+    subtitle = "Time limit reached";
+    description = "default_text";
+    pictureBackground = "";
+    picture = "mil_flag";
+    pictureColor[] = {0.9, 0, 0, 1};
 };
 
 // Player casualty
@@ -50,8 +80,8 @@ class CivCasLimit {
     pictureColor[] = {0.6, 0.1, 0.2, 1};
 };
 
-// Withdrawal - Win
-class WithdrawalWin {
+// Withdrawal - Minor success
+class WithdrawalMinorSuccess {
     title = "Minor Success";
     subtitle = "Tactical withdrawal was called by the CO";
     description = "The CO called tactical withdrawal ending the mission earlier. Consider this a minor success.";
@@ -60,8 +90,8 @@ class WithdrawalWin {
     pictureColor[] = {0, 0.8, 0, 1};
 };
 
-// Withdrawal - Lose
-class WithdrawalLose {
+// Withdrawal - Minor fail
+class WithdrawalMinorFail {
     title = "Minor Defeat";
     subtitle = "Tactical withdrawal was called by the CO";
     description = "The CO called tactical withdrawal ending the mission earlier. Consider this a minor defeat.";

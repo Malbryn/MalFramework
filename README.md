@@ -21,6 +21,7 @@ If something is broken, contact **[Malbryn](https://www.fkgaming.eu/profile/4189
  - CBA
 
 ## Optional mods:
+ - ACRE (required by the Radio channel setup module)
  - CUP Core (required by the Snowfall module)
  - TFAR (required by the Radio channel setup module)
 
