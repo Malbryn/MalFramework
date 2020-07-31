@@ -7,5 +7,9 @@ if (hasInterface) then {
         call FUNC(addRPMenu);
     }] call CFUNC(addEventHandler);
 
+    [QGVAR(transferHAB), {
+        call FUNC(addHABMenu);
+    }] call CFUNC(addEventHandler);
+
     call FUNC(initPole);
 };

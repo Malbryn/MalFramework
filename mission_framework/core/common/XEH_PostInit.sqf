@@ -32,4 +32,10 @@ if (hasInterface) then {
             [QGVAR(sideValueSet), [playerSide, 1, 1, 0]] call CFUNC(serverEvent);
         }] call CFUNC(addEventHandler);
     };
+
+    [QGVARMAIN(deleteMarkerSide), {
+        params ["_marker", "_side"];
+
+        [_marker, _side] call FUNC(deleteMarkerSide);
+    }] call CFUNC(addEventHandler);
 };

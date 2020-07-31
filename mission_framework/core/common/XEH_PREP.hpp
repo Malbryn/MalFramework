@@ -1,3 +1,4 @@
+PREP(deleteMarkerSide);
 PREP(eventHandleDisconnect);
 PREP(initACESpectator);
 PREP(isInside);

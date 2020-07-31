@@ -28,7 +28,7 @@ private  _menu = ['Rally Point', 'Rally Point', '\a3\ui_f\data\GUI\Cfg\Hints\ico
 // Deploy menu
 _menu = ['Deploy Rally Point', 'Deploy Rally Point', '', {
     if (GVARMAIN(moduleRP)) then {
-        call FUNC(deployRp);
+        call FUNC(deployRP);
     } else {
         ["Warning", ["Rally Point system is disabled in this mission"]] call BFUNC(showNotification);
     };
@@ -39,7 +39,7 @@ _menu = ['Deploy Rally Point', 'Deploy Rally Point', '', {
 // Remove menu
 _menu = ['Remove Rally Point', 'Remove Rally Point', '', {
     if (GVARMAIN(moduleRP)) then {
-        call FUNC(removeRp);
+        call FUNC(removeRP);
     } else {
         ["Warning", ["Rally Point system is disabled in this mission"]] call BFUNC(showNotification);
     };
