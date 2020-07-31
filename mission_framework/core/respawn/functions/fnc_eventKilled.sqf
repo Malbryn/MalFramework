@@ -126,6 +126,10 @@ if (GVARMAIN(isTvT)) then {
                         [QEGVAR(scenario_control,transferSC), [], _target] call CFUNC(targetEvent);
                     };
 
+                    if (GVARMAIN(moduleHAB)) then {
+                        [QEGVAR(reinsertion,transferHAB), [], _target] call CFUNC(targetEvent);
+                    };
+
                     if (GVARMAIN(moduleWaveRespawn)) then {
                         [QEGVAR(respawn_wave,transferWR), [], _target] call CFUNC(targetEvent);
                     };

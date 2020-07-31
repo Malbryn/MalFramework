@@ -57,9 +57,21 @@ _tpPoles apply {
             call FUNC(tpToRP);
         }];
     };
+
+    // Option #4 - Platoon HAB
+    if (GVARMAIN(moduleHAB)) then {
+        _x addAction ["Reinsertion - Platoon HAB", {
+            call FUNC(tpToHAB);
+        }];
+    };
 };
 
 // Assigning the RP menu to the squad leaders
 if (GVARMAIN(moduleRP) && GETVAR(player,EGVAR(player,isSL),false)) then {
     call FUNC(addRPMenu);
+};
+
+// Assigning the HAB menu to the COs
+if (GVARMAIN(moduleHAB) && GETVAR(player,EGVAR(player,isCO),false)) then {
+    call FUNC(addHABMenu);
 };
