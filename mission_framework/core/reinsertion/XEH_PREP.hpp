@@ -1,9 +1,13 @@
+PREP(addHABMenu);
 PREP(addParachute);
 PREP(addRPMenu);
+PREP(deployHAB);
 PREP(deployRP);
 PREP(haloDrop);
 PREP(initPole);
+PREP(removeHAB);
 PREP(removeRP);
 PREP(setMRV);
+PREP(tpToHAB);
 PREP(tpToMRV);
 PREP(tpToRP);
