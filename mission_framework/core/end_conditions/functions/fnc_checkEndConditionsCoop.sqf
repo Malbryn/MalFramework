@@ -36,8 +36,10 @@ _taskList apply {
     };
 };
 
+private _rate = 0;
+
 if (count _taskList != 0) then {
-    private _rate = _taskCount / count _taskList;
+    _rate = _taskCount / count _taskList;
 };
 
 // Time limit check
@@ -117,6 +119,7 @@ if (GVARMAIN(moduleExtraction) && !_ended) then {
 
     // End the mission accordingly
     if (_playerCount >= (_allPlayers * GVAR(playerThreshold) * 0.01) && (_allPlayers != 0)) then {
+
         switch (true) do {
             case (_rate == 1) : {
                 [QGVARMAIN(callMission), ["MissionSuccess", true, playerSide]] call CFUNC(serverEvent);

@@ -26,6 +26,15 @@ if (GVARMAIN(isTvT)) then {
     [QEGVAR(common,sideValueSet), [playerSide, 0, 1, 0]] call CFUNC(serverEvent);
 };
 
+// Remove vanilla radio as it conflicts with TFAR/ACRE during no radio missions
+if ("ItemRadio" in (assignedItems player)) then {
+    player unlinkItem "ItemRadio";
+
+    if (GVARMAIN(moduleACRE)) then {
+        player linkItem "ItemRadioAcreFlagged";
+    };
+};
+
 // Screen effects
 cutText ["", "BLACK FADED", 5, true];
 
