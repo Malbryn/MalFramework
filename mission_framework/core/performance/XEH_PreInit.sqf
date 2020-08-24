@@ -11,3 +11,5 @@ ADDON = true;
 // Global variables
 GVAR(serverFPS) = 0;
 GVAR(serverFPSMin) = 0;
+GVAR(toggleFPS) = false;
+GVAR(isMonitoring) = false;
