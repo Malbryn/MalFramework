@@ -22,11 +22,6 @@ if !(hasInterface) exitWith {};
 private _target = call FUNC(chooseTarget);
 private _vicSpot = [_target] call FUNC(checkEmptySeat);
 
-// Check the distance from the squad
-if (((call CFUNC(players)) - [player]) findif {_x distance2D player < 50} != -1) exitWith {
-    ["Warning", ["JIP TP aborted. You're too close to one of your squad members!"]] call BFUNC(showNotification);
-};
-
 // Check if there are other people in the squad
 if !(count units group player > 1) exitWith {
     ["Warning", ["JIP TP aborted. You're the only one in the squad!"]] call BFUNC(showNotification);
