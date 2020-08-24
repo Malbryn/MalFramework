@@ -69,8 +69,8 @@ EGVAR(ai_skills,skillSet) = [
 /* --------------------------------- OPTIONAL MODULES --------------------------------- */
 
 // ACRE
-GVARMAIN(moduleACRE) = true;  // Coop & TvT
-EGVAR(acre,useBabel) = true;  // TvT
+GVARMAIN(moduleACRE) = false;  // Coop & TvT
+EGVAR(acre,useBabel) = false;  // TvT
 
 
 // Ambient fly-by
@@ -207,7 +207,7 @@ GVARMAIN(moduleTaskControl) = true;  // Coop
 
 
 // TFAR
-GVARMAIN(moduleTFAR) = false;  // Coop & TvT
+GVARMAIN(moduleTFAR) = true;  // Coop & TvT
 
 
 // Time limit check
