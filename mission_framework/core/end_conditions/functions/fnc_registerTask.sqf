@@ -24,3 +24,4 @@ if !(isServer) exitWith {};
 params ["_taskID"];
 
 PUSH(GVAR(tasks),_taskID);
+publicVariable QGVAR(tasks);
