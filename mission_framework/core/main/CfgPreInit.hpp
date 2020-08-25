@@ -20,6 +20,10 @@ class GVARMAIN(AISkills) {
     init = PATH_PRE(ai_skills);
 };
 
+class GVARMAIN(AISpawner) {
+    init = PATH_PRE(ai_spawner);
+};
+
 class GVARMAIN(AOLimit) {
     init = PATH_PRE(ao_limit);
 };

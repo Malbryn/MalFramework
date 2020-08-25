@@ -43,11 +43,11 @@ GVARMAIN(respawnTickets) = -1;  // Individual respawn tickets (-1: tickets disab
 GVARMAIN(removePlayerCorpses) = true;  // Remove player corpse upon respawn
 
 // View distances
-GVARMAIN(playerViewDistance) = 2500;  // Player view distance
-GVARMAIN(serverViewDistance) = 2000;  // Server view distance (= AI view distance)
+GVARMAIN(playerViewDistance) = 1500;  // Player view distance
+GVARMAIN(serverViewDistance) = 1500;  // Server view distance (= AI view distance)
 
 // Time acceleration
-GVARMAIN(timeAcceleration) = 2;  // Value between 0.1 and 120
+GVARMAIN(timeAcceleration) = 1;  // Value between 0.1 and 120
 
 // ACE spectator
 GVARMAIN(useACESpectator) = true;  // Use the ACE spectator camera instead of the vanilla one (for dead players)
@@ -71,6 +71,10 @@ EGVAR(ai_skills,skillSet) = [
 // ACRE
 GVARMAIN(moduleACRE) = false;  // Coop & TvT
 EGVAR(acre,useBabel) = false;  // TvT
+
+
+// AI Spawner
+GVARMAIN(moduleAISpawner) = true;  // Coop & TvT
 
 
 // Ambient fly-by
