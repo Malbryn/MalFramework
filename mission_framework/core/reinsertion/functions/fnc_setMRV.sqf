@@ -17,6 +17,8 @@
         void
 */
 
+if !(isServer) exitWith {};
+
 params ["_vehicle"];
 
 SETPMVAR(GVAR(mrv),_vehicle);
