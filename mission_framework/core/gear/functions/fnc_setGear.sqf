@@ -20,6 +20,10 @@
 
 params ["_unit", "_role"];
 
+if (isNil "_unit") exitWith {
+    MSG("ERROR","(Gear) Unit is not found!");
+};
+
 // Remove all gear before applying the loadout
 removeHeadgear _unit;
 removeUniform _unit;
