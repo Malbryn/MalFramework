@@ -1,19 +1,19 @@
 
 /*
-	Author: Genesis
+    Author: Genesis
 
-	Description:
-		Function for finding the closest WorldPos position (Left, Ride, Front, Rear) to an entity. And then finding a suitable position near that entity.
+    Description:
+        Function for finding the closest WorldPos position (Left, Ride, Front, Rear) to an entity. And then finding a suitable position near that entity.
 
-	Parameter(s):
-		0: OBJECT - Entity
-		1: OBJECT - Unit
+    Parameter(s):
+        0: OBJECT - Entity
+        1: OBJECT - Unit
 
-	Returns:
-		ARRAY - Position
-		
-	Note:
-		DEPRECATED
+    Returns:
+        ARRAY - Position
+        
+    Note:
+        DEPRECATED
 */
 
 params ["_ent","_unit"];
