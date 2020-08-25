@@ -23,7 +23,7 @@ if !(hasInterface) exitWith {};
 private _tool = "ACE_EntrenchingTool";
 
 if !(_tool in (items player)) exitWith {
-    ["You need an entreching tool<br/>to perform this action", 2, ace_player, 12] call AFUNC(common,displayTextStructured);
+    ["You need an entrenching tool<br/>to perform this action", 2, ace_player, 12] call AFUNC(common,displayTextStructured);
 };
   
 // Animation (duration: 9 seconds)
