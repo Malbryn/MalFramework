@@ -21,7 +21,11 @@ if (hasInterface) then {
         [_fps] call FUNC(fpsNotification);
     }] call CFUNC(addEventHandler);
 
-    // Client FPS
+    call FUNC(addCheckPerformanceMenu);
+
+    // Client FPS (disable client FPS check during TvT's)
+    if (GVARMAIN(isTvT)) exitWith {};
+
     [QGVAR(displayFPS), {
         params ["_toggle"];
 
@@ -41,7 +45,5 @@ if (hasInterface) then {
         }
     }] call CFUNC(addEventHandler);
 
-    // Menus
-    call FUNC(addCheckPerformanceMenu);
     call FUNC(addPlayerFPSMenu);
 };
