@@ -373,3 +373,87 @@ force force TFAR_ShowDiaryRecord = false;
 
 // CBA Weapons
 force force cba_disposable_replaceDisposableLauncher = true;
+
+// VCOM SETTINGS
+force VCM_ActivateAI = true;
+force VCM_ADVANCEDMOVEMENT = true;
+force VCM_AIDISTANCEVEHPATH = 0;
+force VCM_AIMagLimit = 2;
+force VCM_AISkills_General_EM = true;
+force VCM_AISkills_General_EM_CHN = 10;
+force VCM_AISkills_General_EM_CLDWN = 10;
+force Vcm_AISkills_SideSpecific = false;
+force VCM_AISNIPERS = false;
+force VCM_AISUPPRESS = true;
+force VCM_ARTYDELAY = 30;
+force VCM_ARTYENABLE = false;
+//force VCM_ARTYSIDES = [WEST,EAST,GUER];
+force VCM_CARGOCHNG = true;
+force VCM_ClassSteal = false;
+force VCM_Debug = false;
+force VCM_DISEMBARKRANGE = 150;
+force Vcm_DrivingActivated = true;
+force VCM_ForceSpeed = true;
+force VCM_FRMCHANGE = true;
+force Vcm_GrenadeChance = 5;
+force VCM_HEARINGDISTANCE = 500;
+force VCM_MEDICALACTIVE = false;
+force VCM_MINECHANCE = 0;
+force VCM_MINEENABLED = false;
+force Vcm_PlayerAISkills = true;
+force VCM_RAGDOLL = true;
+force VCM_RAGDOLLCHC = 75;
+//force VCM_SIDEENABLED = [WEST,EAST,GUER];
+force VCM_SKILLCHANGE = true;
+force Vcm_SmokeGrenadeChance = 5;
+force VCM_STATICARMT = 300;
+force VCM_StealVeh = false;
+force VCM_SUPDIST = 150;
+force VCM_TURRETUNLOAD = false;
+force VCM_USECBASETTINGS = true;
+force VCM_WARNDELAY = 30;
+force VCM_WARNDIST = 400;
+
+// VCOM AI General Skill
+Vcm_AISkills_General_AimingAccuracy = 0.25;
+Vcm_AISkills_General_aimingShake = 0.15;
+Vcm_AISkills_General_aimingSpeed = 0.35;
+Vcm_AISkills_General_commanding = 0.5;
+Vcm_AISkills_General_courage = 0.5;
+Vcm_AISkills_General_general = 0.5;
+Vcm_AISkills_General_reloadSpeed = 0.5;
+Vcm_AISkills_General_spotDistance = 0.5;
+Vcm_AISkills_General_spotTime = 0.5;
+
+// VCOM AI West Skill
+Vcm_AISkills_West_AimingAccuracy = 0.25;
+Vcm_AISkills_West_aimingShake = 0.15;
+Vcm_AISkills_West_aimingSpeed = 0.35;
+Vcm_AISkills_West_commanding = 0.5;
+Vcm_AISkills_West_courage = 0.5;
+Vcm_AISkills_West_general = 0.5;
+Vcm_AISkills_West_reloadSpeed = 0.5;
+Vcm_AISkills_West_spotDistance = 0.5;
+Vcm_AISkills_West_spotTime = 0.5;
+
+// VCOM AI East Skill
+Vcm_AISkills_East_AimingAccuracy = 0.25;
+Vcm_AISkills_East_aimingShake = 0.15;
+Vcm_AISkills_East_aimingSpeed = 0.35;
+Vcm_AISkills_East_commanding = 0.5;
+Vcm_AISkills_East_courage = 0.5;
+Vcm_AISkills_East_general = 0.5;
+Vcm_AISkills_East_reloadSpeed = 0.5;
+Vcm_AISkills_East_spotDistance = 0.5;
+Vcm_AISkills_East_spotTime = 0.5;
+
+// VCOM AI Resistance Skill
+Vcm_AISkills_Resistance_AimingAccuracy = 0.25;
+Vcm_AISkills_Resistance_aimingShake = 0.15;
+Vcm_AISkills_Resistance_aimingSpeed = 0.35;
+Vcm_AISkills_Resistance_commanding = 0.5;
+Vcm_AISkills_Resistance_courage = 0.5;
+Vcm_AISkills_Resistance_general = 0.5;
+Vcm_AISkills_Resistance_reloadSpeed = 0.5;
+Vcm_AISkills_Resistance_spotDistance = 0.5;
+Vcm_AISkills_Resistance_spotTime = 0.5;
