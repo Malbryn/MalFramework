@@ -1,16 +1,16 @@
 /*
-	Author: Genesis
+    Author: Genesis
 
-	Description:
-		Movement Prediction base on velocity and multipler
+    Description:
+        Movement Prediction base on velocity and multipler
 
-	Parameter(s):
-		0: unit
-		1: multiplier
+    Parameter(s):
+        0: unit
+        1: multiplier
 
-	Returns:
-		Predicted Position
-	Example1:  [_Unit,4] call VCM_fnc_MovePrediction;
+    Returns:
+        Predicted Position
+    Example1:  [_Unit,4] call VCM_fnc_MovePrediction;
 */
 //Predict motion of an object, and return the predicted position
 params ["_Unit","_Multiplier"];
