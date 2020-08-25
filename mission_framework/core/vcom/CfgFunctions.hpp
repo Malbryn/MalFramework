@@ -156,7 +156,9 @@ class VCOM {
         class isFlatEmpty {};	
 
         // [] call VCM_fnc_CBASettings;
-        class CBASettings {};
+        class CBASettings {
+            preInit = 1;
+        };
         
         // [] call VCM_fnc_SniperList
         class SniperList {};

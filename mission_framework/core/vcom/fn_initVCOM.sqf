@@ -8,18 +8,18 @@
     
             if !(_FileCheck isEqualTo "") then {
                 [] call compile preprocessFileLineNumbers "\userconfig\VCOM_AI\AISettingsV3.hpp";
-                [Vcm_Settings] remoteExec ["VCM_PublicScript",0,false];
+                [Vcm_Settings] remoteExec ["VCM_PublicScript", 0, false];
             } else {
                 [] call compile preprocessFileLineNumbers "mission_framework\core\vcom\Functions\VCOMAI_DefaultSettings.sqf";
-                [Vcm_Settings] remoteExec ["VCM_PublicScript",0,false];
+                [Vcm_Settings] remoteExec ["VCM_PublicScript", 0, false];
             };
         } else {
                 [] call compile preprocessFileLineNumbers "mission_framework\core\vcom\Functions\VCOMAI_DefaultSettings.sqf";
-                [Vcm_Settings] remoteExec ["VCM_PublicScript",0,false];
+                [Vcm_Settings] remoteExec ["VCM_PublicScript", 0, false];
         };
     } else {
         private _id = clientOwner;
-        ["Vcm_Settings",_id] remoteExec ["VCM_ServerAsk",2,false];
+        ["Vcm_Settings",_id] remoteExec ["VCM_ServerAsk", 2, false];
         waitUntil {!(isNil "Vcm_Settings")};
         [] call Vcm_Settings;
     };
