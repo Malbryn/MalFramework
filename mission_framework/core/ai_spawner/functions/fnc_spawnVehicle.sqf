@@ -8,10 +8,13 @@
         Spawns a unit and applies loadout and skill.
 
     Arguments:
-        -
+        0: ARRAY - Vehicle data array
+        1: GROUP - Vehicle group
+        2: ARRAY - Temporary respawn position
+        3: STRING - Special respawn rules
 
     Example:
-        call MF_ai_spawner_fnc_spawnVehicle
+        [[...], newGroup, [0, 0, 0], "NONE"] call MF_ai_spawner_fnc_spawnVehicle
 
     Returns:
         OBJECT

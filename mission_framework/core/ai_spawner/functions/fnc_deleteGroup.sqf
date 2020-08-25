@@ -8,10 +8,10 @@
         Deletes a group.
 
     Arguments:
-        -
+        0: GROUP - The group to delete
 
     Example:
-        call MF_ai_spawner_fnc_deleteGroup
+        [myGroup] call MF_ai_spawner_fnc_deleteGroup
 
     Returns:
         void

@@ -8,10 +8,10 @@
         Saves crew member data.
 
     Arguments:
-        -
+        0: OBJECT
 
     Example:
-        call MF_ai_spawner_fnc_saveCrewMember
+        [crewman1] call MF_ai_spawner_fnc_saveCrewMember
 
     Returns:
         ARRAY

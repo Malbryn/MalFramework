@@ -8,10 +8,10 @@
         Saves waypoint data.
 
     Arguments:
-        -
+        0: GROUP - The group
 
     Example:
-        call MF_ai_spawner_fnc_saveWaypoints
+        [myGroup] call MF_ai_spawner_fnc_saveWaypoints
 
     Returns:
         ARRAY

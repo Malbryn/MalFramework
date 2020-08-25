@@ -8,10 +8,10 @@
         Gives an AI unit unlimited ammo.
 
     Arguments:
-        -
+        0: OBJECT - Unit
 
     Example:
-        call MF_ai_spawner_fnc_unlimitedAmmo
+        [unit] call MF_ai_spawner_fnc_unlimitedAmmo
 
     Returns:
         void

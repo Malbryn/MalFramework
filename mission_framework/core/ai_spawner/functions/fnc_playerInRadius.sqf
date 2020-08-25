@@ -8,10 +8,11 @@
         Detects if player is within a given radius.
 
     Arguments:
-        -
+        0: ARRAY - Position to check
+        1: SCALAR - Radius of check
 
     Example:
-        call MF_ai_spawner_fnc_playerInRadius
+        [getPos unit1, 150] call MF_ai_spawner_fnc_playerInRadius
 
     Returns:
         BOOLEAN

@@ -8,10 +8,11 @@
         Applies waypoint data.
 
     Arguments:
-        -
+        0: GROUP - New group
+        1: ARRAY - Array of waypoints
 
     Example:
-        call MF_ai_spawner_fnc_applyWaypoint
+        [group, [wp1, wp2, wp3]] call MF_ai_spawner_fnc_applyWaypoint
 
     Returns:
         void

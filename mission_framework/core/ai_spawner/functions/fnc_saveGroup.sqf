@@ -8,10 +8,10 @@
         Saves group data.
 
     Arguments:
-        -
+        0: OBJECT or GROUP - The unit/group to save
 
     Example:
-        call MF_ai_spawner_fnc_saveGroup
+        [myGroup] call MF_ai_spawner_fnc_saveGroup
 
     Returns:
         ARRAY
@@ -19,7 +19,7 @@
 
 if !(isServer) exitWith {};
 
-params ["_unit", "_delete"];
+params ["_unit"];
 
 // Make sure unit is a unit and not a group (thanks to S.Crowe)
 if (typeName _unit == "GROUP") then {
