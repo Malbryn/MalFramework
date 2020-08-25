@@ -8,10 +8,10 @@
         Saves vehicle data.
 
     Arguments:
-        -
+        0: OBJECT - Unit
 
     Example:
-        call MF_ai_spawner_fnc_saveVehicle
+        [aiUnit] call MF_ai_spawner_fnc_saveVehicle
 
     Returns:
         ARRAY

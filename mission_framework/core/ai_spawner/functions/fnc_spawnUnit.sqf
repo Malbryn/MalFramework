@@ -8,10 +8,12 @@
         Spawns a unit and applies loadout and skill.
 
     Arguments:
-        -
+        0: ARRAY - Unit data
+        1: GROUP - Unit group
+        2: ARRAY - Spawn position
 
     Example:
-        call MF_ai_spawner_fnc_spawnUnit
+        [[...], newGroup, [0, 0, 0]] call MF_ai_spawner_fnc_spawnUnit
 
     Returns:
         OBJECT

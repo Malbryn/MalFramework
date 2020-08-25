@@ -8,10 +8,10 @@
         Saves unit data.
 
     Arguments:
-        -
+        0: OBJECT - Unit
 
     Example:
-        call MF_ai_spawner_fnc_saveUnit
+        [unit1] call MF_ai_spawner_fnc_saveUnit
 
     Returns:
         ARRAY

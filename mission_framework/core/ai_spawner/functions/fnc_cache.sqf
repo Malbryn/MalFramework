@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_ai_spawner_fnc_cache
+        [myGroup, 300] call MF_ai_spawner_fnc_cache
 
     Returns:
         void
@@ -19,24 +19,15 @@
 
 if !(isServer) exitWith {};
 
-params ["_group", "_radius", "_debug"];
+params ["_group", "_radius"];
 
-if (_debug) then {
-    systemChat format["%1 - Using Cache", _group]
-};
-
-_group setVariable ["IsCached", false];
+SETVAR(_group,GVAR(isCached));
 
 while {{alive _x} count (units _group) > 0} do {
-
     sleep 5;
 
     if ([getPos (leader _group), _radius] call FUNC(playerInRadius)) then {
         if (GETVAR(_group,GVAR(isCached),false)) then {
-            if (_debug) then {
-                MSG_1("DEBUG","%1 - Uncaching group.", _group);
-            };
-            
             {
                 (vehicle _x) hideObjectGlobal false;
                 _x enableSimulationGlobal true;
@@ -46,10 +37,6 @@ while {{alive _x} count (units _group) > 0} do {
         };
     } else {
         if (!(GETVAR(_group,GVAR(isCached),false))) then {
-            if (_debug) then {
-                MSG_1("DEBUG","%1 - Caching group.", _group);
-            };
-            
             {
                 (vehicle _x) hideObjectGlobal true;
                 _x enableSimulationGlobal false;

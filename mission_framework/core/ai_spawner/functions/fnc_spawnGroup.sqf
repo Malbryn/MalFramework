@@ -8,10 +8,12 @@
         Spawns group.
 
     Arguments:
-        -
+        0: ARRAY - Group data
+        1: ARRAY - Spawn position
+        2: STRING - Special spawn rules
 
     Example:
-        call MF_ai_spawner_fnc_spawnGroup
+        [[...], [0, 0, 0], "FLYING"] call MF_ai_spawner_fnc_spawnGroup
 
     Returns:
         GROUP
@@ -26,7 +28,7 @@ _newGroup = createGroup _unitSide;
 waitUntil {!isNull _newGroup};
 
 {
-    _relativePos = (_x # 1) vectorDiff (_vehicleData # 0 # 1);
+    _relativePos = (_x#1) vectorDiff (_vehicleData#0#1);
     _newVehiclePosition = _spawnPos vectorAdd _relativePos;
     _newVehicle = [_x, _newGroup, _newVehiclePosition, _special] call FUNC(spawnVehicle);
     waitUntil {alive _newVehicle};
@@ -36,9 +38,9 @@ waitUntil {!isNull _newGroup};
     private "_relativePos";
         
     if (_vehicleData isEqualTo []) then {
-        _relativePos = (_x # 1) vectorDiff (_infantryData # 0 # 1);
+        _relativePos = (_x#1) vectorDiff (_infantryData#0#1);
     } else {
-        _relativePos = (_x # 1) vectorDiff (_vehicleData # 0 # 1);	
+        _relativePos = (_x#1) vectorDiff (_vehicleData#0#1);	
     };
     
     _newUnitPosition = _spawnPos vectorAdd _relativePos;
