@@ -40,5 +40,6 @@ If something is broken, contact **[Malbryn](https://www.fkgaming.eu/profile/4189
  - MrSanchez' Headlamp
  - NIArms
  - TFAR
+ - VCOM
  - VET_Unflipping
  - Zeus Enhanced
