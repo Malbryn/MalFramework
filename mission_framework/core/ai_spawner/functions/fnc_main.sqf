@@ -20,7 +20,7 @@
         9: STRING - Special spawn rules, for example "FLYING" (Optional, default: "NONE")
 
     Example:
-        [this, 400, false, objNull, "", 10, 2, 0, 0, 10, [], "NONE"] call MF_ai_spawner_fnc_main
+        [this, 2, 30, 300, 150, [], objNull, 0, "", "NONE"] spawn MF_ai_spawner_fnc_main
 
     Returns:
         void
