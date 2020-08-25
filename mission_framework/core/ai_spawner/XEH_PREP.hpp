@@ -1,0 +1,16 @@
+PREP(applyWaypoints);
+PREP(cache);
+PREP(deleteGroup);
+PREP(enemyInRadius);
+PREP(main);
+PREP(pilotKill);
+PREP(playerInRadius);
+PREP(saveCrewMember);
+PREP(saveGroup);
+PREP(saveUnit);
+PREP(saveVehicle);
+PREP(saveWaypoints);
+PREP(spawnGroup);
+PREP(spawnUnit);
+PREP(spawnVehicle);
+PREP(unlimitedAmmo);

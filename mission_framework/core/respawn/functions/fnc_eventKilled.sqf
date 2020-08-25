@@ -21,7 +21,7 @@ if !(hasInterface) exitWith {};
 
 params ["_unit", "_killer", "_instigator", "_useEffects"];
 
-setPlayerRespawnTime 999999;
+setPlayerRespawnTime 10e10;
 
 // Friendly fire
 if (side _instigator == playerSide) then {

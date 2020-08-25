@@ -1,18 +1,18 @@
 
 /*
-	Author: Genesis
+    Author: Genesis
 
-	Description:
-		Finds closest object from an array of objects
+    Description:
+        Finds closest object from an array of objects
 
-	Parameter(s):
-		0: ARRAY - Array to search for closest object
-		1: OBJECT - Object to search away from
-		2: (Optional): BOOLEAN - Defines order to sort array. True: Ascending, false, descending
-		3: (Optional): ???
+    Parameter(s):
+        0: ARRAY - Array to search for closest object
+        1: OBJECT - Object to search away from
+        2: (Optional): BOOLEAN - Defines order to sort array. True: Ascending, false, descending
+        3: (Optional): ???
 
-	Returns:
-		OBJECT
+    Returns:
+        OBJECT
 */
 
 params ["_list","_object","_order","_script"];
@@ -35,19 +35,19 @@ private _distanceArray = [];
 if (typeName _list isEqualTo "SCALAR") then {systemChat format ["_script: %1",_script];};
 private _newObjectDistance = 0;
 {
-	if !(isNil "_x") then
-	{
-		_compareObjectPos = [0,0,0];
-		switch (TypeName _x) do 
-		{
-				case "OBJECT": {_compareObjectPos = getPosATL _x;};
-				case "STRING": {_compareObjectPos = getMarkerPos _x;}; 
-				case "ARRAY": {_compareObjectPos = _x;}; 
-				case "GROUP": {_compareObjectPos = (getPosATL (leader _x));}; 
-		};
-		_newObjectDistance = _compareObjectPos distance2D _position;
-		_distanceArray pushback [_newObjectDistance,_x];
-	};
+    if !(isNil "_x") then
+    {
+        _compareObjectPos = [0,0,0];
+        switch (TypeName _x) do 
+        {
+                case "OBJECT": {_compareObjectPos = getPosATL _x;};
+                case "STRING": {_compareObjectPos = getMarkerPos _x;}; 
+                case "ARRAY": {_compareObjectPos = _x;}; 
+                case "GROUP": {_compareObjectPos = (getPosATL (leader _x));}; 
+        };
+        _newObjectDistance = _compareObjectPos distance2D _position;
+        _distanceArray pushback [_newObjectDistance,_x];
+    };
 } forEach _list;
 
 _distanceArray sort _order;

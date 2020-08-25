@@ -26,6 +26,7 @@ If something is broken, contact **[Malbryn](https://www.fkgaming.eu/profile/4189
  - TFAR (required by the Radio channel setup module)
 
 ### These mods have custom settings already defined in the CBA settings:
+ - ACRE
  - ASR AI
  - DUI Radar
  - IFA3 Liberation
@@ -38,5 +39,7 @@ If something is broken, contact **[Malbryn](https://www.fkgaming.eu/profile/4189
  - GRAD Trenches
  - MrSanchez' Headlamp
  - NIArms
+ - TFAR
+ - VCOM
  - VET_Unflipping
  - Zeus Enhanced

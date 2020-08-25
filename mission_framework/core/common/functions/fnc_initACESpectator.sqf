@@ -30,15 +30,8 @@ if !(_state) exitWith {
 
 // If we allow all sides
 if (_allowAllSides) then {
-    _units = allPlayers - allDeadMen;
-    [_units] call AFUNC(spectator,updateUnits);
     [[west, east, independent, civilian]] call AFUNC(spectator,updateSides);
 } else {
-    if !(GVARMAIN(isTvT)) then {
-        _units = allPlayers - allDeadMen;
-        [_units] call AFUNC(spectator,updateUnits);
-    };
-
     [[playerSide], [west, east, independent, civilian]] call AFUNC(spectator,updateSides);
 };
 

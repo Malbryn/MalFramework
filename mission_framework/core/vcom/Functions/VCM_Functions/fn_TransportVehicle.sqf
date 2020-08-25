@@ -1,15 +1,15 @@
 /*
-	Author: Genesis
+    Author: Genesis
 
-	Description:
-		Generates flanking waypoints.
+    Description:
+        Generates flanking waypoints.
 
-	Parameter(s):
-		0: GROUP 
-		1: LEADER
+    Parameter(s):
+        0: GROUP 
+        1: LEADER
 
-	Returns:
-		NOTHING
+    Returns:
+        NOTHING
 */
 
 params ["_grp","_leader"]

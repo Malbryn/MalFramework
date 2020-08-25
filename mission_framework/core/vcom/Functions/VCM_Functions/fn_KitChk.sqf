@@ -1,15 +1,15 @@
 
 /*
-	Author: Genesis
+    Author: Genesis
 
-	Description:
-		This function will handle assigning proper variables to units, while returning appropriate arrays.
+    Description:
+        This function will handle assigning proper variables to units, while returning appropriate arrays.
 
-	Parameter(s):
-		0: GROUP - Group to check
+    Parameter(s):
+        0: GROUP - Group to check
 
-	Returns:
-		ARRAY - Format [_medicArray, _itemList]
+    Returns:
+        ARRAY - Format [_medicArray, _itemList]
 */
 
 //First let's find who the medics are in the team and return that list.

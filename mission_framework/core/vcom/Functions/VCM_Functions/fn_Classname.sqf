@@ -1,15 +1,15 @@
 
 /*
-	Author: BIS, modified by Genesis
+    Author: BIS, modified by Genesis
 
-	Description:
-		Check if string is vehicle class
+    Description:
+        Check if string is vehicle class
 
-	Parameter(s):
-		0: STRING - String to check
+    Parameter(s):
+        0: STRING - String to check
 
-	Returns:
-		STRING
+    Returns:
+        STRING
 */
 
 params ["_name"];
