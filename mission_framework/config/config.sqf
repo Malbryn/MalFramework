@@ -137,6 +137,10 @@ EGVAR(jip,jipTimer) = 3 MINUTES;  // For how long the TP is available after join
 GVARMAIN(moduleKillcam) = true;  // Coop & TvT
 
 
+// Logistics
+GVARMAIN(moduleLogistics) = true;  // Coop & TvT
+
+
 // Kill tracker
 GVARMAIN(moduleKillTracker) = true;  // Coop & TvT
 
