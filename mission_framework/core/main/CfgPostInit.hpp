@@ -108,6 +108,10 @@ class GVARMAIN(Killcam) {
     init = PATH_POST(killcam);
 };
 
+class GVARMAIN(Logistics) {
+    init = PATH_POST(logistics);
+};
+
 class GVARMAIN(LOSTool) {
     init = PATH_POST(los_tool);
 };
