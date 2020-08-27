@@ -45,7 +45,7 @@ SETPVAR(_unit,EGVAR(view_distance,viewDistance),_viewDistance);
 
 // Set ACE player variables
 // Medic
-if ((roleDescription _unit) find "Medic" >= 0) then {
+if ((roleDescription _unit) find "Medic" >= 0 || (roleDescription _unit) find "Combat Life Saver" >= 0) then {
     SETPVAR(_unit,ACE_medical_medicClass,1);
 } else {
     SETPVAR(_unit,ACE_medical_medicClass,0);

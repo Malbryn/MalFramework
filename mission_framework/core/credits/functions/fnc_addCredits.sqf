@@ -56,13 +56,16 @@ CREDITS:<br/>
  - OTP Framework<br/>
  - STB_A3 Framework<br/>
  - UO Briefing Kit mod<br/>
+ - VCOM AI mod<br/>
 <br/>
  - AI task scripts by Nkenny<br/>
+ - AI spawner (originally JEBUS) scripts by DreadPirate<br/>
  - AO limit scripts by Olsen and Starfox64<br/>
  - Briefing scripts by Perfks and Pax'Jarome<br/>
  - Cover map script by BlackHawk, PIZZADOX and Karel Moricky<br/>
  - Curator scripts by Commy2<br/>
  - Diary scripts by NeilZar<br/>
+ - Framerate monitor script by DriftingNitro<br/>
  - Friendly fire script by NeilZar<br/>
  - Global AI skill settings by joko // Jonas<br/>
  - Intel scripts by Kex<br/>
@@ -75,6 +78,7 @@ CREDITS:<br/>
  - No-damage ending script by Starfox64<br/>
  - ORBAT script by BlackHawk<br/>
  - Parachute script by Kex and cobra4v320<br/>
+ - Rearm scripts by GitHawk<br/>
  - Server FPS notification script by NeilZar<br/>
  - Setup timer script by Olsen<br/>
  - Snowfall script by AZCoder and JW<br/>
