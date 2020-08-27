@@ -108,6 +108,10 @@ class GVARMAIN(Killcam) {
     init = PATH_PRE(killcam);
 };
 
+class GVARMAIN(Logistics) {
+    init = PATH_PRE(logistics);
+};
+
 class GVARMAIN(LOSTool) {
     init = PATH_PRE(los_tool);
 };

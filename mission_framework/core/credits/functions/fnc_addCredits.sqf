@@ -78,6 +78,7 @@ CREDITS:<br/>
  - No-damage ending script by Starfox64<br/>
  - ORBAT script by BlackHawk<br/>
  - Parachute script by Kex and cobra4v320<br/>
+ - Rearm scripts by GitHawk<br/>
  - Server FPS notification script by NeilZar<br/>
  - Setup timer script by Olsen<br/>
  - Snowfall script by AZCoder and JW<br/>
