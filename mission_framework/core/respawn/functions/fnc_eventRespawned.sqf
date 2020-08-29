@@ -60,6 +60,12 @@ cutText ["", "BLACK FADED", 5, true];
     private _loadout = GETVAR(_unit,EGVAR(gear,currentLoadout),"");
     [_unit, _loadout] call EFUNC(gear,setGear);
 
+    // Assign insignia
+    if (EGVAR(player,insignia) != "") then {
+        [player, ""] call BFUNC(setUnitInsignia);
+        [player, EGVAR(player,insignia)] call BFUNC(setUnitInsignia);
+    };
+
     // Set radios
     if GVARMAIN(moduleACRE) then {
         [] call EFUNC(acre,setChannels);

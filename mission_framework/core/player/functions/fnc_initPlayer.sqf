@@ -16,15 +16,16 @@
             2 - Platoon level leadership (PLTHQ, PLTSGT), can call respawns, resupply and tactical withdrawal
         4: STRING - Assigned fireteam colour (Optional, default: white (= "MAIN"))
         5: SCALAR - Unit's view distance (Optional, default: -1 (default value defined in config.sqf))
+        6: STRING - Custom shoulder insignia (Optional, default: "")
 
     Example:
-        [this, "PLTHQ", 2, "YELLOW", 2500] call MF_player_fnc_initPlayer
+        [this, "PLTHQ", 2, "YELLOW", 2500, "EAF_5thRegiment"] call MF_player_fnc_initPlayer
 
     Returns:
         void
 */
 
-params ["_unit", "_role", ["_traits", 0], ["_colour", "MAIN"], ["_viewDistance", -1]];
+params ["_unit", "_role", ["_traits", 0], ["_colour", "MAIN"], ["_viewDistance", -1], ["_insignia", ""]];
 
 INFO_2("Initialising unit: %1 (Local: %2)",_unit,local _unit);
 
@@ -42,6 +43,9 @@ SETPVAR(_unit,EGVAR(team_colour,teamColour),_colour);
 
 // Assign view distance
 SETPVAR(_unit,EGVAR(view_distance,viewDistance),_viewDistance);
+
+// Save insignia
+GVAR(insignia) = _insignia;
 
 // Set ACE player variables
 // Medic
