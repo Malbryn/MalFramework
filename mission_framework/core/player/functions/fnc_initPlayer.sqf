@@ -45,7 +45,7 @@ SETPVAR(_unit,EGVAR(team_colour,teamColour),_colour);
 SETPVAR(_unit,EGVAR(view_distance,viewDistance),_viewDistance);
 
 // Save insignia
-GVAR(insignia) = _insignia;
+SETPVAR(_unit,GVAR(insignia),_insignia);
 
 // Set ACE player variables
 // Medic
