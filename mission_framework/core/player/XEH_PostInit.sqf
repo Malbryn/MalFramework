@@ -13,4 +13,13 @@ if (hasInterface) then {
             [player, _insignia] call BFUNC(setUnitInsignia);
         };
     }] call CFUNC(addEventHandler);
+
+    [QGVAR(setInsignia), {
+        params ["_unit", "_insignia"];
+
+        if (_insignia != "") then {
+            [_unit, ""] call BFUNC(setUnitInsignia);
+            [_unit, _insignia] call BFUNC(setUnitInsignia);
+        };
+    }] call CFUNC(addEventHandler);
 };

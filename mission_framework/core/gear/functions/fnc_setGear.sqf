@@ -15,13 +15,14 @@
         [this, "SL"] call MF_gear_fnc_setGear
 
     Returns:
-        void
+        BOOLEAN
 */
 
 params ["_unit", "_role"];
 
 if (isNil "_unit") exitWith {
     MSG("ERROR","(Gear) Unit is not found!");
+    false
 };
 
 // Remove all gear before applying the loadout
@@ -54,11 +55,15 @@ if ((side _unit) == west) then {
 };
 
 // Apply the selected loadout
-if !(count _gear == 0) then {
-    _unit setUnitLoadout _gear;
-} else {
+if (count _gear == 0) exitWith {
     MSG("ERROR","(Gear) Empty gear array!");
+    false
 };
+
+// Apply the selected loadout
+_unit setUnitLoadout _gear;
 
 // Save the current loadout
 SETPVAR(_unit,GVAR(currentLoadout),_role);
+
+true
