@@ -7,8 +7,19 @@ if (hasInterface) then {
 
     [QGVARMAIN(initFramework), {
         // Assign insignia
-        if (GVAR(insignia) != "") then {
-            [player, GVAR(insignia)] call BFUNC(setUnitInsignia);
+        private _insignia = GETVAR(player,GVAR(insignia),"");
+
+        if (_insignia != "") then {
+            [player, _insignia] call BFUNC(setUnitInsignia);
+        };
+    }] call CFUNC(addEventHandler);
+
+    [QGVAR(setInsignia), {
+        params ["_unit", "_insignia"];
+
+        if (_insignia != "") then {
+            [_unit, ""] call BFUNC(setUnitInsignia);
+            [_unit, _insignia] call BFUNC(setUnitInsignia);
         };
     }] call CFUNC(addEventHandler);
 };
