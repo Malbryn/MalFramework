@@ -56,16 +56,16 @@ cutText ["", "BLACK FADED", 5, true];
         ["Terminate"] call BFUNC(EGSpectator);
     };
 
-    // Load the gear
+    // Assigning gear and insignia
     private _loadout = GETVAR(_unit,EGVAR(gear,currentLoadout),"");
     [_unit, _loadout] call EFUNC(gear,setGear);
 
-    // Assign insignia
-    private _insignia = GETVAR(_unit,EGVAR(player,insignia),"");
-    if (_insignia != "") then {
-        [player, ""] call BFUNC(setUnitInsignia);
-        [player, _insignia] call BFUNC(setUnitInsignia);
-    };
+    [{
+        params ["_unit"];
+
+        private _insignia = GETVAR(_unit,EGVAR(player,insignia),"");
+        [QEGVAR(player,setInsignia), [_unit, _insignia]] call CFUNC(globalEvent);
+    }, [_unit], 3] call CFUNC(waitAndExecute);
 
     // Set radios
     if GVARMAIN(moduleACRE) then {
