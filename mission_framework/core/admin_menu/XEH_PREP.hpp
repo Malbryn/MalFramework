@@ -1,1 +1,17 @@
 PREP(addAdminMenu);
+PREP(bringPlayer);
+PREP(closeAdminMenu);
+PREP(eventAdminMenuOpened);
+PREP(healPlayer);
+PREP(kickPlayer);
+PREP(openArsenal);
+PREP(reassignCurator);
+PREP(setMissionTitle);
+PREP(setTaskState);
+PREP(startStatsPFH);
+PREP(teleportToPlayer);
+PREP(toggleFPSCounter);
+PREP(updatePlayerCount);
+PREP(updatePlayerList);
+PREP(updateProgressBar);
+PREP(updateTaskList);

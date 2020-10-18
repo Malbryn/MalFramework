@@ -3,7 +3,12 @@
 if (isServer) then {
     [{
         GVAR(serverFPS) = parseNumber (diag_fps toFixed 2);
-        GVAR(serverFPSMin) = parseNumber (diag_fpsMin toFixed 2);
+
+        private _tempMin = parseNumber (diag_fpsMin toFixed 2);
+        if (_tempMin < GVAR(serverFPSMin) && CBA_MissionTime > 3) then {
+            GVAR(serverFPSMin) = _tempMin;
+        };
+
         publicVariable QGVAR(serverFPS);
         publicVariable QGVAR(serverFPSMin);
 
