@@ -26,4 +26,8 @@ allPlayers apply {
     lbSetData [718, _index, netId _x];
 };
 
+// Player count
 call FUNC(updatePlayerCount);
+
+// Alphabetical order
+lbSort 718;
