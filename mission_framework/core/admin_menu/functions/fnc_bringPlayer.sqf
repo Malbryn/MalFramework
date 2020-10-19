@@ -28,7 +28,7 @@ if (_player != "") then {
     private _unit = objectFromNetId (lbData [718, lbCurSel 718]);
     
     // Check if the player is in vehicle
-    private _vicSpot = [player] call EFUNC(jip,checkEmptySeats);
+    private _vicSpot = [player] call EFUNC(jip,checkEmptySeat);
     
     if (vehicle player != player && _vicSpot) then {
         _unit moveInAny vehicle player;
