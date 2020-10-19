@@ -24,5 +24,12 @@ if !(hasInterface) exitWith {};
 private _player = lbText [718, lbCurSel 718];
 
 if (_player != "") then {
-    serverCommand format ["#kick %1", _player];
+    if (IS_ADMIN_LOGGED) then {
+        "" serverCommand format ["#kick %1", _player];
+    } else {
+        MSG("You're not logged in");
+    };
 };
+
+// Delete form the player list
+lbDelete [718, lbCurSel 718];
