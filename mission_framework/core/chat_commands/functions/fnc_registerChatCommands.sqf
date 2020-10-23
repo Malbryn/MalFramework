@@ -30,3 +30,8 @@ if !(hasInterface) exitWith {};
     [QGVARMAIN(callMission), ["MissionTerminated", false, playerSide]] call CFUNC(serverEvent);
     MSG("INFO","Terminating mission...");
 }, "admin"] call CFUNC(registerChatCommand);
+
+// Open the Admin menu
+["openAdminMenu", {
+    createDialog "MF_AdminMenu";
+}, "admin"] call CFUNC(registerChatCommand);

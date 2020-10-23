@@ -20,16 +20,30 @@
 
 if !(hasInterface) exitWith {};
 
-// Get the currently selected player
-private _player = lbText [718, lbCurSel 718];
-
-if (_player != "") then {
-    if (IS_ADMIN_LOGGED) then {
-        "" serverCommand format ["#kick %1", _player];
-    } else {
-        MSG("You're not logged in");
-    };
+if !(IS_ADMIN_LOGGED) exitWith {
+    MSG("INFO","You're not a logged in admin");
 };
 
-// Delete form the player list
-lbDelete [718, lbCurSel 718];
+[] spawn {
+    // Get the currently selected player
+    private _player = lbText [718, lbCurSel 718];
+
+    if (_player != "") then {
+        private _confirm = [
+            format ["Are you sure you want to kick %1?", _player], 
+            "Confirm action",
+            true,
+            true,
+            findDisplay 799
+        ] call BFUNC(guiMessage);
+
+        if (_confirm) then {
+            "" serverCommand format ["#kick %1", _player];
+
+            // Delete form the player list
+            [{!isNull findDisplay 799}, {
+                lbDelete [718, lbCurSel 718];
+            }] call CFUNC(waitUntilAndExecute);
+        };
+    };
+};
