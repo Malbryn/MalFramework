@@ -28,10 +28,6 @@ class GVARMAIN(AOLimit) {
     init = PATH_PRE(ao_limit);
 };
 
-class GVARMAIN(Arsenal) {
-    init = PATH_PRE(arsenal);
-};
-
 class GVARMAIN(Briefing) {
     init = PATH_PRE(briefing);
 };
@@ -52,10 +48,6 @@ class GVARMAIN(Credits) {
     init = PATH_PRE(credits);
 };
 
-class GVARMAIN(Curator) {
-    init = PATH_PRE(curator);
-};
-
 class GVARMAIN(DisableDamage) {
     init = PATH_PRE(disable_damage);
 };
@@ -70,10 +62,6 @@ class GVARMAIN(EndMIssion) {
 
 class GVARMAIN(Flyby) {
     init = PATH_PRE(flyby);
-};
-
-class GVARMAIN(ForceEnd) {
-    init = PATH_PRE(force_end);
 };
 
 class GVARMAIN(FriendlyFire) {
@@ -132,10 +120,6 @@ class GVARMAIN(Orbat) {
     init = PATH_PRE(orbat);
 };
 
-class GVARMAIN(Performance) {
-    init = PATH_PRE(performance);
-};
-
 class GVARMAIN(Player) {
     init = PATH_PRE(player);
 };
@@ -178,10 +162,6 @@ class GVARMAIN(StaticLine) {
 
 class GVARMAIN(SupplyDrop) {
     init = PATH_PRE(supply_drop);
-};
-
-class GVARMAIN(TaskControl) {
-    init = PATH_PRE(task_control);
 };
 
 class GVARMAIN(TeamColour) {

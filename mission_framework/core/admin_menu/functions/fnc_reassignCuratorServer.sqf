@@ -5,13 +5,13 @@
         Malbryn
 
     Description:
-        Reassigns the curator module
+        Reassigns the curator module on the server.
 
     Arguments:
         0: OBJECT - Player unit who has curator access
 
     Example:
-        [_unit] call MF_curator_fnc_reassignCurator
+        [_unit] call MF_admin_menu_fnc_reassignCuratorServer
 
     Returns:
         void

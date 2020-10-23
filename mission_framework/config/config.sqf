@@ -73,6 +73,11 @@ GVARMAIN(moduleACRE) = false;  // Coop & TvT
 EGVAR(acre,useBabel) = false;  // TvT
 
 
+// Admin menu
+EGVAR(admin_menu,enableArsenal) = true;  // Coop
+EGVAR(admin_menu,enableCurator) = true;  // Coop
+
+
 // AI Spawner
 GVARMAIN(moduleAISpawner) = true;  // Coop & TvT
 
@@ -90,10 +95,6 @@ EGVAR(ao_limit,aoMarkerBlufor) = "mrk_aoLimitBlufor";  // AO limit marker for BL
 EGVAR(ao_limit,aoMarkerRedfor) = "mrk_aoLimitRedfor";  // AO limit marker for REDFOR players
 
 
-// Arsenal
-GVARMAIN(moduleArsenal) = true;  // Coop
-
-
 // Briefing
 GVARMAIN(moduleBriefing) = true;  // Coop & TvT
 
@@ -102,10 +103,6 @@ GVARMAIN(moduleBriefing) = true;  // Coop & TvT
 GVARMAIN(moduleCoverMap) = true;  // Coop & TvT
 EGVAR(cover_map,aoMarker) = "ao";  // AO marker
 EGVAR(cover_map,colour) = "Color4_FD_F";  // Colour of the covered area
-
-
-// Curator
-GVARMAIN(moduleCurator) = true;  // Coop
 
 
 // Grass cutter
@@ -208,10 +205,6 @@ GVARMAIN(moduleStaticLine) = true;  // Coop & TvT
 GVARMAIN(moduleSupplyDrop) = true;  // Coop
 EGVAR(supply_drop,supplyDropPlane) = "B_T_VTOL_01_vehicle_F";  // Plane or helicopter used for the supply drop
 EGVAR(supply_drop,useFlare) = false;  // Use flares to mark the crate instead of smokes (night ops)
-
-
-// Task control
-GVARMAIN(moduleTaskControl) = true;  // Coop
 
 
 // TFAR
