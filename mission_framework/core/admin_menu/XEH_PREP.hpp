@@ -10,6 +10,7 @@ PREP(setMissionTitle);
 PREP(setTaskState);
 PREP(startStatsPFH);
 PREP(teleportToPlayer);
+PREP(terminateMission);
 PREP(toggleFPSCounter);
 PREP(updatePlayerCount);
 PREP(updatePlayerList);
