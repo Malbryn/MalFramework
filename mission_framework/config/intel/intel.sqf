@@ -14,10 +14,11 @@
 EGVAR(intel,intelList) = [
 // ID: 0
     [
-        "Test title 1",       // Title of the intel
-        "Test text 1",        // Intel text
-        3,                    // Pick-up duration
-        true                  // Delete the object after it was acquired
+        "Test title 1",  // Title of the intel
+        "Test text 1",   // Intel text
+        3,               // Pick-up duration
+        true,            // Delete the object after it was acquired
+        true             // Share the intel globally
     ],
 
 // ID: 1
@@ -25,6 +26,7 @@ EGVAR(intel,intelList) = [
         "Test title 2",
         "Test text 2",
         10,
+        false,
         false
     ]
 ];
