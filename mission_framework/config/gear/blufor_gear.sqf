@@ -46,16 +46,18 @@ case "SL" : {
 
 
 case "MEDIC" : {
-    _gear = [["arifle_SPAR_01_blk_ERCO_Pointer_F","","acc_pointer_IR","optic_ERCO_blk_F",["30Rnd_556x45_Stanag_red",30],[],""],
-    [],
-    ["hgun_P07_khk_Snds_F","muzzle_snds_L","","",["16Rnd_9x21_Mag",17],[],""],
-    ["U_B_CTRG_Soldier_F",[["FirstAidKit",1],["30Rnd_556x45_Stanag_red",3,30],["SmokeShell",1,1]]],
-    ["V_TacVest_oli",[["30Rnd_556x45_Stanag_red",2,30],["16Rnd_9x21_Mag",2,17],["MiniGrenade",2,1],["SmokeShellGreen",1,1],["Chemlight_green",2,1]]],
-    ["B_AssaultPack_rgr_CTRGMedic_F",[["Medikit",1],["FirstAidKit",5],["SmokeShellRed",1,1],["SmokeShellBlue",1,1],["SmokeShellOrange",1,1]]],
-    "H_HelmetB_TI_tna_F",
-    "G_Balaclava_TI_G_tna_F",
-    ["Binocular","","","",[],[],""],
-    ["ItemMap","ItemGPS","ItemRadio","ItemCompass","ItemWatch","NVGogglesB_grn_F"]];
+    _gear = [
+        ["arifle_SPAR_01_blk_ERCO_Pointer_F","","acc_pointer_IR","optic_ERCO_blk_F",["30Rnd_556x45_Stanag_red",30],[],""],
+        [],
+        ["hgun_P07_khk_Snds_F","muzzle_snds_L","","",["16Rnd_9x21_Mag",17],[],""],
+        ["U_B_CTRG_Soldier_F",[["FirstAidKit",1],["30Rnd_556x45_Stanag_red",3,30],["SmokeShell",1,1]]],
+        ["V_TacVest_oli",[["30Rnd_556x45_Stanag_red",2,30],["16Rnd_9x21_Mag",2,17],["MiniGrenade",2,1],["SmokeShellGreen",1,1],["Chemlight_green",2,1]]],
+        ["B_AssaultPack_rgr_CTRGMedic_F",[["Medikit",1],["FirstAidKit",5],["SmokeShellRed",1,1],["SmokeShellBlue",1,1],["SmokeShellOrange",1,1]]],
+        "H_HelmetB_TI_tna_F",
+        "G_Balaclava_TI_G_tna_F",
+        ["Binocular","","","",[],[],""],
+        ["ItemMap","ItemGPS","ItemRadio","ItemCompass","ItemWatch","NVGogglesB_grn_F"]
+    ];
 };
 
 

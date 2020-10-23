@@ -7,3 +7,9 @@ PREP_RECOMPILE_START;
 PREP_RECOMPILE_END;
 
 ADDON = true;
+
+// Global variables
+GVAR(serverFPS) = 999;
+GVAR(serverFPSMin) = 999;
+GVAR(toggleFPS) = false;
+GVAR(isMonitoring) = false;

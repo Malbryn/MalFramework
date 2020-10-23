@@ -50,6 +50,7 @@ taskManagement_propagate = 0;  // Propagate shared tasks to subordinates
 
 // RscTitles
 #include "mission_framework\core\main\rscTitles.hpp"
+#include "mission_framework\core\admin_menu\dialog\MF_AdminMenu.hpp"
 
 // VCOM functions
 #ifdef VCOMAI
