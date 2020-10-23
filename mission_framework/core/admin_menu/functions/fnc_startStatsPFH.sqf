@@ -43,10 +43,10 @@ GVAR(timeStatsPFH) = [{
 // Other stats (updates every 3 seconds)
 GVAR(otherStatsPFH) = [{
     // Server FPS (Current)
-    ctrlSetText [700, str EGVAR(performance,serverFPS)];
+    ctrlSetText [700, str GVAR(serverFPS)];
 
     // Server FPS (Min)
-    ctrlSetText [701, str EGVAR(performance,serverFPSMin)];
+    ctrlSetText [701, str GVAR(serverFPSMin)];
 
     // View distance (Server)
     ctrlSetText [703, str GVARMAIN(playerViewDistance)];
@@ -75,7 +75,7 @@ GVAR(otherStatsPFH) = [{
     ctrlSetText [709, str _unitsCivfor];
 
     // Object count
-    private _objects = count allMissionObjects "All";
+    private _objects = (count allMissionObjects "All") - _units;
     ctrlSetText [710, str _objects];
 
     // Dead units

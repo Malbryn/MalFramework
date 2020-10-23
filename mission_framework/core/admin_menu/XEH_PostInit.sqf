@@ -29,8 +29,6 @@ if (hasInterface) then {
         [_fps] call FUNC(fpsNotification);
     }] call CFUNC(addEventHandler);
 
-    call FUNC(addCheckPerformanceMenu);
-
     // Client FPS
     [QGVAR(displayFPS), {
         params ["_toggle"];
@@ -74,9 +72,4 @@ if (GVAR(enableCurator) && !GVARMAIN(isTvT)) then {
             call FUNC(assignCurator);
         }] call CFUNC(addEventHandler);
     };
-};
-
-
-
-if (hasInterface) then {
 };
