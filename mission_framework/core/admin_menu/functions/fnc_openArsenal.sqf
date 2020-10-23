@@ -19,6 +19,10 @@
 
 if !(hasInterface) exitWith {};
 
+if GVARMAIN(isTvT) exitWith {MSG("INFO","The Arsenal function is not available in TvT missions")};
+
+if !GVAR(enableArsenal) exitWith {MSG("INFO","The Arsenal function was disabled by the mission maker")};
+
 // Close dialog
 call FUNC(closeAdminMenu);
 

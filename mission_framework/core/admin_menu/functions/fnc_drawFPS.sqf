@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_performance_fnc_drawFPS
+        call MF_admin_menu_fnc_drawFPS
 
     Returns:
         void
