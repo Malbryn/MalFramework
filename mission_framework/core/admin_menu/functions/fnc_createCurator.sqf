@@ -11,7 +11,7 @@
         0: OBJECT - The unit who has the access to curator
 
     Example:
-        [_unit] call MF_curator_fnc_createCurator
+        [_unit] call MF_admin_menu_fnc_createCurator
 
     Returns:
         void
