@@ -1,6 +1,7 @@
 PREP(addHABMenu);
 PREP(addParachute);
 PREP(addRPMenu);
+PREP(createTPDestination);
 PREP(deployHAB);
 PREP(deployRP);
 PREP(haloDrop);
