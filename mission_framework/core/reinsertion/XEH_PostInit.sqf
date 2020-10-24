@@ -11,5 +11,11 @@ if (hasInterface) then {
         call FUNC(addHABMenu);
     }] call CFUNC(addEventHandler);
 
+    [QGVAR(createTPDestination), {
+        params ["_name", "_pos"];
+
+        [_name, _pos] call FUNC(createTPDestination);
+    }] call CFUNC(addEventHandler);
+
     call FUNC(initPole);
 };
