@@ -6,6 +6,7 @@ PREP(createCurator);
 PREP(drawFPS);
 PREP(eventAdminMenuOpened);
 PREP(fpsNotification);
+PREP(getCurrentAdmin);
 PREP(healPlayer);
 PREP(kickPlayer);
 PREP(openArsenal);
