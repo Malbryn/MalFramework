@@ -21,15 +21,18 @@ if !(hasInterface) exitWith {};
 
 // Time stats (updates every second)
 GVAR(timeStatsPFH) = [{
-    // Mission time
-    private _missionTime = [CBA_missionTime] call EFUNC(common,getTimeStamp);
-    ctrlSetText [702, _missionTime];
-
     // Mission progress
-    private _timeLimit = [EGVAR(end_conditions,timeLimit)] call EFUNC(common,getTimeStamp);
-    private _missionProgress = format ["%1 / %2", _missionTime, _timeLimit];
-    ctrlSetText [714, _missionProgress];
-    call FUNC(updateProgressBar);
+    private _missionTime = [CBA_missionTime] call EFUNC(common,getTimeStamp);
+
+    if (GVARMAIN(moduleTimeLimit)) then {
+        private _timeLimit = [EGVAR(end_conditions,timeLimit)] call EFUNC(common,getTimeStamp);
+        private _missionProgress = format ["%1 / %2", _missionTime, _timeLimit];
+        ctrlSetText [714, _missionProgress];
+        call FUNC(updateProgressBar);
+    } else {
+        private _missionProgress = format ["%1 / --:--:--", _missionTime];
+        ctrlSetText [714, _missionProgress];
+    };
 
     // System time
     private _systemTime = [] call EFUNC(common,getSystemTime);
@@ -47,6 +50,10 @@ GVAR(otherStatsPFH) = [{
 
     // Server FPS (Min)
     ctrlSetText [701, str GVAR(serverFPSMin)];
+
+    // Current admin
+    private _admin = call FUNC(getCurrentAdmin);
+    ctrlSetText [702, _admin];
 
     // View distance (Server)
     ctrlSetText [703, str GVARMAIN(playerViewDistance)];
