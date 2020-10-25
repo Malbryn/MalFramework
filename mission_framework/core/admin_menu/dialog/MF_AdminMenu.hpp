@@ -206,7 +206,7 @@ class MF_AdminMenu
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
             
         };
-        class LabelMissionTime
+        class LabelCurrentAdmin
         {
             type = 0;
             idc = -1;
@@ -215,14 +215,14 @@ class MF_AdminMenu
             w = safeZoneW * 0.1375;
             h = safeZoneH * 0.03666667;
             style = 0;
-            text = "Mission time:";
+            text = "Current admin:";
             colorBackground[] = {0.102,0.102,0.102,1};
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
             
         };
-        class TextMissionTime
+        class TextCurrentAdmin
         {
             type = 0;
             idc = 702;
@@ -231,7 +231,7 @@ class MF_AdminMenu
             w = safeZoneW * 0.0625;
             h = safeZoneH * 0.03666667;
             style = 1;
-            text = "00:00:00";
+            text = "N/A";
             colorBackground[] = {0.102,0.102,0.102,1};
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";

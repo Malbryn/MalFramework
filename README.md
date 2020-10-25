@@ -1,6 +1,6 @@
 <p align="center">
   <img src="https://i.imgur.com/Lq5Do49.png">
-  <a href="https://github.com/Malbryn/MalFramework/releases/tag/v1.07">
+  <a href="https://github.com/Malbryn/MalFramework/releases/tag/v1.08">
     <img src="https://img.shields.io/badge/Version-1.08-brightgreen" alt="MalFramework Version">
   </a>
 </p>
@@ -24,22 +24,3 @@ If something is broken, contact **[Malbryn](https://www.fkgaming.eu/profile/4189
  - ACRE (required by the Radio channel setup module)
  - CUP Core (required by the Snowfall module)
  - TFAR (required by the Radio channel setup module)
-
-### These mods have custom settings already defined in the CBA settings:
- - ACRE
- - ASR AI
- - DUI Radar
- - IFA3 Liberation
- - LAMBS Danger FSM
- - LAxemann's Suppress
- - VET Unflipping
- - VCOM AI (script version included in the framework)
- - Advanced Urban Rappelling
- - CBA Weapons
- - GRAD Trenches
- - MrSanchez' Headlamp
- - NIArms
- - TFAR
- - VCOM
- - VET_Unflipping
- - Zeus Enhanced
