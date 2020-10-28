@@ -25,6 +25,9 @@ if (isNil "_unit") exitWith {
     false
 };
 
+// No gear for spectators
+if (side _unit == sideLogic) exitWith {};
+
 // Remove all gear before applying the loadout
 removeHeadgear _unit;
 removeUniform _unit;
