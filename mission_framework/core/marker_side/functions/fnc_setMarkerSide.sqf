@@ -19,6 +19,9 @@
 
 if !(hasInterface) exitWith {};
 
+// Specators can see every marker
+if (side player == sideLogic) exitWith {};
+
 _markersBLU = GVAR(markersBlufor);
 _markersRED = GVAR(markersRedfor);
 
