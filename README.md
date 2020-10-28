@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://i.imgur.com/Lq5Do49.png">
   <a href="https://github.com/Malbryn/MalFramework/releases/tag/v1.08">
-    <img src="https://img.shields.io/badge/Version-1.08-brightgreen" alt="MalFramework Version">
+    <img src="https://img.shields.io/badge/Version-1.09BETA-brightgreen" alt="MalFramework Version">
   </a>
 </p>
 

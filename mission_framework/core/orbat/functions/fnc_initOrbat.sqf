@@ -19,8 +19,11 @@
 
 private ["_newIndex", "_playerSide", "_groupArray"];
 
-_newIndex = player createDiarySubject ["GearIndex", "ORBAT"];
 _playerSide = playerSide;
+
+if (_playerSide == sideLogic) exitWith {};
+
+_newIndex = player createDiarySubject ["GearIndex", "ORBAT"];
 _groupArray = [];
 
 allGroups apply {
