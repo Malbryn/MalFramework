@@ -19,5 +19,5 @@
 
 if !(hasInterface) exitWith {};
 
-private _text = format ["%1 / %2", count allPlayers, getNumber (missionConfigFile >> "Header" >> "maxPlayers")];
+private _text = format ["%1 / %2", count (call BFUNC(listPlayers)), getNumber (missionConfigFile >> "Header" >> "maxPlayers")];
 ctrlSetText [717, _text];
