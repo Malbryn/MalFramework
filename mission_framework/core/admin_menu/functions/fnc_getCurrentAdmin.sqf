@@ -20,13 +20,15 @@
 if !(hasInterface) exitWith {};
 
 // There's no logged-in admin in localhost, return the host name instead
-if !(isDedicated) exitWith {name player};
+if (isServer) exitWith {name player};
 
 // Get admin array
-private _admin = (allPlayers select {(admin (owner _x)) > 0});
+[QGVAR(getAdmin)] call CFUNC(serverEvent);
+
+private _admin = GVAR(currentAdmin);
 
 if (_admin isEqualTo []) then {
     "N/A"
 } else {
-    _admin select 0
+    name (_admin select 0);
 };

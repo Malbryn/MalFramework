@@ -16,6 +16,11 @@ if (isServer) then {
             [QGVAR(fpsWarning), GVAR(serverFPS)] call CFUNC(globalEvent);
         };
     }, 2] call CFUNC(addPerFrameHandler);
+
+    [QGVAR(getAdmin), {
+        GVAR(currentAdmin) = allPlayers select {(admin (owner _x)) > 0};
+        publicVariable QGVAR(currentAdmin);
+    }] call CFUNC(addEventHandler);
 };
 
 if (hasInterface) then {
