@@ -19,7 +19,9 @@
 
 if !(hasInterface) exitWith {};
 
-allPlayers apply {
+private _playerList = call BFUNC(listPlayers);
+
+_playerList apply {
     private _index = lbAdd [718, name _x];
 
     // Attach the player object (net ID) to the row
