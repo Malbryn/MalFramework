@@ -45,6 +45,24 @@ if (GVARMAIN(moduleTimeLimit) && !_ended) then {
                 _ended = true;
             };
 
+            case 3 : {
+                private _bluforCount = west countSide playableUnits;
+                private _redforCount = east countSide playableUnits;
+
+                if (_bluforCount > _redforCount) then {
+                    [QGVARMAIN(callMission), ["TimeLimitBlufor", true, west]] call CFUNC(localEvent);
+                    _ended = true;
+                } else {
+                    if (_bluforCount < _redforCount) then {
+                        [QGVARMAIN(callMission), ["TimeLimitRedfor", true, east]] call CFUNC(localEvent);
+                        _ended = true;
+                    } else {
+                        [QGVARMAIN(callMission), ["TimeLimitDraw", false]] call CFUNC(localEvent);
+                        _ended = true;
+                    };
+                };
+            };
+
             default {
                 [QGVARMAIN(systemMessage), ["ERROR", "(End conditions) Wrong favoured side code in Time limit settings"]] call CFUNC(globalEvent);
                 _ended = true;

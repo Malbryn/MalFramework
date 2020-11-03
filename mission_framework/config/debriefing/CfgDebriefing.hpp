@@ -143,6 +143,16 @@ class TimeLimitRedfor {
     pictureColor[] = {0.5, 0, 0, 1};
 };
 
+// Time limit - Draw
+class TimeLimitDraw {
+    title = "Draw";
+    subtitle = "Time limit reached";
+    description = "Time's up. Both sides have the same amount of players. It's a draw.";
+    pictureBackground = "";
+    picture = "o_unknown";
+    pictureColor[] = {0.5, 0, 0, 1};
+};
+
 // Player casualty - Blufor win
 class PlayerCasLimitBlufor {
     title = "blufor_faction Win";
