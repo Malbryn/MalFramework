@@ -30,5 +30,13 @@ if (isServer) then {
                 }, 10] call CFUNC(addPerFrameHandler);
             };
         }, [], 5] call CFUNC(waitAndExecute);
+
+        // Time limit notification
+        if (GVAR(notificationTime) != -1) then {
+            [{(GVAR(timeLimit) - floor (CBA_missionTime)) == GVAR(notificationTime)}, {
+                private _timeLimitMinutes = floor (GVAR(notificationTime) / 60);
+                [QGVARMAIN(notification_2), ["TimeLimitNotification", _timeLimitMinutes]] call CFUNC(globalEvent);
+            }] call CFUNC(waitUntilAndExecute);
+        };
     }] call CFUNC(addEventHandler);
 };
