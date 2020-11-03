@@ -20,6 +20,8 @@
 
 if !(hasInterface) exitWith {};
 
+if GVARMAIN(isTvT) exitWith {MSG("INFO","Healing is not available in TvT missions")};
+
 // Get the currently selected player
 private _player = lbText [718, lbCurSel 718];
 
