@@ -8,7 +8,7 @@ GVARMAIN(isTvT) = false;  // If the mission is a TvT mission
 // End condition - Time limit
 GVARMAIN(moduleTimeLimit) = true;  // Coop & TvT
 EGVAR(end_conditions,timeLimit) = 60 MINUTES;  // Mission time limit in seconds
-EGVAR(end_conditions,favouredSide) = 1;  // TvT: Favoured side (0: NONE, 1: BLUFOR, 2: REDFOR)
+EGVAR(end_conditions,favouredSide) = 1;  // TvT: Favoured side (0: None, 1: BLUFOR, 2: REDFOR, 3: Side with more players)
 
 // End condition - Player casualty limit
 GVARMAIN(modulePlayerCasualties) = false;  // Coop & TvT
