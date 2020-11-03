@@ -88,4 +88,15 @@ class CfgNotifications {
         priority = 4;
         difficulty[] = {};
     };
+
+    class TimeLimitNotification {
+        title = "MISSION TIME LIMIT";
+        iconPicture = "\a3\ui_f\data\IGUI\Cfg\Actions\settimer_ca.paa";
+        iconText = "";
+        description = "%1 minutes remaining.";
+        color[] = {1, 1, 1, 1};
+        duration = 5;
+        priority = 5;
+        difficulty[] = {};
+    };
 };
