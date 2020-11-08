@@ -19,6 +19,10 @@
 
 if !(hasInterface) exitWith {};
 
+// Stop PFH's - in case they were running already
+[GVAR(timeStatsPFH)] call CFUNC(removePerFrameHandler);
+[GVAR(otherStatsPFH)] call CFUNC(removePerFrameHandler);
+
 // Time stats (updates every second)
 GVAR(timeStatsPFH) = [{
     // Mission progress
