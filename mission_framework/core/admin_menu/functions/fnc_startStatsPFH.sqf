@@ -19,6 +19,9 @@
 
 if !(hasInterface) exitWith {};
 
+// Exit if the dialog is not visible
+if (isNull findDisplay 799) exitWith {};
+
 // Stop PFH's - in case they were running already
 [GVAR(timeStatsPFH)] call CFUNC(removePerFrameHandler);
 [GVAR(otherStatsPFH)] call CFUNC(removePerFrameHandler);
