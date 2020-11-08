@@ -1107,7 +1107,7 @@ class MF_AdminMenu
             w = safeZoneW * 0.125;
             h = safeZoneH * 0.04;
             style = 16+0;
-            text = "BLUFOR : Alpha 1-1\nMachinegunner (Alive)";
+            text = "";
             colorBackground[] = {0.2,0.2,0.2,1};
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
