@@ -1,4 +1,5 @@
 PREP(addAdminMenu);
+PREP(addPlayerInfoEH);
 PREP(assignCurator);
 PREP(bringPlayer);
 PREP(closeAdminMenu);
