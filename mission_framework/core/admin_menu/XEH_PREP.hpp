@@ -9,7 +9,7 @@ PREP(eventAdminMenuOpened);
 PREP(fpsNotification);
 PREP(getCurrentAdmin);
 PREP(healPlayer);
-PREP(kickPlayer);
+PREP(onPause);
 PREP(openArsenal);
 PREP(reassignCuratorClient);
 PREP(reassignCuratorServer);
