@@ -1,6 +1,6 @@
 //Exported via Arma Dialog Creator (https://github.com/kayler-renslow/arma-dialog-creator)
-
 #include "CustomControlClasses.h"
+
 class MF_AdminMenu
 {
     idd = 799;
