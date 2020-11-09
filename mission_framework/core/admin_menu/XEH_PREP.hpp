@@ -1,4 +1,5 @@
 PREP(addAdminMenu);
+PREP(addPlayerInfoEH);
 PREP(assignCurator);
 PREP(bringPlayer);
 PREP(closeAdminMenu);
@@ -8,7 +9,7 @@ PREP(eventAdminMenuOpened);
 PREP(fpsNotification);
 PREP(getCurrentAdmin);
 PREP(healPlayer);
-PREP(kickPlayer);
+PREP(onPause);
 PREP(openArsenal);
 PREP(reassignCuratorClient);
 PREP(reassignCuratorServer);

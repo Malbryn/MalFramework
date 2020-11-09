@@ -32,6 +32,9 @@ if !(hasInterface) exitWith {};
     // Set mission title
     call FUNC(setMissionTitle);
 
+    // Add listbox EH
+    call FUNC(addPlayerInfoEH);
+
     // Block ESC key
     GVAR(escKeyBlock) = (findDisplay 799) displayAddEventHandler ["KeyDown", "if (((_this select 1) == 1)) then {true};"];
 }] call CFUNC(waitUntilAndExecute);

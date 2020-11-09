@@ -1,6 +1,8 @@
 // DO NOT EDIT (unless you know what you are doing)
 // To access the basic settings open the description.hpp in 'mission_framework\config\'
 
+#include "mission_framework\core\main\script_macros.hpp"
+
 // Importing the custom settings
 #include "mission_framework\config\description.hpp"
 __EXEC(MF_missionMaker = UID;)
@@ -36,6 +38,9 @@ taskManagement_markers2D = 0;  // Use 2D markers
 taskManagement_markers3D = 0;  // Use 3D markers
 taskManagement_propagate = 0;  // Propagate shared tasks to subordinates
 
+// Admin menu
+onPauseScript[] = {QEFUNC(admin_menu,onPause)};
+
 // Debriefing config
 #include "mission_framework\core\main\CfgDebriefing.hpp"
 
@@ -50,7 +55,6 @@ taskManagement_propagate = 0;  // Propagate shared tasks to subordinates
 
 // RscTitles
 #include "mission_framework\core\main\rscTitles.hpp"
-#include "mission_framework\core\admin_menu\dialog\MF_AdminMenu.hpp"
 
 // VCOM functions
 #ifdef VCOMAI

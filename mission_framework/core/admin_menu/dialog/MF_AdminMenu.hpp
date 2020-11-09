@@ -1,6 +1,6 @@
 //Exported via Arma Dialog Creator (https://github.com/kayler-renslow/arma-dialog-creator)
-
 #include "CustomControlClasses.h"
+
 class MF_AdminMenu
 {
     idd = 799;
@@ -24,10 +24,9 @@ class MF_AdminMenu
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
             onLoad = "call MF_admin_menu_fnc_eventAdminMenuOpened";
-            
         };
-        
     };
+
     class Controls
     {
         class TitleMain
@@ -44,8 +43,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.3);
-            
         };
+
         class ButtonCloseDialog
         {
             type = 1;
@@ -76,8 +75,8 @@ class MF_AdminMenu
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
             onMouseButtonClick = "call MF_admin_menu_fnc_closeAdminMenu";
-            
         };
+
         class ListboxPlayerlist
         {
             type = 5;
@@ -106,10 +105,9 @@ class MF_AdminMenu
                 arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
                 arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
                 border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
-                
             };
-            
         };
+
         class TitlePlayerlist
         {
             type = 0;
@@ -124,8 +122,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.1);
-            
         };
+
         class TitlePerformance
         {
             type = 0;
@@ -140,8 +138,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.1);
-            
         };
+
         class LabelCurrentFPS
         {
             type = 0;
@@ -156,8 +154,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
         };
+
         class TextCurrentFPS
         {
             type = 0;
@@ -174,6 +172,7 @@ class MF_AdminMenu
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
             
         };
+
         class LabelMinFPS
         {
             type = 0;
@@ -188,8 +187,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
         };
+
         class TextMinFPS
         {
             type = 0;
@@ -204,9 +203,9 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
         };
-        class LabelCurrentAdmin
+
+        class LabelMissionTime
         {
             type = 0;
             idc = -1;
@@ -215,14 +214,14 @@ class MF_AdminMenu
             w = safeZoneW * 0.1375;
             h = safeZoneH * 0.03666667;
             style = 0;
-            text = "Current admin:";
+            text = "Mission time:";
             colorBackground[] = {0.102,0.102,0.102,1};
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
         };
-        class TextCurrentAdmin
+
+        class TextMissionTime
         {
             type = 0;
             idc = 702;
@@ -231,13 +230,13 @@ class MF_AdminMenu
             w = safeZoneW * 0.0625;
             h = safeZoneH * 0.03666667;
             style = 1;
-            text = "N/A";
+            text = "00:00:00";
             colorBackground[] = {0.102,0.102,0.102,1};
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
         };
+
         class LabelServerViewDistance
         {
             type = 0;
@@ -252,8 +251,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
         };
+
         class TextServerViewDistance
         {
             type = 0;
@@ -268,8 +267,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
         };
+
         class LabelPlayerViewDistance
         {
             type = 0;
@@ -284,8 +283,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
         };
+
         class TextPlayerViewDistance
         {
             type = 0;
@@ -300,8 +299,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
         };
+
         class LabelCountAllUnits
         {
             type = 0;
@@ -316,8 +315,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
         };
+
         class TextCountAllUnits
         {
             type = 0;
@@ -332,8 +331,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
         };
+
         class LabelCountBlufor
         {
             type = 0;
@@ -348,8 +347,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
         };
+
         class TextCountBlufor
         {
             type = 0;
@@ -364,8 +363,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
         };
+
         class LabelCountRedfor
         {
             type = 0;
@@ -380,8 +379,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
         };
+
         class TextCountRedfor
         {
             type = 0;
@@ -396,8 +395,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
         };
+
         class LabelCountGreenfor
         {
             type = 0;
@@ -412,8 +411,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
         };
+
         class TextCountGreenfor
         {
             type = 0;
@@ -428,8 +427,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
         };
+
         class LabelCountCivfor
         {
             type = 0;
@@ -444,8 +443,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
         };
+
         class TextCountCivfor
         {
             type = 0;
@@ -460,8 +459,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
         };
+
         class LabelCountObject
         {
             type = 0;
@@ -476,8 +475,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
         };
+
         class TextCountObject
         {
             type = 0;
@@ -492,8 +491,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
         };
+
         class LabelCountDead
         {
             type = 0;
@@ -508,8 +507,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
         };
+
         class TextCountDead
         {
             type = 0;
@@ -524,46 +523,14 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
         };
-        class ButtonKickPlayer
-        {
-            type = 1;
-            idc = -1;
-            x = safeZoneX + safeZoneW * 0.7375;
-            y = safeZoneY + safeZoneH * 0.73777778;
-            w = safeZoneW * 0.125;
-            h = safeZoneH * 0.04;
-            style = 2;
-            text = "Kick";
-            borderSize = 0;
-            colorBackground[] = {0.2,0.2,0.2,1};
-            colorBackgroundActive[] = {0.1294,0.4549,0.6118,1};
-            colorBackgroundDisabled[] = {0.2,0.2,0.2,1};
-            colorBorder[] = {0,0,0,0};
-            colorDisabled[] = {0.2,0.2,0.2,1};
-            colorFocused[] = {0.2,0.2,0.2,1};
-            colorShadow[] = {0,0,0,0};
-            colorText[] = {0.902,0.902,0.902,1};
-            font = "PuristaMedium";
-            offsetPressedX = 0.0025;
-            offsetPressedY = 0.0025;
-            offsetX = 0.0025;
-            offsetY = 0.0025;
-            sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick",0.09,1.0};
-            soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
-            soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
-            soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
-            onMouseButtonClick = "call MF_admin_menu_fnc_kickPlayer";
-            
-        };
+
         class ButtonTeleportTo
         {
             type = 1;
             idc = -1;
             x = safeZoneX + safeZoneW * 0.7375;
-            y = safeZoneY + safeZoneH * 0.68888889;
+            y = safeZoneY + safeZoneH * 0.73777778;
             w = safeZoneW * 0.125;
             h = safeZoneH * 0.04;
             style = 2;
@@ -588,8 +555,8 @@ class MF_AdminMenu
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
             onMouseButtonClick = "call MF_admin_menu_fnc_teleportToPlayer";
-            
         };
+
         class ButtonHealPlayer
         {
             type = 1;
@@ -620,14 +587,14 @@ class MF_AdminMenu
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
             onMouseButtonClick = "call MF_admin_menu_fnc_healPlayer";
-            
         };
+
         class ButtonBringPlayer
         {
             type = 1;
             idc = -1;
             x = safeZoneX + safeZoneW * 0.7375;
-            y = safeZoneY + safeZoneH * 0.64;
+            y = safeZoneY + safeZoneH * 0.68888889;
             w = safeZoneW * 0.125;
             h = safeZoneH * 0.04;
             style = 2;
@@ -652,8 +619,8 @@ class MF_AdminMenu
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
             onMouseButtonClick = "call MF_admin_menu_fnc_bringPlayer";
-            
         };
+        
         class ListboxTaskList
         {
             type = 5;
@@ -682,10 +649,9 @@ class MF_AdminMenu
                 arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
                 arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
                 border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
-                
             };
-            
         };
+
         class TitleTasklist
         {
             type = 0;
@@ -700,8 +666,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.1);
-            
         };
+
         class ButtonTaskCreated
         {
             type = 1;
@@ -732,8 +698,8 @@ class MF_AdminMenu
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
             onMouseButtonClick = "['CREATED'] call MF_admin_menu_fnc_setTaskState";
-            
         };
+
         class ButtonTaskAssigned
         {
             type = 1;
@@ -764,8 +730,8 @@ class MF_AdminMenu
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
             onMouseButtonClick = "['ASSIGNED'] call MF_admin_menu_fnc_setTaskState";
-            
         };
+
         class ButtonTaskSucceeded
         {
             type = 1;
@@ -796,8 +762,8 @@ class MF_AdminMenu
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
             onMouseButtonClick = "['SUCCEEDED'] call MF_admin_menu_fnc_setTaskState";
-            
         };
+
         class ButtonTaskFailed
         {
             type = 1;
@@ -828,8 +794,8 @@ class MF_AdminMenu
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
             onMouseButtonClick = "['FAILED'] call MF_admin_menu_fnc_setTaskState";
-            
         };
+
         class ButtonReassignCurator
         {
             type = 1;
@@ -859,9 +825,9 @@ class MF_AdminMenu
             soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
-            onMouseButtonClick = "call MF_admin_menu_fnc_reassignCuratorClient";
-            
+            onMouseButtonClick = "call MF_admin_menu_fnc_reassignCurator";
         };
+
         class ButtonToggleFPS
         {
             type = 1;
@@ -892,8 +858,8 @@ class MF_AdminMenu
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
             onMouseButtonClick = "call MF_admin_menu_fnc_toggleFPSCounter";
-            
         };
+
         class ButtonTerminateMission
         {
             type = 1;
@@ -924,8 +890,8 @@ class MF_AdminMenu
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
             onMouseButtonClick = "call MF_admin_menu_fnc_terminateMission";
-            
         };
+
         class ButtonOpenArsenal
         {
             type = 1;
@@ -956,8 +922,8 @@ class MF_AdminMenu
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
             onMouseButtonClick = "call MF_admin_menu_fnc_openArsenal";
-            
         };
+
         class TitlePlayercount
         {
             type = 0;
@@ -972,8 +938,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.1);
-            
         };
+
         class TitleMissionName
         {
             type = 0;
@@ -988,8 +954,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.9);
-            
         };
+
         class ProgressBarMissionTime
         {
             type = 8;
@@ -1002,8 +968,8 @@ class MF_AdminMenu
             colorBar[] = {0.1294,0.4549,0.6118,1};
             colorFrame[] = {0.6,0.6,0.6,1};
             texture = "#(argb,8,8,3)color(1,1,1,1)";
-            
         };
+
         class TitleMissionProgress
         {
             type = 0;
@@ -1018,8 +984,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.9);
-            
         };
+
         class LabelServerTime
         {
             type = 0;
@@ -1034,8 +1000,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
         };
+
         class TextServerTime
         {
             type = 0;
@@ -1050,8 +1016,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
         };
+
         class LabelMissionProgress
         {
             type = 0;
@@ -1066,8 +1032,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
         };
+
         class LabelServerUptime
         {
             type = 0;
@@ -1082,8 +1048,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
         };
+
         class TextServerUptime
         {
             type = 0;
@@ -1098,8 +1064,8 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
         };
+
         class ButtonTaskCancelled
         {
             type = 1;
@@ -1130,9 +1096,23 @@ class MF_AdminMenu
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
             onMouseButtonClick = "['CANCELED'] call MF_admin_menu_fnc_setTaskState";
-            
         };
-        
+
+        class TitlePlayerInfo
+        {
+            type = 0;
+            idc = 721;
+            x = safeZoneX + safeZoneW * 0.7375;
+            y = safeZoneY + safeZoneH * 0.63888889;
+            w = safeZoneW * 0.125;
+            h = safeZoneH * 0.04;
+            style = 16+0;
+            text = "";
+            colorBackground[] = {0.2,0.2,0.2,1};
+            colorText[] = {0.902,0.902,0.902,1};
+            font = "PuristaMedium";
+            sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.75);
+            lineSpacing = 0.9;
+        };
     };
-    
 };

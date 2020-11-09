@@ -20,8 +20,8 @@
 if !(hasInterface) exitWith {};
 
 // Stop PFH's
-[GVAR(timeStatsPFH)] call FUNC(removePerFrameHandler);
-[GVAR(otherStatsPFH)] call FUNC(removePerFrameHandler);
+[GVAR(timeStatsPFH)] call CFUNC(removePerFrameHandler);
+[GVAR(otherStatsPFH)] call CFUNC(removePerFrameHandler);
 
 // Enable ESC key
 (findDisplay 799) displayRemoveEventHandler ["KeyDown", GVAR(escKeyBlock)];

@@ -19,6 +19,9 @@
 
 if !(hasInterface) exitWith {};
 
+// Exit if the dialog is not visible
+if (isNull findDisplay 799) exitWith {};
+
 private _taskList = player call BFUNC(tasksUnit);
 
 _taskList apply {
