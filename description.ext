@@ -39,7 +39,7 @@ taskManagement_markers3D = 0;  // Use 3D markers
 taskManagement_propagate = 0;  // Propagate shared tasks to subordinates
 
 // Admin menu
-onPauseScript[] = {QEFUNC(admin_menu,onPause)};
+onPauseScript[] = {QEFUNC(admin,onPause)};
 
 // Debriefing config
 #include "mission_framework\core\main\CfgDebriefing.hpp"

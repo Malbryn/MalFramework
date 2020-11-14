@@ -11,7 +11,7 @@
         0: OBJECT - Player unit who has curator access
 
     Example:
-        [_unit] call MF_admin_menu_fnc_reassignCuratorServer
+        [_unit] call MF_admin_fnc_reassignCuratorServer
 
     Returns:
         void

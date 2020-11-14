@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_admin_menu_fnc_addPlayerInfoEH
+        call MF_admin_fnc_addPlayerInfoEH
 
     Returns:
         void

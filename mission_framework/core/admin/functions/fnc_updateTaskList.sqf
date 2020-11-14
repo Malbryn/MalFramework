@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_admin_menu_fnc_updateProgressBar
+        call MF_admin_fnc_updateProgressBar
 
     Returns:
         void

@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_admin_menu_fnc_startStatsPFH
+        call MF_admin_fnc_startStatsPFH
 
     Returns:
         void

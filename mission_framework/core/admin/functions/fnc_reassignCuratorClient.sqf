@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_admin_menu_fnc_reassignCuratorClient
+        call MF_admin_fnc_reassignCuratorClient
 
     Returns:
         void

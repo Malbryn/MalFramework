@@ -12,7 +12,7 @@
         -
 
     Example:
-        call MF_admin_menu_fnc_healPlayer
+        call MF_admin_fnc_healPlayer
 
     Returns:
         void

@@ -5,14 +5,14 @@
         Malbryn
 
     Description:
-        Teleports the player to the currently selected player's location.
+        Brings the currently selected player to the player's location.
         To be executed from the Admin menu.
 
     Arguments:
         -
 
     Example:
-        call MF_admin_menu_fnc_teleportToPlayer
+        call MF_admin_fnc_bringPlayer
 
     Returns:
         void
@@ -26,15 +26,15 @@ private _player = lbText [718, lbCurSel 718];
 if (_player != "") then {
     // Get the player object
     private _unit = objectFromNetId (lbData [718, lbCurSel 718]);
-
-    // Check if the player is in vehicle
-    private _vicSpot = [_unit] call EFUNC(jip,checkEmptySeat);
     
-    if (vehicle _unit != _unit && _vicSpot) then {
-        player moveInAny vehicle _unit;
+    // Check if the player is in vehicle
+    private _vicSpot = [player] call EFUNC(jip,checkEmptySeat);
+    
+    if (vehicle player != player && _vicSpot) then {
+        _unit moveInAny vehicle player;
     } else {
-        player setPosATL (_unit getPos [2, getDir _unit]);
+        _unit setPosATL (player getPos [2, getDir player]);
     };
 
-    MSG_2("INFO","You have teleported to %1 (%2)",name _unit,player);
+    MSG_1("INFO","%1 has been teleported to your location",name _unit);
 };
