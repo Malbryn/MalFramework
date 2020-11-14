@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_admin_menu_fnc_assignCurator
+        call MF_admin_fnc_assignCurator
 
     Returns:
         void

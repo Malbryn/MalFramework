@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_admin_menu_fnc_closeAdminMenu
+        call MF_admin_fnc_closeAdminMenu
 
     Returns:
         void

@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_admin_menu_fnc_eventAdminMenuOpened
+        call MF_admin_fnc_eventAdminMenuOpened
 
     Returns:
         void

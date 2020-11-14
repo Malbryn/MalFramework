@@ -11,7 +11,7 @@
         0: STRING - Task state
 
     Example:
-        ["SUCCEEDED"] call MF_admin_menu_fnc_setTaskState
+        ["SUCCEEDED"] call MF_admin_fnc_setTaskState
 
     Returns:
         void
