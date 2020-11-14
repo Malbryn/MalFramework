@@ -76,7 +76,7 @@ cutText ["", "BLACK FADED", 5, true];
 
     // Reassign curator
     if (IS_ADMIN_LOGGED || getPlayerUID _unit == GETPAVAR(GVARMAIN(missionMaker),"")) then {
-        [QEGVAR(curator,curatorReassigned), [player]] call CFUNC(serverEvent);
+        [QEGVAR(admin,curatorReassigned), [player]] call CFUNC(serverEvent);
     };
 
     // Snow effect

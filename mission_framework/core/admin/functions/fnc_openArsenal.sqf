@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_admin_menu_fnc_openArsenal
+        call MF_admin_fnc_openArsenal
 
     Returns:
         void

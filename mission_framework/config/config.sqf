@@ -9,7 +9,7 @@ GVARMAIN(isTvT) = false;  // If the mission is a TvT mission
 GVARMAIN(moduleTimeLimit) = true;  // Coop & TvT
 EGVAR(end_conditions,timeLimit) = 60 MINUTES;  // Mission time limit in seconds
 EGVAR(end_conditions,favouredSide) = 1;  // TvT: Favoured side (0: None, 1: BLUFOR, 2: REDFOR, 3: Side with more players)
-EGVAR(end_conditions,notificationTime) = 5 MINUTES;  // Send a notification to each player X minutes before the time limit (-1: disabled)
+EGVAR(end_conditions,notificationTime) = 10 MINUTES;  // Send a notification to each player X seconds before the time limit (-1: disabled)
 
 // End condition - Player casualty limit
 GVARMAIN(modulePlayerCasualties) = false;  // Coop & TvT
@@ -75,8 +75,8 @@ EGVAR(acre,useBabel) = false;  // TvT
 
 
 // Admin menu
-EGVAR(admin_menu,enableArsenal) = true;  // Coop
-EGVAR(admin_menu,enableCurator) = true;  // Coop
+EGVAR(admin,enableArsenal) = true;  // Coop
+EGVAR(admin,enableCurator) = true;  // Coop
 
 
 // AI Spawner

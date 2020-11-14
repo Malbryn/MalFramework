@@ -1,11 +1,11 @@
-#define COMPONENT admin_menu
+#define COMPONENT admin
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE
 // #define CBA_DEBUG_SYNCHRONOUS
 // #define ENABLE_PERFORMANCE_COUNTERS
 
-#ifdef DEBUG_ENABLED_ADMIN_MENU
+#ifdef DEBUG_ENABLED_ADMIN
     #define DEBUG_MODE_FULL
 #endif
 

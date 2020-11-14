@@ -11,7 +11,7 @@
         0: SCALAR - FPS number
 
     Example:
-        call MF_admin_menu_fnc_fpsNotification
+        call MF_admin_fnc_fpsNotification
 
     Returns:
         void

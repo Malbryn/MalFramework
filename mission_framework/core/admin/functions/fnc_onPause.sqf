@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_admin_menu_fnc_onPause
+        call MF_admin_fnc_onPause
 
     Returns:
         void

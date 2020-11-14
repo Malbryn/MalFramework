@@ -9,7 +9,7 @@ class GVARMAIN(ACRE) {
 };
 
 class GVARMAIN(AdminMenu) {
-    init = PATH_PRE(admin_menu);
+    init = PATH_PRE(admin);
 };
 
 class GVARMAIN(AIScripts) {

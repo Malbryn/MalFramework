@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_admin_menu_fnc_getCurrentAdmin
+        call MF_admin_fnc_getCurrentAdmin
 
     Returns:
         STRING

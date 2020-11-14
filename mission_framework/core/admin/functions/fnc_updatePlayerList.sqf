@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_admin_menu_fnc_updatePlayerList
+        call MF_admin_fnc_updatePlayerList
 
     Returns:
         void
