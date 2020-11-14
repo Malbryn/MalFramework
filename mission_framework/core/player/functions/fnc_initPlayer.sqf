@@ -17,15 +17,19 @@
         4: STRING - Assigned fireteam colour (Optional, default: white (= "MAIN"))
         5: SCALAR - Unit's view distance (Optional, default: -1 (default value defined in config.sqf))
         6: STRING - Custom shoulder insignia (Optional, default: "")
+        7: SCALART - ACE player variables (Optional, default: 0):
+            0 - None
+            1 - Medic status
+            2 - Pilot status
 
     Example:
-        [this, "PLTHQ", 2, "YELLOW", 2500, "EAF_5thRegiment"] call MF_player_fnc_initPlayer
+        [this, "MEDIC", 0, "GREEN", 2500, "EAF_5thRegiment", 1] call MF_player_fnc_initPlayer
 
     Returns:
         void
 */
 
-params ["_unit", "_role", ["_traits", 0], ["_colour", "MAIN"], ["_viewDistance", -1], ["_insignia", ""]];
+params ["_unit", "_role", ["_traits", 0], ["_colour", "MAIN"], ["_viewDistance", -1], ["_insignia", ""], ["_aceVars", 0]];
 
 INFO_2("Initialising unit: %1 (Local: %2)",_unit,local _unit);
 
@@ -48,19 +52,22 @@ SETPVAR(_unit,EGVAR(view_distance,viewDistance),_viewDistance);
 SETPVAR(_unit,GVAR(insignia),_insignia);
 
 // Set ACE player variables
-// Medic
-if ((roleDescription _unit) find "Medic" >= 0 || (roleDescription _unit) find "Combat Life Saver" >= 0) then {
-    SETPVAR(_unit,ACE_medical_medicClass,1);
-} else {
-    SETPVAR(_unit,ACE_medical_medicClass,0);
-};
+switch (_aceVars) do {
+    case 1: { // Medic
+        SETPVAR(_unit,ACE_medical_medicClass,1);
+        SETPVAR(_unit,ACE_GForceCoef,1);
+        SETPVAR(_unit,ACE_isEngineer,0);
+    };
 
-// Pilot
-if ((roleDescription _unit) find "Pilot" >= 0) then {
-    SETPVAR(_unit,ACE_GForceCoef,0.5);
-} else {
-    SETPVAR(_unit,ACE_GForceCoef,1);
-};
+    case 2: { // Pilot
+        SETPVAR(_unit,ACE_medical_medicClass,0);
+        SETPVAR(_unit,ACE_GForceCoef,0.5);
+        SETPVAR(_unit,ACE_isEngineer,0);
+    };
 
-// Engineer
-SETPVAR(_unit,ACE_isEngineer,0);
+    default {
+        SETPVAR(_unit,ACE_medical_medicClass,0);
+        SETPVAR(_unit,ACE_GForceCoef,1);
+        SETPVAR(_unit,ACE_isEngineer,0);
+    };
+};
