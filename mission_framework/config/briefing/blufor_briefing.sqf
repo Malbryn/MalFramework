@@ -26,7 +26,7 @@ NEWTAB("II. Situation")
 <br/><font color='#21749c' size='16' face='PuristaSemiBold'>Weather</font>
 <br/><font size='14' face='PuristaMedium'>Current:</font>
 <br/> - Wind:
-<br/> - Rain or snow:
+<br/> - Precipitation:
 <br/> - Sky:
 <br/> - Fog:
 <br/>

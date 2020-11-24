@@ -14,22 +14,22 @@
             0 - No special ability
             1 - Squad level leadership (SL, FTL), can deploy Rally Poins
             2 - Platoon level leadership (PLTHQ, PLTSGT), can call respawns, resupply and tactical withdrawal
-        4: STRING - Assigned fireteam colour (Optional, default: white (= "MAIN"))
-        5: SCALAR - Unit's view distance (Optional, default: -1 (default value defined in config.sqf))
-        6: STRING - Custom shoulder insignia (Optional, default: "")
-        7: SCALART - ACE player variables (Optional, default: 0):
+        3: SCALAR - ACE player variables (Optional, default: 0):
             0 - None
             1 - Medic status
             2 - Pilot status
+        4: STRING - Assigned fireteam colour (Optional, default: white (= "MAIN"))
+        5: SCALAR - Unit's custom view distance (Optional, default: -1 (default value defined in config.sqf))
+        6: STRING - Custom shoulder insignia (Optional, default: "")
 
     Example:
-        [this, "MEDIC", 0, "GREEN", 2500, "EAF_5thRegiment", 1] call MF_player_fnc_initPlayer
+        [this, "MEDIC", 0, 1, "GREEN", 2500, "EAF_5thRegiment"] call MF_player_fnc_initPlayer
 
     Returns:
         void
 */
 
-params ["_unit", "_role", ["_traits", 0], ["_colour", "MAIN"], ["_viewDistance", -1], ["_insignia", ""], ["_aceVars", 0]];
+params ["_unit", "_role", ["_traits", 0], ["_aceVars", 0], ["_colour", "MAIN"], ["_viewDistance", -1], ["_insignia", ""]];
 
 INFO_2("Initialising unit: %1 (Local: %2)",_unit,local _unit);
 
