@@ -42,7 +42,6 @@ if (isDedicated) then {
 // Disable damage
 if (GVARMAIN(moduleDisableDamage)) then {
     [QGVARMAIN(damageDisabled), []] call CFUNC(globalEvent);
-    INFO("Player damage disabled");
 };
 
 // Logging
