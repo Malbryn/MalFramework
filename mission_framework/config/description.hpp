@@ -12,9 +12,8 @@ class Header {
 };
 
 // Mission selection screen
-briefingName = "[TVT-12] operation_name";  // Mission name on the mission selection screen (use [CO-XX] or [TVT-XX] where XX is the max. player number)
+briefingName = "[CO-12] operation_name";  // Mission name on the mission selection screen (use [CO-XX] or [TVT-XX] where XX is the max. player number)
 overviewText = "mission_info";  // Mission info on the mission selection screen (e.g. mission assets, factions, time limit etc.)
-overviewPicture = "";  // Overview picture on the mission selection screen (Optional, can be the same as the 'loadScreen' below)
 
 // Loading screen settings
 onLoadName = "operation_name";  // Name of the operation on the loading screen (you can drop the [CO-XX] part here)
