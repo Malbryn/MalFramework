@@ -35,14 +35,14 @@ if (hasInterface) then {
     MSG(_level,_message);
 }] call CFUNC(addEventHandler);
 
-// Remote notification
+// Remote notification #1
 [QGVARMAIN(notification_1), {
     params ["_cat"];
     
     [_cat] call BFUNC(showNotification);
 }] call CFUNC(addEventHandler);
 
-// Remote notification
+// Remote notification #2
 [QGVARMAIN(notification_2), {
     params ["_cat", "_message"];
     

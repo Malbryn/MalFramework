@@ -4,8 +4,10 @@ if (isServer) then {
     [{
         GVAR(serverFPS) = parseNumber (diag_fps toFixed 2);
 
+        // Save the lowest framerate
+        // Delay it by few seconds to ignore the usual lag spike at mission start
         private _tempMin = parseNumber (diag_fpsMin toFixed 2);
-        if (_tempMin < GVAR(serverFPSMin) && CBA_MissionTime > 3) then {
+        if (_tempMin < GVAR(serverFPSMin) && CBA_MissionTime > 5) then {
             GVAR(serverFPSMin) = _tempMin;
         };
 
