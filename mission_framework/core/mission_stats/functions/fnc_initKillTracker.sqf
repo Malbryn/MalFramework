@@ -69,7 +69,7 @@ if (GVARMAIN(moduleKillTracker)) then {
 
         // If unit was player then send event to self
         if (_unitIsPlayer) then {
-            private _killerName = "Self?";
+            private _killerName = "Self";
 
             if ((!isNull _killer) && {_unit != _killer}) then {
                 if (_killerIsPlayer) then {
