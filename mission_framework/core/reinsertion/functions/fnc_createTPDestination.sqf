@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Creates the RP menu for the group leader.
+        Creates a teleport destination (one-way teleport).
         Use the "createTPDestination" EH on the server to sync it with JIP players.
         (Example:
             [
@@ -58,7 +58,7 @@ _tpPoles apply {
                 cutText ["", "BLACK IN", 3, true];
             }, [], 1] call CFUNC(waitAndExecute);
         }, _this#3#1, 2] call CFUNC(waitAndExecute);
-    }, [_name, _pos]];
+    }, [_name, _pos], 1, true, true, "", "true", 12];
 };
 
 true

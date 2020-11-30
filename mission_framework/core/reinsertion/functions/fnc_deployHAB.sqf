@@ -45,6 +45,12 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
     private _id = netId _HAB;
     SETPMVAR(GVAR(HAB),_id);
 
+    // Add TP to RP option
+    if (GVARMAIN(moduleRP) && GVAR(allowTPFromHAB)) then {
+        [QGVAR(addTPToRPOption), [_HAB], QGVAR(HABID)] call CFUNC(globalEventJIP);
+        [QGVAR(HABID), _HAB] call CFUNC(removeGlobalEventJIP); // Remove JIP ID when the object is deleted
+    };
+
     // Mark on map
     if GVAR(markHAB) then {
         switch (side player) do {
