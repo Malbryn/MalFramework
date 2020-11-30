@@ -174,6 +174,7 @@ EGVAR(reinsertion,RPPickUp) = false;  // If the player is required to pick up th
 EGVAR(reinsertion,RPObject) = "Land_TentA_F";  // Object used as the squad rally point
 EGVAR(reinsertion,markHAB) = true;  // Mark the HAB location on map 
 EGVAR(reinsertion,HABObject) = "Land_HBarrierTower_F";  // Object used as the platoon HAB
+EGVAR(reinsertion,allowTPFromHAB) = true;  // If TP to squad RP is allowed from the platoon HAB
 EGVAR(reinsertion,TPPoles) = ["pole1"];  // Teleport pole object(s)
 
 

@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if (!GVARMAIN(moduleHALO) && !GVARMAIN(moduleMRV) && !GVARMAIN(moduleRP)) exitWith {};
+if (!GVARMAIN(moduleHALO) && !GVARMAIN(moduleMRV) && !GVARMAIN(moduleRP) && !GVARMAIN(moduleHAB)) exitWith {};
 
 if (hasInterface) then {
     [QGVAR(transferRP), {
@@ -15,6 +15,14 @@ if (hasInterface) then {
         params ["_name", "_pos"];
 
         [_name, _pos] call FUNC(createTPDestination);
+    }] call CFUNC(addEventHandler);
+
+    [QGVAR(addTPToRPOption), {
+        params ["_obj"];
+        systemChat format ["%1", _obj];
+        _obj addAction ["Reinsertion - Squad Rally Point", {
+            call FUNC(tpToRP);
+        }, nil, 1, true, true, "", "true", 12];
     }] call CFUNC(addEventHandler);
 
     call FUNC(initPole);
