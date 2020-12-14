@@ -45,10 +45,10 @@ private _share = _intel#4;
         _arguments params ["_title", "_text", "_delete", "_share"];
 
         if (_share) then {
-            [QGVARMAIN(intelFound), [_title, _text, name _finder]] call CFUNC(globalEvent);
+            [QGVARMAIN(intelFound), [_title, _text, name _finder, true]] call CFUNC(globalEvent);
             [QGVARMAIN(notification_2), ["IntelAdded", format ["Intel: %1<br/>was found by %2", _title, name _finder]]] call CFUNC(globalEvent);
         } else {
-            [QGVARMAIN(intelFound), [_title, _text, name _finder]] call CFUNC(localEvent);
+            [QGVARMAIN(intelFound), [_title, _text, name _finder, false]] call CFUNC(localEvent);
             [QGVARMAIN(notification_2), ["IntelAdded", format ["Intel: %1", _title]]] call CFUNC(localEvent);
         };
 
