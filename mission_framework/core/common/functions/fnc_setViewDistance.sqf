@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_view_distance_fnc_setViewDistance
+        call MF_common_fnc_setViewDistance
 
     Returns:
         void

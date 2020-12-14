@@ -12,8 +12,8 @@
         1: STRING - Role of the unit, see: gear script
         2: SCALAR - Unit traits (Optional, default: 0):
             0 - No special ability
-            1 - Squad level leadership (SL, FTL), can deploy Rally Poins
-            2 - Platoon level leadership (PLTHQ, PLTSGT), can call respawns, resupply and tactical withdrawal
+            1 - Squad level leadership (SL, FTL) -> can deploy Rally Poins
+            2 - Platoon level leadership (PLTHQ, PLTSGT) -> can call respawns, resupply and tactical withdrawal
         3: SCALAR - ACE player variables (Optional, default: 0):
             0 - None
             1 - Medic status
@@ -31,7 +31,7 @@
 
 params ["_unit", "_role", ["_traits", 0], ["_aceVars", 0], ["_colour", "MAIN"], ["_viewDistance", -1], ["_insignia", ""]];
 
-INFO_2("Initialising unit: %1 (Local: %2)",_unit,local _unit);
+INFO_2("Initialising unit: %1 (%2) (Local: %3)",_unit,name _unit,local _unit);
 
 // Locality check
 if !(local _unit) exitWith {};
@@ -46,7 +46,7 @@ if !(local _unit) exitWith {};
 SETPVAR(_unit,EGVAR(team_colour,teamColour),_colour);
 
 // Assign view distance
-SETPVAR(_unit,EGVAR(view_distance,viewDistance),_viewDistance);
+SETPVAR(_unit,EGVAR(common,viewDistance),_viewDistance);
 
 // Save insignia
 SETPVAR(_unit,GVAR(insignia),_insignia);

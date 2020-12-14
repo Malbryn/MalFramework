@@ -179,7 +179,3 @@ class GVARMAIN(TimeLimit) {
 class GVARMAIN(VehicleRespawn) {
     init = PATH_POST(vehicle_respawn);
 };
-
-class GVARMAIN(ViewDistance) {
-    init = PATH_POST(view_distance);
-};
