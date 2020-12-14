@@ -14,24 +14,25 @@
             0 - No special ability
             1 - Squad level leadership (SL, FTL) -> can deploy Rally Poins
             2 - Platoon level leadership (PLTHQ, PLTSGT) -> can call respawns, resupply and tactical withdrawal
-        3: SCALAR - ACE player variables (Optional, default: 0):
-            0 - None
-            1 - Medic status
-            2 - Pilot status
+        3: ARRAY - ACE player variables (Optional, default: [false, false, false]):
+            0 - Medic status
+            1 - Pilot status
+            2 - Engineer status
         4: STRING - Assigned fireteam colour (Optional, default: white (= "MAIN"))
         5: SCALAR - Unit's custom view distance (Optional, default: -1 (default value defined in config.sqf))
         6: STRING - Custom shoulder insignia (Optional, default: "")
 
     Example:
-        [this, "MEDIC", 0, 1, "GREEN", 2500, "EAF_5thRegiment"] call MF_player_fnc_initPlayer
+        [this, "MEDIC", 0, [true, false, false], "GREEN", 2500, "EAF_5thRegiment"] call MF_player_fnc_initPlayer
 
     Returns:
         void
 */
 
-params ["_unit", "_role", ["_traits", 0], ["_aceVars", 0], ["_colour", "MAIN"], ["_viewDistance", -1], ["_insignia", ""]];
+params ["_unit", "_role", ["_traits", 0], ["_aceVars", [false, false, false]], ["_colour", "MAIN"], ["_viewDistance", -1], ["_insignia", ""]];
 
-INFO_2("Initialising unit: %1 (%2) (Local: %3)",_unit,name _unit,local _unit);
+INFO_6("Initialising unit: [%1] [%2] [%3] [%4] %5 [%6m]",group _unit,name _unit,_role,_traits,_aceVars,_viewDistance);
+// 20:10:11 [MF] (player) INFO: Initialising unit: [B ALPHA 1-1] [Malbryn] [AR] [0] [false, false, false] [1200m]
 
 // Locality check
 if !(local _unit) exitWith {};
@@ -51,23 +52,12 @@ SETPVAR(_unit,EGVAR(common,viewDistance),_viewDistance);
 // Save insignia
 SETPVAR(_unit,GVAR(insignia),_insignia);
 
-// Set ACE player variables
-switch (_aceVars) do {
-    case 1: { // Medic
-        SETPVAR(_unit,ACE_medical_medicClass,1);
-        SETPVAR(_unit,ACE_GForceCoef,1);
-        SETPVAR(_unit,ACE_isEngineer,0);
-    };
+// Set ACE variables
+// Medic status
+[SETPVAR(_unit,ACE_medical_medicClass,1), SETPVAR(_unit,ACE_medical_medicClass,0)] select (_aceVars#0);
 
-    case 2: { // Pilot
-        SETPVAR(_unit,ACE_medical_medicClass,0);
-        SETPVAR(_unit,ACE_GForceCoef,0.5);
-        SETPVAR(_unit,ACE_isEngineer,0);
-    };
+// Pilot status
+[SETPVAR(_unit,ACE_GForceCoef,0.5), SETPVAR(_unit,ACE_GForceCoef,1)] select (_aceVars#1);
 
-    default {
-        SETPVAR(_unit,ACE_medical_medicClass,0);
-        SETPVAR(_unit,ACE_GForceCoef,1);
-        SETPVAR(_unit,ACE_isEngineer,0);
-    };
-};
+// Engineer status
+[SETPVAR(_unit,ACE_isEngineer,1), SETPVAR(_unit,ACE_isEngineer,0)] select (_aceVars#2);
