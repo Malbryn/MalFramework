@@ -3,6 +3,7 @@
 if (isServer && GVARMAIN(isTvT)) then {
     [QGVARMAIN(initFramework), {
         call FUNC(eventHandleDisconnect);
+        call FUNC(setViewDistance);
     }] call CFUNC(addEventHandler);
 
     [QGVAR(sideValueSet), {
@@ -24,6 +25,8 @@ if (hasInterface) then {
              "\A3\Ui_f\data\GUI\Cfg\Ranks\major_gs.paa",
              "\A3\Ui_f\data\GUI\Cfg\Ranks\colonel_gs.paa"
         ]] call AFUNC(nametags,setFactionRankIcons);
+
+        call FUNC(setViewDistance);
     }] call CFUNC(addEventHandler);
 
     if (GVARMAIN(isTvT)) then {
@@ -39,3 +42,7 @@ if (hasInterface) then {
         [_marker, _side] call FUNC(deleteMarkerSide);
     }] call CFUNC(addEventHandler);
 };
+
+[QGVARMAIN(initFramework), {
+    call FUNC(setViewDistance);
+}] call CFUNC(addEventHandler);
