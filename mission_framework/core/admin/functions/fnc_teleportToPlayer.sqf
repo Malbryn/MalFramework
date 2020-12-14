@@ -36,5 +36,5 @@ if (_player != "") then {
         player setPosATL (_unit getPos [2, getDir _unit]);
     };
 
-    MSG_2("INFO","You have teleported to %1 (%2)",name _unit,player);
+    MSG_2("INFO","You have teleported to %1",name _unit);
 };
