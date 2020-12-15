@@ -23,6 +23,8 @@ if (isServer) then {
         GVAR(currentAdmin) = allPlayers select {(admin (owner _x)) > 0};
         publicVariable QGVAR(currentAdmin);
     }] call CFUNC(addEventHandler);
+
+    GVAR(adminChannelID) = radioChannelCreate [[0.9, 0.2, 0.1, 1], "Admin channel", "Admin chat (%UNIT_NAME)", [], true];
 };
 
 if (hasInterface) then {
