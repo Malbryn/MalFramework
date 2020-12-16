@@ -30,3 +30,8 @@ private _menu = ['Admin Menu', 'Admin Menu', '\a3\ui_f\data\GUI\Cfg\Hints\Comman
 
 // Admin chat
 GVAR(adminChannelID) radioChannelAdd [player];
+
+// Save it for respawn
+if (EGVAR(custom_channel,playerCustomChannels) findIf {_x == GVAR(adminChannelID)} == -1) then {
+    EGVAR(custom_channel,playerCustomChannels) pushBack GVAR(adminChannelID);
+};
