@@ -48,6 +48,10 @@ class GVARMAIN(Credits) {
     init = PATH_PRE(credits);
 };
 
+class GVARMAIN(CustomChannel) {
+    init = PATH_PRE(custom_channel);
+};
+
 class GVARMAIN(DisableDamage) {
     init = PATH_PRE(disable_damage);
 };

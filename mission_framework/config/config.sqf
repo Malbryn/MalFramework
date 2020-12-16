@@ -106,6 +106,12 @@ EGVAR(cover_map,aoMarker) = "ao";  // AO marker
 EGVAR(cover_map,colour) = "Color4_FD_F";  // Colour of the covered area
 
 
+// Custom channel
+GVARMAIN(moduleCustomChannel) = true;  // Coop & TvT
+EGVAR(custom_channel,channelName) = "JTAC channel";  // Name of the channel
+EGVAR(custom_channel,channelColour) = [0.8, 0, 0.5, 1];  // Colour of the channel (RGBA format, default: FK pink)
+
+
 // Grass cutter
 GVARMAIN(moduleGrassCutter) = true;  // Coop & TvT
 
