@@ -89,6 +89,13 @@ cutText ["", "BLACK FADED", 5, true];
         hideBody (_corpse);
     };
 
+    // Readd custom channels
+    if (count EGVAR(custom_channel,playerCustomChannels) != 0) then {
+        EGVAR(custom_channel,playerCustomChannels) apply {
+            _x radioChannelAdd [_unit];
+        };
+    };
+
     // Remaining respawn tickets
     if (GETVAR(_unit,EGVAR(respawn_tickets,amount),-1) == -1) exitWith {};
 
