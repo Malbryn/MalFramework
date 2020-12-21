@@ -1,0 +1,2 @@
+PREP(initChair);
+PREP(sitDown);
