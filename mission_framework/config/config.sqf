@@ -196,6 +196,10 @@ EGVAR(setup_timer,markerRedfor) = "mrk_setupRedfor";  // Setup area for the REDF
 EGVAR(setup_timer,timerRedfor) = 90;  // Setup timer for the REDFOR side
 
 
+// Sitting
+GVARMAIN(moduleSitting) = true;  // Coop & TvT
+
+
 // Scenario control
 GVARMAIN(moduleScenarioControl) = true;  // Coop & TvT
 
