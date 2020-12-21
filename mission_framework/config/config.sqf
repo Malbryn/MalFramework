@@ -88,7 +88,7 @@ GVARMAIN(moduleFlyby) = true;  // Coop
 
 
 // AO limit
-GVARMAIN(moduleAOLimit) = false;  // Coop & TvT
+GVARMAIN(moduleAOLimit) = true;  // Coop & TvT
 EGVAR(ao_limit,timerLand) = 10;  // Timer for any land based vehicle/unit (-1: disabled)
 EGVAR(ao_limit,timerAir) = -1;  // Timer for any air vehicle (-1: disabled)
 EGVAR(ao_limit,aoMarkerAll) = "mrk_aoLimitAll";  // AO limit marker for every player
@@ -178,7 +178,7 @@ GVARMAIN(moduleRP) = true;  // Coop & TvT
 GVARMAIN(moduleHAB) = true;  // Coop & TvT
 EGVAR(reinsertion,RPPickUp) = false;  // If the player is required to pick up the previous RP
 EGVAR(reinsertion,RPObject) = "Land_TentA_F";  // Object used as the squad rally point
-EGVAR(reinsertion,markHAB) = true;  // Mark the HAB location on map 
+EGVAR(reinsertion,markHAB) = true;  // Mark the HAB location on map
 EGVAR(reinsertion,HABObject) = "Land_HBarrierTower_F";  // Object used as the platoon HAB
 EGVAR(reinsertion,allowTPFromHAB) = true;  // If TP to squad RP is allowed from the platoon HAB
 EGVAR(reinsertion,TPPoles) = ["pole1"];  // Teleport pole object(s)
