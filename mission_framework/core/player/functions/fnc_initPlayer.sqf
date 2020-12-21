@@ -54,10 +54,10 @@ SETPVAR(_unit,GVAR(insignia),_insignia);
 
 // Set ACE variables
 // Medic status
-[SETPVAR(_unit,ACE_medical_medicClass,1), SETPVAR(_unit,ACE_medical_medicClass,0)] select (_aceVars#0);
+SETPVAR(_unit,ACE_medical_medicClass,if (_aceVars select 0) then {1} else {0});
 
 // Pilot status
-[SETPVAR(_unit,ACE_GForceCoef,0.5), SETPVAR(_unit,ACE_GForceCoef,1)] select (_aceVars#1);
+SETPVAR(_unit,ACE_GForceCoef,if (_aceVars select 1) then {0.5} else {1});
 
 // Engineer status
-[SETPVAR(_unit,ACE_isEngineer,1), SETPVAR(_unit,ACE_isEngineer,0)] select (_aceVars#2);
+SETPVAR(_unit,ACE_isEngineer,if (_aceVars select 2) then {1} else {0});
