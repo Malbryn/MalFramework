@@ -26,6 +26,9 @@ if (isNull _obj) exitWith {
     false
 };
 
+// Seat is not taken by default
+SETPVAR(_obj,GVAR(isTaken),false);
+
 // Add action to the chair
 _obj addAction [
     "<t color='#21749c'>Sit Down</t>",
@@ -35,7 +38,7 @@ _obj addAction [
     false,
     true,
     "",
-    "true",
+    "!(_target getVariable ['MF_sitting_isTaken', false]) && !(_this getVariable ['MF_sitting_isSeated', false])",
     3
 ];
 

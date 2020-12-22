@@ -33,5 +33,8 @@ _caller removeAction _actionID;
 // Offset
 _caller setPosATL (_arguments modelToWorld [1, 0, -0.45]);
 
+// Unit is not seated anymore
+SETVAR(_caller,GVAR(isSeated),false);
+
 // Reset chair
 [_arguments] call FUNC(initChair);
