@@ -2,7 +2,7 @@
 
 /*
     Author:
-        Malbryn
+        RickOShay, Malbryn
 
     Description:
         Plays the sit down animation.
@@ -24,7 +24,6 @@ if !(hasInterface) exitWith {};
 
 params ["_target", "_caller", "_actionId", "_arguments"];
 
-private _pos = getPosATL _target;
 private _dir = (getDir _target) + 180;
 
 // Set player's pos and dir then play anim
@@ -32,7 +31,11 @@ _caller setDir _dir;
 [QGVAR(playAnim), [_caller, "HubSittingChairUA_move1"]] call CFUNC(globalEvent);
 _caller setPosATL (_target modelToWorld [0, -0.14, -1]);
 
-// Remove action & add stand up action
+// Assign statuses
+SETPVAR(_target,GVAR(isTaken),true);
+SETVAR(_caller,GVAR(isSeated),true);
+
+// Remove sit down action & add stand up action
 _target removeAction _actionId;
 _caller addAction [
     "<t color='#21749c'>Stand up</t>",
