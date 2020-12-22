@@ -5,13 +5,13 @@
         Malbryn
 
     Description:
-        blank
+        Registers an object as a chair and adds the sit down action to it.
 
     Arguments:
         0: OBJECT - The chair object
 
     Example:
-        call MF_sitting_fnc_initChair
+        [this] call MF_sitting_fnc_initChair
 
     Returns:
         BOOLEAN
