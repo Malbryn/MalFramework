@@ -81,10 +81,11 @@ CREDITS:<br/>
  - Rearm scripts by GitHawk<br/>
  - Server FPS notification script by NeilZar<br/>
  - Setup timer script by Olsen<br/>
+ - Sit down script by RickOShay<br/>
  - Snowfall script by AZCoder and JW<br/>
  - Vehicle respawn scripts by Fredrik Eriksson<br/>
 <br/>
-Special thanks to <font color='#21749c'>kMaN</font> for his support and help with testing this framework.
+Special thanks to <font color='#21749c'>kMaN</font> and <font color='#21749c'>Garfield</font> for their technical help.
 </font>
 "
 DIARY_RECORD_END;
