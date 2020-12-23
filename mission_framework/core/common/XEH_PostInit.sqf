@@ -41,6 +41,12 @@ if (hasInterface) then {
 
         [_marker, _side] call FUNC(deleteMarkerSide);
     }] call CFUNC(addEventHandler);
+
+    [QGVAR(removeCTFAction), {
+        params ["_ID"];
+
+        [player, _ID] call BFUNC(holdActionRemove);
+    }] call CFUNC(addEventHandler);
 };
 
 [QGVARMAIN(initFramework), {
