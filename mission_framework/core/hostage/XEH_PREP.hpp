@@ -1,1 +1,2 @@
-PREP();
+PREP(makeHostage);
+PREP(registerRescueTask);
