@@ -80,6 +80,10 @@ class GVARMAIN(GrassCutter) {
     init = PATH_POST(grass_cutter);
 };
 
+class GVARMAIN(Hostage) {
+    init = PATH_POST(hostage);
+};
+
 class GVARMAIN(IED) {
     init = PATH_POST(ied);
 };
