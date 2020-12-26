@@ -156,6 +156,10 @@ class GVARMAIN(SetupTimer) {
     init = PATH_PRE(setup_timer);
 };
 
+class GVARMAIN(Sitting) {
+    init = PATH_PRE(sitting);
+};
+
 class GVARMAIN(Snowfall) {
     init = PATH_PRE(snowfall);
 };
