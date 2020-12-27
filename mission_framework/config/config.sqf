@@ -116,6 +116,10 @@ EGVAR(custom_channel,channelColour) = [0.8, 0, 0.5, 1];  // Colour of the channe
 GVARMAIN(moduleGrassCutter) = true;  // Coop & TvT
 
 
+// Hostage
+GVARMAIN(moduleHostage) = true;  // Coop & TvT
+
+
 // IED
 GVARMAIN(moduleIED) = true;  // Coop
 
