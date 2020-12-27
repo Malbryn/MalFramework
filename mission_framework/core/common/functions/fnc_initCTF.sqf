@@ -43,7 +43,7 @@ params ["_obj", "_taskID", ["_text", "Capture"], ["_duration", 10]];
         [_taskID, "SUCCEEDED"] call BFUNC(taskSetState);
 
         // Remove hold action from everyone and JIP clients
-        [QGVAR(removeCTFAction), [_ID]] CFUNC(globalEventJIP);
+        [QGVAR(removeCTFAction), [_ID]] call CFUNC(globalEventJIP);
     },
     {},
     [_taskID],

@@ -117,7 +117,7 @@ GVARMAIN(moduleGrassCutter) = true;  // Coop & TvT
 
 
 // Hostage
-GVARMAIN(moduleHostage) = true;
+GVARMAIN(moduleHostage) = true;  // Coop & TvT
 
 
 // IED
