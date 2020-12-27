@@ -113,13 +113,12 @@ if (GVARMAIN(moduleTaskLimit) && !_ended) then {
 // Extraction check
 if (GVARMAIN(moduleExtraction) && !_ended) then {
     // Count the players inside the extraction zone
-    _playerCount = {
+    private _playerCount = {
         _x inArea GVAR(extMarker);
     } count (allPlayers select {alive _x});
 
     // End the mission accordingly
     if (_playerCount >= (_allPlayers * GVAR(playerThreshold) * 0.01) && (_allPlayers != 0)) then {
-
         switch (true) do {
             case (_rate == 1) : {
                 [QGVARMAIN(callMission), ["MissionSuccess", true, playerSide]] call CFUNC(serverEvent);
