@@ -18,7 +18,7 @@
 
     Example:
         [2, [pow1, pow2], "t2", "mrk_extraction", 3, 2, true] call MF_hostage_fnc_checkTaskConditions
-        
+
     Returns:
         void
 */
@@ -33,8 +33,11 @@ if ({!alive _x} count _hostages >= _limitFail) exitWith {
 
     // Stop PFH
     [_handle] call CFUNC(removePerFrameHandler);
-    MSG("DEBUG","Task failed - REMOVING framehandler!");
 };
+
+// If the task is done, we don't check the zone anymore to save performance
+// However we still track the death of the hostages
+if (_taskID call BFUNC(taskState) == "SUCCEEDED") exitWith {};
 
 // Count the hostages inside the extraction zone
 private _count = {
@@ -49,8 +52,4 @@ if (_count >= _limitSuccess) then {
     if (_endMission) then {
         [QGVARMAIN(callMission), ["MissionSuccess", true, playerSide]] call CFUNC(serverEvent);
     };
-
-    // Remove PFH
-    [GVAR(_handle)] call CFUNC(removePerFrameHandler);
-    MSG("DEBUG","Task succeeded - REMOVING framehandler!");
 };

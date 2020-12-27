@@ -1,4 +1,4 @@
-#define COMPONENT HOSTAGE
+#define COMPONENT hostage
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE
