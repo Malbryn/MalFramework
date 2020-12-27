@@ -28,7 +28,7 @@ if (_taskID == "") exitWith {MSG("ERROR","(Hostage) Empty task ID")};
 [_unit, true] call AFUNC(captives,setHandcuffed);
 
 // Animation
-_unit switchMove 'Acts_AidlPsitMstpSsurWnonDnon04';
+//_unit switchMove 'Acts_AidlPsitMstpSsurWnonDnon04';
 
 // Register hostage
 SETVAR(_unit,GVAR(assignedTask),_taskID);

@@ -25,12 +25,23 @@ if !(isServer) exitWith {};
 
 params [["_taskID", ""], ["_extZone", ""], ["_limitFail", -1], ["_limitSuccess", -1], ["_endMission", false]];
 
+// Check stuff
+// TODO
+
 // Add a PFH to each task
 // Delay the PFH until mission start so every hostage is initialised
 [QGVARMAIN(initFramework), {
-    private _handle = [{
-        params [_handle, _taskID, _extZone, _limitFail, _limitSuccess, _endMission];
-        
+    // Get the hostages
+    private _hostages = GVAR(allHostages) select {GETVAR(_x,GVAR(assignedTask),"") != ""};
 
-    }, 3, [_handle, _taskID, _extZone, _limitFail, _limitSuccess, _endMission]] call CFUNC(addPerFrameHandler);
+    // PFH
+    private _handle = [{
+        params [_handle, _hostages, _taskID, _extZone, _limitFail, _limitSuccess, _endMission];
+
+        // Debug
+        MSG("DEBUG","RUNNING framehandler...");
+
+        // Check function
+        [_handle, _hostages, _taskID, _extZone, _limitFail, _limitSuccess, _endMission] call FUNC(checkTaskConditions);
+    }, 3, [_handle, _hostages, _taskID, _extZone, _limitFail, _limitSuccess, _endMission]] call CFUNC(addPerFrameHandler);
 }] call CFUNC(addEventHandler);
