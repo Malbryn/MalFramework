@@ -1,4 +1,4 @@
-#define COMPONENT CUSTOM_CHANNEL
+#define COMPONENT custom_channel
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE
