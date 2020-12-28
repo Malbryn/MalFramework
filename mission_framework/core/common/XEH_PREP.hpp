@@ -7,3 +7,4 @@ PREP(initCTF);
 PREP(isInside);
 PREP(selectTarget);
 PREP(setSideValue);
+PREP(setViewDistance);
