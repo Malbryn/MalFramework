@@ -31,7 +31,8 @@ _caller removeAction _actionID;
 [QGVAR(playAnim), [_caller, ""]] call CFUNC(globalEvent);
 
 // Offset
-_caller setPosATL (_arguments modelToWorld [1, 0, -0.45]);
+//_caller setPosATL (_arguments modelToWorld [1, 0, -0.45]);
+_caller setPosATL (getPosATL _arguments);
 
 // Unit is not seated anymore
 SETVAR(_caller,GVAR(isSeated),false);
