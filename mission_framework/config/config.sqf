@@ -180,6 +180,7 @@ GVARMAIN(moduleHALO) = true;  // Coop & TvT
 GVARMAIN(moduleMRV) = true;  // Coop & TvT
 GVARMAIN(moduleRP) = true;  // Coop & TvT
 GVARMAIN(moduleHAB) = true;  // Coop & TvT
+GVARMAIN(moduleTP) = true;  // Coop & TvT
 EGVAR(reinsertion,RPPickUp) = false;  // If the player is required to pick up the previous RP
 EGVAR(reinsertion,RPObject) = "Land_TentA_F";  // Object used as the squad rally point
 EGVAR(reinsertion,markHAB) = true;  // Mark the HAB location on map
