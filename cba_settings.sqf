@@ -272,9 +272,6 @@ force force ace_vehiclelock_defaultLockpickStrength = 10;
 force force ace_vehiclelock_lockVehicleInventory = false;
 force force ace_vehiclelock_vehicleStartingLockState = -1;
 
-// ACE Vehicles
-force force ace_vehicles_keepEngineRunning = true;
-
 // ACE View Distance Limiter
 force force ace_viewdistance_enabled = false;
 force force ace_viewdistance_limitViewDistance = 10000;

@@ -22,15 +22,13 @@
         void
 */
 
-if !(hasInterface) exitWith {};
-
 params ["_object", "_mode", ["_rearmCount", -1], ["_allowPylons", true], ["_range", 20]];
 
 // Set variables (using object-specific variables instead of global ones)
 SETVAR(_object,GVAR(rearmRange),_range);
 SETPVAR(_object,GVAR(rearmCount),_rearmCount);
 
-if (!alive _object) exitWith {};
+if !(alive _object) exitWith {};
 
 // Rearm
 if (_mode in [0, 1, 4, 5]) then {
