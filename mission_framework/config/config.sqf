@@ -233,7 +233,8 @@ GVARMAIN(moduleTimeLimitCheck) = true;  // Coop & TvT
 
 
 // Unit tracking
-GVARMAIN(moduleUnitTracking) = true;  // Coop & TvT
+GVARMAIN(moduleUnitTracking) = true;  // Coop
+EGVAR(unit_tracking,refreshInterval) = 1;  // Refresh rate in seconds (min. value = 1)
 
 
 // Vehicle respawn
