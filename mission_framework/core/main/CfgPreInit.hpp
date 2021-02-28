@@ -188,6 +188,10 @@ class GVARMAIN(TimeLimit) {
     init = PATH_PRE(time_limit);
 };
 
+class GVARMAIN(UnitTracking) {
+    init = PATH_PRE(unit_tracking);
+};
+
 class GVARMAIN(VehicleRespawn) {
     init = PATH_PRE(vehicle_respawn);
 };
