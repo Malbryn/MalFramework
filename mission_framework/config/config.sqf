@@ -232,6 +232,10 @@ GVARMAIN(moduleTFAR) = true;  // Coop & TvT
 GVARMAIN(moduleTimeLimitCheck) = true;  // Coop & TvT
 
 
+// Unit tracking
+GVARMAIN(moduleUnitTracking) = true;  // Coop & TvT
+
+
 // Vehicle respawn
 GVARMAIN(moduleVehicleRespawn) = true;  // Coop & TvT
 
