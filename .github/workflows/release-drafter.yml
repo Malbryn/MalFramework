@@ -6,6 +6,17 @@ on:
             - master
 
 jobs:
+    bump:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Bump Version
+              uses: remorses/bump-version@js
+              with:
+                  version_file: ./VERSION
+                  prefix: v
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     draft:
         runs-on: ubuntu-latest
         steps:
