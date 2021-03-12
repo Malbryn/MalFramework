@@ -11,7 +11,7 @@
 
     Returns:
         NOTHING
-        
+
     Note:
         It has been decided to use Vanilla cover system rather than a custom implementation.
 */
@@ -23,7 +23,7 @@ private _moveDist = 50;
 private _nearestEnemy = _leader findNearestEnemy _leader;
 if (isNull _nearestEnemy) then
 {
-    _nearestEnemy = _leader call VCM_fnc_ClstEmy;	
+    _nearestEnemy = _leader call VCM_fnc_ClstEmy;
 };
 private _typeListFinal = [];
 
@@ -48,11 +48,11 @@ if (VCM_Debug) then
 {
     private _arrow = "Sign_Arrow_Green_F" createVehicle [0,0,0];
     _arrow setposATL _movePosition;
-    _arrow spawn 
+    _arrow spawn
     {
         _counter = 0;
         _position = getpos _this;
-        _newPos2 = _position select 2;						
+        _newPos2 = _position select 2;
         while {_counter < 60} do
         {
             _newPos2 = _newPos2 + 0.1;
@@ -61,8 +61,8 @@ if (VCM_Debug) then
             sleep 0.5;
         };
         deletevehicle _this;
-    };					
-};	
+    };
+};
 private _typeList = nearestObjects [_movePosition, [], (_moveDist/2)];
 private _roads = _movePosition nearRoads _moveDist;
 {
@@ -79,10 +79,10 @@ private _roads = _movePosition nearRoads _moveDist;
             private _maxHeight = abs ((_p2 select 2) - (_p1 select 2));
             if (_maxWidth > 1.5 && {_maxLength > 1.5} && {_maxHeight > 1.5}) then
             {
-                if (_type isEqualTo "") then 
+                if (_type isEqualTo "") then
                 {
                     _weakListFinal pushback _x
-                } 
+                }
                 else
                 {
                     _typeListFinal pushback _x;
@@ -93,13 +93,13 @@ private _roads = _movePosition nearRoads _moveDist;
     true;
 } count ((_typeList) - (_roads));
 
-if (_typeListFinal isEqualTo [] && _weakListFinal isEqualTo []) exitWith 
+if (_typeListFinal isEqualTo [] && _weakListFinal isEqualTo []) exitWith
 {
     //NO COVER
     {
         private _P = [[[_movePosition, 50]],["water"]] call BIS_fnc_randomPos;
         _x forcespeed -1;
-        _x doMove _P;		
+        _x doMove _P;
     } foreach _units;
 };
 
@@ -110,20 +110,20 @@ if (_typeListFinal isEqualTo [] && _weakListFinal isEqualTo []) exitWith
     {
         [_x,_typeListFinal,_weakListFinal,_nearestEnemy,_moveDist,_movePosition] spawn
         {
-            params ["_unit","_coverL","_concealL","_nearestEnemy","_moveDist","_movePosition"];	
+            params ["_unit","_coverL","_concealL","_nearestEnemy","_moveDist","_movePosition"];
             private _posCON = (getPosWorld _unit);
             if (count _concealL > 0) then {_posCON = selectRandom _concealL;}; //[_concealL,_unit,true,"NrstPos"] call VCM_fnc_ClstObj;
             if (count _coverL > 0) then {_posCON = selectRandom _coverL }; //_posCON = [_coverL,_unit,true,"NrstPos"] call VCM_fnc_ClstObj;
-                
+
                 //Return fire for a few seconds, then move
                 private _fNearestEnemy = _unit findNearestEnemy _unit;
                 if (isNull _fNearestEnemy) then
                 {
-                    _fNearestEnemy = _unit call VCM_fnc_ClstEmy;	
+                    _fNearestEnemy = _unit call VCM_fnc_ClstEmy;
                 };
                 _unit doSuppressiveFire _fNearestEnemy;
                 sleep (5 + (random 10));
-                
+
                 private _FPos = [_nearestEnemy, (_posCON distance _nearestEnemy) + 2, ([_nearestEnemy, _posCON] call BIS_fnc_dirTo)] call BIS_fnc_relPos;
                 private _DistW = 2;
                 if (_posCON iskindof "AllVehicles") then {_DistW = 5;};
@@ -131,11 +131,11 @@ if (_typeListFinal isEqualTo [] && _weakListFinal isEqualTo []) exitWith
                 {
                     private _arrow = "VR_3DSelector_01_exit_F" createVehicle [0,0,0];
                     _arrow setposATL _FPos;
-                    _arrow spawn 
+                    _arrow spawn
                     {
                         _counter = 0;
                         _position = getpos _this;
-                        _newPos2 = _position select 2;						
+                        _newPos2 = _position select 2;
                         while {_counter < 60} do
                         {
                             _newPos2 = _newPos2 + 0.1;
@@ -144,7 +144,7 @@ if (_typeListFinal isEqualTo [] && _weakListFinal isEqualTo []) exitWith
                             sleep 0.5;
                         };
                         deletevehicle _this;
-                    };					
+                    };
                 };
                 _unit setUnitPos "MIDDLE";
                 _unit doWatch ObjNull;
@@ -156,7 +156,7 @@ if (_typeListFinal isEqualTo [] && _weakListFinal isEqualTo []) exitWith
                 sleep 0.2;
                 _unit doMove _FPos;
                 sleep 1;
-                //_unit setDestination [_FPos,"LEADER PLANNED", true];								
+                //_unit setDestination [_FPos,"LEADER PLANNED", true];
                 //We need the AI to STAY in the ordered position until ordered to move again.
                 private _Cont = true;
                 private _Fail = false;
@@ -165,7 +165,7 @@ if (_typeListFinal isEqualTo [] && _weakListFinal isEqualTo []) exitWith
                 {
                     if (_unit distance2D _FPos < _DistW) then {_Cont = false;};
                     if (!(alive _unit) || _Cnt > 80) then {_Cont = false;_Fail = true;};
-                    _Cnt = _Cnt + 0.1;	
+                    _Cnt = _Cnt + 0.1;
                     sleep 0.1;
                 };
                 if !(_Fail) then {_unit forcespeed 0;};

@@ -32,12 +32,12 @@ if (count _NEnemies > 0) then
         {
             _NEnemyA pushback (_x#1);
         };
-    
+
     } foreach _NEnemies;
-};	
+};
 
 private _LGroup = group _SquadLead;
-if (_NearbyCover isEqualTo []) exitWith 
+if (_NearbyCover isEqualTo []) exitWith
 {
     {
         if (isNull objectParent _x) then
@@ -63,10 +63,10 @@ if (_NearbyCover isEqualTo []) exitWith
                     //_unit enableAI "CHECKVISIBLE";
                     //_unit enableAI "COVER";
                     _Unit doWatch _TargetE;
-                    _Unit lookat _TargetE; 
-                    _Unit doTarget _TargetE;					
-                    _Unit forceSpeed -1;				
-                    _Unit setDestination [(getpos _Unit), "FORMATION PLANNED", true];						
+                    _Unit lookat _TargetE;
+                    _Unit doTarget _TargetE;
+                    _Unit forceSpeed -1;
+                    _Unit setDestination [(getpos _Unit), "FORMATION PLANNED", true];
                     _Unit doSuppressiveFire _TargetE;
                 };
                 if (vcm_Debug) then {[_Unit,"LOOKING TO FIRE"] call VCM_fnc_DebugText;};
@@ -84,19 +84,19 @@ if ((count (waypoints _LGroup)) == 0) exitWith {};
 if (count _CoverObjects > 0 && {!(_WPos isEqualTo [0,0,0])}) then
 {
 
-    
+
     private _CoverHardObjects = [];
     {
         if (_x isKindOf "House" || {_x isKindOf "Wall"}) then
         {
             _CoverHardObjects pushback _x;
         };
-    } foreach _CoverObjects;	
-    
+    } foreach _CoverObjects;
+
     private _Pos = _WPos;
     private _MoveArray = [];
 
-    
+
 
     {
         if (isNull objectParent _x) then
@@ -113,8 +113,8 @@ if (count _CoverObjects > 0 && {!(_WPos isEqualTo [0,0,0])}) then
                     _Pos =  _CoverObj getPos [2,(_CoverObj getdir _SquadLead)];
                     _FinalPos = _Pos findEmptyPosition [0,10,"B_soldier_AT_F"];
                     if (_FinalPos isEqualTo []) then {_FinalPos = _Pos;};
-                    
-        
+
+
                     private _nBuilding = nearestBuilding _FinalPos;
                     if ([_nBuilding] call BIS_fnc_isBuildingEnterable && {_nBuilding distance2D _FinalPos < 25}) then
                     {
@@ -123,13 +123,13 @@ if (count _CoverObjects > 0 && {!(_WPos isEqualTo [0,0,0])}) then
                         {
                             _FinalPos = selectRandom ([_nBuilding] call BIS_fnc_buildingPositions);
                         };
-                    };			
-                    _MoveArray pushback [_x,_FinalPos];	
+                    };
+                    _MoveArray pushback [_x,_FinalPos];
                     [_x,_FinalPos] spawn
                     {
                         params ["_Unit","_Pos"];
                         sleep (2 + (random 5));
-                        
+
                         //_Unit disableAI "FSM";
                         //_Unit disableAI "TARGET";
                         //_Unit disableAI "WEAPONAIM";
@@ -138,19 +138,19 @@ if (count _CoverObjects > 0 && {!(_WPos isEqualTo [0,0,0])}) then
                         //_Unit disableAI "CHECKVISIBLE";
                         //_Unit disableAI "COVER";
                         _Unit doWatch ObjNull;
-                        _Unit forceSpeed -1;				
+                        _Unit forceSpeed -1;
                         _Unit setDestination [_Pos, "FORMATION PLANNED", true];
                         doStop _Unit;
                         _Unit domove _Pos;
                         //_Unit doFollow (leader (group _Unit));
-                        
-                        If (VCM_Debug) then 
+
+                        If (VCM_Debug) then
                         {
                             [_unit,"MOVING TO POSITION - A"] call VCM_fnc_DebugText;
                             [_Unit,_Pos,[0.71,0.09,0,1]] spawn VCM_fnc_DebugLine;
                         };
                     };
-        
+
                 }
                 else
                 {
@@ -160,14 +160,14 @@ if (count _CoverObjects > 0 && {!(_WPos isEqualTo [0,0,0])}) then
                         private _CoverObjects = _NearbyCover#1;
                     };
                         if (count _CoverObjects > 2) then
-                        {			
+                        {
                             _CoverObjects deleteAt (_CoverObjects findif {_CoverObj isEqualTo _x});
                         };
-                        _Pos =  _CoverObj getPos [2,(_CoverObj getdir _SquadLead)];				
+                        _Pos =  _CoverObj getPos [2,(_CoverObj getdir _SquadLead)];
                         _FinalPos = _Pos findEmptyPosition [0,10,"B_soldier_AT_F"];
-                        if (_FinalPos isEqualTo []) then {_FinalPos = _Pos;};				
-                        
-        
+                        if (_FinalPos isEqualTo []) then {_FinalPos = _Pos;};
+
+
                         private _nBuilding = nearestBuilding _FinalPos;
                         if ([_nBuilding] call BIS_fnc_isBuildingEnterable && {_nBuilding distance2D _FinalPos < 20}) then
                         {
@@ -176,14 +176,14 @@ if (count _CoverObjects > 0 && {!(_WPos isEqualTo [0,0,0])}) then
                             {
                                 _FinalPos = selectRandom ([_nBuilding] call BIS_fnc_buildingPositions);
                             };
-                        };	
+                        };
                         _MoveArray pushback [_x,_FinalPos];
                         [_x,_FinalPos] spawn
                         {
                             params ["_Unit","_Pos"];
                             sleep (2 + (random 5));
-                            
-                            _unit forceSpeed -1;				
+
+                            _unit forceSpeed -1;
                             //_Unit disableAI "FSM";
                             //_Unit disableAI "TARGET";
                             //_Unit disableAI "WEAPONAIM";
@@ -196,8 +196,8 @@ if (count _CoverObjects > 0 && {!(_WPos isEqualTo [0,0,0])}) then
                             _Unit doMove _Pos;
                             _Unit setDestination [_Pos, "FORMATION PLANNED", true];
                             //_Unit doFollow (leader (group _Unit));
-                            
-                            If (VCM_Debug) then 
+
+                            If (VCM_Debug) then
                             {
                                 [_Unit,"MOVING TO POSITION - B"] call VCM_fnc_DebugText;
                                 [_Unit,_Pos,[0.71,0.09,0,1]] spawn VCM_fnc_DebugLine;
@@ -211,7 +211,7 @@ if (count _CoverObjects > 0 && {!(_WPos isEqualTo [0,0,0])}) then
                         {
                             params ["_Unit","_Pos"];
                             sleep (2 + (random 5));
-                            
+
                             _Unit setUnitPos "Middle";
                             //_Unit disableAI "FSM";
                             //_Unit disableAI "TARGET";
@@ -224,14 +224,14 @@ if (count _CoverObjects > 0 && {!(_WPos isEqualTo [0,0,0])}) then
                             _unit forceSpeed -1;
                             _Unit setDestination [_Pos, "FORMATION PLANNED", true];
                             _Unit doMove _Pos;
-                            
-                            If (VCM_Debug) then 
+
+                            If (VCM_Debug) then
                             {
                                 [_unit,"MOVING TO POSITION - C"] call VCM_fnc_DebugText;
                                 [_Unit,_Pos,[0.71,0.09,0,1]] spawn VCM_fnc_DebugLine;
                             };
-                        };			
-                        
+                        };
+
                     };
                     */
                 };
@@ -257,8 +257,8 @@ if (count _CoverObjects > 0 && {!(_WPos isEqualTo [0,0,0])}) then
                     //_Unit enableAI "COVER";
                     dostop _Unit;
                     _Unit doWatch _TargetE;
-                    _Unit lookat _TargetE; 
-                    _Unit doTarget _TargetE;						
+                    _Unit lookat _TargetE;
+                    _Unit doTarget _TargetE;
                     _Unit forceSpeed -1;
                     private _RndPos = (leader _LGroup) getPos [(random 20),360];
                     if (_Unit isEqualTo (leader _LGroup)) then
@@ -269,17 +269,17 @@ if (count _CoverObjects > 0 && {!(_WPos isEqualTo [0,0,0])}) then
                     _Unit domove _RndPos;
                     //_Unit doFollow (leader (group _Unit));
                     _Unit setDestination [_RndPos, "FORMATION PLANNED", true];
-                    if (vcm_Debug) then 
+                    if (vcm_Debug) then
                     {
                         [_Unit,"LOOKING TO FIRE - ZD"] call VCM_fnc_DebugText;
                         [_Unit,(getpos _TargetE),[0.71,0.09,0,1],true] spawn VCM_fnc_DebugLine;
-                    };					
+                    };
                 };
 
             };
         };
     } foreach (units _LGroup);
-    
+
     private _Cntr = 0;
 
     _MoveArray spawn
@@ -311,8 +311,8 @@ if (count _CoverObjects > 0 && {!(_WPos isEqualTo [0,0,0])}) then
                         //_Unit enableAI "CHECKVISIBLE";
                         //_Unit enableAI "COVER";
                         _Unit doWatch _x;
-                        _Unit lookat _x; 
-                        _Unit doTarget _x;						
+                        _Unit lookat _x;
+                        _Unit doTarget _x;
                         If (VCM_Debug) then {[_Unit,"STOP TO RETURN FIRE"] call VCM_fnc_DebugText;[_Unit,(getpos _x),[0.71,0.09,0,1],true] spawn VCM_fnc_DebugLine;};
                     };
                 } foreach _EnemyList;
@@ -322,8 +322,8 @@ if (count _CoverObjects > 0 && {!(_WPos isEqualTo [0,0,0])}) then
                     _Unit doMove _Pos;
                     //_Unit doFollow (leader (group _Unit));
                     _Unit forcespeed -1;
-                    _Unit setDestination [_Pos, "FORMATION PLANNED", true];					
-                    If (VCM_Debug) then 
+                    _Unit setDestination [_Pos, "FORMATION PLANNED", true];
+                    If (VCM_Debug) then
                     {
                         [_Unit,format ["FORCE MOVE! %1",_Pos]] call VCM_fnc_DebugText;
                         [_Unit,_Pos,[0.71,0.09,0,1]] spawn VCM_fnc_DebugLine;
@@ -345,12 +345,12 @@ if (count _CoverObjects > 0 && {!(_WPos isEqualTo [0,0,0])}) then
         //_LGroup setCombatMode "YELLOW";
         //_LGroup setBehaviour "AWARE";
         private _CurrentWaypoint = currentWaypoint _LGroup;
-        private _wPos2 = waypointPosition [_LGroup,_CurrentWaypoint];	
+        private _wPos2 = waypointPosition [_LGroup,_CurrentWaypoint];
         {
                 _x params ["_Unit","_Pos"];
-                
+
                 if !(alive _Unit) then {_MoveArray deleteAt _foreachIndex;};
-                
+
                 if (_Unit distance2D _Pos < 2) then
                 {
                     _unit spawn
@@ -375,7 +375,7 @@ if (count _CoverObjects > 0 && {!(_WPos isEqualTo [0,0,0])}) then
                         if (count _EnemyArray > 0) then
                         {
                             private _TargetE = ((_EnemyArray#0)#1);
-                            _this forceSpeed -1;						
+                            _this forceSpeed -1;
                             _this doSuppressiveFire _TargetE;
                             if (vcm_Debug) then {[_this,"RETURN FIRE - Z"] call VCM_fnc_DebugText;[_this,(getpos _TargetE),[0.71,0.09,0,1],true] spawn VCM_fnc_DebugLine;};
                         };
@@ -388,11 +388,11 @@ if (count _CoverObjects > 0 && {!(_WPos isEqualTo [0,0,0])}) then
         _Cntr = _Cntr + 0.01;
         (count _MoveArray < 1 || _Cntr > 30 || !(_WPos isEqualTo _wPos2))
     };
-    
+
     //_LGroup setBehaviourStrong "COMBAT";
     //_LGroup setCombatMode "YELLOW";
     //_LGroup setBehaviour "COMBAT";
-    
+
 }
 else
 {
@@ -405,7 +405,7 @@ else
             };
             _x forceSpeed -1;
             _x setUnitPos "Auto";
-            _x setDestination [_WPos, "FORMATION PLANNED", true];	
+            _x setDestination [_WPos, "FORMATION PLANNED", true];
             If (VCM_Debug) then {[_x,"MOVING TO POSITION - D"] call VCM_fnc_DebugText;};
             if (random 100 < 50) then
             {
@@ -425,12 +425,12 @@ else
                     //_Unit enableAI "AUTOTARGET";
                     //_Unit enableAI "SUPPRESSION";
                     //_Unit enableAI "CHECKVISIBLE";
-                    //_Unit enableAI "COVER";				
+                    //_Unit enableAI "COVER";
                     _Unit doWatch _TargetE;
-                    _Unit lookat _TargetE; 
-                    _Unit doTarget _TargetE;					
-                    _Unit forceSpeed -1;				
-                    _Unit setDestination [(getpos _Unit), "FORMATION PLANNED", true];						
+                    _Unit lookat _TargetE;
+                    _Unit doTarget _TargetE;
+                    _Unit forceSpeed -1;
+                    _Unit setDestination [(getpos _Unit), "FORMATION PLANNED", true];
                     _Unit doSuppressiveFire _TargetE;
                 };
                 if (vcm_Debug) then {[_Unit,"LOOKING TO FIRE - NO COVER"] call VCM_fnc_DebugText;};

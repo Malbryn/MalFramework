@@ -22,8 +22,8 @@ private _returned = false;
     {
         _returned = true;
         _returned
-    }	
-    
+    }
+
 } foreach (units _grp);
 
 _returned

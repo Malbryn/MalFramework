@@ -31,7 +31,7 @@ private _assignedPairs = []; //Static weapon - Gunner pair
         if (_unit distance2D _x < 100) then
         {
             _assignedPairs pushback [_unit,_x];
-            _unitArray deleteAt (_unitArray findIf {_x isEqualTo _unit});	
+            _unitArray deleteAt (_unitArray findIf {_x isEqualTo _unit});
         };
     };
 } foreach _weaps;
@@ -74,13 +74,13 @@ if (count _assignedPairs isEqualTo 0) exitWith {};
                         _statictime = _statictime - 5;
                     };
                     if (_statictime < 1) then {_staticGreen = false;};
-                };				
+                };
                 
                 unassignVehicle _unit;
                 _unit leaveVehicle _weap;
                 doGetOut _unit;
             
             };
-        };		
-    };	
+        };
+    };
 } foreach _assignedPairs;

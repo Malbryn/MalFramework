@@ -47,7 +47,7 @@ _waypoints = [_unitGroup] call FUNC(saveWaypoints);
     (vehicle _x) enableSimulationGlobal false;
 } forEach _unitsInGroup;
 
-{	
+{
     if ( (vehicle _x) == _x) then {
         _infantryData pushBack ([_x] call FUNC(saveUnit));
     } else {

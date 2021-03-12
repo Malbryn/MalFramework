@@ -20,4 +20,4 @@ if ((typeName _name) isEqualTo "STRING") then
   _return = (configFile >> "cfgVehicles" >> _name);
 };
 
-_return 
+_return

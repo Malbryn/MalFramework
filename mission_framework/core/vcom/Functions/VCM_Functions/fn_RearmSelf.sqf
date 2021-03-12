@@ -36,7 +36,7 @@ if (_magCount < _magLimit) then {
         if (alive _x && {_x isKindOf "Man"}) then {_potRearm = _potRearm - [_x];};
         true;
     } count _potRearm;
-    
+
     //If men are around see if we can take ammo from them first.
     _stop = false;
     if (count _potRearm != 0) then {
@@ -51,7 +51,7 @@ if (_magCount < _magLimit) then {
             if (isNil "_mags") then {_mags = [];};
             {
                 if (_x isEqualTo _curMag) exitwith {
-                    [_orgUnit,_unit] spawn VCM_fnc_ActRearm; 
+                    [_orgUnit,_unit] spawn VCM_fnc_ActRearm;
                     _stop = true;
                 };
                 true;

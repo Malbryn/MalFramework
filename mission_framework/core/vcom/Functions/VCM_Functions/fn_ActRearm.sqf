@@ -11,7 +11,7 @@
 
     Returns:
         NOTHING
-        
+
     Example:
         [unit1, getPos deadUnit] call VCM_fnc_ActRearm;
 */

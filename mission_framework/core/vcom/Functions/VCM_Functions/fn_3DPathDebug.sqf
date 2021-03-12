@@ -14,7 +14,7 @@ if (count _VisualA > 0) then
     {
         removeMissionEventHandler ["Draw3D",_x];
     } foreach _VisualA;
-};	
+};
 _ArrowA = [];
 _VisualA = [];
 {
@@ -64,7 +64,7 @@ if !(_Unit getVariable ["VCM_DBGSET",false]) then
 {
     _Unit addEventHandler ["killed",
         {
-            params ["_unit", "_killer", "_instigator", "_useEffects"];	
+            params ["_unit", "_killer", "_instigator", "_useEffects"];
 
             private _ArrowA = _Unit getVariable ["VCM_DBGA",[]];
             private _VisualA = _Unit getVariable ["VCM_DBGVI",[]];
@@ -80,7 +80,7 @@ if !(_Unit getVariable ["VCM_DBGSET",false]) then
                 {
                     removeMissionEventHandler ["Draw3D",_x];
                 } foreach _VisualA;
-            };	
+            };
         }];
     _Unit addEventHandler ["Deleted",
         {
@@ -100,7 +100,7 @@ if !(_Unit getVariable ["VCM_DBGSET",false]) then
                 {
                     removeMissionEventHandler ["Draw3D",_x];
                 } foreach _VisualA;
-            };	
-        }];		
+            };
+        }];
     _Unit setVariable ["VCM_DBGSET",true];
 };

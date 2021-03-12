@@ -18,7 +18,7 @@
         
 west reportRemoteTarget [TARGET, 3600];
 TARGET confirmSensorTarget [west, true];
-VLS fireAtTarget [TARGET, "weapon_vls_01"];		
+VLS fireAtTarget [TARGET, "weapon_vls_01"];
         
 */
 
@@ -42,7 +42,7 @@ private _RemoveList = [];
     private _class = typeOf _veh;
     if !(isNil ("_class")) then 
     {
-        private _artyChk = getNumber(configfile/"CfgVehicles"/_class/"artilleryScanner");	
+        private _artyChk = getNumber(configfile/"CfgVehicles"/_class/"artilleryScanner");
         if (!(_artyChk isEqualTo 1) || !(alive _x)) then
         {
             _RemoveList pushBack _x;
@@ -62,7 +62,7 @@ private _artyArray = [];
     if ([(side _x),_CallSide] call BIS_fnc_sideIsFriendly && {side _x in VCM_ARTYSIDES}) then
     {
         _artyArray pushback _x;
-    };	
+    };
 } foreach VCM_ARTYLST;
 
 //There are no artillery units available!
@@ -110,14 +110,14 @@ switch (true) do
     if (_x isKindOf "LandVehicle") then
     {
         _Vcnt pushBack _x;
-    };	
+    };
 } foreach _AllEmyUnits;
     
 
 
 //Define what rounds we are using at the enemies.
 //["HE","Guided","Laser Guided","Cluster Shells","Mine Cluster","White Smoke","AT Mine Cluster"]
-//_Finallist pushbackunique (getText(configfile/"CfgMagazines"/_x/"displayNameShort"));	
+//_Finallist pushbackunique (getText(configfile/"CfgMagazines"/_x/"displayNameShort"));
 private _FinalArtyArray = [];
 private _FinalAmmoType = [];
 private _SmokeArray = [];
@@ -133,8 +133,8 @@ if (count _VCnt > 0) then
                 private _Type = getText(configfile/"CfgMagazines"/_x/"displayNameShort");
                 if (["AT", _Type] call BIS_fnc_inString || ["Guided", _Type] call BIS_fnc_inString) then {_FinalArtyArray pushBackUnique _Unit;_FinalAmmoType pushBackUnique _x;};
                 if (["Smoke", _Type] call BIS_fnc_inString) then {_SmokeArray pushBackUnique _x;};
-            } foreach _ammoArray;		
-        };	
+            } foreach _ammoArray;
+        };
     } foreach (units _clstGrp);
     private _VAttached = selectRandom _VCnt;
     private _LazTarget = _LazClass createVehicle [0,0,0];_LazTarget attachto [_VAttached,[0,0,4]]; _LazTarget spawn {sleep 120; deleteVehicle _this;};
@@ -158,9 +158,9 @@ else
                     _FinalAmmoType pushBackUnique _x;
                 };
                 if (["Smoke", _Type] call BIS_fnc_inString) then {_SmokeArray pushBackUnique _x;};
-            } foreach _ammoArray;		
-        };	
-    } foreach (units _clstGrp);	
+            } foreach _ammoArray;
+        };
+    } foreach (units _clstGrp);
     
 };
 
@@ -191,12 +191,12 @@ if (_RndNumber isEqualTo 1) then
 {
         private _FireUnit = selectRandom _aVehGrpUnits;
         private _dist = (_MinRDist + (random _MaxRDist));
-        private _pos = _PredictedLoc2;		
+        private _pos = _PredictedLoc2;
         private _positions = _pos getPos [_dist,(random 360)];
         private _CF = [_FriendlyArray,_positions,true,"Arty1"] call VCM_fnc_ClstObj;
         if (_CF distance2D _positions > 50) then
         {
-            _FireUnit doArtilleryFire [_positions,_randomAmmoArray,_RndNumber];	
+            _FireUnit doArtilleryFire [_positions,_randomAmmoArray,_RndNumber];
             If (VCM_Debug) then {[(leader _clstGrp),"DO FIRE"] call VCM_fnc_DebugText;};
         }
         else
@@ -204,7 +204,7 @@ if (_RndNumber isEqualTo 1) then
             If (VCM_Debug) then {[(leader _clstGrp),"SMOKE FIRE"] call VCM_fnc_DebugText;};
             if (count _SmokeArray > 0) then
             {
-                _FireUnit doArtilleryFire [_positions,(selectRandom _SmokeArray),_RndNumber];	
+                _FireUnit doArtilleryFire [_positions,(selectRandom _SmokeArray),_RndNumber];
             };
         };
 }
@@ -224,7 +224,7 @@ else
         {
             if (count _SmokeArray > 0) then
             {
-                _x doArtilleryFire [_positions,(selectRandom _SmokeArray),_RndNumber];	
+                _x doArtilleryFire [_positions,(selectRandom _SmokeArray),_RndNumber];
             };
         };
     } foreach _aVehGrpUnits;

@@ -5,7 +5,7 @@
         Generates flanking waypoints.
 
     Parameter(s):
-        0: GROUP 
+        0: GROUP
         1: LEADER
 
     Returns:

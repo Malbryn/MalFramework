@@ -20,7 +20,7 @@ private _NeedHealing = [];
 {
     if (damage _x > 0) then
     {
-        private _CanHealSelf = _x call VCM_fnc_HealSelf; 
+        private _CanHealSelf = _x call VCM_fnc_HealSelf;
         if !(_CanHealSelf) then
         {
             _NeedHealing pushback _x;

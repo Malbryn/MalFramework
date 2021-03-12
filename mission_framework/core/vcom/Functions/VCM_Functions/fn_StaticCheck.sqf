@@ -8,13 +8,13 @@ copyToClipboard str _StaticList;
     {
         private _BackPack = _x select 1;
         private _HASUAV = _x select 2;
-        
+
         private _NearestEnemy = _leader findNearestEnemy _leader;
         if (isNull _NearestEnemy) then
         {
-            _NearestEnemy = _leader call VCM_fnc_ClstEmy;	
+            _NearestEnemy = _leader call VCM_fnc_ClstEmy;
         };
-        
+
         //If the unit is in a building, or can see the enemy, we don't want them deploying mortars.
         private _CurrentBackPack = backpack _Unit;
         private _Vcom_Indoor = false;
@@ -23,28 +23,28 @@ copyToClipboard str _StaticList;
         {
             if (_x isKindof "Building") exitWith {_Vcom_Indoor = true;};
         } foreach _Array;
-        
+
         if !(_Vcom_Indoor) then
-        {	
+        {
             private _AssembledG = getText (configfile >> "CfgVehicles" >> _CurrentBackPack >> "assembleInfo" >> "assembleTo");
             if !(_HASUAV) then
             {
-                
+
                 if !(_AssembledG isEqualTo "") then
                 {
                     private _StaticCreated = _AssembledG createvehicle [0,0,100];
-            
-                    [_Unit,_StaticCreated,_NearestEnemy] spawn 
+
+                    [_Unit,_StaticCreated,_NearestEnemy] spawn
                     {
                         params ["_Unit","_StaticCreated","_NearestEnemy"];
-                        
+
                         private _NewPos = _Unit modelToWorld [0,1,0.35];
                         _StaticCreated allowdamage false;
                         _StaticCreated setVelocity [0,0,0];
                         private _NewPos = _Unit modelToWorld [0,1,0.35];
                         _StaticCreated setposATL _NewPos;
                         _StaticCreated allowdamage true;
-                        
+
                         sleep (random 2);
                         [_Unit,"AinvPknlMstpSnonWnonDnon_Putdown_AmovPknlMstpSnonWnonDnon"] remoteExec ["Vcm_PMN",0];
                         sleep 3.5;
@@ -52,12 +52,12 @@ copyToClipboard str _StaticList;
                         [_Unit] orderGetIn true;
                         _Unit moveInGunner _StaticCreated;
                         removeBackpackGlobal _Unit;
-            
+
                         private _dirTo = _StaticCreated getDir _NearestEnemy;
                         _StaticCreated setDir _dirTo;
                         (Vehicle _Unit) setDir _dirTo;
                     };
-            
+
                     _StaticList set [_foreachindex,"DELETEME"];
                     [_Unit,_CurrentBackPack,_StaticCreated] spawn VCM_fnc_PackStatic;
                 };
@@ -67,10 +67,10 @@ copyToClipboard str _StaticList;
                 if !(_AssembledG isEqualTo "") then
                 {
 
-                    [_Unit,_NearestEnemy,_AssembledG] spawn 
+                    [_Unit,_NearestEnemy,_AssembledG] spawn
                     {
                         params ["_Unit","_NearestEnemy","_AssembledG"];
-            
+
                         sleep (random 2);
                         [_Unit,"AinvPknlMstpSnonWnonDnon_Putdown_AmovPknlMstpSnonWnonDnon"] remoteExec ["Vcm_PMN",0];
                         removeBackpackGlobal _Unit;
@@ -81,7 +81,7 @@ copyToClipboard str _StaticList;
                         _UAVCreated setVelocity [0,0,0];
                         private _NewPos = _Unit modelToWorld [0,1,0.25];
                         _UAVCreated setposATL _NewPos;
-                        
+
                         createVehicleCrew _UAVCreated;
                         {
                             [_x] joinsilent (group _Unit);
@@ -90,11 +90,11 @@ copyToClipboard str _StaticList;
                         _UAVCreated domove (getposATL _NearestEnemy);
                         _StaticList set [_foreachindex,"DELETEME"];
                     };
-                
+
 
                 };
             };
-        
+
         };
     };
 } foreach _StaticList;

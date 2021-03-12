@@ -32,26 +32,26 @@ waitUntil {isNull _unit || {!(alive _unit)} || {_nBuilding distance2D _unit < 50
 
 //Find the units in the group!
 private _groupUnits = units _this;
-_this setVariable ["VCOM_GARRISONED",true];	
+_this setVariable ["VCOM_GARRISONED",true];
 private _waypointIs = "HOLD";
 while {_waypointIs isEqualTo "HOLD" && ({ alive _x } count units _this > 0)} do
 {
     private _index = currentWaypoint _this;
-    private _waypointIs = waypointType [_this,_index];		
+    private _waypointIs = waypointType [_this,_index];
     private _tempA = _buildingPositions;
     if (count _tempA > 0) then
     {
         {
             private _foot = isNull objectParent _x;
             if (_foot) then
-            {	
+            {
                 private _buildingLocation = selectRandom _tempA;
                 if !(isNil "_buildingLocation") then
                 {
                     _x enableAI "PATH";
                     _x doMove _buildingLocation;
                     _x setUnitPos "UP";
-                    [_x,_buildingLocation] spawn 
+                    [_x,_buildingLocation] spawn
                     {
                         params ["_unit","_buildingLocation"];
                         if (isNil "_buildingLocation") exitWith {};
@@ -62,9 +62,9 @@ while {_waypointIs isEqualTo "HOLD" && ({ alive _x } count units _this > 0)} do
                     _tempA deleteAt _RMV;
                 };
             };
-        } forEach _groupUnits;		
-        
-        
+        } forEach _groupUnits;
+
+
     };
     sleep (30 + (random 60));
 };

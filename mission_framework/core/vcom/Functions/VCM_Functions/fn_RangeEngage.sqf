@@ -23,12 +23,12 @@ if (count _NearestEnemy > 0) then
         {
             _ShootArray pushback (_x # 1);
         };
-    
+
     } foreach _NearestEnemy;
-    
+
     if (count _ShootArray > 0) then
     {
-        
+
         {
                 if !(_x in _SniperList) then
                 {
@@ -42,8 +42,8 @@ if (count _NearestEnemy > 0) then
                                 [_x,_rtrn] spawn
                                 {
                                     params ["_Unit","_rtrn"];
-                                    sleep (2 + RANDOM 4);									
-                                    for "_i" from 1 to (random 2) do 
+                                    sleep (2 + RANDOM 4);
+                                    for "_i" from 1 to (random 2) do
                                     {
                                         _Unit doSuppressiveFire _rtrn;
                                         _Unit suppressFor 3;

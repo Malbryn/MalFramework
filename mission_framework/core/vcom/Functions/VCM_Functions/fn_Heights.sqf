@@ -12,8 +12,8 @@
 
     Returns:
         ARRAY
-    
-    Example1: 
+
+    Example1:
         _Test = [Object Center,radius,Precision (Recommended no lower than 5),false] call VCM_fnc_Heights;
         //player setposASL (_Test select 0 select 1); -> Highest point
         //player setposASL (_Test ((count _Test) - 1) select 1); -> Lowest Point
@@ -36,7 +36,7 @@ while {_counter < _limit} do
 {
     _starterArray pushback _startingPos;
     _startingPos = [(_startingPos select 0),(_startingPos select 1)+_prec,(_startingPos select 2)];
-    _array1 pushback _startingPos;	
+    _array1 pushback _startingPos;
     _counter = _counter + 1;
 };
 
@@ -47,8 +47,8 @@ while {_counter < _limit} do
     while {_counter < _limit} do
     {
         _array1 pushback _startingPos;
-        _startingPos = [(_startingPos select 0) + _prec,(_startingPos select 1),(_startingPos select 2)];	
-        _counter = _counter + 1;		
+        _startingPos = [(_startingPos select 0) + _prec,(_startingPos select 1),(_startingPos select 2)];
+        _counter = _counter + 1;
     };
 } foreach _starterArray;
 

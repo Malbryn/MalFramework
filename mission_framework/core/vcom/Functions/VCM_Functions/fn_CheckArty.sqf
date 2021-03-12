@@ -10,7 +10,7 @@
 
     Returns:
         NOTHING
-    
+
     Note:
         Deprecated in favour of Rydigiers "Fire for Effect: The God Of War"
 */
@@ -26,11 +26,11 @@ if (isNil ("_class")) exitWith {};
 private _artyScan = getNumber(configfile/"CfgVehicles"/_class/"artilleryScanner");
 
 //Exit the script if it is not defined as artillery
-if (isNil "_artyScan") exitWith 
+if (isNil "_artyScan") exitWith
 {
 
 //Check if unit somehow is in the Vcm_ArtilleryArray and remove them.  This can happen to units who were inside artillery pieces but ejected or moved out due to a divine intervention.
-    if (_veh in Vcm_ArtilleryArray) then 
+    if (_veh in Vcm_ArtilleryArray) then
     {
         private _t = Vcm_ArtilleryArray findIf {_veh isEqualTo _x};
         Vcm_ArtilleryArray deleteAt _t;
@@ -38,7 +38,7 @@ if (isNil "_artyScan") exitWith
 
 };
 
-if (_artyScan isEqualTo 1) then 
+if (_artyScan isEqualTo 1) then
 {
 
     Vcm_ArtilleryArray pushBack _veh;

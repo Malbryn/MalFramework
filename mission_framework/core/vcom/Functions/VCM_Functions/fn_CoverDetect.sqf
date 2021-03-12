@@ -1,5 +1,5 @@
 params ["_CenterUnit"];
-private _Leader = _CenterUnit;	
+private _Leader = _CenterUnit;
 private _SearchSize = 30;
 private _LeaderPos = getposASL _Leader;
 private _RtrnA = [];

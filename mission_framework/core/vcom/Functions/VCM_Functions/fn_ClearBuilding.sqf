@@ -30,7 +30,7 @@ private _buildingPositions = [];
 
 
 if (count _buildingPositions < 1) exitWith {};
-private _finalSel = [_buildingPositions,_enemy,true,"Clear0"] call VCM_fnc_ClstObj; 
+private _finalSel = [_buildingPositions,_enemy,true,"Clear0"] call VCM_fnc_ClstObj;
 
 //Check to see if the enemy is within the bounds of the building, and not just outside of it
 
@@ -46,7 +46,7 @@ if (_unitPosition inArea [(getPosATL _finalSel), ((_XnY#1)#0),((_XnY#1)#1), (get
     //Unit is inside the hitbox of a building. Or close enough.
     private _tempA = _finalSel call BIS_fnc_buildingPositions;
     private _tempB = _tempA;
-    
+
     //Filter down the closest positions
     private _acceptableRange = _unitPosition#2;
     {
@@ -54,16 +54,16 @@ if (_unitPosition inArea [(getPosATL _finalSel), ((_XnY#1)#0),((_XnY#1)#1), (get
         {
             _tempA deleteAt _forEachIndex;
         };
-    
+
     } foreach _tempA;
-    
+
     if (_tempA isEqualTo []) then {_tempA = _tempB;};
-    
+
     private _clstP = [_tempA,_enemy,true,"Clear1"] call VCM_fnc_ClstObj;
-    
-    
-    
-    
+
+
+
+
     private _Timer = diag_ticktime + 30;
     waitUntil
     {
@@ -75,11 +75,11 @@ if (_unitPosition inArea [(getPosATL _finalSel), ((_XnY#1)#0),((_XnY#1)#1), (get
             _x moveTo _clstP;
             _x setDestination [_clstP, "FORMATION PLANNED", true];
         } foreach (units _group);
-    
+
         sleep 5;
         diag_ticktime > _Timer
     };
-    
-    
-    
-}; 
+
+
+
+};

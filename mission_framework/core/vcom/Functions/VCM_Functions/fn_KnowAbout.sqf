@@ -9,7 +9,7 @@
         0: ARRAY
         1: OBJECT - Unit that will be revealed to above array
         2: NUMBER - Knowledge value to add
-    
+
     Returns:
         NOTHING
 */

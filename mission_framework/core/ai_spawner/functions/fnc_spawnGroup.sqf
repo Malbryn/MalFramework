@@ -40,7 +40,7 @@ waitUntil {!isNull _newGroup};
     if (_vehicleData isEqualTo []) then {
         _relativePos = (_x#1) vectorDiff (_infantryData#0#1);
     } else {
-        _relativePos = (_x#1) vectorDiff (_vehicleData#0#1);	
+        _relativePos = (_x#1) vectorDiff (_vehicleData#0#1);
     };
     
     _newUnitPosition = _spawnPos vectorAdd _relativePos;

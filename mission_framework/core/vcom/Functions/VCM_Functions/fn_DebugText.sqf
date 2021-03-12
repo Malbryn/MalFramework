@@ -5,12 +5,12 @@ if (isNil "_Unit") exitWith {};
 if (VCM_Debug) then
 {
     [(str _Unit), "onEachFrame"] call BIS_fnc_removeStackedEventHandler;
-    [(str _Unit), "onEachFrame", 
+    [(str _Unit), "onEachFrame",
     {
         params ["_Unit","_text"];
         private _pos = getposATL _Unit;
         _pos set [2,3];
-        call compile format 
+        call compile format
         [
             '
             drawIcon3D
