@@ -19,12 +19,19 @@
 
 if !(isServer) exitWith {};
 
-{
-    // Delete marker if vehicle is destroyed
-    if (!alive _y && !(_y isKindOf "Man")) then {
-        deleteMarker _x;
-        GVAR(markerHash) deleteAt _x;
-    };
+// Exit if the hash is empty
+if (count GVAR(markerHash) == 0) exitWith {};
 
-    _x setMarkerPos (getPos _y);
+{
+    // Delete marker forever if vehicle was destroyed
+    if (_y isEqualType objNull) then {
+        _x setMarkerPos (getPos _y);
+
+        if (!alive _y) exitWith {
+            deleteMarker _x;
+            GVAR(markerHash) deleteAt _x;
+        };
+    } else {
+        _x setMarkerPos (getPos (leader _y));
+    };
 } forEach GVAR(markerHash);
