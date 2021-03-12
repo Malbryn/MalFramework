@@ -1,0 +1,33 @@
+branches:
+    - master
+
+name-template: "v$NEXT_PATCH_VERSION"
+tag-template: "v$NEXT_PATCH_VERSION"
+
+categories:
+    - title: "**ADDED:**"
+      labels:
+          - "feature"
+    - title: "**FIXED:**"
+      labels:
+          - "bug fix"
+    - title: "**IMPROVED:**"
+      labels:
+          - "enhancement"
+    - title: "**CHANGED:**"
+      labels:
+          - "rework"
+
+exclude-labels:
+    - "ignore changelog"
+
+change-template: "- $TITLE (#$NUMBER)"
+template: |
+    ## Change Log Summary
+
+    $CHANGES
+
+replacers:
+    # Category titles
+    - search: '/\#\# (\*\*(ADDED|FIXED|IMPROVED|CHANGED):\*\*)/g'
+      replace: "$1"
