@@ -18,7 +18,7 @@ jobs:
               with:
                   version_file: VERSION
               env:
-                  GITHUB_TOKEN: ${{ secrets.ACTION_TOKEN }}
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     draft:
         runs-on: ubuntu-latest
