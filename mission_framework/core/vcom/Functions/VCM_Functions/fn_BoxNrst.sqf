@@ -11,7 +11,7 @@
 
     Returns:
         ARRAY - Position
-        
+
     Note:
         DEPRECATED
 */

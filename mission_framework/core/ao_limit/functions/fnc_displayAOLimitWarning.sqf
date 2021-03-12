@@ -40,7 +40,7 @@ GVAR(displayAOLimitWarning) = [{
     if (serverTime >= GVAR(nextBeep)) then {
         INC(GVAR(nextBeep));
         playSound "Beep_Target";
-	};
+    };
 
     private _timeLeft = _endTime - serverTime;
     private _colorSet = ["IGUI", "TEXT_RGB"];

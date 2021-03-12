@@ -17,13 +17,13 @@ while {alive player && {Vcm_ActivateAI}} do
     if (player isIRLaserOn currentWeapon player) then
     {
         private _side = side player;
-        
+
         private _wepDir = (player weaponDirection currentWeapon player) vectorMultiply 1000;
         private _eyePosS = eyePos player;
         private _eyePosB = [_eyePosS select 0,_eyePosS select 1,(_eyePosS select 2 - 0.25)];
         private _endSight = _eyePosB vectoradd _wepDir;
         private _lineInter = lineIntersectsSurfaces [_eyePosB, _endSight, player, player, true, 1];
-        
+
         if !(_lineInter isEqualTo []) then
         {
             private _finalPos = (_lineInter select 0 select 0);
@@ -39,8 +39,8 @@ while {alive player && {Vcm_ActivateAI}} do
                 {
                     _startPos = [_startPos,100,_dirPlayer] call BIS_fnc_relPos;
                     private _ne = [_enemies,_startPos,true,"IR"] call VCM_fnc_ClstObj;
-                    if (_ne distance2D _startPos < 65) exitWith 
-                    {				
+                    if (_ne distance2D _startPos < 65) exitWith
+                    {
                         [
                             [_ne,player],
                             {
@@ -49,16 +49,16 @@ while {alive player && {Vcm_ActivateAI}} do
                                 {
                                     private _kv = _ne knowsAbout _unit;
                                     _ne reveal [_unit,(_kv + 0.4)];
-                                };								
+                                };
                             }
-                        ] remoteExec ["bis_fnc_call",0];		
-                    };					
+                        ] remoteExec ["bis_fnc_call",0];
+                    };
                     _chunkN = _chunkN + 1;
                     sleep 0.1;
-                };			
+                };
             };
             sleep 0.25;
-        };	
+        };
     };
     sleep 0.25;
 };

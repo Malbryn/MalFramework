@@ -21,7 +21,7 @@ if (_medic isEqualType [] || {!(alive _medic)} || {!(alive _unit)} || {_unit dis
 if (VCM_DEBUG) then {systemChat format ["%1 attempting to heal %2", _medic, _unit];};
 
 _medic setVariable ["VCM_MBUSY", true];
- 
+
 _medic disableAI "FSM";
 _medic disableAI "TARGET";
 _medic disableAI "WEAPONAIM";
@@ -32,9 +32,9 @@ _medic disableAI "COVER";
 _medic forcespeed -1;
 _medic setDestination [(getpos _Unit), "FORMATION PLANNED", true];
 
-while {alive _medic && {alive _unit} && {_unit distance2D _medic > 3}} do 
+while {alive _medic && {alive _unit} && {_unit distance2D _medic > 3}} do
 {
-    _medic forceSpeed -1;				
+    _medic forceSpeed -1;
     _medic setDestination [(getpos _Unit), "FORMATION PLANNED", true];
     sleep 3;
 };

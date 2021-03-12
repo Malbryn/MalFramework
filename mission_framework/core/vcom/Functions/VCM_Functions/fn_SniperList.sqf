@@ -16,12 +16,12 @@ private _RtrnList = [];
 
 {
     private _Items = primaryWeaponItems _x;
-    private _Item = _Items # 2;	
+    private _Item = _Items # 2;
     if !(_Item isEqualTo "") then
     {
         private _Unit = _x;
         private _SightTypes = (configfile >> "CfgWeapons" >> _Item >> "ItemInfo" >> "OpticsModes") call BIS_fnc_getCfgSubClasses;
-        
+
         {
             if (getNumber (configfile >> "CfgWeapons" >> _Item >> "ItemInfo" >> "OpticsModes" >> _x >> "distanceZoomMax") > 800) exitwith
             {
@@ -31,9 +31,9 @@ private _RtrnList = [];
                 _Unit setCustomAimCoef 0;
             };
         } foreach _SightTypes;
-        
-    }; 
-    
+
+    };
+
 } foreach (units _this);
 
 

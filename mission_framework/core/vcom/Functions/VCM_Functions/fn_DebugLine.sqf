@@ -6,20 +6,20 @@ if (VCM_Debug) then
     if (_Blink) then {sleep 0.05;};
     if !(alive _Unit) exitWith {};
     if (isNil "_Unit") exitWith {};
-    
+
     [((str _Unit)+"D"), "onEachFrame"] call BIS_fnc_removeStackedEventHandler;
-    [((str _Unit)+"D"), "onEachFrame", 
+    [((str _Unit)+"D"), "onEachFrame",
     {
         params ["_Unit","_EPos","_Color","_Blink"];
         private _Spos = (ASLToAGL eyePos _Unit);
         _EPos set [2,3];
-        call compile format 
+        call compile format
         [
             '
-            drawLine3D 
+            drawLine3D
             [
-                %1, 
-                %2, 
+                %1,
+                %2,
                 %3
             ];
             '

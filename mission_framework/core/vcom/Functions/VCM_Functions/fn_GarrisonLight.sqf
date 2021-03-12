@@ -35,7 +35,7 @@ if (count _tempA > 0) then
             if !(isNil "_buildingLocation") then
             {
                 _x doMove _buildingLocation;
-                [_x,_buildingLocation] spawn 
+                [_x,_buildingLocation] spawn
                 {
                     params ["_leader","_buildingLocation"];
                     if (isNil "_buildingLocation") exitWith {};

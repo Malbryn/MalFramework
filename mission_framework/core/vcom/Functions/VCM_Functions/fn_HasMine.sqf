@@ -3,7 +3,7 @@
     Author: Genesis
 
     Description:
-        This function will determine if the unit has a mine, satchel, or another explosive that could be used to blow shit up. 
+        This function will determine if the unit has a mine, satchel, or another explosive that could be used to blow shit up.
 
     Parameter(s):
         0: OBJECT - Unit
@@ -23,10 +23,10 @@ private _satchelArray = [];
 {
     private _mag = _x select 0;
     private _value = (configfile >> "CfgMagazines" >> _mag >> "nameSound") call BIS_fnc_getCfgData;
-    
-    if (_value isEqualTo "satchelcharge") then 
+
+    if (_value isEqualTo "satchelcharge") then
     {
-        
+
         _satchelArray pushback [((configfile >> "CfgMagazines" >> _mag >> "ammo") call BIS_fnc_getCfgData),_mag];
         _hasSatchel = true;
 
@@ -34,10 +34,10 @@ private _satchelArray = [];
     if (_value isEqualTo "mine") then
     {
         _hasMine = true;
-        _actualObj pushback [((configfile >> "CfgMagazines" >> _mag >> "ammo") call BIS_fnc_getCfgData),_mag];		
+        _actualObj pushback [((configfile >> "CfgMagazines" >> _mag >> "ammo") call BIS_fnc_getCfgData),_mag];
     };
-    
-    
+
+
 } forEach _magsAmmo;
 
 _pushArray = [_hasSatchel,_actualObj,_hasMine,_satchelArray];

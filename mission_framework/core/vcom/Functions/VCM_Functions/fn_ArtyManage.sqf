@@ -20,7 +20,7 @@ private _ArtyGroupBool = false;
     if (_num isEqualTo -1) then
     {
         private _class = typeOf _veh;
-        if !(isNil ("_class")) then 
+        if !(isNil ("_class")) then
         {
             private _artyChk = getNumber(configfile/"CfgVehicles"/_class/"artilleryScanner");
             if (_artyChk isEqualTo 1) then

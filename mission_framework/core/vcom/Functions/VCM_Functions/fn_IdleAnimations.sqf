@@ -8,7 +8,7 @@ if (isNil "_CombatCheck") exitWith {};
 
 if !(_CombatCheck getFSMVariable ["_CNow",false]) then
 {
-    
+
     private _RndAnims= [
     "Acts_Rifle_Operations_Back",
     "Acts_Rifle_Operations_Barrel",
@@ -36,9 +36,9 @@ if !(_CombatCheck getFSMVariable ["_CNow",false]) then
     "Acts_Ambient_Shoelaces",
     "Acts_Ambient_Stretching"
     ];
-    
+
     // && {((GetposATL _x)#2) < 0.1}
-    
+
     {
         if (10 > random 100) then
         {

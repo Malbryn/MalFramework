@@ -15,7 +15,7 @@ if (count _NEnemies > 0) then
         };
     
     } foreach _NEnemies;
-};	
+};
 
 if (count _NEnemyA > 0) then
 {
@@ -36,7 +36,7 @@ if (count _NEnemyA > 0) then
             {
                 _x forcespeed -1;
             };
-        } foreach (units (group _SquadLead));	
+        } foreach (units (group _SquadLead));
     };
 
     //Now let's see if we can get out of combat mode
@@ -46,7 +46,7 @@ if (count _NEnemyA > 0) then
     {
         private _EEP = eyePos _x;
         _EEP set [2,((_EEP#2)+5)];
-        private _cs = [_SquadLead, "VIEW"] checkVisibility [_EP,_EEP];	
+        private _cs = [_SquadLead, "VIEW"] checkVisibility [_EP,_EEP];
         if (_cs > 0) exitWith
         {
             _CST = true;

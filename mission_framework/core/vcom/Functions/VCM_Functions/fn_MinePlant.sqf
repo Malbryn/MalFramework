@@ -65,7 +65,7 @@ if (_nearestEnemy distance2D _unit < 100) then
 else
 {
     _nearRoads = _unit nearRoads 50;
-    if (count _nearRoads > 0) then 
+    if (count _nearRoads > 0) then
     {
         private _closestRoad = [_nearRoads,_unit,true,"2"] call VCM_fnc_ClstObj;
         doStop _unit;
@@ -100,12 +100,12 @@ VCOM_mineArray pushBack [_Mine,_unitSide];
 [_Mine, false] remoteExecCall ["enableSimulationGlobal",2];
 };
 /*
-[_mine,_unitSide] spawn 
+[_mine,_unitSide] spawn
 {
     params ["_Mine","_unitSide"];
-    
-    
-    
+
+
+
     private _NotSafe = true;
     [_Mine, false] remoteExecCall ["enableSimulationGlobal",2];
     waitUntil
@@ -114,7 +114,7 @@ VCOM_mineArray pushBack [_Mine,_unitSide];
         private _ClosestEnemy = [0,0,0];
         _ClosestEnemy = [_Array1,_Mine,true,"2"] call VCM_fnc_ClstObj;
         if (_ClosestEnemy distance _Mine < 2.5) then {_NotSafe = false;};
-        sleep 0.1;	
+        sleep 0.1;
         (!(alive _mine) || {!(_NotSafe)})
     };
     [_Mine, true] remoteExecCall ["enableSimulationGlobal",2];

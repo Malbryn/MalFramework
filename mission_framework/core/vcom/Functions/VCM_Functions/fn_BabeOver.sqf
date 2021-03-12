@@ -19,30 +19,30 @@ _dpos = [0,0,0];
 if (_cos > 0.8) exitwith
 {
 
-    for "_i" from 0 to 20 do   
-    { 
+    for "_i" from 0 to 20 do
+    {
         _intcount = 0;
-    
-        _posa = _climber modeltoWorld [0, (_i*0.05), 0.5];   
 
-        _posb = _climber modeltoWorld [0, (_i*0.05), -1.7];  
+        _posa = _climber modeltoWorld [0, (_i*0.05), 0.5];
 
-        _int = lineintersectsSurfaces [agltoasl _posa, agltoasl _posb, _climber, objNull, true, 1, "GEOM", "FIRE"]; 
-        
+        _posb = _climber modeltoWorld [0, (_i*0.05), -1.7];
+
+        _int = lineintersectsSurfaces [agltoasl _posa, agltoasl _posb, _climber, objNull, true, 1, "GEOM", "FIRE"];
+
         _intcount = (count _int)+_intcount;
-        
-        
-        
-        _posa = _climber modeltoWorld [0, 0, (_i*0.05)];   
 
-        _posb = _climber modeltoWorld [0, 1.5, (_i*0.05)];  		
-        
-        _int2 = lineintersectsSurfaces [agltoasl _posa, agltoasl _posb, _climber, objNull, true, 1, "GEOM", "FIRE"]; 
-        
-        _intcount = (count _int2)+_intcount;		
 
-        
-        
+
+        _posa = _climber modeltoWorld [0, 0, (_i*0.05)];
+
+        _posb = _climber modeltoWorld [0, 1.5, (_i*0.05)];
+
+        _int2 = lineintersectsSurfaces [agltoasl _posa, agltoasl _posb, _climber, objNull, true, 1, "GEOM", "FIRE"];
+
+        _intcount = (count _int2)+_intcount;
+
+
+
         if (_intcount == 0) then
         {
             _anm = "";
@@ -65,7 +65,7 @@ if (_cos > 0.8) exitwith
 
             if (_anm != "" && str _dpos != "[0,0,0]") then
             {
-            
+
                 _babe_em_vars = _climber getvariable "babe_em_vars";
                 _babe_em_vars set [0, true];
                 _climber setVariable ["babe_em_vars", _babe_em_vars];
@@ -103,13 +103,13 @@ _int = [];
 
 _obj = _climber;
 
-for "_i" from 0 to 60 do   
-{ 
-    _posa = _climber modeltoWorld [0, 0, (_i*0.05)];   
+for "_i" from 0 to 60 do
+{
+    _posa = _climber modeltoWorld [0, 0, (_i*0.05)];
 
-    _posb = _climber modeltoWorld [0, 1.5, (_i*0.05)+ 0.1];   
+    _posb = _climber modeltoWorld [0, 1.5, (_i*0.05)+ 0.1];
 
-    _int = lineintersectsSurfaces [agltoasl _posa, agltoasl _posb, _climber, objNull, true, 1, "GEOM", "FIRE"]; 
+    _int = lineintersectsSurfaces [agltoasl _posa, agltoasl _posb, _climber, objNull, true, 1, "GEOM", "FIRE"];
 
 
     _respos = (_int select 0) select 0;
@@ -145,7 +145,7 @@ for "_i" from 0 to 60 do
             _dst = (_ppWT max _tpWT) - (_ppWT min _tpWT);
 
             if (EM_debug) then
-            {	
+            {
                 drawLine3D [_posa, _posb, [0,1,1,1]];
             };
 
@@ -181,17 +181,17 @@ _postopos = ((_toptest select 0)select 3);
 
 _top = !isNil "_postopos";
 
-if (!_top) then 
+if (!_top) then
 {
     _toppos = agltoasl(_climber modeltoworld [0,2,0]);
 }else
-{		
+{
     _a = abs (_pos select 2);
     _b = abs (_toppos select 2);
 
     _max = _a max _b;
 
-    if (_max == _a) then 
+    if (_max == _a) then
     {
         if (_a - _b > 0.6) then
         {
@@ -215,13 +215,13 @@ if (str _pos != "[0,0,0]" && _top) then
     _avZ = 0;
     _min = 999;
     _max = 0;
-    for "_i" from 0 to (count _goodZ)-1 do   
-    { 
+    for "_i" from 0 to (count _goodZ)-1 do
+    {
         _z = _goodZ select _i;
 
         if (_i > 0) then
         {
-            _min = _min min _z;	
+            _min = _min min _z;
             _max = _max max _z;
         };
 
@@ -265,7 +265,7 @@ if (_blocked) then
     _pos = [0,0,0];
 };
 
-if (!_top && _obj != _climber && _obj isKindOf "CaManBase") then 
+if (!_top && _obj != _climber && _obj isKindOf "CaManBase") then
 {
     _pos = [0,0,0];
 };
@@ -288,11 +288,11 @@ if (!_top) then
 
     _f = agltoasl (_climber modeltoworld [(_posWT select 0) - 0.3, (_posWT select 1) + 0.1, (_posWT select 2)+0.2]);
 
-    _int1 = lineintersectsSurfaces [_a, _b, _climber, objNull, true, 1, "GEOM", "FIRE"]; 
+    _int1 = lineintersectsSurfaces [_a, _b, _climber, objNull, true, 1, "GEOM", "FIRE"];
 
-    _int2 = lineintersectsSurfaces [_c, _d, _climber, objNull, true, 1, "GEOM", "FIRE"]; 
+    _int2 = lineintersectsSurfaces [_c, _d, _climber, objNull, true, 1, "GEOM", "FIRE"];
 
-    _int3 = lineintersectsSurfaces [_e, _f, _climber, objNull, true, 1, "GEOM", "FIRE"]; 
+    _int3 = lineintersectsSurfaces [_e, _f, _climber, objNull, true, 1, "GEOM", "FIRE"];
 
     _wide = (count _int1) + (count _int2) + (count _int3) == 0;
 
@@ -304,7 +304,7 @@ if (EM_debug) then
     babe_em_debug_a setposasl (_poses select 0);
 };
 
-if !_wide then 
+if !_wide then
 {
     _pos = [0,0,0];
 };
@@ -316,13 +316,13 @@ if (str _pos != "[0,0,0]" && count _poses > 0) then
     if (_top) then
     {
         _posa = _poses select 0;
-        
+
         _posa set [2, (_posa select 2)+0.2];
 
         _posb = [_posa select 0, _posa select 1, (_posa select 2) + 1.25];
 
         _int4 = lineintersectsSurfaces [_posa, _posb, _climber, objNull, true, 1, "GEOM", "FIRE"];
-        
+
         if (EM_debug) then
         {
             _a = createVehicle ["Sign_Arrow_F", _posa, [], 0, "can_collide"];
@@ -330,7 +330,7 @@ if (str _pos != "[0,0,0]" && count _poses > 0) then
             _b = createVehicle ["Sign_Arrow_F", _posb, [], 0, "can_collide"];
             _b setposasl _posb;
         };
-        
+
         _blocked = count _int4 != 0;
     } else
     {
@@ -341,7 +341,7 @@ if (str _pos != "[0,0,0]" && count _poses > 0) then
         _posb = [_mtw select 0, _mtw select 1, _posa select 2];
 
         _int5 = lineintersectsSurfaces [_posa, _posb, _climber, objNull, true, 1, "GEOM", "FIRE"];
-        
+
         if (EM_debug) then
         {
             _a = createVehicle ["Sign_Arrow_F", _posa, [], 0, "can_collide"];
@@ -349,7 +349,7 @@ if (str _pos != "[0,0,0]" && count _poses > 0) then
             _b = createVehicle ["Sign_Arrow_F", _posb, [], 0, "can_collide"];
             _b setposasl _posb;
         };
-        
+
         _blocked = count _int5 != 0;
     };
 };

@@ -2,7 +2,7 @@
     Author: Genesis
 
     Description:
-        
+
 
     Parameter(s):
         0: GROUP
@@ -55,7 +55,7 @@ if (count _VehArr > 0) then
                     else
                     {
                         _x setUnloadInCombat [false, false];
-                        if (VCM_Debug) then {diag_log format ["VEHICLECHECK: Group cant unload! %1",_group];};					
+                        if (VCM_Debug) then {diag_log format ["VEHICLECHECK: Group cant unload! %1",_group];};
                     };
                 };
             };

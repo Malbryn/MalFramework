@@ -27,7 +27,7 @@ private _RndAnims= [
 "Acts_Ambient_Shoelaces",
 "Acts_Ambient_Stretching"
 ];
-    
+
 {
     if (animationState _x in _RndAnims) then
     {

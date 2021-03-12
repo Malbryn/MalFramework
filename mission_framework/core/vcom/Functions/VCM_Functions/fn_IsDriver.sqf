@@ -18,11 +18,11 @@ _Vehicle = (vehicle _this);
 
 _ActualDriver = driver _Vehicle;
 
-if (_this isEqualTo _ActualDriver) then 
+if (_this isEqualTo _ActualDriver) then
 {
-  
+
   _NotDriver = 1;
-  
+
 };
 
 _NotDriver

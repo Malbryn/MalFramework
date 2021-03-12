@@ -41,7 +41,7 @@ if (isNil "_checkStatus" || {(_unit getVariable ["Vcm_Disable",false])} || {!("I
 
 private _arrayOrg = _unit call VCM_fnc_FriendlyArray;
 _arrayOrg = _arrayOrg - VCM_ARTYLST;
-//Remove players 
+//Remove players
 {if (isPlayer _x) then {_arrayOrg deleteAt _foreachIndex;};} foreach _arrayOrg;
 
 private _array2 = _killer call VCM_fnc_FriendlyArray;
@@ -64,22 +64,22 @@ if (_aliveCount > 0) then
         {
 
             private _checkStatus2 = assignedItems _x;
-            
 
-            if (!(isNil "_checkStatus2") && {!(_x getVariable ["Vcm_Disable",false])} && {!(_x getVariable ["VCM_NOFLANK",false])} && {!(_x getVariable ["VCM_NORESCUE",false])} && {!(_x getVariable ["VCM_MOVE2SUP",false])} && {"ItemRadio" in _checkStatus2}) then 
+
+            if (!(isNil "_checkStatus2") && {!(_x getVariable ["Vcm_Disable",false])} && {!(_x getVariable ["VCM_NOFLANK",false])} && {!(_x getVariable ["VCM_NORESCUE",false])} && {!(_x getVariable ["VCM_MOVE2SUP",false])} && {"ItemRadio" in _checkStatus2}) then
             {
 
 
                         private _group	= group _x;
-                        if ((count (waypoints _group)) < 2) then 
+                        if ((count (waypoints _group)) < 2) then
                         {
 
                             private _WaypointCheck = _group call VCM_fnc_WyptChk;
-                            if (count _WaypointCheck < 1) then 
+                            if (count _WaypointCheck < 1) then
                             {
-                            
 
-                                if ((_x distance2D _unit) <= VCM_WARNDIST) then 
+
+                                if ((_x distance2D _unit) <= VCM_WARNDIST) then
                                 {
 
                                             _x setbehaviour "AWARE";
@@ -92,8 +92,8 @@ if (_aliveCount > 0) then
                                                     _waypoint2 = (group _Driver) addwaypoint[_trgtPos,15,150];
                                                     _waypoint2 setwaypointtype "MOVE";
                                                     _waypoint2 setWaypointSpeed "NORMAL";
-                                                    _waypoint2 setWaypointBehaviour "AWARE";	
-                                                    [(group _Driver), (_waypoint2 select 1)] setWaypointCompletionRadius 25;											
+                                                    _waypoint2 setWaypointBehaviour "AWARE";
+                                                    [(group _Driver), (_waypoint2 select 1)] setWaypointCompletionRadius 25;
                                             }
                                             else
                                             {
@@ -108,27 +108,27 @@ if (_aliveCount > 0) then
                                                         _waypoint2 setwaypointtype "MOVE";
                                                         _waypoint2 setWaypointSpeed "NORMAL";
                                                         _waypoint2 setWaypointBehaviour "AWARE";
-                                                        [(group _x), (_waypoint2 select 1)] setWaypointCompletionRadius 25;												
+                                                        [(group _x), (_waypoint2 select 1)] setWaypointCompletionRadius 25;
                                             };
 
 
-                                            (group _x) spawn 
+                                            (group _x) spawn
                                             {
                                                 sleep 300;
                                                 _this setVariable ["VCM_MOVE2SUP",false];
                                             };
-                                
+
                                 };
                             };
-    
+
                         };
-                        
-                        
 
 
-    
-            
-            };	
+
+
+
+
+            };
         };
-    } foreach _arrayOrg;	
+    } foreach _arrayOrg;
 };
