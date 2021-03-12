@@ -1,0 +1,10 @@
+release/*
+releases/*
+
+# Arma test mission file
+*.sqm
+
+*.pbo
+*.zip
+
+CHANGELOG.md
