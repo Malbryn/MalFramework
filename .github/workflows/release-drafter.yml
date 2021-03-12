@@ -9,11 +9,12 @@ jobs:
     bump:
         runs-on: ubuntu-latest
         steps:
+            - name: Checkout the source code
+              uses: actions/checkout@v2
             - name: Bump Version
               uses: remorses/bump-version@js
               with:
-                  version_file: ./VERSION
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  version_file: VERSION
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
