@@ -13,9 +13,7 @@ jobs:
               uses: remorses/bump-version@js
               with:
                   version_file: ./VERSION
-                  prefix: v
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
 
     draft:
         runs-on: ubuntu-latest
