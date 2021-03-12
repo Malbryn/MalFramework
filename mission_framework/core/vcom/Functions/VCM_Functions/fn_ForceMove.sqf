@@ -105,7 +105,7 @@ if (count _CoverObjects > 0 && {!(_WPos isEqualTo [0,0,0])}) then
             if (random 100 < 30) then
             {
                 if (count _CoverHardObjects > 0) then
-                {	_CoverObj = [_CoverHardObjects,_WPos] call BIS_fnc_nearestPosition;
+                {_CoverObj = [_CoverHardObjects,_WPos] call BIS_fnc_nearestPosition;
                     if (count _CoverHardObjects > 2) then
                     {
                         _CoverHardObjects deleteAt (_CoverHardObjects findif {_CoverObj isEqualTo _x});

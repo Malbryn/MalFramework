@@ -59,7 +59,7 @@ if ((count _NearestEnemys) > 0) then
                         if (typeOf _x isEqualTo (_x select 0)) exitWith
                         {
                             _ClassnameSet = true;
-                            _x setSkill ["aimingAccuracy",((_x select 1) select 0)];_x setSkill ["aimingShake",((_x select 1) select 1)];_x setSkill ["spotDistance",((_x select 1) select 2)];_x setSkill ["spotTime",((_x select 1) select 3)];_x setSkill ["courage",((_x select 1) select 4)];_x setSkill ["commanding",((_x select 1) select 5)];	_x setSkill ["aimingSpeed",((_x select 1) select 6)];_x setSkill ["general",((_x select 1) select 7)];_x setSkill ["endurance",((_x select 1) select 8)];_x setSkill ["reloadSpeed",((_x select 1) select 9)];
+                            _x setSkill ["aimingAccuracy",((_x select 1) select 0)];_x setSkill ["aimingShake",((_x select 1) select 1)];_x setSkill ["spotDistance",((_x select 1) select 2)];_x setSkill ["spotTime",((_x select 1) select 3)];_x setSkill ["courage",((_x select 1) select 4)];_x setSkill ["commanding",((_x select 1) select 5)];_x setSkill ["aimingSpeed",((_x select 1) select 6)];_x setSkill ["general",((_x select 1) select 7)];_x setSkill ["endurance",((_x select 1) select 8)];_x setSkill ["reloadSpeed",((_x select 1) select 9)];
                         };
                     } foreach VCM_SKILL_CLASSNAMES;
                 };

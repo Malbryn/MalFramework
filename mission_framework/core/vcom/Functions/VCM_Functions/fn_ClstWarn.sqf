@@ -70,7 +70,7 @@ if (_aliveCount > 0) then
             {
 
 
-                        private _group	= group _x;
+                        private _group = group _x;
                         if ((count (waypoints _group)) < 2) then
                         {
 
