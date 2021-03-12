@@ -4,7 +4,7 @@ if !(GVARMAIN(moduleUnitTracking)) exitWith {};
 
 if (isServer) then {
     // Add PFH
-    [{
-        call FUNC(refreshMarkers);
-    }, GVAR(refreshInterval)] call CFUNC(addPerFrameHandler);
+    [QGVARMAIN(initFramework), {
+        [{call FUNC(refreshMarkers)}, GVAR(refreshInterval)] call CFUNC(addPerFrameHandler);
+    }] call CFUNC(addEventHandler);
 };
