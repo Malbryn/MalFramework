@@ -34,14 +34,11 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-            - name: Display structure of downloaded files
-              run: ls -R
-              working-directory: .
-
-            - name: Download artifact
-              uses: actions/download-artifact@v2
+            - name: Pack files
+              uses: thedoctor0/zip-release@master
               with:
-                  name: MalFramework_${{ github.sha }}.zip
+                  filename: "MalFramework_${{ github.sha }}.zip"
+                  exclusions: "*.git* /tools/* .editorconfig .gitignore"
 
             - name: Upload release asset
               uses: actions/upload-release-asset@v1.0.1
