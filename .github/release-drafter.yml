@@ -1,7 +1,7 @@
 branches:
     - master
 
-name-template: "v$NEXT_MINOR_VERSION"
+name-template: "MalFramework_v$NEXT_MINOR_VERSION"
 tag-template: "v$NEXT_MINOR_VERSION"
 
 categories:
@@ -16,7 +16,7 @@ categories:
           - "enhancement"
     - title: "**CHANGED:**"
       labels:
-          - "rework"
+          - "cleanup"
 
 exclude-labels:
     - "ignore changelog"
