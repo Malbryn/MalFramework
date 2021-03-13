@@ -34,10 +34,6 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-            - name: Get version
-              id: get_version
-              run: echo ::set-output name=version::$(cat VERSION)
-
             - name: Pack files
               uses: thedoctor0/zip-release@master
               with:
@@ -49,7 +45,7 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
-                  upload_url: ${{ steps.release_drafter.outputs.name }}
+                  upload_url: ${{ steps.release_drafter.outputs.upload_url }}
                   asset_path: ./${{ steps.release_drafter.outputs.name }}.zip
                   asset_name: ${{ steps.release_drafter.outputs.name }}.zip
                   asset_content_type: application/zip
