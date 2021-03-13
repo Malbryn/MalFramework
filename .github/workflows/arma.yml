@@ -38,7 +38,7 @@ jobs:
             - name: Pack files
               uses: thedoctor0/zip-release@master
               with:
-                  filename: "MalFramework_${{ github.ref }}.zip"
+                  filename: "MalFramework_${{ github.sha }}.zip"
                   exclusions: "*.git* /tools/* .editorconfig .gitignore"
 
             - name: Upload artifact
