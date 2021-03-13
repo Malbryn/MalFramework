@@ -7,6 +7,7 @@ on:
         paths-ignore:
             - "VERSION"
             - "README.md"
+            - ".github/**"
 
 jobs:
     bump:
@@ -25,11 +26,18 @@ jobs:
     draft:
         runs-on: ubuntu-latest
         steps:
+            - name: Checkout the source code
+              uses: actions/checkout@v2
+
             - name: Release Drafter
               id: release_drafter
               uses: release-drafter/release-drafter@v5
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+            - uses: actions/download-artifact@v2
+              with:
+                  name: MalFramework_${{ github.sha }}.zip
 
             - name: Upload release asset
               uses: actions/upload-release-asset@v1.0.1
