@@ -42,7 +42,7 @@ jobs:
               uses: thedoctor0/zip-release@master
               with:
                   filename: "MalFramework_v${{ steps.get_version.outputs.version }}.zip"
-                  exclusions: "*.git* /tools/* .editorconfig .gitignore"
+                  exclusions: "*.git* /tools/* .editorconfig .gitignore mission.sqm"
 
             - name: Upload release asset
               uses: actions/upload-release-asset@v1.0.1
