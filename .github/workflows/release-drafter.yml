@@ -22,10 +22,6 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-            - name: Get the version
-              id: get_version
-              run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
-
     draft:
         runs-on: ubuntu-latest
         steps:
@@ -38,12 +34,14 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+            - name: Get version
+              id: get_version
+              uses: battila7/get-version-action@v2
+
             - name: Pack files
               uses: thedoctor0/zip-release@master
-              env:
-                  VERSION: ${{ steps.get_version.outputs.VERSION }}
               with:
-                  filename: "MalFramework_v${{ $VERSION }}.zip"
+                  filename: "MalFramework_v${{ steps.get_version.outputs.version-without-v }}.zip"
                   exclusions: "*.git* /tools/* .editorconfig .gitignore"
 
             - name: Upload release asset
