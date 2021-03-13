@@ -16,7 +16,7 @@ categories:
           - "enhancement"
     - title: "**CHANGED:**"
       labels:
-          - "rework"
+          - "cleanup"
 
 exclude-labels:
     - "ignore changelog"
