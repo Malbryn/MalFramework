@@ -22,6 +22,10 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+            - name: Get the version
+              id: get_version
+              run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+
     draft:
         runs-on: ubuntu-latest
         steps:
@@ -36,8 +40,10 @@ jobs:
 
             - name: Pack files
               uses: thedoctor0/zip-release@master
+              env:
+                  VERSION: ${{ steps.get_version.outputs.VERSION }}
               with:
-                  filename: "MalFramework_${{ github.sha }}.zip"
+                  filename: "MalFramework_v${{ $VERSION }}.zip"
                   exclusions: "*.git* /tools/* .editorconfig .gitignore"
 
             - name: Upload release asset
@@ -46,6 +52,6 @@ jobs:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
                   upload_url: ${{ steps.release_drafter.outputs.upload_url }}
-                  asset_path: ./MalFramework_${{ github.sha }}.zip
-                  asset_name: MalFramework_${{ github.sha }}.zip
+                  asset_path: ./MalFramework_*.zip
+                  asset_name: MalFramework_*.zip
                   asset_content_type: application/zip
