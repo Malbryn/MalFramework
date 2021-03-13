@@ -35,6 +35,8 @@ jobs:
             - name: Checkout the source code
               uses: actions/checkout@master
 
+            - name: Get version
+
             - name: Pack files
               uses: thedoctor0/zip-release@master
               with:
@@ -45,4 +47,4 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: MalFramework_${{ github.sha }}
-                  path: MalFramework_*.zip
+                  path: MalFramework_*
