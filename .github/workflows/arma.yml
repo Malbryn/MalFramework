@@ -12,8 +12,10 @@ jobs:
         steps:
             - name: Checkout the source code
               uses: actions/checkout@v2
+
             - name: Validate SQF
               run: python3 tools/sqf_validator.py
+
             - name: Check for BOM
               uses: arma-actions/bom-check@v1
 
@@ -22,6 +24,7 @@ jobs:
         steps:
             - name: Checkout the source code
               uses: actions/checkout@master
+
             - name: Lint (sqflint)
               uses: arma-actions/sqflint@master
               continue-on-error: true # No failure due to many false-positives
@@ -31,8 +34,16 @@ jobs:
         steps:
             - name: Checkout the source code
               uses: actions/checkout@master
-            - name: Upload Artifact
+
+            - name: Pack files
+              uses: thedoctor0/zip-release@master
+              with:
+                  filename: "MalFramework_${{ github.ref }}.zip"
+                  exclusions: "*.git* /tools/* .editorconfig .gitignore"
+                  path: ./release
+
+            - name: Upload artifact
               uses: actions/upload-artifact@v2
               with:
-                  name: MalFramework-${{ github.sha }}-nobin
-                  path: releases/*
+                  name: MalFramework-${{ github.sha }}
+                  path: release/MalFramework_*.zip
