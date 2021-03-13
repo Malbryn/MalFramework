@@ -40,7 +40,7 @@ jobs:
               with:
                   filename: "MalFramework_${{ github.ref }}.zip"
                   exclusions: "*.git* /tools/* .editorconfig .gitignore"
-                  path: ./release
+                  path: release/
 
             - name: Upload artifact
               uses: actions/upload-artifact@v2
