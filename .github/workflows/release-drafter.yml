@@ -26,6 +26,17 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Release Drafter
+              id: release_drafter
               uses: release-drafter/release-drafter@v5
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Upload release asset
+              uses: actions/upload-release-asset@v1.0.1
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              with:
+                  upload_url: ${{ steps.release_drafter.outputs.upload_url }}
+                  asset_path: ./MalFramework_${{ github.ref }}.zip
+                  asset_name: MalFramework_${{ github.ref }}.zip
+                  asset_content_type: application/zip
