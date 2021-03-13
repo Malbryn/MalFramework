@@ -50,6 +50,6 @@ jobs:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
                   upload_url: ${{ steps.release_drafter.outputs.upload_url }}
-                  asset_path: ./MalFramework_*.zip
-                  asset_name: MalFramework_*.zip
+                  asset_path: ./MalFramework_v${{ steps.get_version.outputs.version-without-v }}.zip
+                  asset_name: MalFramework_v${{ steps.get_version.outputs.version-without-v }}.zip
                   asset_content_type: application/zip
