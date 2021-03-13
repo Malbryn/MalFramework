@@ -35,8 +35,6 @@ jobs:
             - name: Checkout the source code
               uses: actions/checkout@master
 
-            - name: Get version
-
             - name: Pack files
               uses: thedoctor0/zip-release@master
               with:
