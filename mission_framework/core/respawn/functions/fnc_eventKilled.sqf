@@ -8,10 +8,10 @@
         Adds an event handler that fires when the player dies.
 
     Arguments:
-        -
+        1: OBJECT - The unit that died
 
     Example:
-        call MF_respawn_fnc_eventKilled
+        [player] call MF_respawn_fnc_eventKilled
 
     Returns:
         void
@@ -19,16 +19,17 @@
 
 if !(hasInterface) exitWith {};
 
-params ["_unit", "_killer", "_instigator", "_useEffects"];
+params ["_unit"];
 
+// Set timer
 setPlayerRespawnTime 10e10;
 
-// Friendly fire
-if (side _instigator == playerSide) then {
-    private _nameKiller = name _instigator;
-    private _nameKilled = name player;
+// Save the killer
+private _killer = GETVAR(player,ace_medical_lastDamageSource,objNull);
 
-    [QEGVAR(admin,logFF), [_nameKilled, _nameKiller]] call CFUNC(globalEvent);
+// Log friendly fire
+if (isPlayer _killer && (side _killer) == playerSide) then {
+    [QEGVAR(admin,logFF), [name player, name _killer]] call CFUNC(globalEvent);
 };
 
 // Side update
