@@ -1,28 +1,16 @@
-name: Release Drafter
+name: Upload asset
 
 on:
     push:
         branches:
-            - master
+            - release
         paths-ignore:
             - "VERSION"
             - "README.md"
+            - ".github/**"
 
 jobs:
-    bump:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout the source code
-              uses: actions/checkout@v2
-
-            - name: Bump Version
-              uses: remorses/bump-version@js
-              with:
-                  version_file: VERSION
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    draft:
+    upload:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout the source code
