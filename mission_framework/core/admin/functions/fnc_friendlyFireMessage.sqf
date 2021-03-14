@@ -13,7 +13,7 @@
         1: STRING - Name of the player who was the killer
 
     Example:
-        ["player1", "player2"] call MF_friendly_fire_fnc_friendlyFireMessage
+        ["player1", "player2"] call MF_admin_fnc_friendlyFireMessage
 
     Returns:
         void
@@ -23,7 +23,7 @@ params ["_killed", "_killer"];
 
 // Notifying game masters
 if (hasInterface && (IS_ADMIN_LOGGED || getPlayerUID player == GETPAVAR(GVARMAIN(missionMaker),""))) then {
-    MSG_2("WARNING","(Friendly fire) %1 was killed by %2",_killed,_killer);
+    MSG_2("WARNING","(Admin) %1 was killed by %2",_killed,_killer);
 };
 
 // End mission stats

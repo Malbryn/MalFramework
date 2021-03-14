@@ -8,10 +8,11 @@
         Adds an event handler that fires when the player respawns.
 
     Arguments:
-        -
+        1: OBJECT - The unit that died
+        2: OBJECT - The old body of the unit
 
     Example:
-        call MF_respawn_fnc_eventRespawned
+        [player, objNull] call MF_respawn_fnc_eventRespawned
 
     Returns:
         void

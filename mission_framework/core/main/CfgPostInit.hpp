@@ -68,10 +68,6 @@ class GVARMAIN(Flyby) {
     init = PATH_POST(flyby);
 };
 
-class GVARMAIN(FriendlyFire) {
-    init = PATH_POST(friendly_fire);
-};
-
 class GVARMAIN(Gear) {
     init = PATH_POST(gear);
 };
