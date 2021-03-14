@@ -7,6 +7,7 @@ PREP(createCurator);
 PREP(drawFPS);
 PREP(eventAdminMenuOpened);
 PREP(fpsNotification);
+PREP(friendlyFireMessage);
 PREP(getCurrentAdmin);
 PREP(healPlayer);
 PREP(onPause);

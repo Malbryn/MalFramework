@@ -82,3 +82,10 @@ if (GVAR(enableCurator) && !GVARMAIN(isTvT)) then {
         }] call CFUNC(addEventHandler);
     };
 };
+
+// Friendly fire events
+[QGVAR(logFF), {
+    params ["_unit", "_killer"];
+
+    [_unit, _killer] call FUNC(friendlyFireMessage);
+}] call CFUNC(addEventHandler);
