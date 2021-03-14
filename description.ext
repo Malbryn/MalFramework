@@ -17,6 +17,7 @@ respawnOnStart = -1;  // Respawn script at mission start
 
 // Mission settings
 cba_settings_hasSettingsFile = 1;  // Enable CBA settings file
+cba_settings_whitelist[] = {UID};  // Enable the CBA server settings for the mission maker + logged in admin or host
 disableChannels[] = {0, 2, 4, 5};  // Disable certain comms channels
 disabledAI = 1;  // Enable/disable AI in player slots
 enableDebugConsole[] = {UID};  // Enable the debug console for the mission maker + logged in admin or host
