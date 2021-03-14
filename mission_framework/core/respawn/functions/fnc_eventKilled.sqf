@@ -28,7 +28,7 @@ if (side _instigator == playerSide) then {
     private _nameKiller = name _instigator;
     private _nameKilled = name player;
 
-    [QEGVAR(friendly_fire,logFF), [_nameKilled, _nameKiller]] call CFUNC(globalEvent);
+    [QEGVAR(admin,logFF), [_nameKilled, _nameKiller]] call CFUNC(globalEvent);
 };
 
 // Side update

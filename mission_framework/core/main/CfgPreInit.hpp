@@ -68,10 +68,6 @@ class GVARMAIN(Flyby) {
     init = PATH_PRE(flyby);
 };
 
-class GVARMAIN(FriendlyFire) {
-    init = PATH_PRE(friendly_fire);
-};
-
 class GVARMAIN(Gear) {
     init = PATH_PRE(gear);
 };
