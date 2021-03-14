@@ -1,4 +1,4 @@
-// MF - Basic
+// MF - FK
 
 // ACE Advanced Ballistics
 force force ace_advanced_ballistics_ammoTemperatureEnabled = true;
@@ -24,11 +24,10 @@ force force ace_advanced_throwing_enablePickUpAttached = true;
 // ACE Arsenal
 force force ace_arsenal_allowDefaultLoadouts = false;
 force force ace_arsenal_allowSharedLoadouts = true;
-force force ace_arsenal_EnableRPTLog = true;
 
 // ACE Artillery
 force force ace_artillerytables_advancedCorrections = false;
-force force ace_artillerytables_disableArtilleryComputer = true;
+force force ace_artillerytables_disableArtilleryComputer = false;
 force force ace_mk6mortar_airResistanceEnabled = true;
 force force ace_mk6mortar_allowCompass = true;
 force force ace_mk6mortar_allowComputerRangefinder = false;
@@ -50,7 +49,7 @@ force force ace_parachute_hideAltimeter = true;
 
 // ACE Cook off
 force force ace_cookoff_ammoCookoffDuration = 0.3;
-force force ace_cookoff_enable = 2;
+force force ace_cookoff_enable = 0;
 force force ace_cookoff_enableAmmobox = true;
 force force ace_cookoff_enableAmmoCookoff = true;
 force force ace_cookoff_probabilityCoef = 0.3;
@@ -62,19 +61,28 @@ force force ace_csw_handleExtraMagazines = true;
 force force ace_csw_progressBarTimeCoefficent = 1;
 
 // ACE Explosives
-force force ace_explosives_explodeOnDefuse = false;
+force force ace_explosives_explodeOnDefuse = true;
 force force ace_explosives_punishNonSpecialists = true;
 force force ace_explosives_requireSpecialist = false;
+force force ace_explosives_customTimerMax = 900;
+force force ace_explosives_customTimerMin = 5;
 
 // ACE Fragmentation Simulation
 force force ace_frag_enabled = true;
 force force ace_frag_maxTrack = 20;
 force force ace_frag_maxTrackPerFrame = 10;
-force force ace_frag_reflectionsEnabled = false;
+force force ace_frag_reflectionsEnabled = true;
 force force ace_frag_spallEnabled = false;
+
+// ACE G-Forces
+force force ace_gforces_coef = 1;
+force force ace_gforces_enabledFor = 1;
 
 // ACE Goggles
 force force ace_goggles_effects = 2;
+
+// ACE Grenades
+force force ace_grenades_convertExplosives = true;
 
 // ACE Hearing
 force force ace_hearing_autoAddEarplugsToUnits = false;
@@ -86,7 +94,6 @@ force force ace_hearing_unconsciousnessVolume = 0.3;
 
 // ACE Interaction
 force force ace_interaction_disableNegativeRating = true;
-force force ace_interaction_enableMagazinePassing = true;
 force force ace_interaction_enableTeamManagement = true;
 
 // ACE Logistics
@@ -96,7 +103,7 @@ force force ace_cargo_paradropTimeCoefficent = 2.5;
 force force ace_rearm_distance = 20;
 force force ace_rearm_level = 0;
 force force ace_rearm_supply = 0;
-force force ace_refuel_hoseLength = 15;
+force force ace_refuel_hoseLength = 20;
 force force ace_refuel_rate = 1;
 force force ace_repair_addSpareParts = true;
 force force ace_repair_autoShutOffEngineWhenStartingRepair = false;
@@ -118,9 +125,9 @@ force force ace_magazinerepack_timePerBeltLink = 8;
 force force ace_magazinerepack_timePerMagazine = 2;
 
 // ACE Map
-force force ace_map_BFT_Enabled = true;
+force force ace_map_BFT_Enabled = false;
 force force ace_map_BFT_HideAiGroups = true;
-force force ace_map_BFT_Interval = 0.5;
+force force ace_map_BFT_Interval = 1;
 force force ace_map_BFT_ShowPlayerNames = false;
 force force ace_map_DefaultChannel = 1;
 force force ace_map_mapGlow = true;
@@ -128,12 +135,20 @@ force force ace_map_mapIllumination = true;
 force force ace_map_mapLimitZoom = false;
 force force ace_map_mapShake = true;
 force force ace_map_mapShowCursorCoordinates = false;
-force force ace_markers_moveRestriction = 5;
+force force ace_markers_moveRestriction = 4;
+force force ace_markers_timestampEnabled = true;
+force force ace_markers_timestampFormat = "HH:MM";
+force force ace_markers_timestampHourFormat = 24;
 
 // ACE Map Gestures
+force force ace_map_gestures_allowCurator = true;
+force force ace_map_gestures_allowSpectator = true;
+force force ace_map_gestures_briefingMode = 0;
 force force ace_map_gestures_enabled = true;
 force force ace_map_gestures_interval = 0.03;
 force force ace_map_gestures_maxRange = 7;
+force force ace_map_gestures_maxRangeCamera = 14;
+force force ace_map_gestures_onlyShowFriendlys = false;
 
 // ACE Medical
 force force ace_medical_ai_enabledFor = 0;
@@ -142,8 +157,9 @@ force force ace_medical_bleedingCoefficient = 0.5;
 force force ace_medical_blood_bloodLifetime = 600;
 force force ace_medical_blood_enabledFor = 2;
 force force ace_medical_blood_maxBloodObjects = 500;
-force force ace_medical_fatalDamageSource = 2;
+force force ace_medical_fatalDamageSource = 1;
 force force ace_medical_feedback_bloodVolumeEffectType = 2;
+force force ace_medical_feedback_painEffectType = 1;
 force force ace_medical_fractureChance = 0.6;
 force force ace_medical_fractures = 2;
 force force ace_medical_gui_enableMedicalMenu = 1;
@@ -151,20 +167,22 @@ force force ace_medical_gui_maxDistance = 3;
 force force ace_medical_gui_openAfterTreatment = true;
 force force ace_medical_ivFlowRate = 4;
 force force ace_medical_limping = 0;
-force force ace_medical_painCoefficient = 0.75;
-force force ace_medical_playerDamageThreshold = 1;
+force force ace_medical_painCoefficient = 0.8;
+force force ace_medical_playerDamageThreshold = 3;
 force force ace_medical_spontaneousWakeUpChance = 0.4;
 force force ace_medical_spontaneousWakeUpEpinephrineBoost = 10;
 force force ace_medical_statemachine_AIUnconsciousness = true;
-force force ace_medical_statemachine_cardiacArrestTime = 600;
+force force ace_medical_statemachine_cardiacArrestBleedoutEnabled = true;
+force force ace_medical_statemachine_cardiacArrestTime = 300;
 force force ace_medical_statemachine_fatalInjuriesAI = 0;
 force force ace_medical_statemachine_fatalInjuriesPlayer = 0;
 force force ace_medical_treatment_advancedBandages = 2;
 force force ace_medical_treatment_advancedDiagnose = true;
 force force ace_medical_treatment_advancedMedication = true;
+force force ace_medical_treatment_allowBodyBagUnconscious = false;
 force force ace_medical_treatment_allowLitterCreation = true;
 force force ace_medical_treatment_allowSelfIV = 1;
-force force ace_medical_treatment_allowSelfPAK = 1;
+force force ace_medical_treatment_allowSelfPAK = 0;
 force force ace_medical_treatment_allowSelfStitch = 1;
 force force ace_medical_treatment_allowSharedEquipment = 1;
 force force ace_medical_treatment_clearTraumaAfterBandage = false;
@@ -183,11 +201,19 @@ force force ace_medical_treatment_medicEpinephrine = 0;
 force force ace_medical_treatment_medicIV = 1;
 force force ace_medical_treatment_medicPAK = 1;
 force force ace_medical_treatment_medicSurgicalKit = 1;
-force force ace_medical_treatment_timeCoefficientPAK = 0.75;
+force force ace_medical_treatment_timeCoefficientPAK = 0.7;
+force force ace_medical_treatment_treatmentTimeAutoinjector = 5;
+force force ace_medical_treatment_treatmentTimeBodyBag = 15;
+force force ace_medical_treatment_treatmentTimeCPR = 15;
+force force ace_medical_treatment_treatmentTimeIV = 12;
+force force ace_medical_treatment_treatmentTimeSplint = 7;
+force force ace_medical_treatment_treatmentTimeTourniquet = 7;
+force force ace_medical_treatment_woundReopenChance = 1;
+force force ace_medical_treatment_woundStitchTime = 5;
 
 // ACE Name Tags
 force force ace_nametags_playerNamesMaxAlpha = 0.8;
-force force ace_nametags_playerNamesViewDistance = 8;
+force force ace_nametags_playerNamesViewDistance = 10;
 force force ace_nametags_showCursorTagForVehicles = false;
 
 // ACE Nightvision
@@ -196,7 +222,6 @@ force force ace_nightvision_disableNVGsWithSights = false;
 force force ace_nightvision_effectScaling = 0.3;
 force force ace_nightvision_fogScaling = 0;
 force force ace_nightvision_noiseScaling = 0.3;
-force force ace_nightvision_shutterEffects = false;
 
 // ACE Overheating
 force force ace_overheating_enabled = true;
@@ -242,8 +267,8 @@ force force ace_scopes_zeroReferenceTemperature = 15;
 // ACE Spectator
 force force ace_spectator_enableAI = false;
 force force ace_spectator_maxFollowDistance = 10;
-force force ace_spectator_restrictModes = 1;
-force force ace_spectator_restrictVisions = 1;
+force force ace_spectator_restrictModes = 4;
+force force ace_spectator_restrictVisions = 3;
 
 // ACE Switch Units
 force force ace_switchunits_enableSafeZone = true;
@@ -254,18 +279,24 @@ force force ace_switchunits_switchToEast = false;
 force force ace_switchunits_switchToIndependent = false;
 force force ace_switchunits_switchToWest = false;
 
+// ACE Trenches
+force force ace_trenches_bigEnvelopeDigDuration = 25;
+force force ace_trenches_bigEnvelopeRemoveDuration = 15;
+force force ace_trenches_smallEnvelopeDigDuration = 20;
+force force ace_trenches_smallEnvelopeRemoveDuration = 12;
+
 // ACE Uncategorized
 force force ace_fastroping_requireRopeItems = false;
 force force ace_gforces_enabledFor = 1;
+force force ace_gunbag_swapGunbagEnabled = true;
 force force ace_hitreactions_minDamageToTrigger = 0.1;
 force force ace_laser_dispersionCount = 2;
 force force ace_microdagr_mapDataAvailable = 2;
-force force ace_microdagr_waypointPrecision = 3;
+force force ace_microdagr_waypointPrecision = 1;
 force force ace_overpressure_distanceCoefficient = 1;
 
 // ACE User Interface
 force force ace_ui_allowSelectiveUI = true;
-force force ace_ui_soldierVehicleWeaponInfo = true;
 
 // ACE Vehicle Lock
 force force ace_vehiclelock_defaultLockpickStrength = 10;
@@ -287,12 +318,6 @@ force force ace_laserpointer_enabled = true;
 force force ace_weather_enabled = true;
 force force ace_weather_updateInterval = 60;
 force force ace_weather_windSimulation = false;
-force force ace_weather_enableServerController = true;
-force force ace_weather_useACEWeather = false;
-force force ace_weather_syncRain = false;
-force force ace_weather_syncWind = false;
-force force ace_weather_syncMisc = false;
-force force ace_weather_serverUpdateInterval = 60;
 
 // ACE Wind Deflection
 force force ace_winddeflection_enabled = true;
@@ -308,15 +333,8 @@ force force ace_zeus_revealMines = 0;
 force force ace_zeus_zeusAscension = false;
 force force ace_zeus_zeusBird = false;
 
-// ACRE2
-force force acre_sys_core_fullDuplex = true;
-force force acre_sys_core_ignoreAntennaDirection = true;
-force force acre_sys_core_interference = true;
-force force acre_sys_core_revealToAI = 0;
-force force acre_sys_core_terrainLoss = 1;
-force force acre_sys_core_ts3ChannelName = "TaskForceRadio";
-force force acre_sys_core_ts3ChannelPassword = "123";
-force force acre_sys_signal_signalModel = 2;
+// CBA Weapons
+force force cba_disposable_replaceDisposableLauncher = true;
 
 // TFAR - Global settings
 force force TFAR_AICanHearPlayer = false;
@@ -333,12 +351,12 @@ force force TFAR_givePersonalRadioToRegularSoldier = false;
 force force TFAR_globalRadioRangeCoef = 1;
 force force TFAR_instantiate_instantiateAtBriefing = false;
 force force TFAR_noAutomoveSpectator = false;
-force force TFAR_objectInterceptionEnabled = true;
+force force TFAR_objectInterceptionEnabled = false;
 force force TFAR_objectInterceptionStrength = 400;
 force force tfar_radiocode_east = "_opfor";
 force force tfar_radiocode_independent = "_independent";
 force force tfar_radiocode_west = "_bluefor";
-force force tfar_radioCodesDisabled = false;
+force force tfar_radioCodesDisabled = true;
 force force TFAR_SameLRFrequenciesForSide = true;
 force force TFAR_SameSRFrequenciesForSide = true;
 force force TFAR_setting_defaultFrequencies_lr_east = "69,68,67,66,65,64,63,62,70";
@@ -368,89 +386,87 @@ force force tfar_terrain_interception_coefficient = 7;
 force force TFAR_voiceCone = true;
 force force TFAR_ShowDiaryRecord = false;
 
-// CBA Weapons
-force force cba_disposable_replaceDisposableLauncher = true;
-
-// VCOM SETTINGS
-force VCM_ActivateAI = true;
-force VCM_ADVANCEDMOVEMENT = true;
-force VCM_AIDISTANCEVEHPATH = 0;
-force VCM_AIMagLimit = 2;
-force VCM_AISkills_General_EM = true;
-force VCM_AISkills_General_EM_CHN = 10;
-force VCM_AISkills_General_EM_CLDWN = 10;
-force Vcm_AISkills_SideSpecific = false;
-force VCM_AISNIPERS = false;
-force VCM_AISUPPRESS = true;
-force VCM_ARTYDELAY = 30;
-force VCM_ARTYENABLE = false;
-//force VCM_ARTYSIDES = [WEST,EAST,GUER];
-force VCM_CARGOCHNG = true;
-force VCM_ClassSteal = false;
-force VCM_Debug = false;
-force VCM_DISEMBARKRANGE = 150;
-force Vcm_DrivingActivated = true;
-force VCM_ForceSpeed = true;
-force VCM_FRMCHANGE = true;
-force Vcm_GrenadeChance = 5;
-force VCM_HEARINGDISTANCE = 500;
-force VCM_MEDICALACTIVE = false;
-force VCM_MINECHANCE = 0;
-force VCM_MINEENABLED = false;
-force Vcm_PlayerAISkills = true;
-force VCM_RAGDOLL = true;
-force VCM_RAGDOLLCHC = 75;
-//force VCM_SIDEENABLED = [WEST,EAST,GUER];
-force VCM_SKILLCHANGE = true;
-force Vcm_SmokeGrenadeChance = 5;
-force VCM_STATICARMT = 300;
-force VCM_StealVeh = false;
-force VCM_SUPDIST = 150;
-force VCM_TURRETUNLOAD = false;
-force VCM_USECBASETTINGS = true;
-force VCM_WARNDELAY = 30;
-force VCM_WARNDIST = 400;
-
-// VCOM AI General Skill
-Vcm_AISkills_General_AimingAccuracy = 0.25;
-Vcm_AISkills_General_aimingShake = 0.15;
-Vcm_AISkills_General_aimingSpeed = 0.35;
-Vcm_AISkills_General_commanding = 0.5;
-Vcm_AISkills_General_courage = 0.5;
-Vcm_AISkills_General_general = 0.5;
-Vcm_AISkills_General_reloadSpeed = 0.5;
-Vcm_AISkills_General_spotDistance = 0.5;
-Vcm_AISkills_General_spotTime = 0.5;
-
-// VCOM AI West Skill
-Vcm_AISkills_West_AimingAccuracy = 0.25;
-Vcm_AISkills_West_aimingShake = 0.15;
-Vcm_AISkills_West_aimingSpeed = 0.35;
-Vcm_AISkills_West_commanding = 0.5;
-Vcm_AISkills_West_courage = 0.5;
-Vcm_AISkills_West_general = 0.5;
-Vcm_AISkills_West_reloadSpeed = 0.5;
-Vcm_AISkills_West_spotDistance = 0.5;
-Vcm_AISkills_West_spotTime = 0.5;
-
 // VCOM AI East Skill
-Vcm_AISkills_East_AimingAccuracy = 0.25;
-Vcm_AISkills_East_aimingShake = 0.15;
-Vcm_AISkills_East_aimingSpeed = 0.35;
+Vcm_AISkills_East_AimingAccuracy = 0.3;
+Vcm_AISkills_East_aimingShake = 0.3;
+Vcm_AISkills_East_aimingSpeed = 0.3;
 Vcm_AISkills_East_commanding = 0.5;
 Vcm_AISkills_East_courage = 0.5;
 Vcm_AISkills_East_general = 0.5;
-Vcm_AISkills_East_reloadSpeed = 0.5;
-Vcm_AISkills_East_spotDistance = 0.5;
-Vcm_AISkills_East_spotTime = 0.5;
+Vcm_AISkills_East_reloadSpeed = 0.4;
+Vcm_AISkills_East_spotDistance = 0.4;
+Vcm_AISkills_East_spotTime = 0.4;
+
+// VCOM AI General Skill
+Vcm_AISkills_General_AimingAccuracy = 0.3;
+Vcm_AISkills_General_aimingShake = 0.3;
+Vcm_AISkills_General_aimingSpeed = 0.3;
+Vcm_AISkills_General_commanding = 0.5;
+Vcm_AISkills_General_courage = 0.5;
+Vcm_AISkills_General_general = 0.5;
+Vcm_AISkills_General_reloadSpeed = 0.4;
+Vcm_AISkills_General_spotDistance = 0.4;
+Vcm_AISkills_General_spotTime = 0.4;
 
 // VCOM AI Resistance Skill
-Vcm_AISkills_Resistance_AimingAccuracy = 0.25;
-Vcm_AISkills_Resistance_aimingShake = 0.15;
-Vcm_AISkills_Resistance_aimingSpeed = 0.35;
+Vcm_AISkills_Resistance_AimingAccuracy = 0.3;
+Vcm_AISkills_Resistance_aimingShake = 0.3;
+Vcm_AISkills_Resistance_aimingSpeed = 0.3;
 Vcm_AISkills_Resistance_commanding = 0.5;
 Vcm_AISkills_Resistance_courage = 0.5;
 Vcm_AISkills_Resistance_general = 0.5;
-Vcm_AISkills_Resistance_reloadSpeed = 0.5;
-Vcm_AISkills_Resistance_spotDistance = 0.5;
-Vcm_AISkills_Resistance_spotTime = 0.5;
+Vcm_AISkills_Resistance_reloadSpeed = 0.4;
+Vcm_AISkills_Resistance_spotDistance = 0.4;
+Vcm_AISkills_Resistance_spotTime = 0.4;
+
+// VCOM AI West Skill
+Vcm_AISkills_West_AimingAccuracy = 0.3;
+Vcm_AISkills_West_aimingShake = 0.3;
+Vcm_AISkills_West_aimingSpeed = 0.3;
+Vcm_AISkills_West_commanding = 0.5;
+Vcm_AISkills_West_courage = 0.5;
+Vcm_AISkills_West_general = 0.5;
+Vcm_AISkills_West_reloadSpeed = 0.4;
+Vcm_AISkills_West_spotDistance = 0.4;
+Vcm_AISkills_West_spotTime = 0.4;
+
+// VCOM SETTINGS
+force force VCM_ActivateAI = true;
+force force VCM_ADVANCEDMOVEMENT = true;
+force force VCM_AIDISTANCEVEHPATH = 0;
+force force VCM_AIMagLimit = 2;
+force force VCM_AISkills_General_EM = true;
+force force VCM_AISkills_General_EM_CHN = 10;
+force force VCM_AISkills_General_EM_CLDWN = 20;
+force force Vcm_AISkills_SideSpecific = true;
+force force VCM_AISNIPERS = true;
+force force VCM_AISUPPRESS = true;
+force force VCM_ARTYDELAY = 60;
+force force VCM_ARTYENABLE = false;
+//force force VCM_ARTYSIDES = [WEST,EAST,GUER];
+force force VCM_CARGOCHNG = true;
+force force VCM_ClassSteal = false;
+force force VCM_Debug = false;
+force force VCM_DISEMBARKRANGE = 150;
+force force Vcm_DrivingActivated = false;
+force force Vcm_DrivingActivated = false;
+force force VCM_ForceSpeed = true;
+force force VCM_FRMCHANGE = true;
+force force Vcm_GrenadeChance = 10;
+force force VCM_HEARINGDISTANCE = 500;
+force force VCM_MEDICALACTIVE = true;
+force force VCM_MINECHANCE = 0;
+force force VCM_MINEENABLED = false;
+force force Vcm_PlayerAISkills = true;
+force force VCM_RAGDOLL = true;
+force force VCM_RAGDOLLCHC = 75;
+//force force VCM_SIDEENABLED = [WEST,EAST,GUER];
+force force VCM_SKILLCHANGE = false;
+force force Vcm_SmokeGrenadeChance = 10;
+force force VCM_STATICARMT = 300;
+force force VCM_StealVeh = false;
+force force VCM_SUPDIST = 75;
+force force VCM_TURRETUNLOAD = false;
+force force VCM_USECBASETTINGS = true;
+force force VCM_WARNDELAY = 30;
+force force VCM_WARNDIST = 400;
