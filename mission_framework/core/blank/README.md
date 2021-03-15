@@ -10,7 +10,7 @@ _Description of each value set in the config file._
 
 | Variable  | Variable type | Default value | Game mode  | Description |
 |:--------- |:------------- |:------------- |:---------- |:----------- |
-| `varName` | `TYPE`        | `default`     | `Coop/TvT` | blank       |
+| `varName` | `TYPE`        | `default`     | Coop/TvT   | blank       |
 
 ## Available:
  - Coop

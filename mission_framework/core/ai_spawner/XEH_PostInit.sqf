@@ -1,3 +1,3 @@
 #include "script_component.hpp"
 
-if !(GVARMAIN(moduleAISpawner)) exitWith {};
+if (GVARMAIN(isTvT) || !GVARMAIN(moduleAISpawner)) exitWith {};

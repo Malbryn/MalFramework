@@ -102,7 +102,7 @@ GVARMAIN(moduleBriefing) = true;  // Coop & TvT
 
 // Cover map
 GVARMAIN(moduleCoverMap) = true;  // Coop & TvT
-EGVAR(cover_map,aoMarker) = "ao";  // AO marker
+EGVAR(cover_map,aoMarker) = "mrk_ao";  // Name of the AO marker
 EGVAR(cover_map,colour) = "Color4_FD_F";  // Colour of the covered area
 
 
