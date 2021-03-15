@@ -24,7 +24,7 @@ EGVAR(end_conditions,civilianCasLimit) = 50;  // Percentage of the max. allowed 
 // End condition - Side respawn tickets
 GVARMAIN(moduleRespawnTickets) = true;  // TvT
 GVARMAIN(respawnTicketsBlufor) = 2;  // Respawn tickets for BLUFOR (-1: disabled)
-GVARMAIN(respawnTicketsRedfor) = -1;  // Respawn tickets for BLUFOR (-1: disabled)
+GVARMAIN(respawnTicketsRedfor) = -1;  // Respawn tickets for REDFOR (-1: disabled)
 
 // End condition - Task limit
 GVARMAIN(moduleTaskLimit) = false;  // Coop
