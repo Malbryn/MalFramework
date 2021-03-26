@@ -29,7 +29,8 @@ jobs:
         steps:
             - name: Checkout the source code
               uses: actions/checkout@master
-              fetch-depth: 0
+              with:
+                fetch-depth: 0
 
             - name: Get version
               id: get-version
