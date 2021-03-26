@@ -214,10 +214,6 @@ GVARMAIN(moduleSnowfall) = false;  // Coop & TvT
 EGVAR(snowfall,maxDensity) = 50;  // Intensity of the snowfall
 
 
-// Static line paradrop
-GVARMAIN(moduleStaticLine) = true;  // Coop & TvT
-
-
 // Supply drop
 GVARMAIN(moduleSupplyDrop) = true;  // Coop
 EGVAR(supply_drop,supplyDropPlane) = "B_T_VTOL_01_vehicle_F";  // Plane or helicopter used for the supply drop

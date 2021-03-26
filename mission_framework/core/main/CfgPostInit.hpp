@@ -160,10 +160,6 @@ class GVARMAIN(Snowfall) {
     init = PATH_POST(snowfall);
 };
 
-class GVARMAIN(StaticLine) {
-    init = PATH_POST(static_line);
-};
-
 class GVARMAIN(SupplyDrop) {
     init = PATH_POST(supply_drop);
 };
