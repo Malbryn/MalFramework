@@ -387,48 +387,48 @@ force force TFAR_voiceCone = true;
 force force TFAR_ShowDiaryRecord = false;
 
 // VCOM AI East Skill
-Vcm_AISkills_East_AimingAccuracy = 0.3;
-Vcm_AISkills_East_aimingShake = 0.3;
-Vcm_AISkills_East_aimingSpeed = 0.3;
-Vcm_AISkills_East_commanding = 0.5;
-Vcm_AISkills_East_courage = 0.5;
-Vcm_AISkills_East_general = 0.5;
-Vcm_AISkills_East_reloadSpeed = 0.4;
-Vcm_AISkills_East_spotDistance = 0.4;
-Vcm_AISkills_East_spotTime = 0.4;
+force force Vcm_AISkills_East_AimingAccuracy = 0.3;
+force force Vcm_AISkills_East_aimingShake = 0.3;
+force force Vcm_AISkills_East_aimingSpeed = 0.3;
+force force Vcm_AISkills_East_commanding = 0.5;
+force force Vcm_AISkills_East_courage = 0.5;
+force force Vcm_AISkills_East_general = 0.5;
+force force Vcm_AISkills_East_reloadSpeed = 0.4;
+force force Vcm_AISkills_East_spotDistance = 0.4;
+force force Vcm_AISkills_East_spotTime = 0.4;
 
 // VCOM AI General Skill
-Vcm_AISkills_General_AimingAccuracy = 0.3;
-Vcm_AISkills_General_aimingShake = 0.3;
-Vcm_AISkills_General_aimingSpeed = 0.3;
-Vcm_AISkills_General_commanding = 0.5;
-Vcm_AISkills_General_courage = 0.5;
-Vcm_AISkills_General_general = 0.5;
-Vcm_AISkills_General_reloadSpeed = 0.4;
-Vcm_AISkills_General_spotDistance = 0.4;
-Vcm_AISkills_General_spotTime = 0.4;
+force force Vcm_AISkills_General_AimingAccuracy = 0.3;
+force force Vcm_AISkills_General_aimingShake = 0.3;
+force force Vcm_AISkills_General_aimingSpeed = 0.3;
+force force Vcm_AISkills_General_commanding = 0.5;
+force force Vcm_AISkills_General_courage = 0.5;
+force force Vcm_AISkills_General_general = 0.5;
+force force Vcm_AISkills_General_reloadSpeed = 0.4;
+force force Vcm_AISkills_General_spotDistance = 0.4;
+force force Vcm_AISkills_General_spotTime = 0.4;
 
 // VCOM AI Resistance Skill
-Vcm_AISkills_Resistance_AimingAccuracy = 0.3;
-Vcm_AISkills_Resistance_aimingShake = 0.3;
-Vcm_AISkills_Resistance_aimingSpeed = 0.3;
-Vcm_AISkills_Resistance_commanding = 0.5;
-Vcm_AISkills_Resistance_courage = 0.5;
-Vcm_AISkills_Resistance_general = 0.5;
-Vcm_AISkills_Resistance_reloadSpeed = 0.4;
-Vcm_AISkills_Resistance_spotDistance = 0.4;
-Vcm_AISkills_Resistance_spotTime = 0.4;
+force force Vcm_AISkills_Resistance_AimingAccuracy = 0.3;
+force force Vcm_AISkills_Resistance_aimingShake = 0.3;
+force force Vcm_AISkills_Resistance_aimingSpeed = 0.3;
+force force Vcm_AISkills_Resistance_commanding = 0.5;
+force force Vcm_AISkills_Resistance_courage = 0.5;
+force force Vcm_AISkills_Resistance_general = 0.5;
+force force Vcm_AISkills_Resistance_reloadSpeed = 0.4;
+force force Vcm_AISkills_Resistance_spotDistance = 0.4;
+force force Vcm_AISkills_Resistance_spotTime = 0.4;
 
 // VCOM AI West Skill
-Vcm_AISkills_West_AimingAccuracy = 0.3;
-Vcm_AISkills_West_aimingShake = 0.3;
-Vcm_AISkills_West_aimingSpeed = 0.3;
-Vcm_AISkills_West_commanding = 0.5;
-Vcm_AISkills_West_courage = 0.5;
-Vcm_AISkills_West_general = 0.5;
-Vcm_AISkills_West_reloadSpeed = 0.4;
-Vcm_AISkills_West_spotDistance = 0.4;
-Vcm_AISkills_West_spotTime = 0.4;
+force force Vcm_AISkills_West_AimingAccuracy = 0.3;
+force force Vcm_AISkills_West_aimingShake = 0.3;
+force force Vcm_AISkills_West_aimingSpeed = 0.3;
+force force Vcm_AISkills_West_commanding = 0.5;
+force force Vcm_AISkills_West_courage = 0.5;
+force force Vcm_AISkills_West_general = 0.5;
+force force Vcm_AISkills_West_reloadSpeed = 0.4;
+force force Vcm_AISkills_West_spotDistance = 0.4;
+force force Vcm_AISkills_West_spotTime = 0.4;
 
 // VCOM SETTINGS
 force force VCM_ActivateAI = true;
