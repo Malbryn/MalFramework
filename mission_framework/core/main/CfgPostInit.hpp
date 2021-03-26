@@ -32,10 +32,6 @@ class GVARMAIN(Briefing) {
     init = PATH_POST(briefing);
 };
 
-class GVARMAIN(ChatCommands) {
-    init = PATH_POST(chat_commands);
-};
-
 class GVARMAIN(Common) {
     init = PATH_POST(common);
 };

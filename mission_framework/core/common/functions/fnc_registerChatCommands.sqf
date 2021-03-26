@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_chat_commands_fnc_registerChatCommands
+        call MF_common_fnc_registerChatCommands
 
     Returns:
         void
