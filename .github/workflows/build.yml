@@ -1,0 +1,59 @@
+name: Build
+
+on:
+    push:
+        branches:
+            - master
+        paths-ignore:
+            - "VERSION"
+            - "README.md"
+            - ".github/**"
+
+jobs:
+    bump-version:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout the source code
+              uses: actions/checkout@v2
+
+            - name: Bump version
+              uses: remorses/bump-version@js
+              with:
+                version_file: VERSION
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    create-artifact:
+        runs-on: ubuntu-latest
+        needs: bump-version
+        steps:
+            - name: Checkout the source code
+              uses: actions/checkout@master
+
+            - name: Get version
+              id: get-version
+              run: echo "::set-output name=version::$(cat VERSION)"
+
+            - name: Upload artifact
+              uses: actions/upload-artifact@v2
+              with:
+                name: MalFramework_v${{ steps.get-version.outputs.version }}
+                path: |
+                    mission_framework/
+                    LICENCE
+                    README.md
+                    VERSION
+                    cba_settings.sqf
+                    description.ext
+
+    draft-release:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout the source code
+              uses: actions/checkout@v2
+
+            - name: Release Drafter
+              uses: release-drafter/release-drafter@v5
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
