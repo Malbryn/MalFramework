@@ -28,21 +28,3 @@ jobs:
             - name: Lint (sqflint)
               uses: arma-actions/sqflint@master
               continue-on-error: true # No failure due to many false-positives
-
-    build:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout the source code
-              uses: actions/checkout@master
-
-            - name: Pack files
-              uses: thedoctor0/zip-release@master
-              with:
-                  filename: "MalFramework_${{ github.sha }}.zip"
-                  exclusions: "*.git* /tools/* .editorconfig .gitignore"
-
-            - name: Upload artifact
-              uses: actions/upload-artifact@v2
-              with:
-                  name: MalFramework_${{ github.sha }}
-                  path: MalFramework_*
