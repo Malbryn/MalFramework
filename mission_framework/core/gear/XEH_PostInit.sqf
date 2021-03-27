@@ -1,14 +1,14 @@
 #include "script_component.hpp"
 
-// Add arsenal EH's if enabled that overwrite the pre-defined gear
+// Add arsenal EH's that overwrite the pre-defined gear (if it's enabled)
 if (hasInterface && GVAR(saveGearInArsenal)) then {
     ["ace_arsenal_displayClosed", {
         GVAR(customLoadout) = getUnitLoadout player;
         SETVAR(player,GVAR(currentLoadout),"CUSTOM");
-    }] call CBA_fnc_addEventHandler;
+    }] call CFUNC(addEventHandler);
 
     [missionNamespace, "ArsenalClosed", {
         GVAR(customLoadout) = getUnitLoadout player;
         SETVAR(player,GVAR(currentLoadout),"CUSTOM");
-    }] call BIS_fnc_addScriptedEventHandler;
+    }] call BFUNC(addScriptedEventHandler);
 };
