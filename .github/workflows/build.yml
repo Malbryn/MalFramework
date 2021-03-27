@@ -19,9 +19,9 @@ jobs:
             - name: Bump version
               uses: remorses/bump-version@js
               with:
-                version_file: VERSION
+                  version_file: VERSION
               env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     create-artifact:
         runs-on: ubuntu-latest
@@ -30,7 +30,7 @@ jobs:
             - name: Checkout the source code
               uses: actions/checkout@master
               with:
-                fetch-depth: 0
+                  ref: master
 
             - name: Get version
               id: get-version
@@ -39,14 +39,14 @@ jobs:
             - name: Upload artifact
               uses: actions/upload-artifact@v2
               with:
-                name: MalFramework_v${{ steps.get-version.outputs.version }}
-                path: |
-                    mission_framework/
-                    LICENCE
-                    README.md
-                    VERSION
-                    cba_settings.sqf
-                    description.ext
+                  name: MalFramework_v${{ steps.get-version.outputs.version }}
+                  path: |
+                      mission_framework/
+                      LICENCE
+                      README.md
+                      VERSION
+                      cba_settings.sqf
+                      description.ext
 
     draft-release:
         runs-on: ubuntu-latest
@@ -57,5 +57,4 @@ jobs:
             - name: Release Drafter
               uses: release-drafter/release-drafter@v5
               env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
