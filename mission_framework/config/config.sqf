@@ -112,6 +112,10 @@ EGVAR(custom_channel,channelName) = "JTAC channel";  // Name of the channel
 EGVAR(custom_channel,channelColour) = [0.8, 0, 0.5, 1];  // Colour of the channel (RGBA format, default: FK pink)
 
 
+// Gear
+EGVAR(gear,saveGearInArsenal) = true;  // Should the player's gear be saved if an arsenal is available (Coop & TvT)
+
+
 // Grass cutter
 GVARMAIN(moduleGrassCutter) = true;  // Coop & TvT
 
