@@ -28,5 +28,5 @@ private _bar = (findDisplay 899) displayCtrl 808;
 _bar progressSetPosition (_tick / SKIPTIME);
 
 // Update text
-private _text = format ["Proceeding in %1 seconds...", floor (SKIPTIME - _tick)];
+private _text = format ["Proceeding in %1 seconds...", round (SKIPTIME - _tick)];
 ctrlSetText [809, _text];

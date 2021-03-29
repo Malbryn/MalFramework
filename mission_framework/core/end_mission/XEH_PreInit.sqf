@@ -9,6 +9,8 @@ PREP_RECOMPILE_END;
 ADDON = true;
 
 // Init global vars
+GVAR(civilianKills) = [];
 GVAR(endTitle) = "";
 GVAR(endDescription) = "";
+GVAR(friendlyFires) = [];
 GVAR(isWin) = true;

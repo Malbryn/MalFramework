@@ -29,6 +29,6 @@ GVAR(countdown) = [{
         [_tick] call FUNC(updateProgressBar);
     } else {
         [this#1] call CFUNC(removePerFrameHandler);
-        //endMission "";
+        endMission "MissionSuccess";
     };
 }, 0, _initTime] call CFUNC(addPerFrameHandler);
