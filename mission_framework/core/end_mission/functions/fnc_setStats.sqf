@@ -42,9 +42,9 @@ if (GVARMAIN(moduleTimeLimit)) then {
 };
 
 // Kill count
-private _killCount = EGVAR(mission_stats,killCount); // TODO: merge modules
+private _killCount = GVAR(killCount);
 ctrlSetText [806, str _killCount];
 
 // Death count
-private _deathCount = EGVAR(mission_stats,deathCount); // TODO: merge modules
+private _deathCount = GVAR(deathCount);
 ctrlSetText [807, str _deathCount];

@@ -45,9 +45,6 @@ onPauseScript[] = {QEFUNC(admin,onPause)};
 // Debriefing config
 #include "mission_framework\core\main\CfgDebriefing.hpp"
 
-// Debriefing sections config
-#include "mission_framework\core\main\CfgDebriefingSections.hpp"
-
 // Notifications config
 #include "mission_framework\core\main\CfgNotifications.hpp"
 
