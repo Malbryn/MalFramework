@@ -21,15 +21,17 @@ if !(hasInterface) exitWith {};
 
 [{!isNull findDisplay 899}, {
     // TODO: CANCEL PENDING TASKS
-    
+
     // Start countdown progress bar
     // TODO
 
-    // Get the task list
+    // Update listboxes
     call FUNC(updateTaskList);
 
-    // Set mission title
+    // Set text
     call FUNC(setMissionTitle);
+    call FUNC(setDebriefingText);
+    call FUNC(setPlayerInfo);
 
     // Block ESC key
     //GVAR(escKeyBlock) = (findDisplay 899) displayAddEventHandler ["KeyDown", "if (((_this select 1) == 1)) then {true};"];

@@ -22,6 +22,8 @@ if !(hasInterface) exitWith {};
 // Exit if the dialog is not visible
 if (isNull findDisplay 899) exitWith {};
 
+disableSerialization;
+
 private _taskList = player call BFUNC(tasksUnit);
 private _ctrl = (findDisplay 899) displayCtrl 810;
 
@@ -50,7 +52,7 @@ _taskList apply {
         default {"taskCreated_ca"};
     };
 
-    lbSetPicture [810, _index, format ["A3\ui_f\data\Map\Diary\Icons\%1.paa", _stateIcon]];
-    lbSetPictureColor [810, _index, [0.902, 0.902, 0.902, 1]];
-    lbSetPictureColorSelected [810, _index, [0.902, 0.902, 0.902, 1]];
+    _ctrl lbSetPicture [_index, format ["A3\ui_f\data\Map\Diary\Icons\%1.paa", _stateIcon]];
+    _ctrl lbSetPictureColor [_index, [0.902, 0.902, 0.902, 1]];
+    _ctrl lbSetPictureColorSelected [_index, [0.902, 0.902, 0.902, 1]];
 };
