@@ -47,11 +47,7 @@ if (isNull findDisplay 799) exitWith {};
         private _groupName = groupId (group _unit);
 
         // Get unit description
-        private _unitDesc = roleDescription _unit;
-        if (_unitDesc find "@" != -1) then { // Remove CBA group names in lobby
-            _unitDescRaw = _unitDesc splitString "@";
-            _unitDesc = _unitDescRaw select 0;
-        };
+        private _unitDesc = [_unit] call EFUNC(common,getUnitDescription);
 
         // Get unit's status
         private _unitStatus = ["Dead", "Alive"] select alive _unit;

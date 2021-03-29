@@ -2,6 +2,7 @@ PREP(deleteMarkerSide);
 PREP(eventHandleDisconnect);
 PREP(getSystemTime);
 PREP(getTimeStamp);
+PREP(getUnitDescription);
 PREP(initACESpectator);
 PREP(initCTF);
 PREP(isInside);

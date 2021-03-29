@@ -114,8 +114,8 @@ class MF_EndScreen
             y = safeZoneY + safeZoneH * 0.32222223;
             w = safeZoneW * 0.3375;
             h = safeZoneH * 0.03666667;
-            style = 2+192;
-            text = "Mission Success";
+            style = 2;
+            text = "ENDING";
             colorBackground[] = {0.102,0.102,0.102,1};
             colorText[] = {0,1,0,1};
             font = "PuristaSemiBold";
@@ -390,11 +390,11 @@ class MF_EndScreen
             w = safeZoneW * 0.2875;
             h = safeZoneH * 0.03666667;
             style = 2;
-            text = "Player - Role";
+            text = "Player [Role - Squad]";
             colorBackground[] = {0.102,0.102,0.102,1};
             colorText[] = {0.1294,0.4549,0.6118,1};
             font = "PuristaSemiBold";
-            sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.1);
+            sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
         };
     };
 };
