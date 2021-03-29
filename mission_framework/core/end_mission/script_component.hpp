@@ -10,3 +10,5 @@
 #endif
 
 #include "..\main\script_macros.hpp"
+
+#define SKIPTIME 20

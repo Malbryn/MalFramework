@@ -23,12 +23,12 @@ if !(hasInterface) exitWith {};
     // TODO: CANCEL PENDING TASKS
 
     // Start countdown progress bar
-    // TODO
+    call FUNC(startCountdown);
 
-    // Update listboxes
+    // Update list boxe
     call FUNC(updateTaskList);
 
-    // Set text
+    // Set text boxes
     call FUNC(setMissionTitle);
     call FUNC(setDebriefingText);
     call FUNC(setPlayerInfo);
