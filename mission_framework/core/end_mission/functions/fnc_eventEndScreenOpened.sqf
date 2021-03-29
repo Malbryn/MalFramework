@@ -25,13 +25,17 @@ if !(hasInterface) exitWith {};
     // Start countdown progress bar
     call FUNC(startCountdown);
 
-    // Update list boxe
+    // Update list boxes
     call FUNC(updateTaskList);
+    // TODO: kill feed
+    call FUNC(updateFriendlyFires);
+    call FUNC(updateCivilianKills);
 
     // Set text boxes
     call FUNC(setMissionTitle);
     call FUNC(setDebriefingText);
     call FUNC(setPlayerInfo);
+    call FUNC(setStats);
 
     // Block ESC key
     //GVAR(escKeyBlock) = (findDisplay 899) displayAddEventHandler ["KeyDown", "if (((_this select 1) == 1)) then {true};"];

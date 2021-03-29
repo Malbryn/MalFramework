@@ -182,12 +182,13 @@ class MF_EndScreen
             style = 16;
             colorBackground[] = {0.2,0.2,0.2,1};
             colorDisabled[] = {0.2,0.2,0.2,1};
-            colorSelect[] = {0.1294,0.4549,0.6118,1};
+            colorSelect[] = {0.902,0.902,0.902,1};
             colorText[] = {0.902,0.902,0.902,1};
+            colorSelectBackground[] = {0.2,0.2,0.2,1};
             font = "PuristaMedium";
             maxHistoryDelay = 0;
             rowHeight = 0;
-            sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.9);
+            sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
             soundSelect[] = {"\A3\ui_f\data\sound\RscListbox\soundSelect",0.09,1.0};
             class ListScrollBar
             {
@@ -226,12 +227,13 @@ class MF_EndScreen
             style = 16;
             colorBackground[] = {0.2,0.2,0.2,1};
             colorDisabled[] = {0.2,0.2,0.2,1};
-            colorSelect[] = {0.1294,0.4549,0.6118,1};
+            colorSelect[] = {0.902,0.902,0.902,1};
             colorText[] = {0.902,0.902,0.902,1};
+            colorSelectBackground[] = {0.2,0.2,0.2,1};
             font = "PuristaMedium";
             maxHistoryDelay = 0;
             rowHeight = 0;
-            sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.9);
+            sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
             soundSelect[] = {"\A3\ui_f\data\sound\RscListbox\soundSelect",0.09,1.0};
             class ListScrollBar
             {

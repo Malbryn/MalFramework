@@ -1,5 +1,9 @@
 #include "script_component.hpp"
 
+if (isServer) then {
+    call FUNC(eventEntityKilled);
+};
+
 [QGVARMAIN(callMission), {
     params ["_ending", "_isVictory", ["_side", sideUnknown]];
 
