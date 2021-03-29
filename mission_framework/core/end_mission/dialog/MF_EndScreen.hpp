@@ -23,7 +23,7 @@ class MF_EndScreen
             colorText[] = {0.749,0.5098,0.9686,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-            onLoad = "call MF_end_screen_fnc_eventEndScreenOpened";
+            onLoad = "call MF_end_mission_fnc_eventEndScreenOpened";
         };
     };
     
@@ -72,8 +72,9 @@ class MF_EndScreen
             style = 16;
             colorBackground[] = {0.2,0.2,0.2,1};
             colorDisabled[] = {0.2,0.2,0.2,1};
-            colorSelect[] = {0.1294,0.4549,0.6118,1};
+            colorSelect[] = {0.902,0.902,0.902,1};
             colorText[] = {0.902,0.902,0.902,1};
+            colorSelectBackground[] = {0.2,0.2,0.2,1};
             font = "PuristaMedium";
             maxHistoryDelay = 0;
             rowHeight = 0;
