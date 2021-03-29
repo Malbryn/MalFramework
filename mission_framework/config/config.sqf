@@ -149,10 +149,6 @@ GVARMAIN(moduleKillcam) = true;  // Coop & TvT
 GVARMAIN(moduleLogistics) = true;  // Coop & TvT
 
 
-// Kill tracker
-GVARMAIN(moduleKillTracker) = true;  // Coop & TvT
-
-
 // LOS Tool
 GVARMAIN(moduleLOSTool) = true;  // Coop & TvT
 

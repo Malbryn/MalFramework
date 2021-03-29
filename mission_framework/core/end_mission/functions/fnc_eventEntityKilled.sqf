@@ -24,7 +24,7 @@ if (GVARMAIN(isTvT)) then {
         params ["_unit", "_killer", "_triggerMan"];
 
         if (side group _unit == civilian) then {
-            private _killerSide = "":
+            private _killerSide = "";
 
             switch (side _killer) do {
                 case west : {

@@ -112,10 +112,6 @@ class GVARMAIN(MarkerSide) {
     init = PATH_POST(marker_side);
 };
 
-class GVARMAIN(MissionStats) {
-    init = PATH_POST(mission_stats);
-};
-
 class GVARMAIN(Mortar) {
     init = PATH_POST(mortar);
 };
