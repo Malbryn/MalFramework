@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Ends the mission on the server and on every client.
+        Calls the mission end on the server, then it ends the mission globally.
 
     Arguments:
         0: STRING - Class name of the ending (defined in CfgDebriefing)
@@ -23,26 +23,11 @@ if !(isServer) exitWith {};
 
 params ["_ending", "_isVictory", ["_side", sideUnknown]];
 
-// Save end mission stats
-call EFUNC(mission_stats,saveMissionTime);
-call EFUNC(mission_stats,saveFriendlyFires);
-call EFUNC(mission_stats,saveCivilianKills);
-
 // Stop the end condition check
 [EGVAR(end_conditions,endConditionCheck)] call CFUNC(removePerFrameHandler);
 
-// If dedicated, end the mission on the server as well
-if (isDedicated) then {
-    [QGVARMAIN(missionEnd), [_ending, true, _side]] call CFUNC(localEvent);
-    [QGVARMAIN(missionEnd), [_ending, _isVictory, _side], allPlayers] call CFUNC(targetEvent);
-} else {
-    [QGVARMAIN(missionEnd), [_ending, _isVictory, _side]] call CFUNC(localEvent);
-};
-
-// Disable damage
-if (GVARMAIN(moduleDisableDamage)) then {
-    [QGVARMAIN(damageDisabled), []] call CFUNC(globalEvent);
-};
+// Run the end screen globally
+[QGVAR(runOutro), [_ending, true, _side]] call CFUNC(globalEvent);
 
 // Logging
 private _time = [CBA_missionTime] call BFUNC(secondsToString);

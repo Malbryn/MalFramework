@@ -37,9 +37,9 @@ _taskList apply {
     private _type = _x call BFUNC(taskType);
     private _typeIcon = getText (configfile >> "CfgTaskTypes" >> _type >> "icon");
 
-    _ctrl lbSetPictureRight [_index, _typeIcon];
-    _ctrl lbSetPictureRightColor [_index, [0.902, 0.902, 0.902, 1]];
-    _ctrl lbSetPictureRightColorSelected [_index, [0.902, 0.902, 0.902, 1]];
+    _ctrl lbSetPicture [_index, _typeIcon];
+    _ctrl lbSetPictureColor [_index, [0.902, 0.902, 0.902, 1]];
+    _ctrl lbSetPictureColorSelected [_index, [0.902, 0.902, 0.902, 1]];
 
     // Get task state icon
     private _state = _x call BFUNC(taskState);
@@ -52,7 +52,7 @@ _taskList apply {
         default {"taskCreated_ca"};
     };
 
-    _ctrl lbSetPicture [_index, format ["A3\ui_f\data\Map\Diary\Icons\%1.paa", _stateIcon]];
-    _ctrl lbSetPictureColor [_index, [0.902, 0.902, 0.902, 1]];
-    _ctrl lbSetPictureColorSelected [_index, [0.902, 0.902, 0.902, 1]];
+    _ctrl lbSetPictureRight [_index, format ["A3\ui_f\data\Map\Diary\Icons\%1.paa", _stateIcon]];
+    _ctrl lbSetPictureRightColor [_index, [0.902, 0.902, 0.902, 1]];
+    _ctrl lbSetPictureRightColorSelected [_index, [0.902, 0.902, 0.902, 1]];
 };

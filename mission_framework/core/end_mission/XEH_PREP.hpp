@@ -1,7 +1,9 @@
 PREP(callMission);
+PREP(endMission);
 PREP(eventEndScreenOpened);
 PREP(eventEntityKilled);
 PREP(initKillTracker);
+PREP(runClosingShot);
 PREP(setDebriefingText);
 PREP(setMissionTitle);
 PREP(setPlayerInfo);

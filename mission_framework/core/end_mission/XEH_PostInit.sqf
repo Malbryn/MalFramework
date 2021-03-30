@@ -4,21 +4,25 @@ if (isServer) then {
     call FUNC(eventEntityKilled);
 };
 
-// Mission end events
-[QGVARMAIN(callMission), {
+// Mission end call event
+[QGVAR(callMission), {
     params ["_ending", "_isVictory", ["_side", sideUnknown]];
 
     [_ending, _isVictory, _side] call FUNC(callMission);
 }] call CFUNC(addEventHandler);
 
-[QGVARMAIN(missionEnd), {
+// Outro event
+[QGVAR(runOutro), {
     params ["_ending", "_isVictory", ["_side", sideUnknown]];
 
-    if (_side == playerSide || _side == sideUnknown) then {
-        [_ending, _isVictory, true, true, true] call BFUNC(endMission);
-    } else {
-        [_ending, !_isVictory, true, true, true] call BFUNC(endMission);
-    };
+    [_ending, _isVictory, _side] call FUNC(endMission);
+}] call CFUNC(addEventHandler);
+
+// Mission end event
+[QGVAR(endMission), {
+    params ["_ending"];
+
+    endMission _ending;
 }] call CFUNC(addEventHandler);
 
 // Init kill tracker
