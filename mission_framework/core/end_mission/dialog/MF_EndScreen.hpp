@@ -13,10 +13,10 @@ class MF_EndScreen
         {
             type = 0;
             idc = 0;
-			x = safeZoneX + safeZoneW * 0.03375;
-			y = safeZoneY + safeZoneH * 0.12666667;
-			w = safeZoneW * 0.9325;
-			h = safeZoneH * 0.74555556;
+            x = safeZoneX + safeZoneW * 0.03375;
+            y = safeZoneY + safeZoneH * 0.12666667;
+            w = safeZoneW * 0.9325;
+            h = safeZoneH * 0.74555556;
             style = 0;
             text = "";
             colorBackground[] = {0.102,0.102,0.102,1};
@@ -33,10 +33,10 @@ class MF_EndScreen
         {
             type = 0;
             idc = 801;
-			x = safeZoneX + safeZoneW * 0.34375;
-			y = safeZoneY + safeZoneH * 0.16555556;
-			w = safeZoneW * 0.3375;
-			h = safeZoneH * 0.03666667;
+            x = safeZoneX + safeZoneW * 0.34375;
+            y = safeZoneY + safeZoneH * 0.16555556;
+            w = safeZoneW * 0.3375;
+            h = safeZoneH * 0.03666667;
             style = 2;
             text = "CO99_Operation_Placeholder (by Placeholder)";
             colorBackground[] = {0.102,0.102,0.102,1};
@@ -49,10 +49,10 @@ class MF_EndScreen
         {
             type = 0;
             idc = -1;
-			x = safeZoneX + safeZoneW * 0.04875;
-			y = safeZoneY + safeZoneH * 0.22444445;
-			w = safeZoneW * 0.1125;
-			h = safeZoneH * 0.03666667;
+            x = safeZoneX + safeZoneW * 0.04875;
+            y = safeZoneY + safeZoneH * 0.22444445;
+            w = safeZoneW * 0.1125;
+            h = safeZoneH * 0.03666667;
             style = 0;
             text = "Objectives";
             colorBackground[] = {0.102,0.102,0.102,1};
@@ -65,10 +65,10 @@ class MF_EndScreen
         {
             type = 5;
             idc = 810;
-			x = safeZoneX + safeZoneW * 0.04875;
-			y = safeZoneY + safeZoneH * 0.27333334;
-			w = safeZoneW * 0.2825;
-			h = safeZoneH * 0.22333334;
+            x = safeZoneX + safeZoneW * 0.04875;
+            y = safeZoneY + safeZoneH * 0.27333334;
+            w = safeZoneW * 0.2825;
+            h = safeZoneH * 0.22333334;
             style = 16;
             colorBackground[] = {0.2,0.2,0.2,1};
             colorDisabled[] = {0.2,0.2,0.2,1};
@@ -94,10 +94,10 @@ class MF_EndScreen
         {
             type = 0;
             idc = -1;
-			x = safeZoneX + safeZoneW * 0.36875;
-			y = safeZoneY + safeZoneH * 0.59666667;
-			w = safeZoneW * 0.1375;
-			h = safeZoneH * 0.03666667;
+            x = safeZoneX + safeZoneW * 0.36875;
+            y = safeZoneY + safeZoneH * 0.59666667;
+            w = safeZoneW * 0.1375;
+            h = safeZoneH * 0.03666667;
             style = 0;
             text = "Mission time:";
             colorBackground[] = {0.102,0.102,0.102,1};
@@ -110,10 +110,10 @@ class MF_EndScreen
         {
             type = 0;
             idc = 802;
-			x = safeZoneX + safeZoneW * 0.34375;
-			y = safeZoneY + safeZoneH * 0.27333334;
-			w = safeZoneW * 0.3375;
-			h = safeZoneH * 0.03666667;
+            x = safeZoneX + safeZoneW * 0.34375;
+            y = safeZoneY + safeZoneH * 0.27333334;
+            w = safeZoneW * 0.3375;
+            h = safeZoneH * 0.03666667;
             style = 2;
             text = "ENDING";
             colorBackground[] = {0.102,0.102,0.102,1};
@@ -126,10 +126,10 @@ class MF_EndScreen
         {
             type = 0;
             idc = 803;
-			x = safeZoneX + safeZoneW * 0.35875;
-			y = safeZoneY + safeZoneH * 0.33777778;
-			w = safeZoneW * 0.3075;
-			h = safeZoneH * 0.14333334;
+            x = safeZoneX + safeZoneW * 0.35875;
+            y = safeZoneY + safeZoneH * 0.33777778;
+            w = safeZoneW * 0.3075;
+            h = safeZoneH * 0.14333334;
             style = 16;
             text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque neque mauris, lacinia eu nisl non, venenatis maximus ex. Phasellus congue ullamcorper eros in eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
             colorBackground[] = {0.102,0.102,0.102,1};
@@ -143,10 +143,10 @@ class MF_EndScreen
         {
             type = 0;
             idc = 805;
-			x = safeZoneX + safeZoneW * 0.51875;
-			y = safeZoneY + safeZoneH * 0.59666667;
-			w = safeZoneW * 0.1375;
-			h = safeZoneH * 0.03666667;
+            x = safeZoneX + safeZoneW * 0.51875;
+            y = safeZoneY + safeZoneH * 0.59666667;
+            w = safeZoneW * 0.1375;
+            h = safeZoneH * 0.03666667;
             style = 1;
             text = "00:00:00 / 00:00:00";
             colorBackground[] = {0.102,0.102,0.102,1};
@@ -159,10 +159,10 @@ class MF_EndScreen
         {
             type = 0;
             idc = -1;
-			x = safeZoneX + safeZoneW * 0.69375;
-			y = safeZoneY + safeZoneH * 0.51777778;
-			w = safeZoneW * 0.1125;
-			h = safeZoneH * 0.03666667;
+            x = safeZoneX + safeZoneW * 0.69375;
+            y = safeZoneY + safeZoneH * 0.51777778;
+            w = safeZoneW * 0.1125;
+            h = safeZoneH * 0.03666667;
             style = 0;
             text = "Civilian kills";
             colorBackground[] = {0.102,0.102,0.102,1};
@@ -175,10 +175,10 @@ class MF_EndScreen
         {
             type = 5;
             idc = 813;
-			x = safeZoneX + safeZoneW * 0.69375;
-			y = safeZoneY + safeZoneH * 0.56666667;
-			w = safeZoneW * 0.2575;
-			h = safeZoneH * 0.22333334;
+            x = safeZoneX + safeZoneW * 0.69375;
+            y = safeZoneY + safeZoneH * 0.56666667;
+            w = safeZoneW * 0.2575;
+            h = safeZoneH * 0.22333334;
             style = 16;
             colorBackground[] = {0.2,0.2,0.2,1};
             colorDisabled[] = {0.2,0.2,0.2,1};
@@ -204,10 +204,10 @@ class MF_EndScreen
         {
             type = 0;
             idc = -1;
-			x = safeZoneX + safeZoneW * 0.69375;
-			y = safeZoneY + safeZoneH * 0.22444445;
-			w = safeZoneW * 0.1375;
-			h = safeZoneH * 0.03666667;
+            x = safeZoneX + safeZoneW * 0.69375;
+            y = safeZoneY + safeZoneH * 0.22444445;
+            w = safeZoneW * 0.1375;
+            h = safeZoneH * 0.03666667;
             style = 0;
             text = "Friendly fires";
             colorBackground[] = {0.102,0.102,0.102,1};
@@ -220,10 +220,10 @@ class MF_EndScreen
         {
             type = 5;
             idc = 812;
-			x = safeZoneX + safeZoneW * 0.69375;
-			y = safeZoneY + safeZoneH * 0.27333334;
-			w = safeZoneW * 0.2575;
-			h = safeZoneH * 0.22333334;
+            x = safeZoneX + safeZoneW * 0.69375;
+            y = safeZoneY + safeZoneH * 0.27333334;
+            w = safeZoneW * 0.2575;
+            h = safeZoneH * 0.22333334;
             style = 16;
             colorBackground[] = {0.2,0.2,0.2,1};
             colorDisabled[] = {0.2,0.2,0.2,1};
@@ -249,10 +249,10 @@ class MF_EndScreen
         {
             type = 8;
             idc = 808;
-			x = safeZoneX + safeZoneW * 0.34375;
-			y = safeZoneY + safeZoneH * 0.76111112;
-			w = safeZoneW * 0.3375;
-			h = safeZoneH * 0.03111112;
+            x = safeZoneX + safeZoneW * 0.34375;
+            y = safeZoneY + safeZoneH * 0.76111112;
+            w = safeZoneW * 0.3375;
+            h = safeZoneH * 0.03111112;
             style = 0;
             colorBar[] = {0.1294,0.4549,0.6118,1};
             colorFrame[] = {0.6,0.6,0.6,1};
@@ -263,10 +263,10 @@ class MF_EndScreen
         {
             type = 0;
             idc = 809;
-			x = safeZoneX + safeZoneW * 0.420625;
-			y = safeZoneY + safeZoneH * 0.76111112;
-			w = safeZoneW * 0.1625;
-			h = safeZoneH * 0.03;
+            x = safeZoneX + safeZoneW * 0.420625;
+            y = safeZoneY + safeZoneH * 0.76111112;
+            w = safeZoneW * 0.1625;
+            h = safeZoneH * 0.03;
             style = 2;
             text = "Proceeding in 10 seconds";
             colorBackground[] = {0.8157,0.1647,0.3529,0};
@@ -279,10 +279,10 @@ class MF_EndScreen
         {
             type = 0;
             idc = -1;
-			x = safeZoneX + safeZoneW * 0.36875;
-			y = safeZoneY + safeZoneH * 0.64555556;
-			w = safeZoneW * 0.1375;
-			h = safeZoneH * 0.03666667;
+            x = safeZoneX + safeZoneW * 0.36875;
+            y = safeZoneY + safeZoneH * 0.64555556;
+            w = safeZoneW * 0.1375;
+            h = safeZoneH * 0.03666667;
             style = 0;
             text = "Kills:";
             colorBackground[] = {0.102,0.102,0.102,1};
@@ -295,10 +295,10 @@ class MF_EndScreen
         {
             type = 0;
             idc = -1;
-			x = safeZoneX + safeZoneW * 0.36875;
-			y = safeZoneY + safeZoneH * 0.69444445;
-			w = safeZoneW * 0.1375;
-			h = safeZoneH * 0.03666667;
+            x = safeZoneX + safeZoneW * 0.36875;
+            y = safeZoneY + safeZoneH * 0.69444445;
+            w = safeZoneW * 0.1375;
+            h = safeZoneH * 0.03666667;
             style = 0;
             text = "Deaths:";
             colorBackground[] = {0.102,0.102,0.102,1};
@@ -311,10 +311,10 @@ class MF_EndScreen
         {
             type = 0;
             idc = 806;
-			x = safeZoneX + safeZoneW * 0.51875;
-			y = safeZoneY + safeZoneH * 0.64555556;
-			w = safeZoneW * 0.1375;
-			h = safeZoneH * 0.03666667;
+            x = safeZoneX + safeZoneW * 0.51875;
+            y = safeZoneY + safeZoneH * 0.64555556;
+            w = safeZoneW * 0.1375;
+            h = safeZoneH * 0.03666667;
             style = 1;
             text = "999";
             colorBackground[] = {0.102,0.102,0.102,1};
@@ -327,10 +327,10 @@ class MF_EndScreen
         {
             type = 0;
             idc = 807;
-			x = safeZoneX + safeZoneW * 0.51875;
-			y = safeZoneY + safeZoneH * 0.69444445;
-			w = safeZoneW * 0.1375;
-			h = safeZoneH * 0.03666667;
+            x = safeZoneX + safeZoneW * 0.51875;
+            y = safeZoneY + safeZoneH * 0.69444445;
+            w = safeZoneW * 0.1375;
+            h = safeZoneH * 0.03666667;
             style = 1;
             text = "999";
             colorBackground[] = {0.102,0.102,0.102,1};
@@ -343,10 +343,10 @@ class MF_EndScreen
         {
             type = 0;
             idc = -1;
-			x = safeZoneX + safeZoneW * 0.04875;
-			y = safeZoneY + safeZoneH * 0.51777778;
-			w = safeZoneW * 0.1125;
-			h = safeZoneH * 0.03666667;
+            x = safeZoneX + safeZoneW * 0.04875;
+            y = safeZoneY + safeZoneH * 0.51777778;
+            w = safeZoneW * 0.1125;
+            h = safeZoneH * 0.03666667;
             style = 0;
             text = "Kill Feed";
             colorBackground[] = {0.102,0.102,0.102,1};
@@ -359,10 +359,10 @@ class MF_EndScreen
         {
             type = 5;
             idc = 811;
-			x = safeZoneX + safeZoneW * 0.04875;
-			y = safeZoneY + safeZoneH * 0.56666667;
-			w = safeZoneW * 0.2825;
-			h = safeZoneH * 0.22333334;
+            x = safeZoneX + safeZoneW * 0.04875;
+            y = safeZoneY + safeZoneH * 0.56666667;
+            w = safeZoneW * 0.2825;
+            h = safeZoneH * 0.22333334;
             style = 16;
             colorBackground[] = {0.2,0.2,0.2,1};
             colorDisabled[] = {0.2,0.2,0.2,1};
@@ -388,10 +388,10 @@ class MF_EndScreen
         {
             type = 0;
             idc = 804;
-			x = safeZoneX + safeZoneW * 0.36875;
-			y = safeZoneY + safeZoneH * 0.52777778;
-			w = safeZoneW * 0.2875;
-			h = safeZoneH * 0.03666667;
+            x = safeZoneX + safeZoneW * 0.36875;
+            y = safeZoneY + safeZoneH * 0.52777778;
+            w = safeZoneW * 0.2875;
+            h = safeZoneH * 0.03666667;
             style = 2;
             text = "Player [Role - Squad]";
             colorBackground[] = {0.102,0.102,0.102,1};
@@ -401,20 +401,20 @@ class MF_EndScreen
         };
 
         class LabelTerrain
-		{
-			type = 0;
-			idc = 814;
-			x = safeZoneX + safeZoneW * 0.34375;
-			y = safeZoneY + safeZoneH * 0.21444445;
-			w = safeZoneW * 0.3375;
-			h = safeZoneH * 0.03666667;
-			style = 2;
-			text = "Terrain";
-			colorBackground[] = {0.102,0.102,0.102,1};
-			colorText[] = {0.949,0.949,0.949,1};
-			font = "PuristaBold";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.85);
-			
-		};
+        {
+            type = 0;
+            idc = 814;
+            x = safeZoneX + safeZoneW * 0.34375;
+            y = safeZoneY + safeZoneH * 0.205;
+            w = safeZoneW * 0.3375;
+            h = safeZoneH * 0.03666667;
+            style = 2;
+            text = "Terrain";
+            colorBackground[] = {0.102,0.102,0.102,1};
+            colorText[] = {0.949,0.949,0.949,1};
+            font = "PuristaBold";
+            sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.85);
+            
+        };
     };
 };
