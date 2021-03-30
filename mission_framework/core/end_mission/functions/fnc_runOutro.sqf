@@ -9,20 +9,19 @@
 
     Arguments:
         0: STRING - Class name of the ending (defined in CfgDebriefing)
-        1: BOOLEAN - Is victory
-        2: SIDE - Which side isVictory refers to (TvT missions)
+        1: BOOLEAN - Success?
 
     Example:
-        ["BluforWin", true, west] call MF_end_mission_fnc_callMission
+        ["BluforWin", true] call MF_end_mission_fnc_runOutro
 
     Returns:
         void
 */
 
-params ["_ending", "_isVictory", ["_side", sideUnknown]];
+params ["_ending", "_isVictory"];
 
 if (isServer) then {
-    // Delay until the end of the closing shot (~14s)
+    // Delay until the end of the closing shot (~13s)
     [{
         // Disable simulation
         {
@@ -31,14 +30,14 @@ if (isServer) then {
 
         // Delay until the end of the end screen (SKIPTIME macro)
         [{
-            [QGVAR(endMission), [_ending]] call CFUNC(globalEvent);
-        }, [], SKIPTIME] call CFUNC(waitAndExecute);
-    }, [], 14] call CFUNC(waitAndExecute);
+            [QGVAR(endMission), [_this#0]] call CFUNC(globalEvent);
+        }, _this, SKIPTIME] call CFUNC(waitAndExecute);
+    }, [_ending], 13] call CFUNC(waitAndExecute);
 };
 
 if (hasInterface) then {
     // Screen effects
-    call FUNC(runClosingShot);
+    [_ending, _isVictory] call FUNC(runClosingShot);
 
     // Cancel pending tasks
     private _taskList = player call BFUNC(tasksUnit);
@@ -47,7 +46,7 @@ if (hasInterface) then {
         private _state = _x call BFUNC(taskState);
 
         if (_state in ["CREATED", "ASSIGNED"]) then {
-            [_taskName, "CANCELED", true] call BFUNC(taskSetState);
+            [_x, "CANCELED", true] call BFUNC(taskSetState);
         };
     };
 };

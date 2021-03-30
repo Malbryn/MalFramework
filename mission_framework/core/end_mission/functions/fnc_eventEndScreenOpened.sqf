@@ -20,8 +20,6 @@
 if !(hasInterface) exitWith {};
 
 [{!isNull findDisplay 899}, {
-    // TODO: CANCEL PENDING TASKS
-
     // Start countdown progress bar
     call FUNC(startCountdown);
 
@@ -38,5 +36,5 @@ if !(hasInterface) exitWith {};
     call FUNC(setStats);
 
     // Block ESC key
-    //GVAR(escKeyBlock) = (findDisplay 899) displayAddEventHandler ["KeyDown", "if (((_this select 1) == 1)) then {true};"];
+    GVAR(escKeyBlock) = (findDisplay 899) displayAddEventHandler ["KeyDown", "if (((_this select 1) == 1)) then {true};"];
 }] call CFUNC(waitUntilAndExecute);

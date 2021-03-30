@@ -21,14 +21,18 @@
 
 if !(isServer) exitWith {};
 
-params ["_ending", "_isVictory", ["_side", sideUnknown]];
+params ["_ending", ["_isVictory", false], ["_side", sideUnknown]];
 
 // Stop the end condition check
 [EGVAR(end_conditions,endConditionCheck)] call CFUNC(removePerFrameHandler);
 
-// Run the end screen globally
-[QGVAR(runOutro), [_ending, true, _side]] call CFUNC(globalEvent);
+// Set vars
+private _title = [missionConfigfile >> "CfgDebriefing" >> _ending, "title", "UNKNOWN"] call BFUNC(returnConfigEntry);
+private _desc = [missionConfigfile >> "CfgDebriefing" >> _ending, "description", "Unknown."] call BFUNC(returnConfigEntry);
 
-// Logging
-private _time = [CBA_missionTime] call BFUNC(secondsToString);
-INFO_3("Ending mission... (Ending: %1 | Victory: %2 | Mission time: %3)",_ending,_isVictory,_time);
+GVAR(endTitle) = toUpper _title;
+GVAR(endDescription) = _desc;
+GVAR(isWin) = _isVictory;
+
+// Run the end screen globally
+[QGVAR(runOutro), [_ending, _isVictory]] call CFUNC(globalEvent);

@@ -25,7 +25,7 @@ params ["_killed", "_killer"];
 if (hasInterface) then {
     // End mission stats
     private _time = [CBA_missionTime] call BFUNC(secondsToString);
-    private _text = format ["%1 - %2 was killed by %3", _time, _killed, _killer];
+    private _text = format ["%1  %2 (by %3)", _time, _killed, _killer];
 
     PUSH(EGVAR(end_mission,friendlyFires),_text);
 

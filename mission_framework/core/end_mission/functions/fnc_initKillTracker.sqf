@@ -26,7 +26,7 @@
 
     // Add it to kill feed
     private _time = [CBA_missionTime] call BFUNC(secondsToString);
-    private _text = format ["%1 - Killed %2 [%3m]", _time, _killed, _distance];
+    private _text = format ["%1  Killed %2 [%3m]", _time, _killed, _distance];
 
     GVAR(killFeed) pushBack [_text, true];
 }] call CFUNC(addEventHandler);
@@ -40,7 +40,7 @@
 
     // Add it to kill feed
     private _time = [CBA_missionTime] call BFUNC(secondsToString);
-    private _text = format ["%1 - Killed by %2 [%3m]", _time, _killer, _distance];
+    private _text = format ["%1  Killed by %2 [%3m]", _time, _killer, _distance];
 
     GVAR(killFeed) pushBack [_text, false];
 }] call CFUNC(addEventHandler);
@@ -73,7 +73,7 @@
 
     // If unit was player then send event to self
     if (_unitIsPlayer) then {
-        _killerName = "yourself";
+        _killerName = "unknown";
 
         if ((!isNull _killer) && {_unit != _killer}) then {
             if (_killerIsPlayer) then {

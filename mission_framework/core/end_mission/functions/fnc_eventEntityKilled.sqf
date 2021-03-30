@@ -44,7 +44,8 @@ if (GVARMAIN(isTvT)) then {
 
             // Log the name of the killer
             private _time = [CBA_missionTime] call BFUNC(secondsToString);
-            private _text = format ["%1 - A civilian was killed by %2%3", _time, name _killer, _killerSide];
+            private _nameCiv = getText (configfile >> "CfgVehicles" >> (typeOf _unit) >> "displayName");
+            private _text = format ["%1  %2 (by %3)%4", _time, _nameCiv, name _killer, _killerSide];
 
             PUSH(GVAR(civilianKills),_text);
             INFO_1("A civilian was killed by %1%2",name _killer,_killerSide);
@@ -60,7 +61,8 @@ if (GVARMAIN(isTvT)) then {
 
             // Log the name of the killer
             private _time = [CBA_missionTime] call BFUNC(secondsToString);
-            private _text = format ["%1 - A civilian was killed by %2", _time, name _killer];
+            private _nameCiv = getText (configfile >> "CfgVehicles" >> (typeOf _unit) >> "displayName");
+            private _text = format ["%1  %2 (by %3)", _time, _nameCiv, name _killer];
 
             PUSH(GVAR(civilianKills),_text);
             INFO_1("A civilian was killed by %1",name _killer);

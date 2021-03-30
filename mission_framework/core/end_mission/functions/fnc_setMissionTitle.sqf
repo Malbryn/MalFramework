@@ -24,3 +24,7 @@ if (isNull findDisplay 899) exitWith {};
 
 private _title = format ["%1 (%2)", briefingName, [missionConfigFile] call BFUNC(overviewAuthor)];
 ctrlSetText [801, _title];
+
+// Terrain name
+private _terrainName = getText (configfile >> "CfgWorlds" >> worldName >> "description");
+ctrlSetText [814, _terrainName];
