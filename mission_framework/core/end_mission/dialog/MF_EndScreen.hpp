@@ -339,7 +339,7 @@ class MF_EndScreen
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
         };
 
-        class LabelKillFeed
+        class LabelKillfeed
         {
             type = 0;
             idc = -1;
@@ -348,14 +348,14 @@ class MF_EndScreen
             w = safeZoneW * 0.1125;
             h = safeZoneH * 0.03666667;
             style = 0;
-            text = "Kill Feed";
+            text = "Killfeed";
             colorBackground[] = {0.102,0.102,0.102,1};
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaSemiBold";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.1);
         };
 
-        class ListboxKillFeed
+        class ListboxKillfeed
         {
             type = 5;
             idc = 811;
@@ -414,7 +414,6 @@ class MF_EndScreen
             colorText[] = {0.949,0.949,0.949,1};
             font = "PuristaBold";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.85);
-            
         };
     };
 };

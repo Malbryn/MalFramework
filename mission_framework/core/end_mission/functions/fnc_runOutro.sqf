@@ -39,6 +39,15 @@ if (hasInterface) then {
     // Screen effects
     [_ending, _isVictory] call FUNC(runClosingShot);
 
+    // Set respawn timer
+    setPlayerRespawnTime 10e10;
+
+    // Disable damage (if setting enabled)
+    if (GVARMAIN(moduleDisableDamage)) then {
+        player allowDamage false;
+        (vehicle player) allowDamage false;
+    };
+
     // Cancel pending tasks
     private _taskList = player call BFUNC(tasksUnit);
 

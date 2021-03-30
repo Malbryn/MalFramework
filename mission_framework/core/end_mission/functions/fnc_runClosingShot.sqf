@@ -63,6 +63,13 @@ private _layerEnd = "BIS_fnc_endMission_end" call BFUNC(rscLayer);
                     2.5 fademusic 0;
 
                     [{
+                        // Close spectator screen
+                        if (!alive player && GVARMAIN(useACESpectator)) then {
+                            (findDisplay 60000) closeDisplay 1;
+                        } else {
+                            ["Terminate"] call BFUNC(EGSpectator);
+                        };
+
                         // Put everyone into spectator channel
                         [player, true] call TFUNC(forceSpectator);
 

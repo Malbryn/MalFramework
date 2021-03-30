@@ -48,10 +48,6 @@ class GVARMAIN(CustomChannel) {
     init = PATH_PRE(custom_channel);
 };
 
-class GVARMAIN(DisableDamage) {
-    init = PATH_PRE(disable_damage);
-};
-
 class GVARMAIN(EndConditions) {
     init = PATH_PRE(end_conditions);
 };
