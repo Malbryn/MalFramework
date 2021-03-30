@@ -1,6 +1,7 @@
 PREP(callMission);
 PREP(eventEndScreenOpened);
 PREP(eventEntityKilled);
+PREP(initKillTracker);
 PREP(setDebriefingText);
 PREP(setMissionTitle);
 PREP(setPlayerInfo);
@@ -8,5 +9,6 @@ PREP(setStats);
 PREP(startCountdown);
 PREP(updateCivilianKills);
 PREP(updateFriendlyFires);
+PREP(updateKillfeed);
 PREP(updateProgressBar);
 PREP(updateTaskList);

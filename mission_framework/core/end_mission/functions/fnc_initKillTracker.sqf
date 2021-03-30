@@ -19,30 +19,44 @@
 
 // Kill event
 [QGVAR(kill), {
-    params ["_killed"];
+    params ["_killed", "_distance"];
 
     // Increment kill counter
     INC(GVAR(killCount));
 
     // Add it to kill feed
-    
+    private _time = [CBA_missionTime] call BFUNC(secondsToString);
+    private _text = format ["%1 - Killed %2 [%3m]", _time, _killed, _distance];
+
+    GVAR(killFeed) pushBack [_text, true];
 }] call CFUNC(addEventHandler);
 
 // Death event
 [QGVAR(death), {
-    params ["_killer"];
+    params ["_killer", "_distance"];
 
     // Increment death counter
     INC(GVAR(deathCount));
+
+    // Add it to kill feed
+    private _time = [CBA_missionTime] call BFUNC(secondsToString);
+    private _text = format ["%1 - Killed by %2 [%3m]", _time, _killer, _distance];
+
+    GVAR(killFeed) pushBack [_text, false];
 }] call CFUNC(addEventHandler);
 
 ["ace_killed", {
     params ["_unit", "_causeOfDeath", "_killer", "_instigator"];
 
+    private _killerName = "";
+
+    // Distance
+    private _distance = round (_killer distance _unit);
+
     if !(isNull _killer) then {
         // If killer is a vehicle, log the vehicle type
         if (!(_killer isKindof "CAManBase")) then {
-            _killInfo pushBack format ["Vehicle: %1", getText (configfile >> "CfgVehicles" >> (typeOf _killer) >> "displayName")];
+            _killerName = getText (configfile >> "CfgVehicles" >> (typeOf _killer) >> "displayName");
         };
 
         if (isNull _instigator) then {
@@ -57,26 +71,19 @@
     // Don't do anything if neither are players
     if (!(_unitIsPlayer || _killerIsPlayer)) exitWith {};
 
-    // Parse info into text
-    _killInfo = if (_killInfo isEqualTo []) then {
-        ""
-    } else {
-        format [" - [%1]", (_killInfo joinString ", ")];
-    };
-
     // If unit was player then send event to self
     if (_unitIsPlayer) then {
-        private _killerName = "Self";
+        _killerName = "yourself";
 
         if ((!isNull _killer) && {_unit != _killer}) then {
             if (_killerIsPlayer) then {
                 _killerName = [_killer, true, false] call AFUNC(common,getName);
             } else {
-                _killerName = format ["*AI* - %1", getText (configfile >> "CfgVehicles" >> (typeOf _killer) >> "displayName")];
+                _killerName = getText (configfile >> "CfgVehicles" >> (typeOf _killer) >> "displayName");
             };
         };
 
-        [QGVAR(death), [_killerName, _killInfo]] call CFUNC(localEvent);
+        [QGVAR(death), [_killerName, _distance]] call CFUNC(localEvent);
     };
 
     // If killer was player then send event to killer
@@ -87,9 +94,9 @@
             // Should be same as profileName
             _unitName = [_unit, true, false] call AFUNC(common,getName);
         } else {
-            _unitName = format ["*AI* - %1", getText (configfile >> "CfgVehicles" >> (typeOf _unit) >> "displayName")];
+            _unitName = getText (configfile >> "CfgVehicles" >> (typeOf _unit) >> "displayName");
         };
 
-        [QGVAR(kill), [_unitName, _killInfo], _killer] call CFUNC(targetEvent);
+        [QGVAR(kill), [_unitName, _distance], _killer] call CFUNC(targetEvent);
     };
 }] call CFUNC(addEventHandler);

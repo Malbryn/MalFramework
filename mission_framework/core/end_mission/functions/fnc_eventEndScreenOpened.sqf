@@ -27,7 +27,7 @@ if !(hasInterface) exitWith {};
 
     // Update list boxes
     call FUNC(updateTaskList);
-    // TODO: kill feed
+    call FUNC(updateKillfeed);
     call FUNC(updateFriendlyFires);
     call FUNC(updateCivilianKills);
 

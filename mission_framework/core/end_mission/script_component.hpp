@@ -11,4 +11,4 @@
 
 #include "..\main\script_macros.hpp"
 
-#define SKIPTIME 20
+#define SKIPTIME 30
