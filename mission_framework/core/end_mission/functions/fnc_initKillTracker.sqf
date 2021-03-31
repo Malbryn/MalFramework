@@ -48,6 +48,9 @@
 ["ace_killed", {
     params ["_unit", "_causeOfDeath", "_killer", "_instigator"];
 
+    // Locality check
+    if !(local _unit) exitWith {};
+
     private _killerName = "";
 
     // Distance

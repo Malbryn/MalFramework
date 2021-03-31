@@ -34,5 +34,12 @@ GVAR(endTitle) = toUpper _title;
 GVAR(endDescription) = _desc;
 GVAR(isWin) = _isVictory;
 
+// Send info to clients
+publicVariable QGVAR(endTitle);
+publicVariable QGVAR(endDescription);
+publicVariable QGVAR(isWin);
+
+publicVariable QGVAR(civilianKills);
+
 // Run the end screen globally
 [QGVAR(runOutro), [_ending, _isVictory]] call CFUNC(globalEvent);
