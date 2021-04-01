@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Ends the mission on the server and on every client.
+        Calls the mission end on the server, then it ends the mission globally.
 
     Arguments:
         0: STRING - Class name of the ending (defined in CfgDebriefing)
@@ -21,29 +21,25 @@
 
 if !(isServer) exitWith {};
 
-params ["_ending", "_isVictory", ["_side", sideUnknown]];
-
-// Save end mission stats
-call EFUNC(mission_stats,saveMissionTime);
-call EFUNC(mission_stats,saveFriendlyFires);
-call EFUNC(mission_stats,saveCivilianKills);
+params ["_ending", ["_isVictory", false], ["_side", sideUnknown]];
 
 // Stop the end condition check
 [EGVAR(end_conditions,endConditionCheck)] call CFUNC(removePerFrameHandler);
 
-// If dedicated, end the mission on the server as well
-if (isDedicated) then {
-    [QGVARMAIN(missionEnd), [_ending, true, _side]] call CFUNC(localEvent);
-    [QGVARMAIN(missionEnd), [_ending, _isVictory, _side], allPlayers] call CFUNC(targetEvent);
-} else {
-    [QGVARMAIN(missionEnd), [_ending, _isVictory, _side]] call CFUNC(localEvent);
-};
+// Set vars
+private _title = [missionConfigfile >> "CfgDebriefing" >> _ending, "title", "UNKNOWN"] call BFUNC(returnConfigEntry);
+private _desc = [missionConfigfile >> "CfgDebriefing" >> _ending, "description", "Unknown."] call BFUNC(returnConfigEntry);
 
-// Disable damage
-if (GVARMAIN(moduleDisableDamage)) then {
-    [QGVARMAIN(damageDisabled), []] call CFUNC(globalEvent);
-};
+GVAR(endTitle) = toUpper _title;
+GVAR(endDescription) = _desc;
+GVAR(isWin) = _isVictory;
 
-// Logging
-private _time = [CBA_missionTime] call BFUNC(secondsToString);
-INFO_3("Ending mission... (Ending: %1 | Victory: %2 | Mission time: %3)",_ending,_isVictory,_time);
+// Send info to clients
+publicVariable QGVAR(endTitle);
+publicVariable QGVAR(endDescription);
+publicVariable QGVAR(isWin);
+
+publicVariable QGVAR(civilianKills);
+
+// Run the end screen globally
+[QGVAR(runOutro), [_ending, _isVictory]] call CFUNC(globalEvent);

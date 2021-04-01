@@ -50,19 +50,19 @@ if (GVARMAIN(moduleTimeLimit) && !_ended) then {
     if (_time > GVAR(timeLimit)) then {
         switch (true) do {
             case (_rate == 1) : {
-                [QGVARMAIN(callMission), ["MissionSuccess", true, playerSide]] call CFUNC(serverEvent);
+                [QEGVAR(end_mission,callMission), ["MissionSuccess", true, playerSide]] call CFUNC(serverEvent);
                 _ended = true;
             };
             case ((GVARMAIN(taskThreshold) * 0.01) <= _rate && _rate < 1) : {
-                [QGVARMAIN(callMission), ["TimeLimitMinorSuccess", true, playerSide]] call CFUNC(serverEvent);
+                [QEGVAR(end_mission,callMission), ["TimeLimitMinorSuccess", true, playerSide]] call CFUNC(serverEvent);
                 _ended = true;
             };
             case (0 < _rate && _rate < GVARMAIN(taskThreshold) * 0.01) : {
-                [QGVARMAIN(callMission), ["TimeLimitMinorFail", false, playerSide]] call CFUNC(serverEvent);
+                [QEGVAR(end_mission,callMission), ["TimeLimitMinorFail", false, playerSide]] call CFUNC(serverEvent);
                 _ended = true;
             };
             case (_rate == 0) : {
-                [QGVARMAIN(callMission), ["MissionFail", false, playerSide]] call CFUNC(serverEvent);
+                [QEGVAR(end_mission,callMission), ["MissionFail", false, playerSide]] call CFUNC(serverEvent);
                 _ended = true;
             };
         };
@@ -75,7 +75,7 @@ if (GVARMAIN(modulePlayerCasualties) && _allPlayers != 0 && !_ended) then {
     private _ratio = _dead / (_allPlayers * 0.01);
 
     if (_ratio >= GVAR(playerCasLimit)) then {
-        [QGVARMAIN(callMission), ["PlayerCasLimit", false]] call CFUNC(localEvent);
+        [QEGVAR(end_mission,callMission), ["PlayerCasLimit", false]] call CFUNC(localEvent);
         _ended = true;
     };
 };
@@ -86,7 +86,7 @@ if (GVARMAIN(moduleCivilianCasualties) && count GVAR(civs) != 0 && !_ended) then
     private _ratio = _dead / (count GVAR(civs) * 0.01);
 
     if (_ratio >= GVAR(civilianCasLimit)) then {
-        [QGVARMAIN(callMission), ["CivCasLimit", false]] call CFUNC(localEvent);
+        [QEGVAR(end_mission,callMission), ["CivCasLimit", false]] call CFUNC(localEvent);
         _ended = true;
     };
 };
@@ -105,7 +105,7 @@ if (GVARMAIN(moduleTaskLimit) && !_ended) then {
     };
 
     if (_count >= GVAR(taskLimit)) then {
-        [QGVARMAIN(callMission), ["MissionSuccess", true]] call CFUNC(localEvent);
+        [QEGVAR(end_mission,callMission), ["MissionSuccess", true]] call CFUNC(localEvent);
         _ended = true;
     };
 };
@@ -121,19 +121,19 @@ if (GVARMAIN(moduleExtraction) && !_ended) then {
     if (_playerCount >= (_allPlayers * GVAR(playerThreshold) * 0.01) && (_allPlayers != 0)) then {
         switch (true) do {
             case (_rate == 1) : {
-                [QGVARMAIN(callMission), ["MissionSuccess", true, playerSide]] call CFUNC(serverEvent);
+                [QEGVAR(end_mission,callMission), ["MissionSuccess", true, playerSide]] call CFUNC(serverEvent);
                 _ended = true;
             };
             case ((GVARMAIN(taskThreshold) * 0.01) <= _rate && _rate < 1) : {
-                [QGVARMAIN(callMission), ["MinorSuccess", true, playerSide]] call CFUNC(serverEvent);
+                [QEGVAR(end_mission,callMission), ["MinorSuccess", true, playerSide]] call CFUNC(serverEvent);
                 _ended = true;
             };
             case (0 < _rate && _rate < GVARMAIN(taskThreshold) * 0.01) : {
-                [QGVARMAIN(callMission), ["MinorFail", false, playerSide]] call CFUNC(serverEvent);
+                [QEGVAR(end_mission,callMission), ["MinorFail", false, playerSide]] call CFUNC(serverEvent);
                 _ended = true;
             };
             case (_rate == 0) : {
-                [QGVARMAIN(callMission), ["MissionFail", false, playerSide]] call CFUNC(serverEvent);
+                [QEGVAR(end_mission,callMission), ["MissionFail", false, playerSide]] call CFUNC(serverEvent);
                 _ended = true;
             };
         };

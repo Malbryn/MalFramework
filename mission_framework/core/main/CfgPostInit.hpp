@@ -48,10 +48,6 @@ class GVARMAIN(CustomChannel) {
     init = PATH_POST(custom_channel);
 };
 
-class GVARMAIN(DisableDamage) {
-    init = PATH_POST(disable_damage);
-};
-
 class GVARMAIN(EndConditions) {
     init = PATH_POST(end_conditions);
 };
@@ -106,10 +102,6 @@ class GVARMAIN(LOSTool) {
 
 class GVARMAIN(MarkerSide) {
     init = PATH_POST(marker_side);
-};
-
-class GVARMAIN(MissionStats) {
-    init = PATH_POST(mission_stats);
 };
 
 class GVARMAIN(Mortar) {
