@@ -46,7 +46,7 @@ jobs:
                       mission_framework/
                       cba_settings.sqf
                       description.ext
-                      LICENCE
+                      LICENSE
                       README.md
 
     draft-release:
