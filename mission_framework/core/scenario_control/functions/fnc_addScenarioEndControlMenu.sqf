@@ -45,23 +45,23 @@ if (GETVAR(player,EGVAR(player,isCO),false)) then {
 
             switch (true) do {
                 case (_rate == 1) : {
-                    [QGVARMAIN(callMission), ["MissionSuccess", true, playerSide]] call CFUNC(serverEvent);
+                    [QEGVAR(end_mission,callMission), ["MissionSuccess", true, playerSide]] call CFUNC(serverEvent);
                 };
                 case ((GVARMAIN(taskThreshold) * 0.01) <= _rate && _rate < 1) : {
-                    [QGVARMAIN(callMission), ["WithdrawalMinorSuccess", true, playerSide]] call CFUNC(serverEvent);
+                    [QEGVAR(end_mission,callMission), ["WithdrawalMinorSuccess", true, playerSide]] call CFUNC(serverEvent);
                 };
                 case (0 < _rate && _rate < (GVARMAIN(taskThreshold) * 0.01)) : {
-                    [QGVARMAIN(callMission), ["WithdrawalMinorFail", false, playerSide]] call CFUNC(serverEvent);
+                    [QEGVAR(end_mission,callMission), ["WithdrawalMinorFail", false, playerSide]] call CFUNC(serverEvent);
                 };
                 case (_rate == 0) : {
-                    [QGVARMAIN(callMission), ["MissionFail", false, playerSide]] call CFUNC(serverEvent);
+                    [QEGVAR(end_mission,callMission), ["MissionFail", false, playerSide]] call CFUNC(serverEvent);
                 };
             };
         } else {
             if (playerSide == west) then {
-                [QGVARMAIN(callMission), ["WithdrawalRedfor", true, east]] call CFUNC(serverEvent);
+                [QEGVAR(end_mission,callMission), ["WithdrawalRedfor", true, east]] call CFUNC(serverEvent);
             } else {
-                [QGVARMAIN(callMission), ["WithdrawalBlufor", true, west]] call CFUNC(serverEvent);
+                [QEGVAR(end_mission,callMission), ["WithdrawalBlufor", true, west]] call CFUNC(serverEvent);
             };
         };
     }, {true}] call AFUNC(interact_menu,createAction);
