@@ -1,5 +1,5 @@
 #define PREFIX MF
-#define VERSION loadFile QUOTE(VERSION);
+#define VERSION loadFile QUOTE(mission_framework/VERSION.sqf);
 
 // DEBUGGING
 #ifndef DEBUG_MODE_NORMAL

@@ -5,7 +5,7 @@ on:
         branches:
             - master
         paths-ignore:
-            - "VERSION"
+            - "mission_framework/VERSION.sqf"
             - "README.md"
             - ".github/**"
 
@@ -19,7 +19,7 @@ jobs:
             - name: Bump version
               uses: remorses/bump-version@js
               with:
-                  version_file: VERSION
+                  version_file: mission_framework/VERSION.sqf
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -34,7 +34,9 @@ jobs:
 
             - name: Get version
               id: get-version
-              run: echo "::set-output name=version::$(cat VERSION)"
+              run: |
+                  cd mission_framework
+                  echo "::set-output name=version::$(cat VERSION.sqf)"
 
             - name: Upload artifact
               uses: actions/upload-artifact@v2
@@ -42,11 +44,10 @@ jobs:
                   name: MalFramework_v${{ steps.get-version.outputs.version }}
                   path: |
                       mission_framework/
-                      LICENCE
-                      README.md
-                      VERSION
                       cba_settings.sqf
                       description.ext
+                      LICENSE
+                      README.md
 
     draft-release:
         runs-on: ubuntu-latest
