@@ -1,4 +1,5 @@
 #define COMPONENT blank
+#define COMPONENT_STR #Blank
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

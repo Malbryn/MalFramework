@@ -8,3 +8,12 @@ PREP_RECOMPILE_START;
 PREP_RECOMPILE_END;
 
 ADDON = true;
+
+// Log events
+[QGVAR(log), {
+    params ["_msg", "_syschatEnabled"];
+
+    [_msg, _syschatEnabled] call FUNC(writeRPT);
+}] call CFUNC(addEventHandler);
+
+[COMPONENT_STR, "DEBUG", "--- DEBUG MODE IS ACTIVE ---", true] call FUNC(log);

@@ -1,4 +1,5 @@
 #define COMPONENT mortar
+#define COMPONENT_STR #Mortar
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

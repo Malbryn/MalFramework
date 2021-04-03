@@ -1,4 +1,5 @@
 #define COMPONENT respawn_tickets
+#define COMPONENT_STR #Respawn tickets
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

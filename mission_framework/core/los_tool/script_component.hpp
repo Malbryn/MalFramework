@@ -1,4 +1,5 @@
 #define COMPONENT los_tool
+#define COMPONENT_STR #LOS Tool
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

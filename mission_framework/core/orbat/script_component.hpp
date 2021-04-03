@@ -1,4 +1,5 @@
 #define COMPONENT orbat
+#define COMPONENT_STR #ORBAT
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

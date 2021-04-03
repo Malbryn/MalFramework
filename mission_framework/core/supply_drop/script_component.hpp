@@ -1,4 +1,5 @@
 #define COMPONENT supply_drop
+#define COMPONENT_STR #Supply drop
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

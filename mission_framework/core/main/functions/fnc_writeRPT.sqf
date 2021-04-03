@@ -12,7 +12,7 @@
         1: BOOLEAN - If the message should be displayed in-game via systemChat
 
     Example:
-        ["Descriptive message", true] call MF_common_fnc_logMessage
+        ["Descriptive message", true] call MF_main_fnc_writeRPT
 
     Returns:
         VOID

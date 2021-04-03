@@ -1,4 +1,5 @@
 #define COMPONENT admin
+#define COMPONENT_STR #Admin
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

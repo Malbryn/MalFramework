@@ -1,4 +1,5 @@
 #define COMPONENT ao_limit
+#define COMPONENT_STR #AO Limit
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

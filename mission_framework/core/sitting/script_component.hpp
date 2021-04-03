@@ -1,4 +1,5 @@
 #define COMPONENT sitting
+#define COMPONENT_STR #Sitting
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

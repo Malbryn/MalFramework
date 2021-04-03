@@ -1,4 +1,5 @@
 #define COMPONENT reinsertion
+#define COMPONENT_STR #Reinsertion
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

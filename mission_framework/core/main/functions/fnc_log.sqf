@@ -18,9 +18,9 @@
             2: Server - log the message on the client where it was called and on the server
 
     Example:
-        [COMPONENT_STR, "INFO", format ["Descriptive message: %1", _value], true, 2] call MF_common_fnc_log
+        [COMPONENT_STR, "INFO", format ["Descriptive message: %1", _value], true, 2] call MF_main_fnc_log
 
-        Output: 19:00:00 [MF] (Common) INFO: Descriptive message: test
+        Output: 19:00:00 [MF] (Main) INFO: Descriptive message: test
 
     Returns:
         VOID

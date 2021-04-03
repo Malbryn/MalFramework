@@ -1,4 +1,5 @@
 #define COMPONENT cover_map
+#define COMPONENT_STR #Cover map
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

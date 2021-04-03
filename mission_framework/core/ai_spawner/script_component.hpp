@@ -1,4 +1,5 @@
 #define COMPONENT ai_spawner
+#define COMPONENT_STR #AI Spawner
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

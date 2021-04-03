@@ -1,4 +1,5 @@
 #define COMPONENT respawn_wave
+#define COMPONENT_STR #Respawn wave
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE
