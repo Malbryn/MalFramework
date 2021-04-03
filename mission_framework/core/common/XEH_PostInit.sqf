@@ -55,3 +55,10 @@ if (hasInterface) then {
 [QGVARMAIN(initFramework), {
     call FUNC(setViewDistance);
 }] call CFUNC(addEventHandler);
+
+// Log events
+[QGVAR(log), {
+    params ["_msg", "_syschatEnabled"];
+
+    [_msg, _syschatEnabled] call FUNC(logMessage);
+}] call CFUNC(addEventHandler);

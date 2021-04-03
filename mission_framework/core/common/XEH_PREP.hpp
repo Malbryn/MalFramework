@@ -6,6 +6,8 @@ PREP(getUnitDescription);
 PREP(initACESpectator);
 PREP(initCTF);
 PREP(isInside);
+PREP(log);
+PREP(logMessage);
 PREP(registerChatCommands);
 PREP(selectTarget);
 PREP(setSideValue);
