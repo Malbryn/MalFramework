@@ -2,7 +2,7 @@
 
 /*
     Author:
-        NeilZar (modified by Malbryn)
+        Malbryn
 
     Description:
         Monitors the server FPS and if it goes below 15, it sends a notification to the game masters.
