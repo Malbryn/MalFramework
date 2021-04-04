@@ -22,7 +22,7 @@ if !(hasInterface) exitWith {};
 params ["_obj"];
 
 if (isNull _obj) exitWith {
-    MSG("ERROR","(Sitting) Chair object does not exist");
+    [COMPONENT_STR, "ERROR", "Chair object does not exist", true] call EFUNC(main,log);
     false
 };
 

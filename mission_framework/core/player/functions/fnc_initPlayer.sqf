@@ -31,8 +31,11 @@
 
 params ["_unit", "_role", ["_traits", 0], ["_aceVars", [false, false, false]], ["_colour", "MAIN"], ["_viewDistance", -1], ["_insignia", ""]];
 
-INFO_6("Initialising unit: [%1] [%2] [%3] [%4] %5 [%6m]",group _unit,name _unit,_role,_traits,_aceVars,_viewDistance);
 // 20:10:11 [MF] (player) INFO: Initialising unit: [B ALPHA 1-1] [Malbryn] [AR] [0] [false, false, false] [1200m]
+[COMPONENT_STR, "INFO", format [
+    "Initialising unit: [%1] [%2] [%3] [%4] %5 [%6m]",
+    group _unit, name _unit, _role, _traits, _aceVars, _viewDistance
+]] call EFUNC(main,log);
 
 // Locality check
 if !(local _unit) exitWith {};

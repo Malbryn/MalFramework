@@ -29,11 +29,11 @@ if (_toggle) then {
     GVAR(fpsEH) = nil;
 
     GVAR(toggleFPS) = false;
-    MSG("INFO","Client FPS display is OFF");
+    [COMPONENT_STR, "INFO", "Client FPS display is OFF", true] call EFUNC(main,log);
 } else {
     [QGVAR(displayFPS), true] call CFUNC(globalEvent);
     GVAR(fpsEH) = addMissionEventHandler ["Draw3D", {call FUNC(drawFPS)}];
 
     GVAR(toggleFPS) = true;
-    MSG("INFO","Client FPS display is ON");
+    [COMPONENT_STR, "INFO", "Client FPS display is ON", true] call EFUNC(main,log);
 };

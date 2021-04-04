@@ -37,7 +37,7 @@ if !(GVAR(aoMarkerRedfor) == "") then {
 };
 
 if (count _ao == 0) exitWith {
-    MSG("WARNING","(AO limit) No AO was defined in the config");
+    [COMPONENT_STR, "ERROR", "AO is not defined in the config", true] call EFUNC(main,log);
 };
 
 _ao apply {

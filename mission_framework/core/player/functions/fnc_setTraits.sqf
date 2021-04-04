@@ -37,6 +37,6 @@ switch (_traits) do {
         SETPVAR(_unit,GVAR(isCO),true);
     };
     default {
-        MSG_2("WARNING","(Player init) Invalid unit trait value (%1) of unit (%2)",_traits,_unit);
+        [COMPONENT_STR, "WARNING", format ["Invalid unit trait value (%1) of unit (%2)", _traits, _unit], true, 2] call EFUNC(main,log);
     };
 };

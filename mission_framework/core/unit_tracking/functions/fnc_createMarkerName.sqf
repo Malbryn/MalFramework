@@ -19,7 +19,9 @@
 
 params [["_unit", objNull, [grpNull, objNull]]];
 
-if (isNull _unit) exitWith {MSG("ERROR", "(Unit tracking) Unable to create unique marker name. The group or object does not exist!")};
+if (isNull _unit) exitWith {
+    [COMPONENT_STR, "ERROR", "The group or object does not exist", true] call EFUNC(main,log);
+};
 
 // Create unique string
 if (_unit isEqualType grpNull) then {

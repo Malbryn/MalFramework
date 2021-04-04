@@ -22,13 +22,12 @@ params ["_unit"];
 private _logic = GETVAR(_unit,GVAR(curatorLogic),objNull);
 
 if (isNull _logic) exitWith {
-    WARNING_2("Curator object does not exist",_unit,_logic);
-    [QGVARMAIN(systemMessage), ["ERROR", "(Admin) Curator object does not exist"], _unit] call CFUNC(targetEvent);
+    [COMPONENT_STR, "ERROR", "Curator object does not exist", true, 3, _unit] call EFUNC(main,log);
 };
 
 unassignCurator _logic;
 
 [{isNull (getAssignedCuratorLogic (_this#0))}, {
     _this#0 assignCurator _this#1;
-    [QGVARMAIN(systemMessage), ["INFO", "(Admin) Assigned to Game Master"], _this#0] call CFUNC(targetEvent);
+    [COMPONENT_STR, "INFO", "Assigned to Curator", true, 3, _this#0] call EFUNC(main,log);
 }, [_unit, _logic]] call CFUNC(waitUntilAndExecute);

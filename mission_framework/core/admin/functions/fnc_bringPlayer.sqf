@@ -36,5 +36,5 @@ if (_player != "") then {
         _unit setPosATL (player getPos [2, getDir player]);
     };
 
-    MSG_1("INFO","%1 has been teleported to your location",name _unit);
+    [COMPONENT_STR, "INFO", format ["%1 has been teleported to your location", name _unit], true] call EFUNC(main,log);
 };

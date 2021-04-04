@@ -60,4 +60,6 @@
         [] spawn VCM_fnc_AIDRIVEBEHAVIOR;
         [] spawn VCM_fnc_Scheduler;
     };
+
+    [COMPONENT_STR, "DEBUG", "VCOM AI is active", true] call EFUNC(main,log);
 };

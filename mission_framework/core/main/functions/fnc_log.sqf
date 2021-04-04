@@ -15,10 +15,13 @@
         4: SCALAR - Location of the message (Optional, default: 1)
             0: Global - log the message on every machine
             1: Local - log the message on the machine where it was called
-            2: Server - log the message on the client where it was called and on the server
+            2: Local & Server - log the message on the client where it was called and on the server
+            3: Target machine - log the message on target machine, target machine has to be passed
+        5: OBJECT - Target machine when location [3] is used (Optional, default: local machine)
 
     Example:
         [COMPONENT_STR, "INFO", format ["Descriptive message: %1", _value], true, 2] call MF_main_fnc_log
+        [COMPONENT_STR, "WARNING", "", true] call EFUNC(main,log);
 
         Output: 19:00:00 [MF] (Main) INFO: Descriptive message: test
 
@@ -26,7 +29,7 @@
         VOID
 */
 
-params ["_component", "_level", "_msg", ["_syschatEnabled", false], ["_location", 1]];
+params ["_component", "_level", "_msg", ["_syschatEnabled", false], ["_location", 1], ["_target", objNull]];
 
 // Ignore debug messages if debug mode is not on
 if (!GVARMAIN(debugMode) && _level == "DEBUG") exitWith {};
@@ -43,6 +46,15 @@ switch (_location) do {
     case 2: {
         [QGVAR(log), [_text, _syschatEnabled]] call CFUNC(serverEvent);
         [QGVAR(log), [_text, _syschatEnabled]] call CFUNC(localEvent);
+    };
+
+    case 3: {
+        if (isNull _target) then {
+            [COMPONENT_STR, "INFO", "Logging: No target was passed, using local machine instead", false] call EFUNC(main,log);
+            [QGVAR(log), [_text, _syschatEnabled]] call CFUNC(localEvent);
+        } else {
+            [QGVAR(log), [_text, _syschatEnabled], _target] call CFUNC(targetEvent);
+        };
     };
 
     default {

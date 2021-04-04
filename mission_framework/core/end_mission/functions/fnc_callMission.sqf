@@ -43,3 +43,10 @@ publicVariable QGVAR(civilianKills);
 
 // Run the end screen globally
 [QGVAR(runOutro), [_ending, _isVictory]] call CFUNC(globalEvent);
+
+// Logging
+private _time = [CBA_missionTime] call BFUNC(secondsToString);
+
+[COMPONENT_STR, "INFO", format [
+    "Ending mission... (Ending: %1 | Victory: %2 | Mission time: %3)", _ending, _isVictory, _time
+]] call EFUNC(main,log);

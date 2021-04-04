@@ -16,4 +16,5 @@ ADDON = true;
     [_msg, _syschatEnabled] call FUNC(writeRPT);
 }] call CFUNC(addEventHandler);
 
-[COMPONENT_STR, "DEBUG", "--- DEBUG MODE IS ACTIVE ---", true] call FUNC(log);
+[COMPONENT_STR, "DEBUG", "*** DEBUG MODE IS ACTIVE ***", true] call FUNC(log);
+[COMPONENT_STR, "INFO", format ["MalFramework v%1", VERSION], false] call FUNC(log);
