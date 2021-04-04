@@ -1,5 +1,5 @@
 #define COMPONENT jip
-#define COMPONENT_STR #JIP
+#define COMPONENT_STR QUOTE(JIP)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

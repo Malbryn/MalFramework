@@ -1,5 +1,5 @@
 #define COMPONENT unit_tracking
-#define COMPONENT_STR #Unit tracking
+#define COMPONENT_STR QUOTE(Unit tracking)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

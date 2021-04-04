@@ -1,5 +1,5 @@
 #define COMPONENT scenario_control
-#define COMPONENT_STR #Scenario control
+#define COMPONENT_STR QUOTE(Scenario control)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

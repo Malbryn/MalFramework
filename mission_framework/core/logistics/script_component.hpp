@@ -1,5 +1,5 @@
 #define COMPONENT logistics
-#define COMPONENT_STR #Logistics
+#define COMPONENT_STR QUOTE(Logistics)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

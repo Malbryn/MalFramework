@@ -1,5 +1,5 @@
 #define COMPONENT custom_channel
-#define COMPONENT_STR #Custom channel
+#define COMPONENT_STR QUOTE(Custom channel)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

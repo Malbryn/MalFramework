@@ -1,5 +1,5 @@
 #define COMPONENT los_tool
-#define COMPONENT_STR #LOS Tool
+#define COMPONENT_STR QUOTE(LOS Tool)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

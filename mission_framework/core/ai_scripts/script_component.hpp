@@ -1,5 +1,5 @@
 #define COMPONENT ai_scripts
-#define COMPONENT_STR #AI Scripts
+#define COMPONENT_STR QUOTE(AI Scripts)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

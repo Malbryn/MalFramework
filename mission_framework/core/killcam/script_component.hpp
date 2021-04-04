@@ -1,5 +1,5 @@
 #define COMPONENT killcam
-#define COMPONENT_STR #Killcam
+#define COMPONENT_STR QUOTE(Killcam)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

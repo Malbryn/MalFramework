@@ -1,5 +1,5 @@
 #define COMPONENT mortar
-#define COMPONENT_STR #Mortar
+#define COMPONENT_STR QUOTE(Mortar)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

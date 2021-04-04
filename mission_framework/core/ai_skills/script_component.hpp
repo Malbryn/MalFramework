@@ -1,5 +1,5 @@
 #define COMPONENT ai_skills
-#define COMPONENT_STR #AI Skills
+#define COMPONENT_STR QUOTE(AI Skills)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

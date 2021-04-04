@@ -1,5 +1,5 @@
 #define COMPONENT team_colour
-#define COMPONENT_STR #Team colour
+#define COMPONENT_STR QUOTE(Team colour)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

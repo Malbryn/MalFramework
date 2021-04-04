@@ -1,5 +1,5 @@
 #define COMPONENT intel
-#define COMPONENT_STR #Intel
+#define COMPONENT_STR QUOTE(Intel)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

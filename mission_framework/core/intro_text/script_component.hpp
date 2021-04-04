@@ -1,5 +1,5 @@
 #define COMPONENT intro_text
-#define COMPONENT_STR #Intro text
+#define COMPONENT_STR QUOTE(Intro text)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

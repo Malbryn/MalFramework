@@ -1,5 +1,5 @@
 #define COMPONENT briefing
-#define COMPONENT_STR #Briefing
+#define COMPONENT_STR QUOTE(Briefing)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

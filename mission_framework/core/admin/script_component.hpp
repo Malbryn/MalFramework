@@ -1,5 +1,5 @@
 #define COMPONENT admin
-#define COMPONENT_STR #Admin
+#define COMPONENT_STR QUOTE(Admin)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

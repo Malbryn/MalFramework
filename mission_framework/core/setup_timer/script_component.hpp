@@ -1,5 +1,5 @@
 #define COMPONENT setup_timer
-#define COMPONENT_STR #Setup timer
+#define COMPONENT_STR QUOTE(Setup timer)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

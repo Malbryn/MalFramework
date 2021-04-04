@@ -1,5 +1,5 @@
 #define COMPONENT tfar
-#define COMPONENT_STR #TFAR
+#define COMPONENT_STR QUOTE(TFAR)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE
