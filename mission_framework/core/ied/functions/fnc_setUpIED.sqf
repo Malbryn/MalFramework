@@ -28,3 +28,5 @@ private _trigger = createTrigger ["EmptyDetector", getPos _obj, false];
 _trigger setTriggerActivation ["ANYPLAYER", "PRESENT", false];
 _trigger setTriggerArea [_radius, _radius, 0, false, _radius];
 _trigger setTriggerStatements ["this && isServer", format ["if (alive %1) then { [%2] call MF_ied_fnc_detonateIED; };", _owner, _id], ""];
+
+[COMPONENT_STR, "DEBUG", format ["IED created [Obj: %1, Owner: %2, Radius: %3]", _obj, _owner, _radius], true] call EFUNC(main,log);

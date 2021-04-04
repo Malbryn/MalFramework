@@ -60,4 +60,6 @@
         [] spawn VCM_fnc_AIDRIVEBEHAVIOR;
         [] spawn VCM_fnc_Scheduler;
     };
+
+    ["VCOM", "DEBUG", "VCOM AI is active", true] call MF_main_fnc_log;
 };

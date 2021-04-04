@@ -78,7 +78,10 @@ private _layerEnd = "BIS_fnc_endMission_end" call BFUNC(rscLayer);
 
                         // Logging
                         private _time = [CBA_missionTime] call BFUNC(secondsToString);
-                        INFO_3("Ending mission... (Ending: %1 | Victory: %2 | Mission time: %3)",_this#3,_this#4,_time);
+                        
+                        [COMPONENT_STR, "INFO", format [
+                            "Ending mission... (Ending: %1 | Victory: %2 | Mission time: %3)", _this#3, _this#4, _time
+                        ]] call EFUNC(main,log);
 
                         markAsFinishedOnSteam;
                     }, _this, 2.7] call CFUNC(waitAndExecute);

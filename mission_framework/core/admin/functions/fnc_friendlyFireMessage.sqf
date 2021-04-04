@@ -19,18 +19,17 @@
         void
 */
 
+if !(hasInterface) exitWith {};
+
 params ["_killed", "_killer"];
 
-// Notifying game masters
-if (hasInterface) then {
-    // End mission stats
-    private _time = [CBA_missionTime] call BFUNC(secondsToString);
-    private _text = format ["%1  %2 (by %3)", _time, _killed, _killer];
+// End mission stats
+private _time = [CBA_missionTime] call BFUNC(secondsToString);
+private _text = format ["%1  %2 (by %3)", _time, _killed, _killer];
 
-    PUSH(EGVAR(end_mission,friendlyFires),_text);
+PUSH(EGVAR(end_mission,friendlyFires),_text);
 
-    // Notify game masters
-    if (IS_ADMIN_LOGGED || getPlayerUID player == GETPAVAR(GVARMAIN(missionMaker),"")) then {
-        MSG_2("WARNING","(Admin) %1 was killed by %2",_killed,_killer);
-    };
+// Notify game masters
+if (IS_ADMIN_LOGGED || getPlayerUID player == GETPAVAR(GVARMAIN(missionMaker),"")) then {
+    [COMPONENT_STR, "INFO", format ["%1 was killed by %2", _killed, _killer], true] call EFUNC(main,log);
 };

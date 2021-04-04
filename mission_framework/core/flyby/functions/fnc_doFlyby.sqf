@@ -36,3 +36,5 @@ _wp1 setWaypointType "MOVE";
 private _wp2 = group _plane addWaypoint [_wp2Pos, 5];
 _wp2 setWaypointStatements ["true", QUOTE(deleteVehicle (vehicle this); crew (vehicle this) apply {deleteVehicle _x})];
 _wp2 setWaypointType "MOVE";
+
+[COMPONENT_STR, "DEBUG", "Flyby is on the way", true, 0] call EFUNC(main,log);

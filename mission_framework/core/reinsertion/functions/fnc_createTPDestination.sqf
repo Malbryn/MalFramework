@@ -38,13 +38,13 @@ GVAR(TPPoles) apply {
 };
 
 if (count _tpPoles == 0) exitWith {
-    MSG("WARNING","(Reinsertion) The teleport pole array is empty");
+    [COMPONENT_STR, "WARNING", "The teleport pole array is empty", true] call EFUNC(main,log);
     false
 };
 
 _tpPoles apply {
     if (isNull _x) exitWith {
-        MSG_1("ERROR","(Reinsertion) Teleport pole object (%1) does not exist",_x);
+        [COMPONENT_STR, "WARNING", format ["Teleport pole object (%1) does not exist", _x], true] call EFUNC(main,log);
     };
 
     // Add TP action

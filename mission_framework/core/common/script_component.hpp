@@ -1,4 +1,5 @@
 #define COMPONENT common
+#define COMPONENT_STR QUOTE(Common)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

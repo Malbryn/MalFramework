@@ -1,4 +1,5 @@
 #define COMPONENT vehicle_respawn
+#define COMPONENT_STR QUOTE(Vehicle respawn)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

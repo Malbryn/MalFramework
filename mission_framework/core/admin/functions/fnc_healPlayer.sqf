@@ -20,7 +20,9 @@
 
 if !(hasInterface) exitWith {};
 
-if GVARMAIN(isTvT) exitWith {MSG("INFO","Healing is not available in TvT missions")};
+if (GVARMAIN(isTvT) && !GVARMAIN(debugMode)) exitWith {
+    [COMPONENT_STR, "INFO", "Healing is not available in TvT missions", true] call EFUNC(main,log);
+};
 
 // Get the currently selected player
 private _player = lbText [718, lbCurSel 718];
@@ -31,5 +33,5 @@ if (_player != "") then {
 
     [_unit, _unit] call AFUNC(medical_treatment,fullHeal);
 
-    MSG_1("INFO","%1 has been healed",name _unit);
+    [COMPONENT_STR, "INFO", format ["%1 has been healed", name _unit], true] call EFUNC(main,log);
 };

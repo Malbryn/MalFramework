@@ -48,7 +48,7 @@ if (GVARMAIN(isTvT)) then {
             private _text = format ["%1  %2 (by %3)%4", _time, _nameCiv, name _killer, _killerSide];
 
             PUSH(GVAR(civilianKills),_text);
-            INFO_1("A civilian was killed by %1%2",name _killer,_killerSide);
+            [COMPONENT_STR, "INFO", format ["A civilian was killed by %1%2", name _killer, _killerSide]] call EFUNC(main,log);
         };
     }];
 } else {
@@ -65,7 +65,7 @@ if (GVARMAIN(isTvT)) then {
             private _text = format ["%1  %2 (by %3)", _time, _nameCiv, name _killer];
 
             PUSH(GVAR(civilianKills),_text);
-            INFO_1("A civilian was killed by %1",name _killer);
+            [COMPONENT_STR, "INFO", format ["A civilian was killed by %1", name _killer]] call EFUNC(main,log);
         };
     }];
 };

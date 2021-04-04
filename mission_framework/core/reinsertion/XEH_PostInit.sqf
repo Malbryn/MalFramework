@@ -19,7 +19,7 @@ if (hasInterface) then {
 
     [QGVAR(addTPToRPOption), {
         params ["_obj"];
-        systemChat format ["%1", _obj];
+
         _obj addAction ["Reinsertion - Squad Rally Point", {
             call FUNC(tpToRP);
         }, nil, 1, true, true, "", "true", 12];

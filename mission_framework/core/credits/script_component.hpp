@@ -1,4 +1,5 @@
 #define COMPONENT credits
+#define COMPONENT_STR QUOTE(Credits)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

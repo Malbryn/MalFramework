@@ -58,7 +58,7 @@ if !(hasInterface) exitWith {};
             };
 
             default {
-                MSG("WARNING","Player side has to be either BLUFOR or REDFOR during TvT's. RADIO ENCODING won't work properly.");
+                [COMPONENT_STR, "WARNING", "Player side has to be either BLUFOR or REDFOR during TvT's, RADIO ENCODING won't work properly", true] call EFUNC(main,log);
             };
         };
     } else {
@@ -107,7 +107,7 @@ if !(hasInterface) exitWith {};
             };
 
             default {
-                MSG("WARNING","Player side has to be either BLUFOR or REDFOR during TvT's. BABEL won't work properly.");
+                [COMPONENT_STR, "WARNING", "Player side has to be either BLUFOR or REDFOR during TvT's, BABEL won't work properly", true] call EFUNC(main,log);
             };
         };
     };
