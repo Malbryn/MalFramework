@@ -20,7 +20,7 @@
 if !(hasInterface) exitWith {};
 
 if !(isMultiplayer) exitWith {
-    MSG("ERROR","(Setup timer) Singleplayer session detected, this module will function only in multiplayer");
+    [COMPONENT_STR, "ERROR", "Singleplayer session detected, this module will function in multiplayer only", true] call EFUNC(main,log);
 };
 
 private _zone = [];
@@ -34,7 +34,7 @@ if !(GVAR(markerRedfor) == "") then {
 };
 
 if (count _zone == 0) exitWith {
-    MSG("WARNING","(Setup timer) No marker was defined in the config");
+    [COMPONENT_STR, "ERROR", "No staging zone marker was defined in the config", true] call EFUNC(main,log);
 };
 
 GVAR(marker) = [];

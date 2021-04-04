@@ -28,13 +28,6 @@ if (hasInterface) then {
     }] call CFUNC(waitUntilAndExecute);
 };
 
-// Remote messages
-[QGVARMAIN(systemMessage), {
-    params ["_level", "_message"];
-    
-    MSG(_level,_message);
-}] call CFUNC(addEventHandler);
-
 // Remote notification #1
 [QGVARMAIN(notification_1), {
     params ["_cat"];

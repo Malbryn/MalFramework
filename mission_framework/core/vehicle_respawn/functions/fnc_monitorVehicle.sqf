@@ -21,6 +21,8 @@ if !(isServer) exitWith {};
 
 {
     if !(alive (_x#0)) then {
+        [COMPONENT_STR, "DEBUG", format ["Respawning vehicle: %1", _x#0], true, 0] call EFUNC(main,log);
+
         _x spawn {
             params [
                 ["_vehicle", objNull, [objNull]],

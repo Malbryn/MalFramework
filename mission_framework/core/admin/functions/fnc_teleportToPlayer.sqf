@@ -36,5 +36,5 @@ if (_player != "") then {
         player setPosATL (_unit getPos [2, getDir _unit]);
     };
 
-    MSG_2("INFO","You have teleported to %1",name _unit);
+    [COMPONENT_STR, "INFO", format ["You have teleported to %1", name _unit], true] call EFUNC(main,log);
 };

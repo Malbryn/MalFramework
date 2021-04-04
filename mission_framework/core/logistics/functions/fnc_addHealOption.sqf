@@ -23,7 +23,7 @@ if !(hasInterface) exitWith {};
 params ["_object"];
 
 if !(alive _object) exitWith {
-    MSG("WARNING","(Logistics) Medic bag object was destroyed");
+    [COMPONENT_STR, "WARNING", "Medic bag object is destroyed", true] call EFUNC(main,log);
 };
 
 // Children code

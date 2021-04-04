@@ -20,7 +20,7 @@
 private ["_channels", "_srCh", "_lrCh"];
 
 if !(isMultiplayer) exitWith {
-    MSG("INFO","(TFAR) The module does not work in single player");
+    [COMPONENT_STR, "INFO", "The module does not work in single player", true] call EFUNC(main,log);
 };
 
 private _channels = GETVAR(player,GVAR(radioChannels),[]);

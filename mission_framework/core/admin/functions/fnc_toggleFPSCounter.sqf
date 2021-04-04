@@ -19,7 +19,9 @@
 
 if !(hasInterface) exitWith {};
 
-if GVARMAIN(isTvT) exitWith {MSG("INFO","The FPS display is not available in TvT missions")};
+if (GVARMAIN(isTvT) && !GVARMAIN(debugMode)) exitWith {
+    [COMPONENT_STR, "INFO", "The FPS display is not available in TvT missions", true] call EFUNC(main,log);
+};
 
 // Toggle player FPS
 call FUNC(togglePlayerFPS);

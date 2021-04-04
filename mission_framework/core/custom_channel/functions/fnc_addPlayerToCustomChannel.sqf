@@ -22,7 +22,7 @@ params ["_unit"];
 if !(hasInterface) exitWith {};
 
 if (GVAR(channelID) == 0) exitWith {
-    MSG("ERROR","(Custom channel) Custom channel does not exist");
+    [COMPONENT_STR, "ERROR", "Custom channel does not exist", true] call EFUNC(main,log);
 };
 
 GVAR(channelID) radioChannelAdd [_unit];

@@ -1,4 +1,5 @@
 #define COMPONENT gear
+#define COMPONENT_STR QUOTE(Gear)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

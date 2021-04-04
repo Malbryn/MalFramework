@@ -22,7 +22,7 @@ if !(hasInterface) exitWith {};
 private _mrv = GETMVAR(GVAR(mrv),objNull);
 
 if (isNull _mrv) exitWith {
-    MSG("ERROR","MRV does not exist!");
+    [COMPONENT_STR, "ERROR", "MRV does not exist", true] call EFUNC(main,log);
 };
 
 if !(alive _mrv) exitWith {

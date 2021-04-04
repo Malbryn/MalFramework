@@ -34,4 +34,4 @@ _logic addCuratorEditableObjects [(allMissionObjects "Man"), true];
 
 SETPVAR(_unit,GVAR(curatorLogic),_logic);
 
-[QGVARMAIN(systemMessage), ["INFO", "Game Master: Registered as Curator"], _unit] call CFUNC(targetEvent);
+[COMPONENT_STR, "INFO", "Game Master: Registered as Curator", true, 3, _unit] call EFUNC(main,log);

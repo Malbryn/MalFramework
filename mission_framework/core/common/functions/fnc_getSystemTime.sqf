@@ -8,7 +8,7 @@
         Returns the current system time in the following format: yyyy-mm-dd hh:mm:ss.
 
     Arguments:
-        0: BOOLEAN - Use UTC time (optional, default: false)
+        0: BOOLEAN - Use UTC time (Optional, default: false)
 
     Example:
         [false] call MF_common_fnc_getSystemTime

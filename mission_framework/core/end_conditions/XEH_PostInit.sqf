@@ -11,7 +11,7 @@ if (isServer) then {
         // Check the tasks array
         if ((GVARMAIN(moduleTaskLimit) && (count GVAR(tasks) == 0)) ||
         (GVARMAIN(moduleExtraction) && (count GVAR(tasks) == 0))) then {
-            [QGVARMAIN(systemMessage), ["WARNING", "(End conditions) The End conditions module is active but no task was registered. The end condition check won't work properly."]] call CFUNC(globalEvent);
+            [COMPONENT_STR, "WARNING", "No task was registered, the end condition check won't work properly", true, 0] call EFUNC(main,log);
             GVARMAIN(moduleTaskLimit) = false;
             GVARMAIN(moduleExtraction) = false;
             GVARMAIN(moduleTimeLimit) = false;

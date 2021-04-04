@@ -2,6 +2,9 @@
 
 /* -------------------------------- MISSION PARAMETERS -------------------------------- */
 
+// Debug mode
+GVARMAIN(debugMode) = true;  // Debug mode for mission/framework development (turn it off before deploying the mission)
+
 // Mission type
 GVARMAIN(isTvT) = false;  // If the mission is a TvT mission
 

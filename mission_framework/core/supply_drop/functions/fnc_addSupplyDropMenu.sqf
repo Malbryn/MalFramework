@@ -22,7 +22,7 @@ if !(hasInterface) exitWith {};
 SETPMVAR(GVAR(dropAvailable),true);
 
 if (count GVAR(supplyCrates) == 0) exitWith {
-    MSG("WARNING","Supply drop module: The supply drop crate array is empty! Please configure the module in the config.sqf");
+    [COMPONENT_STR, "ERROR", "No supply drop crate is defined in the config", true] call EFUNC(main,log);
 };
 
 if (GETVAR(player,EGVAR(player,isCO),false)) then {

@@ -1,4 +1,5 @@
 #define COMPONENT player
+#define COMPONENT_STR QUOTE(Player)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

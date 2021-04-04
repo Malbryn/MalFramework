@@ -1,4 +1,5 @@
 #define COMPONENT snowfall
+#define COMPONENT_STR QUOTE(Snowfall)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE
