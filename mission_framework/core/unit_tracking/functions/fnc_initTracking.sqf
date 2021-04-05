@@ -48,7 +48,7 @@ if (GVAR(refreshInterval) < 1) then {
 // Create marker
 private _markerPos = if (_unit isEqualType objNull) then [{getPos _unit}, {getPos (leader _unit)}];
 
-private _markerName = [_unit] call FUNC(createMarkerName);
+private _markerName = [_unit] call EFUNC(common,createMarkerName);
 private _marker = createMarker [_markerName, _markerPos];
 
 // Customise marker
