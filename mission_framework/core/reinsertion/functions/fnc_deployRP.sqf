@@ -45,6 +45,19 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
         private _RPTent = objectFromNetId _id;
         deleteVehicle _RPTent;
         SETPVAR((group player),GVAR(RPTent),nil);
+
+        // Remove previous marker
+        if GVAR(markRP) then {
+            private _marker = GETVAR((group player),GVAR(markerRP),"");
+
+            if (_marker == "") then {
+                [COMPONENT_STR, "ERROR", "RP marker is not found", true] call EFUNC(main,log);
+            } else {
+                deleteMarker _marker;
+
+                SETPVAR((group player),GVAR(markerRP),"");
+            };
+        };
     };
 
     // Create RP tent and save the netId so other people can remove it as well
@@ -58,6 +71,17 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
     ["Info", ["You have deployed the RP"]] call BFUNC(showNotification);
     [QGVARMAIN(notification_2), ["Info", "Your SL has deployed the RP"], _unitArray] call CFUNC(targetEvent);
 
+    // Mark on map
+    if GVAR(markRP) then {
+        private _markerName = [player] call EFUNC(common,createMarkerName);
+        private _marker = createMarker [_markerName, getPos player, 3];
+        _markerName setMarkerType "mil_box";
+        _markerName setMarkerColor "ColorOrange";
+        _markerName setMarkerText "RP";
+
+        // Save as group var
+        SETPVAR((group player),GVAR(markerRP),_markerName);
+    };
 }, {
     // Stop the animation if the progress bar was cancelled
     [player, ""] remoteExec ["switchMove", 0];

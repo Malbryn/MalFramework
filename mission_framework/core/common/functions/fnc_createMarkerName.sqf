@@ -11,7 +11,7 @@
         0: GROUP or OBJECT - The group or object that will be marked
 
     Example:
-        [this] call MF_unit_tracking_fnc_createMarkerName
+        [this] call MF_common_fnc_createMarkerName
 
     Returns:
         STRING
