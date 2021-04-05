@@ -23,24 +23,7 @@ scopeName QGVAR(main);
 
 private _allPlayers = count allPlayers;
 private _ended = false;
-
-// Calculate task rate if Time limit or Extraction is enabled
-private _taskList = GVAR(tasks);
-private _taskCount = 0;
-
-_taskList apply {
-    private _state = _x call BFUNC(taskState);
-
-    if (_state == "SUCCEEDED") then {
-        _taskCount = _taskCount + 1;
-    };
-};
-
-private _rate = 0;
-
-if (count _taskList != 0) then {
-    _rate = _taskCount / count _taskList;
-};
+private _rate = call FUNC(calculateTaskRate);
 
 // Time limit check
 if (GVARMAIN(moduleTimeLimit) && !_ended) then {
@@ -119,6 +102,13 @@ if (GVARMAIN(moduleExtraction) && !_ended) then {
 
     // End the mission accordingly
     if (_playerCount >= (_allPlayers * GVAR(playerThreshold) * 0.01) && (_allPlayers != 0)) then {
+        // Complete exfil task and recalculate the completion rate
+        if (GVAR(extTask) != "" && {[GVAR(extTask)] call BFUNC(taskExists)}) then {
+            [GVAR(extTask), "SUCCEEDED", true] call BFUNC(taskSetState);
+
+            _rate = call FUNC(calculateTaskRate);
+        };
+
         switch (true) do {
             case (_rate == 1) : {
                 [QEGVAR(end_mission,callMission), ["MissionSuccess", true, playerSide]] call CFUNC(serverEvent);
