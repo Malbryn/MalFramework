@@ -180,7 +180,7 @@ GVARMAIN(moduleOrbat) = true;  // Coop & TvT
 
 
 // Reinsertion
-GVARMAIN(moduleHALO) = false;  // Coop & TvT
+GVARMAIN(moduleHALO) = true;  // Coop & TvT
 GVARMAIN(moduleMRV) = false;  // Coop & TvT
 GVARMAIN(moduleRP) = true;  // Coop & TvT
 GVARMAIN(moduleHAB) = false;  // Coop & TvT
