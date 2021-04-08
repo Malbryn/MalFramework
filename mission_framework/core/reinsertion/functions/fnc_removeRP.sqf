@@ -46,7 +46,7 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
     // Send notification to the squad memebers
     private _unitArray = (units group player) - [player];
     ["Info", ["You have picked up the RP"]] call BFUNC(showNotification);
-    [QGVARMAIN(notification_2), ["Info", "Your SL has picked up the RP"], _unitArray] call CFUNC(targetEvent);
+    [QGVARMAIN(notification_2), ["Info", "The RP has been picked up"], _unitArray] call CFUNC(targetEvent);
 
     // Remove marker
     if GVAR(markRP) then {

@@ -28,8 +28,11 @@ if (_pos isEqualTo "") exitWith {
 cutText ["You are being paradropped into the AO", "BLACK OUT", 2, true];
 
 [{
-    player setPos _this;
-    player setPosATL [(getposATL player)#0, (getpos player)#1, 1500];
+    // Get a random position in a radius
+    private _randomPos = [[[_this, 250]], []] call BFUNC(randomPos);
+
+    _randomPos set [2, 1500];
+    player setPos _randomPos;
     [player] call FUNC(addParachute);
 
     [{

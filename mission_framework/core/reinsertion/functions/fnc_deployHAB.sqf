@@ -39,7 +39,7 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
 
 // Display ACE progress bar
 [12, [], {
-    // Create RP tent and save the netId so other people can remove it as well
+    // Create HAB and save the netId so other people can remove it as well
     private _HAB = createVehicle [GVAR(HABObject), player getPos [8, getDir player], [], 0, "CAN_COLLIDE"];
     _HAB setDir (getDir player);
     private _id = netId _HAB;
