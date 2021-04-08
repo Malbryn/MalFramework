@@ -5,11 +5,11 @@
         Malbryn
 
     Description:
-        Spawns a plane to do a fly-by then despawns it.
+        Spawns an aircraft to do a fly-by then despawns it.
 
     Arguments:
-        0: STRING - Class name of the plane
-        1: ARRAY - Starting position of the plane (note: 3rd coordinate is the altitude of the plane)
+        0: STRING - Class name of the aircraft
+        1: ARRAY - Starting position of the aircraft (note: 3rd coordinate is the altitude of the aircraft)
         2: ARRAY - First waypoint position
         3: ARRAY - Second waypoint position
 
@@ -24,17 +24,21 @@ if !(isServer) exitWith {};
 
 params ["_type", "_startPos", "_wp1Pos", "_wp2Pos"];
 
-private _plane = createVehicle [_type, _startPos, [], 0, "FLY"];
-createVehicleCrew _plane;
+private _aircraft = createVehicle [_type, _startPos, [], 0, "FLY"];
+createVehicleCrew _aircraft;
 
-group _plane setCombatMode "BLUE";
-group _plane setBehaviour "CARELESS";
+group _aircraft setCombatMode "BLUE";
+group _aircraft setBehaviour "CARELESS";
 
-private _wp1 = group _plane addWaypoint [_wp1Pos, 5];
+private _wp1 = group _aircraft addWaypoint [_wp1Pos, 5];
 _wp1 setWaypointType "MOVE";
 
-private _wp2 = group _plane addWaypoint [_wp2Pos, 5];
-_wp2 setWaypointStatements ["true", QUOTE(deleteVehicle (vehicle this); crew (vehicle this) apply {deleteVehicle _x})];
+private _wp2 = group _aircraft addWaypoint [_wp2Pos, 5];
 _wp2 setWaypointType "MOVE";
+_wp2 setWaypointStatements ["true", QUOTE(
+    private _aircraft = vehicle this;
+    deleteVehicle (vehicle _aircraft);
+    thisList apply {deleteVehicle _x};
+)];
 
 [COMPONENT_STR, "DEBUG", "Flyby is on the way", true, 0] call EFUNC(main,log);
