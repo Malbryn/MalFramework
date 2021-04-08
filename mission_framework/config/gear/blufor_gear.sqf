@@ -91,10 +91,3 @@ case "RM" : {
         ["ItemMap","ItemGPS","","ItemCompass","ItemWatch","NVGogglesB_grn_F"]
     ];
 };
-
-
-// Customised loadout saved in Arsenal
-// Do not remove
-case "CUSTOM" : {
-    _gear = GVAR(customLoadout);
-};

@@ -43,6 +43,11 @@ if ((side _unit) == west) then {
     switch _role do {
         #include "..\..\..\config\gear\blufor_gear.sqf"
 
+        // Customised loadout saved in Arsenal
+        case "CUSTOM" : {
+            _gear = GVAR(customLoadout);
+        };
+
         default {
             [COMPONENT_STR, "ERROR", format ["Undefined role (%1) in the loadout (blufor_gear.sqf)", _role], true] call EFUNC(main,log);
         };
@@ -50,6 +55,11 @@ if ((side _unit) == west) then {
 } else {
     switch _role do {
         #include "..\..\..\config\gear\redfor_gear.sqf"
+
+        // Customised loadout saved in Arsenal
+        case "CUSTOM" : {
+            _gear = GVAR(customLoadout);
+        };
 
         default {
             [COMPONENT_STR, "ERROR", format ["Undefined role (%1) in the loadout (redfor_gear.sqf)", _role], true] call EFUNC(main,log);
