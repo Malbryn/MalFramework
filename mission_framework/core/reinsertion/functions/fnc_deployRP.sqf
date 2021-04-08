@@ -69,7 +69,7 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
     // Send notification to the squad memebers
     private _unitArray = (units group player) - [player];
     ["Info", ["You have deployed the RP"]] call BFUNC(showNotification);
-    [QGVARMAIN(notification_2), ["Info", "Your SL has deployed the RP"], _unitArray] call CFUNC(targetEvent);
+    [QGVARMAIN(notification_2), ["Info", "The RP has been deployed"], _unitArray] call CFUNC(targetEvent);
 
     // Mark on map
     if GVAR(markRP) then {
