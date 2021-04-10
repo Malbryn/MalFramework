@@ -31,17 +31,17 @@ params [["_taskID", ""], ["_extZone", ""], ["_limitFail", -1], ["_limitSuccess",
     _thisArgs params ["_taskID", "_extZone", "_limitFail", "_limitSuccess", "_endMission"];
 
     // Check stuff
-    if !([_taskID] call BFUNC(taskExists)) exitWith {
-        [COMPONENT_STR, "ERROR", format ["Task (%1) does not exist", _taskID], true, 0] call EFUNC(main,log);
-    };
-
     if (getMarkerType _extZone == "") exitWith {
         [COMPONENT_STR, "ERROR", format ["Marker (%1) does not exist", _extZone], true, 0] call EFUNC(main,log);
     };
 
+    if !([_taskID] call BFUNC(taskExists)) then {
+        [COMPONENT_STR, "DEBUG", format ["Task (%1) does not exist", _taskID], true, 0] call EFUNC(main,log);
+    };
+
     if (_limitSuccess > count GVAR(allHostages)) then {
         [COMPONENT_STR, "WARNING", format [
-            "Required number of hostages (set to %1) is higher than the hostage count (count: %2)", _limitSuccess, count GVAR(allHostages)
+            "Required number of hostages (set to %1) is higher than the hostage count (current: %2)", _limitSuccess, count GVAR(allHostages)
         ], true, 0] call EFUNC(main,log);
     };
 
