@@ -118,6 +118,7 @@ EGVAR(custom_channel,channelColour) = [0.8, 0, 0.5, 1];  // Colour of the channe
 
 // Gear
 EGVAR(gear,saveGearInArsenal) = false;  // Should the player's gear be saved if an arsenal is available (Coop & TvT)
+EGVAR(gear,enableBackpackLock) = true;  // Enable backpack lock (Coop & TvT)
 
 
 // Grass cutter
