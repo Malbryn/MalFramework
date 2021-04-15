@@ -31,4 +31,3 @@ if (hasInterface) then {
         };
     };
 };
-
