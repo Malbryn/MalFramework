@@ -8,6 +8,6 @@ _No further setup is required._
 ## Config:
 \-
 
-## Available:
+## Supported mission type(s):
  - Coop
  - TvT

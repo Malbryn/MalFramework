@@ -74,6 +74,6 @@ _Using the default values means:_
 
 _Tasks that were not completed will be set to "CANCELLED" at mission end._
 
-## Available:
+## Supported mission type(s):
  - Coop
  - TvT

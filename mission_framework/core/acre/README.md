@@ -12,6 +12,6 @@ _Description of each value set in the config file._
 |:--------------- |:------------- |:------------- |:--------- |:---------------------------- |
 | `useBabel`      | `BOOLEAN`     | `false`       | TvT       | Use the Babel system of ACRE |
 
-## Available:
+## Supported mission type(s):
  - Coop
  - TvT

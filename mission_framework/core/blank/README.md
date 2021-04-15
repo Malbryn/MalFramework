@@ -12,6 +12,6 @@ _Description of each value set in the config file._
 |:--------- |:------------- |:------------- |:---------- |:----------- |
 | `varName` | `TYPE`        | `default`     | Coop/TvT   | blank       |
 
-## Available:
+## Supported mission type(s):
  - Coop
  - TvT

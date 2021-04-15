@@ -15,5 +15,5 @@ _Description of each value set in the config file._
 |:---------- |:------------- |:----------------------------------------------- |:---------- |:---------------------- |
 | `skillSet` | `ARRAY`       | `[0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]` | Coop/TvT   | Array of AI sub-skills |
 
-## Available:
+## Supported mission type(s):
  - Coop

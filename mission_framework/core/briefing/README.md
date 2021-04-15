@@ -10,6 +10,6 @@ _INDFOR player units will get the REDFOR briefing in Coop missions._
 ## Config:
 \-
 
-## Available:
+## Supported mission type(s):
  - Coop
  - TvT

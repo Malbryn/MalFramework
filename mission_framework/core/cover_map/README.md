@@ -17,6 +17,6 @@ _Description of each value set in the config file._
 | `aoMarker` | `STRING`      | `"mrk_ao"`      | Coop/TvT   | Name of the AO marker      |
 | `colour`   | `STRING`      | `"Color4_FD_F"` | Coop/TvT   | Colour of the covered area |
 
-## Available:
+## Supported mission type(s):
  - Coop
  - TvT

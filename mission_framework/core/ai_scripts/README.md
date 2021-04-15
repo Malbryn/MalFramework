@@ -21,5 +21,5 @@ _Available tasks:_
 ## Config:
 \-
 
-## Available:
+## Supported mission type(s):
  - Coop

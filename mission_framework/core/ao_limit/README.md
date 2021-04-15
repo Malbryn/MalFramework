@@ -19,6 +19,6 @@ _Description of each value set in the config file._
 | `aoMarkerBlufor` | `STRING`      | `"mrk_aoLimitBlufor"` | TvT        | AO limit marker for BLUFOR players                   |
 | `aoMarkerRedfor` | `STRING`      | `"mrk_aoLimitRedfor"` | TvT        | AO limit marker for REDFOR players                   |
 
-## Available:
+## Supported mission type(s):
  - Coop
  - TvT

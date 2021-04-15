@@ -25,5 +25,5 @@ Example:
 ## Config:
 \-
 
-## Available:
+## Supported mission type(s):
  - Coop

@@ -17,6 +17,6 @@ _Description of each value set in the config file._
 | `enableArsenal` | `BOOLEAN`     | `true`        | Coop      | Enable Arsenal option in the admin menu |
 | `enableCurator` | `BOOLEAN`     | `true`        | Coop      | Enable Curator assignment               |
 
-## Available:
+## Supported mission type(s):
  - Coop
  - TvT

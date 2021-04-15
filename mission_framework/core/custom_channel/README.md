@@ -1,4 +1,4 @@
-# Custom channel
+# Custom Channel
 ## Description:
 _This module adds the option to create a custom channel like FAC channel etc._
 
@@ -13,6 +13,6 @@ _Description of each value set in the config file._
 | `channelName`   | `STRING`      | `"JTAC channel"`   | Coop/TvT   | Name of the channel                                   |
 | `channelColour` | `ARRAY`       | `[0.8, 0, 0.5, 1]` | Coop/TvT   | Colour of the channel (RGBA format, default: FK pink) |
 
-## Available:
+## Supported mission type(s):
  - Coop
  - TvT
