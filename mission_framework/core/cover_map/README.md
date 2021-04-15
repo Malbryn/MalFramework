@@ -3,7 +3,7 @@
 _This module covers the map so only a smaller section is visible for the players._
 
 ## Usage:
-1. _Place down a rectangular area marker on the map._
+1. _Place down a **rectangular** area marker on the map._
 2. _Give it a unique name._
 
 _Note:_

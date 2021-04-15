@@ -2,11 +2,11 @@
 ## Description:
 _This module restricts the players' movement around the map by designating a target AO. The players cannot leave this area for more than the given time._
 
-_If they stay outside of the AO for too long, they will be killed (just like in Battlefield games for example)._
+_If they stay outside of the AO for too long, they will be killed._
 
 ## Usage:
-1. _Place down an rectangle area marker_
-2. _Give it a uniqe name_
+1. _Place down a rectangle area marker_
+2. _Give it a unique name_
 
 ## Config:
 _Description of each value set in the config file._

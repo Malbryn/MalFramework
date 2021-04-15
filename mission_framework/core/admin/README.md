@@ -3,8 +3,8 @@
 _This module adds admin tools (admin menu, friendly-fire detection, server FPS monitoring etc.) to the mission maker and the logged-in admin._
 
 _Note:_
- - _This module is always active and cannot be turnt off in the config._
- - _Certain functions (e.g. arsenal, healing) won't work in TvT missions._
+ - _This is a core module and cannot be turned off in the config._
+ - _Certain functions (e.g. Arsenal, healing) won't work in TvT missions._
 
 ## Usage:
 _No further setup is required._

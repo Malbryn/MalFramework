@@ -5,13 +5,13 @@ _This module checks the defined end conditions every couple of seconds and ends 
 ## Usage:
 _Available end conditions:_
  - _Time limit - Ends the mission when the time limit is reached_
- - _Player casualty limit - Ends the mission when the player casulty limit is reached_
+ - _Player casualty limit - Ends the mission when the player casualty limit is reached_
  - _Civilian casualty limit - Ends the mission when the civilian casualty limit is reached_
  - _Side respawn tickets - Ends the mission when a side runs out of respawn tickets_
  - _Task limit - Ends the mission when a certain amount of tasks is completed_
  - _Extraction - Ends the mission when the given amount of players are in the extraction zone_
 
-_The framework relies on the vanilla task system. It is required in order to use most of the end conditions as the framework check the percentage of the completed tasks and ends the mission accordingly._
+_The framework relies on the vanilla task system. It is required to use most of the end conditions as the framework check the percentage of the completed tasks and ends the mission accordingly._
 
 _**Important:** don't forget to customise the end screen messages in `mission_framework\config\debriefing\CfgDebriefing.hpp`._
 
@@ -49,10 +49,11 @@ _Description of each value set in the config file._
 | `taskLimit` | `SCALAR`      | `2`           | Coop      | Minimum number of completed tasks |
 ---
 ### **Extraction**
-| Variable          | Variable type | Default value | Game mode | Description                                                            |
-|:----------------- |:------------- |:------------- |:--------- |:---------------------------------------------------------------------- |
-| `extMarker`       | `STRING`      | `"mrk_ext"`   | Coop      | Name of the extraction marker                                          |
-| `playerThreshold` | `SCALAR`      | `50`          | Coop      | Percentage of the alive players that have to be in the extraction zone |
+| Variable          | Variable type | Default value | Game mode | Description                                                                                     |
+|:----------------- |:------------- |:------------- |:--------- |:----------------------------------------------------------------------------------------------- |
+| `extMarker`       | `STRING`      | `"mrk_ext"`   | Coop      | Name of the extraction marker                                                                   |
+| `extTask`         | `STRING`      | `""`          | Coop      | Extraction task that will be automatically completed (empty string disables this functionality) |
+| `playerThreshold` | `SCALAR`      | `50`          | Coop      | Percentage of the alive players that have to be in the extraction zone                          |
 ---
 ### **Task threshold**
 | Variable          | Variable type | Default value | Game mode | Description                                                                            |
@@ -70,6 +71,8 @@ _Using the default values means:_
 | 1% - 65%   | Minor failure |
 | 66% - 99%  | Minor succes  |
 | 100%       | Major success |
+
+_Tasks that were not completed will be set to "CANCELLED" at mission end._
 
 ## Available:
  - Coop

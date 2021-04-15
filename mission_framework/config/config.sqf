@@ -36,7 +36,7 @@ EGVAR(end_conditions,taskLimit) = 2;  // Minimum number of completed tasks
 // End condition - Extraction
 GVARMAIN(moduleExtraction) = true;  // Coop
 EGVAR(end_conditions,extMarker) = "mrk_ext";  // Name of the extraction marker
-EGVAR(end_conditions,extTask) = "t3";  // Extraction task that will be automatically completed (empty string disables this functionality)
+EGVAR(end_conditions,extTask) = "";  // Extraction task that will be automatically completed (empty string disables this functionality)
 EGVAR(end_conditions,playerThreshold) = 50;  // Percentage of the alive players that have to be in the extraction zone
 
 // Task threshold (used by Time limit, Extraction and Tactical Withdrawal)

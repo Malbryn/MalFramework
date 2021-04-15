@@ -1,6 +1,6 @@
 # AI Skills
 ## Description:
-_This module sets the AI skills globally at mission start. Its also adds an EH for setting the AI skills for newly spawned AI later in the mission._
+_This module sets the AI skills globally at mission start. It also adds an EH for setting the AI skills for newly spawned AI later in the mission._
 
 _Note:_
 - _For more information about the AI sub-skills visit the [Wiki](https://community.bistudio.com/wiki/Arma_3:_AI_Skill#Sub-Skills)._
