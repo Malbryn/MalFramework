@@ -1,4 +1,5 @@
 #define COMPONENT grass_cutter
+#define COMPONENT_STR QUOTE(Grass cutter)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

@@ -47,6 +47,9 @@ if (hasInterface) then {
 
         [player, _ID] call BFUNC(holdActionRemove);
     }] call CFUNC(addEventHandler);
+
+    // Init chat commands
+    call FUNC(registerChatCommands);
 };
 
 [QGVARMAIN(initFramework), {

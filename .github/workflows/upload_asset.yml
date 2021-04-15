@@ -5,7 +5,7 @@ on:
         branches:
             - release
         paths-ignore:
-            - "VERSION"
+            - "mission_framework/VERSION.sqf"
             - "README.md"
             - ".github/**"
 

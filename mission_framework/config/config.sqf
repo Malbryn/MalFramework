@@ -2,6 +2,9 @@
 
 /* -------------------------------- MISSION PARAMETERS -------------------------------- */
 
+// Debug mode
+GVARMAIN(debugMode) = true;  // Debug mode for mission/framework development (turn it off before deploying the mission)
+
 // Mission type
 GVARMAIN(isTvT) = false;  // If the mission is a TvT mission
 
@@ -22,7 +25,7 @@ GVARMAIN(moduleCivilianCasualties) = true;  // Coop & TvT
 EGVAR(end_conditions,civilianCasLimit) = 50;  // Percentage of the max. allowed civilian casualty
 
 // End condition - Side respawn tickets
-GVARMAIN(moduleRespawnTickets) = true;  // TvT
+GVARMAIN(moduleRespawnTickets) = false;  // TvT
 GVARMAIN(respawnTicketsBlufor) = 2;  // Respawn tickets for BLUFOR (-1: disabled)
 GVARMAIN(respawnTicketsRedfor) = -1;  // Respawn tickets for REDFOR (-1: disabled)
 
@@ -33,6 +36,7 @@ EGVAR(end_conditions,taskLimit) = 2;  // Minimum number of completed tasks
 // End condition - Extraction
 GVARMAIN(moduleExtraction) = true;  // Coop
 EGVAR(end_conditions,extMarker) = "mrk_ext";  // Name of the extraction marker
+EGVAR(end_conditions,extTask) = "t3";  // Extraction task that will be automatically completed (empty string disables this functionality)
 EGVAR(end_conditions,playerThreshold) = 50;  // Percentage of the alive players that have to be in the extraction zone
 
 // Task threshold (used by Time limit, Extraction and Tactical Withdrawal)
@@ -80,15 +84,15 @@ EGVAR(admin,enableCurator) = true;  // Coop
 
 
 // AI Spawner
-GVARMAIN(moduleAISpawner) = true;  // Coop & TvT
+GVARMAIN(moduleAISpawner) = false;  // Coop & TvT
 
 
 // Ambient fly-by
-GVARMAIN(moduleFlyby) = true;  // Coop
+GVARMAIN(moduleFlyby) = false;  // Coop
 
 
 // AO limit
-GVARMAIN(moduleAOLimit) = true;  // Coop & TvT
+GVARMAIN(moduleAOLimit) = false;  // Coop & TvT
 EGVAR(ao_limit,timerLand) = 10;  // Timer for any land based vehicle/unit (-1: disabled)
 EGVAR(ao_limit,timerAir) = -1;  // Timer for any air vehicle (-1: disabled)
 EGVAR(ao_limit,aoMarkerAll) = "mrk_aoLimitAll";  // AO limit marker for every player
@@ -107,9 +111,13 @@ EGVAR(cover_map,colour) = "Color4_FD_F";  // Colour of the covered area
 
 
 // Custom channel
-GVARMAIN(moduleCustomChannel) = true;  // Coop & TvT
+GVARMAIN(moduleCustomChannel) = false;  // Coop & TvT
 EGVAR(custom_channel,channelName) = "JTAC channel";  // Name of the channel
 EGVAR(custom_channel,channelColour) = [0.8, 0, 0.5, 1];  // Colour of the channel (RGBA format, default: FK pink)
+
+
+// Gear
+EGVAR(gear,saveGearInArsenal) = false;  // Should the player's gear be saved if an arsenal is available (Coop & TvT)
 
 
 // Grass cutter
@@ -117,19 +125,19 @@ GVARMAIN(moduleGrassCutter) = true;  // Coop & TvT
 
 
 // Hostage
-GVARMAIN(moduleHostage) = true;  // Coop & TvT
+GVARMAIN(moduleHostage) = false;  // Coop & TvT
 
 
 // IED
-GVARMAIN(moduleIED) = true;  // Coop
+GVARMAIN(moduleIED) = false;  // Coop
 
 
 // Intel
-GVARMAIN(moduleIntel) = true;  // Coop
+GVARMAIN(moduleIntel) = false;  // Coop
 
 
 // Intro text
-GVARMAIN(moduleIntroText) = true;  // Coop & TvT
+GVARMAIN(moduleIntroText) = false;  // Coop & TvT
 EGVAR(intro_text,title) = "TEST TITLE";  // Title
 EGVAR(intro_text,date) = "TEST DATE";  // Date
 EGVAR(intro_text,location) = "TEST LOCATION";  // Location
@@ -146,25 +154,21 @@ GVARMAIN(moduleKillcam) = true;  // Coop & TvT
 
 
 // Logistics
-GVARMAIN(moduleLogistics) = true;  // Coop & TvT
-
-
-// Kill tracker
-GVARMAIN(moduleKillTracker) = true;  // Coop & TvT
+GVARMAIN(moduleLogistics) = false;  // Coop & TvT
 
 
 // LOS Tool
-GVARMAIN(moduleLOSTool) = true;  // Coop & TvT
+GVARMAIN(moduleLOSTool) = false;  // Coop & TvT
 
 
 // Marker side
-GVARMAIN(moduleMarkerSide) = true;  // TvT
+GVARMAIN(moduleMarkerSide) = false;  // TvT
 EGVAR(marker_side,markersBlufor) = ["mrk_blufor"];  // BLUFOR markers
 EGVAR(marker_side,markersRedfor) = ["mrk_redfor"];  // REDFOR markers
 
 
 // Mortar fire
-GVARMAIN(moduleMortar) = true;  // Coop
+GVARMAIN(moduleMortar) = false;  // Coop
 
 
 // No damage ending
@@ -177,11 +181,12 @@ GVARMAIN(moduleOrbat) = true;  // Coop & TvT
 
 // Reinsertion
 GVARMAIN(moduleHALO) = true;  // Coop & TvT
-GVARMAIN(moduleMRV) = true;  // Coop & TvT
+GVARMAIN(moduleMRV) = false;  // Coop & TvT
 GVARMAIN(moduleRP) = true;  // Coop & TvT
-GVARMAIN(moduleHAB) = true;  // Coop & TvT
-GVARMAIN(moduleTP) = true;  // Coop & TvT
+GVARMAIN(moduleHAB) = false;  // Coop & TvT
+GVARMAIN(moduleTP) = false;  // Coop & TvT
 EGVAR(reinsertion,RPPickUp) = false;  // If the player is required to pick up the previous RP
+EGVAR(reinsertion,markRP) = true;  // Mark the RP location on map
 EGVAR(reinsertion,RPObject) = "Land_TentA_F";  // Object used as the squad rally point
 EGVAR(reinsertion,markHAB) = true;  // Mark the HAB location on map
 EGVAR(reinsertion,HABObject) = "Land_HBarrierTower_F";  // Object used as the platoon HAB
@@ -194,7 +199,7 @@ GVARMAIN(moduleSafetyStart) = true;  // Coop & TvT
 
 
 // Setup timer
-GVARMAIN(moduleSetupTimer) = true;  // Coop & TvT
+GVARMAIN(moduleSetupTimer) = false;  // Coop & TvT
 EGVAR(setup_timer,markerBlufor) = "mrk_setupBlufor";  // Setup area for the BLUFOR side
 EGVAR(setup_timer,timerBlufor) = 60;  // Setup timer for the BLUFOR side
 EGVAR(setup_timer,markerRedfor) = "mrk_setupRedfor";  // Setup area for the REDFOR side
@@ -202,7 +207,7 @@ EGVAR(setup_timer,timerRedfor) = 90;  // Setup timer for the REDFOR side
 
 
 // Sitting
-GVARMAIN(moduleSitting) = true;  // Coop & TvT
+GVARMAIN(moduleSitting) = false;  // Coop & TvT
 
 
 // Scenario control
@@ -214,31 +219,27 @@ GVARMAIN(moduleSnowfall) = false;  // Coop & TvT
 EGVAR(snowfall,maxDensity) = 50;  // Intensity of the snowfall
 
 
-// Static line paradrop
-GVARMAIN(moduleStaticLine) = true;  // Coop & TvT
-
-
 // Supply drop
-GVARMAIN(moduleSupplyDrop) = true;  // Coop
+GVARMAIN(moduleSupplyDrop) = false;  // Coop
 EGVAR(supply_drop,supplyDropPlane) = "B_T_VTOL_01_vehicle_F";  // Plane or helicopter used for the supply drop
 EGVAR(supply_drop,useFlare) = false;  // Use flares to mark the crate instead of smokes (night ops)
 
 
 // TFAR
-GVARMAIN(moduleTFAR) = true;  // Coop & TvT
+GVARMAIN(moduleTFAR) = false;  // Coop & TvT
 
 
 // Time limit check
-GVARMAIN(moduleTimeLimitCheck) = true;  // Coop & TvT
+GVARMAIN(moduleTimeLimitCheck) = false;  // Coop & TvT
 
 
 // Unit tracking
-GVARMAIN(moduleUnitTracking) = true;  // Coop
+GVARMAIN(moduleUnitTracking) = false;  // Coop
 EGVAR(unit_tracking,refreshInterval) = 1;  // Refresh rate in seconds (min. value = 1)
 
 
 // Vehicle respawn
-GVARMAIN(moduleVehicleRespawn) = true;  // Coop & TvT
+GVARMAIN(moduleVehicleRespawn) = false;  // Coop & TvT
 
 
 // Wave respawn

@@ -1,4 +1,5 @@
 #define COMPONENT time_limit
+#define COMPONENT_STR QUOTE(Time limit)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

@@ -29,26 +29,26 @@ params [["_unit", objNull, [grpNull, objNull]], ["_type", ""], ["_text", ""], ["
 
 // Check params
 if (isNull _unit) exitWith {
-    [QGVARMAIN(systemMessage), ["ERROR", "(Unit tracking) Group or object does not exit!"]] call CFUNC(globalEvent);
+    [COMPONENT_STR, "ERROR", "Group or object does not exit", true, 0] call EFUNC(main,log);
 };
 
 if !(_unit isEqualTypeAny [objNull, grpNull]) exitWith {
-    [QGVARMAIN(systemMessage), ["ERROR", "(Unit tracking) Incorrect unit type!"]] call CFUNC(globalEvent);
+    [COMPONENT_STR, "ERROR", "Incorrect unit type", true, 0] call EFUNC(main,log);
 };
 
 if (_type == "") exitWith {
-    [QGVARMAIN(systemMessage), ["ERROR", "(Unit tracking) Marker classname is empty!"]] call CFUNC(globalEvent);
+    [COMPONENT_STR, "ERROR", "Marker classname is empty", true, 0] call EFUNC(main,log);
 };
 
 if (GVAR(refreshInterval) < 1) then {
     GVAR(refreshInterval) = 1;
-    INFO("Invalid update interval, using default value of (1 second).");
+    [COMPONENT_STR, "DEBUG", "Invalid update interval, using default value of (1 second)", true, 0] call EFUNC(main,log);
 };
 
 // Create marker
 private _markerPos = if (_unit isEqualType objNull) then [{getPos _unit}, {getPos (leader _unit)}];
 
-private _markerName = [_unit] call FUNC(createMarkerName);
+private _markerName = [_unit] call EFUNC(common,createMarkerName);
 private _marker = createMarker [_markerName, _markerPos];
 
 // Customise marker

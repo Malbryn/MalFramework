@@ -60,26 +60,30 @@ if (hasInterface) then {
 };
 
 // Curator events
-if (GVAR(enableCurator) && !GVARMAIN(isTvT)) then {
-    if (isServer) then {
-        [QGVAR(curatorRegistered), {
-            params ["_unit"];
+if GVAR(enableCurator) then {
+    if (!GVARMAIN(isTvT) || {GVARMAIN(isTvT) && GVARMAIN(debugMode)}) then {
+        // Server events
+        if (isServer) then {
+            [QGVAR(curatorRegistered), {
+                params ["_unit"];
 
-            [_unit] call FUNC(createCurator);
-        }] call CFUNC(addEventHandler);
-        
+                [_unit] call FUNC(createCurator);
+            }] call CFUNC(addEventHandler);
+            
 
-        [QGVAR(curatorReassigned), {
-            params ["_unit"];
+            [QGVAR(curatorReassigned), {
+                params ["_unit"];
 
-            [_unit] call FUNC(reassignCuratorServer);
-        }] call CFUNC(addEventHandler);
-    };
+                [_unit] call FUNC(reassignCuratorServer);
+            }] call CFUNC(addEventHandler);
+        };
 
-    if (hasInterface) then {
-        [QGVARMAIN(initFramework), {
-            call FUNC(assignCurator);
-        }] call CFUNC(addEventHandler);
+        // Client events
+        if (hasInterface) then {
+            [QGVARMAIN(initFramework), {
+                call FUNC(assignCurator);
+            }] call CFUNC(addEventHandler);
+        };
     };
 };
 

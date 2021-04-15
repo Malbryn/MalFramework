@@ -1,4 +1,5 @@
 #define COMPONENT respawn
+#define COMPONENT_STR QUOTE(Respawn)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

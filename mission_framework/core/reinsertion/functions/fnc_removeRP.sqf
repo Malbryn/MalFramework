@@ -46,7 +46,20 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
     // Send notification to the squad memebers
     private _unitArray = (units group player) - [player];
     ["Info", ["You have picked up the RP"]] call BFUNC(showNotification);
-    [QGVARMAIN(notification_2), ["Info", "Your SL has picked up the RP"], _unitArray] call CFUNC(targetEvent);
+    [QGVARMAIN(notification_2), ["Info", "The RP has been picked up"], _unitArray] call CFUNC(targetEvent);
+
+    // Remove marker
+    if GVAR(markRP) then {
+        private _marker = GETVAR((group player),GVAR(markerRP),"");
+
+        if (_marker == "") then {
+            [COMPONENT_STR, "ERROR", "RP marker is not found", true] call EFUNC(main,log);
+        } else {
+            deleteMarker _marker;
+
+            SETPVAR((group player),GVAR(markerRP),"");
+        };
+    };
 }, {
     // Stop the animation if the progress bar was cancelled
     [player, ""] remoteExec ["switchMove", 0];

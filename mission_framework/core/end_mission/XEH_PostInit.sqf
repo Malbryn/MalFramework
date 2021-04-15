@@ -1,17 +1,29 @@
 #include "script_component.hpp"
 
-[QGVARMAIN(callMission), {
+if (isServer) then {
+    call FUNC(eventEntityKilled);
+};
+
+// Mission end call event (Server event)
+[QGVAR(callMission), {
     params ["_ending", "_isVictory", ["_side", sideUnknown]];
 
     [_ending, _isVictory, _side] call FUNC(callMission);
 }] call CFUNC(addEventHandler);
 
-[QGVARMAIN(missionEnd), {
-    params ["_ending", "_isVictory", ["_side", sideUnknown]];
+// Outro event (Global event)
+[QGVAR(runOutro), {
+    params ["_ending", "_isVictory"];
 
-    if (_side == playerSide || _side == sideUnknown) then {
-        [_ending, _isVictory, true, true, true] call BFUNC(endMission);
-    } else {
-        [_ending, !_isVictory, true, true, true] call BFUNC(endMission);
-    };
+    [_ending, _isVictory] call FUNC(runOutro);
 }] call CFUNC(addEventHandler);
+
+// Mission end event
+[QGVAR(endMission), {
+    params ["_ending"];
+
+    endMission _ending;
+}] call CFUNC(addEventHandler);
+
+// Init kill tracker
+call FUNC(initKillTracker);

@@ -1,4 +1,5 @@
 #define COMPONENT end_conditions
+#define COMPONENT_STR QUOTE(End conditions)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

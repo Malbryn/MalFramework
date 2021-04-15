@@ -21,7 +21,7 @@
 params ["_unit", "_role"];
 
 if (isNil "_unit") exitWith {
-    MSG("ERROR","(Gear) Unit is not found!");
+    [COMPONENT_STR, "ERROR", "Unit is not found", true] call EFUNC(main,log);
     false
 };
 
@@ -43,23 +43,33 @@ if ((side _unit) == west) then {
     switch _role do {
         #include "..\..\..\config\gear\blufor_gear.sqf"
 
+        // Customised loadout saved in Arsenal
+        case "CUSTOM" : {
+            _gear = GVAR(customLoadout);
+        };
+
         default {
-            MSG_1("WARNING","(Gear) Undefined role in the loadout: %1 (blufor_gear.sqf)",_role);
+            [COMPONENT_STR, "ERROR", format ["Undefined role (%1) in the loadout (blufor_gear.sqf)", _role], true] call EFUNC(main,log);
         };
     };
 } else {
     switch _role do {
         #include "..\..\..\config\gear\redfor_gear.sqf"
 
+        // Customised loadout saved in Arsenal
+        case "CUSTOM" : {
+            _gear = GVAR(customLoadout);
+        };
+
         default {
-            MSG_1("WARNING","(Gear) Undefined role in the loadout: %1 (redfor_gear.sqf)",_role);
+            [COMPONENT_STR, "ERROR", format ["Undefined role (%1) in the loadout (redfor_gear.sqf)", _role], true] call EFUNC(main,log);
         };
     };
 };
 
 // Apply the selected loadout
 if (count _gear == 0) exitWith {
-    MSG("ERROR","(Gear) Empty gear array!");
+    [COMPONENT_STR, "ERROR", "Gear array is empty", true] call EFUNC(main,log);
     false
 };
 
@@ -68,5 +78,7 @@ _unit setUnitLoadout _gear;
 
 // Save the current loadout
 SETPVAR(_unit,GVAR(currentLoadout),_role);
+
+[COMPONENT_STR, "DEBUG", format ["Assigned role: %1", _role], true] call EFUNC(main,log);
 
 true

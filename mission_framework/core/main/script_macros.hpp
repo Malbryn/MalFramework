@@ -1,5 +1,5 @@
 #define PREFIX MF
-#define VERSION preprocessFile QUOTE(VERSION);
+#define VERSION loadFile QUOTE(mission_framework\VERSION.sqf);
 
 // DEBUGGING
 #ifndef DEBUG_MODE_NORMAL
@@ -75,3 +75,10 @@ for '_i' from 0 to _size do \
 { \
     player createDiaryRecord (_briefing select _size - _i); \
 };
+
+// Custom task state colour codes
+#define TASKCOLOUR_CREATED [0.902, 0.902, 0.902, 1]
+#define TASKCOLOUR_ASSIGNED [0.8, 0.502, 0.2, 1]
+#define TASKCOLOUR_SUCCEEDED [0, 1, 0, 1]
+#define TASKCOLOUR_FAILED [1, 0, 0, 1]
+#define TASKCOLOUR_CANCELLED [0.4, 0.4, 0.4, 1]

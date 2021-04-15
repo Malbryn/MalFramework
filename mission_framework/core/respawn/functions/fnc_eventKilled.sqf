@@ -56,7 +56,7 @@ if (GVARMAIN(isTvT)) then {
         };
 
         default {
-            MSG_1("ERROR","(Side tickets) Invalid side of player (%1)",playerSide);
+            [COMPONENT_STR, "ERROR", format ["Cannot calculate side tickets, invalid side of player (%1)", playerSide], true] call EFUNC(main,log);
         };
     };
 };

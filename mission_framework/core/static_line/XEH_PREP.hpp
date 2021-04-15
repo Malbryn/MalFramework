@@ -1,2 +1,0 @@
-PREP(addStaticLineDropMenu);
-PREP(doParadrop);

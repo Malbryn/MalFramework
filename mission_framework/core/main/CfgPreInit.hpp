@@ -32,10 +32,6 @@ class GVARMAIN(Briefing) {
     init = PATH_PRE(briefing);
 };
 
-class GVARMAIN(ChatCommands) {
-    init = PATH_PRE(chat_commands);
-};
-
 class GVARMAIN(Common) {
     init = PATH_PRE(common);
 };
@@ -50,10 +46,6 @@ class GVARMAIN(Credits) {
 
 class GVARMAIN(CustomChannel) {
     init = PATH_PRE(custom_channel);
-};
-
-class GVARMAIN(DisableDamage) {
-    init = PATH_PRE(disable_damage);
 };
 
 class GVARMAIN(EndConditions) {
@@ -112,10 +104,6 @@ class GVARMAIN(MarkerSide) {
     init = PATH_PRE(marker_side);
 };
 
-class GVARMAIN(MissionStats) {
-    init = PATH_PRE(mission_stats);
-};
-
 class GVARMAIN(Mortar) {
     init = PATH_PRE(mortar);
 };
@@ -162,10 +150,6 @@ class GVARMAIN(Sitting) {
 
 class GVARMAIN(Snowfall) {
     init = PATH_PRE(snowfall);
-};
-
-class GVARMAIN(StaticLine) {
-    init = PATH_PRE(static_line);
 };
 
 class GVARMAIN(SupplyDrop) {

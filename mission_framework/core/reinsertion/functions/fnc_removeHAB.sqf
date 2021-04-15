@@ -24,7 +24,7 @@ if (isNil {GETMVAR(GVAR(HAB),nil)}) exitWith {
     ["Warning", ["The HAB hasn't been deployed yet"]] call BFUNC(showNotification);
 };
 
-// Check if the RP tent is in range
+// Check if the HAB tent is in range
 private _id = GETMVAR(GVAR(HAB),nil);
 private _HAB = objectFromNetId _id;
 
@@ -37,7 +37,7 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
 
 // Display ACE progress bar
 [12, [], {
-    // Remove RP tent and delete the coordinates
+    // Remove the HAB and delete the coordinates
     private _id = GETMVAR(GVAR(HAB),nil);
     private _HAB = objectFromNetId _id;
     deleteVehicle _HAB;

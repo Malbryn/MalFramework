@@ -1,4 +1,5 @@
 #define COMPONENT marker_side
+#define COMPONENT_STR QUOTE(Marker side)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE

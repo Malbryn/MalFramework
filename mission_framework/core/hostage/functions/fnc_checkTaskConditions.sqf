@@ -50,6 +50,6 @@ if (_count >= _limitSuccess) then {
 
     // End the mission if it was enabled
     if (_endMission) then {
-        [QGVARMAIN(callMission), ["MissionSuccess", true, playerSide]] call CFUNC(serverEvent);
+        [QEGVAR(end_mission,callMission), ["MissionSuccess", true, playerSide]] call CFUNC(serverEvent);
     };
 };

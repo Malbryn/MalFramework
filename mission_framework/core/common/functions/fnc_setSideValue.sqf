@@ -51,6 +51,6 @@ switch _side do {
     };
 
     default {
-        WARNING_1("Cannot set side value. Invalid player side: %1",_side);
+        [COMPONENT_STR, "WARNING", format ["Cannot set side value, invalid player side: %1", _side], true, 0] call EFUNC(main,log);
     };
 };
