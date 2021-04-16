@@ -203,7 +203,7 @@ GVARMAIN(moduleSetupTimer) = false;  // Coop & TvT
 EGVAR(setup_timer,markerBlufor) = "mrk_setupBlufor";  // Setup area for the BLUFOR side
 EGVAR(setup_timer,timerBlufor) = 60;  // Setup timer for the BLUFOR side
 EGVAR(setup_timer,markerRedfor) = "mrk_setupRedfor";  // Setup area for the REDFOR side
-EGVAR(setup_timer,timerRedfor) = 90;  // Setup timer for the REDFOR side
+EGVAR(setup_timer,timerRedfor) = 60;  // Setup timer for the REDFOR side
 
 
 // Sitting
