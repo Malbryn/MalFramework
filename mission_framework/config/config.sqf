@@ -236,7 +236,7 @@ EGVAR(unit_tracking,refreshInterval) = 1;  // Refresh rate in seconds (min. valu
 
 
 // Vehicle respawn
-GVARMAIN(moduleVehicleRespawn) = false;  // Coop & TvT
+GVARMAIN(moduleVehicleRespawn) = true;  // Coop & TvT
 
 
 // Wave respawn

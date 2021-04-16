@@ -26,7 +26,7 @@
 if !(isServer) exitWith {};
 
 params [
-["_vehicle", objNull, [objNull]],
+    ["_vehicle", objNull, [objNull]],
     ["_delay", 5, [0]],
     ["_init", {}, [{}]],
     ["_respawnLimit", -1, [0]],
@@ -61,10 +61,13 @@ if (_savePaint) then {
     _parts = _customization#1;
 };
 
+// Save pylons
+private _pylons = getAllPylonsInfo _vehicle;
+
 private _vehicleData = [
     _delay, _init, _loadout, vehicleVarName _vehicle, getPosASL _vehicle,
     getDir _vehicle, typeOf _vehicle, _inventory, _savePaint, _paint, _parts,
-    _deleteWreck, _limitEnabled
+    _deleteWreck, _limitEnabled, _pylons
 ];
 
 if (isNil QGVAR(vehicleMonitor)) then {
