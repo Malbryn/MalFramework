@@ -6,7 +6,7 @@ _The mission maker can define hostage units, the framework will monitor the stat
 
 _An extraction area and a threshold can be set, so the given amount of hostages have to be in the extraction zone in order to complete the task._
 
-_The module can also trigger mission complete._
+_The module can also trigger mission complete or mission fail._
 
 ## Usage:
 1. _Set up the hostage task_
@@ -31,7 +31,8 @@ Arguments:
     1: STRING - Marker name for the extraction zone
     2: SCALAR - Number of hostages KIA to fail the task
     3: SCALAR - Number of rescued hostages to complete the task
-    4: BOOLEAN - Should the mission end when task is completed or failed (Optional, default: false)
+    4: BOOLEAN - Should the mission end (MissionSuccess) if the task is successful (Optional, default: false)
+    5: BOOLEAN - Should the mission end (MissionFailed) if the task is failed (Optional, default: false)
 
 Example:
     ["t1", "mrk_extraction", 3, 2, true] call MF_hostage_fnc_registerRescueTask
