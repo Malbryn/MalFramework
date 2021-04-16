@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_time_limit_fnc_addTimeLimitCheckMenu
+        call MF_end_conditions_fnc_addTimeLimitCheckMenu
 
     Returns:
         void
