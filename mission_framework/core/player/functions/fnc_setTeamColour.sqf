@@ -11,10 +11,10 @@
         -
 
     Example:
-        call MF_team_colour_fnc_setTeamColour
+        call MF_player_fnc_setTeamColour
 
     Returns:
-        void
+        STRING
 */
 
 private _teamColour = GETVAR(player,GVAR(teamColour),"MAIN");
@@ -22,3 +22,5 @@ private _teamColour = GETVAR(player,GVAR(teamColour),"MAIN");
 if (_teamColour != "MAIN") then {
     player assignTeam _teamColour;
 };
+
+_teamColour

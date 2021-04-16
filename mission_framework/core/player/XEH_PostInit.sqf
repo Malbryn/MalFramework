@@ -12,6 +12,9 @@ if (hasInterface) then {
         if (_insignia != "") then {
             [player, _insignia] call BFUNC(setUnitInsignia);
         };
+
+        // Set team colour
+        call FUNC(setTeamColour);
     }] call CFUNC(addEventHandler);
 
     [QGVAR(setInsignia), {
