@@ -2,6 +2,8 @@
 ## Description:
 _This module adds a supply drop option to players with platoon level leadership (see: Player module)._
 
+_The module spawns a plane or helicopter which then drops in the designated supply crate._
+
 ## Usage:
 1. _Place down crates and fill them up with ammo, medical stuff etc._
 2. _Call `MF_supply_drop_fnc_addCrate` in the init field of the crates_

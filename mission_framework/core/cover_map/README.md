@@ -3,11 +3,11 @@
 _This module covers the map so only a smaller section is visible for the players._
 
 ## Usage:
-1. _Place down a **rectangular** area marker on the map._
-2. _Give it a unique name._
+1. _Place down a **rectangular** area marker on the map_
+2. _Give it a unique name_
 
 _Note:_
- - _It can be the same marker as the one used in the `ao_limit` module._
+ - _It can be the same marker as the one used in the `AO Limit` module._
 
 ## Config:
 _Description of each value set in the config file._

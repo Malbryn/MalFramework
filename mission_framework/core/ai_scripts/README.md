@@ -9,7 +9,7 @@ _Note:_
 ## Usage:
 _Simply call one of the functions in the init field of the unit._
 
-*IMPORTANT:*</br>
+**IMPORTANT:**</br>
 _Be careful when using this with Dynamic Simulation or any AI caching (e.g. Show/Hide module) as it "breaks the AI free" which can result in invisible AI._
 
 _Available tasks:_

@@ -1,6 +1,8 @@
 # AO Limit
 ## Description:
-_This module restricts the players' movement around the map by designating a target AO. The players cannot leave this area for more than the given time._
+_This module restricts the player's movement around the map by designating a target AO._
+
+_The player cannot leave this area for more than the given time._
 
 _If they stay outside of the AO for too long, they will be killed._
 

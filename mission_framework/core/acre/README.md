@@ -3,7 +3,7 @@
 _This module allows the configuration of the ACRE mod._
 
 ## Usage:
-_Check the additional settings in `mission_framework\core\acre\settings.hpp`._
+_Check the additional settings in `core\acre\settings.hpp`._
 
 ## Config:
 _Description of each value set in the config file._

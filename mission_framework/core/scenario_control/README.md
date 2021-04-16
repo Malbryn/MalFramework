@@ -1,6 +1,6 @@
-# Safety
+# Scenario Control
 ## Description:
-_This module lets players with platoon level leadership (see: Player module) to call Tactical Withdrawal and end the mission._
+_This module lets players with platoon level leadership (see: Player module) call Tactical Withdrawal and end the mission._
 
 _The outcome depends on the task threshold defined in `config.cfg`._
 

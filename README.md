@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://i.imgur.com/Lq5Do49.png">
-  <a href="https://github.com/Malbryn/MalFramework/releases/tag/1.10.0">
-    <img src="https://img.shields.io/badge/Release-1.10.0-brightgreen" alt="MalFramework Version">
-  </a>
+    <img src="https://i.imgur.com/Lq5Do49.png">
+    <a href="https://github.com/Malbryn/MalFramework/releases/tag/1.10.0">
+        <img src="https://img.shields.io/badge/Release-1.10.0-brightgreen" alt="MalFramework Version">
+    </a>
 </p>
 
 Welcome to **Malbryn's Mission Framework**. This framework was made for my Arma 3 scripted missions and it is based on some other Arma 3 mission frameworks and other scripts. Their original authors are credited in the script headers as well as in the Credits section in-game. This script library is compatible with both PvE and TvT missions.

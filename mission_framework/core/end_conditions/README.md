@@ -13,7 +13,7 @@ _Available end conditions:_
 
 _The framework relies on the vanilla task system. It is required to use most of the end conditions as the framework check the percentage of the completed tasks and ends the mission accordingly._
 
-_**Important:** don't forget to customise the end screen messages in `mission_framework\config\debriefing\CfgDebriefing.hpp`._
+_**Important:** don't forget to customise the end screen in `config\debriefing\CfgDebriefing.hpp`._
 
 ## Config:
 _Description of each value set in the config file._

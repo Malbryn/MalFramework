@@ -4,7 +4,7 @@ _This module adds support for hostage rescue tasks/missions._
 
 _The mission maker can define hostage units, the framework will monitor the status of those units._
 
-_An extraction area and a threshold can be set, so the given amount of has to be in the extraction zone in order to complete the task._
+_An extraction area and a threshold can be set, so the given amount of hostages have to be in the extraction zone in order to complete the task._
 
 _The module can also trigger mission complete._
 

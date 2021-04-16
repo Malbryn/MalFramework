@@ -1,9 +1,11 @@
 # AI Spawner
 ## Description:
-_This module integrates DreadPirate's awesome [Jebus - Just Editor Based Unit Spawning](https://forums.bohemia.net/forums/topic/174661-jebus-just-editor-based-unit-spawning/) script. The module takes editor-based groups and respawns them when the group is eliminated._
+_This module integrates DreadPirate's awesome [Jebus - Just Editor Based Unit Spawning](https://forums.bohemia.net/forums/topic/174661-jebus-just-editor-based-unit-spawning/) script._
+
+_It takes editor-based groups and respawns them when the group is eliminated._
 
 ## Usage:
-_Call `MF_ai_spawner_fnc_main` in the init field of the target group or unit (or use it with triggers)._
+1. _Call `MF_ai_spawner_fnc_main` in the init field of the target group or unit (or use it with triggers)._
 
 ```
 Arguments:

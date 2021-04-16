@@ -2,7 +2,7 @@
 ## Description:
 _This module adds basic unit tracking._
 
-_It can be used to track groups or objcts (units and vehicles)._
+_It can be used to track groups or objects (units and vehicles)._
 
 ## Usage:
 1. _Place down the group, unit or vehicle_

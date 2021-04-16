@@ -2,11 +2,11 @@
 ## Description:
 _This module adds wave respawns (as opposed to the default, custom respawn)._
 
-_Players with platoon level leadership (see: Player module) will be able to call in for reinforcements._
+_Players with platoon level leadership (see: Player module) will be able to call for reinforcements._
 
 _If those players die, the option will be available for the next person in command of the platoon._
 
-_If the entire leadership element dies, no one will be able to call in for reinforcements._
+_If the entire leadership element dies, no one will be able to call for reinforcements._
 
 ## Usage:
 _No further setup is required._

@@ -1,6 +1,6 @@
 # Grass Cutter
 ## Description:
-_This module adds an option to the players so they can remove grass around them._
+_This module adds an option to the player so they can remove grass around them._
 
 _By default, an entrenching tool is required to perform the action._
 

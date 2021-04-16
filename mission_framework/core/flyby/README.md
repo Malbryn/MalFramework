@@ -1,6 +1,6 @@
 # Fly-by
 ## Description:
-_This module spawns friendly aircraft that do a fly-by along the designated path and then despawns them._
+_This module spawns a friendly aircraft that performs a fly-by along the designated path and then despawns it._
 
 ## Usage:
 _Call the function in the activation field of a trigger._
