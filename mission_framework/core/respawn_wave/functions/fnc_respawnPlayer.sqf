@@ -20,7 +20,7 @@
 if !(hasInterface) exitWith {};
 
 // Check if the respawn tickets are enabled
-if (GETVAR(player,EGVAR(respawn_tickets,amount),-1) != 0) then {
+if (GETVAR(player,EGVAR(respawn,tickets),-1) != 0) then {
     setPlayerRespawnTime 6;
 
     ["RespawnCalled"] call BFUNC(showNotification);
