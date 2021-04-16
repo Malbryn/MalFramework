@@ -27,7 +27,7 @@ EGVAR(end_conditions,civilianCasLimit) = 50;  // Percentage of the max. allowed 
 // End condition - Side respawn tickets
 GVARMAIN(moduleRespawnTickets) = false;  // TvT
 GVARMAIN(respawnTicketsBlufor) = 2;  // Respawn tickets for BLUFOR (-1: disabled)
-GVARMAIN(respawnTicketsRedfor) = -1;  // Respawn tickets for BLUFOR (-1: disabled)
+GVARMAIN(respawnTicketsRedfor) = -1;  // Respawn tickets for REDFOR (-1: disabled)
 
 // End condition - Task limit
 GVARMAIN(moduleTaskLimit) = false;  // Coop
@@ -36,7 +36,7 @@ EGVAR(end_conditions,taskLimit) = 2;  // Minimum number of completed tasks
 // End condition - Extraction
 GVARMAIN(moduleExtraction) = true;  // Coop
 EGVAR(end_conditions,extMarker) = "mrk_ext";  // Name of the extraction marker
-EGVAR(end_conditions,extTask) = "t3";  // Extraction task that will be automatically completed (empty string disables this functionality)
+EGVAR(end_conditions,extTask) = "";  // Extraction task that will be automatically completed (empty string disables this functionality)
 EGVAR(end_conditions,playerThreshold) = 50;  // Percentage of the alive players that have to be in the extraction zone
 
 // Task threshold (used by Time limit, Extraction and Tactical Withdrawal)
@@ -105,8 +105,8 @@ GVARMAIN(moduleBriefing) = true;  // Coop & TvT
 
 
 // Cover map
-GVARMAIN(moduleCoverMap) = false;  // Coop & TvT
-EGVAR(cover_map,aoMarker) = "ao";  // AO marker
+GVARMAIN(moduleCoverMap) = true;  // Coop & TvT
+EGVAR(cover_map,aoMarker) = "mrk_ao";  // Name of the AO marker
 EGVAR(cover_map,colour) = "Color4_FD_F";  // Colour of the covered area
 
 
@@ -114,6 +114,10 @@ EGVAR(cover_map,colour) = "Color4_FD_F";  // Colour of the covered area
 GVARMAIN(moduleCustomChannel) = false;  // Coop & TvT
 EGVAR(custom_channel,channelName) = "JTAC channel";  // Name of the channel
 EGVAR(custom_channel,channelColour) = [0.8, 0, 0.5, 1];  // Colour of the channel (RGBA format, default: FK pink)
+
+
+// End mission
+EGVAR(end_mission,disableDamage) = true;  // Disable damage during the mission end screen (Coop & TvT)
 
 
 // Gear
@@ -171,10 +175,6 @@ EGVAR(marker_side,markersRedfor) = ["mrk_redfor"];  // REDFOR markers
 GVARMAIN(moduleMortar) = false;  // Coop
 
 
-// No damage ending
-GVARMAIN(moduleDisableDamage) = true;  // Coop & TvT
-
-
 // ORBAT
 GVARMAIN(moduleOrbat) = true;  // Coop & TvT
 
@@ -203,7 +203,7 @@ GVARMAIN(moduleSetupTimer) = false;  // Coop & TvT
 EGVAR(setup_timer,markerBlufor) = "mrk_setupBlufor";  // Setup area for the BLUFOR side
 EGVAR(setup_timer,timerBlufor) = 60;  // Setup timer for the BLUFOR side
 EGVAR(setup_timer,markerRedfor) = "mrk_setupRedfor";  // Setup area for the REDFOR side
-EGVAR(setup_timer,timerRedfor) = 90;  // Setup timer for the REDFOR side
+EGVAR(setup_timer,timerRedfor) = 60;  // Setup timer for the REDFOR side
 
 
 // Sitting
