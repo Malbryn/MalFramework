@@ -124,10 +124,6 @@ class GVARMAIN(Respawn) {
     init = PATH_PRE(respawn);
 };
 
-class GVARMAIN(RespawnTickets) {
-    init = PATH_PRE(respawn_tickets);
-};
-
 class GVARMAIN(RespawnWave) {
     init = PATH_PRE(respawn_wave);
 };
