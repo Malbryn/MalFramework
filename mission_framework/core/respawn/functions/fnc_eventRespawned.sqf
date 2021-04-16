@@ -98,10 +98,10 @@ cutText ["", "BLACK FADED", 5, true];
     };
 
     // Remaining respawn tickets
-    if (GETVAR(_unit,EGVAR(respawn_tickets,amount),-1) == -1) exitWith {};
+    if (GETVAR(_unit,GVAR(tickets),-1) == -1) exitWith {};
 
-    private _tickets = (GETVAR(_unit,EGVAR(respawn_tickets,amount),-1)) - 1;
-    [_unit, _tickets] call EFUNC(respawn_tickets,setRespawnTickets);
+    private _tickets = (GETVAR(_unit,GVAR(tickets),-1)) - 1;
+    [_unit, _tickets] call FUNC(setRespawnTickets);
 
     [format ["Respawns available:<br/>%1", _tickets], 2, ace_player, 12] call AFUNC(common,displayTextStructured);
 }, [_unit, _corpse], 1] call CFUNC(waitAndExecute);
