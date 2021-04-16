@@ -62,7 +62,7 @@ if (_savePaint) then {
 };
 
 // Save pylons
-private _pylons = getPylonMagazines _vehicle;
+private _pylons = getAllPylonsInfo _vehicle;
 
 private _vehicleData = [
     _delay, _init, _loadout, vehicleVarName _vehicle, getPosASL _vehicle,

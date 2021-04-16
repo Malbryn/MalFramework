@@ -95,7 +95,7 @@ if !(isServer) exitWith {};
                 } forEach getPylonMagazines _newVehicle;
 
                 {
-                    _newVehicle setPylonLoadout [_forEachIndex + 1, _x, true, _pylonPaths select _forEachIndex]
+                    _newVehicle setPylonLoadout [_x#0, _x#3, true, _x#2]
                 } forEach _pylons;
             };
 
