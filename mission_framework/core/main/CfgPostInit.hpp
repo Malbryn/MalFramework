@@ -164,10 +164,6 @@ class GVARMAIN(TFAR) {
     init = PATH_POST(tfar);
 };
 
-class GVARMAIN(TimeLimit) {
-    init = PATH_POST(time_limit);
-};
-
 class GVARMAIN(UnitTracking) {
     init = PATH_POST(unit_tracking);
 };

@@ -40,3 +40,7 @@ if (isServer) then {
         };
     }] call CFUNC(addEventHandler);
 };
+
+if (hasInterface && GVAR(timeLimitCheckEnabled)) then {
+    call FUNC(addTimeLimitCheckMenu);
+};
