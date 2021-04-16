@@ -42,7 +42,8 @@ if !(isServer) exitWith {};
                 "_paint",
                 "_parts",
                 "_deleteWreck",
-                "_limitEnabled"
+                "_limitEnabled",
+                "_pylons"
             ];
 
             private _respawnCount = GETVAR(_vehicle,GVAR(respawnCount),0);
@@ -80,6 +81,23 @@ if !(isServer) exitWith {};
             [_newVehicle, _name] remoteExec ["setVehicleVarName", 0, _newVehicle];
 
             _newVehicle call _init;
+
+            // Pylons
+            if (_newVehicle isKindOf "Air") then {
+                [COMPONENT_STR, "DEBUG", "Vehicle is an air vehicle, changing pylons...", true, 0] call EFUNC(main,log);
+
+                private _pylonPaths = (configProperties [configFile >> "CfgVehicles" >> typeOf _newVehicle >> "Components" >> "TransportPylonsComponent" >> "Pylons", "isClass _x"]) apply {
+                    getArray (_x >> "turret")
+                };
+
+                {
+                    _newVehicle removeWeaponGlobal getText (configFile >> "CfgMagazines" >> _x >> "pylonWeapon")
+                } forEach getPylonMagazines _newVehicle;
+
+                {
+                    _newVehicle setPylonLoadout [_forEachIndex + 1, _x, true, _pylonPaths select _forEachIndex]
+                } forEach _pylons;
+            };
 
             GVAR(totalArray) pushBack [_newVehicle, _vehicleData];
         };
