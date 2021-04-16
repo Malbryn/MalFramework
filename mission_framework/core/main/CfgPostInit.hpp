@@ -156,10 +156,6 @@ class GVARMAIN(SupplyDrop) {
     init = PATH_POST(supply_drop);
 };
 
-class GVARMAIN(TeamColour) {
-    init = PATH_POST(team_colour);
-};
-
 class GVARMAIN(TFAR) {
     init = PATH_POST(tfar);
 };

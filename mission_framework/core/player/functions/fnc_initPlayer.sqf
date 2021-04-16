@@ -47,7 +47,7 @@ if !(local _unit) exitWith {};
 [_unit, _traits] call FUNC(setTraits);
 
 // Assign team colour
-SETPVAR(_unit,EGVAR(team_colour,teamColour),_colour);
+SETPVAR(_unit,GVAR(teamColour),_colour);
 
 // Assign view distance
 SETPVAR(_unit,EGVAR(common,viewDistance),_viewDistance);
