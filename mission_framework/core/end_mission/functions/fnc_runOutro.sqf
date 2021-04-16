@@ -43,7 +43,7 @@ if (hasInterface) then {
     setPlayerRespawnTime 10e10;
 
     // Disable damage (if setting enabled)
-    if (GVARMAIN(moduleDisableDamage)) then {
+    if (GVAR(disableDamage)) then {
         player allowDamage false;
         (vehicle player) allowDamage false;
     };

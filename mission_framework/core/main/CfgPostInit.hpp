@@ -124,10 +124,6 @@ class GVARMAIN(Respawn) {
     init = PATH_POST(respawn);
 };
 
-class GVARMAIN(RespawnTickets) {
-    init = PATH_POST(respawn_tickets);
-};
-
 class GVARMAIN(RespawnWave) {
     init = PATH_POST(respawn_wave);
 };
@@ -156,16 +152,8 @@ class GVARMAIN(SupplyDrop) {
     init = PATH_POST(supply_drop);
 };
 
-class GVARMAIN(TeamColour) {
-    init = PATH_POST(team_colour);
-};
-
 class GVARMAIN(TFAR) {
     init = PATH_POST(tfar);
-};
-
-class GVARMAIN(TimeLimit) {
-    init = PATH_POST(time_limit);
 };
 
 class GVARMAIN(UnitTracking) {

@@ -12,4 +12,6 @@ if (hasInterface) then {
 
         [_unit, _corpse] call FUNC(eventRespawned);
     }] call CFUNC(addBISEventHandler);
+
+    call FUNC(setRespawntickets);
 };

@@ -79,7 +79,7 @@ if (GVARMAIN(isTvT)) then {
         // Save death location of the player
         SETVAR(player,EGVAR(reinsertion,deathPos),getPos player);
 
-        if (GETVAR(player,EGVAR(respawn_tickets,amount),-1) == 0 || (GVARMAIN(moduleWaveRespawn) && EGVAR(respawn_wave,availableWaves) == 0)) then {
+        if (GETVAR(player,GVAR(tickets),-1) == 0 || (GVARMAIN(moduleWaveRespawn) && EGVAR(respawn_wave,availableWaves) == 0)) then {
             // Init spectator screen
             if (GVARMAIN(useACESpectator)) then {
                 [true, true, true] call EFUNC(common,initACESpectator);
@@ -87,7 +87,7 @@ if (GVARMAIN(isTvT)) then {
                 ["Initialize", [player, [], false, true, true, false, true, false, true, true]] call BFUNC(EGSpectator);
             };
 
-            if (GETVAR(player,EGVAR(respawn_tickets,amount),-1) == 0) then {
+            if (GETVAR(player,GVAR(tickets),-1) == 0) then {
                 [QGVARMAIN(notification_2), ["Warning", "You have no more respawn tickets!"]] call CFUNC(localEvent);
             };
 
