@@ -123,6 +123,7 @@ EGVAR(end_mission,disableDamage) = true;  // Disable damage during the mission e
 
 // Gear
 EGVAR(gear,saveGearInArsenal) = false;  // Should the player's gear be saved if an arsenal is available (Coop & TvT)
+EGVAR(gear,enableBackpackLock) = true;  // Enable backpack lock (Coop & TvT)
 
 
 // Grass cutter
