@@ -13,6 +13,7 @@ GVARMAIN(moduleTimeLimit) = true;  // Coop & TvT
 EGVAR(end_conditions,timeLimit) = 60 MINUTES;  // Mission time limit in seconds
 EGVAR(end_conditions,favouredSide) = 1;  // TvT: Favoured side (0: None, 1: BLUFOR, 2: REDFOR, 3: Side with more players)
 EGVAR(end_conditions,notificationTime) = 10 MINUTES;  // Send a notification to each player X seconds before the time limit (-1: disabled)
+EGVAR(end_conditions,timeLimitCheckEnabled) = true;  // Enable time limit check for players
 
 // End condition - Player casualty limit
 GVARMAIN(modulePlayerCasualties) = false;  // Coop & TvT
@@ -227,10 +228,6 @@ EGVAR(supply_drop,useFlare) = false;  // Use flares to mark the crate instead of
 
 // TFAR
 GVARMAIN(moduleTFAR) = false;  // Coop & TvT
-
-
-// Time limit check
-GVARMAIN(moduleTimeLimitCheck) = false;  // Coop & TvT
 
 
 // Unit tracking

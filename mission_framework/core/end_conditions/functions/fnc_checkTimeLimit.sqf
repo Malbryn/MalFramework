@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_time_limit_fnc_checkTimeLimit
+        call MF_end_conditions_fnc_checkTimeLimit
 
     Returns:
         void
@@ -19,7 +19,7 @@
 
 if !(hasInterface) exitWith {};
 
-private _timeSeconds = ceil (EGVAR(end_conditions,timeLimit) - CBA_missionTime);
+private _timeSeconds = ceil (GVAR(timeLimit) - CBA_missionTime);
 private _timeMinutes = ceil (_timeSeconds / 60);
 
 switch true do {
