@@ -1,4 +1,4 @@
-# Cover Map
+# Mpa Cover
 ## Description:
 _This module covers the map so only a smaller section is visible for the players._
 

@@ -2,7 +2,7 @@
 
 /*
     Author:
-        BlackHawk, PIZZADOX (original A2 script by Karel Moricky)
+        BlackHawk, PIZZADOX and Karel Moricky
 
     Description:
         Covers the map area outside of the AO.
@@ -11,7 +11,7 @@
         0: STRING - Name of AO marker
 
     Example:
-        ["ao"] call MF_cover_map_fnc_coverMap
+        ["mrk_ao"] call MF_map_cover_fnc_coverMap
 
     Returns:
         void

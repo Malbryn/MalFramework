@@ -36,8 +36,8 @@ class GVARMAIN(Common) {
     init = PATH_PRE(common);
 };
 
-class GVARMAIN(CoverMap) {
-    init = PATH_PRE(cover_map);
+class GVARMAIN(MapCover) {
+    init = PATH_PRE(map_cover);
 };
 
 class GVARMAIN(Credits) {

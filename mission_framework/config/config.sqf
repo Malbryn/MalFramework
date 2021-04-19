@@ -107,12 +107,6 @@ EGVAR(ao_limit,aoMarkerRedfor) = "mrk_aoLimitRedfor";  // AO limit marker for RE
 GVARMAIN(moduleBriefing) = false;  // Coop & TvT
 
 
-// Cover map
-GVARMAIN(moduleCoverMap) = false;  // Coop & TvT
-EGVAR(cover_map,aoMarker) = "mrk_ao";  // Name of the AO marker
-EGVAR(cover_map,colour) = "Color4_FD_F";  // Colour of the covered area
-
-
 // Custom channel
 GVARMAIN(moduleCustomChannel) = false;  // Coop & TvT
 EGVAR(custom_channel,channelName) = "JTAC channel";  // Name of the channel
@@ -167,6 +161,12 @@ GVARMAIN(moduleLogistics) = false;  // Coop & TvT
 
 // LOS Tool
 GVARMAIN(moduleLOSTool) = false;  // Coop & TvT
+
+
+// Map cover
+GVARMAIN(moduleMapCover) = false;  // Coop & TvT
+EGVAR(map_cover,aoMarker) = "mrk_ao";  // Name of the AO marker
+EGVAR(map_cover,colour) = "Color4_FD_F";  // Colour of the covered area
 
 
 // Marker side
