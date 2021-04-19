@@ -14,6 +14,8 @@ EGVAR(end_conditions,timeLimit) = 60 MINUTES;  // Mission time limit in seconds
 EGVAR(end_conditions,favouredSide) = 1;  // TvT: Favoured side (0: None, 1: BLUFOR, 2: REDFOR, 3: Side with more players)
 EGVAR(end_conditions,notificationTime) = 10 MINUTES;  // Send a notification to each player X seconds before the time limit (-1: disabled)
 EGVAR(end_conditions,timeLimitCheckEnabled) = true;  // Enable time limit check for players
+EGVAR(end_conditions,stagingEnabled) = true;  // Coop: Don't start the mission timer until the players leave the staging area
+EGVAR(end_conditions,stagingAreaMarker) = "mrk_staging";  // Coop: Marker for the staging area
 
 // End condition - Player casualty limit
 GVARMAIN(modulePlayerCasualties) = false;  // Coop & TvT
@@ -106,7 +108,7 @@ GVARMAIN(moduleBriefing) = true;  // Coop & TvT
 
 
 // Cover map
-GVARMAIN(moduleCoverMap) = true;  // Coop & TvT
+GVARMAIN(moduleCoverMap) = false;  // Coop & TvT
 EGVAR(cover_map,aoMarker) = "mrk_ao";  // Name of the AO marker
 EGVAR(cover_map,colour) = "Color4_FD_F";  // Colour of the covered area
 
