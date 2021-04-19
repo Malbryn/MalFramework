@@ -15,7 +15,7 @@
         call MF_end_conditions_fnc_checkStagingArea
 
     Returns:
-        void
+        VOID
 */
 
 if !(isServer) exitWith {};

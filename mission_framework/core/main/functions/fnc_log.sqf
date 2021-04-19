@@ -45,7 +45,11 @@ switch (_location) do {
 
     case 2: {
         [QGVAR(log), [_text, _syschatEnabled]] call CFUNC(serverEvent);
-        [QGVAR(log), [_text, _syschatEnabled]] call CFUNC(localEvent);
+
+        // Prevent double messages in local multiplayer
+        if !(isServer) then {
+            [QGVAR(log), [_text, _syschatEnabled]] call CFUNC(localEvent);
+        };
     };
 
     case 3: {
