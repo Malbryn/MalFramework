@@ -198,6 +198,10 @@ EGVAR(reinsertion,allowTPFromHAB) = true;  // If TP to squad RP is allowed from 
 EGVAR(reinsertion,TPPoles) = ["MF_tpPole_1"];  // Teleport pole object(s)
 
 
+// Retreat
+GVARMAIN(moduleRetreat) = false;  // Coop & TvT
+
+
 // Safety start
 GVARMAIN(moduleSafetyStart) = false;  // Coop & TvT
 
@@ -212,10 +216,6 @@ EGVAR(setup_timer,timerRedfor) = 60;  // Setup timer for the REDFOR side
 
 // Sitting
 GVARMAIN(moduleSitting) = false;  // Coop & TvT
-
-
-// Scenario control
-GVARMAIN(moduleScenarioControl) = false;  // Coop & TvT
 
 
 // Snowfall

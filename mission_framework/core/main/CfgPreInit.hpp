@@ -128,12 +128,12 @@ class GVARMAIN(RespawnWave) {
     init = PATH_PRE(respawn_wave);
 };
 
-class GVARMAIN(Safety) {
-    init = PATH_PRE(safety);
+class GVARMAIN(Retreat) {
+    init = PATH_PRE(retreat);
 };
 
-class GVARMAIN(ScenarioControl) {
-    init = PATH_PRE(scenario_control);
+class GVARMAIN(Safety) {
+    init = PATH_PRE(safety);
 };
 
 class GVARMAIN(SetupTimer) {
