@@ -38,6 +38,16 @@ if (isServer) then {
                 [QGVARMAIN(notification_2), ["TimeLimitNotification", _timeLimitMinutes]] call CFUNC(globalEvent);
             }] call CFUNC(waitUntilAndExecute);
         };
+
+        // Check the staging area
+        if (GVAR(stagingEnabled) && !GVARMAIN(isTvT)) then {
+            [COMPONENT_STR, "DEBUG", "Staging is enabled, delaying mission time limit...", true, 2] call EFUNC(main,log);
+            GVAR(timeLimitOriginal) = GVAR(timeLimit);
+
+            GVAR(checkStaging) = [{
+                call FUNC(checkStagingArea);
+            }, 1] call CFUNC(addPerFrameHandler);
+        };
     }] call CFUNC(addEventHandler);
 };
 

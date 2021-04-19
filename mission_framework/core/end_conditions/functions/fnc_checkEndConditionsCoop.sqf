@@ -27,6 +27,8 @@ private _rate = call FUNC(calculateTaskRate);
 
 // Time limit check
 if (GVARMAIN(moduleTimeLimit) && !_ended) then {
+    if GVAR(stagingEnabled) exitWith {};
+
     private _time = CBA_missionTime;
 
     // End the mission accordingly

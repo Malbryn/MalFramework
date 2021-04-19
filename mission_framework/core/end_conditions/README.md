@@ -19,12 +19,14 @@ _**Important:** don't forget to customise the end screen in `config\debriefing\C
 _Description of each value set in the config file._
 
 ### **Time limit**
-| Variable                | Variable type | Default value | Game mode  | Description                                                                       |
-|:----------------------- |:------------- |:------------- |:---------- |:--------------------------------------------------------------------------------- |
-| `timeLimit`             | `SCALAR`      | `3600`        | Coop/TvT   | Mission time limit in seconds                                                     |
-| `favouredSide`          | `SCALAR`      | `1`           | TvT        | Favoured side (0: None, 1: BLUFOR, 2: REDFOR, 3: Side with more players)          |
-| `notificationTime`      | `SCALAR`      | `600`         | Coop/TvT   | Send a notification to each player X seconds before the time limit (-1: disabled) |
-| `timeLimitCheckEnabled` | `BOOLEAN`     | `true`        | Coop/TvT   | Enable time limit check for players                                               |
+| Variable                | Variable type | Default value   | Game mode  | Description                                                                       |
+|:----------------------- |:------------- |:--------------- |:---------- |:--------------------------------------------------------------------------------- |
+| `timeLimit`             | `SCALAR`      | `3600`          | Coop/TvT   | Mission time limit in seconds                                                     |
+| `favouredSide`          | `SCALAR`      | `1`             | TvT        | Favoured side (0: None, 1: BLUFOR, 2: REDFOR, 3: Side with more players)          |
+| `notificationTime`      | `SCALAR`      | `600`           | Coop/TvT   | Send a notification to each player X seconds before the time limit (-1: disabled) |
+| `timeLimitCheckEnabled` | `BOOLEAN`     | `true`          | Coop/TvT   | Enable time limit check for players                                               |
+| `stagingEnabled`        | `BOOLEAN`     | `false`         | Coop       | Don't start the mission timer until the players leave the staging area            |
+| `stagingAreaMarker`     | `STRING`      | `"mrk_staging"` | Coop       | Marker for the staging area                                                       |
 ---
 ### **Player casualty limit**
 | Variable         | Variable type | Default value | Game mode  | Description                                                        |
