@@ -1,7 +1,7 @@
 <p align="center">
     <img src="https://i.imgur.com/Lq5Do49.png">
     <a href="https://github.com/Malbryn/MalFramework/releases/latest">
-        <img src="https://img.shields.io/github/v/release/Malbryn/MalFramework?label=latest release" alt="latest-release">
+        <img src="https://img.shields.io/github/v/release/Malbryn/MalFramework?label=latest%20release" alt="latest-release">
     </a>
         <a href="https://github.com/Malbryn/MalFramework/issues">
         <img src="https://img.shields.io/github/issues/Malbryn/MalFramework" alt="open-issues">
@@ -10,7 +10,7 @@
         <img src="https://img.shields.io/github/workflow/status/Malbryn/MalFramework/Build" alt="build-status">
     </a>
     <a href="https://github.com/Malbryn/MalFramework/actions/workflows/build.yml">
-        <img src="https://img.shields.io/github/v/tag/Malbryn/MalFramework?label=current build" alt="current-build">
+        <img src="https://img.shields.io/github/v/tag/Malbryn/MalFramework?label=current%20build" alt="current-build">
     </a>
 </p>
 
