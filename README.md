@@ -14,14 +14,16 @@
     </a>
 </p>
 
-Welcome to **Malbryn's Mission Framework**. This framework was designed to help mission-makers create complex PvE and TvT scenarios in Arma 3.
+Welcome to **Malbryn's Mission Framework**.
+
+This framework was designed to help mission-makers create complex PvE and TvT scenarios in Arma 3.
 Some scripts have also been integrated into the framework. Their original authors were given credit in the Credits section.
 
 If something is broken, contact **[Malbryn](https://www.fkgaming.eu/profile/4189-malbryn/)** or open a new issue on **[GitHub](https://github.com/Malbryn/MalFramework/issues)**.
 
 </br>
 
-**[For more information, visit the Wiki](https://github.com/Malbryn/MalFramework/wiki)**
+**[For more information, visit the Wiki.](https://github.com/Malbryn/MalFramework/wiki)**
 
 </br>
 
