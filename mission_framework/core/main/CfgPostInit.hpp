@@ -36,10 +36,6 @@ class GVARMAIN(Common) {
     init = PATH_POST(common);
 };
 
-class GVARMAIN(MapCover) {
-    init = PATH_POST(map_cover);
-};
-
 class GVARMAIN(Credits) {
     init = PATH_POST(credits);
 };
@@ -98,6 +94,10 @@ class GVARMAIN(Logistics) {
 
 class GVARMAIN(LOSTool) {
     init = PATH_POST(los_tool);
+};
+
+class GVARMAIN(MapCover) {
+    init = PATH_POST(map_cover);
 };
 
 class GVARMAIN(MarkerSide) {
