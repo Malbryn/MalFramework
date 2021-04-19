@@ -23,7 +23,7 @@ If something is broken, contact **[Malbryn](https://www.fkgaming.eu/profile/4189
 
 </br>
 
-**[For more information, visit the Wiki.](https://github.com/Malbryn/MalFramework/wiki)**
+**For more information, [visit the Wiki.](https://github.com/Malbryn/MalFramework/wiki)**
 
 </br>
 

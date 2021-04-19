@@ -9,7 +9,7 @@ GVARMAIN(debugMode) = true;  // Debug mode for mission/framework development (tu
 GVARMAIN(isTvT) = false;  // If the mission is a TvT mission
 
 // End condition - Time limit
-GVARMAIN(moduleTimeLimit) = true;  // Coop & TvT
+GVARMAIN(moduleTimeLimit) = false;  // Coop & TvT
 EGVAR(end_conditions,timeLimit) = 60 MINUTES;  // Mission time limit in seconds
 EGVAR(end_conditions,favouredSide) = 1;  // TvT: Favoured side (0: None, 1: BLUFOR, 2: REDFOR, 3: Side with more players)
 EGVAR(end_conditions,notificationTime) = 10 MINUTES;  // Send a notification to each player X seconds before the time limit (-1: disabled)
@@ -24,7 +24,7 @@ EGVAR(end_conditions,bluforCasLimit) = 75;  // TvT: Percentage of the max. allow
 EGVAR(end_conditions,redforCasLimit) = 75;  // TvT: Percentage of the max. allowed player casualty for the REDFOR side
 
 // End condition - Civilian casualty limit
-GVARMAIN(moduleCivilianCasualties) = true;  // Coop & TvT
+GVARMAIN(moduleCivilianCasualties) = false;  // Coop & TvT
 EGVAR(end_conditions,civilianCasLimit) = 50;  // Percentage of the max. allowed civilian casualty
 
 // End condition - Side respawn tickets
@@ -37,7 +37,7 @@ GVARMAIN(moduleTaskLimit) = false;  // Coop
 EGVAR(end_conditions,taskLimit) = 2;  // Minimum number of completed tasks
 
 // End condition - Extraction
-GVARMAIN(moduleExtraction) = true;  // Coop
+GVARMAIN(moduleExtraction) = false;  // Coop
 EGVAR(end_conditions,extMarker) = "mrk_ext";  // Name of the extraction marker
 EGVAR(end_conditions,extTask) = "";  // Extraction task that will be automatically completed (empty string disables this functionality)
 EGVAR(end_conditions,playerThreshold) = 50;  // Percentage of the alive players that have to be in the extraction zone
@@ -104,7 +104,7 @@ EGVAR(ao_limit,aoMarkerRedfor) = "mrk_aoLimitRedfor";  // AO limit marker for RE
 
 
 // Briefing
-GVARMAIN(moduleBriefing) = true;  // Coop & TvT
+GVARMAIN(moduleBriefing) = false;  // Coop & TvT
 
 
 // Cover map
@@ -120,16 +120,16 @@ EGVAR(custom_channel,channelColour) = [0.8, 0, 0.5, 1];  // Colour of the channe
 
 
 // End mission
-EGVAR(end_mission,disableDamage) = true;  // Disable damage during the mission end screen (Coop & TvT)
+EGVAR(end_mission,disableDamage) = false;  // Disable damage during the mission end screen (Coop & TvT)
 
 
 // Gear
 EGVAR(gear,saveGearInArsenal) = false;  // Should the player's gear be saved if an arsenal is available (Coop & TvT)
-EGVAR(gear,enableBackpackLock) = true;  // Enable backpack lock (Coop & TvT)
+EGVAR(gear,enableBackpackLock) = false;  // Enable backpack lock (Coop & TvT)
 
 
 // Grass cutter
-GVARMAIN(moduleGrassCutter) = true;  // Coop & TvT
+GVARMAIN(moduleGrassCutter) = false;  // Coop & TvT
 
 
 // Hostage
@@ -149,16 +149,16 @@ GVARMAIN(moduleIntroText) = false;  // Coop & TvT
 EGVAR(intro_text,title) = "TEST TITLE";  // Title
 EGVAR(intro_text,date) = "TEST DATE";  // Date
 EGVAR(intro_text,location) = "TEST LOCATION";  // Location
-EGVAR(intro_text,delay) = 20;  // Delay after loading in
+EGVAR(intro_text,delay) = 15;  // Delay after loading in
 
 
 // JIP
-GVARMAIN(moduleJIP) = true;  // Coop & TvT
+GVARMAIN(moduleJIP) = false;  // Coop & TvT
 EGVAR(jip,jipTimer) = 3 MINUTES;  // For how long the TP is available after joining the mission
 
 
 // Killcam
-GVARMAIN(moduleKillcam) = true;  // Coop & TvT
+GVARMAIN(moduleKillcam) = false;  // Coop & TvT
 
 
 // Logistics
@@ -180,13 +180,13 @@ GVARMAIN(moduleMortar) = false;  // Coop
 
 
 // ORBAT
-GVARMAIN(moduleOrbat) = true;  // Coop & TvT
+GVARMAIN(moduleOrbat) = false;  // Coop & TvT
 
 
 // Reinsertion
-GVARMAIN(moduleHALO) = true;  // Coop & TvT
+GVARMAIN(moduleHALO) = false;  // Coop & TvT
 GVARMAIN(moduleMRV) = false;  // Coop & TvT
-GVARMAIN(moduleRP) = true;  // Coop & TvT
+GVARMAIN(moduleRP) = false;  // Coop & TvT
 GVARMAIN(moduleHAB) = false;  // Coop & TvT
 GVARMAIN(moduleTP) = false;  // Coop & TvT
 EGVAR(reinsertion,RPPickUp) = false;  // If the player is required to pick up the previous RP
@@ -195,11 +195,11 @@ EGVAR(reinsertion,RPObject) = "Land_TentA_F";  // Object used as the squad rally
 EGVAR(reinsertion,markHAB) = true;  // Mark the HAB location on map
 EGVAR(reinsertion,HABObject) = "Land_HBarrierTower_F";  // Object used as the platoon HAB
 EGVAR(reinsertion,allowTPFromHAB) = true;  // If TP to squad RP is allowed from the platoon HAB
-EGVAR(reinsertion,TPPoles) = ["pole1"];  // Teleport pole object(s)
+EGVAR(reinsertion,TPPoles) = ["MF_tpPole_1"];  // Teleport pole object(s)
 
 
 // Safety start
-GVARMAIN(moduleSafetyStart) = true;  // Coop & TvT
+GVARMAIN(moduleSafetyStart) = false;  // Coop & TvT
 
 
 // Setup timer
@@ -215,7 +215,7 @@ GVARMAIN(moduleSitting) = false;  // Coop & TvT
 
 
 // Scenario control
-GVARMAIN(moduleScenarioControl) = true;  // Coop & TvT
+GVARMAIN(moduleScenarioControl) = false;  // Coop & TvT
 
 
 // Snowfall
@@ -239,7 +239,7 @@ EGVAR(unit_tracking,refreshInterval) = 1;  // Refresh rate in seconds (min. valu
 
 
 // Vehicle respawn
-GVARMAIN(moduleVehicleRespawn) = true;  // Coop & TvT
+GVARMAIN(moduleVehicleRespawn) = false;  // Coop & TvT
 
 
 // Wave respawn
