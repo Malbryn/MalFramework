@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if !(GVARMAIN(moduleCoverMap)) exitWith {};
+if !(GVARMAIN(moduleMapCover)) exitWith {};
 
 ADDON = false;
 

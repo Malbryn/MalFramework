@@ -1,12 +1,12 @@
-#define COMPONENT cover_map
-#define COMPONENT_STR QUOTE(Cover map)
+#define COMPONENT retreat
+#define COMPONENT_STR QUOTE(Retreat)
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE
 // #define CBA_DEBUG_SYNCHRONOUS
 // #define ENABLE_PERFORMANCE_COUNTERS
 
-#ifdef DEBUG_ENABLED_COVER_MAP
+#ifdef DEBUG_ENABLED_RETREAT
     #define DEBUG_MODE_FULL
 #endif
 
