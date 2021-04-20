@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_scenario_control_fnc_addScenarioEndControlMenu
+        call MF_retreat_fnc_addScenarioEndControlMenu
 
     Returns:
         void

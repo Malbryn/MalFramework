@@ -1,4 +1,4 @@
-# Scenario Control
+# Retreat
 ## Description:
 _This module lets players with platoon level leadership (see: Player module) call Tactical Withdrawal and end the mission._
 

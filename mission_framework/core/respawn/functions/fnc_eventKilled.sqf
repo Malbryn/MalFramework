@@ -112,7 +112,7 @@ if (GVARMAIN(isTvT)) then {
             };
 
             // CO modules transfer
-            if (GETVAR(player,EGVAR(player,isCO),false) && (GVARMAIN(moduleSupplyDrop) || GVARMAIN(moduleScenarioControl) || GVARMAIN(moduleWaveRespawn))) then {
+            if (GETVAR(player,EGVAR(player,isCO),false) && (GVARMAIN(moduleSupplyDrop) || GVARMAIN(moduleRetreat) || GVARMAIN(moduleWaveRespawn))) then {
                 private _target = [player] call EFUNC(common,selectTarget);
 
                 if (_target != objNull && {!(GETVAR(_target,EGVAR(player,isCO),false))}) then {
@@ -123,8 +123,8 @@ if (GVARMAIN(isTvT)) then {
                         [QEGVAR(supply_drop,transferSD), [], _target] call CFUNC(targetEvent);
                     };
 
-                    if (GVARMAIN(moduleScenarioControl)) then {
-                        [QEGVAR(scenario_control,transferSC), [], _target] call CFUNC(targetEvent);
+                    if (GVARMAIN(moduleRetreat)) then {
+                        [QEGVAR(retreat,transferSC), [], _target] call CFUNC(targetEvent);
                     };
 
                     if (GVARMAIN(moduleHAB)) then {

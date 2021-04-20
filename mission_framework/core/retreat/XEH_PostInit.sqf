@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if !(GVARMAIN(moduleScenarioControl)) exitWith {};
+if !(GVARMAIN(moduleRetreat)) exitWith {};
 
 // Check if the tasks are registered properly
 [QGVARMAIN(initFramework), {

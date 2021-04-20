@@ -36,10 +36,6 @@ class GVARMAIN(Common) {
     init = PATH_POST(common);
 };
 
-class GVARMAIN(CoverMap) {
-    init = PATH_POST(cover_map);
-};
-
 class GVARMAIN(Credits) {
     init = PATH_POST(credits);
 };
@@ -100,6 +96,10 @@ class GVARMAIN(LOSTool) {
     init = PATH_POST(los_tool);
 };
 
+class GVARMAIN(MapCover) {
+    init = PATH_POST(map_cover);
+};
+
 class GVARMAIN(MarkerSide) {
     init = PATH_POST(marker_side);
 };
@@ -128,12 +128,12 @@ class GVARMAIN(RespawnWave) {
     init = PATH_POST(respawn_wave);
 };
 
-class GVARMAIN(Safety) {
-    init = PATH_POST(safety);
+class GVARMAIN(Retreat) {
+    init = PATH_POST(retreat);
 };
 
-class GVARMAIN(ScenarioControl) {
-    init = PATH_POST(scenario_control);
+class GVARMAIN(Safety) {
+    init = PATH_POST(safety);
 };
 
 class GVARMAIN(SetupTimer) {

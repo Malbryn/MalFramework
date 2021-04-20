@@ -245,3 +245,6 @@ class MissionTerminated {
     picture = "mil_warning";
     pictureColor[] = {0.9, 0, 0, 1};
 };
+
+
+/* ----------------------------- CUSTOM ENDINGS ----------------------------- */

@@ -36,10 +36,6 @@ class GVARMAIN(Common) {
     init = PATH_PRE(common);
 };
 
-class GVARMAIN(CoverMap) {
-    init = PATH_PRE(cover_map);
-};
-
 class GVARMAIN(Credits) {
     init = PATH_PRE(credits);
 };
@@ -100,6 +96,10 @@ class GVARMAIN(LOSTool) {
     init = PATH_PRE(los_tool);
 };
 
+class GVARMAIN(MapCover) {
+    init = PATH_PRE(map_cover);
+};
+
 class GVARMAIN(MarkerSide) {
     init = PATH_PRE(marker_side);
 };
@@ -128,12 +128,12 @@ class GVARMAIN(RespawnWave) {
     init = PATH_PRE(respawn_wave);
 };
 
-class GVARMAIN(Safety) {
-    init = PATH_PRE(safety);
+class GVARMAIN(Retreat) {
+    init = PATH_PRE(retreat);
 };
 
-class GVARMAIN(ScenarioControl) {
-    init = PATH_PRE(scenario_control);
+class GVARMAIN(Safety) {
+    init = PATH_PRE(safety);
 };
 
 class GVARMAIN(SetupTimer) {
