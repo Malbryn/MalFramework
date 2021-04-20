@@ -9,6 +9,9 @@ if (hasInterface) then {
     if (GVARMAIN(isTvT)) then {
         0 enableChannel [true, true];
     };
+
+    // Credits section in Diary
+    call FUNC(addCredits);
 };
 
 call FUNC(initCustomEHs);

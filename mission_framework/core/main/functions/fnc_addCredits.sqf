@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_credits_fnc_addCredits
+        call MF_main_fnc_addCredits
 
     Returns:
         void
@@ -43,6 +43,8 @@ DIARY_RECORD_END;
 
 DIARY_RECORD_START("Credits", "Mission Framework")
 "
+<img image='mission_framework\core\main\img\banner.jpg' width='360' height='90'/>
+<br/>
 <font size='14' face='PuristaMedium'>This mission was made with Malbryn's Mission Framework.<br/>
 <br/>
 Some parts of this framework are based on other Arma 3 frameworks and scripts. See the original authors below.<br/>
