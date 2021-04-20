@@ -17,7 +17,7 @@ Arguments:
     6: BOOLEAN - Custom paintjob. Saves the current paint on the vehicle and applies it on respawn (Optional, default: true)
 
 Example:
-    [this, 30, {_this allowDamage false}, 3, false, true, true] call MF_vehicle_respawn_fnc_initVehicleRespawn
+    [this, 30, {}, 3, false, true, true] call MF_vehicle_respawn_fnc_initVehicleRespawn
 ```
 
 ## Config:
