@@ -4,7 +4,7 @@ _This module starts a setup timer at mission start, during which the players can
 
 _Players who leave the area will be teleported back into it._
 
-_It's useful during TvT mission so the defenders have some extra time to set up their defenses but it can be used in Coop missions too._
+_It's useful during TvT mission so the defenders have some extra time to set up their defences but it can be used in Coop missions too._
 
 ## Usage:
 1. _Place down area marker(s) for the selected side(s), give it (them) unique name(s)_
