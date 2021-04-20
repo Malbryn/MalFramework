@@ -24,7 +24,7 @@ _Available options:_
 ```
 
 ## Usage:
-1. _Place down a teleport pole (or any object) at th respawn area and give it a unique name_
+1. _Place down a teleport pole (or any object) at the respawn area and give it a unique name_
 
 ### MRV:
 2. _Put down a vehicle that should be the respawn vehicle_

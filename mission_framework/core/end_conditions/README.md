@@ -72,7 +72,7 @@ _Using the default values means:_
 | ---------: |:------------- |
 | 0%         | Major failure |
 | 1% - 65%   | Minor failure |
-| 66% - 99%  | Minor succes  |
+| 66% - 99%  | Minor success |
 | 100%       | Major success |
 
 _Tasks that were not completed will be set to "CANCELLED" at mission end._
