@@ -16,12 +16,6 @@ jobs:
             - name: Checkout the source code
               uses: actions/checkout@v2
 
-            - name: Release Drafter
-              id: release_drafter
-              uses: release-drafter/release-drafter@v5
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
             - name: Pack files
               uses: thedoctor0/zip-release@master
               with:
