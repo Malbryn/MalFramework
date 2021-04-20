@@ -36,10 +36,6 @@ class GVARMAIN(Common) {
     init = PATH_PRE(common);
 };
 
-class GVARMAIN(Credits) {
-    init = PATH_PRE(credits);
-};
-
 class GVARMAIN(CustomChannel) {
     init = PATH_PRE(custom_channel);
 };
