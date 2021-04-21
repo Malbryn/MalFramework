@@ -9,9 +9,6 @@
     <a href="https://github.com/Malbryn/MalFramework/actions/workflows/build.yml">
         <img src="https://img.shields.io/github/workflow/status/Malbryn/MalFramework/Build" alt="build-status">
     </a>
-    <a href="https://github.com/Malbryn/MalFramework/actions/workflows/build.yml">
-        <img src="https://img.shields.io/github/v/tag/Malbryn/MalFramework?label=current%20build" alt="current-build">
-    </a>
 </p>
 
 Welcome to **Malbryn's Mission Framework**.

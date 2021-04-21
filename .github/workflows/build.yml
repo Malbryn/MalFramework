@@ -5,9 +5,10 @@ on:
         branches:
             - master
         paths-ignore:
-            - "mission_framework/VERSION.sqf"
-            - "README.md"
             - ".github/**"
+            - "tools/**"
+            - ".editorconfig"
+            - "gitignore"
 
 jobs:
     bump-version:
@@ -16,6 +17,7 @@ jobs:
             - name: Checkout the source code
               uses: actions/checkout@v2
 
+            #TODO
             - name: Bump version
               uses: remorses/bump-version@js
               with:
@@ -32,6 +34,7 @@ jobs:
               with:
                   ref: master
 
+            # TODO
             - name: Get version
               id: get-version
               run: |
@@ -41,7 +44,7 @@ jobs:
             - name: Upload artifact
               uses: actions/upload-artifact@v2
               with:
-                  name: MalFramework_v${{ steps.get-version.outputs.version }}
+                  name: MalFramework_v${{ steps.get-version.outputs.version }} #TODO
                   path: |
                       mission_framework/
                       cba_settings.sqf
