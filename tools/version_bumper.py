@@ -14,16 +14,25 @@ if sys.version_info[0] != 3:
     sys.exit(1)
 
 # Globals
-ci_build = False
+push_commit = False
 framework_version = "0.0.0.0"
-script_version_path = "../mission_framework/core/main/script_version.hpp"
 
 
 def bump_version(version_increments=[]):
+    if not version_increments:
+        print("No increment was given. Please provide one of the following:")
+        print("'increment_major', 'increment_minor', 'increment_patch', 'increment_build'")
+        sys.exit(1)
+
     global framework_version
     version_stamp = framework_version
 
     try:
+        from pathlib import Path
+
+        script_path = Path(__file__).parents[1]
+        script_version_path = os.path.join(script_path, "mission_framework/core/main/script_version.hpp")
+
         if os.path.isfile(script_version_path):
             file = open(script_version_path, "r")
             hpp_text = file.read()
@@ -72,39 +81,42 @@ def bump_version(version_increments=[]):
         print("Resetting to the default version stamp: {}".format(version_stamp))
         sys.exit(1)
 
-    print("Version is set to {}".format(version_stamp))
     framework_version = version_stamp
+
+    # Set environment variable
+    subprocess.call("echo '::set-output name=VERSION::{}'".format(framework_version), shell=True)
 
     git_push()
 
 
 def git_push():
-    print("Setting up Git config...")
-    subprocess.call(["git", "config", "--local", "user.name", "github-actions"])
-    subprocess.call(["git", "config", "--local", "user.email", "action@github.com"])
+    if not push_commit:
+        print("Skipping pushing commit...")
+        return
 
     print("Pushing to remote...")
+
+    # Set up credentials
+    subprocess.call(["git", "config", "--local", "user.name", "github-actions"])
+    subprocess.call(["git", "config", "--local", "user.email", "actions@no-reply.github.com"])
+
+    # Push commit
     commit_msg = "v" + ".".join(framework_version.split(".")[0:3]) + " Build " + framework_version.split(".")[3]
 
     subprocess.call(["git", "add", "-A"])
     subprocess.call(["git", "commit", "-m", commit_msg])
     subprocess.call(["git", "push", "origin", "master"])
 
-    print("Pushed: {}".format(commit_msg))
+    print("Pushed commit to master: {}".format(commit_msg))
 
 
 def main(argv):
-    print("version_bumper.py for MalFramework, based on the original make.py script by Ryan Schultz.")
+    print("This is version_bumper.py for MalFramework, based on the original make.py script by Ryan Schultz.")
 
-    global ci_build
+    global push_commit
     global framework_version
-    global script_version_path
 
-    if sys.platform != "win32":
-        print("Non-Windows platform, please re-run from cmd.")
-        sys.exit(1)
-
-    # Version increment
+    # Which part of the version should be incremented
     version_increments = []
     if "increment_build" in argv:
         argv.remove("increment_build")
@@ -119,10 +131,10 @@ def main(argv):
         argv.remove("increment_major")
         version_increments.append("major")
 
-    # CI
-    if "ci" in argv:
-        argv.remove("ci")
-        ci_build = True
+    # Should push a commit to master
+    if "push_commit" in argv:
+        argv.remove("push_commit")
+        push_commit = True
 
     bump_version(version_increments)
 

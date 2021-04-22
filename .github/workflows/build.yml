@@ -6,45 +6,28 @@ on:
             - master
         paths-ignore:
             - ".github/**"
+            - "mission_framework/core/main/script_version.hpp"
             - "tools/**"
             - ".editorconfig"
-            - "gitignore"
+            - ".gitignore"
 
 jobs:
-    bump-version:
+    build:
         runs-on: ubuntu-latest
-        steps:
-            - name: Checkout the source code
-              uses: actions/checkout@v2
-
-            #TODO
-            - name: Bump version
-              uses: remorses/bump-version@js
-              with:
-                  version_file: mission_framework/VERSION.sqf
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    create-artifact:
-        runs-on: ubuntu-latest
-        needs: bump-version
         steps:
             - name: Checkout the source code
               uses: actions/checkout@master
               with:
                   ref: master
 
-            # TODO
-            - name: Get version
-              id: get-version
-              run: |
-                  cd mission_framework
-                  echo "::set-output name=version::$(cat VERSION.sqf)"
+            - name: Bump version
+              id: bump-version
+              run: python3 tools/version_bumper.py increment_build push_commit
 
             - name: Upload artifact
               uses: actions/upload-artifact@v2
               with:
-                  name: MalFramework_v${{ steps.get-version.outputs.version }} #TODO
+                  name: MalFramework_v${{ steps.bump-version.outputs.VERSION }}
                   path: |
                       mission_framework/
                       cba_settings.sqf
