@@ -1,7 +1,10 @@
 # Based on Arma 3 make.py
 # https://github.com/acemod/arma-project-template/blob/master/tools/make.py
 
+__version__ = "0.1"
+
 import re
+import subprocess
 import sys
 import os
 
@@ -12,7 +15,7 @@ if sys.version_info[0] != 3:
 
 # Globals
 ci_build = False
-framework_version = "1.0.0"
+framework_version = "0.0.0.0"
 script_version_path = "../mission_framework/core/main/script_version.hpp"
 
 
@@ -61,20 +64,37 @@ def bump_version(version_increments=[]):
 
         else:
             print("Version file is missing or cannot be accessed.")
-            raise FileNotFoundError("File not found: {}".format(script_version_path))
+            sys.exit(1)
 
     except Exception as e:
         print("Error in get_version(): {}".format(e))
         print("Check the integrity of the file: {}".format(script_version_path))
         print("Resetting to the default version stamp: {}".format(version_stamp))
+        sys.exit(1)
 
     print("Version is set to {}".format(version_stamp))
     framework_version = version_stamp
-    return framework_version
+
+    git_push()
+
+
+def git_push():
+    print("Setting up Git config...")
+    subprocess.call(["git", "config", "--local", "user.name", "github-actions"])
+    subprocess.call(["git", "config", "--local", "user.email", "action@github.com"])
+
+    print("Pushing to remote...")
+    commit_msg = "v" + ".".join(framework_version.split(".")[0:3]) + " Build " + framework_version.split(".")[3]
+
+    subprocess.call(["git", "add", "-A"])
+    subprocess.call(["git", "commit", "-m", commit_msg])
+    subprocess.call(["git", "push", "origin", "master"])
+
+    print("Pushed: {}".format(commit_msg))
 
 
 def main(argv):
-    print("version_bumper.py for MalFramework, based on the original make.py script")
+    print("version_bumper.py for MalFramework, based on the original make.py script by Ryan Schultz.")
 
     global ci_build
     global framework_version
@@ -110,4 +130,5 @@ def main(argv):
 if __name__ == "__main__":
     main(sys.argv)
 
+    print("Building successful.")
     sys.exit(0)
