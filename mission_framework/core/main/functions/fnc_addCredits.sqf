@@ -21,6 +21,7 @@ if !(hasInterface) exitWith {};
 
 // Framework version
 private _version = VERSION;
+private _build = BUILD;
 
 // Title of the mission
 private _title = briefingName;
@@ -29,11 +30,11 @@ private _title = briefingName;
 private _author = [missionConfigFile] call BFUNC(overviewAuthor);
 
 private _text = format ["
-  <font color='#21749c' size='16' face='PuristaSemiBold'>%1</font><br/>
-  <font size='14' face='PuristaMedium'>This mission was made</font> <font color='#21749c' size='14' face='PuristaSemiBold'>%2.</font><br/>
-  <br/>
-  <font size='14' face='PuristaMedium'>Framework version:</font> <font color='#21749c' size='14' face='PuristaSemiBold'>%3</font>
-", _title, _author, _version];
+    <font color='#21749c' size='16' face='PuristaSemiBold'>%1</font><br/>
+    <font size='14' face='PuristaMedium'>This mission was made</font> <font color='#21749c' size='14' face='PuristaSemiBold'>%2.</font><br/>
+    <br/>
+    <font size='14' face='PuristaMedium'>Framework version:</font> <font color='#21749c' size='14' face='PuristaSemiBold'>%3 (%4)</font>
+", _title, _author, _version, _build];
 
 DIARY_SUBJECT("Credits");
 
