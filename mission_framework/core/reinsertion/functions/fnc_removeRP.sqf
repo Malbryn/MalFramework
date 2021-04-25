@@ -40,23 +40,22 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
     // Remove RP tent and delete the coordinates
     private _id = GETVAR((group player),GVAR(RPTent),nil);
     private _RPTent = objectFromNetId _id;
+
     deleteVehicle _RPTent;
     SETPVAR((group player),GVAR(RPTent),nil);
 
     // Send notification to the squad memebers
-    private _unitArray = (units group player) - [player];
     ["Info", ["You have picked up the RP"]] call BFUNC(showNotification);
+
+    private _unitArray = (units group player) - [player];
     [QGVARMAIN(notification_2), ["Info", "The RP has been picked up"], _unitArray] call CFUNC(targetEvent);
 
-    // Remove marker
+    // Remove previous marker
     if GVAR(markRP) then {
         private _marker = GETVAR((group player),GVAR(markerRP),"");
 
-        if (_marker == "") then {
-            [COMPONENT_STR, "ERROR", "RP marker is not found", true] call EFUNC(main,log);
-        } else {
+        if (_marker != "") then {
             deleteMarker _marker;
-
             SETPVAR((group player),GVAR(markerRP),"");
         };
     };

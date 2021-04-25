@@ -43,6 +43,7 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
         // Remove the previous RP tent and delete the coordinates
         private _id = GETVAR((group player),GVAR(RPTent),nil);
         private _RPTent = objectFromNetId _id;
+        
         deleteVehicle _RPTent;
         SETPVAR((group player),GVAR(RPTent),nil);
 
@@ -50,31 +51,31 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
         if GVAR(markRP) then {
             private _marker = GETVAR((group player),GVAR(markerRP),"");
 
-            if (_marker == "") then {
-                [COMPONENT_STR, "ERROR", "RP marker is not found", true] call EFUNC(main,log);
-            } else {
+            if (_marker != "") then {
                 deleteMarker _marker;
-
                 SETPVAR((group player),GVAR(markerRP),"");
             };
         };
     };
 
-    // Create RP tent and save the netId so other people can remove it as well
+    // Create RP tent and save the netId so other people can access it too
     private _RPTent = createVehicle [GVAR(RPObject), player getPos [3, getDir player], [], 0, "CAN_COLLIDE"];
     _RPTent setDir (getDir player);
     private _id = netId _RPTent;
     SETPVAR((group player),GVAR(RPTent),_id);
 
     // Send notification to the squad memebers
-    private _unitArray = (units group player) - [player];
     ["Info", ["You have deployed the RP"]] call BFUNC(showNotification);
+
+    private _unitArray = (units group player) - [player];
     [QGVARMAIN(notification_2), ["Info", "The RP has been deployed"], _unitArray] call CFUNC(targetEvent);
 
     // Mark on map
     if GVAR(markRP) then {
+        // Create a unique marker name
         private _markerName = [player] call EFUNC(common,createMarkerName);
         private _marker = createMarker [_markerName, getPos player, 3];
+
         _markerName setMarkerType "mil_box";
         _markerName setMarkerColor "ColorOrange";
         _markerName setMarkerText "RP";
