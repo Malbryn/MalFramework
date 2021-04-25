@@ -33,7 +33,7 @@ private _text = format ["
     <font color='#21749c' size='16' face='PuristaSemiBold'>%1</font><br/>
     <font size='14' face='PuristaMedium'>This mission was made</font> <font color='#21749c' size='14' face='PuristaSemiBold'>%2.</font><br/>
     <br/>
-    <font size='14' face='PuristaMedium'>Framework version:</font> <font color='#21749c' size='14' face='PuristaSemiBold'>%3 (%4)</font>
+    <font size='14' face='PuristaMedium'>Framework version:</font> <font color='#21749c' size='14' face='PuristaSemiBold'>%3 (Build %4)</font>
 ", _title, _author, _version, _build];
 
 DIARY_SUBJECT("Credits");
