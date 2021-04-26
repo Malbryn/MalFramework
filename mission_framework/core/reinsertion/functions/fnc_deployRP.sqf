@@ -83,6 +83,13 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
         // Save as group var
         SETPVAR((group player),GVAR(markerRP),_markerName);
     };
+
+    // Add remove option
+    private _menu = ['Remove Rally Point', 'Remove Rally Point', '', {
+        call FUNC(removeRP);
+    }, {[_this#0] call FUNC(canRemoveRP)}] call AFUNC(interact_menu,createAction);
+
+    [_RPTent, 0, ["ACE_MainActions"], _menu] call AFUNC(interact_menu,addActionToObject);
 }, {
     // Stop the animation if the progress bar was cancelled
     [player, ""] remoteExec ["switchMove", 0];
