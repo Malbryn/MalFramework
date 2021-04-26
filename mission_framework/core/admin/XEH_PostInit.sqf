@@ -25,6 +25,7 @@ if (isServer) then {
     }] call CFUNC(addEventHandler);
 
     GVAR(adminChannelID) = radioChannelCreate [[0.9, 0.2, 0.1, 1], "Admin channel", "Admin chat (%UNIT_NAME)", [], true];
+    publicVariable QGVAR(adminChannelID);
 };
 
 if (hasInterface) then {
