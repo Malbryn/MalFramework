@@ -186,7 +186,7 @@ GVARMAIN(moduleOrbat) = false;  // Coop & TvT
 // Reinsertion
 GVARMAIN(moduleHALO) = false;  // Coop & TvT
 GVARMAIN(moduleMRV) = false;  // Coop & TvT
-GVARMAIN(moduleRP) = true;  // Coop & TvT
+GVARMAIN(moduleRP) = false;  // Coop & TvT
 GVARMAIN(moduleHAB) = false;  // Coop & TvT
 GVARMAIN(moduleTP) = false;  // Coop & TvT
 EGVAR(reinsertion,RPPickUp) = false;  // If the player is required to pick up the previous RP

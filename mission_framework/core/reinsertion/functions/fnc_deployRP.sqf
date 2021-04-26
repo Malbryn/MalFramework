@@ -73,7 +73,7 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
     // Mark on map
     if GVAR(markRP) then {
         // Create a unique marker name
-        private _markerName = [player] call EFUNC(common,createMarkerName);
+        private _markerName = format ["MF_%1", groupId (group player)];
         private _marker = createMarker [_markerName, getPos player, 3];
 
         _markerName setMarkerType "mil_box";

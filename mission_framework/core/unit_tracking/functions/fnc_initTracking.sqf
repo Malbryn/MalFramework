@@ -42,13 +42,13 @@ if (_type == "") exitWith {
 
 if (GVAR(refreshInterval) < 1) then {
     GVAR(refreshInterval) = 1;
-    [COMPONENT_STR, "DEBUG", "Invalid update interval, using default value of (1 second)", true, 0] call EFUNC(main,log);
+    [COMPONENT_STR, "DEBUG", "Invalid update interval, using default value (1 second)", true, 0] call EFUNC(main,log);
 };
 
 // Create marker
 private _markerPos = if (_unit isEqualType objNull) then [{getPos _unit}, {getPos (leader _unit)}];
 
-private _markerName = [_unit] call EFUNC(common,createMarkerName);
+private _markerName = [_unit] call FUNC(createMarkerName);
 private _marker = createMarker [_markerName, _markerPos];
 
 // Customise marker

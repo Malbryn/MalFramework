@@ -23,7 +23,7 @@ if !(isServer) exitWith {};
 if (count GVAR(markerHash) == 0) exitWith {};
 
 {
-    // Delete marker forever if vehicle was destroyed
+    // Delete marker if vehicle was destroyed
     if (_y isEqualType objNull) then {
         _x setMarkerPos (getPos _y);
 
