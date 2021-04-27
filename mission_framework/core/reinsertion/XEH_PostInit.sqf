@@ -25,5 +25,17 @@ if (hasInterface) then {
         }, nil, 1, true, true, "", "true", 12];
     }] call CFUNC(addEventHandler);
 
+    [QGVAR(addRemoveRPOption), {
+        params ["_obj"];
+
+        [_obj] call FUNC(addRemoveRPOption);
+    }] call CFUNC(addEventHandler);
+
+    [QGVAR(addRemoveHABOption), {
+        params ["_obj"];
+
+        [_obj] call FUNC(addRemoveHABOption);
+    }] call CFUNC(addEventHandler);
+
     call FUNC(initPole);
 };

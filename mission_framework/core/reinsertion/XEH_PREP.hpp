@@ -1,5 +1,7 @@
 PREP(addHABMenu);
 PREP(addParachute);
+PREP(addRemoveHABOption);
+PREP(addRemoveRPOption);
 PREP(addRPMenu);
 PREP(canRemoveHAB);
 PREP(canRemoveRP);

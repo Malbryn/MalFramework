@@ -74,22 +74,18 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
     if GVAR(markRP) then {
         // Create a unique marker name
         private _markerName = format ["MF_%1", groupId (group player)];
-        private _marker = createMarker [_markerName, getPos player, 3];
+        private _marker = createMarker [_markerName, getPos player];
 
         _markerName setMarkerType "mil_box";
         _markerName setMarkerColor "ColorOrange";
-        _markerName setMarkerText "RP";
+        _markerName setMarkerText format ["RP - %1", groupId (group player)];
 
         // Save as group var
         SETPVAR((group player),GVAR(markerRP),_markerName);
     };
 
-    // Add remove option
-    private _menu = ['Remove Rally Point', 'Remove Rally Point', '', {
-        call FUNC(removeRP);
-    }, {[_this#0] call FUNC(canRemoveRP)}] call AFUNC(interact_menu,createAction);
-
-    [_RPTent, 0, ["ACE_MainActions"], _menu] call AFUNC(interact_menu,addActionToObject);
+    // Add remove action
+    [QGVAR(addRemoveRPOption), [_RPTent]] call CFUNC(globalEvent);
 }, {
     // Stop the animation if the progress bar was cancelled
     [player, ""] remoteExec ["switchMove", 0];

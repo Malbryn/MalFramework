@@ -186,8 +186,8 @@ GVARMAIN(moduleOrbat) = false;  // Coop & TvT
 // Reinsertion
 GVARMAIN(moduleHALO) = false;  // Coop & TvT
 GVARMAIN(moduleMRV) = false;  // Coop & TvT
-GVARMAIN(moduleRP) = false;  // Coop & TvT
-GVARMAIN(moduleHAB) = false;  // Coop
+GVARMAIN(moduleRP) = true;  // Coop & TvT
+GVARMAIN(moduleHAB) = true;  // Coop
 GVARMAIN(moduleTP) = false;  // Coop & TvT
 EGVAR(reinsertion,RPPickUp) = false;  // If the player is required to pick up the previous RP
 EGVAR(reinsertion,markRP) = true;  // Mark the RP location on map
@@ -230,11 +230,11 @@ EGVAR(supply_drop,useFlare) = false;  // Use flares to mark the crate instead of
 
 
 // TFAR
-GVARMAIN(moduleTFAR) = false;  // Coop & TvT
+GVARMAIN(moduleTFAR) = true;  // Coop & TvT
 
 
 // Unit tracking
-GVARMAIN(moduleUnitTracking) = false;  // Coop
+GVARMAIN(moduleUnitTracking) = true;  // Coop
 EGVAR(unit_tracking,refreshInterval) = 1;  // Refresh rate in seconds (min. value = 1)
 
 
