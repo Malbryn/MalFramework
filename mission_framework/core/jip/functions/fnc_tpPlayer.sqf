@@ -20,7 +20,7 @@
 if !(hasInterface) exitWith {};
 
 private _target = call FUNC(chooseTarget);
-private _vicSpot = [_target] call FUNC(checkEmptySeat);
+private _vicSpot = [_target] call EFUNC(common,checkEmptySeat);
 
 // Check if there are other people in the squad
 if !(count units group player > 1) exitWith {
