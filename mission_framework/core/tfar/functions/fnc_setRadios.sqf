@@ -20,7 +20,7 @@
         Channel 9  |  Freq. 190              Channel 9  |  Freq. 70
 
     Arguments:
-        0: OBJECT - Player unit
+        0: OBJECT or GROUP - Player unit or group
         1: SCALAR - Short range radio channel (between 1 and 9) (Optional, default: -1)
         2: SCALAR - Long range radio channel (between 1 and 9) (Optional, default: -1)
 
@@ -31,18 +31,34 @@
         void
 */
 
-params ["_unit", ["_srCh", -1], ["_lrCh", -1]];
+params [["_unit", objNull], ["_srCh", -1], ["_lrCh", -1]];
 
-if !(local _unit) exitWith {};
+switch (typeName _unit) do {
+    case "OBJECT": {
+        if (local _unit) then {
+            private _channels = GETVAR(_unit,GVAR(radioChannels),[ARR_2(-1,-1)]);
 
-// Convert the channel number to an array pointer
-if (_srCh != -1) then {
-    _srCh = _srCh - 1;
+            if (_srCh != -1) then { _channels set [0, _srCh - 1] };
+            if (_lrCh != -1) then { _channels set [1, _lrCh - 1] };
+
+            SETPVAR(_unit,GVAR(radioChannels),_channels);
+        };
+    };
+
+    case "GROUP": {
+        (units _unit) apply {
+            if (local _x) then {
+                private _channels = GETVAR(_x,GVAR(radioChannels),[ARR_2(-1,-1)]);
+
+                if (_srCh != -1) then { _channels set [0, _srCh - 1] };
+                if (_lrCh != -1) then { _channels set [1, _lrCh - 1] };
+
+                SETPVAR(_x,GVAR(radioChannels),_channels);
+            };
+        };
+    };
+
+    default {
+        [COMPONENT_STR, "ERROR", format ["Wrong input type (%1), expected Object or Group", typeName _unit], true, 1] call EFUNC(main,log);
+    };
 };
-
-if (_lrCh != -1) then {
-    _lrCh = _lrCh - 1;
-};
-
-private _channels = [_srCh, _lrCh];
-SETPVAR(_unit,GVAR(radioChannels),_channels);

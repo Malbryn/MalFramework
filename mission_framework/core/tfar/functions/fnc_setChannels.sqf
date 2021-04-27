@@ -20,12 +20,10 @@
 private ["_channels", "_srCh", "_lrCh"];
 
 if !(isMultiplayer) exitWith {
-    [COMPONENT_STR, "INFO", "The module does not work in single player", true] call EFUNC(main,log);
+    [COMPONENT_STR, "INFO", "The module does not work in singleplayer", true] call EFUNC(main,log);
 };
 
-private _channels = GETVAR(player,GVAR(radioChannels),[]);
-
-if (count _channels == 0) exitWith {};
+private _channels = GETVAR(_unit,GVAR(radioChannels),[ARR_2(-1,-1)]);
 
 private _srCh = _channels#0;
 private _lrCh = _channels#1;
