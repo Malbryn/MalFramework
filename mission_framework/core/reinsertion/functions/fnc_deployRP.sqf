@@ -21,7 +21,7 @@ if !(hasInterface) exitWith {};
 
 // Check if it is enabled
 if !(GVARMAIN(moduleRP)) exitWith {
-    ["Warning", ["Squad rally point system is not available in this mission!"]] call BFUNC(showNotification);
+    ["Warning", ["Squad rally point system is not available in this mission"]] call BFUNC(showNotification);
 };
 
 // Check if the rally point is already deployed
@@ -58,7 +58,7 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
         };
     };
 
-    // Create RP tent and save the netId so other people can access it too
+    // Create RP tent and save the netId so other people can access it
     private _RPTent = createVehicle [GVAR(RPObject), player getPos [3, getDir player], [], 0, "CAN_COLLIDE"];
     _RPTent setDir (getDir player);
     private _id = netId _RPTent;
@@ -83,6 +83,13 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
         // Save as group var
         SETPVAR((group player),GVAR(markerRP),_markerName);
     };
+
+    // Add remove option
+    private _menu = ['Remove Rally Point', 'Remove Rally Point', '', {
+        call FUNC(removeRP);
+    }, {[_this#0] call FUNC(canRemoveRP)}] call AFUNC(interact_menu,createAction);
+
+    [_RPTent, 0, ["ACE_MainActions"], _menu] call AFUNC(interact_menu,addActionToObject);
 }, {
     // Stop the animation if the progress bar was cancelled
     [player, ""] remoteExec ["switchMove", 0];

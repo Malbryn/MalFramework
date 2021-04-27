@@ -19,17 +19,11 @@
 
 if !(hasInterface) exitWith {};
 
-// Check if the rally point is deployed
-if (isNil {GETVAR((group player),GVAR(RPTent),nil)}) exitWith {
-    ["Warning", ["The RP hasn't been deployed yet"]] call BFUNC(showNotification);
-};
-
-// Check if the RP tent is in range
 private _id = GETVAR((group player),GVAR(RPTent),nil);
-private _RPTent = objectFromNetId _id;
 
-if (player distance _RPTent > 5) exitWith {
-    ["Warning", ["You are too far from the RP"]] call BFUNC(showNotification);
+// Check if the rally point is deployed
+if (isNil "_id") exitWith {
+    ["Warning", ["The RP hasn't been deployed yet"]] call BFUNC(showNotification);
 };
 
 // Play animation (duration: 9 seconds)
