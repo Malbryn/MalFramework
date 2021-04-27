@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Checks if the player can remove a RP (is SL and it's his squad's RP).
+        Checks if the player can remove a RP (is SL and it's their squad's RP).
 
     Arguments:
         0: OBJECT - The RP object

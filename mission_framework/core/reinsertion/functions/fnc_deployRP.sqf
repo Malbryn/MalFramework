@@ -21,7 +21,7 @@ if !(hasInterface) exitWith {};
 
 // Check if it is enabled
 if !(GVARMAIN(moduleRP)) exitWith {
-    ["Warning", ["Squad rally point system is not available in this mission!"]] call BFUNC(showNotification);
+    ["Warning", ["Squad rally point system is not available in this mission"]] call BFUNC(showNotification);
 };
 
 // Check if the rally point is already deployed
@@ -58,7 +58,7 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
         };
     };
 
-    // Create RP tent and save the netId so other people can access it too
+    // Create RP tent and save the netId so other people can access it
     private _RPTent = createVehicle [GVAR(RPObject), player getPos [3, getDir player], [], 0, "CAN_COLLIDE"];
     _RPTent setDir (getDir player);
     private _id = netId _RPTent;
