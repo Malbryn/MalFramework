@@ -36,7 +36,7 @@ params [["_unit", objNull], ["_srCh", -1], ["_lrCh", -1]];
 switch (typeName _unit) do {
     case "OBJECT": {
         if (local _unit) then {
-            private _channels = GETVAR(_unit,GVAR(radioChannels),[ARR_2(-1,-1)]);
+            private _channels = GETVAR(_unit,GVAR(radioChannels),[ARR_2(-1, -1)]);
 
             if (_srCh != -1) then { _channels set [0, _srCh - 1] };
             if (_lrCh != -1) then { _channels set [1, _lrCh - 1] };
@@ -46,9 +46,16 @@ switch (typeName _unit) do {
     };
 
     case "GROUP": {
+        private _channelsGroup = GETVAR(_unit,GVAR(radioChannels),[ARR_2(-1, -1)]);
+
+        if (_srCh != -1) then { _channelsGroup set [0, _srCh - 1] };
+        if (_lrCh != -1) then { _channelsGroup set [1, _lrCh - 1] };
+
+        SETPVAR(_unit,GVAR(radioChannels),_channelsGroup);
+
         (units _unit) apply {
             if (local _x) then {
-                private _channels = GETVAR(_x,GVAR(radioChannels),[ARR_2(-1,-1)]);
+                private _channels = GETVAR(_x,GVAR(radioChannels),[ARR_2(-1, -1)]);
 
                 if (_srCh != -1) then { _channels set [0, _srCh - 1] };
                 if (_lrCh != -1) then { _channels set [1, _lrCh - 1] };

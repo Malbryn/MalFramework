@@ -147,7 +147,7 @@ EGVAR(intro_text,delay) = 15;  // Delay after loading in
 
 
 // JIP
-GVARMAIN(moduleJIP) = false;  // Coop & TvT
+GVARMAIN(moduleJIP) = true;  // Coop & TvT
 EGVAR(jip,jipTimer) = 3 MINUTES;  // For how long the TP is available after joining the mission
 
 
@@ -186,8 +186,8 @@ GVARMAIN(moduleOrbat) = false;  // Coop & TvT
 // Reinsertion
 GVARMAIN(moduleHALO) = false;  // Coop & TvT
 GVARMAIN(moduleMRV) = false;  // Coop & TvT
-GVARMAIN(moduleRP) = true;  // Coop & TvT
-GVARMAIN(moduleHAB) = true;  // Coop
+GVARMAIN(moduleRP) = false;  // Coop & TvT
+GVARMAIN(moduleHAB) = false;  // Coop
 GVARMAIN(moduleTP) = false;  // Coop & TvT
 EGVAR(reinsertion,RPPickUp) = false;  // If the player is required to pick up the previous RP
 EGVAR(reinsertion,markRP) = true;  // Mark the RP location on map
@@ -230,11 +230,11 @@ EGVAR(supply_drop,useFlare) = false;  // Use flares to mark the crate instead of
 
 
 // TFAR
-GVARMAIN(moduleTFAR) = true;  // Coop & TvT
+GVARMAIN(moduleTFAR) = false;  // Coop & TvT
 
 
 // Unit tracking
-GVARMAIN(moduleUnitTracking) = true;  // Coop
+GVARMAIN(moduleUnitTracking) = false;  // Coop
 EGVAR(unit_tracking,refreshInterval) = 1;  // Refresh rate in seconds (min. value = 1)
 
 
