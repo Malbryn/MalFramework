@@ -80,6 +80,11 @@ if (GVARMAIN(isTvT)) then {
         SETVAR(player,EGVAR(reinsertion,deathPos),getPos player);
 
         if (GETVAR(player,GVAR(tickets),-1) == 0 || (GVARMAIN(moduleWaveRespawn) && EGVAR(respawn_wave,availableWaves) == 0)) then {
+            // Check if the mission is ending
+            if (EGVAR(end_mission,outroIsRunning)) exitWith {
+                setPlayerRespawnTime 10e10;
+            };
+
             // Init spectator screen
             if (GVARMAIN(useACESpectator)) then {
                 [true, true, true] call EFUNC(common,initACESpectator);
@@ -146,6 +151,11 @@ if (GVARMAIN(isTvT)) then {
 
             if !(GVARMAIN(moduleWaveRespawn)) then {
                 setPlayerRespawnTime GVARMAIN(respawnTimer);
+            };
+
+            // Check if the mission is ending
+            if (EGVAR(end_mission,outroIsRunning)) exitWith {
+                setPlayerRespawnTime 10e10;
             };
 
             // Init the complainer mode

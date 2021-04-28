@@ -10,6 +10,7 @@ ADDON = true;
 
 // Init global vars
 GVAR(civilianKills) = [];
+GVAR(outroIsRunning) = false;
 GVAR(deathCount) = 0;
 GVAR(endTitle) = "";
 GVAR(endDescription) = "";
