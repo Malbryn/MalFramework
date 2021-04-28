@@ -1,6 +1,10 @@
 PREP(addHABMenu);
 PREP(addParachute);
+PREP(addRemoveHABOption);
+PREP(addRemoveRPOption);
 PREP(addRPMenu);
+PREP(canRemoveHAB);
+PREP(canRemoveRP);
 PREP(createTPDestination);
 PREP(deployHAB);
 PREP(deployRP);

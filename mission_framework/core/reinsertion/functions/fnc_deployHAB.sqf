@@ -21,7 +21,7 @@ if !(hasInterface) exitWith {};
 
 // Check if it is enabled
 if !(GVARMAIN(moduleHAB)) exitWith {
-    ["Warning", ["HAB system is not available in this mission!"]] call BFUNC(showNotification);
+    ["Warning", ["HAB reinsertion is not available in this mission"]] call BFUNC(showNotification);
 };
 
 // Check if the HAB is already deployed
@@ -39,7 +39,7 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
 
 // Display ACE progress bar
 [12, [], {
-    // Create HAB and save the netId so other people can remove it as well
+    // Create HAB and save the netId so other people can access it
     private _HAB = createVehicle [GVAR(HABObject), player getPos [8, getDir player], [], 0, "CAN_COLLIDE"];
     _HAB setDir (getDir player);
     private _id = netId _HAB;
@@ -53,33 +53,29 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
 
     // Mark on map
     if GVAR(markHAB) then {
+        private _marker = createMarker ["MF_mrk_HAB", _HAB];
+        "MF_mrk_HAB" setMarkerText "HAB";
+
         switch (side player) do {
             case west : {
-                private _marker = createMarker ["MF_mrk_HAB_west", _HAB];
-                "MF_mrk_HAB_west" setMarkerType "b_hq";
-                "MF_mrk_HAB_west" setMarkerColor "ColorWEST";
-                "MF_mrk_HAB_west" setMarkerText "HAB";
-
-                [QGVARMAIN(deleteMarkerSide), ["MF_mrk_HAB_west", east]] call CFUNC(globalEvent);
+                "MF_mrk_HAB" setMarkerType "b_hq";
+                "MF_mrk_HAB" setMarkerColor "ColorWEST";
             };
 
             case east : {
-                private _marker = createMarker ["MF_mrk_HAB_east", _HAB];
-                "MF_mrk_HAB_east" setMarkerType "o_hq";
-                "MF_mrk_HAB_east" setMarkerColor "ColorEAST";
-                "MF_mrk_HAB_east" setMarkerText "HAB";
-
-                [QGVARMAIN(deleteMarkerSide), ["MF_mrk_HAB_east", west]] call CFUNC(globalEvent);
+                "MF_mrk_HAB" setMarkerType "o_hq";
+                "MF_mrk_HAB" setMarkerColor "ColorEAST";
             };
 
             default {
-                private _marker = createMarker ["MF_mrk_HAB_ind", _HAB];
-                "MF_mrk_HAB_ind" setMarkerType "n_hq";
-                "MF_mrk_HAB_ind" setMarkerColor "ColorGUER";
-                "MF_mrk_HAB_ind" setMarkerText "HAB";
+                "MF_mrk_HAB" setMarkerType "n_hq";
+                "MF_mrk_HAB" setMarkerColor "ColorGUER";
             };
         };
     };
+
+    // Add remove action
+    [QGVAR(addRemoveHABOption), [_HAB]] call CFUNC(globalEvent);
 }, {
     // Stop the animation if the progress bar was cancelled
     [player, ""] remoteExec ["switchMove", 0];

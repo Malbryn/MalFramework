@@ -1,5 +1,8 @@
+#include "script_version.hpp"
+
 #define PREFIX MF
-#define VERSION loadFile QUOTE(mission_framework\VERSION.sqf);
+#define VERSION QUOTE(MAJOR.MINOR.PATCH)
+#define VERSION_BUILD QUOTE(MAJOR.MINOR.PATCH.BUILD)
 
 // DEBUGGING
 #ifndef DEBUG_MODE_NORMAL

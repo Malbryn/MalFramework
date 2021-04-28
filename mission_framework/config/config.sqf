@@ -147,7 +147,7 @@ EGVAR(intro_text,delay) = 15;  // Delay after loading in
 
 
 // JIP
-GVARMAIN(moduleJIP) = false;  // Coop & TvT
+GVARMAIN(moduleJIP) = true;  // Coop & TvT
 EGVAR(jip,jipTimer) = 3 MINUTES;  // For how long the TP is available after joining the mission
 
 
@@ -187,7 +187,7 @@ GVARMAIN(moduleOrbat) = false;  // Coop & TvT
 GVARMAIN(moduleHALO) = false;  // Coop & TvT
 GVARMAIN(moduleMRV) = false;  // Coop & TvT
 GVARMAIN(moduleRP) = false;  // Coop & TvT
-GVARMAIN(moduleHAB) = false;  // Coop & TvT
+GVARMAIN(moduleHAB) = false;  // Coop
 GVARMAIN(moduleTP) = false;  // Coop & TvT
 EGVAR(reinsertion,RPPickUp) = false;  // If the player is required to pick up the previous RP
 EGVAR(reinsertion,markRP) = true;  // Mark the RP location on map

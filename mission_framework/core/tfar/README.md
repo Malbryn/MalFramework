@@ -3,8 +3,11 @@
 _This module allows the mission maker to assign pre-set radio channels to player units._
 
 ## Usage:
-1. _Call `MF_tfar_fnc_setRadios` in the init field of the unit_
+1. _Call `MF_tfar_fnc_setRadios` in the init field of the unit (if you want to assign radio channels individually) or in the init field of the group (if you want to assign radio channels for the entire group)_
 
+_Notes:_
+ - _You can mix them as well, for example you can put `[this, 2] call MF_tfar_fnc_setRadios` in the init field of the group to set every group member's radio to channel two. Then you put `[this, -1, 5] call MF_tfar_fnc_setRadios` in the init field of the squad leader to set their long range radio to channel 5._
+ - _The group's init field has higher hierarchy meaning that it will overwrite the values set in the init field of unit's._
 ```
 Description:
     Saves the unit's pre-set radio channels.
@@ -22,7 +25,7 @@ Description:
     Channel 9  |  Freq. 190              Channel 9  |  Freq. 70
 
 Arguments:
-    0: OBJECT - Player unit
+    0: OBJECT or GROUP - Player unit or group
     1: SCALAR - Short range radio channel (between 1 and 9) (Optional, default: -1)
     2: SCALAR - Long range radio channel (between 1 and 9) (Optional, default: -1)
 

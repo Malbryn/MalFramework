@@ -5,13 +5,13 @@
         Malbryn
 
     Description:
-        Creates a unique marker name.
+        Creates a unique marker name for the unit tracker.
 
     Arguments:
-        0: GROUP or OBJECT - The group or object that will be marked
+        0: GROUP or OBJECT - The group or object that will be tracked
 
     Example:
-        [this] call MF_common_fnc_createMarkerName
+        [this] call MF_unit_tracking_fnc_createMarkerName
 
     Returns:
         STRING

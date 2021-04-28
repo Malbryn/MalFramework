@@ -11,7 +11,7 @@
         0: OBJECT - Target unit to check
 
     Example:
-        [bob] call MF_jip_fnc_checkEmptySeats
+        [bob] call MF_common_fnc_checkEmptySeat
 
     Returns:
         BOOLEAN

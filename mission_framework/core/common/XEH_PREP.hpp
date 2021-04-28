@@ -1,4 +1,4 @@
-PREP(createMarkerName);
+PREP(checkEmptySeat);
 PREP(deleteMarkerSide);
 PREP(eventHandleDisconnect);
 PREP(getSystemTime);

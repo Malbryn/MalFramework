@@ -24,7 +24,9 @@ if !(isServer) exitWith {};
 params ["_ending", ["_isVictory", false], ["_side", sideUnknown]];
 
 // Stop the end condition check
-[EGVAR(end_conditions,endConditionCheck)] call CFUNC(removePerFrameHandler);
+if (!isNil QEGVAR(end_conditions,endConditionCheck)) then {
+    [EGVAR(end_conditions,endConditionCheck)] call CFUNC(removePerFrameHandler);
+};
 
 // Set vars
 private _title = [missionConfigfile >> "CfgDebriefing" >> _ending, "title", "UNKNOWN"] call BFUNC(returnConfigEntry);
