@@ -74,13 +74,8 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
         };
     };
 
-    // Add remove option
-    private _menu = ['Remove HAB', 'Remove HAB', '', {
-        call FUNC(removeHAB);
-    }, {[_this#0] call FUNC(canRemoveHAB)}] call AFUNC(interact_menu,createAction);
-
-    [_HAB, 0, ["ACE_MainActions"], _menu] call AFUNC(interact_menu,addActionToObject);
-
+    // Add remove action
+    [QGVAR(addRemoveHABOption), [_HAB]] call CFUNC(globalEvent);
 }, {
     // Stop the animation if the progress bar was cancelled
     [player, ""] remoteExec ["switchMove", 0];

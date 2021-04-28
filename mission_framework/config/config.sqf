@@ -147,7 +147,7 @@ EGVAR(intro_text,delay) = 15;  // Delay after loading in
 
 
 // JIP
-GVARMAIN(moduleJIP) = false;  // Coop & TvT
+GVARMAIN(moduleJIP) = true;  // Coop & TvT
 EGVAR(jip,jipTimer) = 3 MINUTES;  // For how long the TP is available after joining the mission
 
 
