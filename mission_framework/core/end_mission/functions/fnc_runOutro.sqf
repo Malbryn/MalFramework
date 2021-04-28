@@ -39,8 +39,9 @@ if (hasInterface) then {
     // Screen effects
     [_ending, _isVictory] call FUNC(runClosingShot);
 
-    // Set respawn timer
+    // Set respawn timer and prevent players that just died from entering spectator
     setPlayerRespawnTime 10e10;
+    GVAR(outroIsRunning) = true;
 
     // Disable damage (if setting enabled)
     if (GVAR(disableDamage)) then {
