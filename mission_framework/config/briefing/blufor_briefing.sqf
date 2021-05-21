@@ -19,9 +19,6 @@ NEWTAB("I. Organisation")
 <br/>
 <br/><font color='#21749c' size='14' face='PuristaSemiBold'>player_unit_or_faction</font>
 <br/>list_of_the_squads_and_callsigns
-<br/>
-<br/><font color='#21749c' size='14' face='PuristaSemiBold'>assets_unit_or_faction</font>
-<br/>list_of_the_friendly_assets_and_callsigns
 ENDTAB;
 
 NEWTAB("II. Situation")
@@ -95,7 +92,7 @@ NEWTAB("IV. Support & Logistics:")
 <br/><font color='#21749c' size='14' face='PuristaSemiBold'>Transportation:</font>
 <br/> - infantry_transport_information
 <br/>
-<br/><font color='#21749c' size='14' face='PuristaSemiBold'>Available supplies:</font>
+<br/><font color='#21749c' size='14' face='PuristaSemiBold'>Resupplies:</font>
 <br/> - information_of_the_available_resupplies
 <br/>
 <br/>
