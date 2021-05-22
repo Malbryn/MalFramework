@@ -112,11 +112,6 @@ GVARMAIN(moduleCustomChannel) = false;  // Coop & TvT
 EGVAR(custom_channel,channelName) = "JTAC channel";  // Name of the channel
 EGVAR(custom_channel,channelColour) = [0.8, 0, 0.5, 1];  // Colour of the channel (RGBA format, default: FK pink)
 
-
-// End mission
-EGVAR(end_mission,disableDamage) = false;  // Disable damage during the mission end screen (Coop & TvT)
-
-
 // Gear
 EGVAR(gear,saveGearInArsenal) = false;  // Should the player's gear be saved if an arsenal is available (Coop & TvT)
 EGVAR(gear,enableBackpackLock) = false;  // Enable backpack lock (Coop & TvT)
