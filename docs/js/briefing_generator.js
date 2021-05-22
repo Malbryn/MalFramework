@@ -167,7 +167,6 @@ ENDTAB;`
  */
 $("#copy-button").click(function(event) {
     let text = $("#briefing-output");
-    let button = $(this);
 
     text.select();
     document.execCommand("copy");

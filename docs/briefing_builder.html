@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MalFramework - Briefing Builder</title>
+    <link rel="icon" type="image/png" href="/mission_framework/core/main/img/icon.png"/>
     <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/briefing_generator.js" defer></script>
@@ -24,11 +25,11 @@
                     <h4>ORBAT</h4>
                         <li>
                             <label for="faction">Player faction</label>
-                            <textarea name="faction" id="faction" rows=1 placeholder="The player's faction (e.g. US Army)"></textarea>
+                            <textarea name="faction" id="faction" rows=1 placeholder="The players' faction (e.g. 101st Airborne Division, US Army)"></textarea>
                         </li>
                         <li>
                             <label for="groups">List of groups</label>
-                            <textarea name="groups" id="groups" rows=6 placeholder="A list of the player groups or asset, their size and their callsign (e.g. 1x AH-64E Apache (Callsign: RAPTOR))"></textarea>
+                            <textarea name="groups" id="groups" rows=6 placeholder="A list of the player groups, their size and callsign (e.g. 1x AH-64E Apache - Callsign: RAPTOR etc.)"></textarea>
                         </li>
                 </ul>
             </div>
@@ -39,34 +40,36 @@
                     <h4>Background</h4>
                         <li>
                             <label for="summary">Summary</label>
-                            <textarea name="summary" id="summary" rows=4 placeholder="A short background story of what is going on, what the mission is etc."></textarea>
+                            <textarea name="summary" id="summary" rows=4 placeholder="A short background story for the mission"></textarea>
                         </li>
                     <h4>Area of operations</h4>
+                        <h5>Terrain</h5>
                         <li>
-                            <label for="terrain">Terrain</label>
-                            <textarea name="terrain" id="terrain" rows=2 placeholder="Short description of the terrain (e.g. big open fields with some forest patches etc.)"></textarea>
+                            <label for="terrain">Description</label>
+                            <textarea name="terrain" id="terrain" rows=2 placeholder="Description of the terrain (e.g. big open fields with some forest patches etc.)"></textarea>
                         </li>
                         <h5>Weather</h5>
                             <li>
                                 <label for="weather_current">Current</label>
-                                <textarea name="weather_current" id="weather_current" rows=2 placeholder="The current weather conditions (e.g. heavy fog and rain)"></textarea>
+                                <textarea name="weather_current" id="weather_current" rows=2 placeholder="The current weather conditions (e.g. heavy fog and rain etc.)"></textarea>
                             </li>
                             <li>
-                                <label for="weather_forecasted">Forecasted</label>
-                                <textarea name="weather_forecasted" id="weather_forecasted" rows=2 placeholder="The forecasted weather conditions (e.g. no change in weather was forecasted)"></textarea>
+                                <label for="weather_forecasted">Forecast</label>
+                                <textarea name="weather_forecast" id="weather_forecast" rows=2 placeholder="The forecasted weather conditions (e.g. no change in weather was forecasted)"></textarea>
                             </li>
                             <li>
                                 <label for="weather_visibility">Visibility</label>
-                                <textarea name="weather_visibility" id="weather_visibility" rows=2 placeholder="Current visibility (e.g. reduced to 200m due to the fog)"></textarea>
+                                <textarea name="weather_visibility" id="weather_visibility" rows=2 placeholder="Current visibility and light conditions (e.g. visibility is reduced to 200m due to the fog, daytime operation etc.)"></textarea>
                             </li>
                         <h5>Civilian presence</h5>
                             <li>
                                 <label for="civilians">Summary</label>
-                                <textarea name="civilians" id="civilians" rows=2 placeholder="If there are any civilians in the AO how they should be handled etc."></textarea>
+                                <textarea name="civilians" id="civilians" rows=2 placeholder="If there are any civilians in the AO, how they should be handled etc."></textarea>
                             </li>
                     <h4>Enemy forces</h4>
+                        <h5>Composition and Strength</h5>
                         <li>
-                            <label for="composition">Composition and Strength</label>
+                            <label for="composition">Description</label>
                             <textarea name="composition" id="composition" rows=4 placeholder="Description of the enemy composition, strength and weaponry"></textarea>
                         </li>
                         <h5>Capabilities</h5>
@@ -80,7 +83,7 @@
                             </li>
                             <li>
                                 <label for="artillery">Artillery</label>
-                                <textarea name="artillery" id="artillery" rows=2 placeholder="Artillery presence"></textarea>
+                                <textarea name="artillery" id="artillery" rows=2 placeholder="Artillery presence (e.g. they have access to mortars etc.)"></textarea>
                             </li>
                             <li>
                                 <label for="explosives">Explosives</label>
@@ -94,14 +97,8 @@
                 <ul>
                     <h4>Mission intent</h4>
                         <li>
-                            <label for="intent">Mission</label>
-                            <textarea name="intent" id="intent" rows=4 placeholder="Intent of the mission (e.g. Your objective is to capture...)"></textarea>
-                        </li>
-                    <h4>Objectives</h4>
-                        <li>
-                            <label for="obj_title">Objective #1</label>
-                            <textarea name="obj_title" id="obj_title" rows=1 placeholder="Title"></textarea>
-                            <textarea name="obj_description" id="obj_description" rows=2 placeholder="Description"></textarea>
+                            <label for="intent">Description</label>
+                            <textarea name="intent" id="intent" rows=4 placeholder="Intent of the mission and the objectives (e.g. your objective is to capture...)"></textarea>
                         </li>
                 </ul>
             </div>
@@ -111,8 +108,8 @@
                 <ul>
                     <h4>Support</h4>
                         <li>
-                            <label for="supports">Available supports</label>
-                            <textarea name="supports" id="supports" rows=4 placeholder="Available friendly supports (e.g. CAS by RAPTOR, Artillery fire support by HAMMER etc.)"></textarea>
+                            <label for="supports">Available</label>
+                            <textarea name="supports" id="supports" rows=4 placeholder="Available friendly supports (e.g. CAS by RAPTOR, artillery fire support by HAMMER etc.)"></textarea>
                         </li>
 
                     <h4>Logistics</h4>
@@ -122,11 +119,11 @@
                         </li>
                         <li>
                             <label for="transportation">Transportation</label>
-                            <textarea name="transportation" id="transportation" rows=4 placeholder="Available infantry transport (e.g. each squad will recieve 2x HMMWV)"></textarea>
+                            <textarea name="transportation" id="transportation" rows=4 placeholder="Available infantry transport (e.g. each squad will recieve 2x HMMWV etc.)"></textarea>
                         </li>
                         <li>
                             <label for="resupplies">Resupplies</label>
-                            <textarea name="resupplies" id="resupplies" rows=4 placeholder="Available resupplies (e.g. 1x medical resupply crate is available)"></textarea>
+                            <textarea name="resupplies" id="resupplies" rows=4 placeholder="Available resupplies (e.g. 1x medical resupply crate is available, to be requested by the CO)"></textarea>
                         </li>
 
                     <h4>Signals</h4>
@@ -143,7 +140,7 @@
                     <h4>Respawns</h4>
                         <li>
                             <label for="player_respawn">Player respawn</label>
-                            <textarea name="player_respawn" id="player_respawn" rows=4 placeholder="Player respawn info (e.g. unlimited, rolling respawns (5-minute time-out))"></textarea>
+                            <textarea name="player_respawn" id="player_respawn" rows=4 placeholder="Player respawn info (e.g. unlimited, rolling respawns, 5-minute respawn timer etc.)"></textarea>
                         </li>
                         <li>
                             <label for="asset_respawn">Asset respawn</label>
@@ -151,7 +148,7 @@
                         </li>
                         <li>
                             <label for="reinsertion">Reinsertion</label>
-                            <textarea name="reinsertion" id="reinsertion" rows=4 placeholder="How the respawned players will get back to the AO (e.g. teleport via squad rally point system)"></textarea>
+                            <textarea name="reinsertion" id="reinsertion" rows=4 placeholder="How the respawned players will get back to the AO (e.g. teleport via squad rally point system, transported with heli etc.)"></textarea>
                         </li>
 
                     <h4>End conditions</h4>
