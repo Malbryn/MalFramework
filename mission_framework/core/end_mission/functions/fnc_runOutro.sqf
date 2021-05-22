@@ -43,11 +43,9 @@ if (hasInterface) then {
     setPlayerRespawnTime 10e10;
     GVAR(outroIsRunning) = true;
 
-    // Disable damage (if setting enabled)
-    if (GVAR(disableDamage)) then {
-        player allowDamage false;
-        (vehicle player) allowDamage false;
-    };
+    // Disable damage (dying during the closing shot breaks the end screen)
+    player allowDamage false;
+    (vehicle player) allowDamage false;
 
     // Cancel pending tasks
     private _taskList = player call BFUNC(tasksUnit);
