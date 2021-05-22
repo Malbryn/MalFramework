@@ -12,9 +12,6 @@ $("#main-form").submit(function(event) {
     let fields = $(this).serializeArray();
     event.preventDefault();
 
-    // Debug
-    console.log(fields);
-
     generateBriefing(fields);
 });
 
@@ -39,7 +36,8 @@ function generateBriefing(fields) {
     let sideColour = fields[29]['value'] === "BLUFOR" ? "#21749c" : "#9c2d21";
 
     // Output
-    let template = `
+    let template = `// This briefing file was generated with the Briefing Builder tool
+
 NEWTAB("I. Organisation")
 <br/><font color='${sideColour}' size='18' face='PuristaBold'>BLUFOR ORBAT</font>
 <br/>
@@ -151,9 +149,34 @@ NEWTAB("V. Notes:")
 <br/>
 <br/><font color='${sideColour}' size='18' face='PuristaBold'>Mission maker's notes</font>
 <br/> - ${fields[28]['value']}
-ENDTAB;
-    `
+ENDTAB;`
 
-    // Debug
-    console.log(template);
+    // Display output
+    $("#briefing-output").val(template);
+    $("#briefing-output-field").css("display", "flex");
+
+    // Scroll down
+    $("#briefing-output-field")[0].scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 };
+
+/*
+ *  Copy to clipboard event fired when the user clicks the button.
+ */
+$("#copy-button").click(function(event) {
+    let text = $("#briefing-output");
+    let button = $(this);
+
+    text.select();
+    document.execCommand("copy");
+    document.getSelection().removeAllRanges();
+
+    // Button text
+    $("#panel").slideDown("slow");
+
+    setTimeout(function() {
+        $("#panel").slideUp("slow");
+    }, 3000);
+});
