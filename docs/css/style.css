@@ -30,6 +30,24 @@ body {
     font-size: 2em;
 }
 
+.nav-buttons {
+    margin: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-buttons > a {
+    padding: 15px;
+    font-size: 1.75em;
+    border: 3px solid #fff;
+    border-radius: 5px;
+}
+
+.nav-buttons > a:hover {
+    background-color: #305474;
+    cursor: pointer;
+}
+
 .main-form-container {
     margin: auto;
     padding: 20px;
