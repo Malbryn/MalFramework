@@ -30,7 +30,7 @@ body {
     font-size: 2em;
 }
 
-.main-form {
+.main-form-container {
     margin: auto;
     padding: 20px;
     width: 66%;
@@ -69,28 +69,37 @@ textarea {
     font-size: 1em;
 }
 
-.form-radio {
-    padding: 20px;
+.form-select {
+    padding: 5px;
+    display: flex;
 }
 
-.form-radio-blufor,
-.form-radio-redfor {
-    margin-left: 15px;
-    padding: 10px 0px;
+.form-select > h4 {
+    margin: 2px 2px 2px 30px;
 }
 
-.submit-button {
+#side-selector,
+#side-selector > option {
+    margin-left: 5px;
+    width: 15%;
+    color: #000;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+}
+
+#submit-button {
     margin: auto;
     width: 120px;
     height: 40px;
     background-color: #305474;
+    font-size: 1.25em;
+    border: none;
 }
 
-.submit-button > a {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.25em;
+#submit-button:hover {
+    background-color: #3c6991;
+    cursor: pointer;
 }

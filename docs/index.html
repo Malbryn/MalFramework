@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MalFramework - Briefing Builder</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/briefing_generator.js" defer></script>
 </head>
 <body>
     <div class="header">
@@ -14,8 +16,8 @@
         </a>
         <h2>Briefing Builder</h2>
     </div>
-    <div class="main-form">
-        <form action="index.html">
+    <div class="main-form-container">
+        <form id="main-form">
             <div class="form-cat">
                 <h3>I. Organisation</h3>
                 <ul>
@@ -182,22 +184,16 @@
                 </ul>
             </div>
 
-            <div class="form-radio">
-                <h3>Side</h3>
-
-                <div class="form-radio-blufor">
-                    <input type="radio" id="blufor" name="side" value="blufor" required>
-                    <label for="blufor">BLUFOR</label>
-                </div>
-                
-                <div class="form-radio-redfor">
-                    <input type="radio" id="redfor" name="side" value="redfor">
-                    <label for="redfor">REDFOR</label>
-                </div>
+            <div class="form-select">
+                <h4>Side:</h4>
+                <select id="side-selector" required>
+                    <option>BLUFOR</option>
+                    <option>REDFOR</option>
+                </select>
             </div>
 
-            <div class="submit-button">
-                <a href="#">Generate</a>
+            <div class="submit">
+                <button type="submit" id="submit-button">Generate</button>
             </div>
         </form>
     </div>
