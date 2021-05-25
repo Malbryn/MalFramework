@@ -14,7 +14,7 @@
         3: ANY - Additional arguments
 
     Example:
-        [this, player, 2, ""] call MF_sitting_fnc_sitDown
+        [this, player, 2, ""] call MF_common_fnc_sitDown
 
     Returns:
         void
@@ -29,7 +29,6 @@ private _dir = (getDir _target) + 180;
 // Set player's pos and dir then play anim
 _caller setDir _dir;
 [QGVAR(playAnim), [_caller, "HubSittingChairUA_move1"]] call CFUNC(globalEvent);
-//_caller setPosATL (_target modelToWorld [0, -0.14, -1]);
 _caller setPosATL (getPosATL _target);
 
 // Assign statuses
