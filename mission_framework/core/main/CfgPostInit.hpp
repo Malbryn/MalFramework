@@ -32,6 +32,10 @@ class GVARMAIN(Briefing) {
     init = PATH_POST(briefing);
 };
 
+class GVARMAIN(CBRN) {
+    init = PATH_POST(cbrn);
+};
+
 class GVARMAIN(Common) {
     init = PATH_POST(common);
 };
