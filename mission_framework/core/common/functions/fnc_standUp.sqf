@@ -14,7 +14,7 @@
         3: ANY - Additional arguments
 
     Example:
-        [this, player, 2, ""] call MF_sitting_fnc_standUp
+        [this, player, 2, ""] call MF_common_fnc_standUp
 
     Returns:
         void
