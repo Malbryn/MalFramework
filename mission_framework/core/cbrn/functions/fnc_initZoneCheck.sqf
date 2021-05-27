@@ -23,6 +23,9 @@ if (count GVAR(zones) == 0) exitWith {
     [COMPONENT_STR, "DEBUG", "Contamination zones array is empty!", true, 1] call EFUNC(main,log);
 };
 
+// Reset detector screen
+[0] call FUNC(setDetectorDisplay);
+
 // Check 
 GVAR(zoneCheckPFH) = [{
     GVAR(zones) apply {
@@ -34,14 +37,14 @@ GVAR(zoneCheckPFH) = [{
         // Check the player's distance
         if (_dist > _zoneRadius) exitWith {};
 
-        // SFX
-        if ("ChemicalDetector_01_watch_F" in (assignedItems player) && {!GVAR(isMuted)}) then {
-            playSound QGVARMAIN(DetectorBeep);
-        };
-
         // Use linear conversion if between the max radius and inner radius
         if (_dist > _innerRadius) then {
             _currentContLevel = linearConversion [_innerRadius, _zoneRadius, _dist, 9.99, 0];
+        };
+
+        // SFX
+        if ("ChemicalDetector_01_watch_F" in (assignedItems player) && {!GVAR(isMuted)} && {_currentContLevel > GVAR(alertThreshold)}) then {
+            playSound QGVARMAIN(DetectorBeep);
         };
 
         // Set detector display

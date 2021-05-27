@@ -12,3 +12,5 @@ ADDON = true;
 
 GVAR(zones) = [];
 GVAR(timeLimitCurrent) = GVAR(timeLimit);
+GVAR(isMuted) = false;
+GVAR(alertThreshold) = 0;

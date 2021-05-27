@@ -1,3 +1,4 @@
+PREP(addDetectorControls);
 PREP(createZone);
 PREP(getProtectionLevel);
 PREP(handleDamage);
