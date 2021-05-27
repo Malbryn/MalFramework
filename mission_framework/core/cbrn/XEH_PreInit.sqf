@@ -1,5 +1,7 @@
 #include "script_component.hpp"
 
+if !(GVARMAIN(moduleCBRN)) exitWith {};
+
 ADDON = false;
 
 PREP_RECOMPILE_START;
@@ -7,3 +9,5 @@ PREP_RECOMPILE_START;
 PREP_RECOMPILE_END;
 
 ADDON = true;
+
+GVAR(zones) = [];
