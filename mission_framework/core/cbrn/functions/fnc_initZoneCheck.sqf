@@ -32,6 +32,9 @@ GVAR(zoneCheckPFH) = [{
 
         // SFX
 
+        // Set detector display
+        call FUNC(setDetectorDisplay);
+
         // Check the player's protection
         private _playerProtection = [player] call FUNC(getProtectionLevel);
 
