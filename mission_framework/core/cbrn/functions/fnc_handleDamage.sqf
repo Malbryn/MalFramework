@@ -23,14 +23,17 @@ if !(hasInterface) exitWith {};
 
 params ["_unit", "_damage"];
 
-// Lower blood level
+// Blood volume
 private _currentbloodVolume = GETVAR(_unit,ace_medical_bloodVolume,6);
 private _newbloodVolume = _currentbloodVolume - (0.008 * (_damage / 10));
 
 SETVAR(_unit,ace_medical_bloodVolume,_newbloodVolume);
 
-// Cause pain
+// Pain
 private _currentPainLevel = GETVAR(_unit,ace_medical_pain,0);
 private _newPainLevel = _currentPainLevel + (0.005 * (_damage / 10));
 
 SETVAR(_unit,ace_medical_pain,_newPainLevel);
+
+// Fatigue
+ace_advanced_fatigue_anReserve = ace_advanced_fatigue_anReserve - (6.66 * (_damage / 10));
