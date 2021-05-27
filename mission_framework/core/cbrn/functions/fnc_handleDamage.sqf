@@ -10,7 +10,7 @@
 
     Arguments:
         0: OBJECT - Player unit
-        0: SCALAR - The strength of the effect (possible values: 0.00 - 9.99)
+        1: SCALAR - The strength of the effect (possible values: 0.00 - 9.99)
 
     Example:
         [player, 3.6] call MF_cbrn_fnc_handleDamage

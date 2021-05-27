@@ -109,7 +109,6 @@ GVARMAIN(moduleBriefing) = false;  // Coop & TvT
 
 // CBRN
 GVARMAIN(moduleCBRN) = true;  // Coop & TvT
-EGVAR(cbrn,zones) = ["mrk_contZone1"];  // Array of markers for the contamination zones
 EGVAR(cbrn,protectiveMasks) = [];  // Masks that provide protection (LVL 1)
 EGVAR(cbrn,protectiveUniforms) = [];  // Uniforms that provide protection (LVL 2)
 EGVAR(cbrn,protectiveBackpack) = [];  // Backpacks (= breathing apparatus) that provide protection (LVL 3)
