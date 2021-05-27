@@ -11,3 +11,4 @@ PREP_RECOMPILE_END;
 ADDON = true;
 
 GVAR(zones) = [];
+GVAR(timeLimitCurrent) = GVAR(timeLimit);

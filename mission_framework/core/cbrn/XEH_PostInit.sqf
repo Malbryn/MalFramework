@@ -8,3 +8,8 @@ if (hasInterface) then {
         call FUNC(initZoneCheck);
     }] call CFUNC(addEventHandler);
 };
+
+// Refresh time limit after receiving treatment
+["ace_medical_FullHeal", {
+    GVAR(timeLimitCurrent) = GVAR(timeLimit);
+}] call CFUNC(addEventHandler);
