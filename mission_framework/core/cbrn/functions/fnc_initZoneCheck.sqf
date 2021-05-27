@@ -35,15 +35,17 @@ GVAR(zoneCheckPFH) = [{
         if (_dist > _zoneRadius) exitWith {};
 
         // SFX
-        playSound "detector_beep";
+        if ("ChemicalDetector_01_watch_F" in (assignedItems player) && {!GVAR(isMuted)}) then {
+            playSound QGVARMAIN(DetectorBeep);
+        };
 
         // Use linear conversion if between the max radius and inner radius
         if (_dist > _innerRadius) then {
-            _currentContLevel = linearConversion [0, 9.99, _dist, _innerRadius, _zoneRadius];
+            _currentContLevel = linearConversion [_innerRadius, _zoneRadius, _dist, 9.99, 0];
         };
 
         // Set detector display
-        call FUNC(setDetectorDisplay);
+        [_currentContLevel] call FUNC(setDetectorDisplay);
 
         // Check the player's protection
         private _playerProtection = [player] call FUNC(getProtectionLevel);
@@ -56,7 +58,7 @@ GVAR(zoneCheckPFH) = [{
             private _dps = _contLevel * (_protectionLevel - _playerProtection) / _protectionLevel;
 
             // Inflict damage
-            [_dps] call FUNC(handleDamage);
+            [player, _dps] call FUNC(handleDamage);
         } else {
             GVAR(timeLimitCurrent) = GVAR(timeLimitCurrent) - 1;
         };

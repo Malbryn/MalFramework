@@ -23,6 +23,8 @@ params ["_threatLevel"];
 
 disableSerialization;
 
+"ThreatDisplay" cutRsc ["RscWeaponChemicalDetector", "PLAIN", 1, false];
+
 private _ui = uiNamespace getVariable "RscWeaponChemicalDetector";
 private _obj = _ui displayCtrl 101;
 

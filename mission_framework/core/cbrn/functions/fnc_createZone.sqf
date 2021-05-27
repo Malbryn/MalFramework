@@ -36,7 +36,7 @@ if (isNull _object) exitWith {
     false
 };
 
-if (GETVAR(_object,GVAR(zoneParams),[]) != []) exitWith {
+if (GETVAR(_object,GVAR(zoneParams),[]) isNotEqualTo []) exitWith {
     [COMPONENT_STR, "ERROR", "Target object is already a CBRN object", true, 1] call EFUNC(main,log);
 
     false
@@ -61,7 +61,7 @@ if (_contLevel < 0 || 9.99 < _contLevel) exitWith {
 };
 
 // Set zone params
-SETVAR(_object,GVAR(zoneParams),[_zoneRadius,_innerRadius,_protectionLevel,_contLevel]);
+SETVAR(_object,GVAR(zoneParams),[ARR_4(_zoneRadius,_innerRadius,_protectionLevel,_contLevel)]);
 GVAR(zones) = [_object];
 
 true

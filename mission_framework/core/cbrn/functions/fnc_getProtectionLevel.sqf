@@ -32,7 +32,7 @@ if ((goggles _unit) in GVAR(protectiveMasks)) then {
     if ((uniform _unit) in GVAR(protectiveUniforms)) then {
         _level = 2;
 
-        if ((backpack _unit) in GVAR(protectiveBackpack)) {
+        if ((backpack _unit) in GVAR(protectiveBackpack)) then {
             _level = 3;
         };
     };

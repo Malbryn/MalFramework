@@ -6,7 +6,7 @@
 
     Description:
         Handles the damage that is caused to the player.
-        At maximum damage it takes 10 minutes to lose enough blood to pass out (3.6 litres) and 5 minutes to reach maximum pain level (1).
+        At maximum damage it takes 5 minutes to pass out due to bloodloss (3.6 litres).
 
     Arguments:
         0: OBJECT - Player unit
@@ -24,13 +24,13 @@ if !(hasInterface) exitWith {};
 params ["_unit", "_damage"];
 
 // Lower blood level
-private _currentbloodVolume = GETVAR(_unit,QUOTE(ace_medical_bloodVolume),6);
-private _newbloodVolume = _currentBloodLevel - (0.004 * (_damage / 10));
+private _currentbloodVolume = GETVAR(_unit,ace_medical_bloodVolume,6);
+private _newbloodVolume = _currentbloodVolume - (0.008 * (_damage / 10));
 
-SETVAR(_unit,QUOTE(ace_medical_bloodVolume),_newbloodVolume);
+SETVAR(_unit,ace_medical_bloodVolume,_newbloodVolume);
 
 // Cause pain
-private _currentPainLevel = GETVAR(_unit,QUOTE(ace_medical_pain),0);
-private _newPainLevel = _currentPainLevel + (0.0033 * (_damage / 10));
+private _currentPainLevel = GETVAR(_unit,ace_medical_pain,0);
+private _newPainLevel = _currentPainLevel + (0.005 * (_damage / 10));
 
-SETVAR(_unit,QUOTE(ace_medical_pain),_newPainLevel);
+SETVAR(_unit,ace_medical_pain,_newPainLevel);
