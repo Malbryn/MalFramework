@@ -70,17 +70,3 @@ GVAR(zoneCheckPFH) = [{
         };
     };
 }, 1] call CFUNC(addPerFrameHandler);
-/*
-// Mask sound PFH
-GVAR(zoneCheckPFH) = [{
-    if ((goggles _unit) in GVAR(protectiveMasks)) then {
-        private _randomDelay = random [3.5, 4.5, 5.5];
-
-        [{
-            if ((goggles _unit) in GVAR(protectiveMasks)) then {
-                playSound format ["MF_BreathIn%1", ceil (random 4)];
-            };
-        }, [], _randomDelay] call CFUNC(waitAndExecute);
-    };
-}, 1] call CFUNC(addPerFrameHandler);
-*/

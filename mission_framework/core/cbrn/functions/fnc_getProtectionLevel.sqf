@@ -24,7 +24,7 @@ params ["_unit"];
 private _level = 0;
 
 // If the unit is inside a protected vehicle, then exit with highest value
-if ((typeOf vehicle player) in GVAR(protectiveVehicles)) exitWith {3};
+if ((typeOf vehicle _unit) in GVAR(protectiveVehicles) && !isTurnedOut _unit) exitWith {3};
 
 if ((goggles _unit) in GVAR(protectiveMasks)) then {
     _level = 1;

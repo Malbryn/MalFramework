@@ -7,6 +7,7 @@ if (hasInterface) then {
     [QGVARMAIN(initFramework), {
         call FUNC(initZoneCheck);
         call FUNC(addDetectorControls);
+        call FUNC(initSounds);
     }] call CFUNC(addEventHandler);
 };
 
