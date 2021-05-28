@@ -109,7 +109,7 @@ GVARMAIN(moduleBriefing) = false;  // Coop & TvT
 
 // CBRN
 GVARMAIN(moduleCBRN) = true;  // Coop & TvT
-EGVAR(cbrn,timeLimit) = 5;  // The time limit in seconds after which the player (with insufficient protection) starts taking damage
+EGVAR(cbrn,timeLimit) = 30;  // The time limit in seconds after which the player (with insufficient protection) starts taking damage
 EGVAR(cbrn,protectiveMasks) = ["G_AirPurifyingRespirator_02_black_F"];  // Masks that provide protection (LVL 1)
 EGVAR(cbrn,protectiveUniforms) = ["U_C_CBRN_Suit_01_Blue_F"];  // Uniforms that provide protection (LVL 2)
 EGVAR(cbrn,protectiveBackpack) = ["B_CombinationUnitRespirator_01_F"];  // Backpacks (= breathing apparatus) that provide protection (LVL 3)

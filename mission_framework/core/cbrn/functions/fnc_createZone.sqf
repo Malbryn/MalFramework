@@ -10,7 +10,7 @@
     Arguments:
         0: OBJECT - Object that is the center of the zone (use 'Land_HelipadEmpty_F' if you need an invisible object)
         1: SCALAR - Radius of the zone in metres
-        2: SCALAR - Radius of max. contamination (Optional, default: 0)
+        2: SCALAR - Radius of the inner circle (= max. contamination) (Optional, default: 0)
                     The level of contamination will gradually get lower the further we go from this area
         3: SCALAR - Required level of protection for full protection (possible values: 1, 2, 3) (Optional, default: 1)
                     LVL 1 - Mask
