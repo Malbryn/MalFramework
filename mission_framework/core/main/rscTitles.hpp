@@ -7,5 +7,5 @@
 class rscTitles {
     #include "..\ao_limit\dialog\RscAOLimit.hpp"
     #include "..\setup_timer\dialog\RscSetupTimer.hpp"
-    #include "..\cbrn\RscMaskOverlay.hpp"
+    #include "..\cbrn\dialog\RscMaskOverlay.hpp"
 };

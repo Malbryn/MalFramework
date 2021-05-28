@@ -62,6 +62,6 @@ if (_contLevel < 0 || 9.99 < _contLevel) exitWith {
 
 // Set zone params
 SETVAR(_object,GVAR(zoneParams),[ARR_4(_zoneRadius,_innerRadius,_protectionLevel,_contLevel)]);
-GVAR(zones) = [_object];
+GVAR(zones) pushBackUnique _object;
 
 true

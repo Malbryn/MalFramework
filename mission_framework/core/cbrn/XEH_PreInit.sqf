@@ -10,7 +10,8 @@ PREP_RECOMPILE_END;
 
 ADDON = true;
 
-GVAR(zones) = [];
-GVAR(timeLimitCurrent) = GVAR(timeLimit);
-GVAR(isMuted) = false;
 GVAR(alertThreshold) = 0;
+GVAR(isInZone) = false;
+GVAR(isMuted) = false;
+GVAR(timeLimitCurrent) = GVAR(timeLimit);
+GVAR(zones) = [];

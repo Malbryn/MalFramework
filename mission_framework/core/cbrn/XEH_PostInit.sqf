@@ -2,7 +2,6 @@
 
 if !(GVARMAIN(moduleCBRN)) exitWith {};
 
-// Start check event
 if (hasInterface) then {
     [QGVARMAIN(initFramework), {
         call FUNC(initZoneCheck);
@@ -15,3 +14,14 @@ if (hasInterface) then {
 ["ace_medical_FullHeal", {
     GVAR(timeLimitCurrent) = GVAR(timeLimit);
 }] call CFUNC(addEventHandler);
+
+// Mask VFX EH
+["loadout", {
+    params ["_unit", "_newUnitLoadout", "_oldUnitLoadout"];
+    
+    if ((goggles _unit) in GVAR(protectiveMasks)) then {
+        QGVAR(MaskOverlayRsc) cutRsc ["MaskOverlay", "PLAIN", 0.1, true];
+    } else {
+        QGVAR(MaskOverlayRsc) cutFadeOut 1;
+    };
+}, true] call CFUNC(addPlayerEventHandler);

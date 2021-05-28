@@ -36,4 +36,7 @@ private _newPainLevel = _currentPainLevel + (0.005 * (_damage / 10));
 SETVAR(_unit,ace_medical_pain,_newPainLevel);
 
 // Fatigue
-ace_advanced_fatigue_anReserve = ace_advanced_fatigue_anReserve - (6.66 * (_damage / 10));
+private _currentFatigueLevel = GETMVAR(ace_advanced_fatigue_anReserve,2200);
+private _newFatigueLevel = _currentFatigueLevel - (6.66 * (_damage / 10));
+
+SETMVAR(ace_advanced_fatigue_anReserve,_newFatigueLevel);
