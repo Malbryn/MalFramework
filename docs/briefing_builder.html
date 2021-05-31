@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MalFramework - Briefing Builder</title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Malbryn/MalFramework/master/mission_framework/core/main/img/icon.png?"/>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/briefing_generator.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <a href="https://github.com/Malbryn/MalFramework" class="header-banner">
+            <img src="https://raw.githubusercontent.com/Malbryn/MalFramework/master/mission_framework/core/main/img/banner.jpg" alt="malframework_banner">
+        </a>
+        <h2>Briefing Builder</h2>
+    </div>
+    <div class="main-form-container">
+        <form method="dialog" id="main-form">
+            <div class="form-cat">
+                <h3>I. Organisation</h3>
+                <ul>
+                    <h4>ORBAT</h4>
+                        <li>
+                            <label for="faction">Player faction</label>
+                            <textarea name="faction" id="faction" rows=1 placeholder="The players' faction (e.g. 101st Airborne Division, US Army)"></textarea>
+                        </li>
+                        <li>
+                            <label for="groups">List of groups</label>
+                            <textarea name="groups" id="groups" rows=6 placeholder="A list of the player groups, their size and callsign (e.g. 1x AH-64E Apache - Callsign: RAPTOR etc.)"></textarea>
+                        </li>
+                </ul>
+            </div>
+
+            <div class="form-cat">
+                <h3>II. Situation</h3>
+                <ul>
+                    <h4>Background</h4>
+                        <li>
+                            <label for="summary">Summary</label>
+                            <textarea name="summary" id="summary" rows=4 placeholder="A short background story for the mission"></textarea>
+                        </li>
+                    <h4>Area of operations</h4>
+                        <h5>Terrain</h5>
+                        <li>
+                            <label for="terrain">Description</label>
+                            <textarea name="terrain" id="terrain" rows=2 placeholder="Description of the terrain (e.g. big open fields with some forest patches etc.)"></textarea>
+                        </li>
+                        <h5>Weather</h5>
+                            <li>
+                                <label for="weather_current">Current</label>
+                                <textarea name="weather_current" id="weather_current" rows=2 placeholder="The current weather conditions (e.g. heavy fog and rain etc.)"></textarea>
+                            </li>
+                            <li>
+                                <label for="weather_forecasted">Forecast</label>
+                                <textarea name="weather_forecast" id="weather_forecast" rows=2 placeholder="The forecasted weather conditions (e.g. no change in weather was forecasted)"></textarea>
+                            </li>
+                            <li>
+                                <label for="weather_visibility">Visibility</label>
+                                <textarea name="weather_visibility" id="weather_visibility" rows=2 placeholder="Current visibility and light conditions (e.g. visibility is reduced to 200m due to the fog, daytime operation etc.)"></textarea>
+                            </li>
+                        <h5>Civilian presence</h5>
+                            <li>
+                                <label for="civilians">Summary</label>
+                                <textarea name="civilians" id="civilians" rows=2 placeholder="If there are any civilians in the AO, how they should be handled etc."></textarea>
+                            </li>
+                    <h4>Enemy forces</h4>
+                        <h5>Composition and Strength</h5>
+                        <li>
+                            <label for="composition">Description</label>
+                            <textarea name="composition" id="composition" rows=4 placeholder="Description of the enemy composition, strength and weaponry"></textarea>
+                        </li>
+                        <h5>Capabilities</h5>
+                            <li>
+                                <label for="armour">Armour</label>
+                                <textarea name="armour" id="armour" rows=2 placeholder="Maximum armour threat (e.g. up to BMP-2's)"></textarea>
+                            </li>
+                            <li>
+                                <label for="air">Air</label>
+                                <textarea name="air" id="air" rows=2 placeholder="Maximum air threat (e.g. up to transport Mi-8's)"></textarea>
+                            </li>
+                            <li>
+                                <label for="artillery">Artillery</label>
+                                <textarea name="artillery" id="artillery" rows=2 placeholder="Artillery presence (e.g. they have access to mortars etc.)"></textarea>
+                            </li>
+                            <li>
+                                <label for="explosives">Explosives</label>
+                                <textarea name="explosives" id="explosives" rows=2 placeholder="Presence of mines, IED's, UXO's or other explosives"></textarea>
+                            </li>
+                </ul>
+            </div>
+
+            <div class="form-cat">
+                <h3>III. Mission</h3>
+                <ul>
+                    <h4>Mission intent</h4>
+                        <li>
+                            <label for="intent">Description</label>
+                            <textarea name="intent" id="intent" rows=4 placeholder="Intent of the mission and the objectives (e.g. your objective is to capture...)"></textarea>
+                        </li>
+                </ul>
+            </div>
+
+            <div class="form-cat">
+                <h3>IV. Support & Logistics</h3>
+                <ul>
+                    <h4>Support</h4>
+                        <li>
+                            <label for="supports">Available</label>
+                            <textarea name="supports" id="supports" rows=4 placeholder="Available friendly supports (e.g. CAS by RAPTOR, artillery fire support by HAMMER etc.)"></textarea>
+                        </li>
+
+                    <h4>Logistics</h4>
+                        <li>
+                            <label for="maintenance">Maintenance</label>
+                            <textarea name="maintenance" id="maintenance" rows=4 placeholder="Information about RRR (e.g. RRR is available at the friendly FOB etc.)"></textarea>
+                        </li>
+                        <li>
+                            <label for="transportation">Transportation</label>
+                            <textarea name="transportation" id="transportation" rows=4 placeholder="Available infantry transport (e.g. each squad will recieve 2x HMMWV etc.)"></textarea>
+                        </li>
+                        <li>
+                            <label for="resupplies">Resupplies</label>
+                            <textarea name="resupplies" id="resupplies" rows=4 placeholder="Available resupplies (e.g. 1x medical resupply crate is available, to be requested by the CO)"></textarea>
+                        </li>
+
+                    <h4>Signals</h4>
+                        <li>
+                            <label for="frequencies">Radio frequencies</label>
+                            <textarea name="frequencies" id="frequencies" rows=6 placeholder="The radio net structure used in the mission"></textarea>
+                        </li>
+                </ul>
+            </div>
+
+            <div class="form-cat">
+                <h3>V. Notes</h3>
+                <ul>
+                    <h4>Respawns</h4>
+                        <li>
+                            <label for="player_respawn">Player respawn</label>
+                            <textarea name="player_respawn" id="player_respawn" rows=4 placeholder="Player respawn info (e.g. unlimited, rolling respawns, 5-minute respawn timer etc.)"></textarea>
+                        </li>
+                        <li>
+                            <label for="asset_respawn">Asset respawn</label>
+                            <textarea name="asset_respawn" id="asset_respawn" rows=4 placeholder="Asset respawn info (e.g. 1x respawn for the Apache etc.)"></textarea>
+                        </li>
+                        <li>
+                            <label for="reinsertion">Reinsertion</label>
+                            <textarea name="reinsertion" id="reinsertion" rows=4 placeholder="How the respawned players will get back to the AO (e.g. teleport via squad rally point system, transported with heli etc.)"></textarea>
+                        </li>
+
+                    <h4>End conditions</h4>
+                        <li>
+                            <label for="success">Success</label>
+                            <textarea name="success" id="success" rows=6 placeholder="Mission success conditions"></textarea>
+                        </li>
+                        <li>
+                            <label for="failure">Failure</label>
+                            <textarea name="failure" id="failure" rows=6 placeholder="Mission success conditions"></textarea>
+                        </li>
+
+                    <h4>Restrictions</h4>
+                        <li>
+                            <label for="restrictions">Rules</label>
+                            <textarea name="restrictions" id="restrictions" rows=4 placeholder="Additional rules for the mission (e.g. don't take enemy vehicles etc.)"></textarea>
+                        </li>
+
+                    <h4>JIP</h4>
+                        <li>
+                            <label for="jip">Available</label>
+                            <textarea name="jip" id="jip" rows=2 placeholder="If Join-In-Progress is supported by the mission (e.g. available, 3-minute timer)"></textarea>
+                        </li>
+
+                    <h4>Mission maker's notes</h4>
+                        <li>
+                            <label for="notes">Notes</label>
+                            <textarea name="notes" id="notes" rows=6 placeholder="Additional notes by the mission maker"></textarea>
+                        </li>
+                </ul>
+            </div>
+
+            <div class="form-select">
+                <h4>Side:</h4>
+                <select name="side-selector" id="side-selector">
+                    <option>BLUFOR</option>
+                    <option>REDFOR</option>
+                </select>
+            </div>
+
+            <div class="submit">
+                <button type="submit" id="submit-button">Generate</button>
+            </div>
+        </form>
+        <div id="briefing-output-field">
+            <p>Navigate to <code>mission_framework\config\briefing\</code> and paste the following into the .sqf file based on the players' side.</p>
+            <button id="copy-button">Copy to Clipboard</button>
+            <p id="panel">Copied!</p>
+            <textarea name="briefing-output" id="briefing-output" rows=36 readonly></textarea>
+        </div>
+    </div>
+</body>
+</html>

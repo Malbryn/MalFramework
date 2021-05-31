@@ -1,57 +1,67 @@
-// Clickable link to marker:
-// <marker name='nameOfTheMarker'>Click here</marker>
+/*
+CHEAT SHEET
 
-// Insert image:
-// <img image='mission_framework\config\img\loading_screen.jpg' width='270' height='378'/>
+Line break:
+<br/>
 
-NEWTAB("I. Organization")
+Font attributes:
+<font color='#21749c' size='18' face='PuristaBold'>
+
+Clickable link to marker:
+<marker name='nameOfTheMarker'>Click here</marker>
+
+Image:
+<img image='mission_framework\config\img\loading_screen.jpg' width='270' height='378'/>
+*/
+
+NEWTAB("I. Organisation")
 <br/><font color='#21749c' size='18' face='PuristaBold'>BLUFOR ORBAT</font>
 <br/>
-<br/><font color='#21749c' size='16' face='PuristaSemiBold'>player_unit_or_faction</font>
-<br/>list_of_the_squads
-<br/>
-<br/><font color='#21749c' size='16' face='PuristaSemiBold'>assets_unit_or_faction</font>
-<br/>list_of_the_friendly_assets
+<br/><font color='#21749c' size='14' face='PuristaSemiBold'>player_unit_or_faction</font>
+<br/>list_of_the_squads_and_callsigns
 ENDTAB;
 
 NEWTAB("II. Situation")
 <br/><font color='#21749c' size='18' face='PuristaBold'>SUMMARY</font>
-<br/>summary_of_the_mission
+<br/>summary_of_the_background_of_the_mission
 <br/>
 <br/>
 <br/><font color='#21749c' size='18' face='PuristaBold'>AREA OF OPERATIONS</font>
-<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Terrain</font>
+<br/><font color='#21749c' size='14' face='PuristaSemiBold'>Terrain</font>
 <br/>description_of_the_terrain
 <br/>
-<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Weather</font>
-<br/><font size='14' face='PuristaMedium'>Current:</font>
-<br/> - Wind:
-<br/> - Precipitation:
-<br/> - Sky:
-<br/> - Fog:
+<br/><font color='#21749c' size='14' face='PuristaSemiBold'>Weather</font>
+<br/><font size='12' face='PuristaMedium'>Current:</font>
+<br/> - description_of_the_weather
 <br/>
-<br/><font size='14' face='PuristaMedium'>Forecast:</font>
+<br/><font size='12' face='PuristaMedium'>Forecast:</font>
 <br/> - possible_change_of_the_weather
 <br/>
-<br/><font size='14' face='PuristaMedium'>Visibility:</font>
+<br/><font size='12' face='PuristaMedium'>Visibility:</font>
 <br/> - estimated_view_distance
 <br/> - night_mission_conditions
 <br/>
-<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Civilian presence</font>
+<br/><font color='#21749c' size='14' face='PuristaSemiBold'>Civilian presence</font>
 <br/> - info_about_civies
 <br/>
 <br/>
 <br/><font color='#21749c' size='18' face='PuristaBold'>ENEMY FORCES</font>
-<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Composition and Strength</font>
-<br/>description_of_the_enemy_composition_weapons_and_assets
+<br/><font color='#21749c' size='14' face='PuristaSemiBold'>Composition and Strength</font>
+<br/>description_of_the_enemy_composition_and_weaponry
 <br/>enemy_qrf_composition_and_strength
 <br/>
-<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Capabilities:</font>
-<br/><font size='14' face='PuristaMedium'>Fire support:</font>
-<br/> - enemy_fire_support_if_available
+<br/><font color='#21749c' size='14' face='PuristaSemiBold'>Capabilities:</font>
+<br/><font size='12' face='PuristaMedium'>Armour:</font>
+<br/> - enemy_armour
 <br/>
-<br/><font size='14' face='PuristaMedium'>Explosives:</font>
-<br/> - mines_and_other_explosives
+<br/><font size='12' face='PuristaMedium'>Air:</font>
+<br/> - enemy_air
+<br/>
+<br/><font size='12' face='PuristaMedium'>Artillery:</font>
+<br/> - enemy_artillery
+<br/>
+<br/><font size='12' face='PuristaMedium'>Explosives:</font>
+<br/> - enemy_mines_ieds_etc
 ENDTAB;
 
 NEWTAB("III. Mission:")
@@ -60,76 +70,67 @@ NEWTAB("III. Mission:")
 <br/>
 <br/>
 <br/><font color='#21749c' size='18' face='PuristaBold'>OBJECTIVES</font>
-<br/><font color='#21749c' size='16' face='PuristaSemiBold'>location_of_the_objective:</font>
+<br/><font color='#21749c' size='14' face='PuristaSemiBold'>location_of_the_1st_objective:</font>
 <br/> - short_description_of_this_objective
+<br/>
+<br/><font color='#21749c' size='14' face='PuristaSemiBold'>location_of_the_2nd_objective:</font>
+<br/> - short_description_of_this_objective
+<br/>
+<br/>(...)
 ENDTAB;
 
-NEWTAB("IV. Execution:")
-<br/>Up to Platoon Commander
-ENDTAB;
-
-NEWTAB("V. Support & Logistics:")
+NEWTAB("IV. Support & Logistics:")
 <br/><font color='#21749c' size='18' face='PuristaBold'>SUPPORT</font>
-<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Available supports:</font>
-<br/> - fire_support_etc
+<br/><font color='#21749c' size='14' face='PuristaSemiBold'>Available supports:</font>
+<br/> - available_friendly_supports
 <br/>
 <br/>
 <br/><font color='#21749c' size='18' face='PuristaBold'>LOGISTICS</font>
-<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Maintenance:</font>
+<br/><font color='#21749c' size='14' face='PuristaSemiBold'>Maintenance:</font>
 <br/> - RRR_information
 <br/>
-<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Transportation:</font>
-<br/> - transport_information
+<br/><font color='#21749c' size='14' face='PuristaSemiBold'>Transportation:</font>
+<br/> - infantry_transport_information
 <br/>
-<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Available supplies:</font>
-<br/> - information_of_the_available_resupplies_for_each_category
+<br/><font color='#21749c' size='14' face='PuristaSemiBold'>Resupplies:</font>
+<br/> - information_of_the_available_resupplies
 <br/>
 <br/>
 <br/><font color='#21749c' size='18' face='PuristaBold'>SIGNALS</font>
-<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Radio frequencies</font>
+<br/><font color='#21749c' size='14' face='PuristaSemiBold'>Radio frequencies</font>
 <br/> - designated_radio_net_structure
 <br/>
-<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Smoke signals</font>
-<br/> - designated_smoke_signals
 ENDTAB;
 
-NEWTAB("VI. Mission notes:")
+NEWTAB("V. Notes:")
 <br/><font color='#21749c' size='18' face='PuristaBold'>RESPAWNS</font>
-<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Player respawn</font>
+<br/><font color='#21749c' size='14' face='PuristaSemiBold'>Player respawn</font>
 <br/> - player_respawn_info
 <br/>
-<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Reinsertion</font>
-<br/> - reinsertion_info
-<br/>
-<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Asset respawn</font>
+<br/><font color='#21749c' size='14' face='PuristaSemiBold'>Asset respawn</font>
 <br/> - asset_respawn_info
+<br/>
+<br/><font color='#21749c' size='14' face='PuristaSemiBold'>Reinsertion</font>
+<br/> - reinsertion_info
 <br/>
 <br/>
 <br/><font color='#21749c' size='18' face='PuristaBold'>END CONDITIONS</font>
-<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Success</font>
+<br/><font color='#21749c' size='14' face='PuristaSemiBold'>Success</font>
 <br/> - success_conditions
 <br/>
-<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Failure</font>
+<br/><font color='#21749c' size='14' face='PuristaSemiBold'>Failure</font>
 <br/> - failure_conditions
 <br/>
 <br/>
 <br/><font color='#21749c' size='18' face='PuristaBold'>RESTRICTIONS</font>
-<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Use of enemy weapons</font>
-<br/> - allowed_or_not
-<br/>
-<br/><font color='#21749c' size='16' face='PuristaSemiBold'>Use of enemy vehicles</font>
-<br/> - allowed_or_not
+<br/> - additional_rules
 <br/>
 <br/>
 <br/><font color='#21749c' size='18' face='PuristaBold'>JIP</font>
-<br/> - jip_info
+<br/> - join-in-progress_info
 <br/>
 <br/>
 <br/><font color='#21749c' size='18' face='PuristaBold'>Mission maker's notes</font>
 <br/> - mission_notes
 <br/> - other_technical_information
-<br/>
-<br/>
-<br/><font color='#21749c' size='18' face='PuristaBold'>Mission made by</font>
-<br/> - Malbryn
 ENDTAB;

@@ -113,10 +113,6 @@ EGVAR(custom_channel,channelName) = "JTAC channel";  // Name of the channel
 EGVAR(custom_channel,channelColour) = [0.8, 0, 0.5, 1];  // Colour of the channel (RGBA format, default: FK pink)
 
 
-// End mission
-EGVAR(end_mission,disableDamage) = false;  // Disable damage during the mission end screen (Coop & TvT)
-
-
 // Gear
 EGVAR(gear,saveGearInArsenal) = false;  // Should the player's gear be saved if an arsenal is available (Coop & TvT)
 EGVAR(gear,enableBackpackLock) = false;  // Enable backpack lock (Coop & TvT)
@@ -212,10 +208,6 @@ EGVAR(setup_timer,markerBlufor) = "mrk_setupBlufor";  // Setup area for the BLUF
 EGVAR(setup_timer,timerBlufor) = 60;  // Setup timer for the BLUFOR side
 EGVAR(setup_timer,markerRedfor) = "mrk_setupRedfor";  // Setup area for the REDFOR side
 EGVAR(setup_timer,timerRedfor) = 60;  // Setup timer for the REDFOR side
-
-
-// Sitting
-GVARMAIN(moduleSitting) = false;  // Coop & TvT
 
 
 // Snowfall

@@ -4,6 +4,13 @@ on:
     push:
         branches:
             - master
+        paths-ignore:
+            - ".github/**"
+            - "docs/**"
+            - "mission_framework/core/main/script_version.hpp"
+            - "tools/**"
+            - ".editorconfig"
+            - ".gitignore"
     pull_request:
 
 jobs:

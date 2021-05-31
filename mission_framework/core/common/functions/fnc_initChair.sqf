@@ -11,7 +11,7 @@
         0: OBJECT - The chair object
 
     Example:
-        [this] call MF_sitting_fnc_initChair
+        [this] call MF_common_fnc_initChair
 
     Returns:
         BOOLEAN
@@ -38,7 +38,7 @@ _obj addAction [
     false,
     true,
     "",
-    "!(_target getVariable ['MF_sitting_isTaken', false]) && !(_this getVariable ['MF_sitting_isSeated', false])",
+    "!(_target getVariable ['MF_common_isTaken', false]) && !(_this getVariable ['MF_common_isSeated', false])",
     3
 ];
 
