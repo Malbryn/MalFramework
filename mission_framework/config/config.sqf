@@ -45,10 +45,14 @@ EGVAR(end_conditions,playerThreshold) = 50;  // Percentage of the alive players 
 // Task threshold (used by Time limit, Extraction and Tactical Withdrawal)
 GVARMAIN(taskThreshold) = 66;  // Percentage of the tasks that have to be completed
 
-// Respawn rules
-GVARMAIN(respawnTimer) = 30;  // Respawn timer in seconds
-GVARMAIN(respawnTickets) = -1;  // Individual respawn tickets (-1: tickets disabled, 0: respawns disabled)
-GVARMAIN(removePlayerCorpses) = true;  // Remove player corpse upon respawn
+// Respawn
+GVARMAIN(moduleRespawn) = true;  // Coop & TvT
+EGVAR(respawn,timer) = 30;  // Respawn timer in seconds
+EGVAR(respawn,tickets) = -1;  // Individual respawn tickets (-1: tickets disabled)
+EGVAR(respawn,useWaveRespawn) = true;  // Players will respawn in waves
+EGVAR(respawn,manualWaveRespawns) = false;  // Respawn waves has to be requested by the CO (Coop missions only)
+EGVAR(respawn,availableWaves) = 1;  // Number of available respawn waves (manual respawn waves only)
+EGVAR(respawn,removePlayerCorpses) = true;  // Remove the players' corpses upon respawn
 
 // View distances
 GVARMAIN(playerViewDistance) = 1500;  // Player view distance
@@ -232,8 +236,3 @@ EGVAR(unit_tracking,refreshInterval) = 1;  // Refresh rate in seconds (min. valu
 
 // Vehicle respawn
 GVARMAIN(moduleVehicleRespawn) = false;  // Coop & TvT
-
-
-// Wave respawn
-GVARMAIN(moduleWaveRespawn) = false;  // Coop
-EGVAR(respawn_wave,availableWaves) = 1;  // Number of the available respawn waves
