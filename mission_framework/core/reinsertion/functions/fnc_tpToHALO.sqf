@@ -11,13 +11,17 @@
         -
 
     Example:
-        call MF_reinsertion_fnc_haloDrop
+        call MF_reinsertion_fnc_tpToHALO
 
     Returns:
         void
 */
 
 if !(hasInterface) exitWith {};
+
+private _result = ["Reinsertion - Paradrop"] call FUNC(confirmTP);
+
+if !(_result) exitWith {};
 
 private _pos = (GETVAR(player,GVAR(deathPos),""));
 

@@ -11,13 +11,17 @@
         -
 
     Example:
-        call MF_reinsertion_fnc_tpToRP
+        spawn MF_reinsertion_fnc_tpToRP
 
     Returns:
         void
 */
 
 if !(hasInterface) exitWith {};
+
+private _result = ["Reinsertion - Squad Rally Point"] call FUNC(confirmTP);
+
+if !(_result) exitWith {};
 
 private _id = GETVAR((group player),GVAR(RPTent),nil);
 
