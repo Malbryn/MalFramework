@@ -19,6 +19,10 @@
 
 if !(hasInterface) exitWith {};
 
+private _result = ["Reinsertion - Mobile Respawn Vehicle"] call FUNC(confirmTP);
+
+if !(_result) exitWith {};
+
 private _mrv = GETMVAR(GVAR(mrv),objNull);
 
 if (isNull _mrv) exitWith {

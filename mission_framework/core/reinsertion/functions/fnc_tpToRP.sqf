@@ -19,6 +19,10 @@
 
 if !(hasInterface) exitWith {};
 
+private _result = ["Reinsertion - Squad Rally Point"] call FUNC(confirmTP);
+
+if !(_result) exitWith {};
+
 private _id = GETVAR((group player),GVAR(RPTent),nil);
 
 if (isNil "_id") exitWith {

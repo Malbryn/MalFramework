@@ -5,6 +5,7 @@ PREP(addRemoveRPOption);
 PREP(addRPMenu);
 PREP(canRemoveHAB);
 PREP(canRemoveRP);
+PREP(confirmTP);
 PREP(createTPDestination);
 PREP(deployHAB);
 PREP(deployRP);

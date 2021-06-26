@@ -19,6 +19,10 @@
 
 if !(hasInterface) exitWith {};
 
+private _result = ["Reinsertion - Platoon HAB"] call FUNC(confirmTP);
+
+if !(_result) exitWith {};
+
 private _id = GETMVAR(GVAR(HAB),nil);
 
 if (isNil "_id") exitWith {

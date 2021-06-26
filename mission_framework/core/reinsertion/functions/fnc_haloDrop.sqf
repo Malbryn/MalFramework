@@ -19,6 +19,10 @@
 
 if !(hasInterface) exitWith {};
 
+private _result = ["Reinsertion - Paradrop"] call FUNC(confirmTP);
+
+if !(_result) exitWith {};
+
 private _pos = (GETVAR(player,GVAR(deathPos),""));
 
 if (_pos isEqualTo "") exitWith {

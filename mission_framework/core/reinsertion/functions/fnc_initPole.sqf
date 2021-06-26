@@ -40,28 +40,28 @@ _tpPoles apply {
     // Option #1 - Paradrop
     if (GVARMAIN(moduleHALO)) then {
         _x addAction ["Reinsertion - Paradrop", {
-            call FUNC(haloDrop);
+            [] spawn FUNC(haloDrop);
         }, nil, 1, true, true, "", "true", 12];
     };
 
     // Option #2 - MRV
     if (GVARMAIN(moduleMRV)) then {
         _x addAction ["Reinsertion - MRV", {
-            call FUNC(tpToMRV);
+            [] spawn FUNC(tpToMRV);
         }, nil, 1, true, true, "", "true", 12];
     };
 
     // Option #3 - Squad rally point
     if (GVARMAIN(moduleRP)) then {
         _x addAction ["Reinsertion - Squad Rally Point", {
-            call FUNC(tpToRP);
+            [] spawn FUNC(tpToRP);
         }, nil, 1, true, true, "", "true", 12];
     };
 
     // Option #4 - Platoon HAB
     if (GVARMAIN(moduleHAB)) then {
         _x addAction ["Reinsertion - Platoon HAB", {
-            call FUNC(tpToHAB);
+            ["Reinsertion - Platoon HAB"] spawn FUNC(tpToHAB);
         }, nil, 1, true, true, "", "true", 12];
     };
 };
