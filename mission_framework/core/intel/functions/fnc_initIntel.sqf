@@ -2,7 +2,7 @@
 
 /*
     Author:
-        Kex (modified by Malbryn)
+        Malbryn
 
     Description:
         Adds a "Search for intel" option to an intel object.
@@ -10,9 +10,29 @@
     Arguments:
         0: OBJECT - Intel object
         1: SCALAR - ID of the intel (see intel.sqf in config)
+        2: STRING - Pick-up action display text (Optional, default: "Search for intel")
+        3: STRING - Hold action icons (Optional, default: "holdAction_search_ca")
+
+        Available icons:
+            - holdAction_connect_ca.paa
+            - holdAction_forceRespawn_ca.paa
+            - holdAction_hack_ca.paa
+            - holdAction_loadDevice_ca.paa
+            - holdAction_passLeadership_ca.paa
+            - holdAction_requestLeadership_ca.paa
+            - holdAction_revive_ca.paa
+            - holdAction_reviveMedic_ca.paa
+            - holdAction_search_ca.paa
+            - holdAction_secure_ca.paa
+            - holdAction_takeOff1_ca.paa
+            - holdAction_takeOff2_ca.paa
+            - holdAction_thumbsDown_ca.paa
+            - holdAction_thumbsUp_ca.paa
+            - holdAction_unbind_ca.paa
+            - holdAction_unloadDevice_ca.paa
 
     Example:
-        [objName, 2] call MF_intel_fnc_initIntel
+        [this, 2, "Hack laptop", "holdAction_hack_ca"] call MF_intel_fnc_initIntel
 
     Returns:
         void
@@ -20,7 +40,7 @@
 
 if !(hasInterface) exitWith {};
 
-params ["_object", "_id"];
+params ["_object", "_id", ["_displayText", "Search for intel"], ["_icon", "holdAction_search_ca"]];
 
 #include "..\..\..\config\intel\intel.sqf"
 
@@ -30,14 +50,15 @@ private _text = _intel#1;
 private _duration = _intel#2;
 private _delete = _intel#3;
 private _share = _intel#4;
+private _iconPath = format ["\a3\ui_f\data\IGUI\Cfg\holdactions\%1.paa", _icon];
 
 [
     _object,
-    "Search for intel",
-    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa",
-    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa",
-    "_this distance _target < 3",
-    "_caller distance _target < 3",
+    _displayText,
+    _iconPath,
+    _iconPath,
+    "_this distance _target < 4",
+    "_caller distance _target < 4",
     {},
     {},
     {
