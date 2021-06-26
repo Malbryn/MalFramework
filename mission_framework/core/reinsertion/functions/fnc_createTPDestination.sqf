@@ -27,7 +27,7 @@
 
 if !(hasInterface) exitWith {};
 
-params ["_name", "_pos"];
+params [["_name", "UNKNOWN"], ["_pos", []]];
 
 private _tpPoles = [];
 private _pole = objNull;
@@ -49,15 +49,10 @@ _tpPoles apply {
 
     // Add TP action
     _x addAction [format ["Teleport to %1", _name], {
-        cutText [format ["You are being teleported to %1", _this#3#0], "BLACK OUT", 2, true];
+        params ["_target", "_caller", "_actionId", "_arguments"];
+        _arguments params ["_name", "_pos"];
 
-        [{
-            player setPos _this;
-
-            [{
-                cutText ["", "BLACK IN", 3, true];
-            }, [], 1] call CFUNC(waitAndExecute);
-        }, _this#3#1, 2] call CFUNC(waitAndExecute);
+        [_name, _pos] spawn FUNC(tpToDestination);
     }, [_name, _pos], 1, true, true, "", "true", 12];
 };
 

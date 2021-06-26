@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_reinsertion_fnc_tpToRP
+        spawn MF_reinsertion_fnc_tpToRP
 
     Returns:
         void

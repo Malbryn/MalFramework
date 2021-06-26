@@ -11,6 +11,7 @@ PREP(deployHAB);
 PREP(deployRP);
 PREP(haloDrop);
 PREP(initPole);
+PREP(tpToDestination);
 PREP(removeHAB);
 PREP(removeRP);
 PREP(setMRV);

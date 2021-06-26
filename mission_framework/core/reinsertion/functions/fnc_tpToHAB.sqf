@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_reinsertion_fnc_tpToHAB
+        spawn MF_reinsertion_fnc_tpToHAB
 
     Returns:
         void
