@@ -40,7 +40,7 @@ _tpPoles apply {
     // Option #1 - Paradrop
     if (GVARMAIN(moduleHALO)) then {
         _x addAction ["Reinsertion - Paradrop", {
-            [] spawn FUNC(haloDrop);
+            [] spawn FUNC(tpToHALO);
         }, nil, 1, true, true, "", "true", 12];
     };
 

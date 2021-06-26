@@ -62,7 +62,7 @@ _Description of each value set in the config file._
 | `markHAB`        | `BOOLEAN`     | `true`                   | Coop/TvT  | Mark the platoon HAB location on map                                             |
 | `HABObject`      | `STRING`      | `"Land_HBarrierTower_F"` | Coop      | Mark the platoon HAB location on map                                             |
 | `allowTPFromHAB` | `BOOLEAN`     | `true`                   | Coop      | If TP to squad RP is allowed from the platoon HAB                                |
-| `TPPoles`        | `ARRAY`       | `["pole1"]`              | Coop/TvT  | Array of teleport pole object(s)                                                 |
+| `TPPoles`        | `ARRAY`       | `["MF_tpPole_1"]`        | Coop/TvT  | Array of teleport pole object(s)                                                 |
 
 ## Supported mission type(s):
  - Coop

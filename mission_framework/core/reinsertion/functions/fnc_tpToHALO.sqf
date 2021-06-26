@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_reinsertion_fnc_haloDrop
+        call MF_reinsertion_fnc_tpToHALO
 
     Returns:
         void
