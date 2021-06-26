@@ -131,7 +131,7 @@ GVARMAIN(moduleIED) = false;  // Coop
 
 
 // Intel
-GVARMAIN(moduleIntel) = true;  // Coop
+GVARMAIN(moduleIntel) = false;  // Coop
 
 
 // Intro text
