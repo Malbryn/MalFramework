@@ -20,7 +20,7 @@
 
 if !(hasInterface) exitWith {};
 
-params ["_unit", "_corpse"];
+params [["_unit", objNull], ["_corpse", objNull]];
 
 // Side update
 if (GVARMAIN(isTvT)) then {

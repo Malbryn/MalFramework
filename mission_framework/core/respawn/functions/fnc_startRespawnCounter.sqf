@@ -19,8 +19,8 @@
 
 if !(isServer) exitWith {};
 
-// Fire the event 10s earlier as the respawn handler sets a 10s respawn timer so players can see the countdown
-private _delay = GVAR(timer) - 10;
+// Fire the event 5s earlier as the respawn handler sets a 5s respawn timer so players can see the countdown
+private _delay = GVAR(timer) - 5;
 
 GVAR(respawnCounter) = [{
     private _deadPlayers = allPlayers select { !alive _x };
