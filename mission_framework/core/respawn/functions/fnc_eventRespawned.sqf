@@ -12,7 +12,7 @@
         2: OBJECT - The old body of the unit
 
     Example:
-        [player, objNull] call MF_respawn_fnc_eventRespawned
+        [player] call MF_respawn_fnc_eventRespawned
 
     Returns:
         void
@@ -27,22 +27,19 @@ if (GVARMAIN(isTvT)) then {
     [QEGVAR(common,sideValueSet), [playerSide, 0, 1, 0]] call CFUNC(serverEvent);
 };
 
-// Remove vanilla radio as it conflicts with TFAR/ACRE during no radio missions
-if ("ItemRadio" in (assignedItems player)) then {
-    player unlinkItem "ItemRadio";
-
-    if (GVARMAIN(moduleACRE)) then {
-        player linkItem "ItemRadioAcreFlagged";
-    };
-};
+// Remove radios
+call EFUNC(common,removeRadios);
 
 // Screen effects
 cutText ["", "BLACK FADED", 5, true];
 
+// Wait for screen effects to finish
 [{
     params ["_unit", "_corpse"];
+
     private ["_loadout", "_tickets"];
 
+    // Screen effects
     cutText  ["", "BLACK IN", 5, true];
     "dynamicBlur" ppEffectEnable true;
     "dynamicBlur" ppEffectAdjust [6];
@@ -50,14 +47,10 @@ cutText ["", "BLACK FADED", 5, true];
     "dynamicBlur" ppEffectAdjust [0.0];
     "dynamicBlur" ppEffectCommit 3;
 
-    // Close the spectator mode
-    if (GVARMAIN(useACESpectator)) then {
-        [false] call EFUNC(common,initACESpectator);
-    } else {
-        ["Terminate"] call BFUNC(EGSpectator);
-    };
+    // Stop spectator screen
+    call EFUNC(common,stopSpectator);
 
-    // Assigning gear and insignia
+    // Re-assigning gear and insignia
     private _loadout = GETVAR(_unit,EGVAR(gear,currentLoadout),"");
     [_unit, _loadout] call EFUNC(gear,setGear);
 
@@ -70,9 +63,9 @@ cutText ["", "BLACK FADED", 5, true];
 
     // Set radios
     if GVARMAIN(moduleACRE) then {
-        [] call EFUNC(acre,setChannels);
+        call EFUNC(acre,setChannels);
     } else {
-        [] call EFUNC(tfar,setChannels);
+        call EFUNC(tfar,setChannels);
     };
 
     // Reassign curator
@@ -87,10 +80,10 @@ cutText ["", "BLACK FADED", 5, true];
 
     // Delete old body
     if (GVARMAIN(removePlayerCorpses)) then {
-        hideBody (_corpse);
+        hideBody _corpse;
     };
 
-    // Readd custom channels
+    // Re-add custom channels
     if (count EGVAR(custom_channel,playerCustomChannels) != 0) then {
         EGVAR(custom_channel,playerCustomChannels) apply {
             _x radioChannelAdd [_unit];
@@ -98,10 +91,9 @@ cutText ["", "BLACK FADED", 5, true];
     };
 
     // Remaining respawn tickets
-    if (GETVAR(_unit,GVAR(tickets),-1) == -1) exitWith {};
+    private _tickets = GETVAR(_unit,GVAR(tickets),-1);
 
-    private _tickets = (GETVAR(_unit,GVAR(tickets),-1)) - 1;
-    [_unit, _tickets] call FUNC(setRespawnTickets);
+    if (_tickets == -1) exitWith {};
 
-    [format ["Respawns available:<br/>%1", _tickets], 2, ace_player, 12] call AFUNC(common,displayTextStructured);
+    [_tickets] call FUNC(setRespawnTickets);
 }, [_unit, _corpse], 1] call CFUNC(waitAndExecute);
