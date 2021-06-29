@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_respawn_wave_fnc_callReinforcements
+        call MF_respawn_fnc_callReinforcements
 
     Returns:
         void

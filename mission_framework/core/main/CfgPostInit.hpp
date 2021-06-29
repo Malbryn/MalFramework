@@ -120,10 +120,6 @@ class GVARMAIN(Respawn) {
     init = PATH_POST(respawn);
 };
 
-class GVARMAIN(RespawnWave) {
-    init = PATH_POST(respawn_wave);
-};
-
 class GVARMAIN(Retreat) {
     init = PATH_POST(retreat);
 };

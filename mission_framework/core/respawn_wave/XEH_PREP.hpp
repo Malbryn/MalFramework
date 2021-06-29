@@ -1,2 +1,0 @@
-PREP(addCallRespawnMenu);
-PREP(respawnPlayer);

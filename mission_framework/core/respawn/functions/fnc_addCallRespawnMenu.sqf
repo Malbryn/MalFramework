@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_respawn_wave_fnc_addCallRespawnMenu
+        call MF_respawn_fnc_addCallRespawnMenu
 
     Returns:
         void
