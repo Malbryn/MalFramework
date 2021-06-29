@@ -1,3 +1,5 @@
+PREP(addCallRespawnMenu);
+PREP(callReinforcements);
 PREP(eventKilled);
 PREP(eventRespawned);
 PREP(handleRespawn);

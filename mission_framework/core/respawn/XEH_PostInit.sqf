@@ -19,10 +19,13 @@ if (hasInterface) then {
         call FUNC(handleRespawn);
     }] call CFUNC(addEventHandler);
 
-    // Group leader changed event
-    ["leader", {
-        // TODO
-    }] call CFUNC(addPlayerEventHandler);
+    [QGVARMAIN(initFramework), {
+        setPlayerRespawnTime 10e10;
+    }] call CFUNC(addEventHandler);
+
+    [QGVAR(transferWR), {
+        call FUNC(addCallRespawnMenu);
+    }] call CFUNC(addEventHandler);
 
     call FUNC(setRespawntickets);
 };
@@ -31,7 +34,7 @@ if (isServer) then {
     if GVAR(useWaveRespawn) then {
         // Wave respawn event
         [QGVAR(respawnWave), {
-            // TODO
+            call FUNC(handleRespawn);
         }] call CFUNC(addEventHandler);
 
         // Automatic respawn waves - start counter
