@@ -1,6 +1,6 @@
 /*
  *  Briefing generator made for MalFramework script library for Arma 3.
- *  Supports v1.11.1 of the framework.
+ *  Supports v1.11.2 of the framework.
  *
  *  GitHub: https://github.com/Malbryn/MalFramework
  */
@@ -8,15 +8,15 @@
 /*
  *  Event fired when the user submits the form.
  */
-$("#main-form").submit(function(event) {
+$("#main-form").submit(function(e) {
     let fields = $(this).serializeArray();
-    event.preventDefault();
+    e.preventDefault();
 
     generateBriefing(fields);
-});
+})
 
 /*
- *  Converts the line breaks to "<br/>" supported by Arma.
+ *  Converts the line breaks to "<br/>".
  */
 function convertLineBreaks(str) {
     str = str.split("\n").join("\n<br/>");
@@ -31,8 +31,6 @@ function generateBriefing(fields) {
     fields.forEach(element => {
         element['value'] = convertLineBreaks(element['value']);
     });
-
-    console.log(fields[27]['value']);
 
     // Select side colour
     let sideColour = fields[27]['value'] === "BLUFOR" ? "#21749c" : "#9c2d21";
@@ -157,7 +155,7 @@ ENDTAB;`
         behavior: "smooth",
         block: "start"
     });
-};
+}
 
 /*
  *  Copy to clipboard event fired when the user clicks the button.
@@ -175,4 +173,4 @@ $("#copy-button").click(function(event) {
     setTimeout(function() {
         $("#panel").slideUp("slow");
     }, 3000);
-});
+})
