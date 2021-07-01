@@ -15,19 +15,45 @@ $("#main-form").submit(function(e) {
     generateBriefing(fields);
 })
 
+
 /*
  *  Adds a new intel card.
  */
-$(function() {
-    const $cardTemplate = $(".card").clone();
+$("#add-intel").on("click", function(e) {
+    e.preventDefault();
 
-    $("#add-intel").on("click", function(e) {
-        e.preventDefault();
+    let $lastCard = $('div[id^="card_"]:last');
+    let newID = parseInt($lastCard.prop("id").match(/\d+/g), 10) + 1;
+    let $cardClone = $lastCard.clone().prop('id', 'card_' + newID);
 
-        let $cardClone = $cardTemplate.clone();
-        $("#main-form").append($cardClone);
-    });    
+    $("#main-form").append($cardClone);
+
+    setIntelID('#card_' + newID);
 })
+
+
+/*
+ *  Removes the selected intel card. 
+ */
+$(".main-form-container").on("click", ".card-remove", function(e) {
+    e.preventDefault();
+
+    $(this).closest(".card").remove();
+
+    // Re-assign ID's
+    
+})
+
+
+/**
+ *  Changes the card header according to the ID of the intel card.
+ */
+function setIntelID(cardID) {
+    let intelTitle = "Intel #" + cardID.split("_")[1];
+
+    $(cardID).find("h3").html(intelTitle);
+}
+
 
 /*
  *  Converts the line breaks to "<br/>".
@@ -35,6 +61,7 @@ $(function() {
 function convertLineBreaks(str) {
     return str.split("\n").join("\n<br/>");
 }
+
 
 /*
  *  Generates the briefing template.
@@ -58,6 +85,7 @@ function generateBriefing(fields) {
         block: "start"
     });
 }
+
 
 /*
  *  Copy to clipboard event fired when the user clicks the button.

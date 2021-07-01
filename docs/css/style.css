@@ -71,7 +71,12 @@ body {
     border: 2px solid #305474;
 }
 
+#card_0 a {
+    display: none;
+}
+
 .card-header {
+    margin-bottom: 15px;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -83,6 +88,35 @@ body {
     font-size: 1.25em;
 }
 
+.number {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.number > input {
+    margin: 0px 5px;
+    width: 40px;
+    text-align: right;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.checkbox > label {
+    margin-left: 5px;
+}
+
 h3 {
     margin: 5px;
     font-size: 1.5em;
@@ -90,6 +124,10 @@ h3 {
 
 h4 {
     margin: 25px 0px 15px 0px;
+}
+
+h5 {
+    padding: 10px;
 }
 
 ul {

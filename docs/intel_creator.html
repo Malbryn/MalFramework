@@ -19,12 +19,13 @@
     </div>
     <div class="main-form-container">
         <form method="dialog" id="main-form">
-            <div class="form-cat card" id="card_1">
+            <div class="form-cat card" id="card_0">
                 <ul>
                     <div class="card-header submit-button">
-                        <h3>Intel #1</h3>
-                        <a href="" class="card-remove">Remove</a>
+                        <h3>Intel #0</h3>
+                        <a href="/" class="card-remove">Remove</a>
                     </div>
+                    <div class="card-body">
                         <li>
                             <label for="card-title">Title</label>
                             <textarea name="card-title" id="card-title" rows="1"></textarea>
@@ -33,18 +34,20 @@
                             <label for="card-text">Text</label>
                             <textarea name="card-text" id="card-text" rows="5"></textarea>
                         </li>
-                        <li>
-                            <label for="card-number">Pick-up duration</label>
-                            <input type="card-number" name="duration" id="duration">
+                        <li class="number">
+                            <label for="card-duration">Pick-up duration:</label>
+                            <input type="number" name="card-duration" id="card-duration" placeholder="5" onfocus="this.placeholder=''" onblur="this.placeholder='5'">
+                            <span>seconds</span>
                         </li>
-                        <li>
-                            <label for="card-delete">Delete object after it was acquired</label>
+                        <li class="checkbox">
                             <input type="checkbox" name="card-delete" id="card-delete">
+                            <label for="card-delete">Delete object after the intel was acquired</label>
                         </li>
-                        <li>
-                            <label for="card-global">Share intel globally</label>
+                        <li class="checkbox">
                             <input type="checkbox" name="card-global" id="card-global">
+                            <label for="card-global">Share globally</label>
                         </li>
+                    </div>
                 </ul>
             </div>
         </form>
