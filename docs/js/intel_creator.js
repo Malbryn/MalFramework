@@ -6,25 +6,14 @@
  */
 
 /*
- *  Event fired when the user submits the form.
- */
-$("#main-form").submit(function(e) {
-    e.preventDefault();
-    let fields = $(this).serializeArray();
-
-    generateBriefing(fields);
-})
-
-
-/*
  *  Adds a new intel card.
  */
 $("#add-intel").on("click", function(e) {
     e.preventDefault();
 
-    let $lastCard = $('div[id^="card_"]:last');
+    let $lastCard = $("div[id^='card_']:last");
     let newID = parseInt($lastCard.prop("id").match(/\d+/g), 10) + 1;
-    let $cardClone = $lastCard.clone().prop('id', 'card_' + newID);
+    let $cardClone = $lastCard.clone().prop("id", "card_" + newID);
 
     $("#main-form").append($cardClone);
 
@@ -41,8 +30,31 @@ $(".main-form-container").on("click", ".card-remove", function(e) {
     $(this).closest(".card").remove();
 
     // Re-assign ID's
-    
+    refreshIntelIDs();
 })
+
+
+/*
+ *  Refreshes the intel IDs.
+ */
+function refreshIntelIDs() {
+    let cards = $(".main-form-container").find("div[id^='card_']");
+
+    Array.from(cards).forEach(function (e, i) {
+        setCardID(e, i);
+    });
+}
+
+
+/*
+ *  Refreshes the ID of a card.
+ */
+function setCardID(oldID, index) {
+    let newID = 'card_' + index;
+
+    $(oldID).prop("id", newID);
+    setIntelID('#' + newID);
+}
 
 
 /**
@@ -53,54 +65,3 @@ function setIntelID(cardID) {
 
     $(cardID).find("h3").html(intelTitle);
 }
-
-
-/*
- *  Converts the line breaks to "<br/>".
- */
-function convertLineBreaks(str) {
-    return str.split("\n").join("\n<br/>");
-}
-
-
-/*
- *  Generates the briefing template.
- */
-function generateBriefing(fields) {
-    // Convert line breaks
-    fields.forEach(element => {
-        element['value'] = convertLineBreaks(element['value']);
-    });
-
-    // Output
-    let template = ``
-
-    // Display output
-    $("#briefing-output").val(template);
-    $("#briefing-output-field").css("display", "flex");
-
-    // Scroll down
-    $("#briefing-output-field")[0].scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
-}
-
-
-/*
- *  Copy to clipboard event fired when the user clicks the button.
- */
-$("#copy-button").click(function(event) {
-    let text = $("#briefing-output");
-
-    text.select();
-    document.execCommand("copy");
-    document.getSelection().removeAllRanges();
-
-    // Button text
-    $("#panel").slideDown("slow");
-
-    setTimeout(function() {
-        $("#panel").slideUp("slow");
-    }, 3000);
-})
