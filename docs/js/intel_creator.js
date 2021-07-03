@@ -14,10 +14,12 @@ $("#add-intel").on("click", function(e) {
     let $lastCard = $("div[id^='card_']:last");
     let newID = parseInt($lastCard.prop("id").match(/\d+/g), 10) + 1;
     let $cardClone = $lastCard.clone().prop("id", "card_" + newID);
+    let $cardCloneID = '#' + $cardClone.attr('id');
 
     $("#main-form").append($cardClone);
 
-    setIntelID('#card_' + newID);
+    clearForm($cardCloneID);
+    setIntelID($cardCloneID);
 })
 
 
@@ -64,4 +66,16 @@ function setIntelID(cardID) {
     let intelTitle = "Intel #" + cardID.split("_")[1];
 
     $(cardID).find("h3").html(intelTitle);
+}
+
+
+/*
+ *  Clears the form after cloning it.
+ */
+function clearForm(cardID) {
+    let formElements = $(cardID).find('.user-input');
+
+    Array.from(formElements).forEach(e => {
+        $(e).attr('type') === 'checkbox' ? $(e).prop('checked', false) : $(e).val('');
+    });
 }
