@@ -194,18 +194,18 @@ input {
     cursor: pointer;
 }
 
-#briefing-output-field {
+#output-field {
     margin-top: 15px;
     padding: 15px 35px;
     display: none;
     flex-direction: column;
 }
 
-#briefing-output-field > p {
+#output-field > p {
     margin-bottom: 20px;
 }
 
-#briefing-output {
+#output {
     margin-top: 10px;
     font-family: "Courier New", Courier, monospace;
 }

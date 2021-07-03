@@ -114,7 +114,7 @@ function generateIntel() {
 
         Array.from(formElements).forEach(e => {
             intelArray.push(
-                $(e).attr('type') === 'checkbox' ? $(e).prop('checked') : $(e).val()
+                $(e).attr('type') === 'checkbox' ? $(e).prop('checked') : convertLineBreaks($(e).val())
             );
         });
 
@@ -123,5 +123,58 @@ function generateIntel() {
 
         output.push(intelArray);
     });
+    
+    let template = `// This intel file was generated with the Intel Creator tool
+
+EGVAR(intel,intelList) = [${ formatOutput(output) }];
+    `
+
+    // Display output
+    $("#output").val(template);
+    $("#output-field").css("display", "flex");
+
+    // Scroll down
+    $("#output-field")[0].scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+    // Reset output
+    output = [];
 }
 
+
+/**
+ *  Format the output array.
+ */
+function formatOutput(output) {
+    let templateString = "";
+
+    output.forEach(e => {
+        templateString += '["' + e[0] + '", "' + e[1] + '", ' + e[2] + ', ' + e[3] + ', ' + e[4] + '], ';
+    })
+
+    // Delete the last comma
+    templateString = templateString.slice(0, -2);
+
+    return templateString;
+}
+
+
+/*
+ *  Copy to clipboard event fired when the user clicks the button.
+ */
+$("#copy-button").click(e => {
+    let text = $("#output");
+
+    text.select();
+    document.execCommand("copy");
+    document.getSelection().removeAllRanges();
+
+    // Button text
+    $("#panel").slideDown("slow");
+
+    setTimeout(function() {
+        $("#panel").slideUp("slow");
+    }, 3000);
+})

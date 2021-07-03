@@ -147,11 +147,11 @@ NEWTAB("V. Notes:")
 ENDTAB;`
 
     // Display output
-    $("#briefing-output").val(template);
-    $("#briefing-output-field").css("display", "flex");
+    $("#output").val(template);
+    $("#output-field").css("display", "flex");
 
     // Scroll down
-    $("#briefing-output-field")[0].scrollIntoView({
+    $("#output-field")[0].scrollIntoView({
         behavior: "smooth",
         block: "start"
     });
@@ -161,7 +161,7 @@ ENDTAB;`
  *  Copy to clipboard event fired when the user clicks the button.
  */
 $("#copy-button").click(function(event) {
-    let text = $("#briefing-output");
+    let text = $("#output");
 
     text.select();
     document.execCommand("copy");

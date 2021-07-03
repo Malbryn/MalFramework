@@ -36,7 +36,7 @@
                         </li>
                         <li class="number">
                             <label>Pick-up duration:</label>
-                            <input type="number" name="card-duration" class="user-input" value="5" onfocus="this.placeholder=''" onblur="this.placeholder='5'">
+                            <input type="number" name="card-duration" class="user-input" value="5" required>
                             <span>seconds</span>
                         </li>
                         <li class="checkbox">
@@ -54,6 +54,12 @@
         <div class="nav-buttons">
             <a href="/" class="nav-button" id="add-intel">Add new intel</a>
             <button type="submit" id="submit-button" form="main-form">Generate</button>
+        </div>
+        <div id="output-field">
+            <p>Navigate to <code>mission_framework\config\intel\</code> and paste the following into the .sqf file.</p>
+            <button id="copy-button">Copy to Clipboard</button>
+            <p id="panel">Copied!</p>
+            <textarea name="output" id="output" rows=36 readonly></textarea>
         </div>
     </div>
 </body>
