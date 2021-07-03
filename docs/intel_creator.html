@@ -36,7 +36,7 @@
                         </li>
                         <li class="number">
                             <label>Pick-up duration:</label>
-                            <input type="number" name="card-duration" class="user-input" placeholder="5" onfocus="this.placeholder=''" onblur="this.placeholder='5'">
+                            <input type="number" name="card-duration" class="user-input" value="5" onfocus="this.placeholder=''" onblur="this.placeholder='5'">
                             <span>seconds</span>
                         </li>
                         <li class="checkbox">
@@ -53,6 +53,7 @@
         </form>
         <div class="nav-buttons">
             <a href="/" class="nav-button" id="add-intel">Add new intel</a>
+            <button type="submit" id="submit-button" form="main-form">Generate</button>
         </div>
     </div>
 </body>

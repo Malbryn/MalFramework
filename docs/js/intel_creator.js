@@ -5,6 +5,8 @@
  *  GitHub: https://github.com/Malbryn/MalFramework
  */
 
+let output = [];
+
 /*
  *  Adds a new intel card.
  */
@@ -33,6 +35,16 @@ $(".main-form-container").on("click", ".card-remove", function(e) {
 
     // Re-assign ID's
     refreshIntelIDs();
+})
+
+
+/*
+ *  Event fired when the user submits the form.
+ */
+$("#main-form").submit(e => {
+    e.preventDefault();
+
+    generateIntel();
 })
 
 
@@ -79,3 +91,37 @@ function clearForm(cardID) {
         $(e).attr('type') === 'checkbox' ? $(e).prop('checked', false) : $(e).val('');
     });
 }
+
+
+/*
+ *  Converts the line breaks to "<br/>".
+ */
+function convertLineBreaks(str) {
+    str = str.split("\n").join("\n<br/>");
+    return str;
+}
+
+
+/*
+ *  Generates the intel template.
+ */
+function generateIntel() {
+    let cards = $(".main-form-container").find("div[id^='card_']");
+
+    Array.from(cards).forEach(e => {
+        let formElements = $(e).find('.user-input');
+        let intelArray = [];
+
+        Array.from(formElements).forEach(e => {
+            intelArray.push(
+                $(e).attr('type') === 'checkbox' ? $(e).prop('checked') : $(e).val()
+            );
+        });
+
+        // Convert the duration to integer
+        intelArray[2] = parseInt(intelArray[2]);
+
+        output.push(intelArray);
+    });
+}
+
