@@ -1,17 +1,19 @@
-/*
-CHEAT SHEET
+/*    
+    Briefing Builder tool can be found here:
+    https://malbryn.github.io/MalFramework/briefing_builder.html
 
-Line break:
-<br/>
+    CHEAT SHEET
+    Line break:
+    <br/>
 
-Font attributes:
-<font color='#21749c' size='18' face='PuristaBold'>
+    Font attributes:
+    <font color='#21749c' size='18' face='PuristaBold'>
 
-Clickable link to marker:
-<marker name='nameOfTheMarker'>Click here</marker>
+    Clickable link to marker:
+    <marker name='nameOfTheMarker'>Click here</marker>
 
-Image:
-<img image='mission_framework\config\img\loading_screen.jpg' width='270' height='378'/>
+    Image:
+    <img image='mission_framework\config\img\loading_screen.jpg' width='270' height='378'/>
 */
 
 NEWTAB("I. Organisation")
