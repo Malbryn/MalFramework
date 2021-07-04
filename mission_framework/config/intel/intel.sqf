@@ -1,4 +1,7 @@
 /*
+    Intel Creator tool can be found here:
+    https://malbryn.github.io/MalFramework/intel_creator.html
+
     Arguments:
         0: OBJECT - Intel object
         1: SCALAR - ID of the intel
