@@ -1,11 +1,13 @@
 /*
  *  Intel creator made for MalFramework script library for Arma 3.
- *  Supports v1.11.2 of the framework.
  *
  *  GitHub: https://github.com/Malbryn/MalFramework
  */
 
+
+// Output array
 let output = [];
+
 
 /*
  *  Adds a new intel card.
@@ -13,13 +15,16 @@ let output = [];
 $("#add-intel").on("click", function(e) {
     e.preventDefault();
 
+    // Get the last child element and clone it
     let $lastCard = $("div[id^='card_']:last");
     let newID = parseInt($lastCard.prop("id").match(/\d+/g), 10) + 1;
     let $cardClone = $lastCard.clone().prop("id", "card_" + newID);
     let $cardCloneID = '#' + $cardClone.attr('id');
 
+    // Append the clone to the form
     $("#main-form").append($cardClone);
 
+    // Clear the input fields of the clone and change the ID
     clearForm($cardCloneID);
     setIntelID($cardCloneID);
 })
@@ -97,8 +102,7 @@ function clearForm(cardID) {
  *  Converts the line breaks to "<br/>".
  */
 function convertLineBreaks(str) {
-    str = str.split("\n").join("\n<br/>");
-    return str;
+    return str.split("\n").join("\n<br/>");
 }
 
 

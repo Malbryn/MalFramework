@@ -1,35 +1,56 @@
 /*
  *  Briefing generator made for MalFramework script library for Arma 3.
- *  Supports v1.11.2 of the framework.
  *
  *  GitHub: https://github.com/Malbryn/MalFramework
  */
+
 
 /*
  *  Event fired when the user submits the form.
  */
 $("#main-form").submit(function(e) {
     let fields = $(this).serializeArray();
+    
     e.preventDefault();
 
     generateBriefing(fields);
 })
 
+
+/*
+ *  Copy to clipboard event fired when the user clicks the button.
+ */
+$("#copy-button").click(e => {
+    let text = $("#output");
+
+    text.select();
+    document.execCommand("copy");
+    document.getSelection().removeAllRanges();
+
+    // Button text
+    $("#panel").slideDown("slow");
+
+    setTimeout(function() {
+        $("#panel").slideUp("slow");
+    }, 3000);
+})
+
+
 /*
  *  Converts the line breaks to "<br/>".
  */
 function convertLineBreaks(str) {
-    str = str.split("\n").join("\n<br/>");
-    return str;
+    return str.split("\n").join("\n<br/>");
 }
+
 
 /*
  *  Generates the briefing template.
  */
 function generateBriefing(fields) {
     // Convert line breaks
-    fields.forEach(element => {
-        element['value'] = convertLineBreaks(element['value']);
+    fields.forEach(e => {
+        e['value'] = convertLineBreaks(e['value']);
     });
 
     // Select side colour
@@ -156,21 +177,3 @@ ENDTAB;`
         block: "start"
     });
 }
-
-/*
- *  Copy to clipboard event fired when the user clicks the button.
- */
-$("#copy-button").click(function(event) {
-    let text = $("#output");
-
-    text.select();
-    document.execCommand("copy");
-    document.getSelection().removeAllRanges();
-
-    // Button text
-    $("#panel").slideDown("slow");
-
-    setTimeout(function() {
-        $("#panel").slideUp("slow");
-    }, 3000);
-})
