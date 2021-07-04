@@ -22,6 +22,8 @@ If something is broken, contact **[Malbryn](https://www.fkgaming.eu/profile/4189
 
 **For more information, [visit the Wiki.](https://github.com/Malbryn/MalFramework/wiki)**
 
+**For additional tools, [visit the Github Page.](https://malbryn.github.io/MalFramework)**
+
 </br>
 
 ## Required mods:
