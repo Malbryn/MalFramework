@@ -57,7 +57,6 @@ Some parts of this framework are based on other Arma 3 frameworks and scripts. S
  - Curator scripts by Commy2<br/>
  - Diary macros by NeilZar<br/>
  - Global AI skill settings by joko // Jonas<br/>
- - Intel scripts by Kex<br/>
  - JIP teleport scripts by Diwako<br/>
  - Killcam script by Perfk and BlackHawk<br/>
  - Kill tracker script by PabstMirror<br/>
