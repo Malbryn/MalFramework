@@ -8,16 +8,19 @@
         Sets the player's respawn tickets.
 
     Arguments:
-        0: OBJECT - Unit (Optional, default: player)
-        1: SCALAR - Number of respawn tickets (Optional, default: GVARMAIN(respawnTickets))
+        0: SCALAR - Number of respawn tickets (Optional, default: -1)
 
     Example:
-        [player, 3] call MF_respawn_fnc_setRespawnTickets
+        [3] call MF_respawn_fnc_setRespawnTickets
 
     Returns:
         void
 */
 
-params [["_unit", player], ["_amount", GVARMAIN(respawnTickets)]];
+if !(hasInterface) exitWith {};
 
-SETPVAR(_unit,GVAR(tickets),_amount);
+params [["_amount", -1]];
+
+SETPVAR(player,GVAR(tickets),_amount);
+
+[format ["Respawns available:<br/>%1", _amount], 2, player, 12] call AFUNC(common,displayTextStructured);
