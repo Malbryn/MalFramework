@@ -8,11 +8,3 @@ if !(GVARMAIN(moduleRetreat)) exitWith {};
         [COMPONENT_STR, "WARNING", "No task was registered, the Tactical withdrawal option won't be available", true] call EFUNC(main,log);
     };
 }] call CFUNC(addEventHandler);
-
-if (hasInterface) then {
-    [QGVAR(transferSC), {
-        call FUNC(addScenarioEndControlMenu);
-    }] call CFUNC(addEventHandler);
-
-    call FUNC(addScenarioEndControlMenu);
-};
