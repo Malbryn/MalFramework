@@ -2,6 +2,8 @@
 ## Description:
 _This module adds intel to objects that can be picked up by players._
 
+_Intel Creator tool can be found [here](https://malbryn.github.io/MalFramework/intel_creator.html)._
+
 ## Usage:
 1. _Configure the intel in `config\intel\intel.sqf`_
 2. _Place down an intel object_

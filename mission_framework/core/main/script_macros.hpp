@@ -50,6 +50,8 @@
 #define CCOMP(var1) QUOTE(call compile preProcessFileLineNumbers var1)
 #define PATH_PRE(var1) CCOMP('mission_framework\core\var1\XEH_PreInit.sqf')
 #define PATH_POST(var1) CCOMP('mission_framework\core\var1\XEH_PostInit.sqf')
+#define PATH_POST_CLIENT(var1) CCOMP('mission_framework\core\var1\XEH_PostInitClient.sqf')
+#define PATH_POST_SERVER(var1) CCOMP('mission_framework\core\var1\XEH_PostInitServer.sqf')
 
 #define MSG_SYS(LEVEL,MESSAGE) format ["[MF %1] %2", LEVEL, MESSAGE]
 #define MSG(LEVEL,MESSAGE) systemChat MSG_SYS(LEVEL,MESSAGE); [MSG_SYS(LEVEL,MESSAGE)] call CFUNC(log)

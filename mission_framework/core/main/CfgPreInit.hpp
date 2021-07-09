@@ -8,7 +8,7 @@ class GVARMAIN(ACRE) {
     init = PATH_PRE(acre);
 };
 
-class GVARMAIN(AdminMenu) {
+class GVARMAIN(Admin) {
     init = PATH_PRE(admin);
 };
 
@@ -32,6 +32,10 @@ class GVARMAIN(Briefing) {
     init = PATH_PRE(briefing);
 };
 
+class GVARMAIN(CBRN) {
+    init = PATH_PRE(cbrn);
+};
+
 class GVARMAIN(Common) {
     init = PATH_PRE(common);
 };
@@ -44,7 +48,7 @@ class GVARMAIN(EndConditions) {
     init = PATH_PRE(end_conditions);
 };
 
-class GVARMAIN(EndMIssion) {
+class GVARMAIN(EndMission) {
     init = PATH_PRE(end_mission);
 };
 
@@ -104,7 +108,7 @@ class GVARMAIN(Mortar) {
     init = PATH_PRE(mortar);
 };
 
-class GVARMAIN(Orbat) {
+class GVARMAIN(ORBAT) {
     init = PATH_PRE(orbat);
 };
 

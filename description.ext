@@ -51,8 +51,11 @@ onPauseScript[] = {QEFUNC(admin,onPause)};
 // CBA Event handlers
 #include "mission_framework\core\main\CfgEventHandlers.hpp"
 
+// Custom sounds
+#include "mission_framework\core\main\CfgSounds.hpp"
+
 // RscTitles
-#include "mission_framework\core\main\rscTitles.hpp"
+#include "mission_framework\core\main\RscTitles.hpp"
 
 // VCOM functions
 #ifdef VCOMAI

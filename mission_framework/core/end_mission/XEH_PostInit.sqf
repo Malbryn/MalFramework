@@ -1,10 +1,6 @@
 #include "script_component.hpp"
 
-if (isServer) then {
-    call FUNC(eventEntityKilled);
-};
-
-// Mission end call event (Server event)
+// Mission end call event (Server event) - DEPRECATED
 [QGVAR(callMission), {
     params ["_ending", "_isVictory", ["_side", sideUnknown]];
 
