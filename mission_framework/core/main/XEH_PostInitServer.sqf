@@ -1,0 +1,1 @@
+systemChat "--- SERVER INIT ---";

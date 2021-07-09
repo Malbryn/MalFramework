@@ -1,5 +1,7 @@
 #include "script_component.hpp"
 
+systemChat "--- CLIENT AND SERVER INIT ---";
+
 if (isServer) then {
     setTimeMultiplier GVARMAIN(timeAcceleration);
 };
