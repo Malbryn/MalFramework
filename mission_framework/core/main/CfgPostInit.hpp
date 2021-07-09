@@ -48,6 +48,10 @@ class GVARMAIN(Briefing) {
     serverInit = PATH_POST_SERVER(briefing);
 };
 
+class GVARMAIN(CBRN) {
+    init = PATH_POST(cbrn);
+};
+
 class GVARMAIN(Common) {
     init = PATH_POST(common);
     clientInit = PATH_POST_CLIENT(common);
