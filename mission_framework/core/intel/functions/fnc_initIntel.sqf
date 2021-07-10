@@ -52,6 +52,10 @@ private _delete = _intel#3;
 private _share = _intel#4;
 private _iconPath = format ["\a3\ui_f\data\IGUI\Cfg\holdactions\%1.paa", _icon];
 
+// Set a global variable that we can use in triggers
+private _intelID = format ["MF_intel_ID_%1", _id];
+missionNamespace setVariable [_intelID, false, true];
+
 [
     _object,
     _displayText,
@@ -63,20 +67,23 @@ private _iconPath = format ["\a3\ui_f\data\IGUI\Cfg\holdactions\%1.paa", _icon];
     {},
     {
         params ["_object", "_finder", "_ID", "_arguments"];
-        _arguments params ["_title", "_text", "_delete", "_share"];
+        _arguments params ["_title", "_text", "_delete", "_share", "_intelID"];
 
         if (_share) then {
-            [QGVARMAIN(intelFound), [_title, _text, name _finder, true]] call CFUNC(globalEvent);
-            [QGVARMAIN(notification_2), ["IntelAdded", format ["Intel: %1<br/>was found by %2", _title, name _finder]]] call CFUNC(globalEvent);
+            [QGVAR(intelFound), [_title, _text, name _finder, true]] call CFUNC(globalEvent);
+            [QGVAR(notification_2), ["IntelAdded", format ["Intel: %1<br/>was found by %2", _title, name _finder]]] call CFUNC(globalEvent);
         } else {
-            [QGVARMAIN(intelFound), [_title, _text, name _finder, false]] call CFUNC(localEvent);
-            [QGVARMAIN(notification_2), ["IntelAdded", format ["Intel: %1", _title]]] call CFUNC(localEvent);
+            [QGVAR(intelFound), [_title, _text, name _finder, false]] call CFUNC(localEvent);
+            [QGVAR(notification_2), ["IntelAdded", format ["Intel: %1", _title]]] call CFUNC(localEvent);
         };
+
+        // Set global variable for triggers
+        missionNamespace setVariable [_intelID, true, true];
 
         if (_delete) then { deleteVehicle _object };
     },
     {},
-    [_title, _text, _delete, _share],
+    [_title, _text, _delete, _share, _intelID],
     _duration,
     20,
     true,

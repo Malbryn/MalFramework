@@ -9,6 +9,11 @@ _Intel Creator tool can be found [here](https://malbryn.github.io/MalFramework/i
 2. _Place down an intel object_
 3. _Call `MF_intel_fnc_initIntel` in the init field of the object_
 
+_Note:_
+ - _The script will attach a global variable to every intel object. This variable can be used in the Activation field of triggers to activate certain actions._
+ - _The format of each variable is the following: `MF_intel_ID_%1`, where `%1` is the ID of the intel (ID = zero-based index in the `intel.sqf` file)._
+ - _You can use the following in the Activation field of triggers to get the value: `missionNamespace getVariable ["MF_intel_ID_0", false]`_
+
 ```
 Arguments:
     0: OBJECT - Intel object

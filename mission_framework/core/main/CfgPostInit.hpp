@@ -184,12 +184,6 @@ class GVARMAIN(Respawn) {
     serverInit = PATH_POST_SERVER(respawn);
 };
 
-class GVARMAIN(RespawnWave) {
-    init = PATH_POST(respawn_wave);
-    clientInit = PATH_POST_CLIENT(respawn_wave);
-    serverInit = PATH_POST_SERVER(respawn_wave);
-};
-
 class GVARMAIN(Retreat) {
     init = PATH_POST(retreat);
     clientInit = PATH_POST_CLIENT(retreat);
