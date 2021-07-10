@@ -208,7 +208,7 @@ EGVAR(reinsertion,TPPoles) = ["MF_tpPole_1"];  // Teleport pole object(s)
 
 
 // Retreat
-GVARMAIN(moduleRetreat) = false;  // Coop & TvT
+GVARMAIN(moduleRetreat) = true;  // Coop & TvT
 
 
 // Safety start

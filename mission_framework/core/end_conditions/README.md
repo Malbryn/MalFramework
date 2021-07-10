@@ -13,6 +13,17 @@ _Available end conditions:_
 
 _The framework relies on the vanilla task system. It is required to use most of the end conditions as the framework check the percentage of the completed tasks and ends the mission accordingly._
 
+_Because of some limitations of Arma, you also have to register the tasks using `MF_end_conditions_fnc_registerTask`. Simply call the function in the init field of the task as shown in the example below:_
+
+```
+Arguments:
+    0: STRING - Unique Task ID
+    1: BOOLEAN - If the task is optional (won't count towards the outcome of the mission) (Optional, default: false)
+
+Example:
+    ["t1", true] call MF_end_conditions_fnc_registerTask
+```
+
 _**Important:** don't forget to customise the end screen in `config\debriefing\CfgDebriefing.hpp`._
 
 ## Config:
