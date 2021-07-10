@@ -29,7 +29,7 @@ if (GETVAR(player,EGVAR(player,isCO),false)) then {
         // Call the mission end on the server
         if !(GVARMAIN(isTvT)) then {
             // Put the tasks into an array
-            private _taskList = player call BFUNC(tasksUnit);
+            private _taskList = EGVAR(end_conditions,tasks);
 
             // Count the succeeded tasks
             private _count = 0;
