@@ -3,7 +3,7 @@
 if (!GVARMAIN(moduleIntel) || GVARMAIN(isTvT)) exitWith {};
 
 // Intel found event
-[QGVARMAIN(intelFound), {
+[QGVAR(intelFound), {
     params ["_title", "_text", "_finder", "_isGlobal"];
 
     [_title, _text, _finder, _isGlobal] call FUNC(addIntelToDiary);

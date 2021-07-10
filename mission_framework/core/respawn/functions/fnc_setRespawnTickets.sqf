@@ -23,4 +23,6 @@ params [["_amount", -1]];
 
 SETPVAR(player,GVAR(tickets),_amount);
 
+if (_amount == -1) exitWith {};
+
 [format ["Respawns available:<br/>%1", _amount], 2, player, 12] call AFUNC(common,displayTextStructured);
