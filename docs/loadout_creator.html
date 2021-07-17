@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MalFramework - Loadout Creator</title>
+    <link rel="icon" type="image/png"
+        href="https://raw.githubusercontent.com/Malbryn/MalFramework/master/mission_framework/core/main/img/icon.png?" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/loadout_creator.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <a href="https://malbryn.github.io/MalFramework" class="header-banner">
+            <img src="https://raw.githubusercontent.com/Malbryn/MalFramework/master/mission_framework/core/main/img/banner.jpg"
+                alt="malframework_banner">
+        </a>
+        <h2>Loadout Creator</h2>
+    </div>
+    <div class="main-form-container">
+        <form method="dialog" id="main-form">
+            <div class="form-cat card" id="card_0">
+                <ul>
+                    <div class="card-header submit-button">
+                        <div class="card-header">
+                            <h3>Role - </h3>
+                            <div class="tooltip">
+                                <textarea name="card-role" rows="1" id="role" class="user-input code"></textarea>
+                                <span class="tooltiptext">Abbreviation used in the player init to refer to this loadout (e.g. Squad Leader -> SL)</span>
+                            </div>
+                        </div>
+                        <a href="/" class="card-remove">Remove</a>
+                    </div>
+                    <div class="card-body">
+                        <li>
+                            <label>ACE Arsenal output</label>
+                            <textarea name="card-arsenal" rows="5" class="user-input code"></textarea>
+                        </li>
+                        <li>Randomisation options:</li>
+                        <div id="randomisation">
+                            <li>
+                                <div class="checkbox">
+                                    <input type="checkbox" name="card-uniform" class="user-input">
+                                    <label>Uniform</label>
+                                </div>
+                                <textarea name="check-uniform" rows="2" class="user-input code hidden"></textarea>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <input type="checkbox" name="card-vest" class="user-input">
+                                    <label>Vest</label>
+                                </div>
+                                <textarea name="check-vest" rows="2" class="user-input code hidden"></textarea>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <input type="checkbox" name="card-backpack" class="user-input">
+                                    <label>Backpack</label>
+                                </div>
+                                <textarea name="check-backpack" rows="2" class="user-input code hidden"></textarea>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <input type="checkbox" name="card-helmet" class="user-input">
+                                    <label>Helmet</label>
+                                </div>
+                                <textarea name="check-helmet" rows="2" class="user-input code hidden"></textarea>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <input type="checkbox" name="card-facewear" class="user-input">
+                                    <label>Facewear</label>
+                                </div>
+                                <textarea name="check-facewear" rows="2" class="user-input code hidden"></textarea>
+                            </li>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </form>
+        <div class="nav-buttons">
+            <a href="/" class="nav-button" id="add-intel">Add new role</a>
+            <button type="submit" id="submit-button" form="main-form">Generate</button>
+        </div>
+        <div id="output-field">
+            <p>Navigate to <code>mission_framework\config\gear\</code> and paste the following into the .sqf file based on the players' side.</p>
+            <button id="copy-button">Copy to Clipboard</button>
+            <p id="panel">Copied!</p>
+            <textarea name="output" id="output" rows=36 class="code" readonly></textarea>
+        </div>
+    </div>
+</body>
+</html>
