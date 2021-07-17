@@ -129,7 +129,7 @@ EGVAR(custom_channel,channelColour) = [0.8, 0, 0.5, 1];  // Colour of the channe
 // Gear
 EGVAR(gear,saveGearInArsenal) = false;  // Should the player's gear be saved if an arsenal is available (Coop & TvT)
 EGVAR(gear,enableBackpackLock) = false;  // Enable backpack lock (Coop & TvT)
-EGVAR(gear,enableAlternativeLoadout) = true;  // Enable alternative loadouts (Coop & TvT)
+EGVAR(gear,enableAlternativeLoadout) = false;  // Enable alternative loadouts (Coop & TvT)
 EGVAR(gear,loadoutHash) = [  // Key-value pairs (STRING - ARRAY OF STRINGS) for the alternative loadouts (Coop & TvT)
 	["SL", ["SL-2", "SL-3"]],
 	["AR", ["AR-2"]]

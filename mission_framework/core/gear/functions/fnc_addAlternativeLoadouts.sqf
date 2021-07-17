@@ -8,7 +8,7 @@
         Adds the option to change the loadout and take (one of) the alternative one.
 
     Arguments:
-        0: OBJECT - The object that the player can interact with
+        0: OBJECT - The object that the players can interact with
 
     Example:
         [this] call MF_gear_fnc_addAlternativeLoadouts
