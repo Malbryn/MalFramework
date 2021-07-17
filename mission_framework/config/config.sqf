@@ -131,8 +131,8 @@ EGVAR(gear,saveGearInArsenal) = false;  // Should the player's gear be saved if 
 EGVAR(gear,enableBackpackLock) = false;  // Enable backpack lock (Coop & TvT)
 EGVAR(gear,enableAlternativeLoadout) = false;  // Enable alternative loadouts (Coop & TvT)
 EGVAR(gear,loadoutHash) = [  // Key-value pairs (STRING - ARRAY OF STRINGS) for the alternative loadouts (Coop & TvT)
-	["SL", ["SL-2", "SL-3"]],
-	["AR", ["AR-2"]]
+    ["SL", ["SL-2", "SL-3"]],
+    ["AR", ["AR-2"]]
 ];
 
 
