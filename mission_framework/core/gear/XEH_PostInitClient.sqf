@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-// Add arsenal EH's that overwrite the pre-defined gear (if it's enabled)
+// Add arsenal EH's that overwrite the pre-defined gear
 if GVAR(saveGearInArsenal) then {
     ["ace_arsenal_displayClosed", {
         GVAR(customLoadout) = getUnitLoadout player;
@@ -13,7 +13,7 @@ if GVAR(saveGearInArsenal) then {
     }] call BFUNC(addScriptedEventHandler);
 };
 
-// Add lock backpack option (if it's enabled)
+// Add lock backpack option
 if GVAR(enableBackpackLock) then {
     call FUNC(addLockBackpackMenu);
 
@@ -28,4 +28,9 @@ if GVAR(enableBackpackLock) then {
         [typeOf player, 0, ["UPSL_aime_inventory_backpack_action_3d"]] call AFUNC(interact_menu,removeActionFromClass);
         [typeOf player, 0, ["ACE_MainActions", "UPSL_aime_inventory_backpack_action"]] call AFUNC(interact_menu,removeActionFromClass);
     };
+};
+
+// Init alternative loadut hash
+if GVAR(enableAlternativeLoadout) then {
+    GVAR(loadoutHash) = createHashMapFromArray GVAR(loadoutHash);
 };
