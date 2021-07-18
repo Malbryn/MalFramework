@@ -51,7 +51,7 @@ if (GETVAR(player,EGVAR(player,isCO),false) && (GVARMAIN(moduleSupplyDrop) || GV
         };
 
         if (GVAR(waveRespawn) == MANUAL) then {
-            [QGVAR(transferWR), [], _target] call CFUNC(targetEvent);
+            [QGVAR(transferRespawnMenu), [], _target] call CFUNC(targetEvent);
         };
     };
 };
