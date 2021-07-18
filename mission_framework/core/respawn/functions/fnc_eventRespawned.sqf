@@ -79,7 +79,7 @@ cutText ["", "BLACK FADED", 5, true];
     };
 
     // Delete old body
-    if (GVARMAIN(removePlayerCorpses)) then {
+    if (GVAR(removePlayerCorpses)) then {
         hideBody _corpse;
     };
 

@@ -18,10 +18,6 @@
     call FUNC(handleRespawn);
 }] call CFUNC(addEventHandler);
 
-[QGVARMAIN(initFramework), {
-    setPlayerRespawnTime 10e10;
-}] call CFUNC(addEventHandler);
-
 [QGVAR(transferWR), {
     call FUNC(addCallRespawnMenu);
 }] call CFUNC(addEventHandler);

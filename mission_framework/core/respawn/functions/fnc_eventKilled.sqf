@@ -59,7 +59,8 @@ if (isPlayer _killer && (side _killer) == playerSide) then {
         // Save death location of the player
         SETVAR(player,EGVAR(reinsertion,deathPos),getPos player);
 
-        if (GETVAR(player,GVAR(tickets),-1) == 0 || (GVAR(manualWaveRespawns) && GVAR(availableWaves) == 0)) then {
+        // Set respawn timer
+        if (GETVAR(player,GVAR(tickets),-1) == 0 || (GVAR(waveRespawn) == MANUAL && GVAR(availableWaves) == 0)) then {
             if (GETVAR(player,GVAR(tickets),-1) == 0) then {
                 [QGVARMAIN(notification_2), ["Warning", "You have no more respawn tickets!"]] call CFUNC(localEvent);
             };
@@ -76,8 +77,8 @@ if (isPlayer _killer && (side _killer) == playerSide) then {
             // Transfer leader modules (SL & CO)
             call FUNC(transferLeaderModules);
         } else {
-            if !(GVARMAIN(moduleWaveRespawn)) then {
-                setPlayerRespawnTime GVARMAIN(respawnTimer);
+            if (GVAR(waveRespawn) == OFF || GVAR(waveRespawn) == AUTO) then {
+                setPlayerRespawnTime GVAR(timer);
             };
         };
 
@@ -85,7 +86,7 @@ if (isPlayer _killer && (side _killer) == playerSide) then {
         call EFUNC(common,startSpectator);
 
         // Check if the mission is ending
-        if (EGVAR(end_mission,outroIsRunning)) exitWith {
+        if (EGVAR(end_mission,outroIsRunning)) then {
             setPlayerRespawnTime 10e10;
         };
 

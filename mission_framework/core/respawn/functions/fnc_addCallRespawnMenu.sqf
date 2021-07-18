@@ -19,7 +19,7 @@
 
 if !(hasInterface) exitWith {};
 
-if !(GETVAR(player,EGVAR(player,isCO),false) && GVARMAIN(moduleWaveRespawn)) exitWith {};
+if !(GETVAR(player,EGVAR(player,isCO),false) && GVAR(waveRespawn) == MANUAL) exitWith {};
 
 // Respawn category
 private _menu = ['Reinforcements', 'Reinforcements', '\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\meet_ca.paa', {}, {!visibleMap}] call AFUNC(interact_menu,createAction);

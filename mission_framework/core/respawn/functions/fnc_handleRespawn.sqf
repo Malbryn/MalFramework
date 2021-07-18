@@ -17,17 +17,19 @@
         void
 */
 
-if !(isServer) exitWith {};
+if !(hasInterface) exitWith {};
 
-if !GVAR(manualWaveRespawns) then {
+if (GVAR(waveRespawn) == MANUAL) then {
     // Check if the respawn tickets are enabled
     if (GETVAR(player,GVAR(tickets),-1) != 0) then {
-        setPlayerRespawnTime 10;
+        setPlayerRespawnTime 6;
 
         ["RespawnCalled"] call BFUNC(showNotification);
     } else {
         ["Warning", ["The CO requested reinforcements but you don't have any respawns left."]] call BFUNC(showNotification);
     };
 } else {
-    setPlayerRespawnTime 10;
+    ["Info", ["Respawning in 5 seconds..."]] call BFUNC(showNotification);
+
+    setPlayerRespawnTime 6;
 };

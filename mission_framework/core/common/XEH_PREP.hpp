@@ -16,3 +16,4 @@ PREP(setViewDistance);
 PREP(sitDown);
 PREP(standUp);
 PREP(startSpectator);
+PREP(stopSpectator);

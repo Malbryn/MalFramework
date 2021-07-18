@@ -31,7 +31,7 @@ if (GETVAR(player,EGVAR(player,isSL),false) && GVARMAIN(moduleRP)) then {
 };
 
 // CO modules transfer
-if (GETVAR(player,EGVAR(player,isCO),false) && (GVARMAIN(moduleSupplyDrop) || GVARMAIN(moduleRetreat) || GVARMAIN(moduleWaveRespawn))) then {
+if (GETVAR(player,EGVAR(player,isCO),false) && (GVARMAIN(moduleSupplyDrop) || GVARMAIN(moduleRetreat) || GVAR(waveRespawn) == MANUAL)) then {
     private _target = [player] call EFUNC(common,selectTarget);
 
     if (_target != objNull && {!(GETVAR(_target,EGVAR(player,isCO),false))}) then {
@@ -50,7 +50,7 @@ if (GETVAR(player,EGVAR(player,isCO),false) && (GVARMAIN(moduleSupplyDrop) || GV
             [QEGVAR(reinsertion,transferHAB), [], _target] call CFUNC(targetEvent);
         };
 
-        if (GVARMAIN(moduleWaveRespawn)) then {
+        if (GVAR(waveRespawn) == MANUAL) then {
             [QGVAR(transferWR), [], _target] call CFUNC(targetEvent);
         };
     };

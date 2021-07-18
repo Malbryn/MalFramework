@@ -49,9 +49,8 @@ GVARMAIN(taskThreshold) = 66;  // Percentage of the tasks that have to be comple
 GVARMAIN(moduleRespawn) = true;  // Coop & TvT
 EGVAR(respawn,timer) = 30;  // Respawn timer in seconds
 EGVAR(respawn,tickets) = -1;  // Individual respawn tickets (-1: tickets disabled)
-EGVAR(respawn,useWaveRespawn) = false;  // Players will respawn in waves
-EGVAR(respawn,manualWaveRespawns) = false;  // Respawn waves has to be requested by the CO (Coop missions only)
-EGVAR(respawn,availableWaves) = 1;  // Number of available respawn waves (manual respawn waves only)
+EGVAR(respawn,waveRespawn) = MANUAL;  // Players will respawn in waves (OFF, AUTO: run automatically, MANUAL: requested by CO)
+EGVAR(respawn,availableWaves) = 1;  // Number of available respawn waves (MANUAL respawn waves only)
 EGVAR(respawn,removePlayerCorpses) = true;  // Remove the players' corpses upon respawn
 
 // View distances
