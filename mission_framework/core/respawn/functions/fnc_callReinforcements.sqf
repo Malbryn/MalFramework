@@ -39,7 +39,7 @@ if (_count == 0) exitWith {
 
 [["Reinforcements:<br/>%1 player(s)", _count], 2, ace_player, 12] call AFUNC(common,displayTextStructured);
 
-[QGVAR(respawnWave), [], _deadPlayers] call CFUNC(targetEvent);
+[QGVAR(respawnPlayer), [], _deadPlayers] call CFUNC(targetEvent);
 
 DEC(GVAR(availableWaves));
 publicVariable QGVAR(availableWaves);

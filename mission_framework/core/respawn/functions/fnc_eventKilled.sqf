@@ -56,18 +56,28 @@ if (isPlayer _killer && (side _killer) == playerSide) then {
     [{
         params ["_unit", "_killer"];
 
-        // Save death location of the player
-        SETVAR(player,EGVAR(reinsertion,deathPos),getPos player);
-
-        if (GETVAR(player,GVAR(tickets),-1) == 0 || (GVAR(manualWaveRespawns) && GVAR(availableWaves) == 0)) then {
-            if (GETVAR(player,GVAR(tickets),-1) == 0) then {
-                [QGVARMAIN(notification_2), ["Warning", "You have no more respawn tickets!"]] call CFUNC(localEvent);
+        // Set respawn timer
+        switch (GVAR(waveRespawn)) do {
+            case AUTO: {
+                private _diff = (CBA_missionTime - 1) % GVAR(timer);
+                setPlayerRespawnTime GVAR(timer) - _diff;
             };
-
-            if (GVAR(availableWaves) == 0) then {
-                [QGVARMAIN(notification_2), ["Warning", "No more reinforcement waves remaining!"]] call CFUNC(localEvent);
+            case MANUAL: {
+                [QGVARMAIN(notification_2), ["Info", format ["Remaining respawn waves: %1", GVAR(availableWaves)]]] call CFUNC(localEvent);
             };
+            default {
+                setPlayerRespawnTime GVAR(timer);
+            };
+        };
 
+        // Check player tickets
+        if (GETVAR(player,GVAR(tickets),-1) == 0) then {
+            [QGVARMAIN(notification_2), ["Warning", "You have no more respawn tickets!"]] call CFUNC(localEvent);
+            setPlayerRespawnTime 10e10;
+        };
+
+        // Check side tickets
+        if (GETVAR(player,GVAR(tickets),-1) == 0 || (GVAR(waveRespawn) == MANUAL && GVAR(availableWaves) == 0)) then {
             // Killcam
             if (GVARMAIN(moduleKillcam)) then {
                 [player, _killer] call EFUNC(killcam,initKillcam);
@@ -75,17 +85,16 @@ if (isPlayer _killer && (side _killer) == playerSide) then {
 
             // Transfer leader modules (SL & CO)
             call FUNC(transferLeaderModules);
-        } else {
-            if !(GVARMAIN(moduleWaveRespawn)) then {
-                setPlayerRespawnTime GVARMAIN(respawnTimer);
-            };
         };
+
+        // Save death location of the player
+        SETVAR(player,EGVAR(reinsertion,deathPos),getPos player);
 
         // Init spectator screen
         call EFUNC(common,startSpectator);
 
         // Check if the mission is ending
-        if (EGVAR(end_mission,outroIsRunning)) exitWith {
+        if (EGVAR(end_mission,outroIsRunning)) then {
             setPlayerRespawnTime 10e10;
         };
 

@@ -87,3 +87,8 @@ for '_i' from 0 to _size do \
 #define TASKCOLOUR_SUCCEEDED [0, 1, 0, 1]
 #define TASKCOLOUR_FAILED [1, 0, 0, 1]
 #define TASKCOLOUR_CANCELLED [0.4, 0.4, 0.4, 1]
+
+// Wave respawn options
+#define OFF 0
+#define AUTO 1
+#define MANUAL 2
