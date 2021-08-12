@@ -42,3 +42,5 @@ if (_taskID != "") then {
 
     [COMPONENT_STR, "INFO", "Task state has been updated", true] call EFUNC(main,log);
 };
+
+call FUNC(updateTaskList);
