@@ -95,8 +95,7 @@ class MF_AdminMenu
             rowHeight = 0;
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
             soundSelect[] = {"\A3\ui_f\data\sound\RscListbox\soundSelect",0.09,1.0};
-            colorSelectBackground[] = {0,0,0,0};
-            colorSelectBackground2[] = {0,0,0,0};
+            colorSelectBackground[] = {0.3,0.3,0.3,1};
             shadow = 0;
             class ListScrollBar
             {
@@ -632,15 +631,15 @@ class MF_AdminMenu
             style = 16;
             colorBackground[] = {0.2,0.2,0.2,1};
             colorDisabled[] = {0.2,0.2,0.2,1};
-            colorSelect[] = {0.1294,0.4549,0.6118,1};
+            colorSelect[] = {0.902,0.902,0.902,1};
+            colorSelect2[] = {0.902,0.902,0.902,0.75};
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             maxHistoryDelay = 0;
             rowHeight = 0;
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.9);
             soundSelect[] = {"\A3\ui_f\data\sound\RscListbox\soundSelect",0.09,1.0};
-            colorSelectBackground[] = {0,0,0,0};
-            colorSelectBackground2[] = {0,0,0,0};
+            colorSelectBackground[] = {0.3,0.3,0.3,1};
             shadow = 0;
             class ListScrollBar
             {
