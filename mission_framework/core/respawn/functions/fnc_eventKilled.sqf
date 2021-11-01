@@ -33,10 +33,10 @@ if (GVARMAIN(isTvT)) then {
 };
 
 // Check friendly-fire
-private _killer = GETVAR(player,ace_medical_lastDamageSource,objNull);
+private _killer = GETVAR(_unit,ace_medical_lastDamageSource,objNull);
 
 if (isPlayer _killer && (side _killer) == playerSide) then {
-    [QEGVAR(admin,logFF), [name player, name _killer]] call CFUNC(globalEvent);
+    [QEGVAR(admin,logFF), [name _unit, name _killer]] call CFUNC(globalEvent);
 };
 
 // Screen effects
@@ -56,11 +56,15 @@ if (isPlayer _killer && (side _killer) == playerSide) then {
     [{
         params ["_unit", "_killer"];
 
+        // Spectator settings
+        private _allowAllSides = false;
+        private _allowFreeCam = false;
+
         // Set respawn timer
         switch (GVAR(waveRespawn)) do {
             case AUTO: {
-                private _diff = (CBA_missionTime - 1) % GVAR(timer);
-                setPlayerRespawnTime GVAR(timer) - _diff;
+                private _diff = CBA_missionTime % GVAR(timer);
+                setPlayerRespawnTime (GVAR(timer) - _diff);
             };
             case MANUAL: {
                 [QGVARMAIN(notification_2), ["Info", format ["Remaining respawn waves: %1", GVAR(availableWaves)]]] call CFUNC(localEvent);
@@ -71,27 +75,35 @@ if (isPlayer _killer && (side _killer) == playerSide) then {
         };
 
         // Check player tickets
-        if (GETVAR(player,GVAR(tickets),-1) == 0) then {
+        if (GETVAR(_unit,GVAR(playerTickets),-1) == 0) then {
             [QGVARMAIN(notification_2), ["Warning", "You have no more respawn tickets!"]] call CFUNC(localEvent);
             setPlayerRespawnTime 10e10;
+
+            // Set spectator options
+            _allowAllSides = true;
+            _allowFreeCam = true;
         };
 
         // Check side tickets
-        if (GETVAR(player,GVAR(tickets),-1) == 0 || (GVAR(waveRespawn) == MANUAL && GVAR(availableWaves) == 0)) then {
+        if (GETVAR(_unit,GVAR(playerTickets),-1) == 0 || (GVAR(waveRespawn) == MANUAL && GVAR(availableWaves) == 0)) then {
             // Killcam
             if (GVARMAIN(moduleKillcam)) then {
-                [player, _killer] call EFUNC(killcam,initKillcam);
+                [_unit, _killer] call EFUNC(killcam,initKillcam);
             };
 
             // Transfer leader modules (SL & CO)
             call FUNC(transferLeaderModules);
+
+            // Set spectator options
+            _allowAllSides = true;
+            _allowFreeCam = true;
         };
 
         // Save death location of the player
-        SETVAR(player,EGVAR(reinsertion,deathPos),getPos player);
+        SETVAR(_unit,EGVAR(reinsertion,deathPos),getPos _unit);
 
         // Init spectator screen
-        call EFUNC(common,startSpectator);
+        [_allowAllSides, _allowFreeCam] call EFUNC(common,startSpectator);
 
         // Check if the mission is ending
         if (EGVAR(end_mission,outroIsRunning)) then {
@@ -102,6 +114,9 @@ if (isPlayer _killer && (side _killer) == playerSide) then {
         if (GVARMAIN(moduleSnowfall)) then {
             [EGVAR(snowfall,snowfallPFH)] call CFUNC(removePerFrameHandler);
         };
+
+        // Set player's status
+        SETVAR(_unit,GVAR(isDead),true);
 
         // Screen effects
         cutText  ["", "BLACK IN",  3, true];

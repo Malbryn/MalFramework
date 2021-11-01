@@ -8,7 +8,7 @@
         Adds an event handler that fires when the player respawns.
 
     Arguments:
-        1: OBJECT - The unit that died
+        1: OBJECT - The unit that respawned
         2: OBJECT - The old body of the unit
 
     Example:
@@ -20,7 +20,7 @@
 
 if !(hasInterface) exitWith {};
 
-params [["_unit", objNull], ["_corpse", objNull]];
+params [["_unit", player], ["_corpse", objNull]];
 
 // Side update
 if (GVARMAIN(isTvT)) then {
@@ -57,8 +57,8 @@ cutText ["", "BLACK FADED", 5, true];
     [{
         params ["_unit"];
 
-        private _insignia = GETVAR(_unit,EGVAR(player,insignia),"");
-        [QEGVAR(player,setInsignia), [_unit, _insignia]] call CFUNC(globalEvent);
+        private _insignia = GETVAR(_unit,EGVAR(_unit,insignia),"");
+        [QEGVAR(_unit,setInsignia), [_unit, _insignia]] call CFUNC(globalEvent);
     }, [_unit], 3] call CFUNC(waitAndExecute);
 
     // Set radios
@@ -70,7 +70,7 @@ cutText ["", "BLACK FADED", 5, true];
 
     // Reassign curator
     if (IS_ADMIN_LOGGED || getPlayerUID _unit == GETPAVAR(GVARMAIN(missionMaker),"")) then {
-        [QEGVAR(admin,curatorReassigned), [player]] call CFUNC(serverEvent);
+        [QEGVAR(admin,curatorReassigned), [_unit]] call CFUNC(serverEvent);
     };
 
     // Snow effect
@@ -90,10 +90,13 @@ cutText ["", "BLACK FADED", 5, true];
         };
     };
 
+    // Register player's status
+    SETVAR(_unit,GVAR(isDead),false);
+
     // Remaining respawn tickets
-    private _tickets = GETVAR(_unit,GVAR(tickets),-1);
+    private _tickets = GETVAR(_unit,GVAR(playerTickets),-1);
 
     if (_tickets == -1) exitWith {};
 
-    [_tickets] call FUNC(setRespawnTickets);
+    [_unit, _tickets - 1] call FUNC(setRespawnTickets);
 }, [_unit, _corpse], 1] call CFUNC(waitAndExecute);
