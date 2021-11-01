@@ -23,9 +23,9 @@ private _deadPlayers = (allPlayers select {!alive _x});
 private _count = 0;
 
 // Check if the player has respawn tickets left
-if (GETVAR(player,EGVAR(respawn,tickets),-1) != -1) then { // Respawn tickets are enabled - count players with remaining tickets only
+if (GETVAR(player,EGVAR(respawn,playerTickets),-1) != -1) then { // Respawn tickets are enabled - count players with remaining tickets only
     _deadPlayers apply {
-        if (GETVAR(_x,EGVAR(respawn,tickets),-1) > 0) then {
+        if (GETVAR(_x,EGVAR(respawn,playerTickets),-1) > 0) then {
             INC(_count);
         };
     };

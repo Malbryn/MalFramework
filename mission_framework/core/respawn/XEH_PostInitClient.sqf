@@ -25,4 +25,7 @@
 }] call CFUNC(addEventHandler);
 
 // Set the respawn tickets
-call FUNC(setRespawntickets);
+[player, GVAR(tickets)] call FUNC(setRespawntickets);
+
+// Init player's status
+SETVAR(player,GVAR(isDead),false);

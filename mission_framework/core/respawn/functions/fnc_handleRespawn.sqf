@@ -19,9 +19,15 @@
 
 if !(hasInterface) exitWith {};
 
+// Check if the player's death was registered in the FW as well (not between death and the spectator screen)
+// Also exit if the outro screen is running
+if !(GETVAR(player,GVAR(isDead),false) || EGVAR(end_mission,outroIsRunning)) exitWith {
+    [COMPONENT_STR, "INFO", format ["Handling respawn cancelled: player is dead or the outro is running"], false] call EFUNC(main,log);
+};
+
 if (GVAR(waveRespawn) == MANUAL) then {
     // Check if the respawn tickets are enabled
-    if (GETVAR(player,GVAR(tickets),-1) != 0) then {
+    if (GETVAR(player,GVAR(playerTickets),-1) != 0) then {
         setPlayerRespawnTime 6;
 
         ["RespawnCalled"] call BFUNC(showNotification);

@@ -8,10 +8,11 @@
         Starts the spectator mode according to the selected one in the config.
 
     Arguments:
-        -
+        0: BOOLEAN - If every side is available to spectate
+        1: BOOLEAN - If free camera is available
 
     Example:
-        call MF_common_fnc_startSpectator
+        [false, false] call MF_common_fnc_startSpectator
 
     Returns:
         void
@@ -19,8 +20,12 @@
 
 if !(hasInterface) exitWith {};
 
+params ["_allowAllSides", "_allowFreeCam"];
+
+private _sidesArray = [[playerSide], []] select _allowAllSides;
+
 if (GVARMAIN(useACESpectator)) then {
-    [true, true, true] call FUNC(initACESpectator);
+    [true, _allowAllSides, _allowFreeCam] call FUNC(initACESpectator);
 } else {
-    ["Initialize", [player, [], false, true, true, false, true, false, true, true]] call BFUNC(EGSpectator);
+    ["Initialize", [player, _sidesArray, false, _allowFreeCam, true, false, true, false, true, true]] call BFUNC(EGSpectator);
 };
