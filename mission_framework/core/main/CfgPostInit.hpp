@@ -60,6 +60,12 @@ class GVARMAIN(Common) {
     serverInit = PATH_POST_SERVER(common);
 };
 
+class GVARMAIN(Countdown) {
+    init = PATH_POST(countdown);
+    clientInit = PATH_POST_CLIENT(countdown);
+    serverInit = PATH_POST_SERVER(countdown);
+};
+
 class GVARMAIN(CustomChannel) {
     init = PATH_POST(custom_channel);
     clientInit = PATH_POST_CLIENT(custom_channel);
