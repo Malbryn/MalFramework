@@ -1,5 +1,5 @@
-class RscSetupTimer {
-	onLoad = "call MF_setup_timer_fnc_displaySetupTimer;";
+class RscCountdown {
+	onLoad = "call MF_countdown_fnc_displayCountdown;";
 	idd = -1;
 	duration = 1200;
 	movingEnable = 0;
@@ -20,7 +20,7 @@ class RscSetupTimer {
 			type  =  0;
 			shadow = 1;
 			colorShadow[] = {0, 0, 0, 0.5};
-			text = "Setup Timer";
+			text = "Countdown";
 			font = "PuristaMedium";
 			SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 			colorText[] = {1, 1, 1, 1};
@@ -41,7 +41,7 @@ class RscSetupTimer {
 			type  =  0;
 			shadow = 1;
 			colorShadow[] = {0, 0, 0, 0.5};
-			text = "Setup Timer";
+			text = "Countdown";
 			font = "PuristaMedium";
 			SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 			colorText[] = {1, 1, 1, 1};
@@ -51,7 +51,7 @@ class RscSetupTimer {
 			tooltipColorShade[] = {0, 0, 0, 0.64999998};
 		};
 
-		class SetupTimeLeft {
+		class TimeLeft {
 			idc = 1003;
 			text = "  --:--.---";
 			x = "19 * (((safezoneW / safezoneH) min 1.2) / 40) + (safezoneX + (safezoneW - ((safezoneW / safezoneH) min 1.2))/2)";

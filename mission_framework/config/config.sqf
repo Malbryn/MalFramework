@@ -119,6 +119,10 @@ EGVAR(cbrn,protectiveBackpack) = ["B_CombinationUnitRespirator_01_F"];  // Backp
 EGVAR(cbrn,protectiveVehicles) = ["B_APC_Wheeled_01_cannon_F"];  // Vehicles that provide protection (LVL 3)
 
 
+// Countdown
+GVARMAIN(moduleCountdown) = true;  // Coop
+
+
 // Custom channel
 GVARMAIN(moduleCustomChannel) = false;  // Coop & TvT
 EGVAR(custom_channel,channelName) = "JTAC channel";  // Name of the channel

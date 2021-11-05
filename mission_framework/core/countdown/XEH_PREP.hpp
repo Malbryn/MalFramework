@@ -1,1 +1,2 @@
-PREP();
+PREP(showCountdownDialog);
+PREP(startCountdown);
