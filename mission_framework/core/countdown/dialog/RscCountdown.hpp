@@ -20,7 +20,7 @@ class RscCountdown {
 			type  =  0;
 			shadow = 1;
 			colorShadow[] = {0, 0, 0, 0.5};
-			text = "Countdown";
+			text = "";
 			font = "PuristaMedium";
 			SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 			colorText[] = {1, 1, 1, 1};

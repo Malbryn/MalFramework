@@ -5,13 +5,13 @@
         Malbryn
 
     Description:
-        Displays the setup timer on the screen.
+        Initialises the setup timer.
 
     Arguments:
         -
 
     Example:
-        call MF_setup_timer_fnc_displaySetupTimer
+        call MF_setup_timer_fnc_initSetupTimer
 
     Returns:
         void

@@ -6,16 +6,19 @@
 
     Description:
         Starts the countdown on the server and triggers the UI element on target clients.
-        Ends the mission once the countdown hits zero.
+        Runs the given code once the timer hits zero.
 
     Arguments:
         0: SCALAR - Timer in seconds
-        1: STRING - Ending type
-        2: BOOLEAN - Is victory (Optional, default: false)
-        3: OBJECT or GROUP - Show visual countdown to target OBJECT or GROUP clients (Optional, default: every unit on playerSide)
+        1: CODE - Code to execute once the timer hits zero (executed on the server only)
+        2: ARRAY - Arguments passed to the code (Optional, default: [])
+        3: OBJECT, GROUP or ARRAY - Show visual countdown to target OBJECT, GROUP or ARRAY of clients only (Optional, default: global)
+        4: STRING - Title text in the countdown display (Optional, default: "Countdown")
 
     Example:
-        [30, "MissionSuccess", true, targetPlayer] call MF_countdown_fnc_startCountdown
+        [30, {
+            [_this select 0, _this select 1, playerSide] call MF_end_mission_fnc_callMission;
+        }, ["MissionSuccess", true], targetPlayer, "Exfil"] call MF_countdown_fnc_startCountdown
 
     Returns:
         void
@@ -23,29 +26,35 @@
 
 if !(isServer) exitWith {};
 
-params ["_timer", "_ending", ["_isVictory", false], ["_target", playerSide]];
+params ["_timer", "_code", ["_args", []], ["_target", playerSide], ["_titleText", "Countdown"]];
 
 // Check inputs
 if (_timer < 0) exitWith {
     [COMPONENT_STR, "ERROR", "Countdown timer cannot be negative", true, 0] call EFUNC(main,log);
 };
 
-if (!isClass (missionConfigFile >> "CfgDebriefing" >> _ending)) then {
-    [COMPONENT_STR, "WARNING", format ["Ending type (%1) is not found in CfgDebriefing", _ending], true, 0] call EFUNC(main,log);
+if (typeName _code != "CODE") exitWith {
+    [COMPONENT_STR, "ERROR", format ["Invalid type (%1), CODE is expected", typeName _code], true, 0] call EFUNC(main,log);
 };
 
-if (typeName _target != "OBJECT" && typeName _target != "GROUP") exitWith {
-    [COMPONENT_STR, "ERROR", format ["Invalid target type (%1), OBJECT or GROUP is expected", typeName _target], true, 0] call EFUNC(main,log);
+if (typeName _args != "ARRAY") then {
+    [COMPONENT_STR, "WARNING", format ["Invalid type (%1), ARRAY is expected", typeName _args], true, 0] call EFUNC(main,log);
+    _args = [];
 };
 
-// Start the wait event
+// Start the timeout
 [{
-    [_ending, _isVictory, playerSide] call EFUNC(end_mission,callMission);
-}, [_ending, _isVictory, _target], _timer] call CFUNC(waitAndExecute);
+    params ["_code", "_args"];
 
+    _args call _code;
+}, [_code, _args], _timer] call CFUNC(waitAndExecute);
 
-// Display timer on clients
-[QGVAR(showTimer), [_timer], _target] call CFUNC(targetEvent);
+// Display timer on target clients
+if !((typeName _target) in ["OBJECT", "GROUP", "ARRAY"]) then {
+    [QGVAR(initDialog), [_timer, serverTime, _titleText]] call CFUNC(globalEvent);
+} else {
+    [QGVAR(initDialog), [_timer, serverTime, _titleText], _target] call CFUNC(targetEvent);
+};
 
 // Log
-[COMPONENT_STR, "INFO", format ["Countdown started (%1 seconds)", _timer], false, 0] call EFUNC(main,log);
+[COMPONENT_STR, "INFO", format ["Countdown ('%1') started (%2 seconds)", _titleText, _timer], false, 0] call EFUNC(main,log);

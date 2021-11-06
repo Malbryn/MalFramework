@@ -120,7 +120,7 @@ EGVAR(cbrn,protectiveVehicles) = ["B_APC_Wheeled_01_cannon_F"];  // Vehicles tha
 
 
 // Countdown
-GVARMAIN(moduleCountdown) = true;  // Coop
+GVARMAIN(moduleCountdown) = false;  // Coop & TvT
 
 
 // Custom channel

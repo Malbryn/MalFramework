@@ -1,9 +1,9 @@
 #include "script_component.hpp"
 
-if !(GVARMAIN(countdown) || GVARMAIN(isTVT)) exitWith {};
+if !(GVARMAIN(countdown)) exitWith {};
 
-[QGVAR(showDialog), {
-    params ["_timer"];
+[QGVAR(initDialog), {
+    params ["_timer", "_startTime", "_titleText"];
 
-    [_timer] call FUNC(showCountdownDialog);
+    [_timer, _startTime, _titleText] call FUNC(initCountdown);
 }] call CFUNC(addEventHandler);

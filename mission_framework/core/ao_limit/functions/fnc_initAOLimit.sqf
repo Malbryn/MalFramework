@@ -79,7 +79,7 @@ GVAR(aoCheck) = [{
 
             SETMVAR(GVAR(timeLeft),_timeLeft);
 
-            cutRsc ["RscAOLimit", "PLAIN", 0.5, false];
+            titleRsc ["RscAOLimit", "PLAIN", 0.5, false];
         };
     } else {
         _allowedOutside = false;

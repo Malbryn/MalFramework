@@ -1,3 +1,3 @@
 #include "script_component.hpp"
 
-if !(GVARMAIN(countdown) || GVARMAIN(isTVT)) exitWith {};
+if !(GVARMAIN(countdown)) exitWith {};
