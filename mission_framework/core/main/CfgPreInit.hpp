@@ -40,6 +40,10 @@ class GVARMAIN(Common) {
     init = PATH_PRE(common);
 };
 
+class GVARMAIN(Countdown) {
+    init = PATH_PRE(countdown);
+};
+
 class GVARMAIN(CustomChannel) {
     init = PATH_PRE(custom_channel);
 };

@@ -5,13 +5,13 @@
         Malbryn
 
     Description:
-        Displays the setup timer on the screen.
+        Initialises the setup timer.
 
     Arguments:
         -
 
     Example:
-        call MF_setup_timer_fnc_displaySetupTimer
+        call MF_setup_timer_fnc_initSetupTimer
 
     Returns:
         void
@@ -75,7 +75,7 @@ if (count GVAR(marker) == 0) exitWith {};
             GVAR(displayed) = true;
             SETMVAR(GVAR(timeLeft),_timeLeft);
 
-            cutRsc ["RscSetupTimer", "PLAIN", 0.5, false];
+            titleRsc ["RscSetupTimer", "PLAIN", 0.5, false];
         };
 
         if (_timeLeft == 0) then {
