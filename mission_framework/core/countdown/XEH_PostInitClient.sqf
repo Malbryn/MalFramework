@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if !(GVARMAIN(countdown)) exitWith {};
+if !(GVARMAIN(moduleCountdown)) exitWith {};
 
 [QGVAR(initDialog), {
     params ["_timer", "_startTime", "_titleText"];

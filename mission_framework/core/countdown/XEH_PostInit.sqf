@@ -1,3 +1,3 @@
 #include "script_component.hpp"
 
-if !(GVARMAIN(countdown)) exitWith {};
+if !(GVARMAIN(moduleCountdown)) exitWith {};
