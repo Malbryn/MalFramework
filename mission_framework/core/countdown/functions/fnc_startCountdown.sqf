@@ -10,7 +10,7 @@
 
     Arguments:
         0: SCALAR - Timer in seconds
-        1: CODE - Code to execute once the timer hits zero (executed on the server only)
+        1: CODE - Code to be executed once the timer hits zero (executed on the server)
         2: ARRAY - Arguments passed to the code (Optional, default: [])
         3: OBJECT, GROUP or ARRAY - Show visual countdown to target OBJECT, GROUP or ARRAY of clients only (Optional, default: global)
         4: STRING - Title text in the countdown display (Optional, default: "Countdown")

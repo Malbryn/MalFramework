@@ -1,16 +1,28 @@
-# BLANK
+# Countdown
 ## Description:
-_Short description of the module._
+_This module starts a countdown on the server and executes the provided code when the timer hits zero._
+
+_It also can display a countdown HUD element on target clients._
 
 ## Usage:
-_Step-by-step guide on how to use the module._
+_Call the function in the activation field of a trigger._
+
+```
+Arguments:
+    0: SCALAR - Timer in seconds
+    1: CODE - Code to be executed once the timer hits zero (executed on the server)
+    2: ARRAY - Arguments passed to the code (Optional, default: [])
+    3: OBJECT, GROUP or ARRAY - Show visual countdown to target OBJECT, GROUP or ARRAY of clients only (Optional, default: global)
+    4: STRING - Title text in the countdown display (Optional, default: "Countdown")
+
+Example:
+    [30, {
+        [_this select 0, _this select 1, playerSide] call MF_end_mission_fnc_callMission;
+    }, ["MissionSuccess", true], targetPlayer, "Exfil"] call MF_countdown_fnc_startCountdown
+```
 
 ## Config:
-_Description of each value set in the config file._
-
-| Variable  | Variable type | Default value | Game mode  | Description |
-|:--------- |:------------- |:------------- |:---------- |:----------- |
-| `varName` | `TYPE`        | `default`     | Coop/TvT   | blank       |
+\-
 
 ## Supported mission type(s):
  - Coop
