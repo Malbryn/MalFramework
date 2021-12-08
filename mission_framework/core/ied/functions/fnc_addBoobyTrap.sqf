@@ -9,7 +9,7 @@
 
     Arguments:
         0: OBJECT - The target vehicle
-        1: SCALAR - Delay between engine on and detonation (Optional, default: 1s)
+        1: SCALAR - Delay between engine on and detonation in seconds (Optional, default: 1)
 
     Example:
         [this, 2] call MF_ied_fnc_addBoobyTrap
