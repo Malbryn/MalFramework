@@ -50,6 +50,8 @@
 #define CCOMP(var1) QUOTE(call compile preProcessFileLineNumbers var1)
 #define PATH_PRE(var1) CCOMP('mission_framework\core\var1\XEH_PreInit.sqf')
 #define PATH_POST(var1) CCOMP('mission_framework\core\var1\XEH_PostInit.sqf')
+#define PATH_POST_CLIENT(var1) CCOMP('mission_framework\core\var1\XEH_PostInitClient.sqf')
+#define PATH_POST_SERVER(var1) CCOMP('mission_framework\core\var1\XEH_PostInitServer.sqf')
 
 #define MSG_SYS(LEVEL,MESSAGE) format ["[MF %1] %2", LEVEL, MESSAGE]
 #define MSG(LEVEL,MESSAGE) systemChat MSG_SYS(LEVEL,MESSAGE); [MSG_SYS(LEVEL,MESSAGE)] call CFUNC(log)
@@ -85,3 +87,8 @@ for '_i' from 0 to _size do \
 #define TASKCOLOUR_SUCCEEDED [0, 1, 0, 1]
 #define TASKCOLOUR_FAILED [1, 0, 0, 1]
 #define TASKCOLOUR_CANCELLED [0.4, 0.4, 0.4, 1]
+
+// Wave respawn options
+#define OFF 0
+#define AUTO 1
+#define MANUAL 2

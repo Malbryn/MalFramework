@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Updates the progress position in the End Screen.
+        Updates the task list in the End Screen.
 
     Arguments:
         -

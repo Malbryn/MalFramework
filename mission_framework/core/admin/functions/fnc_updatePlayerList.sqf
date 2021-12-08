@@ -22,6 +22,9 @@ if !(hasInterface) exitWith {};
 // Exit if the dialog is not visible
 if (isNull findDisplay 799) exitWith {};
 
+// Clear it first
+lbClear 718;
+
 private _playerList = call BFUNC(listPlayers);
 
 _playerList apply {

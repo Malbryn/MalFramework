@@ -79,6 +79,6 @@ _unit setUnitLoadout _gear;
 // Save the current loadout
 SETPVAR(_unit,GVAR(currentLoadout),_role);
 
-[COMPONENT_STR, "DEBUG", format ["Assigned role: %1", _role], true] call EFUNC(main,log);
+[COMPONENT_STR, "DEBUG", format ["Assigned loadout: %1", _role], true] call EFUNC(main,log);
 
 true

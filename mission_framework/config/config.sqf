@@ -45,10 +45,13 @@ EGVAR(end_conditions,playerThreshold) = 50;  // Percentage of the alive players 
 // Task threshold (used by Time limit, Extraction and Tactical Withdrawal)
 GVARMAIN(taskThreshold) = 66;  // Percentage of the tasks that have to be completed
 
-// Respawn rules
-GVARMAIN(respawnTimer) = 30;  // Respawn timer in seconds
-GVARMAIN(respawnTickets) = -1;  // Individual respawn tickets (-1: tickets disabled, 0: respawns disabled)
-GVARMAIN(removePlayerCorpses) = true;  // Remove player corpse upon respawn
+// Respawn
+GVARMAIN(moduleRespawn) = true;  // Coop & TvT
+EGVAR(respawn,timer) = 30;  // Respawn timer in seconds
+EGVAR(respawn,tickets) = -1;  // Individual respawn tickets (-1: tickets disabled)
+EGVAR(respawn,waveRespawn) = AUTO;  // Players will respawn in waves (OFF, AUTO: run automatically, MANUAL: requested by CO)
+EGVAR(respawn,availableWaves) = 1;  // Number of available respawn waves (MANUAL respawn waves only)
+EGVAR(respawn,removePlayerCorpses) = true;  // Remove the players' corpses upon respawn
 
 // View distances
 GVARMAIN(playerViewDistance) = 1500;  // Player view distance
@@ -107,6 +110,19 @@ EGVAR(ao_limit,aoMarkerRedfor) = "mrk_aoLimitRedfor";  // AO limit marker for RE
 GVARMAIN(moduleBriefing) = false;  // Coop & TvT
 
 
+// CBRN
+GVARMAIN(moduleCBRN) = false;  // Coop & TvT
+EGVAR(cbrn,timeLimit) = 30;  // The time limit in seconds after which the player (with insufficient protection) starts taking damage
+EGVAR(cbrn,protectiveMasks) = ["G_AirPurifyingRespirator_02_black_F"];  // Masks that provide protection (LVL 1)
+EGVAR(cbrn,protectiveUniforms) = ["U_C_CBRN_Suit_01_Blue_F"];  // Uniforms that provide protection (LVL 2)
+EGVAR(cbrn,protectiveBackpack) = ["B_CombinationUnitRespirator_01_F"];  // Backpacks (= breathing apparatus) that provide protection (LVL 3)
+EGVAR(cbrn,protectiveVehicles) = ["B_APC_Wheeled_01_cannon_F"];  // Vehicles that provide protection (LVL 3)
+
+
+// Countdown
+GVARMAIN(moduleCountdown) = false;  // Coop & TvT
+
+
 // Custom channel
 GVARMAIN(moduleCustomChannel) = false;  // Coop & TvT
 EGVAR(custom_channel,channelName) = "JTAC channel";  // Name of the channel
@@ -116,6 +132,11 @@ EGVAR(custom_channel,channelColour) = [0.8, 0, 0.5, 1];  // Colour of the channe
 // Gear
 EGVAR(gear,saveGearInArsenal) = false;  // Should the player's gear be saved if an arsenal is available (Coop & TvT)
 EGVAR(gear,enableBackpackLock) = false;  // Enable backpack lock (Coop & TvT)
+EGVAR(gear,enableAlternativeLoadout) = false;  // Enable alternative loadouts (Coop & TvT)
+EGVAR(gear,loadoutHash) = [  // Key-value pairs (STRING - ARRAY OF STRINGS) for the alternative loadouts (Coop & TvT)
+    ["SL", ["SL-2", "SL-3"]],
+    ["AR", ["AR-2"]]
+];
 
 
 // Grass cutter
@@ -180,10 +201,10 @@ GVARMAIN(moduleOrbat) = false;  // Coop & TvT
 
 
 // Reinsertion
+GVARMAIN(moduleHAB) = false;  // Coop
 GVARMAIN(moduleHALO) = false;  // Coop & TvT
 GVARMAIN(moduleMRV) = false;  // Coop & TvT
 GVARMAIN(moduleRP) = false;  // Coop & TvT
-GVARMAIN(moduleHAB) = false;  // Coop
 GVARMAIN(moduleTP) = false;  // Coop & TvT
 EGVAR(reinsertion,RPPickUp) = false;  // If the player is required to pick up the previous RP
 EGVAR(reinsertion,markRP) = true;  // Mark the RP location on map
@@ -232,8 +253,3 @@ EGVAR(unit_tracking,refreshInterval) = 1;  // Refresh rate in seconds (min. valu
 
 // Vehicle respawn
 GVARMAIN(moduleVehicleRespawn) = false;  // Coop & TvT
-
-
-// Wave respawn
-GVARMAIN(moduleWaveRespawn) = false;  // Coop
-EGVAR(respawn_wave,availableWaves) = 1;  // Number of the available respawn waves

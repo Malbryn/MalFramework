@@ -11,13 +11,17 @@
         -
 
     Example:
-        call MF_reinsertion_fnc_tpToHAB
+        spawn MF_reinsertion_fnc_tpToHAB
 
     Returns:
         void
 */
 
 if !(hasInterface) exitWith {};
+
+private _result = ["Reinsertion - Platoon HAB"] call FUNC(confirmTP);
+
+if !(_result) exitWith {};
 
 private _id = GETMVAR(GVAR(HAB),nil);
 

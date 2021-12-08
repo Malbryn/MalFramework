@@ -8,6 +8,7 @@
 body {
     background-color: #0f1521;
     padding: 20px;
+    overflow: overlay;
 }
 
 .header {
@@ -18,7 +19,8 @@ body {
 }
 
 .header-banner {
-    width: 35%;
+    min-width: 400px;
+    max-width: 35%;
 }
 
 .header-banner > img {
@@ -33,11 +35,20 @@ body {
 .nav-buttons {
     margin: 25px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
+.nav-buttons-intel > button {
+    margin-top: 25px;
+}
+
 .nav-buttons > a {
+    margin: 10px;
     padding: 15px;
+    width: 200px;
+    text-align: center;
     font-size: 1.75em;
     border: 3px solid #fff;
     border-radius: 5px;
@@ -59,6 +70,57 @@ body {
     padding: 15px;
 }
 
+.card {
+    margin-bottom: 20px;
+    border: 2px solid #305474;
+}
+
+#card_0 a {
+    display: none;
+}
+
+.card-header {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.card-remove {
+    padding: 5px;
+    border: 1px solid #305474;
+    font-size: 1.25em;
+}
+
+.number {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.number > input {
+    margin: 0px 5px;
+    width: 40px;
+    text-align: right;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.checkbox > label {
+    margin-left: 5px;
+}
+
 h3 {
     margin: 5px;
     font-size: 1.5em;
@@ -66,6 +128,10 @@ h3 {
 
 h4 {
     margin: 25px 0px 15px 0px;
+}
+
+h5 {
+    padding: 10px;
 }
 
 ul {
@@ -80,7 +146,8 @@ li {
     flex-direction: column;
 }
 
-textarea {
+textarea,
+input {
     margin-bottom: 15px;
     width: auto;
     resize: none;
@@ -113,7 +180,7 @@ textarea {
 
 #submit-button,
 #copy-button {
-    margin: auto;
+    margin-top: 15px;
     width: 120px;
     height: 40px;
     background-color: #305474;
@@ -127,18 +194,18 @@ textarea {
     cursor: pointer;
 }
 
-#briefing-output-field {
+#output-field {
     margin-top: 15px;
     padding: 15px 35px;
     display: none;
     flex-direction: column;
 }
 
-#briefing-output-field > p {
+#output-field > p {
     margin-bottom: 20px;
 }
 
-#briefing-output {
+#output {
     margin-top: 10px;
     font-family: "Courier New", Courier, monospace;
 }

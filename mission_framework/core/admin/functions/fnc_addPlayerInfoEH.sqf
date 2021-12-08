@@ -23,8 +23,8 @@ if !(hasInterface) exitWith {};
 if (isNull findDisplay 799) exitWith {};
 
 ((findDisplay 799) displayCtrl 718) ctrlAddEventHandler ["LBSelChanged", {
-    _text = "";
-
+    private _text = "";
+    
     // Get the currently selected player
     private _player = lbText [718, lbCurSel 718];
 
