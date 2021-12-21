@@ -21,8 +21,6 @@ if !(isServer) exitWith {};
 
 {
     if !(alive (_x#0)) then {
-        [COMPONENT_STR, "DEBUG", format ["Respawning vehicle: %1", _x#0], true, 0] call EFUNC(main,log);
-
         _x spawn {
             params [
                 ["_vehicle", objNull, [objNull]],
@@ -49,7 +47,9 @@ if !(isServer) exitWith {};
             private _respawnCount = GETVAR(_vehicle,GVAR(respawnCount),0);
             private _respawnLimit = GETVAR(_vehicle,GVAR(respawnLimit),0);
         
-            if (_respawnCount >= _respawnLimit || {GETVAR(_vehicle,GVAR(respawnStop),false)}) exitWith {};
+            if ((_limitEnabled && _respawnCount >= _respawnLimit) || {GETVAR(_vehicle,GVAR(respawnStop),false)}) exitWith {};
+
+            [COMPONENT_STR, "DEBUG", format ["Respawning vehicle (%1) in %2 seconds", _vehicle, _delay], true, 0] call EFUNC(main,log);
 
             if _deleteWreck then {
                 deleteVehicle _vehicle;
