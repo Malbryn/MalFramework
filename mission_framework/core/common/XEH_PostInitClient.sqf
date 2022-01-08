@@ -27,9 +27,9 @@
 
 // Capture the flag action
 [QGVAR(removeCTFAction), {
-    params ["_ID"];
+    params ["_obj", "_ID"];
 
-    [player, _ID] call BFUNC(holdActionRemove);
+    [_obj, _ID] call BFUNC(holdActionRemove);
 }] call CFUNC(addEventHandler);
 
 // Init chat commands
