@@ -4,5 +4,5 @@
 [QGVAR(logFF), {
     params ["_unit", "_killer"];
 
-    [_unit, _killer] call FUNC(friendlyFireMessage);
+    [_unit, _killer] call FUNC(logFriendlyFire);
 }] call CFUNC(addEventHandler);
