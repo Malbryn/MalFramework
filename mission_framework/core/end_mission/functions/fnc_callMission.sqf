@@ -42,6 +42,7 @@ publicVariable QGVAR(endDescription);
 publicVariable QGVAR(isWin);
 
 publicVariable QGVAR(civilianKills);
+publicVariable QGVAR(friendlyFires);
 
 // Run the end screen globally
 [QGVAR(runOutro), [_ending, _isVictory]] call CFUNC(globalEvent);

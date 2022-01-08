@@ -35,7 +35,7 @@ if (GVARMAIN(isTvT)) then {
 // Check friendly-fire
 private _killer = GETVAR(_unit,ace_medical_lastDamageSource,objNull);
 
-if (isPlayer _killer && (side _killer) == playerSide) then {
+if (isPlayer _killer && {(side _killer) == playerSide}) then {
     [QEGVAR(admin,logFF), [name _unit, name _killer]] call CFUNC(globalEvent);
 };
 
