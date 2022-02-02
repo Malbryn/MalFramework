@@ -23,7 +23,7 @@ private _marker = GVAR(aoMarker);
 
 // Check if the marker exists
 if (getMarkerType _marker == "") then {
-    [COMPONENT_STR, "ERROR", "AO marker does not exist", true] call EFUNC(main,log);
+    [COMPONENT_STR, "WARNING", "AO marker is not found"] call EFUNC(main,log); 
 };
 
 private _sx = (getMarkerSize _marker)#0;
