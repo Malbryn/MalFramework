@@ -105,66 +105,69 @@ NEWTAB("II. Situation")
 <br/>
 <br/><font size='12' face='PuristaMedium'>Explosives:</font>
 <br/>${fields[12]['value']}
+<br/>
+<br/><font color='${sideColour}' size='14' face='PuristaSemiBold'>Rules of engagement:</font>
+<br/>${fields[13]['value']}
 ENDTAB;
 
 NEWTAB("III. Mission:")
 <br/><font color='${sideColour}' size='18' face='PuristaBold'>MISSION INTENT</font>
-<br/>${fields[13]['value']}
+<br/>${fields[14]['value']}
 ENDTAB;
 
 NEWTAB("IV. Support & Logistics:")
 <br/><font color='${sideColour}' size='18' face='PuristaBold'>SUPPORT</font>
 <br/><font color='${sideColour}' size='14' face='PuristaSemiBold'>Available supports:</font>
-<br/>${fields[14]['value']}
+<br/>${fields[15]['value']}
 <br/>
 <br/>
 <br/><font color='${sideColour}' size='18' face='PuristaBold'>LOGISTICS</font>
 <br/><font color='${sideColour}' size='14' face='PuristaSemiBold'>Maintenance:</font>
-<br/>${fields[15]['value']}
-<br/>
-<br/><font color='${sideColour}' size='14' face='PuristaSemiBold'>Transportation:</font>
 <br/>${fields[16]['value']}
 <br/>
-<br/><font color='${sideColour}' size='14' face='PuristaSemiBold'>Resupplies:</font>
+<br/><font color='${sideColour}' size='14' face='PuristaSemiBold'>Transportation:</font>
 <br/>${fields[17]['value']}
+<br/>
+<br/><font color='${sideColour}' size='14' face='PuristaSemiBold'>Resupplies:</font>
+<br/>${fields[18]['value']}
 <br/>
 <br/>
 <br/><font color='${sideColour}' size='18' face='PuristaBold'>SIGNALS</font>
 <br/><font color='${sideColour}' size='14' face='PuristaSemiBold'>Radio frequencies</font>
-<br/>${fields[18]['value']}
+<br/>${fields[19]['value']}
 <br/>
 ENDTAB;
 
 NEWTAB("V. Notes:")
 <br/><font color='${sideColour}' size='18' face='PuristaBold'>RESPAWNS</font>
 <br/><font color='${sideColour}' size='14' face='PuristaSemiBold'>Player respawn</font>
-<br/>${fields[19]['value']}
-<br/>
-<br/><font color='${sideColour}' size='14' face='PuristaSemiBold'>Asset respawn</font>
 <br/>${fields[20]['value']}
 <br/>
-<br/><font color='${sideColour}' size='14' face='PuristaSemiBold'>Reinsertion</font>
+<br/><font color='${sideColour}' size='14' face='PuristaSemiBold'>Asset respawn</font>
 <br/>${fields[21]['value']}
+<br/>
+<br/><font color='${sideColour}' size='14' face='PuristaSemiBold'>Reinsertion</font>
+<br/>${fields[22]['value']}
 <br/>
 <br/>
 <br/><font color='${sideColour}' size='18' face='PuristaBold'>END CONDITIONS</font>
 <br/><font color='${sideColour}' size='14' face='PuristaSemiBold'>Success</font>
-<br/>${fields[22]['value']}
-<br/>
-<br/><font color='${sideColour}' size='14' face='PuristaSemiBold'>Failure</font>
 <br/>${fields[23]['value']}
 <br/>
-<br/>
-<br/><font color='${sideColour}' size='18' face='PuristaBold'>RESTRICTIONS</font>
+<br/><font color='${sideColour}' size='14' face='PuristaSemiBold'>Failure</font>
 <br/>${fields[24]['value']}
 <br/>
 <br/>
-<br/><font color='${sideColour}' size='18' face='PuristaBold'>JIP</font>
+<br/><font color='${sideColour}' size='18' face='PuristaBold'>RESTRICTIONS</font>
 <br/>${fields[25]['value']}
 <br/>
 <br/>
-<br/><font color='${sideColour}' size='18' face='PuristaBold'>Mission maker's notes</font>
+<br/><font color='${sideColour}' size='18' face='PuristaBold'>JIP</font>
 <br/>${fields[26]['value']}
+<br/>
+<br/>
+<br/><font color='${sideColour}' size='18' face='PuristaBold'>Mission maker's notes</font>
+<br/>${fields[27]['value']}
 ENDTAB;`
 
     // Display output
