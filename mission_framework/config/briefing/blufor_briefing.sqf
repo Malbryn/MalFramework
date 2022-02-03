@@ -64,6 +64,9 @@ NEWTAB("II. Situation")
 <br/>
 <br/><font size='12' face='PuristaMedium'>Explosives:</font>
 <br/> - enemy_mines_ieds_etc
+<br/>
+<br/><font color='#21749c' size='14' face='PuristaSemiBold'>Rules of engagement:</font>
+<br/>summary_of_the_ROE
 ENDTAB;
 
 NEWTAB("III. Mission:")
