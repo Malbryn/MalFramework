@@ -32,8 +32,8 @@ params [["_taskID", ""], ["_extZone", ""], ["_limitFail", -1], ["_limitSuccess",
     _thisArgs params ["_taskID", "_extZone", "_limitFail", "_limitSuccess", "_endSuccess", "_endFail"];
 
     // Check stuff
-    if (getMarkerType _extZone == "") exitWith {
-        [COMPONENT_STR, "ERROR", format ["Marker (%1) does not exist", _extZone], true, 0] call EFUNC(main,log);
+    if (getMarkerType _extZone == "") then {
+        [COMPONENT_STR, "WARNING", format ["Marker (%1) does not exist", _extZone], false, 0] call EFUNC(main,log);
     };
 
     if !([_taskID] call BFUNC(taskExists)) then {
