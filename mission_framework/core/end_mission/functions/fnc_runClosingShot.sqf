@@ -76,9 +76,6 @@ private _layerEnd = "BIS_fnc_endMission_end" call BFUNC(rscLayer);
                         // Close any ACE progress bar
                         uiNamespace setVariable ["ace_common_ctrlProgressBar", controlNull];
 
-                        // Disable input
-                        disableUserInput true;
-
                         // Open dialog
                         createDialog "MF_EndScreen";
 
