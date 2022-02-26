@@ -55,7 +55,6 @@ function generateBriefing(fields) {
 
     // Select side colour
     let sideColour = fields[28]['value'] === "BLUFOR" ? "#21749c" : "#9c2d21";
-    console.log(sideColour);
 
     // Output
     let template = `// This briefing file was generated with the Briefing Builder tool
