@@ -39,6 +39,11 @@ if (isPlayer _killer && {(side _killer) == playerSide}) then {
     [QEGVAR(admin,logFF), [name _unit, name _killer]] call CFUNC(globalEvent);
 };
 
+// Disconnect connected UAV's
+if (!isNull getConnectedUAV _unit) then {
+    _unit connectTerminalToUAV objNull;
+};
+
 // Screen effects
 "dynamicBlur" ppEffectEnable true;
 "dynamicBlur" ppEffectAdjust [0];
