@@ -1,6 +1,6 @@
 # Hostage
 ## Description:
-_This module adds support for hostage rescue tasks/missions._
+_This module adds support for hostage rescue tasks/missions. It can also be used in missions where the objective is to capture HVT's alive._
 
 _The mission maker can define hostage units, the framework will monitor the status of those units._
 
@@ -18,9 +18,10 @@ _The module can also trigger mission complete or mission fail._
 Arguments:
     0: OBJECT - The AI unit
     1: STRING - The ID of the task
+    2: BOOLEAN - Make unit handcufffed (Optional, default: true)
 
 Example:
-    [this, "t1"] call MF_hostage_fnc_makeHostage
+    [this, "t1", false] call MF_hostage_fnc_makeHostage
 ```
 
 5. _Register the extraction task by calling the `MF_hostage_fnc_registerRescueTask` function in the init field of the task_

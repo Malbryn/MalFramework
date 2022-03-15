@@ -5,27 +5,30 @@
         Malbryn
 
     Description:
-        Handcuffs an AI unit and registers it as a hostage/POW.
+        Registers a unit as a hostage/POW and optionally makes them handcuffed.
 
     Arguments:
         0: OBJECT - The AI unit
         1: STRING - The ID of the task
+        2: BOOLEAN - Make unit handcuffed (Optional, default: true)
 
     Example:
-        [this, "t1"] call MF_hostage_fnc_makeHostage
+        [this, "t1", false] call MF_hostage_fnc_makeHostage
 
     Returns:
         void
 */
 
-params [["_unit", objNull], ["_taskID", ""]];
+params [["_unit", objNull], ["_taskID", ""], ["_isHandcuffed", true]];
 
 // Check stuff
 if (isNull _unit) exitWith {[COMPONENT_STR, "ERROR", "Unit is not found", true] call EFUNC(main,log)};
 if (_taskID == "") exitWith {[COMPONENT_STR, "ERROR", "Task ID is empty", true] call EFUNC(main,log)};
 
-// Handcuff
-[_unit, true] call AFUNC(captives,setHandcuffed);
+// Apply handcuffs
+if (_isHandcuffed) then {
+    [_unit, true] call AFUNC(captives,setHandcuffed);
+};
 
 // Register hostage
 SETVAR(_unit,GVAR(assignedTask),_taskID);
