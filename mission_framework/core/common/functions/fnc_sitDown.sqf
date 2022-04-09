@@ -35,6 +35,10 @@ _caller setPosATL (getPosATL _target);
 SETPVAR(_target,GVAR(isTaken),true);
 SETVAR(_caller,GVAR(isSeated),true);
 
+// Disable ACE carrying and dragging
+[_target, false] call AFUNC(dragging,setCarryable);
+[_target, false] call AFUNC(dragging,setDraggable);
+
 // Remove sit down action & add stand up action
 _target removeAction _actionId;
 _caller addAction [
