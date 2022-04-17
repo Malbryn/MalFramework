@@ -65,7 +65,7 @@ cutText ["", "BLACK FADED", 5, true];
     if GVARMAIN(moduleACRE) then {
         call EFUNC(acre,setChannels);
     } else {
-        call EFUNC(tfar,setChannels);
+        [QEGVAR(tfar,setRadios)] call CFUNC(localEvent);
     };
 
     // Reassign curator

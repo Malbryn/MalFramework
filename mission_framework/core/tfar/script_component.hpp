@@ -11,3 +11,6 @@
 #endif
 
 #include "..\main\script_macros.hpp"
+
+// Module-specific macros
+#define STEREO_ARRAY [ARR_3(0,1,2)]

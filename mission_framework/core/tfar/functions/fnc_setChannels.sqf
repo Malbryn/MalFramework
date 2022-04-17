@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Sets up the player's radios.
+        Sets the unit's radios to the assigned channels.
 
     Arguments:
         -
@@ -17,40 +17,33 @@
         void
 */
 
-private ["_channels", "_srCh", "_lrCh"];
+private _srChannel = GETVAR(player,GVAR(srChannel),1);
+private _lrChannel = GETVAR(player,GVAR(lrChannel),1);
 
-if !(isMultiplayer) exitWith {
-    [COMPONENT_STR, "INFO", "The module does not work in singleplayer", true] call EFUNC(main,log);
-};
-
-private _channels = GETVAR(player,GVAR(radioChannels),[ARR_2(-1, -1)]);
-
-// Fix group init issue with JIP
+// Fix group init issue with JIP (#342)
 if (didJIP) then {
-    _channels = GETVAR((group player),GVAR(radioChannels),[ARR_2(-1, -1)]);
+    // Get values from group unless they're the default value
+    if (GETVAR((group player),GVAR(srChannelGroup),1) != 1) then {
+        _srChannel = GETVAR((group player),GVAR(srChannelGroup),1);
+    };
+
+    if (GETVAR((group player),GVAR(lrChannelGroup),1) != 1) then {
+        _lrChannel = GETVAR((group player),GVAR(lrChannelGroup),1);
+    };
 };
 
-private _srCh = _channels#0;
-private _lrCh = _channels#1;
+// Set short range
+[{call TFUNC(haveSWRadio)}, {
+    params ["_srChannel"];
 
-// Short range
-if (_srCh != -1) then {
-    [{call TFUNC(haveSWRadio)}, {
-        params ["_channels", "_srCh"];
+    // TFAR uses 0-based channels!
+    [(call TFUNC(activeSwRadio)), _srChannel - 1] call TFUNC(setSwChannel);
+}, [_srChannel]] call CFUNC(waitUntilAndExecute);
 
-        if (0 <= _srCh && _srCh <= 8) then {
-            [(call TFUNC(activeSwRadio)), _srCh] call TFUNC(setSwChannel);
-        };
-    }, [_channels, _srCh]] call CFUNC(waitUntilAndExecute);
-};
+// Set long range
+[{call TFUNC(haveLRRadio)}, {
+    params ["_lrChannel"];
 
-// Long range
-if (_lrCh != -1) then {
-    [{call TFUNC(haveLRRadio)}, {
-        params ["_channels", "_lrCh"];
-
-        if (0 <= _lrCh && _lrCh <= 8) then {
-            [(call TFUNC(activeLrRadio)), _lrCh] call TFUNC(setLrChannel);
-        };
-    }, [_channels, _lrCh]] call CFUNC(waitUntilAndExecute);
-};
+    // TFAR uses 0-based channels!
+    [(call TFUNC(activeLrRadio)), _lrChannel - 1] call TFUNC(setLrChannel);
+}, [_lrChannel]] call CFUNC(waitUntilAndExecute);
