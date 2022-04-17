@@ -1,2 +1,4 @@
+PREP(initLRRadio);
+PREP(initSRRadio);
 PREP(setChannels);
-PREP(setRadios);
+PREP(setStereos);

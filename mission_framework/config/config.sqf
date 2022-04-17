@@ -243,7 +243,7 @@ EGVAR(supply_drop,useFlare) = false;  // Use flares to mark the crate instead of
 
 
 // TFAR
-GVARMAIN(moduleTFAR) = false;  // Coop & TvT
+GVARMAIN(moduleTFAR) = true;  // Coop & TvT
 
 
 // Unit tracking
