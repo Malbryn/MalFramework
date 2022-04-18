@@ -93,6 +93,10 @@ EGVAR(admin,enableCurator) = true;  // Coop
 GVARMAIN(moduleAISpawner) = false;  // Coop & TvT
 
 
+// Arsenal
+GVARMAIN(moduleArsenal) = true;  // Coop & TvT
+
+
 // Ambient fly-by
 GVARMAIN(moduleFlyby) = false;  // Coop
 
