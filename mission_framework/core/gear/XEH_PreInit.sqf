@@ -8,4 +8,5 @@ PREP_RECOMPILE_END;
 
 ADDON = true;
 
+GVAR(arsenalObjects) = [];
 GVAR(customLoadout) = [];

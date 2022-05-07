@@ -45,6 +45,17 @@ EGVAR(end_conditions,playerThreshold) = 50;  // Percentage of the alive players 
 // Task threshold (used by Time limit, Extraction and Tactical Withdrawal)
 GVARMAIN(taskThreshold) = 66;  // Percentage of the tasks that have to be completed
 
+// Gear
+GVARMAIN(moduleGear) = true;  // Coop & TvT
+EGVAR(gear,useArsenalWhitelist) = true;  // Allows the creation of arsenal objects with custom whitelist based on the player's role
+EGVAR(gear,saveGearInArsenal) = false;  // Should the player's gear be saved (and applied after respawn) when the arsenal is closed
+EGVAR(gear,useLoadouts) = true;  // Apply the pre-defined gear (defined in config\gear\)
+EGVAR(gear,enableAlternativeLoadout) = false;  // Enable alternative loadouts
+EGVAR(gear,loadoutHash) = [  // Key-value pairs (STRING - ARRAY OF STRINGS) for the alternative loadouts
+    ["SL", ["SL-2", "SL-3"]],
+    ["AR", ["AR-2"]]
+];
+
 // Respawn
 GVARMAIN(moduleRespawn) = true;  // Coop & TvT
 EGVAR(respawn,timer) = 30;  // Respawn timer in seconds
@@ -93,10 +104,6 @@ EGVAR(admin,enableCurator) = true;  // Coop
 GVARMAIN(moduleAISpawner) = false;  // Coop & TvT
 
 
-// Arsenal
-GVARMAIN(moduleArsenal) = true;  // Coop & TvT
-
-
 // Ambient fly-by
 GVARMAIN(moduleFlyby) = false;  // Coop
 
@@ -131,16 +138,6 @@ GVARMAIN(moduleCountdown) = false;  // Coop & TvT
 GVARMAIN(moduleCustomChannel) = false;  // Coop & TvT
 EGVAR(custom_channel,channelName) = "JTAC channel";  // Name of the channel
 EGVAR(custom_channel,channelColour) = [0.8, 0, 0.5, 1];  // Colour of the channel (RGBA format, default: FK pink)
-
-
-// Gear
-EGVAR(gear,saveGearInArsenal) = false;  // Should the player's gear be saved if an arsenal is available (Coop & TvT)
-EGVAR(gear,enableBackpackLock) = false;  // Enable backpack lock (Coop & TvT)
-EGVAR(gear,enableAlternativeLoadout) = false;  // Enable alternative loadouts (Coop & TvT)
-EGVAR(gear,loadoutHash) = [  // Key-value pairs (STRING - ARRAY OF STRINGS) for the alternative loadouts (Coop & TvT)
-    ["SL", ["SL-2", "SL-3"]],
-    ["AR", ["AR-2"]]
-];
 
 
 // Grass cutter
