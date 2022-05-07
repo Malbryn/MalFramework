@@ -1,4 +1,4 @@
 PREP(addAlternativeLoadouts);
-PREP(addLockBackpackMenu);
-PREP(lockBackpack);
+PREP(addRestrictedArsenal);
+PREP(initRestrictedArsenal);
 PREP(setGear);
