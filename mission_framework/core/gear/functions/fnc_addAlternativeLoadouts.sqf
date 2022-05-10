@@ -36,8 +36,8 @@ if (isNull _obj) exitWith {
 [QGVARMAIN(initFramework), {
     _thisArgs params ["_obj"];
     
-    private _loadouts = GVAR(loadoutHash);
-    private _available = [GETVAR(player,GVAR(currentLoadout),"")];
+    private _loadouts = GVAR(loadoutHashParsed);
+    private _available = [GETVAR(player,GVAR(currentRole),"")];
 
     _available append (_loadouts get _available#0);
 

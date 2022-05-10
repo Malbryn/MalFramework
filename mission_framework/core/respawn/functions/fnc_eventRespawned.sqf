@@ -51,8 +51,8 @@ cutText ["", "BLACK FADED", 5, true];
     call EFUNC(common,stopSpectator);
 
     // Re-assigning gear and insignia
-    private _loadout = GETVAR(_unit,EGVAR(gear,currentLoadout),"");
-    [_unit, _loadout] call EFUNC(gear,setGear);
+    private _role = GETVAR(_unit,EGVAR(gear,currentRole),"");
+    [_unit, _role] call EFUNC(gear,setGear);
 
     [{
         params ["_unit"];

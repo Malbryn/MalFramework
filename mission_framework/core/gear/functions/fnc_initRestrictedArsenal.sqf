@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_gear_fnc_initRestrictedArsenal
+        call MF_gear_fnc_initRestrictedArsenalObjects
 
     Returns:
         void
@@ -31,7 +31,7 @@ if (count _objects == 0) exitWith {
     ] call EFUNC(main,log);
 };
 
-private _role = GETVAR(player,EGVAR(gear,currentLoadout),"");
+private _role = GETVAR(player,EGVAR(gear,currentRole),"");
 
 if (_role == "") exitWith {
     [

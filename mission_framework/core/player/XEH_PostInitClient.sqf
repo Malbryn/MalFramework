@@ -22,5 +22,5 @@
 }] call CFUNC(addEventHandler);
 
 // Reload the gear after init is done to prevent issues with overloaded gear
-private _loadout = GETVAR(player,EGVAR(gear,currentLoadout),"");
-[player, _loadout] call EFUNC(gear,setGear);
+private _role = GETVAR(player,EGVAR(gear,currentRole),"");
+[player, _role] call EFUNC(gear,setGear);

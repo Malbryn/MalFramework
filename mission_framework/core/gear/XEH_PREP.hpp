@@ -1,4 +1,6 @@
 PREP(addAlternativeLoadouts);
 PREP(addRestrictedArsenal);
-PREP(initRestrictedArsenal);
+PREP(createLoadoutHashMap);
+PREP(initRestrictedArsenalObjects);
+PREP(saveGear);
 PREP(setGear);

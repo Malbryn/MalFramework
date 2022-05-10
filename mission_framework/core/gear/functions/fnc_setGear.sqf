@@ -135,7 +135,8 @@ if (count _gear == 0) exitWith {
 _unit setUnitLoadout _gear;
 
 // Save the current loadout
-SETPVAR(_unit,GVAR(currentLoadout),_role);
+SETPVAR(_unit,GVAR(currentRole),_role);
+SETPVAR(_unit,GVAR(currentGear),_gear);
 
 [
     COMPONENT_STR,
