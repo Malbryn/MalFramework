@@ -50,7 +50,6 @@ DIARY_RECORD_START("Credits", "Mission Framework")
 <br/>
 Some parts of this framework are based on other Arma 3 frameworks and scripts. See the original authors below.<br/>
 <br/>
- - AI task scripts by Nkenny<br/>
  - AI spawner (originally JEBUS) scripts by DreadPirate<br/>
  - AO limit scripts by Olsen and Starfox64<br/>
  - Briefing scripts by Perfks and Pax'Jarome<br/>

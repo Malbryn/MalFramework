@@ -18,12 +18,6 @@ class GVARMAIN(Admin) {
     serverInit = PATH_POST_SERVER(admin);
 };
 
-class GVARMAIN(AIScripts) {
-    init = PATH_POST(ai_scripts);
-    clientInit = PATH_POST_CLIENT(ai_scripts);
-    serverInit = PATH_POST_SERVER(ai_scripts);
-};
-
 class GVARMAIN(AISkills) {
     init = PATH_POST(ai_skills);
     clientInit = PATH_POST_CLIENT(ai_skills);
