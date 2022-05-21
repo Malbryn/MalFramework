@@ -18,7 +18,7 @@
 // CTRG 2035
 
 case "SL" : {
-    _randomVest = selectRandom ["V_TacVest_oli", "V_PlateCarrierL_CTRG"];
+    _randomFacewear = selectRandom ["G_Aviator", "G_Shades_Black", "G_Balaclava_TI_G_tna_F"];
 
     _gear = [
         // Primary weapon
@@ -30,13 +30,13 @@ case "SL" : {
         // Uniform
         ["U_B_CTRG_Soldier_F",[["FirstAidKit",1],["30Rnd_556x45_Stanag_Tracer_Red",2,30],["30Rnd_556x45_Stanag_red",1,30],["SmokeShell",1,1]]],
         // Vest
-        [_randomVest,[["30Rnd_556x45_Stanag_red",2,30],["16Rnd_9x21_Mag",2,17],["MiniGrenade",2,1],["SmokeShellGreen",1,1],["SmokeShellBlue",1,1],["SmokeShellOrange",1,1],["Chemlight_green",2,1]]],
+        ["V_TacVest_oli",[["30Rnd_556x45_Stanag_red",2,30],["16Rnd_9x21_Mag",2,17],["MiniGrenade",2,1],["SmokeShellGreen",1,1],["SmokeShellBlue",1,1],["SmokeShellOrange",1,1],["Chemlight_green",2,1]]],
         // Backpack
         ["B_RadioBag_01_tropic_F"],
         // Helmet
         "H_HelmetB_TI_tna_F",
         // Facewear
-        "G_Balaclava_TI_G_tna_F",
+        _randomFacewear,
         // Binos
         ["Rangefinder","","","",[],[],""],
         // Linked items

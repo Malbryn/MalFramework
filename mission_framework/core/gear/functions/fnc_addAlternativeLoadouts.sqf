@@ -5,10 +5,10 @@
         Malbryn
 
     Description:
-        Adds the option to change the loadout and take (one of) the alternative one.
+        Adds the option to change the loadout and take an the alternative one.
 
     Arguments:
-        0: OBJECT - The object that the players can interact with
+        0: OBJECT - The object that provides this option
 
     Example:
         [this] call MF_gear_fnc_addAlternativeLoadouts
@@ -19,17 +19,25 @@
 
 if !(hasInterface) exitWith {};
 
-params [["_obj", objNull]];
+params [
+    ["_obj", objNull, [objNull]]
+];
 
 if (isNull _obj) exitWith {
-    [COMPONENT_STR, "ERROR", "The object doesn't exist", true] call EFUNC(main,log);
+    [
+        COMPONENT_STR,
+        "ERROR",
+        "Cannot add alternative loadouts because the target object doesn't exist",
+        true,
+        1
+    ] call EFUNC(main,log);
 };
 
-[{CBA_missionTime > 1}, {
-    params ["_obj"];
-
-    private _loadouts = GVAR(loadoutHash);
-    private _available = [GETVAR(player,GVAR(currentLoadout),"")];
+[QGVARMAIN(initFramework), {
+    _thisArgs params ["_obj"];
+    
+    private _loadouts = GVAR(loadoutHashParsed);
+    private _available = [GETVAR(player,GVAR(currentRole),"")];
 
     _available append (_loadouts get _available#0);
 
@@ -57,4 +65,4 @@ if (isNull _obj) exitWith {
             [_obj, 0, ["ACE_MainActions", "Loadout"], _childMenu] call AFUNC(interact_menu,addActionToObject);
         } forEach _y;
     } forEach _loadouts;
-}, [_obj]] call CFUNC(waitUntilAndExecute);
+}, [_obj]] call CFUNC(addEventHandlerArgs);
