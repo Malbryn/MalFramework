@@ -12,10 +12,6 @@ class GVARMAIN(Admin) {
     init = PATH_PRE(admin);
 };
 
-class GVARMAIN(AIScripts) {
-    init = PATH_PRE(ai_scripts);
-};
-
 class GVARMAIN(AISkills) {
     init = PATH_PRE(ai_skills);
 };
