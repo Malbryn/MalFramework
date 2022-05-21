@@ -49,9 +49,9 @@ GVARMAIN(taskThreshold) = 66;  // Percentage of the tasks that have to be comple
 GVARMAIN(moduleGear) = true;  // Coop & TvT
 EGVAR(gear,useArsenalWhitelist) = false;  // Allows the creation of arsenal objects with custom whitelist based on the player's role
 EGVAR(gear,saveGearInArsenal) = false;  // Should the player's gear be saved (and applied after respawn) when the arsenal is closed
-EGVAR(gear,useLoadouts) = true;  // Apply the pre-defined gear (defined in config\gear\)
-EGVAR(gear,enableAlternativeLoadout) = false;  // Enable alternative loadouts
-EGVAR(gear,loadoutHash) = [  // Key-value pairs (STRING - ARRAY OF STRINGS) for the alternative loadouts
+EGVAR(gear,useLoadouts) = false;  // Apply the pre-defined gear (defined in config\gear\)
+EGVAR(gear,enableAlternativeLoadouts) = false;  // Enable alternative loadouts
+EGVAR(gear,loadoutHash) = [  // Key-value pairs (STRING - ARRAY OF STRINGS) for the alternative loadouts (defined in config\gear\)
     ["SL", ["SL-2", "SL-3"]],
     ["AR", ["AR-2"]]
 ];
@@ -60,7 +60,7 @@ EGVAR(gear,loadoutHash) = [  // Key-value pairs (STRING - ARRAY OF STRINGS) for 
 GVARMAIN(moduleRespawn) = true;  // Coop & TvT
 EGVAR(respawn,timer) = 30;  // Respawn timer in seconds
 EGVAR(respawn,tickets) = -1;  // Individual respawn tickets (-1: tickets disabled)
-EGVAR(respawn,waveRespawn) = AUTO;  // Players will respawn in waves (OFF, AUTO: run automatically, MANUAL: requested by CO)
+EGVAR(respawn,waveRespawn) = OFF;  // Players will respawn in waves (OFF, AUTO: run automatically, MANUAL: requested by CO)
 EGVAR(respawn,availableWaves) = 1;  // Number of available respawn waves (MANUAL respawn waves only)
 EGVAR(respawn,removePlayerCorpses) = true;  // Remove the players' corpses upon respawn
 

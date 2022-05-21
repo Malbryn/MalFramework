@@ -1,5 +1,7 @@
 #include "script_component.hpp"
 
+if !(GVARMAIN(moduleGear)) exitWith {};
+
 // Add arsenal EH's that overwrite the pre-defined gear
 if GVAR(saveGearInArsenal) then {
     ["ace_arsenal_displayClosed", {
@@ -12,7 +14,7 @@ if GVAR(saveGearInArsenal) then {
 };
 
 // Init alternative loadut hash
-if GVAR(enableAlternativeLoadout) then {
+if GVAR(enableAlternativeLoadouts) then {
     [GVAR(loadoutHash)] call FUNC(createLoadoutHashMap);
 };
 

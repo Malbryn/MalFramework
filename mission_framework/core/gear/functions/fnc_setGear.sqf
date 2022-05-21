@@ -29,7 +29,7 @@ if (isNull _unit) exitWith {
     [
         COMPONENT_STR,
         "ERROR",
-        "Unit is not found",
+        "Cannot set player gear because the unit is not found",
         true,
         1
     ] call EFUNC(main,log);
@@ -39,7 +39,7 @@ if (_role == "") exitWith {
     [
         COMPONENT_STR,
         "ERROR",
-        "Unit role is empty",
+        "Cannot set player gear because the unit role is empty",
         true,
         1
     ] call EFUNC(main,log);
@@ -125,7 +125,7 @@ if (count _gear == 0) exitWith {
     [
         COMPONENT_STR,
         "ERROR",
-        "Gear array is empty",
+        "Cannot apply gear because the gear array is empty",
         true,
         1
     ] call EFUNC(main,log);

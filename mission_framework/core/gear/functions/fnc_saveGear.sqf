@@ -28,7 +28,7 @@ if (isNull _unit) exitWith {
     [
         COMPONENT_STR,
         "ERROR",
-        "Cannot save the unit's gear, the unit is not found",
+        "Cannot save the unit's gear because the unit is not found",
         true,
         1
     ] call EFUNC(main,log);
@@ -38,7 +38,7 @@ if (_role == "") exitWith {
     [
         COMPONENT_STR,
         "ERROR",
-        "Cannot save the unit's gear, the role is empty",
+        "Cannot save the unit's gear because the role is empty",
         true,
         1
     ] call EFUNC(main,log);

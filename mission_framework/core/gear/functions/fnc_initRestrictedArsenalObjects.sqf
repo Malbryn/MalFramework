@@ -62,7 +62,7 @@ if (count _allItems == 0) then {
     ] call EFUNC(main,log);
 };
 
-// Combine common and role-specific items, filtering duplicate items
+// Combine common and role-specific items and filter any duplicate items
 _commonItems apply {
     _allItems pushBackUnique _x;
 };

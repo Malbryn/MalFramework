@@ -5,10 +5,10 @@
         Malbryn
 
     Description:
-        Adds the option to change the loadout and take (one of) the alternative one.
+        Adds the option to change the loadout and take an the alternative one.
 
     Arguments:
-        0: OBJECT - The object that the players can interact with
+        0: OBJECT - The object that provides this option
 
     Example:
         [this] call MF_gear_fnc_addAlternativeLoadouts
@@ -27,7 +27,7 @@ if (isNull _obj) exitWith {
     [
         COMPONENT_STR,
         "ERROR",
-        "Cannot add alternative loadouts because the object doesn't exist",
+        "Cannot add alternative loadouts because the target object doesn't exist",
         true,
         1
     ] call EFUNC(main,log);

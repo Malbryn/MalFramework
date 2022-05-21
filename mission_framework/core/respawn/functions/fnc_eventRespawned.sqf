@@ -50,10 +50,17 @@ cutText ["", "BLACK FADED", 5, true];
     // Stop spectator screen
     call EFUNC(common,stopSpectator);
 
-    // Re-assigning gear and insignia
+    // Re-assigning gear
     private _role = GETVAR(_unit,EGVAR(gear,currentRole),"");
-    [_unit, _role] call EFUNC(gear,setGear);
+    private _gear = GETVAR(_unit,EGVAR(gear,currentGear),[]);
 
+    if (count _gear != 0) then {
+        _unit setUnitLoadout _gear;
+    } else {
+        [_unit, _role] call EFUNC(gear,setGear);
+    };
+
+    // Reassign insignia
     [{
         params ["_unit"];
 

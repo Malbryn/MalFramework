@@ -18,7 +18,7 @@
 // SPETSNAZ 2035
 
 case "SL" : {
-    _randomVest = selectRandom ["V_SmershVest_01_F", "V_SmershVest_01_radio_F"];
+    _randomFacewear = selectRandom ["G_Aviator", "G_Shades_Black", "G_Spectacles_Tinted"];
 
     _gear = [
         // Primary weapon
@@ -30,13 +30,13 @@ case "SL" : {
         // Uniform
         ["U_O_R_Gorka_01_camo_F",[["FirstAidKit",1],["30rnd_762x39_AK12_Lush_Mag_F",2,30]]],
         // Vest
-        [_randomVest,[["30rnd_762x39_AK12_Lush_Mag_F",1,30],["30rnd_762x39_AK12_Lush_Mag_Tracer_F",2,30],["16Rnd_9x21_Mag",2,17],["MiniGrenade",2,1],["1Rnd_HE_Grenade_shell",5,1],["SmokeShell",1,1],["SmokeShellRed",1,1],["SmokeShellOrange",1,1],["SmokeShellYellow",1,1],["Chemlight_red",2,1],["1Rnd_Smoke_Grenade_shell",2,1],["1Rnd_SmokeRed_Grenade_shell",1,1],["1Rnd_SmokeOrange_Grenade_shell",1,1],["1Rnd_SmokeYellow_Grenade_shell",1,1]]],
+        ["V_SmershVest_01_radio_F",[["30rnd_762x39_AK12_Lush_Mag_F",1,30],["30rnd_762x39_AK12_Lush_Mag_Tracer_F",2,30],["16Rnd_9x21_Mag",2,17],["MiniGrenade",2,1],["1Rnd_HE_Grenade_shell",5,1],["SmokeShell",1,1],["SmokeShellRed",1,1],["SmokeShellOrange",1,1],["SmokeShellYellow",1,1],["Chemlight_red",2,1],["1Rnd_Smoke_Grenade_shell",2,1],["1Rnd_SmokeRed_Grenade_shell",1,1],["1Rnd_SmokeOrange_Grenade_shell",1,1],["1Rnd_SmokeYellow_Grenade_shell",1,1]]],
         // Backpack
         [],
         // Helmet
         "H_HelmetAggressor_cover_taiga_F",
         // Facewear
-        "",
+        _randomFacewear,
         // Binos
         ["Rangefinder","","","",[],[],""],
         // Linked items
