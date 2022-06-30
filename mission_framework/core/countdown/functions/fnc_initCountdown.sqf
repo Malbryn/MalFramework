@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Initialises the setup timer.
+        Initialises the countdown.
 
     Arguments:
         0: SCALAR - Timer in seconds
@@ -13,7 +13,7 @@
         2: STRING - Title text in the display
 
     Example:
-        [30, 60, "Exfil"] call MF_setup_timer_fnc_initSetupTimer
+        [30, 60, "Exfil"] call MF_countdown_fnc_initCountdown
 
     Returns:
         void
