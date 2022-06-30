@@ -6,7 +6,8 @@
 
     Description:
         Starts the countdown on the server and triggers the UI element on target clients.
-        Runs the given code once the timer hits zero.
+        Runs the given code on the target client once the timer hits zero.
+        There can be only one countdown running at the same time.
 
     Arguments:
         0: SCALAR - Timer in seconds
@@ -24,33 +25,88 @@
         }, ["MissionSuccess", true], targetPlayer, "Exfil"] call MF_countdown_fnc_startCountdown
 
     Returns:
-        void
+        SCALAR: ID of the started countdown
 */
 
 if !(isServer) exitWith {};
 
-params ["_timer", "_code", ["_args", []], ["_target", playerSide], ["_titleText", "Countdown"]];
+params ["_timer", "_code", ["_args", []], ["_target", allPlayers], ["_titleText", "Countdown"]];
+
+// Check if there's already a running countdown (i.e. check last element)
+private _lastIndex = count GVAR(countdownStack) - 1;
+private _lastState = GVAR(countdownStack) select _lastIndex;
+
+if (_lastState) exitWith {
+    [
+        COMPONENT_STR,
+        "ERROR",
+        "Running countdown detected, wait for it to end or cancel it before starting a new one",
+        true,
+        0
+    ] call EFUNC(main,log);
+};
 
 // Check inputs
 if (_timer < 0) exitWith {
-    [COMPONENT_STR, "ERROR", "Countdown timer cannot be negative", true, 0] call EFUNC(main,log);
+    [
+        COMPONENT_STR,
+        "ERROR",
+        "Countdown timer cannot be negative number",
+        true,
+        0
+    ] call EFUNC(main,log);
 };
 
 if (typeName _code != "CODE") exitWith {
-    [COMPONENT_STR, "ERROR", format ["Invalid type (%1), CODE is expected", typeName _code], true, 0] call EFUNC(main,log);
+    [
+        COMPONENT_STR,
+        "ERROR",
+        format ["Invalid type (%1), CODE is expected", typeName _code],
+        true,
+        0
+    ] call EFUNC(main,log);
 };
 
 if (typeName _args != "ARRAY") then {
-    [COMPONENT_STR, "WARNING", format ["Invalid type (%1), ARRAY is expected", typeName _args], true, 0] call EFUNC(main,log);
+    [
+        COMPONENT_STR,
+        "WARNING",
+        format ["Invalid type (%1), ARRAY is expected", typeName _args],
+        true,
+        0
+    ] call EFUNC(main,log);
+
     _args = [];
 };
 
-// Start the timeout
-[{
-    params ["_code", "_args", "_target"];
+// Set state
+GVAR(countdownStack) pushBack true;
+_lastIndex = _lastIndex + 1;
 
-    [_target, _args] call _code;
-}, [_code, _args, _target], _timer] call CFUNC(waitAndExecute);
+// Start the timer
+[{
+    params ["_code", "_args", "_target", "_index"];
+
+    // Check state of the countdown and run the code if the countdown is still active
+    private _state = GVAR(countdownStack) select _index;
+
+    if (_state) then {
+        // Run the code
+        [_target, _args] call _code;
+    } else {
+        // Log
+        [
+            COMPONENT_STR,
+            "INFO",
+            format [
+                "Stopped countdown detected (index: %1), cancelling running of code",
+                _index
+            ],
+            false,
+            0
+        ] call EFUNC(main,log);
+    }
+}, [_code, _args, _target, _lastIndex], _timer] call CFUNC(waitAndExecute);
 
 // Convert SIDE to ARRAY (CBA target event doesn't accept SIDE as target)
 if (typeName _target == "SIDE") then {
@@ -59,10 +115,22 @@ if (typeName _target == "SIDE") then {
 
 // Display timer on target clients
 if !((typeName _target) in ["OBJECT", "GROUP", "ARRAY"]) then {
-    [QGVAR(initDialog), [_timer, serverTime, _titleText]] call CFUNC(globalEvent);
+    [QGVAR(openDialog), [_timer, serverTime, _titleText]] call CFUNC(globalEvent);
 } else {
-    [QGVAR(initDialog), [_timer, serverTime, _titleText], _target] call CFUNC(targetEvent);
+    [QGVAR(openDialog), [_timer, serverTime, _titleText], _target] call CFUNC(targetEvent);
 };
 
 // Log
-[COMPONENT_STR, "INFO", format ["Countdown ('%1') started (%2 seconds)", _titleText, _timer], false, 0] call EFUNC(main,log);
+[
+    COMPONENT_STR,
+    "INFO",
+    format [
+        "Countdown ('%1') started (timer: %2 seconds, index: %3)",
+        _titleText, _timer, _lastIndex
+    ],
+    false,
+    0
+] call EFUNC(main,log);
+
+// Return the index
+_lastIndex
