@@ -33,10 +33,16 @@ if !(isServer) exitWith {};
 params ["_timer", "_code", ["_args", []], ["_target", allPlayers], ["_titleText", "Countdown"]];
 
 // Check if there's already a running countdown (i.e. check last element)
-private _lastIndex = count GVAR(countdownStack) - 1;
-private _lastState = GVAR(countdownStack) select _lastIndex;
+private _lastIndex = 0;
+private _isRunning = false;
 
-if (_lastState) exitWith {
+// Getting element from an empty array would fail, an empty array also means no countdown is running
+if (count GVAR(countdownStack) != 0) then {
+    _lastIndex = count GVAR(countdownStack) - 1;
+    _isRunning = GVAR(countdownStack) select _lastIndex;
+};
+
+if (_isRunning) exitWith {
     [
         COMPONENT_STR,
         "ERROR",
@@ -80,8 +86,7 @@ if (typeName _args != "ARRAY") then {
 };
 
 // Set state
-GVAR(countdownStack) pushBack true;
-_lastIndex = _lastIndex + 1;
+private _newIndex = GVAR(countdownStack) pushBack true;
 
 // Start the timer
 [{
@@ -90,7 +95,22 @@ _lastIndex = _lastIndex + 1;
     // Check state of the countdown and run the code if the countdown is still active
     private _state = GVAR(countdownStack) select _index;
 
+    // Log
+    [
+        COMPONENT_STR,
+        "INFO",
+        format [
+            "Countdown finished (index: %1, state: %2)",
+            _index, _state
+        ],
+        false,
+        0
+    ] call EFUNC(main,log);
+
     if (_state) then {
+        // Set state
+        GVAR(countdownStack) set [_index, false];
+
         // Run the code
         [_target, _args] call _code;
     } else {
@@ -106,7 +126,7 @@ _lastIndex = _lastIndex + 1;
             0
         ] call EFUNC(main,log);
     }
-}, [_code, _args, _target, _lastIndex], _timer] call CFUNC(waitAndExecute);
+}, [_code, _args, _target, _newIndex], _timer] call CFUNC(waitAndExecute);
 
 // Convert SIDE to ARRAY (CBA target event doesn't accept SIDE as target)
 if (typeName _target == "SIDE") then {
@@ -126,11 +146,11 @@ if !((typeName _target) in ["OBJECT", "GROUP", "ARRAY"]) then {
     "INFO",
     format [
         "Countdown ('%1') started (timer: %2 seconds, index: %3)",
-        _titleText, _timer, _lastIndex
+        _titleText, _timer, _newIndex
     ],
     false,
     0
 ] call EFUNC(main,log);
 
 // Return the index
-_lastIndex
+_newIndex
