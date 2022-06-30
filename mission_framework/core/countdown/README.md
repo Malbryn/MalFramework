@@ -1,11 +1,13 @@
 # Countdown
 ## Description:
-_This module starts a countdown on the server and executes the provided code when the timer hits zero._
+_This module starts a countdown on the server and executes the provided code on the target client (or on the server) when the timer hits zero._
 
-_It also can display a countdown HUD element on target clients._
+_It is also possible to display a counter HUD element on the target clients._
+
+_There can be only one countdown running at the same time, however a running countdown can be stopped._
 
 ## Usage:
-_Call the function in the activation field of a trigger._
+_Call `MF_countdown_fnc_startCountdown` in the activation field of a trigger._
 
 ```
 Arguments:
@@ -22,6 +24,16 @@ Example:
         ["Mission is ending..."] remoteExec ["hint", _target];
         [_args select 0, _args select 1, _target] call MF_end_mission_fnc_callMission;
     }, ["MissionSuccess", true], targetPlayer, "Exfil"] call MF_countdown_fnc_startCountdown
+```
+
+_It is also possible to cancel the currently running countdown by calling `MF_countdown_fnc_stopCountdown`._
+
+```
+Arguments:
+    -
+
+Example:
+    call MF_countdown_fnc_stopCountdown
 ```
 
 ## Config:
