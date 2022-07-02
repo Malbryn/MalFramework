@@ -19,6 +19,6 @@
 
 if !(hasInterface) exitWith {};
 
-if !(IS_ADMIN_LOGGED || getPlayerUID player == GETPAVAR(GVARMAIN(missionMaker),"")) exitWith {};
+if !(call FUNC(isAdmin)) exitWith {};
 
 [QGVAR(curatorRegistered), [player]] call CFUNC(serverEvent);

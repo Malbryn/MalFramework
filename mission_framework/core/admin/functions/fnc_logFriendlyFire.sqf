@@ -28,6 +28,6 @@ private _text = format ["%1  %2 (by %3)", _time, _killed, _killer];
 PUSH(EGVAR(end_mission,friendlyFires),_text);
 
 // Notify game masters
-if (isServer || {IS_ADMIN_LOGGED || getPlayerUID player == GETPAVAR(GVARMAIN(missionMaker),"")}) then {
+if (isServer || {call FUNC(isAdmin)}) then {
     [COMPONENT_STR, "INFO", format ["%1 was killed by %2", _killed, _killer], true] call EFUNC(main,log);
 };

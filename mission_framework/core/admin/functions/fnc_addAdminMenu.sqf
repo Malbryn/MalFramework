@@ -19,7 +19,7 @@
 
 if !(hasInterface) exitWith {};
 
-if !(IS_ADMIN_LOGGED || getPlayerUID player == GETPAVAR(GVARMAIN(missionMaker),"")) exitWith {};
+if !(call FUNC(isAdmin)) exitWith {};
 
 // Admin menu
 private _menu = ['Admin Menu', 'Admin Menu', '\a3\ui_f\data\GUI\Cfg\Hints\Commanding_ca.paa', {
