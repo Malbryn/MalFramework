@@ -9,6 +9,7 @@ PREP(eventAdminMenuOpened);
 PREP(fpsNotification);
 PREP(getCurrentAdmin);
 PREP(healPlayer);
+PREP(initAdmins);
 PREP(isAdmin);
 PREP(logFriendlyFire);
 PREP(onPause);
