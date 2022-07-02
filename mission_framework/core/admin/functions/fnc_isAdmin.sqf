@@ -19,4 +19,6 @@
 
 if !(hasInterface) exitWith {};
 
-IS_ADMIN_LOGGED || getPlayerUID player == GETPAVAR(GVARMAIN(missionMaker),"");
+private _playerUID = getPlayerUID player;
+
+GVAR(admins) findIf { _x == _playerUID } > -1;

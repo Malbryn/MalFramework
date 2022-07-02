@@ -26,12 +26,16 @@ if (_missionMakerUID != "") then {
     GVAR(admins) pushBack _missionMakerUID;
 };
 
-// Find the logged-in admin
+// Find the admin
 private _adminArray = allPlayers select { 0 < admin owner _x };
 
 if (0 < count _adminArray) then {
-    GVAR(admins) pushBackUnique (_adminArray select 0);
+    private _adminUID = getPlayerUID (_adminArray select 0);
+    GVAR(admins) pushBackUnique _adminUID;
 };
+
+// Make changes public
+publicVariable QGVAR(admins);
 
 // Log
 [

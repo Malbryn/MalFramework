@@ -6,6 +6,7 @@ PREP(closeAdminMenu);
 PREP(createCurator);
 PREP(drawFPS);
 PREP(eventAdminMenuOpened);
+PREP(eventAdminStateChanged);
 PREP(fpsNotification);
 PREP(getCurrentAdmin);
 PREP(healPlayer);

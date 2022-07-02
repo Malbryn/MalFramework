@@ -1,5 +1,12 @@
 #include "script_component.hpp"
 
+// Admin status check
+addMissionEventHandler ["OnUserAdminStateChanged", {
+    params ["_networkId", "_loggedIn", "_votedIn"];
+
+    [_networkId, _loggedIn, _votedIn] call FUNC(eventAdminStateChanged);
+}];
+
 // Current logged-in admin check
 [QGVAR(getAdmin), {
     GVAR(currentAdmin) = allPlayers select {(admin (owner _x)) > 0};
