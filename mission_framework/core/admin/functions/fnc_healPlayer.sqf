@@ -26,7 +26,7 @@ if (GVARMAIN(isTvT) && !GVARMAIN(debugMode)) exitWith {
         "INFO",
         "Healing is not available in TvT missions",
         true
-     call EFUNC(main,log);
+    ] call EFUNC(main,log);
 };
 
 // Get the currently selected player
