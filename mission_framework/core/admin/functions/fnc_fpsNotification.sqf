@@ -5,10 +5,10 @@
         Malbryn
 
     Description:
-        Monitors the server FPS and if it goes below 15, it sends a notification to the game masters.
+        Displays a message about low server FPS along with the AI count and the number of dead objects.
 
     Arguments:
-        0: SCALAR - FPS number
+        0: SCALAR - Current server FPS
 
     Example:
         [12] call MF_admin_fnc_fpsNotification
@@ -21,9 +21,21 @@ if !(hasInterface) exitWith {};
 
 if !(call FUNC(isAdmin)) exitWith {};
 
-params ["_fps"];
+params [
+    ["_fps", -1, [0]]
+];
 
 private _aiCount = {!isPlayer _x} count allUnits;
 private _deadUnits = count allDeadMen;
 
-[COMPONENT_STR, "INFO", format ["Server FPS is low! FPS: %1 | AI count: %2 | Dead units: %3", _fps, _aiCount, _deadUnits], true] call EFUNC(main,log);
+// Log
+[
+    COMPONENT_STR,
+    "INFO",
+    format [
+        "Server FPS is low! FPS: %1 | AI count: %2 | Dead units: %3",
+        _fps, _aiCount, _deadUnits
+    ],
+    true,
+    1
+] call EFUNC(main,log);

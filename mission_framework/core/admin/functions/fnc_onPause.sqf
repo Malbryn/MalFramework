@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Adds a button to the pause menu that opens Admin menu.
+        Adds a button to the pause menu that opens the Admin menu.
 
     Arguments:
         -
@@ -39,7 +39,7 @@ _button ctrlAddEventHandler ["ButtonClick", {
     params ["_ctrl"];
     _display = ctrlParent _ctrl;
 
-    createDialog "MF_AdminMenu";
+    createDialog QGVARMAIN(AdminMenu);
     _display closeDisplay 1;
 }];
 

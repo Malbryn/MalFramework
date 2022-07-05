@@ -20,11 +20,21 @@
 if !(hasInterface) exitWith {};
 
 if (GVARMAIN(isTvT) && !GVARMAIN(debugMode)) exitWith {
-    [COMPONENT_STR, "INFO", "Curator function is not available in TvT missions", true] call EFUNC(main,log);
+    [
+        COMPONENT_STR,
+        "INFO",
+        "Curator function is not available in TvT missions",
+        true
+    ] call EFUNC(main,log);
 };
 
 if !GVAR(enableCurator) exitWith {
-    [COMPONENT_STR, "INFO", "Curator was disabled by the mission maker", true] call EFUNC(main,log);
+    [
+        COMPONENT_STR,
+        "INFO",
+        "Curator was disabled by the mission maker",
+        true
+    ] call EFUNC(main,log);
 };
 
 // Reassign Curator

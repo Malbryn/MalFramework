@@ -2,7 +2,7 @@
 
 /*
     Author:
-        Commy2 (modified by Malbryn)
+        Malbryn
 
     Description:
         Creates a curator logic for the game masters.
@@ -19,9 +19,29 @@
 
 if !(isServer) exitWith {};
 
-params ["_unit"];
+params [
+    ["_unit", objNull, [objNull]]
+];
 
-private _logic = createGroup sideLogic createUnit ["ModuleCurator_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
+// Check input
+if (isNull _unit) exitWith {
+    [
+        COMPONENT_STR,
+        "ERROR",
+        "Cannot create curator object, the unit is null",
+        false,
+        1
+    ] call EFUNC(main,log);
+};
+
+// Create curator logic
+private _logic = (createGroup sideLogic) createUnit [
+    "ModuleCurator_F",
+    [0, 0, 0],
+    [],
+    0,
+    "CAN_COLLIDE"
+];
 
 [_logic, _unit, true] call AFUNC(zeus,bi_moduleCurator);
 _unit assignCurator _logic;
@@ -34,4 +54,12 @@ _logic addCuratorEditableObjects [(allMissionObjects "Man"), true];
 
 SETPVAR(_unit,GVAR(curatorLogic),_logic);
 
-[COMPONENT_STR, "INFO", "Game Master: Registered as Curator", true, 3, _unit] call EFUNC(main,log);
+// Log
+[
+    COMPONENT_STR,
+    "INFO",
+    "Assigned as Curator",
+    false,
+    3,
+    _unit
+] call EFUNC(main,log);

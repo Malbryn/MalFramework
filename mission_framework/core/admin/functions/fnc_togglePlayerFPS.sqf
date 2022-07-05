@@ -21,19 +21,31 @@ if !(hasInterface) exitWith {};
 
 if !(call FUNC(isAdmin)) exitWith {};
 
-_toggle = GVAR(toggleFPS);
+private _toggle = GVAR(toggleFPS);
 
 if (_toggle) then {
     [QGVAR(displayFPS), false] call CFUNC(globalEvent);
     removeMissionEventHandler ["Draw3D", GVAR(fpsEH)];
-    GVAR(fpsEH) = nil;
 
+    GVAR(fpsEH) = nil;
     GVAR(toggleFPS) = false;
-    [COMPONENT_STR, "INFO", "Client FPS display is OFF", true] call EFUNC(main,log);
+
+    [
+        COMPONENT_STR,
+        "INFO",
+        "Client FPS display is OFF",
+        true
+    ] call EFUNC(main,log);
 } else {
     [QGVAR(displayFPS), true] call CFUNC(globalEvent);
-    GVAR(fpsEH) = addMissionEventHandler ["Draw3D", {call FUNC(drawFPS)}];
 
+    GVAR(fpsEH) = addMissionEventHandler ["Draw3D", {call FUNC(drawFPS)}];
     GVAR(toggleFPS) = true;
-    [COMPONENT_STR, "INFO", "Client FPS display is ON", true] call EFUNC(main,log);
+
+    [
+        COMPONENT_STR,
+        "INFO",
+        "Client FPS display is ON",
+        true
+    ] call EFUNC(main,log);
 };

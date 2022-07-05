@@ -53,7 +53,6 @@ Some parts of this framework are based on other Arma 3 frameworks and scripts. S
  - AI spawner (originally JEBUS) scripts by DreadPirate<br/>
  - AO limit scripts by Olsen and Starfox64<br/>
  - Briefing scripts by Perfks and Pax'Jarome<br/>
- - Curator scripts by Commy2<br/>
  - Diary macros by NeilZar<br/>
  - Global AI skill settings by joko // Jonas<br/>
  - JIP teleport scripts by Diwako<br/>

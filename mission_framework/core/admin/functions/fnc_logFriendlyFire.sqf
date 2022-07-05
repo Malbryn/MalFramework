@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Sends a notification to the game masters when FF happens.
+        Displays a message about a friendly-fire incident to the game masters.
         Saves the incident in the end mission stats.
 
     Arguments:
@@ -19,7 +19,10 @@
         void
 */
 
-params ["_killed", "_killer"];
+params [
+    ["_killed", "", [""]],
+    ["_killer", "", [""]]
+];
 
 // End mission stats
 private _time = [CBA_missionTime] call BFUNC(secondsToString);
@@ -27,7 +30,15 @@ private _text = format ["%1  %2 (by %3)", _time, _killed, _killer];
 
 PUSH(EGVAR(end_mission,friendlyFires),_text);
 
-// Notify game masters
+// Notify if the player is a game master
 if (isServer || {call FUNC(isAdmin)}) then {
-    [COMPONENT_STR, "INFO", format ["%1 was killed by %2", _killed, _killer], true] call EFUNC(main,log);
+    [
+        COMPONENT_STR,
+        "INFO",
+        format [
+            "%1 was killed by %2",
+            _killed, _killer
+        ],
+        true
+    ] call EFUNC(main,log);
 };

@@ -14,13 +14,15 @@
         call MF_admin_fnc_getCurrentAdmin
 
     Returns:
-        STRING
+        STRING: name of the admin player
 */
 
 if !(hasInterface) exitWith {};
 
 // There's no logged-in admin in localhost, return the host name instead
-if (isServer) exitWith {name player};
+if (isServer) exitWith {
+    name player;
+};
 
 // Get admin array
 [QGVAR(getAdmin)] call CFUNC(serverEvent);
@@ -28,7 +30,7 @@ if (isServer) exitWith {name player};
 private _admin = GVAR(currentAdmin);
 
 if (_admin isEqualTo []) then {
-    "N/A"
+    "N/A";
 } else {
     name (_admin select 0);
 };

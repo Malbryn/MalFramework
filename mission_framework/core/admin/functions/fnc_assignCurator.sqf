@@ -2,7 +2,7 @@
 
 /*
     Author:
-        Commy2
+        Malbryn
 
     Description:
         Assigns curator to the game masters.

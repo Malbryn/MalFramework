@@ -20,11 +20,21 @@
 if !(hasInterface) exitWith {};
 
 if (GVARMAIN(isTvT) && !GVARMAIN(debugMode)) exitWith {
-    [COMPONENT_STR, "INFO", "Arsenal is not available in TvT missions", true] call EFUNC(main,log);
+    [
+        COMPONENT_STR,
+        "INFO",
+        "Arsenal is not available in TvT missions",
+        true
+    ] call EFUNC(main,log);
 };
 
 if !GVAR(enableArsenal) exitWith {
-    [COMPONENT_STR, "INFO", "Arsenal was disabled by the mission maker", true] call EFUNC(main,log);
+    [
+        COMPONENT_STR,
+        "INFO",
+        "Arsenal was disabled by the mission maker",
+        true
+    ] call EFUNC(main,log);
 };
 
 // Close dialog
