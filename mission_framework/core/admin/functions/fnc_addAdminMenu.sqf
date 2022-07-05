@@ -19,19 +19,22 @@
 
 if !(hasInterface) exitWith {};
 
-if !(call FUNC(isAdmin)) exitWith {};
+// Create and add the admin ACE interaction option
+private _menu = [
+    'Admin Menu',
+    'Admin Menu',
+    '\a3\ui_f\data\GUI\Cfg\Hints\Commanding_ca.paa',
+    {
+        createDialog QGVARMAIN(AdminMenu);
+    },
+    {
+        call FUNC(isAdmin) && !visibleMap
+    }
+] call AFUNC(interact_menu,createAction);
 
-// Admin menu
-private _menu = ['Admin Menu', 'Admin Menu', '\a3\ui_f\data\GUI\Cfg\Hints\Commanding_ca.paa', {
-    createDialog "MF_AdminMenu";
-}, {!visibleMap}] call AFUNC(interact_menu,createAction);
-
-[player, 1, ["ACE_SelfActions"], _menu] call AFUNC(interact_menu,addActionToObject);
-
-// Admin chat
-GVAR(adminChannelID) radioChannelAdd [player];
-
-// Save it for respawn
-if (EGVAR(custom_channel,playerCustomChannels) findIf {_x == GVAR(adminChannelID)} == -1) then {
-    EGVAR(custom_channel,playerCustomChannels) pushBack GVAR(adminChannelID);
-};
+[
+    player,
+    1,
+    ["ACE_SelfActions"],
+    _menu
+] call AFUNC(interact_menu,addActionToObject);

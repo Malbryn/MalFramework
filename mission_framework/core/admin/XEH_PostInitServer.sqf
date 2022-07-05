@@ -48,6 +48,22 @@ if (GVAR(enableCurator) && (!GVARMAIN(isTvT) || {GVARMAIN(isTvT) && GVARMAIN(deb
     };
 }, 2] call CFUNC(addPerFrameHandler);
 
-// Admin text channel
-GVAR(adminChannelID) = radioChannelCreate [[0.9, 0.2, 0.1, 1], "Admin channel", "Admin chat (%UNIT_NAME)", [], true];
-publicVariable QGVAR(adminChannelID);
+// Added to admin channel event
+[QGVAR(onAddToAdminChannel), {
+    params ["_units"];
+
+    [_units] call FUNC(handleAddToAdminChannel);
+}] call CFUNC(addEventHandler);
+
+// Removed from admin channel event
+[QGVAR(onRemoveFromAdminChannel), {
+    params ["_units"];
+
+    [_units] call FUNC(handleRemoveFromAdminChannel);
+}] call CFUNC(addEventHandler);
+
+// Init admins
+call FUNC(initAdmins);
+
+// Create admin text channel
+call FUNC(createAdminChannel);

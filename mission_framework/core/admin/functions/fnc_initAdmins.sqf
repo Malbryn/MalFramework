@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Initialises the array that contains the admins.
+        Initialises the array that contains the UID of the admins.
 
     Arguments:
         -
@@ -18,6 +18,9 @@
 */
 
 if !(isServer) exitWith {};
+
+// Reset the array
+GVAR(admins) = [];
 
 // Add the mission maker
 private _missionMakerUID = GETPAVAR(GVARMAIN(missionMaker),"");
@@ -34,7 +37,7 @@ if (0 < count _adminArray) then {
     GVAR(admins) pushBackUnique _adminUID;
 };
 
-// Make changes public
+// Sync the array with the clients
 publicVariable QGVAR(admins);
 
 // Log
