@@ -19,6 +19,6 @@
 
 if !(hasInterface) exitWith {};
 
-if !(call FUNC(isAdmin)) exitWith {};
+if !(call FUNC(isGameMaster)) exitWith {};
 
-[QGVAR(curatorRegistered), [player]] call CFUNC(serverEvent);
+[QGVAR(onCuratorCreated), [player]] call CFUNC(serverEvent);

@@ -8,24 +8,40 @@
         Reassigns the curator module on the server.
 
     Arguments:
-        0: OBJECT - Player unit who has curator access
+        0: OBJECT - Player to assign the curator access to
 
     Example:
-        [_unit] call MF_admin_fnc_reassignCuratorServer
+        [player1] call MF_admin_fnc_handleCuratorReassigned
 
     Returns:
         void
 */
 
-params ["_unit"];
+if !(isServer) exitWith {};
 
+params [
+    ["_unit", objNull, [objNull]]
+];
+
+// Check input
+if (isNull _unit) exitWith {
+    [
+        COMPONENT_STR,
+        "ERROR",
+        "Cannot reassign curator, the unit is null",
+        false,
+        1
+    ] call EFUNC(main,log);
+};
+
+// Get curator logic
 private _logic = GETVAR(_unit,GVAR(curatorLogic),objNull);
 
 if (isNull _logic) exitWith {
     [
         COMPONENT_STR,
         "ERROR",
-        "Curator object does not exist",
+        "Cannot reassign curator, the curator object does not exist",
         true,
         3,
         _unit
@@ -36,15 +52,16 @@ if (isNull _logic) exitWith {
 unassignCurator _logic;
 
 // Assign curator
-[{isNull (getAssignedCuratorLogic (_this select 0))}, {
+[{ isNull (getAssignedCuratorLogic (_this select 0)) }, {
     params ["_unit", "_logic"];
 
     _unit assignCurator _logic;
 
+    // Log
     [
         COMPONENT_STR,
         "INFO",
-        "Assigned to Curator",
+        "Reassigned curator",
         true,
         3,
         _unit

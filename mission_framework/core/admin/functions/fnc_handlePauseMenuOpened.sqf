@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_admin_fnc_onPause
+        call MF_admin_fnc_handlePauseMenuOpened
 
     Returns:
         void
@@ -19,7 +19,7 @@
 
 if !(hasInterface) exitWith {};
 
-// FUNC(isAdmin) doesn't work here
+// FUNC(isGameMaster) doesn't work here
 if !(IS_ADMIN_LOGGED || getPlayerUID player == GETPAVAR(GVARMAIN(missionMaker),"")) exitWith {};
 
 disableSerialization;

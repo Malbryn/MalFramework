@@ -24,13 +24,16 @@ if (isServer) exitWith {
     name player;
 };
 
-// Get admin array
-[QGVAR(getAdmin)] call CFUNC(serverEvent);
+private _admin = "N/A";
 
-private _admin = GVAR(currentAdmin);
+if (count GVAR(gameMasters) > 1) then {
+    private _filtered = GVAR(gameMasters) select {
+        _x isNotEqualTo GVARMAIN(missionMaker)
+    };
 
-if (_admin isEqualTo []) then {
-    "N/A";
-} else {
-    name (_admin select 0);
+    _admin = _filtered select 0;
+} else if (count GVAR(gameMasters) > 0) then {
+    _admin = GVAR(gameMasters) select 0;
 };
+
+_admin;

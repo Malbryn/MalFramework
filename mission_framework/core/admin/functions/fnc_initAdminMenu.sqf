@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_admin_fnc_addAdminMenu
+        call MF_admin_fnc_initAdminMenu
 
     Returns:
         void
@@ -28,7 +28,7 @@ private _menu = [
         createDialog QGVARMAIN(AdminMenu);
     },
     {
-        call FUNC(isAdmin) && !visibleMap
+        call FUNC(isGameMaster) && !visibleMap
     }
 ] call AFUNC(interact_menu,createAction);
 

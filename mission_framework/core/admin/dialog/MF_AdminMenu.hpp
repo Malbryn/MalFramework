@@ -23,7 +23,7 @@ class MF_AdminMenu
             colorText[] = {0.1294,0.4549,0.6118,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-            onLoad = "call MF_admin_fnc_eventAdminMenuOpened";
+            onLoad = "call MF_admin_fnc_handleAdminMenuOpened";
         };
     };
 
@@ -824,7 +824,7 @@ class MF_AdminMenu
             soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
-            onMouseButtonClick = "call MF_admin_fnc_reassignCuratorClient";
+            onMouseButtonClick = "call MF_admin_fnc_reassignCurator";
         };
 
         class ButtonToggleFPS
@@ -856,7 +856,7 @@ class MF_AdminMenu
             soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
-            onMouseButtonClick = "call MF_admin_fnc_toggleFPSCounter";
+            onMouseButtonClick = "call fnc_togglePlayerFPS";
         };
 
         class ButtonTerminateMission

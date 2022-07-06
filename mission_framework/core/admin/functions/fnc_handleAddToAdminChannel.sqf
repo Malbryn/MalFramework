@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Adds a player to the admin channel.
+        Adds unit(s) to the admin channel.
 
     Arguments:
         0: ARRAY - The player(s) to be added to the channel
@@ -34,5 +34,5 @@ if (count _units == 0) exitWith {
     ] call EFUNC(main,log);
 };
 
-// Add unit to the channel
+// Add units to the channel
 GVAR(adminChannelID) radioChannelAdd _units;

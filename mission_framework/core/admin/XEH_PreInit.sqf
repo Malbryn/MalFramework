@@ -8,10 +8,14 @@ PREP_RECOMPILE_END;
 
 ADDON = true;
 
-// Global variables
+
+/**************************************************************************************************/
+// GLOBALS
+/**************************************************************************************************/
+
 GVAR(adminChannelID) = 0;
-GVAR(admins) = [];
 GVAR(currentAdmin) = [];
+GVAR(gameMasters) = [];
 GVAR(isMonitoring) = false;
 GVAR(serverFPS) = 999;
 GVAR(serverFPSMin) = 999;

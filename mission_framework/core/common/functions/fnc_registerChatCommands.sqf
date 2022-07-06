@@ -21,7 +21,7 @@ if !(hasInterface) exitWith {};
 
 // Add admin menu (if the admin logs-in after mission init)
 ["addAdminMenu", {
-    call EFUNC(admin,addAdminMenu);
+    call EFUNC(admin,initAdminMenu);
     [COMPONENT_STR, "INFO", "Adding admin menu...", true] call EFUNC(main,log);
 }, "admin"] call CFUNC(registerChatCommand);
 

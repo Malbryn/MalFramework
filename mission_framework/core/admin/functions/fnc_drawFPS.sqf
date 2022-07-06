@@ -2,7 +2,7 @@
 
 /*
     Author:
-        joko // Jonas (modified by Malbryn)
+        joko // Jonas, Malbryn
 
     Description:
         Displays the player's FPS

@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Removes a player from the admin channel.
+        Removes unit(s) from the admin channel.
 
     Arguments:
         0: ARRAY - The player(s) to be removed from the channel
@@ -20,7 +20,7 @@
 if !(isServer) exitWith {};
 
 params [
-    ["_unit", [], [[]]]
+    ["_units", [], [[]]]
 ];
 
 // Check input
@@ -34,5 +34,5 @@ if (count _units == 0) exitWith {
     ] call EFUNC(main,log);
 };
 
-// Remove unit from the channel
-GVAR(adminChannelID) radioChannelRemove _unit;
+// Remove units from the channel
+GVAR(adminChannelID) radioChannelRemove _units;

@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_admin_fnc_eventAdminMenuOpened
+        call MF_admin_fnc_handleAdminMenuOpened
 
     Returns:
         void
@@ -21,7 +21,7 @@ if !(hasInterface) exitWith {};
 
 [{!isNull findDisplay 799 && isNull findDisplay 91919}, {
     // Start the stats PFH
-    call FUNC(startStatsPFH);
+    call FUNC(addStatsPFH);
 
     // Get the player list
     call FUNC(updatePlayerList);

@@ -31,7 +31,7 @@ private _text = format ["%1  %2 (by %3)", _time, _killed, _killer];
 PUSH(EGVAR(end_mission,friendlyFires),_text);
 
 // Notify if the player is a game master
-if (isServer || {call FUNC(isAdmin)}) then {
+if (isServer || {call FUNC(isGameMaster)}) then {
     [
         COMPONENT_STR,
         "INFO",

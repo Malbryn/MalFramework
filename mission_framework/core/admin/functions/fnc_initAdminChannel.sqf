@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_admin_fnc_createAdminChannel
+        call MF_admin_fnc_initAdminChannel
 
     Returns:
         void
@@ -34,5 +34,5 @@ if (_adminChannelID != 0) then {
     publicVariable QGVAR(adminChannelID);
 
     // Add admins to the channel
-    [QGVAR(onAddToAdminChannel), [GVAR(admins)]] call CFUNC(localEvent);
+    [QGVAR(onAddToAdminChannel), [GVAR(gameMasters)]] call CFUNC(localEvent);
 };

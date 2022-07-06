@@ -8,10 +8,10 @@
         Creates a curator logic for the game masters.
 
     Arguments:
-        0: OBJECT - The unit who has the access to curator
+        0: OBJECT - Player to assign the curator access to
 
     Example:
-        [_unit] call MF_admin_fnc_createCurator
+        [_unit] call MF_admin_fnc_handleCuratorCreated
 
     Returns:
         void
@@ -43,22 +43,25 @@ private _logic = (createGroup sideLogic) createUnit [
     "CAN_COLLIDE"
 ];
 
+// Assign the curator logic
 [_logic, _unit, true] call AFUNC(zeus,bi_moduleCurator);
 _unit assignCurator _logic;
 
+// Manage editable objects in the zeus interface
 _logic addCuratorEditableObjects [allPlayers, true];
 _logic addCuratorEditableObjects [(allMissionObjects "Air"), true];
 _logic addCuratorEditableObjects [(allMissionObjects "Ship"), true];
 _logic addCuratorEditableObjects [(allMissionObjects "LandVehicle"), true];
 _logic addCuratorEditableObjects [(allMissionObjects "Man"), true];
 
+// Save the reference to the curator object
 SETPVAR(_unit,GVAR(curatorLogic),_logic);
 
 // Log
 [
     COMPONENT_STR,
     "INFO",
-    "Assigned as Curator",
+    "Assigned curator",
     false,
     3,
     _unit

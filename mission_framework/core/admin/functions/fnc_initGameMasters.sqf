@@ -5,13 +5,13 @@
         Malbryn
 
     Description:
-        Initialises the array that contains the UID of the admins.
+        Initialises the array that contains the UID of the game masters.
 
     Arguments:
         -
 
     Example:
-        call MF_admin_fnc_initAdmins
+        call MF_admin_fnc_initGameMasters
 
     Returns:
         void
@@ -20,13 +20,13 @@
 if !(isServer) exitWith {};
 
 // Reset the array
-GVAR(admins) = [];
+GVAR(gameMasters) = [];
 
 // Add the mission maker
 private _missionMakerUID = GETPAVAR(GVARMAIN(missionMaker),"");
 
 if (_missionMakerUID != "") then {
-    GVAR(admins) pushBack _missionMakerUID;
+    GVAR(gameMasters) pushBack _missionMakerUID;
 };
 
 // Find the admin
@@ -34,17 +34,17 @@ private _adminArray = allPlayers select { 0 < admin owner _x };
 
 if (0 < count _adminArray) then {
     private _adminUID = getPlayerUID (_adminArray select 0);
-    GVAR(admins) pushBackUnique _adminUID;
+    GVAR(gameMasters) pushBackUnique _adminUID;
 };
 
 // Sync the array with the clients
-publicVariable QGVAR(admins);
+publicVariable QGVAR(gameMasters);
 
 // Log
 [
     COMPONENT_STR,
     "INFO",
-    format ["Current admins: %1", GVAR(admins)],
+    format ["Current admins: %1", GVAR(gameMasters)],
     false,
     1
 ] call EFUNC(main,log);

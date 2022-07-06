@@ -19,12 +19,12 @@
 
 if !(hasInterface) exitWith {};
 
-if !(call FUNC(isAdmin)) exitWith {};
+if !(call FUNC(isGameMaster)) exitWith {};
 
 private _toggle = GVAR(toggleFPS);
 
 if (_toggle) then {
-    [QGVAR(displayFPS), false] call CFUNC(globalEvent);
+    [QGVAR(onClientFPSDisplayChanged), false] call CFUNC(globalEvent);
     removeMissionEventHandler ["Draw3D", GVAR(fpsEH)];
 
     GVAR(fpsEH) = nil;
@@ -37,7 +37,7 @@ if (_toggle) then {
         true
     ] call EFUNC(main,log);
 } else {
-    [QGVAR(displayFPS), true] call CFUNC(globalEvent);
+    [QGVAR(onClientFPSDisplayChanged), true] call CFUNC(globalEvent);
 
     GVAR(fpsEH) = addMissionEventHandler ["Draw3D", {call FUNC(drawFPS)}];
     GVAR(toggleFPS) = true;
