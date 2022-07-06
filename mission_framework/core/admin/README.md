@@ -14,12 +14,7 @@ _Note:_
 _No further setup is required._
 
 ## Config:
-_Description of each value set in the config file._
-
-| Variable        | Variable type | Default value | Game mode | Description                             |
-|:--------------- |:------------- |:------------- |:--------- |:--------------------------------------- |
-| `enableArsenal` | `BOOLEAN`     | `true`        | Coop      | Enable Arsenal option in the admin menu |
-| `enableCurator` | `BOOLEAN`     | `true`        | Coop      | Enable Curator assignment               |
+\-
 
 ## Supported mission type(s):
  - Coop

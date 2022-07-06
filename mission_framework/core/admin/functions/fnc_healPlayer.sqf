@@ -20,15 +20,6 @@
 
 if !(hasInterface) exitWith {};
 
-if (GVARMAIN(isTvT) && !GVARMAIN(debugMode)) exitWith {
-    [
-        COMPONENT_STR,
-        "INFO",
-        "Healing is not available in TvT missions",
-        true
-    ] call EFUNC(main,log);
-};
-
 // Get the currently selected player
 private _player = lbText [718, lbCurSel 718];
 
