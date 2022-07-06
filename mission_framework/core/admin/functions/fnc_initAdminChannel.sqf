@@ -34,5 +34,7 @@ if (_adminChannelID != 0) then {
     publicVariable QGVAR(adminChannelID);
 
     // Add admins to the channel
-    [QGVAR(onAddToAdminChannel), [GVAR(gameMasters)]] call CFUNC(localEvent);
+    private _units = [GVAR(gameMasters)] call EFUNC(common,getUnitsByUID);
+
+    [QGVAR(onAddedToAdminChannel), [_units]] call CFUNC(localEvent);
 };

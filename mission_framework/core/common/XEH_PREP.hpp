@@ -4,6 +4,7 @@ PREP(eventHandleDisconnect);
 PREP(getSystemTime);
 PREP(getTimeStamp);
 PREP(getUnitDescription);
+PREP(getUnitsByUID);
 PREP(initACESpectator);
 PREP(initChair);
 PREP(initCTF);
