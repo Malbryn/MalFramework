@@ -35,4 +35,4 @@ if (isNull _unit) exitWith {
 };
 
 // Remove from admin channel
-[QGVAR(onRemoveFromAdminChannel), [_unit]] call CFUNC(localEvent);
+[QGVAR(onRemovedFromAdminChannel), [_unit]] call CFUNC(localEvent);

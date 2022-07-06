@@ -35,4 +35,4 @@ if (isNull _unit) exitWith {
 };
 
 // Add to admin channel
-[QGVAR(onAddToAdminChannel), [_unit]] call CFUNC(localEvent);
+[QGVAR(onAddedToAdminChannel), [_unit]] call CFUNC(localEvent);

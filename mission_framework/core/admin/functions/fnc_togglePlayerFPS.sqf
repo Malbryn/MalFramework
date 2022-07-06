@@ -30,6 +30,7 @@ if (_toggle) then {
     GVAR(fpsEH) = nil;
     GVAR(toggleFPS) = false;
 
+    // Log
     [
         COMPONENT_STR,
         "INFO",
@@ -42,6 +43,7 @@ if (_toggle) then {
     GVAR(fpsEH) = addMissionEventHandler ["Draw3D", {call FUNC(drawFPS)}];
     GVAR(toggleFPS) = true;
 
+    // Log
     [
         COMPONENT_STR,
         "INFO",

@@ -11,7 +11,7 @@
         0: ARRAY - The player(s) to be removed from the channel
 
     Example:
-        [[player1, player2]] call MF_admin_fnc_handleRemoveFromAdminChannel
+        [[player1, player2]] call MF_admin_fnc_handleRemovedFromAdminChannel
 
     Returns:
         void

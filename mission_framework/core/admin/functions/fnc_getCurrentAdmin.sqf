@@ -32,7 +32,9 @@ if (count GVAR(gameMasters) > 1) then {
     };
 
     _admin = _filtered select 0;
-} else if (count GVAR(gameMasters) > 0) then {
+};
+
+if (count GVAR(gameMasters) > 0) then {
     _admin = GVAR(gameMasters) select 0;
 };
 
