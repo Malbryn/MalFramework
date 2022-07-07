@@ -5,13 +5,13 @@
         Malbryn
 
     Description:
-        Adds unit(s) to the admin channel.
+        Removes unit(s) from the admin channel.
 
     Arguments:
-        0: ARRAY - The player(s) to be added to the channel
+        0: ARRAY - The player(s) to be removed from the channel
 
     Example:
-        [[player1, player2]] call MF_admin_fnc_handleAddToAdminChannel
+        [[player1, player2]] call MF_admin_fnc_removeFromAdminChannel
 
     Returns:
         void
@@ -28,11 +28,11 @@ if (count _units == 0) exitWith {
     [
         COMPONENT_STR,
         "ERROR",
-        "Cannot add the unit(s) to the admin channel, the unit array is empty",
+        "Cannot remove the unit(s) from the admin channel, the unit array is empty",
         false,
         1
     ] call EFUNC(main,log);
 };
 
-// Add units to the channel
-GVAR(adminChannelID) radioChannelAdd _units;
+// Remove units from the channel
+GVAR(adminChannelID) radioChannelRemove _units;

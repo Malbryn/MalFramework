@@ -34,5 +34,7 @@ if (isNull _unit) exitWith {
     ] call EFUNC(main,log);
 };
 
+// TODO: Add curator access
+
 // Add to admin channel
-[QGVAR(onAddedToAdminChannel), [_unit]] call CFUNC(localEvent);
+[[_unit]] call FUNC(addToAdminChannel);

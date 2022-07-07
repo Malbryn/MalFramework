@@ -25,20 +25,6 @@ addMissionEventHandler ["OnUserAdminStateChanged", {
     [_unit] call FUNC(handleAdminLoggedOut);
 }] call CFUNC(addEventHandler);
 
-// Added to admin channel
-[QGVAR(onAddedToAdminChannel), {
-    params ["_units"];
-
-    [_units] call FUNC(handleAddedToAdminChannel);
-}] call CFUNC(addEventHandler);
-
-// Removed from admin channel
-[QGVAR(onRemovedFromAdminChannel), {
-    params ["_units"];
-
-    [_units] call FUNC(handleRemovedFromAdminChannel);
-}] call CFUNC(addEventHandler);
-
 // Curator created
 [QGVAR(onCuratorCreated), {
     params ["_unit"];

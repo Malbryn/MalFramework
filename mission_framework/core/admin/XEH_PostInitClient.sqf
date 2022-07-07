@@ -4,11 +4,6 @@
 // EVENTS
 /**************************************************************************************************/
 
-// Curator
-[QGVARMAIN(initFramework), {
-    call FUNC(handleCuratorAssigned);
-}] call CFUNC(addEventHandler);
-
 // Low FPS notifications
 [QGVAR(onLowFPS), {
     params ["_fps"];
@@ -29,3 +24,6 @@
 
 // Admin menu
 call FUNC(initAdminMenu);
+
+// Init Curator
+call FUNC(initCurator);

@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Creates a curator logic for the game masters.
+        Creates a curator logic for the passed player.
 
     Arguments:
         0: OBJECT - Player to assign the curator access to

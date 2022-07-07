@@ -34,5 +34,8 @@ if (isNull _unit) exitWith {
     ] call EFUNC(main,log);
 };
 
+// TODO: Remove curator access
+// TODO: Stop player FPS counter
+
 // Remove from admin channel
-[QGVAR(onRemovedFromAdminChannel), [_unit]] call CFUNC(localEvent);
+[[_units]] call FUNC(removeFromAdminChannel);
