@@ -19,6 +19,7 @@ PREP(handlePlayerFPSToggled);
 PREP(healPlayer);
 PREP(initAdminChannel);
 PREP(initAdminMenu);
+PREP(initChatCommands);
 PREP(initCurator);
 PREP(initFPSMonitor);
 PREP(initGameMasters);

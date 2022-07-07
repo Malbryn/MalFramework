@@ -9,7 +9,6 @@ PREP(initACESpectator);
 PREP(initChair);
 PREP(initCTF);
 PREP(isInside);
-PREP(registerChatCommands);
 PREP(removeRadios);
 PREP(selectTarget);
 PREP(setSideValue);

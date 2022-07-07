@@ -36,5 +36,8 @@
 // Admin menu
 call FUNC(initAdminMenu);
 
-// Init Curator
+// Curator
 call FUNC(initCurator);
+
+// Chat commands
+call FUNC(initChatCommands);
