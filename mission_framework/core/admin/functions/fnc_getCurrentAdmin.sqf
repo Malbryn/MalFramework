@@ -24,18 +24,25 @@ if (isServer) exitWith {
     name player;
 };
 
-private _admin = "N/A";
+private _admin = objNull;
+private _adminUID = "";
+private _adminName = "N/A";
 
 if (count GVAR(gameMasters) > 1) then {
+    private _missionMakerUID = GETPAVAR(GVARMAIN(missionMaker),"");
     private _filtered = GVAR(gameMasters) select {
-        _x isNotEqualTo GVARMAIN(missionMaker)
+        _x isNotEqualTo _missionMakerUID
     };
 
-    _admin = _filtered select 0;
+    _adminUID = _filtered select 0;
+    _admin = [_adminUID] call BFUNC(getUnitByUID);
 };
 
 if (count GVAR(gameMasters) > 0) then {
-    _admin = GVAR(gameMasters) select 0;
+    _adminUID = GVAR(gameMasters) select 0;
+    _admin = [_adminUID] call BFUNC(getUnitByUID);
 };
 
-_admin;
+_adminName = name _admin;
+
+_adminName

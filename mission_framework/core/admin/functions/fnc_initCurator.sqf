@@ -19,8 +19,8 @@
 
 if !(hasInterface) exitWith {};
 
-if !(call FUNC(isGameMaster)) exitWith {};
-
 [QGVARMAIN(initFramework), {
-    [player] call FUNC(createCurator);
+    if (call FUNC(isGameMaster)) then {
+        [QGVAR(onCuratorCreated), player] call CFUNC(serverEvent);
+    };
 }] call CFUNC(addEventHandler);

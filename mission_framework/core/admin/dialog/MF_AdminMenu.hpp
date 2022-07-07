@@ -74,7 +74,7 @@ class MF_AdminMenu
             soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
-            onMouseButtonClick = "call MF_admin_fnc_closeAdminMenu";
+            onMouseButtonUp = "['MF_admin_onAdminMenuClosed'] call CBA_fnc_localEvent";
         };
 
         class ListboxPlayerlist
@@ -856,7 +856,7 @@ class MF_AdminMenu
             soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
-            onMouseButtonClick = "call MF_admin_fnc_togglePlayerFPS";
+            onMouseButtonClick = "['MF_admin_onPlayerFPSToggled'] call CBA_fnc_localEvent";
         };
 
         class ButtonTerminateMission

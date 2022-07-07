@@ -34,8 +34,28 @@ if (isNull _unit) exitWith {
     ] call EFUNC(main,log);
 };
 
-// TODO: Remove curator access
-// TODO: Stop player FPS counter
+// Remove curator access
+private _curatorObj = GETVAR(_unit,GVAR(curatorLogic),objNull);
+
+if !(isNull _curatorObj) then {
+    unassignCurator _curatorObj;
+    deleteVehicle _curatorObj;
+} else {
+    // Log
+    [
+        COMPONENT_STR,
+        "WARNING",
+        "Cannot remove admin curator access, the curator object is not found",
+        false,
+        1
+    ] call EFUNC(main,log);
+};
+
+// Stop any running player 3D FPS counter
+[QGVAR(onPlayerFPSToggled), [], _unit] call CFUNC(targetEvent);
+
+// Close admin menu
+[QGVAR(onAdminMenuClosed), [], _unit] call CFUNC(targetEvent);
 
 // Remove from admin channel
-[[_units]] call FUNC(removeFromAdminChannel);
+[[_unit]] call FUNC(removeFromAdminChannel);

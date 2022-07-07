@@ -20,7 +20,7 @@
 if !(hasInterface) exitWith {};
 
 // Close dialog
-call FUNC(closeAdminMenu);
+[QGVAR(onAdminMenuClosed), []] call CFUNC(localEvent);
 
 // Open Arsenal
 [player, player, true] call AFUNC(arsenal,openBox);

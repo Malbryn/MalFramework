@@ -34,7 +34,8 @@ if (isNull _unit) exitWith {
     ] call EFUNC(main,log);
 };
 
-// TODO: Add curator access
+// Create curator entity for the player
+[QGVAR(onCuratorCreated), [_unit]] call CFUNC(localEvent);
 
 // Add to admin channel
 [[_unit]] call FUNC(addToAdminChannel);

@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_admin_fnc_togglePlayerFPS
+        call MF_admin_fnc_handlePlayerFPSToggled
 
     Returns:
         void

@@ -30,10 +30,11 @@ if (_missionMakerUID != "") then {
 };
 
 // Find the admin
-private _adminArray = allPlayers select { 0 < admin owner _x };
+private _adminArray = allUsers select { 0 < (getUserInfo _x) select 8 };
 
 if (0 < count _adminArray) then {
-    private _adminUID = getPlayerUID (_adminArray select 0);
+    private _admin = _adminArray select 0;
+    private _adminUID = (getUserInfo _admin) select 2;
     GVAR(gameMasters) pushBackUnique _adminUID;
 };
 

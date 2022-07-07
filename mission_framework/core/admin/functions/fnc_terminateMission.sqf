@@ -41,7 +41,7 @@ if !(hasInterface) exitWith {};
 
         // Close the dialog
         [{!isNull findDisplay 799}, {
-            call FUNC(closeAdminMenu);
+            [QGVAR(onAdminMenuClosed)] call CFUNC(localEvent);
         }] call CFUNC(waitUntilAndExecute);
     };
 };
