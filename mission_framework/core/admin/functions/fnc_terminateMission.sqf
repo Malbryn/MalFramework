@@ -30,11 +30,18 @@ if !(hasInterface) exitWith {};
     ] call BFUNC(guiMessage);
 
     if (_confirm) then {
-        [QEGVAR(end_mission,callMission), ["MissionTerminated", false, playerSide]] call CFUNC(serverEvent);
+        [
+            QEGVAR(end_mission,callMission),
+            [
+                "MissionTerminated",
+                false,
+                playerSide
+            ]
+        ] call CFUNC(serverEvent);
 
         // Close the dialog
         [{!isNull findDisplay 799}, {
-            call FUNC(closeAdminMenu);
+            [QGVAR(onAdminMenuClosed)] call CFUNC(localEvent);
         }] call CFUNC(waitUntilAndExecute);
     };
 };

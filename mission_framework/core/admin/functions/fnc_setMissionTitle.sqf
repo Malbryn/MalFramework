@@ -22,5 +22,9 @@ if !(hasInterface) exitWith {};
 // Exit if the dialog is not visible
 if (isNull findDisplay 799) exitWith {};
 
-private _title = format ["%1 (%2)", briefingName, [missionConfigFile] call BFUNC(overviewAuthor)];
+private _title = format [
+    "%1 (%2)",
+    briefingName, [missionConfigFile] call BFUNC(overviewAuthor)
+];
+
 ctrlSetText [713, _title];

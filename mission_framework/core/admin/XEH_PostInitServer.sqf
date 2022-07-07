@@ -1,46 +1,54 @@
 #include "script_component.hpp"
 
-// Current logged-in admin check
-[QGVAR(getAdmin), {
-    GVAR(currentAdmin) = allPlayers select {(admin (owner _x)) > 0};
-    publicVariable QGVAR(currentAdmin);
+/**************************************************************************************************/
+// EVENTS
+/**************************************************************************************************/
+
+// Admin state changed
+addMissionEventHandler ["OnUserAdminStateChanged", {
+    params ["_networkId", "_loggedIn", "_votedIn"];
+
+    [_networkId, _loggedIn, _votedIn] call FUNC(handleAdminStateChanged);
+}];
+
+// Admin logged in
+[QGVAR(onAdminLoggedIn), {
+    params ["_unit"];
+
+    [_unit] call FUNC(handleAdminLoggedIn);
 }] call CFUNC(addEventHandler);
 
-// Curator
-if (GVAR(enableCurator) && (!GVARMAIN(isTvT) || {GVARMAIN(isTvT) && GVARMAIN(debugMode)})) then {
-    [QGVAR(curatorRegistered), {
-        params ["_unit"];
+// Admin logged out
+[QGVAR(onAdminLoggedOut), {
+    params ["_unit"];
 
-        [_unit] call FUNC(createCurator);
-    }] call CFUNC(addEventHandler);
-    
+    [_unit] call FUNC(handleAdminLoggedOut);
+}] call CFUNC(addEventHandler);
 
-    [QGVAR(curatorReassigned), {
-        params ["_unit"];
+// Curator created
+[QGVAR(onCuratorCreated), {
+    params ["_unit"];
 
-        [_unit] call FUNC(reassignCuratorServer);
-    }] call CFUNC(addEventHandler);
-};
+    [_unit] call FUNC(handleCuratorCreated);
+}] call CFUNC(addEventHandler);
 
-// FPS check
-[{
-    GVAR(serverFPS) = parseNumber (diag_fps toFixed 2);
+// Curator reassigned
+[QGVAR(onCuratorReassigned), {
+    params ["_unit"];
 
-    // Save the lowest framerate
-    // Delay it by few seconds to ignore the usual lag spike at mission start
-    private _tempMin = parseNumber (diag_fpsMin toFixed 2);
-    if (_tempMin < GVAR(serverFPSMin) && CBA_MissionTime > 5) then {
-        GVAR(serverFPSMin) = _tempMin;
-    };
+    [_unit] call FUNC(handleCuratorReassigned);
+}] call CFUNC(addEventHandler);
 
-    publicVariable QGVAR(serverFPS);
-    publicVariable QGVAR(serverFPSMin);
 
-    if (GVAR(serverFPS) < 20) then {
-        [QGVAR(fpsWarning), GVAR(serverFPS)] call CFUNC(globalEvent);
-    };
-}, 2] call CFUNC(addPerFrameHandler);
+/**************************************************************************************************/
+// INIT FUNCTIONS
+/**************************************************************************************************/
+
+// Admin array
+call FUNC(initGameMasters);
 
 // Admin text channel
-GVAR(adminChannelID) = radioChannelCreate [[0.9, 0.2, 0.1, 1], "Admin channel", "Admin chat (%UNIT_NAME)", [], true];
-publicVariable QGVAR(adminChannelID);
+call FUNC(initAdminChannel);
+
+// FPS monitoring
+call FUNC(initFPSMonitor);

@@ -11,7 +11,7 @@
         -
 
     Example:
-        call MF_common_fnc_registerChatCommands
+        call MF_admin_fnc_initChatCommands
 
     Returns:
         void
@@ -19,13 +19,7 @@
 
 if !(hasInterface) exitWith {};
 
-// Add admin menu (if the admin logs-in after mission init)
-["addAdminMenu", {
-    call EFUNC(admin,addAdminMenu);
-    [COMPONENT_STR, "INFO", "Adding admin menu...", true] call EFUNC(main,log);
-}, "admin"] call CFUNC(registerChatCommand);
-
-// Add an option to terminate the mission as admin
+// Terminate the mission
 ["terminateMission", {
     [QEGVAR(end_mission,callMission), ["MissionTerminated", false, playerSide]] call CFUNC(serverEvent);
     [COMPONENT_STR, "INFO", "Terminating mission...", true] call EFUNC(main,log);

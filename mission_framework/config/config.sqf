@@ -95,11 +95,6 @@ GVARMAIN(moduleACRE) = false;  // Coop & TvT
 EGVAR(acre,useBabel) = false;  // TvT
 
 
-// Admin menu
-EGVAR(admin,enableArsenal) = true;  // Coop
-EGVAR(admin,enableCurator) = true;  // Coop
-
-
 // AI Spawner
 GVARMAIN(moduleAISpawner) = false;  // Coop & TvT
 

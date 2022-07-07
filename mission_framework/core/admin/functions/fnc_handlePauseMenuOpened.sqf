@@ -5,13 +5,13 @@
         Malbryn
 
     Description:
-        Adds a button to the pause menu that opens Admin menu.
+        Adds a button to the pause menu that opens the Admin menu.
 
     Arguments:
         -
 
     Example:
-        call MF_admin_fnc_onPause
+        call MF_admin_fnc_handlePauseMenuOpened
 
     Returns:
         void
@@ -19,6 +19,7 @@
 
 if !(hasInterface) exitWith {};
 
+// FUNC(isGameMaster) doesn't work here
 if !(IS_ADMIN_LOGGED || getPlayerUID player == GETPAVAR(GVARMAIN(missionMaker),"")) exitWith {};
 
 disableSerialization;
@@ -38,7 +39,7 @@ _button ctrlAddEventHandler ["ButtonClick", {
     params ["_ctrl"];
     _display = ctrlParent _ctrl;
 
-    createDialog "MF_AdminMenu";
+    createDialog QGVARMAIN(AdminMenu);
     _display closeDisplay 1;
 }];
 

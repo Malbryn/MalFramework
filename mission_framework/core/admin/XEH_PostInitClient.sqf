@@ -1,38 +1,43 @@
 #include "script_component.hpp"
 
-// Server FPS
-[QGVAR(fpsWarning), {
+/**************************************************************************************************/
+// EVENTS
+/**************************************************************************************************/
+
+// Admin menu closed
+[QGVAR(onAdminMenuClosed), {
+    call FUNC(handleAdminMenuClosed);
+}] call CFUNC(addEventHandler);
+
+// Low FPS notifications
+[QGVAR(onLowFPS), {
     params ["_fps"];
 
-    [_fps] call FUNC(fpsNotification);
+    [_fps] call FUNC(handleLowFPS);
 }] call CFUNC(addEventHandler);
 
-// Client FPS
-[QGVAR(displayFPS), {
+// Client FPS counter
+[QGVAR(onClientFPSDisplayChanged), {
     params ["_toggle"];
 
-    if (GVAR(isMonitoring) && _toggle) exitWith {};
-    if (!GVAR(isMonitoring) && !_toggle) exitWith {};
-
-    if (_toggle) then {
-        GVAR(fpsMonitor) = [{
-            SETPVAR(player,GVAR(clientFPS),round diag_fps);
-        }, 1] call CFUNC(addPerFrameHandler);
-
-        GVAR(isMonitoring) = true;
-    } else {
-        [GVAR(fpsMonitor)] call CFUNC(removePerFrameHandler);
-
-        GVAR(isMonitoring) = false;
-    }
+    [_toggle] call FUNC(handleClientFPSDisplayChanged);
 }] call CFUNC(addEventHandler);
 
-// Curator
-if (GVAR(enableCurator) && (!GVARMAIN(isTvT) || {GVARMAIN(isTvT) && GVARMAIN(debugMode)})) then {
-    [QGVARMAIN(initFramework), {
-        call FUNC(assignCurator);
-    }] call CFUNC(addEventHandler);
-};
+// Client FPS display
+[QGVAR(onPlayerFPSToggled), {
+    call FUNC(handlePlayerFPSToggled);
+}] call CFUNC(addEventHandler);
 
-// Add admin menu
-call FUNC(addAdminMenu);
+
+/**************************************************************************************************/
+// INIT FUNCTIONS
+/**************************************************************************************************/
+
+// Admin menu
+call FUNC(initAdminMenu);
+
+// Curator
+call FUNC(initCurator);
+
+// Chat commands
+call FUNC(initChatCommands);

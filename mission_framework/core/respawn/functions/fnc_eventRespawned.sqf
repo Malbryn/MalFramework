@@ -76,7 +76,7 @@ cutText ["", "BLACK FADED", 5, true];
     };
 
     // Reassign curator
-    if (IS_ADMIN_LOGGED || getPlayerUID _unit == GETPAVAR(GVARMAIN(missionMaker),"")) then {
+    if (call EFUNC(admin,isGameMaster)) then {
         [QEGVAR(admin,curatorReassigned), [_unit]] call CFUNC(serverEvent);
     };
 

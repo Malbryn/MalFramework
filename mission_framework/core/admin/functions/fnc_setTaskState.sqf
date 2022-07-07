@@ -40,7 +40,13 @@ if (_taskID != "") then {
 
     lbSetColor [712, lbCurSel 712, _colour];
 
-    [COMPONENT_STR, "INFO", "Task state has been updated", true] call EFUNC(main,log);
+    [
+        COMPONENT_STR,
+        "INFO",
+        "Task state has been updated",
+        true
+    ] call EFUNC(main,log);
 };
 
+// Update the task list
 call FUNC(updateTaskList);
