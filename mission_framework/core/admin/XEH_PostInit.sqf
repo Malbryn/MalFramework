@@ -1,8 +1,12 @@
 #include "script_component.hpp"
 
-// Friendly fire event
-[QGVAR(logFF), {
+/**************************************************************************************************/
+// EVENTS
+/**************************************************************************************************/
+
+// Friendly fire
+[QGVAR(onFriendlyFire), {
     params ["_unit", "_killer"];
 
-    [_unit, _killer] call FUNC(logFriendlyFire);
+    [_unit, _killer] call FUNC(handleFriendlyFire);
 }] call CFUNC(addEventHandler);

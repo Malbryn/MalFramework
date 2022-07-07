@@ -36,7 +36,7 @@ if (GVARMAIN(isTvT)) then {
 private _killer = GETVAR(_unit,ace_medical_lastDamageSource,objNull);
 
 if (isPlayer _killer && {(side _killer) == playerSide}) then {
-    [QEGVAR(admin,logFF), [name _unit, name _killer]] call CFUNC(globalEvent);
+    [QEGVAR(admin,onFriendlyFire), [name _unit, name _killer]] call CFUNC(globalEvent);
 };
 
 // Disconnect connected UAV's

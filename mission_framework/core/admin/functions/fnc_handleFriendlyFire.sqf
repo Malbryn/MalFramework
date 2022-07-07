@@ -13,7 +13,7 @@
         1: STRING - Name of the player who was the killer
 
     Example:
-        ["player1", "player2"] call MF_admin_fnc_friendlyFireMessage
+        ["player1", "player2"] call MF_admin_fnc_handleFriendlyFire
 
     Returns:
         void
