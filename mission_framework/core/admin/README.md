@@ -8,7 +8,6 @@ _Only the Game Masters have access to the Admin modules._
 
 _Note:_
  - _This is a core module and cannot be turned off in the config._
- - _Certain functions (e.g. Arsenal, healing) won't work in TvT missions._
 
 ## Usage:
 _No further setup is required._
