@@ -49,6 +49,7 @@ GVARMAIN(taskThreshold) = 66;  // Percentage of the tasks that have to be comple
 GVARMAIN(moduleGear) = true;  // Coop & TvT
 EGVAR(gear,useArsenalWhitelist) = false;  // Allows the creation of arsenal objects with custom whitelist based on the player's role
 EGVAR(gear,saveGearInArsenal) = false;  // Should the player's gear be saved (and applied after respawn) after the arsenal is closed
+EGVAR(gear,removeDefaultGear) = true;  // Should the default gear (that the unit has in the editor) be removed if pre-defined gear is disabled
 EGVAR(gear,useLoadouts) = false;  // Apply the pre-defined gear (defined in config\gear\)
 EGVAR(gear,enableAlternativeLoadouts) = false;  // Enable alternative loadouts
 EGVAR(gear,loadoutHash) = [  // Key-value pairs (STRING - ARRAY OF STRINGS) for the alternative loadouts (defined in config\gear\)
