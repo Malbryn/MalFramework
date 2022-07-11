@@ -56,6 +56,13 @@ if (side _unit == sideLogic) exitWith {
     ] call EFUNC(main,log);
 };
 
+// Save the default gear
+private _defaultGear = if (GVAR(removeDefaultGear)) then {
+    [[],[],[],["U_B_CombatUniform_mcam_tshirt",[]],[],[],"","",[],["ItemMap","","","ItemCompass","ItemWatch",""]];
+} else {
+    getUnitLoadout _unit;
+};
+
 // Remove all gear before applying the loadout
 removeHeadgear _unit;
 removeUniform _unit;
@@ -66,9 +73,6 @@ removeAllAssignedItems _unit;
 
 // Find the role of the unit
 private _gear = [];
-private _defaultGear = [
-    [],[],[],["U_B_CombatUniform_mcam_tshirt",[]],[],[],"","",[],["ItemMap","","","ItemCompass","ItemWatch",""]
-];
 
 if (GVAR(useLoadouts)) then {
     if ((side _unit) == west) then {
