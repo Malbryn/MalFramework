@@ -64,8 +64,8 @@ cutText ["", "BLACK FADED", 5, true];
     [{
         params ["_unit"];
 
-        private _insignia = GETVAR(_unit,EGVAR(_unit,insignia),"");
-        [QEGVAR(_unit,setInsignia), [_unit, _insignia]] call CFUNC(globalEvent);
+        private _insignia = GETVAR(_unit,EGVAR(player,insignia),"");
+        [QEGVAR(player,setInsignia), [_unit, _insignia]] call CFUNC(globalEvent);
     }, [_unit], 3] call CFUNC(waitAndExecute);
 
     // Set radios
