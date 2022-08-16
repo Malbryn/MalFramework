@@ -28,7 +28,7 @@ GVAR(TPPoles) apply {
     _tpPoles pushBack _pole;
 };
 
-if (count _tpPoles == 0) exitWith {
+if (_tpPoles isEqualTo []) exitWith {
     [COMPONENT_STR, "ERROR", "The teleport pole array is empty", true] call EFUNC(main,log);
 };
 

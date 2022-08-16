@@ -30,7 +30,7 @@ if !(isNil {GETMVAR(GVAR(HAB),nil)}) exitWith {
 };
 
 // Check if there's enemy nearby
-if !(allUnits findIf {side _x != civilian && side _x getFriend playerSide < 0.6 && _x distance player < 50} == -1) exitWith {
+if (allUnits findIf {side _x != civilian && side _x getFriend playerSide < 0.6 && _x distance player < 50} != -1) exitWith {
     ["Warning", ["Cannot deploy a HAB when enemies are nearby"]] call BFUNC(showNotification);
 };
 

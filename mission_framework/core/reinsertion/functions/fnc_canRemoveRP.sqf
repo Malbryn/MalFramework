@@ -28,6 +28,4 @@ if !(GETVAR(player,EGVAR(player,isSL),false)) exitWith { false };
 private _id = GETVAR((group player),GVAR(RPTent),nil);
 private _RPTent = objectFromNetId _id;
 
-if (isNil "_id" || _RPTent isNotEqualTo _obj) exitWith { false };
-
-true
+!isNil "_id" && {_RPTent isEqualTo _obj}

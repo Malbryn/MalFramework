@@ -28,6 +28,4 @@ if !(GETVAR(player,EGVAR(player,isCO),false)) exitWith { false };
 private _id = GETMVAR(GVAR(HAB),nil);
 private _HAB = objectFromNetId _id;
 
-if (isNil "_id" || _HAB isNotEqualTo _obj) exitWith { false };
-
-true
+!isNil "_id" && {_HAB isEqualTo _obj}

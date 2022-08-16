@@ -30,7 +30,7 @@ if (GVAR(RPPickUp) && !(isNil {GETVAR((group player),GVAR(RPTent),nil)})) exitWi
 };
 
 // Check if there's enemy nearby
-if !(allUnits findIf {side _x != civilian && side _x getFriend playerSide < 0.6 && _x distance player < 50} == -1) exitWith {
+if (allUnits findIf {side _x != civilian && side _x getFriend playerSide < 0.6 && _x distance player < 50} != -1) exitWith {
     ["Warning", ["Cannot deploy a RP when enemies are nearby"]] call BFUNC(showNotification);
 };
 
@@ -43,7 +43,7 @@ player playMove "AinvPknlMstpSnonWrflDr_medic5";
         // Remove the previous RP tent and delete the coordinates
         private _id = GETVAR((group player),GVAR(RPTent),nil);
         private _RPTent = objectFromNetId _id;
-        
+
         deleteVehicle _RPTent;
         SETPVAR((group player),GVAR(RPTent),nil);
 
