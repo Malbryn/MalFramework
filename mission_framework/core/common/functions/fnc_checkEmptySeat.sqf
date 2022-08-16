@@ -2,7 +2,7 @@
 
 /*
     Author:
-        Diwako
+        Diwako, johnb43
 
     Description:
         Checks if there's a free seat in the target unit's vehicle
@@ -19,15 +19,11 @@
 
 params [["_target", objNull]];
 
-private _freeSeat = false;
-private _hasDriver = vehicle _target emptyPositions "driver";
-private _hasCommander = vehicle _target emptyPositions "commander";
-private _hasGunner = vehicle _target emptyPositions "gunner";
-private _hasDriver = vehicle _target emptyPositions "driver";
-private _hasCargo = vehicle _target emptyPositions "cargo";
+private _vehicle = vehicle _target;
 
-if (_hasDriver > 0 || _hasCommander > 0 || _hasGunner > 0 || _hasDriver > 0 || _hasCargo > 0) then {
-    _freeSeat = true;
-};
+private _hasDriver = _vehicle emptyPositions "driver";
+private _hasCommander = _vehicle emptyPositions "commander";
+private _hasGunner =_vehicle emptyPositions "gunner";
+private _hasCargo = _vehicle emptyPositions "cargo";
 
-_freeSeat
+_hasDriver > 0 || _hasCommander > 0 || _hasGunner > 0 || _hasCargo > 0

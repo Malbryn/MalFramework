@@ -2,7 +2,7 @@
 
 /*
     Author:
-        Malbryn
+        Malbryn, johnb43
 
     Description:
         Removes the unit's radios (TFAR and ACRE).
@@ -19,6 +19,15 @@
 
 params [["_unit", objNull]];
 
+// TFAR
+if (GVARMAIN(moduleTFAR)) then {
+    (_unit call TFUNC(getRadioItems)) apply {
+        _unit removeItems _x;
+        _unit unlinkItem _x;
+    };
+};
+
+// ACRE
 if ("ItemRadio" in (assignedItems _unit)) then {
     _unit unlinkItem "ItemRadio";
 

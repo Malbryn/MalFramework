@@ -21,10 +21,10 @@ params ["_unit"];
 
 private _inside = false;
 private _worldPos = getPosWorld _unit;
-private _skyPos = getPosWorld _unit vectorAdd [0, 0, 50];
+private _skyPos = _worldPos vectorAdd [0, 0, 50];
 private _line = lineIntersectsSurfaces [_worldPos, _skyPos, _unit, objNull, true, 1, "GEOM", "NONE"];
 
-if (count _line > 0) then {
+if (_line isNotEqualTo []) then {
     private _result = _line#0;
     private _house = _result#3;
 

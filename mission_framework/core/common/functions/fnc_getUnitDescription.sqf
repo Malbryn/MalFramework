@@ -22,8 +22,8 @@ params [["_unit", objNull]];
 
 private _unitDesc = roleDescription _unit;
 
-if (_unitDesc find "@" != -1) then {
-    _unitDescRaw = _unitDesc splitString "@";
+if ("@" in _unitDesc) then {
+    private _unitDescRaw = _unitDesc splitString "@";
     _unitDesc = _unitDescRaw select 0;
 };
 
