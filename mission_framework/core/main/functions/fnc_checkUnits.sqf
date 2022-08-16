@@ -29,6 +29,6 @@ private _hiddenUnits = [];
     };
 } forEach allUnits;
 
-if (count _hiddenUnits != 0) then {
+if (_hiddenUnits isNotEqualTo []) then {
     [COMPONENT_STR, "WARNING", format ["The following units are hidden and have dynamic simulation enabled: %1", _hiddenUnits], true, 0] call FUNC(log);
 };

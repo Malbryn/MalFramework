@@ -22,8 +22,8 @@ if !(hasInterface) exitWith {};
 // Specators can see every marker
 if (side player == sideLogic) exitWith {};
 
-_markersBLU = GVAR(markersBlufor);
-_markersRED = GVAR(markersRedfor);
+private _markersBLU = GVAR(markersBlufor);
+private _markersRED = GVAR(markersRedfor);
 
 if (playerSide == west) then {
     _markersRED apply {deleteMarkerLocal _x};
