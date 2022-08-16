@@ -27,7 +27,7 @@ if !(alive _object) exitWith {
 };
 
 // Children code
-_insertChildren = {
+private _insertChildren = {
     params ["_target", "_player", "_params"];
 
     private _actions = [];
@@ -53,7 +53,7 @@ _insertChildren = {
 
 // Main action
 private _menu = [
-    "Heal", "Heal", "\a3\ui_f\data\IGUI\Cfg\Actions\heal_ca.paa", {}, {}, _insertChildren, [], "", 2, [false, false, false, true, false]
+    'Heal', 'Heal', '\a3\ui_f\data\IGUI\Cfg\Actions\heal_ca.paa', {}, {}, _insertChildren, [], "", 2, [false, false, false, true, false]
 ] call AFUNC(interact_menu,createAction);
 
 [_object, 0, [], _menu] call AFUNC(interact_menu,addActionToObject);

@@ -30,15 +30,15 @@ private _vehicleActions = [];
 
 {
     private _vehicle = _x;
-    private _icon = getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "Icon");
+    private _icon = getText (configOf _vehicle >> "Icon");
 
-    if !((_icon select [0, 1]) == "\") then {
+    if ((_icon select [0, 1]) isNotEqualTo "\") then {
         _icon = "";
     };
 
     private _action = [
         _vehicle,
-        getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName"),
+        getText (configOf _vehicle >> "displayName"),
         _icon,
         {
             _this call FUNC(rearmEntireVehicle);

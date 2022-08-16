@@ -21,18 +21,15 @@
 
 params ["_unit", "_killer"];
 
-if (vehicle _killer != vehicle _unit && _killer != objNull) then {
+if (vehicle _killer != vehicle _unit && !isNull _killer) then {
     GVAR(unitPos) = ASLtoAGL eyePos _unit;
     GVAR(killer) = _killer;
     GVAR(killerPos) = ASLtoAGL eyePos _killer;
 };
 
 private _cam = GETMVAR(BIS_EGSpectatorCamera_camera,objNull);
-private _pos = [2000, 2000, 100];
-private _dir = 0;
-
-_pos = [(getpos _unit)#0, (getpos _unit)#1, ((getposATL _unit)#2) + 1.2];
-_dir = getDir _unit;
+private _pos = (getPosATL _unit) vectorAdd [0, 0, 1.2];
+private _dir = getDir _unit;
 
 if (abs(_pos#0) < 2 && abs(_pos#1) < 2) then {
     _pos = [2000, 2000, 100];
@@ -52,17 +49,17 @@ private _display = if (GVARMAIN(useACESpectator)) then [{60000}, {60492}];
 if !(isNull GVAR(killer)) then {
     GVAR(distance) = GVAR(killer) distance _unit;
     _pos = ([_pos, -1.8, ([_unit, GVAR(killer)] call BFUNC(dirTo))] call BFUNC(relPos));
-    _cam setposATL _pos;
-    _temp1 = ([getposASL _cam, getposASL GVAR(killer)] call BFUNC(vectorFromXToY));
+    _cam setPosATL _pos;
+    _temp1 = ([getPosASL _cam, getPosASL GVAR(killer)] call BFUNC(vectorFromXToY));
     _temp = (_temp1 call CFUNC(vect2Polar));
-    
+
     if (abs(_temp#2) > 89) then {
         _temp set [2, 0]
     };
 
     [_cam, [_temp#1, _temp#2]] call BFUNC(setObjectRotation);
 } else {
-    _cam setposATL _pos;
+    _cam setPosATL _pos;
     _cam setDir _dir;
 };
 
