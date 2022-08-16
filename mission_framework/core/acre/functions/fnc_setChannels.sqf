@@ -23,9 +23,7 @@ if !(hasInterface) exitWith {};
 params [["_radio", ""], ["_channel", 1]];
 
 if (_radio != "") then {
-    private _array = [_radio, _channel];
-
-    GVAR(channels) pushBackUnique _array;
+    GVAR(channels) pushBackUnique [_radio, _channel];
 };
 
 [{call acre_api_fnc_isInitialized}, {
