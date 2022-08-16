@@ -23,7 +23,7 @@ if !(hasInterface) exitWith {};
 if (GETVAR(player,EGVAR(player,isSL),false) && GVARMAIN(moduleRP)) then {
     private _target = [player] call EFUNC(common,selectTarget);
 
-    if (_target != objNull && {!(GETVAR(_target,EGVAR(player,isSL),false))}) then {
+    if (!isNull _target && {!(GETVAR(_target,EGVAR(player,isSL),false))}) then {
         SETPVAR(_target,EGVAR(player,isSL),true);
         [QEGVAR(reinsertion,transferRP), [], _target] call CFUNC(targetEvent);
         [QGVARMAIN(notification_2), ["Info", "You can now deploy the squad rally point"], _target] call CFUNC(targetEvent);
@@ -34,7 +34,7 @@ if (GETVAR(player,EGVAR(player,isSL),false) && GVARMAIN(moduleRP)) then {
 if (GETVAR(player,EGVAR(player,isCO),false) && (GVARMAIN(moduleSupplyDrop) || GVARMAIN(moduleRetreat) || GVAR(waveRespawn) == MANUAL)) then {
     private _target = [player] call EFUNC(common,selectTarget);
 
-    if (_target != objNull && {!(GETVAR(_target,EGVAR(player,isCO),false))}) then {
+    if (!isNull _target && {!(GETVAR(_target,EGVAR(player,isCO),false))}) then {
         SETPVAR(_target,EGVAR(player,isCO),true);
         [QGVARMAIN(notification_2), ["Info", "You are now in charge of the platoon"], _target] call CFUNC(targetEvent);
 

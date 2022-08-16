@@ -19,7 +19,7 @@
 
 if !(hasInterface) exitWith {};
 
-private _deadPlayers = (allPlayers select {!alive _x});
+private _deadPlayers = allPlayers select {!alive _x};
 private _count = 0;
 
 // Check if the player has respawn tickets left

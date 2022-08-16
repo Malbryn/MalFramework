@@ -33,8 +33,11 @@ if (GETVAR(player,EGVAR(player,isCO),false)) then {
 
             // Count the succeeded tasks
             private _count = 0;
+            private _state = "";
+
             _taskList apply {
-                private _state = _x call BFUNC(taskState);
+                _state = _x call BFUNC(taskState);
+
                 if (_state == "SUCCEEDED") then {
                     _count = _count + 1;
                 };
@@ -47,10 +50,10 @@ if (GETVAR(player,EGVAR(player,isCO),false)) then {
                 case (_rate == 1) : {
                     [QEGVAR(end_mission,callMission), ["MissionSuccess", true, playerSide]] call CFUNC(serverEvent);
                 };
-                case ((GVARMAIN(taskThreshold) * 0.01) <= _rate && _rate < 1) : {
+                case ((GVARMAIN(taskThreshold) * 0.01) <= _rate && {_rate < 1}) : {
                     [QEGVAR(end_mission,callMission), ["WithdrawalMinorSuccess", true, playerSide]] call CFUNC(serverEvent);
                 };
-                case (0 < _rate && _rate < (GVARMAIN(taskThreshold) * 0.01)) : {
+                case (0 < _rate && {_rate < (GVARMAIN(taskThreshold) * 0.01)}) : {
                     [QEGVAR(end_mission,callMission), ["WithdrawalMinorFail", false, playerSide]] call CFUNC(serverEvent);
                 };
                 case (_rate == 0) : {

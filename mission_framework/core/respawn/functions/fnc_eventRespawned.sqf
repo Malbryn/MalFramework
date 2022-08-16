@@ -54,7 +54,7 @@ cutText ["", "BLACK FADED", 5, true];
     private _role = GETVAR(_unit,EGVAR(gear,currentRole),"");
     private _gear = GETVAR(_unit,EGVAR(gear,currentGear),[]);
 
-    if (count _gear != 0) then {
+    if (_gear isNotEqualTo []) then {
         _unit setUnitLoadout _gear;
     } else {
         [_unit, _role] call EFUNC(gear,setGear);
@@ -71,7 +71,9 @@ cutText ["", "BLACK FADED", 5, true];
     // Set radios
     if GVARMAIN(moduleACRE) then {
         call EFUNC(acre,setChannels);
-    } else {
+    };
+
+    if GVARMAIN(moduleTFAR) then {
         [QEGVAR(tfar,setRadios)] call CFUNC(localEvent);
     };
 
@@ -91,7 +93,7 @@ cutText ["", "BLACK FADED", 5, true];
     };
 
     // Re-add custom channels
-    if (count EGVAR(custom_channel,playerCustomChannels) != 0) then {
+    if (EGVAR(custom_channel,playerCustomChannels) isNotEqualTo []) then {
         EGVAR(custom_channel,playerCustomChannels) apply {
             _x radioChannelAdd [_unit];
         };

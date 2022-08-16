@@ -56,7 +56,7 @@ if (!isNull getConnectedUAV _unit) then {
     params ["_unit", "_killer"];
 
     // Screen effects
-    cutText  ["", "BLACK OUT", 5, true];
+    cutText ["", "BLACK OUT", 5, true];
 
     [{
         params ["_unit", "_killer"];
