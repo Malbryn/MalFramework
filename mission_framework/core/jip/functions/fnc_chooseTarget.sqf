@@ -2,7 +2,7 @@
 
 /*
     Author:
-        Diwako (modified by Malbryn)
+        Diwako (modified by Malbryn), johnb43
 
     Description:
         Checks target for a valid unit in the player's group
@@ -20,21 +20,14 @@
 if !(hasInterface) exitWith {};
 
 private _target = objNull;
-private _partGroup = units group player;
+private _leader = leader group player;
 
 // If player is not the leader and the leader is alive then the leader is the target
-if (player != leader group player && {alive leader group player}) then {
-    _target = leader group player;
-};
-
-// If player is the leader or the leader is dead then pick the next best one
-if (player == leader group player || {!alive leader group player}) then {
-    _partGroup = _partGroup - [player];
-
-    // Check if part group is empty
-    if !(count _partGroup == 0) then {
-        _target = _partGroup select (_partGroup findIf {alive _x});
-    };
+if (player != _leader && {alive _leader}) then {
+    _target = _leader;
+} else {
+    // If player is the leader or the leader is dead then pick the next best one
+    _target = [player] call EFUNC(common,selectTarget);
 };
 
 _target

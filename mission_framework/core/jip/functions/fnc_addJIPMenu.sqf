@@ -26,7 +26,7 @@ if !(hasInterface && didJIP) exitWith {};
 
 SETVAR(player,GVAR(spawnPos),getPos player);
 
-private _menu = ["Teleport to squad", "Teleport to squad", "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\transport_ca.paa", {
+private _menu = ['Teleport to squad', 'Teleport to squad', '\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\transport_ca.paa', {
     call FUNC(tpPlayer);
 }, {!visibleMap && (player distance2D GETVAR(player,GVAR(spawnPos),0) < 200)}] call AFUNC(interact_menu,createAction);
 
