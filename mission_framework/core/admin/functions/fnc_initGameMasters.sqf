@@ -22,17 +22,22 @@ if !(isServer) exitWith {};
 // Reset the array
 GVAR(gameMasters) = [];
 
+// Add the local host
+if (hasInterface && {!isDedicated}) then {
+    GVAR(gameMasters) pushBack (getPlayerUID player);
+};
+
 // Add the mission maker
 private _missionMakerUID = GETPAVAR(GVARMAIN(missionMaker),"");
 
 if (_missionMakerUID != "") then {
-    GVAR(gameMasters) pushBack _missionMakerUID;
+    GVAR(gameMasters) pushBackUnique _missionMakerUID;
 };
 
 // Find the admin
 private _adminArray = allUsers select { 0 < (getUserInfo _x) select 8 };
 
-if (0 < count _adminArray) then {
+if (_adminArray isNotEqualTo []) then {
     private _admin = _adminArray select 0;
     private _adminUID = (getUserInfo _admin) select 2;
     GVAR(gameMasters) pushBackUnique _adminUID;

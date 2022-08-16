@@ -52,7 +52,7 @@ if !(isNull _curatorObj) then {
 };
 
 // Stop any running player 3D FPS counter
-[QGVAR(onPlayerFPSToggled), [], _unit] call CFUNC(targetEvent);
+[QGVAR(onPlayerFPSToggled), [0], _unit] call CFUNC(targetEvent);
 
 // Close admin menu
 [QGVAR(onAdminMenuClosed), [], _unit] call CFUNC(targetEvent);

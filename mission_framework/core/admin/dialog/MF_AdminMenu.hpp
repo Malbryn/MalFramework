@@ -6,7 +6,7 @@ class MF_AdminMenu
     idd = 799;
     movingEnable = false;
     enableSimulation = true;
-    
+
     class ControlsBackground
     {
         class Background
@@ -23,7 +23,7 @@ class MF_AdminMenu
             colorText[] = {0.1294,0.4549,0.6118,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-            onLoad = "call MF_admin_fnc_handleAdminMenuOpened";
+            onLoad = QUOTE(call FUNC(handleAdminMenuOpened));
         };
     };
 
@@ -74,7 +74,7 @@ class MF_AdminMenu
             soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
-            onMouseButtonUp = "['MF_admin_onAdminMenuClosed'] call CBA_fnc_localEvent";
+            onMouseButtonUp = QUOTE([QQGVAR(onAdminMenuClosed)] call CFUNC(localEvent));
         };
 
         class ListboxPlayerlist
@@ -169,7 +169,7 @@ class MF_AdminMenu
             colorText[] = {0.902,0.902,0.902,1};
             font = "PuristaMedium";
             sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8);
-            
+
         };
 
         class LabelMinFPS
@@ -553,7 +553,7 @@ class MF_AdminMenu
             soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
-            onMouseButtonClick = "call MF_admin_fnc_teleportToPlayer";
+            onMouseButtonClick = QUOTE(call FUNC(teleportToPlayer));
         };
 
         class ButtonHealPlayer
@@ -585,7 +585,7 @@ class MF_AdminMenu
             soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
-            onMouseButtonClick = "call MF_admin_fnc_healPlayer";
+            onMouseButtonClick = QUOTE(call FUNC(healPlayer));
         };
 
         class ButtonBringPlayer
@@ -617,9 +617,9 @@ class MF_AdminMenu
             soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
-            onMouseButtonClick = "call MF_admin_fnc_bringPlayer";
+            onMouseButtonClick = QUOTE(call FUNC(bringPlayer));
         };
-        
+
         class ListboxTaskList
         {
             type = 5;
@@ -696,7 +696,7 @@ class MF_AdminMenu
             soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
-            onMouseButtonClick = "['CREATED'] call MF_admin_fnc_setTaskState";
+            onMouseButtonClick = QUOTE(['CREATED'] call FUNC(setTaskState));
         };
 
         class ButtonTaskAssigned
@@ -728,7 +728,7 @@ class MF_AdminMenu
             soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
-            onMouseButtonClick = "['ASSIGNED'] call MF_admin_fnc_setTaskState";
+            onMouseButtonClick = QUOTE(['ASSIGNED'] call FUNC(setTaskState));
         };
 
         class ButtonTaskSucceeded
@@ -760,7 +760,7 @@ class MF_AdminMenu
             soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
-            onMouseButtonClick = "['SUCCEEDED'] call MF_admin_fnc_setTaskState";
+            onMouseButtonClick = QUOTE(['SUCCEEDED'] call FUNC(setTaskState));
         };
 
         class ButtonTaskFailed
@@ -792,7 +792,7 @@ class MF_AdminMenu
             soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
-            onMouseButtonClick = "['FAILED'] call MF_admin_fnc_setTaskState";
+            onMouseButtonClick = QUOTE(['FAILED'] call FUNC(setTaskState));
         };
 
         class ButtonReassignCurator
@@ -824,7 +824,7 @@ class MF_AdminMenu
             soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
-            onMouseButtonClick = "call MF_admin_fnc_reassignCurator";
+            onMouseButtonClick = QUOTE(call FUNC(reassignCurator));
         };
 
         class ButtonToggleFPS
@@ -856,7 +856,7 @@ class MF_AdminMenu
             soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
-            onMouseButtonClick = "['MF_admin_onPlayerFPSToggled'] call CBA_fnc_localEvent";
+            onMouseButtonClick = QUOTE([QQGVAR(onPlayerFPSToggled)] call CFUNC(localEvent));
         };
 
         class ButtonTerminateMission
@@ -888,7 +888,7 @@ class MF_AdminMenu
             soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
-            onMouseButtonClick = "call MF_admin_fnc_terminateMission";
+            onMouseButtonClick = QUOTE(call FUNC(terminateMission));
         };
 
         class ButtonOpenArsenal
@@ -920,7 +920,7 @@ class MF_AdminMenu
             soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
-            onMouseButtonClick = "call MF_admin_fnc_openArsenal";
+            onMouseButtonClick = QUOTE(call FUNC(openArsenal));
         };
 
         class TitlePlayercount
@@ -1094,7 +1094,7 @@ class MF_AdminMenu
             soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
             soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
             soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
-            onMouseButtonClick = "['CANCELED'] call MF_admin_fnc_setTaskState";
+            onMouseButtonClick = QUOTE(['CANCELED'] call FUNC(setTaskState));
         };
 
         class TitlePlayerInfo

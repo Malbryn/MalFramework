@@ -24,7 +24,7 @@ params [
 ];
 
 // Check input
-if (count _units == 0) exitWith {
+if (_units isEqualTo []) exitWith {
     [
         COMPONENT_STR,
         "ERROR",

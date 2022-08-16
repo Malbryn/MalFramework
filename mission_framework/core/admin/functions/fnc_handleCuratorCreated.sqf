@@ -49,10 +49,10 @@ _unit assignCurator _logic;
 
 // Manage editable objects in the zeus interface
 _logic addCuratorEditableObjects [allPlayers, true];
-_logic addCuratorEditableObjects [(allMissionObjects "Air"), true];
-_logic addCuratorEditableObjects [(allMissionObjects "Ship"), true];
-_logic addCuratorEditableObjects [(allMissionObjects "LandVehicle"), true];
-_logic addCuratorEditableObjects [(allMissionObjects "Man"), true];
+_logic addCuratorEditableObjects [allMissionObjects "Air", true];
+_logic addCuratorEditableObjects [allMissionObjects "Ship", true];
+_logic addCuratorEditableObjects [allMissionObjects "LandVehicle", true];
+_logic addCuratorEditableObjects [allMissionObjects "Man", true];
 
 // Save the reference to the curator object
 SETPVAR(_unit,GVAR(curatorLogic),_logic);

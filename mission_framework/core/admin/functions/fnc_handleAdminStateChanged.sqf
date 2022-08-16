@@ -56,8 +56,8 @@ if (_loggedIn) then {
     private _missionMakerUID = GETPAVAR(GVARMAIN(missionMaker),"");
 
     // Remove from array (don't remove if it's the mission maker)
-    if (_playerUID != _missionMakerUID) then {
-        GVAR(gameMasters) = GVAR(gameMasters) - [_playerUID];
+    if (_playerUID isNotEqualTo _missionMakerUID) then {
+        GVAR(gameMasters) deleteAt (GVAR(gameMasters) find _playerUID);
     };
 
     // Fire event

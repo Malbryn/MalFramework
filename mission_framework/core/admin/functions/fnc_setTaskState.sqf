@@ -27,15 +27,13 @@ private _taskID = lbData [712, lbCurSel 712];
 if (_taskID != "") then {
     [_taskID, _state] call BFUNC(taskSetState);
 
-    private _colour = [];
-
     // Refresh the colour
-    switch (_state) do {
-        case "ASSIGNED": {_colour = TASKCOLOUR_ASSIGNED};
-        case "SUCCEEDED": {_colour = TASKCOLOUR_SUCCEEDED};
-        case "FAILED": {_colour = TASKCOLOUR_FAILED};
-        case "CANCELED": {_colour = TASKCOLOUR_CANCELLED};
-        default {_colour = TASKCOLOUR_CREATED};
+    private _colour = switch (_state) do {
+        case "ASSIGNED": {TASKCOLOUR_ASSIGNED};
+        case "SUCCEEDED": {TASKCOLOUR_SUCCEEDED};
+        case "FAILED": {TASKCOLOUR_FAILED};
+        case "CANCELED": {TASKCOLOUR_CANCELLED};
+        default {TASKCOLOUR_CREATED};
     };
 
     lbSetColor [712, lbCurSel 712, _colour];

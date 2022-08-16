@@ -25,7 +25,19 @@
 
 // Client FPS display
 [QGVAR(onPlayerFPSToggled), {
-    call FUNC(handlePlayerFPSToggled);
+    // -1 == toggle, 0 == turn off, 1 == turn on
+    params [
+        ["_toggle", -1, [0]]
+    ];
+
+    if (_toggle == -1) then {
+        call FUNC(handlePlayerFPSToggled);
+    } else {
+        // Guarantees the turning on or off of FPS counter
+        if (_toggle == 0 && {GVAR(toggleFPS)} || {_toggle == 1 && {!GVAR(toggleFPS)}}) then {
+            call FUNC(handlePlayerFPSToggled);
+        };
+    };
 }] call CFUNC(addEventHandler);
 
 

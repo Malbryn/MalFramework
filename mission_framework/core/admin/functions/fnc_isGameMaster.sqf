@@ -19,6 +19,4 @@
 
 if !(hasInterface) exitWith {};
 
-private _playerUID = getPlayerUID player;
-
-GVAR(gameMasters) findIf { _x == _playerUID } > -1;
+(getPlayerUID player) in GVAR(gameMasters);

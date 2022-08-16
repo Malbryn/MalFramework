@@ -40,4 +40,4 @@ if (_toggle) then {
     [GVAR(fpsMonitor)] call CFUNC(removePerFrameHandler);
 
     GVAR(isMonitoring) = false;
-}
+};

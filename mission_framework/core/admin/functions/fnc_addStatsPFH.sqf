@@ -69,23 +69,24 @@ GVAR(otherStatsPFH) = [{
     ctrlSetText [704, str GVARMAIN(serverViewDistance)];
 
     // Unit count (All)
-    private _units = count allUnits;
+    private _allUnits = allUnits;
+    private _units = count _allUnits;
     ctrlSetText [705, str _units];
 
     // Unit count (BLUFOR)
-    private _unitsBlufor = west countSide allUnits;
+    private _unitsBlufor = west countSide _allUnits;
     ctrlSetText [706, str _unitsBlufor];
 
     // Unit count (REDFOR)
-    private _unitsRedfor = east countSide allUnits;
+    private _unitsRedfor = east countSide _allUnits;
     ctrlSetText [707, str _unitsRedfor];
 
     // Unit count (GREENFOR)
-    private _unitsGreenfor = resistance countSide allUnits;
+    private _unitsGreenfor = resistance countSide _allUnits;
     ctrlSetText [708, str _unitsGreenfor];
 
     // Unit count (CIVFOR)
-    private _unitsCivfor = civilian countSide allUnits;
+    private _unitsCivfor = civilian countSide _allUnits;
     ctrlSetText [709, str _unitsCivfor];
 
     // Object count

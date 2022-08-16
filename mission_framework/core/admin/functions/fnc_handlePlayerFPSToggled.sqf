@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Toggles the players' FPS display
+        Toggles the players' FPS display.
 
     Arguments:
         -
@@ -19,12 +19,12 @@
 
 if !(hasInterface) exitWith {};
 
-if !(call FUNC(isGameMaster)) exitWith {};
+// Ensure that despite not being a game master, the FPS can be turned off
+if (!GVAR(toggleFPS) && {!call FUNC(isGameMaster)}) exitWith {};
 
-private _toggle = GVAR(toggleFPS);
+if (GVAR(toggleFPS)) then {
+    [QGVAR(requestToggleClientFPS), [player, false]] call CFUNC(serverEvent);
 
-if (_toggle) then {
-    [QGVAR(onClientFPSDisplayChanged), false] call CFUNC(globalEvent);
     removeMissionEventHandler ["Draw3D", GVAR(fpsEH)];
 
     GVAR(fpsEH) = nil;
@@ -38,7 +38,7 @@ if (_toggle) then {
         true
     ] call EFUNC(main,log);
 } else {
-    [QGVAR(onClientFPSDisplayChanged), true] call CFUNC(globalEvent);
+    [QGVAR(requestToggleClientFPS), [player, true]] call CFUNC(serverEvent);
 
     GVAR(fpsEH) = addMissionEventHandler ["Draw3D", {call FUNC(drawFPS)}];
     GVAR(toggleFPS) = true;

@@ -19,7 +19,7 @@
 
 if !(hasInterface) exitWith {};
 
-[{!isNull findDisplay 799 && isNull findDisplay 91919}, {
+[{!isNull findDisplay 799 && {isNull findDisplay 91919}}, {
     // Start the stats PFH
     call FUNC(addStatsPFH);
 
@@ -36,5 +36,5 @@ if !(hasInterface) exitWith {};
     call FUNC(addPlayerInfoEH);
 
     // Block ESC key
-    GVAR(escKeyBlock) = (findDisplay 799) displayAddEventHandler ["KeyDown", "if (((_this select 1) == 1)) then {true};"];
+    GVAR(escKeyBlock) = (findDisplay 799) displayAddEventHandler ["KeyDown", { (_this select 1) == 1 }];
 }] call CFUNC(waitUntilAndExecute);
