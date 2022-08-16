@@ -2,7 +2,7 @@
 
 /*
     Author:
-        Fredrik Eriksson
+        Fredrik Eriksson, johnb43
 
     Description:
         Inits the vehicle respawn module.
@@ -11,7 +11,7 @@
         0: OBJECT - Vehicle to be monitored for respawn
         1: SCALAR - Respawn delay in seconds (Optional, default: 5)
         2: CODE - Initialization for vehicle (to refer the vehicle use: _this) (Optional, default: {})
-    3: SCALAR - Respawn limit. Number of respawns the vehicle has (-1 = unlimited) (Optional, default: -1)
+        3: SCALAR - Respawn limit. Number of respawns the vehicle has (-1 = unlimited) (Optional, default: -1)
         4: BOOLEAN - Deletes wreck on respawn. Wrecks within 100m of respawn point are automatically deleted, regardless of setting (Optional, default: false)
         5: BOOLEAN - Use custom loadout, saves inventory and loads it on respawn (Optional, default: true)
         6: BOOLEAN - Custom paintjob. Saves the current paint on the vehicle and applies it on respawn (Optional, default: true)
@@ -45,18 +45,14 @@ if (_respawnLimit != -1) then {
 private _inventory = [];
 
 if (_loadout) then {
-    _items = getItemCargo _vehicle;
-    _magazines = getMagazineCargo _vehicle;
-    _weapons = getWeaponCargo _vehicle;
-    _backpacks = getBackpackCargo _vehicle;
-    _inventory = [_items, _magazines, _weapons, _backpacks];
+    _inventory = [getItemCargo _vehicle, getMagazineCargo _vehicle, weaponsItemsCargo _vehicle, getBackpackCargo _vehicle];
 };
 
 private _paint = "";
 private _parts = [];
 
 if (_savePaint) then {
-    _customization = [_vehicle] call BFUNC(getVehicleCustomization);
+    private _customization = [_vehicle] call BFUNC(getVehicleCustomization);
     _paint = (_customization#0)#0;
     _parts = _customization#1;
 };
@@ -70,10 +66,10 @@ private _vehicleData = [
     _deleteWreck, _limitEnabled, _pylons
 ];
 
-if (isNil QGVAR(vehicleMonitor)) then {
-    GVAR(totalArray) = [];
-    call FUNC(initVehicleMonitor);
-    GVAR(vehicleMonitor) = 1;
-};
+SETPVAR(_vehicle,GVAR(vehicleData),_vehicleData);
 
-GVAR(totalArray) pushBack [_vehicle, _vehicleData];
+// Execute globally, in case locality of vehicle changes
+private _id = [QGVAR(registerKilledEH), _vehicle] call CFUNC(globalEventJIP);
+
+// Remove JIP event when vehicle is deleted
+[_id, _vehicle] call CFUNC(removeGlobalEventJIP);

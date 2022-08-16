@@ -1,3 +1,3 @@
 PREP(initVehicleRespawn);
-PREP(monitorVehicle);
 PREP(setVehicleInventory);
+PREP(vehicleKilled);

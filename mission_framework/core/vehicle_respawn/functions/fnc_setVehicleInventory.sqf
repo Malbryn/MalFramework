@@ -2,7 +2,7 @@
 
 /*
     Author:
-        Fredrik Eriksson
+        Fredrik Eriksson, johnb43
 
     Description:
         Adds items to the vehicle equipment storage.
@@ -21,28 +21,25 @@
 if !(isServer) exitWith {};
 
 params [["_vehicle", objNull, [objNull]], ["_inventoryArray", [], [[]]]];
+_inventoryArray params ["_itemArray", "_magazineArray", "_weaponArray", "_backpackArray"];
 
 clearItemCargoGlobal _vehicle;
 clearMagazineCargoGlobal _vehicle;
 clearWeaponCargoGlobal _vehicle;
 clearBackpackCargoGlobal _vehicle;
 
-private _itemArray = _inventoryArray#0;
 {
-    _vehicle addItemCargoGlobal [_x, ((_itemArray#1) select ((_itemArray#0) find _x))];
-} count (_itemArray#0);
+    _vehicle addItemCargoGlobal [_x, (_itemArray#1) select _forEachIndex];
+} forEach (_itemArray#0);
 
-private _magazineArray = _inventoryArray#1;
 {
-    _vehicle addMagazineCargoGlobal [_x, ((_magazineArray#1) select ((_magazineArray#0) find _x))];
-} count (_magazineArray#0);
+    _vehicle addMagazineCargoGlobal [_x, (_magazineArray#1) select _forEachIndex];
+} forEach (_magazineArray#0);
 
-private _weaponArray = _inventoryArray#2;
 {
-    _vehicle addWeaponCargoGlobal [_x, ((_weaponArray#1) select ((_weaponArray#0) find _x))];
-} count (_weaponArray#0);
+    _vehicle addWeaponWithAttachmentsCargoGlobal [_x, 1];
+} forEach _weaponArray;
 
-private _backpackArray = _inventoryArray#3;
 {
-    _vehicle addBackpackCargoGlobal [_x, ((_backpackArray#1) select ((_backpackArray#0) find _x))];
-} count (_backpackArray#0);
+    _vehicle addBackpackCargoGlobal [_x, (_backpackArray#1) select _forEachIndex];
+} forEach (_backpackArray#0);
