@@ -125,7 +125,7 @@ if (GVAR(useLoadouts)) then {
 };
 
 // Apply the selected loadout
-if (count _gear == 0) exitWith {
+if (_gear isEqualTo []) exitWith {
     [
         COMPONENT_STR,
         "ERROR",

@@ -138,6 +138,7 @@ EGVAR(custom_channel,channelColour) = [0.8, 0, 0.5, 1];  // Colour of the channe
 
 // Grass cutter
 GVARMAIN(moduleGrassCutter) = false;  // Coop & TvT
+EGVAR(grass_cutter,requireEntrenchingTool) = true;
 
 
 // Hostage
