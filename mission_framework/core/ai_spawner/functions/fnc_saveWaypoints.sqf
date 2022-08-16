@@ -22,9 +22,11 @@ if !(isServer) exitWith {};
 params ["_unitGroup"];
 
 private _waypointList = [];
+private _currentWaypoint = [];
+private _waypointCount = count (waypoints _unitGroup);
 
-if (count (waypoints _unitGroup) > 1) then {
-    for "_waypointIndex" from 1 to (count (waypoints _unitGroup) - 1) do {
+if (_waypointCount > 1) then {
+    for "_waypointIndex" from 1 to (_waypointCount - 1) do {
         _currentWaypoint = [];
 
         _currentWaypoint pushBack waypointPosition [_unitGroup, _waypointIndex];

@@ -20,14 +20,6 @@
 if !(isServer) exitWith {};
 
 params ["_crewMember"];
-
 _crewMember params ["_unit", "_role", "_cargoIndex", "_turretPath"];
 
-private _crewMemberData = [];
-
-_crewMemberData pushBack ([_unit] call FUNC(saveUnit));
-_crewMemberData pushBack _role;
-_crewMemberData pushBack _cargoIndex;
-_crewMemberData pushBack _turretPath;
-
-_crewMemberData;
+[[_unit] call FUNC(saveUnit), _role, _cargoIndex, _turretPath]

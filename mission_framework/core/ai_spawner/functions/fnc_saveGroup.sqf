@@ -2,7 +2,7 @@
 
 /*
     Author:
-       DreadPirate (modified by Malbryn)
+       DreadPirate (modified by Malbryn), johnb43
 
     Description:
         Saves group data.
@@ -19,50 +19,40 @@
 
 if !(isServer) exitWith {};
 
-params ["_unit"];
+params [["_unit", objNull, [objNull, grpNull]]];
 
 // Make sure unit is a unit and not a group (thanks to S.Crowe)
-if (typeName _unit == "GROUP") then {
-    _unit = leader _unit;
-};
+private _unitGroup = [group _unit, _unit] select (_unit isEqualType grpNull);
 
-_groupData = [];
-_infantryData = [];
-_vehicleData = [];
-_vehicles = [];
-_waypoints = [];
+// Save waypoint data
+private _waypoints = [_unitGroup] call FUNC(saveWaypoints);
 
-// Save group data
-_unitSide = side _unit;
-_unitGroup = (group _unit);
-_unitsInGroup = units _unitGroup;
+private _vehicle = objNull;
+private _infantryData = [];
+private _vehicleData = [];
 
-//Save waypoint data
-_waypoints = [_unitGroup] call FUNC(saveWaypoints);
-
-// Freeze units
+// Freeze units and get their info
 {
+    _vehicle = objectParent _x;
+
     _x disableAI "ALL";
     _x enableSimulationGlobal false;
-    (vehicle _x) enableSimulationGlobal false;
-} forEach _unitsInGroup;
 
-{
-    if ( (vehicle _x) == _x) then {
+    if (isNull _vehicle) then {
         _infantryData pushBack ([_x] call FUNC(saveUnit));
     } else {
+        _vehicle enableSimulationGlobal false;
+
         // Normal vehicles have drivers
-        if (driver (vehicle _x) == _x) then {
-            _vehicleData pushBack ([vehicle _x] call FUNC(saveVehicle));
+        if (driver _vehicle == _x) then {
+            _vehicleData pushBack ([_vehicle] call FUNC(saveVehicle));
         } else {
             // Static weapons have gunners
-            if ((gunner (vehicle _x) == _x) && ((vehicle _x) isKindOf "StaticWeapon")) then {
-                _vehicleData pushBack ([vehicle _x] call FUNC(saveVehicle));
+            if ((gunner _vehicle == _x) && {_vehicle isKindOf "StaticWeapon"}) then {
+                _vehicleData pushBack ([_vehicle] call FUNC(saveVehicle));
             };
         };
     };
-} forEach _unitsInGroup;
+} forEach (units _unit);
 
-_groupData = [_unitSide, _vehicleData, _infantryData, _waypoints];
-
-_groupData
+[side _unit, _vehicleData, _infantryData, _waypoints]

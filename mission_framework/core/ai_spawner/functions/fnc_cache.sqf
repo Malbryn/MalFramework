@@ -26,13 +26,13 @@ SETVAR(_group,GVAR(isCached));
 while {{alive _x} count (units _group) > 0} do {
     sleep 5;
 
-    if ([getPos (leader _group), _radius] call FUNC(playerInRadius)) then {
+    if ([getPosATL (leader _group), _radius] call FUNC(playerInRadius)) then {
         if (GETVAR(_group,GVAR(isCached),false)) then {
             {
                 (vehicle _x) hideObjectGlobal false;
                 _x enableSimulationGlobal true;
-            } forEach units _group;
-            
+            } forEach (units _group);
+
             SETVAR(_group,GVAR(isCached),false);
         };
     } else {
@@ -40,8 +40,8 @@ while {{alive _x} count (units _group) > 0} do {
             {
                 (vehicle _x) hideObjectGlobal true;
                 _x enableSimulationGlobal false;
-            } forEach units _group;
-            
+            } forEach (units _group);
+
             SETVAR(_group,GVAR(isCached),true);
         };
     };

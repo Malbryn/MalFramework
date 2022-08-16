@@ -12,6 +12,7 @@
         1: GROUP - Vehicle group
         2: ARRAY - Temporary respawn position
         3: STRING - Special respawn rules
+        4: BOOLEAN - Give crew members infinite ammo
 
     Example:
         [[...], newGroup, [0, 0, 0], "NONE"] call MF_ai_spawner_fnc_spawnVehicle
@@ -22,7 +23,7 @@
 
 if !(isServer) exitWith {};
 
-params ["_vehicleData", "_newGroup", "_tmpRespawnPos", "_special"];
+params ["_vehicleData", "_newGroup", "_tmpRespawnPos", "_special", "_unlimitedAmmo"];
 
 _vehicleData params [
     "_vehicleType", "_vehiclePos", "_vehicleDir", "_vehicleLocked", "_vehicleItemCargo",
@@ -52,45 +53,48 @@ clearBackpackCargoGlobal _newVehicle;
 {_newVehicle setObjectTextureGlobal [_forEachIndex, _x];} forEach _vehicleObjectTextures;
 {_newVehicle animateSource [_x, _vehicleAnimationPhases select _forEachIndex];} forEach _vehicleAnimationNames;
 
-if (!(_vehicleVarName isEqualTo "")) then {
+if (_vehicleVarName isNotEqualTo "") then {
     [_newVehicle, _vehicleVarName] remoteExec ["setVehicleVarName", 0, _newVehicle];
-    SETPMVAR(_vehicleVarName,_newVehicle);
+    missionNamespace setVariable [_vehicleVarName, _newVehicle, true];
 };
 
-_crew = [];
+private _crew = [];
 
 {
-    _newUnit =  [_x#0, _newGroup, _tmpRespawnPos] call FUNC(spawnUnit);
+    _newUnit = [_x#0, _newGroup, _tmpRespawnPos, _unlimitedAmmo] call FUNC(spawnUnit);
     _crew pushBack _newUnit;
-    switch toLower (_x#1) do {
-        case 'driver': {
+
+    switch (toLowerANSI (_x#1)) do {
+        case "driver": {
             _newUnit assignAsDriver _newVehicle;
             _newUnit moveInDriver _newVehicle
-        }; 
-
-        case 'commander': {
-            _newUnit assignAsCommander _newVehicle;
-            _newUnit moveInCommander _newVehicle
-        }; 
-        
-        case 'gunner': {
-            _newUnit assignAsGunner _newVehicle;
-            _newUnit moveInGunner _newVehicle
-        }; 
-
-        case 'cargo': {
-            _newUnit assignAsCargoIndex [_newVehicle,(_x#2)];
-            _newUnit moveInCargo [_newVehicle,(_x#2)]
         };
 
-        case 'turret': {
-            _newUnit assignAsTurret [_newVehicle,(_x#3)];
-            _newUnit moveInturret [_newVehicle,(_x#3)]
-        }; 
+        case "commander": {
+            _newUnit assignAsCommander _newVehicle;
+            _newUnit moveInCommander _newVehicle
+        };
+
+        case "gunner": {
+            _newUnit assignAsGunner _newVehicle;
+            _newUnit moveInGunner _newVehicle
+        };
+
+        case "cargo": {
+            _newUnit assignAsCargoIndex [_newVehicle, _x#2];
+            _newUnit moveInCargo [_newVehicle, _x#2]
+        };
+
+        case "turret": {
+            _newUnit assignAsTurret [_newVehicle, _x#3];
+            _newUnit moveInturret [_newVehicle, _x#3]
+        };
     };
 } forEach _vehicleCrewData;
 
-waituntil {count crew _newVehicle == count (_crew)};
+private _countCrew = count _crew;
+
+waitUntil {count crew _newVehicle == _countCrew};
 
 if (_newVehicle isKindOf "Plane" && (_vehiclePos#2 > 50)) then {
     _newVehicle setPos (_newVehicle modelToWorld [0, 0, 500]);

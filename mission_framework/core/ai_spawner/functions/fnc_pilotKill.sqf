@@ -28,4 +28,4 @@ private _group = group (_crew#0);
 
 waitUntil {!canMove _aircraft};
 
-{deleteVehicle _x} foreach _crew;
+deleteVehicleCrew _aircraft;

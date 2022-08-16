@@ -36,8 +36,8 @@ _vehicleData pushBack (getPylonMagazines _vehicle);
 _vehicleData pushBack (getObjectMaterials _vehicle);
 _vehicleData pushBack (getObjectTextures _vehicle);
 
-_thisAnimationNames = animationNames _vehicle;
-_thisAnimationPhases = [];
+private _thisAnimationNames = animationNames _vehicle;
+private _thisAnimationPhases = [];
 
 {
     _thisAnimationPhases pushBack (_vehicle animationPhase _x);
@@ -47,7 +47,7 @@ _vehicleData pushBack (_thisAnimationNames);
 _vehicleData pushBack (_thisAnimationPhases);
 _vehicleData pushBack vehicleVarName _vehicle;
 
-_crewData = [];
+private _crewData = [];
 
 {
     _crewData pushBack ([_x] call FUNC(saveCrewMember));
@@ -55,4 +55,4 @@ _crewData = [];
 
 _vehicleData pushBack _crewData;
 
-_vehicleData
+_vehicleData;

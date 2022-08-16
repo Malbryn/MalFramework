@@ -21,7 +21,7 @@
 
 if !(isServer) exitWith {};
 
-params ["_unitData", "_newGroup", "_spawnPos"];
+params ["_unitData", "_newGroup", "_spawnPos", ["_unlimitedAmmo", true, [false]]];
 _unitData params ["_unitType", "_unitPos", "_unitLoadout", "_unitSkill", "_unitVarName"];
 
 private _newUnit = _newGroup createUnit [_unitType, _spawnPos, [], 0, "CAN_COLLIDE"];
@@ -31,11 +31,13 @@ waitUntil {alive _newUnit};
 _newUnit setUnitLoadout _unitLoadout;
 _newUnit setSkill _unitSkill;
 
-if (!(_unitVarName isEqualTo "")) then {
+if (_unitVarName isNotEqualTo "") then {
     [_newUnit, _unitVarName] remoteExec ["setVehicleVarName", 0, _newUnit];
     missionNamespace setVariable [_unitVarName, _newUnit, true];
 };
 
-[_newUnit] call FUNC(unlimitedAmmo);
+if (_unlimitedAmmo) then {
+    [_newUnit] call FUNC(unlimitedAmmo);
+};
 
 _newUnit
