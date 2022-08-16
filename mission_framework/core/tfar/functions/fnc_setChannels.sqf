@@ -2,7 +2,7 @@
 
 /*
     Author:
-        Malbryn
+        Malbryn, johnb43
 
     Description:
         Sets the unit's radios to the assigned channels.
@@ -32,18 +32,25 @@ if (didJIP) then {
     };
 };
 
-// Set short range
-[{call TFUNC(haveSWRadio)}, {
-    params ["_srChannel"];
+// Wait until radios have been received
+["TFAR_RadioRequestResponseEvent", {
+    _thisArgs params ["_srChannel", "_lrChannel"];
 
-    // TFAR uses 0-based channels!
-    [(call TFUNC(activeSwRadio)), _srChannel - 1] call TFUNC(setSwChannel);
-}, [_srChannel]] call CFUNC(waitUntilAndExecute);
+    [_thisType, _thisId] call CFUNC(removeEventHandler);
 
-// Set long range
-[{call TFUNC(haveLRRadio)}, {
-    params ["_lrChannel"];
+    // Set short range; Timeout after 5s
+    [{call TFUNC(haveSWRadio)}, {
+        params ["_srChannel"];
 
-    // TFAR uses 0-based channels!
-    [(call TFUNC(activeLrRadio)), _lrChannel - 1] call TFUNC(setLrChannel);
-}, [_lrChannel]] call CFUNC(waitUntilAndExecute);
+        // TFAR uses 0-based channels!
+        [(call TFUNC(activeSwRadio)), _srChannel - 1] call TFUNC(setSwChannel);
+    }, [_srChannel], 5] call CFUNC(waitUntilAndExecute);
+
+    // Set long range; Timeout after 5s
+    [{call TFUNC(haveLRRadio)}, {
+        params ["_lrChannel"];
+
+        // TFAR uses 0-based channels!
+        [(call TFUNC(activeLrRadio)), _lrChannel - 1] call TFUNC(setLrChannel);
+    }, [_lrChannel], 5] call CFUNC(waitUntilAndExecute);
+}, [_srChannel, _lrChannel]] call CFUNC(addEventHandlerArgs);

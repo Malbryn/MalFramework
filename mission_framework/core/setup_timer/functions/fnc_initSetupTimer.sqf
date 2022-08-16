@@ -25,15 +25,15 @@ if !(isMultiplayer) exitWith {
 
 private _zone = [];
 
-if !(GVAR(markerBlufor) == "") then {
+if (GVAR(markerBlufor) != "") then {
     _zone pushBack [west, GVAR(timerBlufor), GVAR(markerBlufor)];
 };
 
-if !(GVAR(markerRedfor) == "") then {
+if (GVAR(markerRedfor) != "") then {
     _zone pushBack [east, GVAR(timerRedfor), GVAR(markerRedfor)];
 };
 
-if (count _zone == 0) exitWith {
+if (_zone isEqualTo []) exitWith {
     [COMPONENT_STR, "ERROR", "No staging zone marker was defined in the config", true] call EFUNC(main,log);
 };
 
@@ -47,7 +47,7 @@ _zone apply {
     };
 };
 
-if (count GVAR(marker) == 0) exitWith {};
+if (GVAR(marker) isEqualTo []) exitWith {};
 
 [{!isNil QGVAR(startTime)}, {
     GVAR(pos) = getPosATL (vehicle player);
@@ -65,11 +65,7 @@ if (count GVAR(marker) == 0) exitWith {};
             };
         };
 
-        private _timeLeft = round(_startTime + (GVAR(marker)#0) - serverTime);
-
-        if (_timeLeft < 0) then {
-            _timeLeft = 0;
-        };
+        private _timeLeft = round (_startTime + (GVAR(marker)#0) - serverTime);
 
         if (_timeLeft > 0 && !GVAR(displayed)) then {
             GVAR(displayed) = true;
@@ -78,7 +74,7 @@ if (count GVAR(marker) == 0) exitWith {};
             titleRsc ["RscSetupTimer", "PLAIN", 0.5, false];
         };
 
-        if (_timeLeft == 0) then {
+        if (_timeLeft <= 0) then {
             GVAR(marker)#1 setMarkerAlphaLocal 0;
 
             // Remove framehandler

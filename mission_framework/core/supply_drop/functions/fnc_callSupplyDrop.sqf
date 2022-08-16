@@ -5,7 +5,7 @@
         Malbryn
 
     Description:
-        Spawsn the resupply plane which then drops the supplies.
+        Spawns the resupply plane which then drops the supplies.
 
     Arguments:
         0: OBJECT - Pre-placed resupply box
@@ -57,23 +57,24 @@ switch (_dir) do {
 
 // Spawn smoke
 if !(GVAR(useFlare)) then {
-    private _signal = "SmokeShellBlue" createVehicle _playerPos;
+    "SmokeShellBlue" createVehicle _playerPos;
 };
 
 // Create the plane
 GVAR(plane) = createVehicle [_type, _startPos, [], 0, "FLY"];
 createVehicleCrew GVAR(plane);
-group GVAR(plane) setCombatMode "BLUE";
-group GVAR(plane) setBehaviour "CARELESS";
+private _group = group GVAR(plane);
+_group setCombatMode "BLUE";
+_group setBehaviour "CARELESS";
 
 // First waypoint
-private _wp1 = group GVAR(plane) addWaypoint [_endPos, 20];
+private _wp1 = _group addWaypoint [_endPos, 20];
 _wp1 setWaypointStatements ["true", QUOTE(GVAR(chute) = createVehicle [ARR_5('O_Parachute_02_F',getPos GVAR(plane),[],0,'FLY')];)];
 _wp1 setWaypointType "MOVE";
 
 
 [{alive GVAR(chute)}, {
-    params ["_crate", "_signal", "_startPos"];
+    params ["_crate", "_startPos", "_group"];
 
     // Teleport and attach the crate to the parachute
     _crate allowDamage false;
@@ -81,28 +82,21 @@ _wp1 setWaypointType "MOVE";
     _crate attachTo [GVAR(chute), [0, 0, 0.5]];
 
     // Spawn smoke/flare
-    if (GVAR(useFlare)) then {
-        _signal = "F_40mm_Green" createVehicle position _crate;
-    } else {
-        _signal = "SmokeShellYellow" createVehicle position _crate;
-    };
+    private _signal = (["SmokeShellYellow", "F_40mm_Green"] select (GVAR(useFlare))) createVehicle position _crate;
 
     _signal attachTo [_crate, [0, 0, 0.1]];
 
     // Second waypoint, delete plane
-    private _wp2 = group GVAR(plane) addWaypoint [_startPos, 20];
-    _wp2 setWaypointStatements ["true", QUOTE(crew GVAR(plane) apply {deleteVehicle _x}; deleteVehicle GVAR(plane); SETPMVAR(QGVAR(dropAvailable),true);)];
+    private _wp2 = _group addWaypoint [_startPos, 20];
+    _wp2 setWaypointStatements ["true", QUOTE(deleteVehicleCrew GVAR(plane); deleteVehicle GVAR(plane); SETPMVAR(QGVAR(dropAvailable),true);)];
     _wp2 setWaypointType "MOVE";
 
     [{
-        params ["_crate", "_signal"];
-        
-        if (GVAR(useFlare)) then {
-            _signal = "Chemlight_green" createVehicle position _crate;
-        } else {
-            _signal = "SmokeShellYellow" createVehicle position _crate;
-        };
+        params ["_crate"];
+
+        // Spawn smoke/flare
+        private _signal = (["SmokeShellYellow", "Chemlight_green"] select (GVAR(useFlare))) createVehicle position _crate;
 
         _signal attachTo [_crate, [0, 0, 0.1]];
-    }, [_crate, _signal], 45] call CFUNC(waitAndExecute);
-}, [_crate, _signal, _startPos]] call CFUNC(waitUntilAndExecute);
+    }, [_crate], 45] call CFUNC(waitAndExecute);
+}, [_crate, _startPos, _group]] call CFUNC(waitUntilAndExecute);

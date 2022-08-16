@@ -27,7 +27,6 @@ GVAR(snowfallPFH) = [{
     _d  = 15;
     _density = 50;  // Snow density at start
     _nextChange = time + 30;
-    _inside = false;
 
     _inside = [player] call EFUNC(common,isInside);
 

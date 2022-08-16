@@ -21,14 +21,14 @@ if !(hasInterface) exitWith {};
 
 SETPMVAR(GVAR(dropAvailable),true);
 
-if (count GVAR(supplyCrates) == 0) exitWith {
+if (GVAR(supplyCrates) isEqualTo []) exitWith {
     [COMPONENT_STR, "ERROR", "No supply drop crate is defined in the config", true] call EFUNC(main,log);
 };
 
 if (GETVAR(player,EGVAR(player,isCO),false)) then {
     // Supply drop category
     private _menu = ['Supply drop', 'Supply drop', '\a3\ui_f\data\Map\VehicleIcons\iconParachute_ca.paa', {}, {!visibleMap && isNull objectParent player}] call AFUNC(interact_menu,createAction);
-    
+
     [player, 1, ["ACE_SelfActions"], _menu] call AFUNC(interact_menu,addActionToObject);
 
     private _crate = [];
@@ -42,7 +42,7 @@ if (GETVAR(player,EGVAR(player,isCO),false)) then {
         if (GETVAR(_crate,GVAR(crateAvailable),true)) then {
 
             _menu = [_crateName, _crateName, '', {}, {true}] call AFUNC(interact_menu,createAction);
-            
+
             [player, 1, ["ACE_SelfActions", "Supply drop"], _menu] call AFUNC(interact_menu,addActionToObject);
 
             // Direction control

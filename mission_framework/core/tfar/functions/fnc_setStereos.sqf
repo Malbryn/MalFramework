@@ -2,7 +2,7 @@
 
 /*
     Author:
-        Malbryn
+        Malbryn, johnb43
 
     Description:
         Sets the unit's radios to the assigned stereo channels.
@@ -32,16 +32,23 @@ if (didJIP) then {
     };
 };
 
-// Set short range
-[{call TFUNC(haveSWRadio)}, {
-    params ["_srStereo"];
+// Wait until radios have been received
+["TFAR_RadioRequestResponseEvent", {
+    _thisArgs params ["_srStereo", "_lrStereo"];
 
-    [(call TFUNC(activeSwRadio)), _srStereo] call TFUNC(setSwStereo);
-}, [_srStereo]] call CFUNC(waitUntilAndExecute);
+    [_thisType, _thisId] call CFUNC(removeEventHandler);
 
-// Set long range
-[{call TFUNC(haveLRRadio)}, {
-    params ["_lrStereo"];
+    // Set short range; Timeout after 5s
+    [{call TFUNC(haveSWRadio)}, {
+        params ["_srStereo"];
 
-    [(call TFUNC(activeLrRadio)), _lrStereo] call TFUNC(setLrStereo);
-}, [_lrStereo]] call CFUNC(waitUntilAndExecute);
+        [(call TFUNC(activeSwRadio)), _srStereo] call TFUNC(setSwStereo);
+    }, [_srStereo], 5] call CFUNC(waitUntilAndExecute);
+
+    // Set long range; Timeout after 5s
+    [{call TFUNC(haveLRRadio)}, {
+        params ["_lrStereo"];
+
+        [(call TFUNC(activeLrRadio)), _lrStereo] call TFUNC(setLrStereo);
+    }, [_lrStereo], 5] call CFUNC(waitUntilAndExecute);
+}, [_srStereo, _lrStereo]] call CFUNC(addEventHandlerArgs);
